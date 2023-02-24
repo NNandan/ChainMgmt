@@ -1,0 +1,33 @@
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
+Imports DataAccessHandler
+Imports Telerik.WinControls.UI
+Public Class frmTested
+    Private Sub frmTested_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.CopyColumnSchema(Me.radGridView1, Me.radGridView2)
+    End Sub
+    Private Sub CopySelectedRows(ByVal sourceGrid As RadGridView, ByVal destinationGrid As RadGridView)
+        For i As Integer = 0 To sourceGrid.SelectedRows.Count - 1
+            Dim values As Object() = New Object(sourceGrid.ColumnCount - 1) {}
+
+            For c As Integer = 0 To sourceGrid.SelectedRows(i).Cells.Count - 1
+                values(c) = sourceGrid.SelectedRows(i).Cells(c).Value
+            Next
+
+            destinationGrid.Rows.Add(values)
+        Next
+    End Sub
+    Private Sub CopyColumnSchema(ByVal sourceGrid As RadGridView, ByVal destinationGrid As RadGridView)
+        'For i As Integer = 0 To sourceGrid.ColumnCount - 1
+        '    Dim col As GridViewDataColumn = New GridViewDataColumn()
+        '    col.HeaderText = sourceGrid.Columns(i).HeaderText
+        '    col.UniqueName = sourceGrid.Columns(i).UniqueName
+        '    col.DataType = sourceGrid.Columns(i).DataType
+        '    col.Width = sourceGrid.Columns(i).Width
+        '    destinationGrid.Columns.Add(col)
+        'Next
+    End Sub
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Me.CopySelectedRows(Me.RadGridView1, Me.RadGridView2)
+    End Sub
+End Class

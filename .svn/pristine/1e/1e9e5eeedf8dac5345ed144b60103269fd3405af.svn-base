@@ -1,0 +1,12 @@
+﻿Imports System.Configuration
+Imports System.Data.SqlClient
+Imports DataAccessHandler
+Imports Telerik.WinControls.UI
+Public Class frmTested
+    Private objDBOperation As DBOperation
+
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+
+    End Sub
+End Class

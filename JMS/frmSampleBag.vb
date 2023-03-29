@@ -17,7 +17,6 @@ Public Class frmSampleBag
             Select Case mFr_State
                 Case FormState.AStateMode
                     '    Me.Lbl_Tran_Mode.Text = "NEW MODE"
-
                     '    Me.txtAccountName.BackColor = Color.LemonChiffon
                     Me.btnSave.Enabled = True
                     Me.btnSave.Text = "&Save"
@@ -52,13 +51,12 @@ Public Class frmSampleBag
         'txtFineTotal.Text = Format(sFineTotal, "0.00")
     End Sub
     Private Sub fillBagType()
-
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FillSampleBag", DbType.String))
         End With
 
@@ -193,13 +191,12 @@ Public Class frmSampleBag
 
     End Sub
     Private Sub bindReceiveListview()
-
         Dim dt As DataTable = New DataTable()
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "GetSampleBagDetails", DbType.String))
             .Add(dbManager.CreateParameter("@BagSrNo", Convert.ToString(cmbRBagNo.SelectedItem.Text), DbType.String))
         End With
@@ -242,14 +239,13 @@ Public Class frmSampleBag
         End Try
     End Sub
     Private Sub fetchUpdateSampleBag()
-
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@BagSrNo", Convert.ToString(cmbUBagNo.SelectedItem.Text.Trim), DbType.String))
                 .Add(dbManager.CreateParameter("@ActionType", "SearchByBagNo", DbType.String))
             End With
@@ -270,7 +266,7 @@ Public Class frmSampleBag
                 txtUissueFineWt.Text = dtData.Rows(0).Item("IssueFineWt").ToString()
 
                 txtUWtOnScale.Text = dtData.Rows(0).Item("WtOnScale").ToString()
-                txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonRecieve").ToString()
+                txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonReceive").ToString()
                 txtUGrossLoss.Text = dtData.Rows(0).Item("GrossLossWt").ToString()
             Else
                 MessageBox.Show("No Data Found !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -481,9 +477,14 @@ Public Class frmSampleBag
         btnCancel.Enabled = True
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+        If Not Validate_Fields() Then Exit Sub
+
         Try
             If rbLotSample.Checked = True Then
                 Me.UpdateSampleSrNoForTran()
+
+                AddHandler rbLotSample.CheckedChanged, AddressOf rbLotSample_CheckedChanged
             Else
                 Me.UpdateSampleSrNoForUsed()
             End If
@@ -550,7 +551,7 @@ Public Class frmSampleBag
                 Dparameters.Clear()
 
                 For i As Integer = 0 To dgvTSampleBag.Rows.Count - 1
-                    Dparameters.Add(dbManager.CreateParameter("@ActionType", "UpdateSampleNo", DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@ActionType", "UpdateSampleNoForLot", DbType.String))
                     Dparameters.Add(dbManager.CreateParameter("@BId", Val(cmbCBagtype.SelectedValue), DbType.Int16))
                     Dparameters.Add(dbManager.CreateParameter("@TId", Val(dgvTSampleBag.Rows(i).Cells(0).Value), DbType.Int16))
                     Dparameters.Add(dbManager.CreateParameter("@BagType", "S", DbType.String))
@@ -560,7 +561,7 @@ Public Class frmSampleBag
                     Dparameters.Clear()
                 Next
 
-                MessageBox.Show("Sample Bag Updated !!!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Sample Bag Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 AddHandler rbLotSample.CheckedChanged, AddressOf rbLotSample_CheckedChanged
 
@@ -580,15 +581,16 @@ Public Class frmSampleBag
                 Dparameters.Clear()
 
                 For i As Integer = 0 To dgvTSampleBag.Rows.Count - 1
-                    Dparameters.Add(dbManager.CreateParameter("@ActionType", "UpdateSampleNo", DbType.String))
-                    'Dparameters.Add(dbManager.CreateParameter("@SampleBagNo", CStr(txtMaxNo.Text.Trim()), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@ActionType", "UpdateSampleNoForBag", DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@BId", Val(cmbCBagtype.SelectedValue), DbType.Int16))
                     Dparameters.Add(dbManager.CreateParameter("@TId", Val(dgvTSampleBag.Rows(i).Cells(0).Value), DbType.Int16))
+                    Dparameters.Add(dbManager.CreateParameter("@BagType", "SB", DbType.String))
 
                     dbManager.Update("SP_SampleBagNo_Update", CommandType.StoredProcedure, Dparameters.ToArray())
                     Dparameters.Clear()
                 Next
 
-                MessageBox.Show("Sample Bag Updated !!!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Sample Bag Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
                 MessageBox.Show("Error:- " & ex.Message)
@@ -607,9 +609,6 @@ Public Class frmSampleBag
         If dgvFSampleBag.CurrentColumn.Name = "colChkBox" Then
             dgvFSampleBag.EndEdit()
         End If
-
-        'Me.fillMaxsrno()
-
     End Sub
     Private Sub bindSampleBag()
         Dim dt As DataTable = New DataTable()
@@ -643,11 +642,11 @@ Public Class frmSampleBag
 
     End Sub
     Private Sub tbSampleBag_Click(sender As Object, e As EventArgs) Handles tbSampleBag.Click
-        If tbSampleBag.SelectedIndex = 0 Then  ''for Create Bhuka Bag
+        If tbSampleBag.SelectedIndex = 0 Then       ''for Create Bhuka Bag
             Me.fillBagType()
-        ElseIf tbSampleBag.SelectedIndex = 1 Then ''for Receive Bhuka Bag
+        ElseIf tbSampleBag.SelectedIndex = 1 Then   ''for Receive Bhuka Bag
             Me.fillBagType()
-        ElseIf tbSampleBag.SelectedIndex = 2 Then ''for Update Bhuka Bag
+        ElseIf tbSampleBag.SelectedIndex = 2 Then   ''for Update Bhuka Bag
             Me.fillBagType()
         End If
     End Sub
@@ -783,7 +782,7 @@ Public Class frmSampleBag
         Try
             Call UClear_Form()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub UClear_Form()
@@ -921,6 +920,23 @@ Public Class frmSampleBag
             ElseIf txtRCarbon.Text.Trim.Length = 0 Then
                 MessageBox.Show("Enter Carbon Recived !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 txtRCarbon.Focus()
+                Return False
+            End If
+
+            Return True
+        Catch ex As Exception
+            Return False
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Function
+
+    Private Function Validate_Fields() As Boolean
+        Try
+
+            'Assigning Default values
+            If Val(cmbCBagtype.SelectedIndex) = -1 Or Val(cmbCBagtype.SelectedIndex) = 0 Then
+                MessageBox.Show("Select Item Bag Type !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                cmbCBagtype.Focus()
                 Return False
             End If
 

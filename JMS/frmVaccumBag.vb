@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmVaccumBag
@@ -36,6 +35,7 @@ Public Class frmVaccumBag
         Dim dt As DataTable = New DataTable()
 
         Dim parameters = New List(Of SqlParameter)()
+
         With parameters
             .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "GetVaccumData", DbType.String))
@@ -81,6 +81,7 @@ Public Class frmVaccumBag
         With parameters
             .Add(dbManager.CreateParameter("@ActionType", "FillVacuumBag", DbType.String))
         End With
+
         Dim dr = dbManager.GetDataReader("SP_BagMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         dt.Load(dr)
@@ -188,7 +189,7 @@ Public Class frmVaccumBag
             Dim parameters = New List(Of SqlParameter)()
             parameters.Clear()
 
-            If btnUSave.Text = "Save" Then
+            If btnUSave.Text = "&Save" Then
 
                 With parameters
                     .Add(dbManager.CreateParameter("@ActionType", "UpdateReportPr", DbType.String))
@@ -266,9 +267,9 @@ Public Class frmVaccumBag
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@BagSrNo", Convert.ToString(cmbUBagNo.SelectedItem.Text), DbType.String))
                 .Add(dbManager.CreateParameter("@ActionType", "SearchByBagNo", DbType.String))
             End With
@@ -290,7 +291,7 @@ Public Class frmVaccumBag
                 txtUissueFineWt.Text = dt.Rows(0).Item("IssueFineWt").ToString()
 
                 txtUWtOnScale.Text = dt.Rows(0).Item("WtOnScale").ToString()
-                txtUcarbonReceive.Text = dt.Rows(0).Item("CarbonRecieve").ToString()
+                txtUcarbonReceive.Text = dt.Rows(0).Item("CarbonReceive").ToString()
 
                 'txtUGrossLoss.Text = dt.Rows(0).Item("GrossLossWt").ToString()
             Else
@@ -312,9 +313,10 @@ Public Class frmVaccumBag
             Dim parameters = New List(Of SqlParameter)()
             parameters.Clear()
 
-            If btnRSave.Text = "Save" Then
+            If btnRSave.Text = "&Save" Then
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@UBagDt", RTransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@UItemId", Val(cmbRBagtype.SelectedValue), DbType.Int16))
@@ -333,9 +335,9 @@ Public Class frmVaccumBag
                 dbManager.Insert("SP_UsedBags_Save", CommandType.StoredProcedure, parameters.ToArray())
 
                 Dim tparameters = New List(Of SqlParameter)()
-                tparameters.Clear()
 
                 With tparameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "UpdateVacuumSt", DbType.String))
                     .Add(dbManager.CreateParameter("@BId", Val(cmbRBagtype.SelectedValue), DbType.Int16))
                     .Add(dbManager.CreateParameter("@BagNo", Convert.ToString(cmbRBagNo.SelectedItem), DbType.String))
@@ -351,30 +353,54 @@ Public Class frmVaccumBag
         End Try
     End Sub
     Private Sub UpdateVacuumSrNo()
+
+        Dim alParaval As New ArrayList
+
+        Dim BagId As Int16 = 0
+        Dim TranId As String = Nothing
+
         Dim IRowCount As Integer = 0
+        Dim iValue As Integer = 0
+
+        alParaval.Add(cmbCBagtype.SelectedValue)
 
         If dgvVacuumBag.Rows.Count > 0 Then
+            For Each row As GridViewRowInfo In dgvVacuumBag.Rows
+                If row.Cells(0).Value = True Then
+                    If TranId = "" Then
+                        TranId = Val(row.Cells(7).Value)
+                    Else
+                        TranId = TranId & "|" & Val(row.Cells(7).Value)
+                    End If
+                End If
+                IRowCount += 1
+            Next
+
+            alParaval.Add(TranId)
 
             Try
+
                 Dim Dparameters = New List(Of SqlParameter)()
                 Dparameters.Clear()
 
-                For i As Integer = 0 To dgvVacuumBag.Rows.Count - 1
-                    If dgvVacuumBag.Rows(i).Cells(0).Value = True Then
-                        Dparameters.Add(dbManager.CreateParameter("@ActionType", "UpdateVacuumNo", DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@BId", Val(cmbCBagtype.SelectedValue), DbType.Int16))
-                        Dparameters.Add(dbManager.CreateParameter("@TId", Val(dgvVacuumBag.Rows(i).Cells(7).Value), DbType.Int16))
-                        Dparameters.Add(dbManager.CreateParameter("@BagType", "V", DbType.String))
-                        dbManager.Update("SP_UsedBagNo_Update", CommandType.StoredProcedure, Dparameters.ToArray())
-                    End If
-                    Dparameters.Clear()
-                Next
+                With Dparameters
+                    .Add(dbManager.CreateParameter("@ActionType", "UpdateVacuumNo", DbType.String))
+                    .Add(dbManager.CreateParameter("@BId", alParaval.Item(iValue), DbType.Int16))
+                    iValue += 1
+                    .Add(dbManager.CreateParameter("@TId", alParaval.Item(iValue), DbType.String))
+                    iValue += 1
+                    .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
+                    .Add(dbManager.CreateParameter("@BagType", "V", DbType.String))
+                End With
+
+                dbManager.Update("SP_UsedBagNo_Update", CommandType.StoredProcedure, Dparameters.ToArray())
 
                 MessageBox.Show("Vaccum Bag Updated !!!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
                 MessageBox.Show("Error:- " & ex.Message)
             End Try
+
         End If
     End Sub
     Private Sub cmbRBagNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbRBagNo.SelectedIndexChanged
@@ -406,7 +432,6 @@ Public Class frmVaccumBag
         'End Try
 
     End Sub
-
     Private Sub tbVaccumeBag_Click(sender As Object, e As EventArgs) Handles tbVaccumeBag.Click
         If tbVaccumeBag.SelectedIndex = 0 Then  ''for Create Vaccum Bag
             Me.FillBagType()
@@ -438,9 +463,9 @@ Public Class frmVaccumBag
         Dim dt As DataTable = New DataTable()
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "GetVaccumBagDetails", DbType.String))
             .Add(dbManager.CreateParameter("@BagSrNo", Convert.ToString(cmbRBagNo.SelectedItem.Text.Trim()), DbType.String))
         End With
@@ -592,9 +617,9 @@ Public Class frmVaccumBag
         If cmbRBagtype.SelectedIndex > 0 Then
 
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetReceiveVaccumSrNo", DbType.String))
                 .Add(dbManager.CreateParameter("@BId", Val(cmbRBagtype.SelectedValue), DbType.Int16))
             End With
@@ -660,9 +685,9 @@ Public Class frmVaccumBag
         If cmbUpdBagtype.SelectedIndex > 0 Then
 
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@BId", Val(cmbUpdBagtype.SelectedValue), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "GetUpdateVaccumSrNo", DbType.String))
             End With

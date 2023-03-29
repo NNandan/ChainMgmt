@@ -49,6 +49,7 @@ Partial Class frmTransactionStockRpt
         '
         'btnShow
         '
+        Me.btnShow.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnShow.Location = New System.Drawing.Point(325, 318)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(75, 25)
@@ -58,11 +59,12 @@ Partial Class frmTransactionStockRpt
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 39)
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label1.Location = New System.Drawing.Point(16, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(92, 13)
+        Me.Label1.Size = New System.Drawing.Size(97, 14)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Select Bag Type :"
+        Me.Label1.Text = "Select Bag Type"
         '
         'cmbBagType
         '
@@ -73,7 +75,7 @@ Partial Class frmTransactionStockRpt
         Me.cmbBagType.Items.Add(RadListDataItem1)
         Me.cmbBagType.Items.Add(RadListDataItem2)
         Me.cmbBagType.Items.Add(RadListDataItem3)
-        Me.cmbBagType.Location = New System.Drawing.Point(108, 35)
+        Me.cmbBagType.Location = New System.Drawing.Point(116, 35)
         Me.cmbBagType.Name = "cmbBagType"
         Me.cmbBagType.Size = New System.Drawing.Size(125, 20)
         Me.cmbBagType.TabIndex = 36

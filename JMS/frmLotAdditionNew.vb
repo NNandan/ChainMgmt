@@ -500,7 +500,7 @@ Public Class frmLotAdditionNew
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchDataForC", DbType.String))
             End With
 
             dtData = dbManager.GetDataTable("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -562,7 +562,7 @@ Public Class frmLotAdditionNew
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchCrDetailRecord", DbType.String))
                 .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
             End With
 

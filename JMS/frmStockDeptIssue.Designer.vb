@@ -42,7 +42,7 @@ Partial Class frmStockDeptIssue
         '
         Me.dgvWipLotNo.BackColor = System.Drawing.SystemColors.Control
         Me.dgvWipLotNo.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvWipLotNo.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvWipLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvWipLotNo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvWipLotNo.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvWipLotNo.Location = New System.Drawing.Point(2, 1)
@@ -97,28 +97,30 @@ Partial Class frmStockDeptIssue
         'lblCBhukaTotal
         '
         Me.lblCBhukaTotal.AutoSize = True
-        Me.lblCBhukaTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCBhukaTotal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCBhukaTotal.Location = New System.Drawing.Point(403, 396)
         Me.lblCBhukaTotal.Name = "lblCBhukaTotal"
-        Me.lblCBhukaTotal.Size = New System.Drawing.Size(52, 16)
+        Me.lblCBhukaTotal.Size = New System.Drawing.Size(38, 14)
         Me.lblCBhukaTotal.TabIndex = 51
-        Me.lblCBhukaTotal.Text = "Total :"
+        Me.lblCBhukaTotal.Text = "Total"
         '
         'lblReceiveFw
         '
         Me.lblReceiveFw.AutoSize = True
-        Me.lblReceiveFw.Location = New System.Drawing.Point(641, 399)
+        Me.lblReceiveFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblReceiveFw.Location = New System.Drawing.Point(641, 397)
         Me.lblReceiveFw.Name = "lblReceiveFw"
-        Me.lblReceiveFw.Size = New System.Drawing.Size(13, 13)
+        Me.lblReceiveFw.Size = New System.Drawing.Size(14, 14)
         Me.lblReceiveFw.TabIndex = 50
         Me.lblReceiveFw.Text = "0"
         '
         'lblReceivePr
         '
         Me.lblReceivePr.AutoSize = True
-        Me.lblReceivePr.Location = New System.Drawing.Point(572, 399)
+        Me.lblReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblReceivePr.Location = New System.Drawing.Point(572, 397)
         Me.lblReceivePr.Name = "lblReceivePr"
-        Me.lblReceivePr.Size = New System.Drawing.Size(13, 13)
+        Me.lblReceivePr.Size = New System.Drawing.Size(14, 14)
         Me.lblReceivePr.TabIndex = 49
         Me.lblReceivePr.Text = "0"
         Me.lblReceivePr.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -126,9 +128,10 @@ Partial Class frmStockDeptIssue
         'lblReceiveWt
         '
         Me.lblReceiveWt.AutoSize = True
-        Me.lblReceiveWt.Location = New System.Drawing.Point(503, 399)
+        Me.lblReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblReceiveWt.Location = New System.Drawing.Point(503, 397)
         Me.lblReceiveWt.Name = "lblReceiveWt"
-        Me.lblReceiveWt.Size = New System.Drawing.Size(13, 13)
+        Me.lblReceiveWt.Size = New System.Drawing.Size(14, 14)
         Me.lblReceiveWt.TabIndex = 48
         Me.lblReceiveWt.Text = "0"
         '

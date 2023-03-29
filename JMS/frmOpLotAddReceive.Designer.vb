@@ -116,7 +116,7 @@ Partial Class frmOpLotAddReceive
         Me.GBoxMain.Controls.Add(Me.Label6)
         Me.GBoxMain.Controls.Add(Me.txtLotNo)
         Me.GBoxMain.Controls.Add(Me.TransDt)
-        Me.GBoxMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.GBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GBoxMain.Location = New System.Drawing.Point(4, 3)
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GBoxMain.Name = "GBoxMain"
@@ -128,26 +128,26 @@ Partial Class frmOpLotAddReceive
         '
         'txtRemarks
         '
-        Me.txtRemarks.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtRemarks.Location = New System.Drawing.Point(374, 81)
+        Me.txtRemarks.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtRemarks.Location = New System.Drawing.Point(401, 81)
         Me.txtRemarks.Name = "txtRemarks"
-        Me.txtRemarks.Size = New System.Drawing.Size(259, 20)
+        Me.txtRemarks.Size = New System.Drawing.Size(231, 20)
         Me.txtRemarks.TabIndex = 10
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(427, 26)
+        Me.Label21.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label21.Location = New System.Drawing.Point(433, 27)
         Me.Label21.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(66, 15)
+        Me.Label21.Size = New System.Drawing.Size(61, 14)
         Me.Label21.TabIndex = 814
-        Me.Label21.Text = "Opreation :"
+        Me.Label21.Text = "Opreation"
         '
         'cmbOperation
         '
-        Me.cmbOperation.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbOperation.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbOperation.Location = New System.Drawing.Point(497, 24)
         Me.cmbOperation.Name = "cmbOperation"
@@ -157,17 +157,17 @@ Partial Class frmOpLotAddReceive
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label3.Location = New System.Drawing.Point(219, 50)
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label3.Location = New System.Drawing.Point(216, 50)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(70, 13)
+        Me.Label3.Size = New System.Drawing.Size(74, 14)
         Me.Label3.TabIndex = 812
-        Me.Label3.Text = "Lot Add No. :"
+        Me.Label3.Text = "Lot Add No."
         '
         'txtLotAddNo
         '
-        Me.txtLotAddNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtLotAddNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtLotAddNo.Location = New System.Drawing.Point(293, 47)
         Me.txtLotAddNo.Name = "txtLotAddNo"
         Me.txtLotAddNo.Size = New System.Drawing.Size(116, 20)
@@ -176,17 +176,17 @@ Partial Class frmOpLotAddReceive
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(215, 24)
+        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label7.Location = New System.Drawing.Point(222, 25)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(74, 15)
+        Me.Label7.Size = New System.Drawing.Size(68, 14)
         Me.Label7.TabIndex = 148
-        Me.Label7.Text = "Item Name :"
+        Me.Label7.Text = "Item Name"
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Location = New System.Drawing.Point(293, 22)
         Me.cmbItem.Name = "cmbItem"
@@ -195,38 +195,38 @@ Partial Class frmOpLotAddReceive
         '
         'txtReceiveWt
         '
-        Me.txtReceiveWt.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtReceiveWt.Location = New System.Drawing.Point(178, 81)
+        Me.txtReceiveWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReceiveWt.Location = New System.Drawing.Point(181, 81)
         Me.txtReceiveWt.Name = "txtReceiveWt"
-        Me.txtReceiveWt.Size = New System.Drawing.Size(65, 20)
+        Me.txtReceiveWt.Size = New System.Drawing.Size(74, 20)
         Me.txtReceiveWt.TabIndex = 7
         Me.txtReceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtReceivePr
         '
-        Me.txtReceivePr.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtReceivePr.Location = New System.Drawing.Point(244, 81)
+        Me.txtReceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReceivePr.Location = New System.Drawing.Point(255, 81)
         Me.txtReceivePr.Name = "txtReceivePr"
-        Me.txtReceivePr.Size = New System.Drawing.Size(65, 20)
+        Me.txtReceivePr.Size = New System.Drawing.Size(72, 20)
         Me.txtReceivePr.TabIndex = 8
         Me.txtReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'cmbGItem
         '
         Me.cmbGItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbGItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbGItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbGItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbGItem.Location = New System.Drawing.Point(38, 81)
         Me.cmbGItem.Name = "cmbGItem"
-        Me.cmbGItem.Size = New System.Drawing.Size(140, 20)
+        Me.cmbGItem.Size = New System.Drawing.Size(142, 20)
         Me.cmbGItem.TabIndex = 6
         '
         'txtFineWt
         '
         Me.txtFineWt.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtFineWt.Location = New System.Drawing.Point(310, 81)
+        Me.txtFineWt.Location = New System.Drawing.Point(328, 81)
         Me.txtFineWt.Name = "txtFineWt"
-        Me.txtFineWt.Size = New System.Drawing.Size(63, 20)
+        Me.txtFineWt.Size = New System.Drawing.Size(72, 20)
         Me.txtFineWt.TabIndex = 9
         Me.txtFineWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -243,7 +243,7 @@ Partial Class frmOpLotAddReceive
         '
         Me.dgvLotReceive.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvLotReceive.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvLotReceive.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvLotReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLotReceive.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLotReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvLotReceive.Location = New System.Drawing.Point(2, 101)
@@ -268,21 +268,21 @@ Partial Class frmOpLotAddReceive
         GridViewTextBoxColumn4.HeaderText = "Receive Wt."
         GridViewTextBoxColumn4.Name = "colReceiveWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 66
+        GridViewTextBoxColumn4.Width = 75
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.HeaderText = "Receive %"
         GridViewTextBoxColumn5.Name = "colReceivePr"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 66
+        GridViewTextBoxColumn5.Width = 75
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.HeaderText = "Fine Wt."
         GridViewTextBoxColumn6.Name = "colFineWt"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 66
+        GridViewTextBoxColumn6.Width = 75
         GridViewTextBoxColumn7.EnableExpressionEditor = False
         GridViewTextBoxColumn7.HeaderText = "Remarks"
         GridViewTextBoxColumn7.Name = "colRemarks"
-        GridViewTextBoxColumn7.Width = 260
+        GridViewTextBoxColumn7.Width = 230
         Me.dgvLotReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7})
         Me.dgvLotReceive.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvLotReceive.MasterTemplate.ViewDefinition = TableViewDefinition1
@@ -295,49 +295,54 @@ Partial Class frmOpLotAddReceive
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(295, 400)
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(295, 398)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 13
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(372, 400)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(372, 398)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 12
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(218, 400)
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnSave.Location = New System.Drawing.Point(218, 398)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
         Me.lblTransDt.AutoSize = True
-        Me.lblTransDt.Location = New System.Drawing.Point(8, 25)
+        Me.lblTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblTransDt.Location = New System.Drawing.Point(22, 25)
         Me.lblTransDt.Name = "lblTransDt"
-        Me.lblTransDt.Size = New System.Drawing.Size(81, 16)
+        Me.lblTransDt.Size = New System.Drawing.Size(70, 14)
         Me.lblTransDt.TabIndex = 11
-        Me.lblTransDt.Text = "Receive Dt.:"
+        Me.lblTransDt.Text = "Receive Dt."
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 49)
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label6.Location = New System.Drawing.Point(43, 49)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 16)
+        Me.Label6.Size = New System.Drawing.Size(48, 14)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Lot No.:"
+        Me.Label6.Text = "Lot No."
         '
         'txtLotNo
         '
-        Me.txtLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtLotNo.Location = New System.Drawing.Point(95, 47)
         Me.txtLotNo.Name = "txtLotNo"
         Me.txtLotNo.Size = New System.Drawing.Size(85, 20)
@@ -345,6 +350,7 @@ Partial Class frmOpLotAddReceive
         '
         'TransDt
         '
+        Me.TransDt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.TransDt.Location = New System.Drawing.Point(95, 22)
         Me.TransDt.Name = "TransDt"

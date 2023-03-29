@@ -22,36 +22,38 @@ Partial Class frmLotAdditionFinal
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
+        Me.txtPowder = New System.Windows.Forms.TextBox()
+        Me.lblPowder = New System.Windows.Forms.Label()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
         Me.btnCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.txtActualRecieveFine = New System.Windows.Forms.TextBox()
         Me.txtActualIssueFine = New System.Windows.Forms.TextBox()
-        Me.txtExtraRecieveFine = New System.Windows.Forms.TextBox()
+        Me.txtTotalReceiveFine = New System.Windows.Forms.TextBox()
         Me.txtTotalIssueFine = New System.Windows.Forms.TextBox()
         Me.txtActualIssuePr = New System.Windows.Forms.TextBox()
         Me.txtActualReceivePr = New System.Windows.Forms.TextBox()
-        Me.txtExtraRecievePr = New System.Windows.Forms.TextBox()
+        Me.txtTotalReceivePr = New System.Windows.Forms.TextBox()
         Me.txtTotalIssuePr = New System.Windows.Forms.TextBox()
         Me.txtActualRecieveWt = New System.Windows.Forms.TextBox()
         Me.txtActualIssueWt = New System.Windows.Forms.TextBox()
-        Me.txtExtraRecieveWt = New System.Windows.Forms.TextBox()
+        Me.txtTotalReceiveWt = New System.Windows.Forms.TextBox()
         Me.txtTotalIssueWt = New System.Windows.Forms.TextBox()
         Me.lblFineWt = New System.Windows.Forms.Label()
         Me.lblPercent = New System.Windows.Forms.Label()
@@ -75,8 +77,10 @@ Partial Class frmLotAdditionFinal
         Me.GBoxRDetails = New System.Windows.Forms.GroupBox()
         Me.dgvReceive = New Telerik.WinControls.UI.RadGridView()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbPowder = New System.Windows.Forms.RadioButton()
+        Me.rbKdm = New System.Windows.Forms.RadioButton()
         Me.txtLotRecieveId = New Telerik.WinControls.UI.RadTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.cmbTLabour = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtFrKarigar = New Telerik.WinControls.UI.RadTextBox()
         Me.cmbItem = New Telerik.WinControls.UI.RadDropDownList()
@@ -100,6 +104,8 @@ Partial Class frmLotAdditionFinal
         Me.ColItemName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColIssueWt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColIssuePr = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lblReceivePr = New System.Windows.Forms.Label()
+        Me.txtReceivePr = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
@@ -114,6 +120,7 @@ Partial Class frmLotAdditionFinal
         CType(Me.dgvReceive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxMain.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.txtLotRecieveId, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -154,21 +161,25 @@ Partial Class frmLotAdditionFinal
         '
         'GBoxDetails
         '
+        Me.GBoxDetails.Controls.Add(Me.txtReceivePr)
+        Me.GBoxDetails.Controls.Add(Me.lblReceivePr)
+        Me.GBoxDetails.Controls.Add(Me.txtPowder)
+        Me.GBoxDetails.Controls.Add(Me.lblPowder)
         Me.GBoxDetails.Controls.Add(Me.btnExit)
         Me.GBoxDetails.Controls.Add(Me.btnCancel)
         Me.GBoxDetails.Controls.Add(Me.btnSave)
         Me.GBoxDetails.Controls.Add(Me.btnDelete)
         Me.GBoxDetails.Controls.Add(Me.txtActualRecieveFine)
         Me.GBoxDetails.Controls.Add(Me.txtActualIssueFine)
-        Me.GBoxDetails.Controls.Add(Me.txtExtraRecieveFine)
+        Me.GBoxDetails.Controls.Add(Me.txtTotalReceiveFine)
         Me.GBoxDetails.Controls.Add(Me.txtTotalIssueFine)
         Me.GBoxDetails.Controls.Add(Me.txtActualIssuePr)
         Me.GBoxDetails.Controls.Add(Me.txtActualReceivePr)
-        Me.GBoxDetails.Controls.Add(Me.txtExtraRecievePr)
+        Me.GBoxDetails.Controls.Add(Me.txtTotalReceivePr)
         Me.GBoxDetails.Controls.Add(Me.txtTotalIssuePr)
         Me.GBoxDetails.Controls.Add(Me.txtActualRecieveWt)
         Me.GBoxDetails.Controls.Add(Me.txtActualIssueWt)
-        Me.GBoxDetails.Controls.Add(Me.txtExtraRecieveWt)
+        Me.GBoxDetails.Controls.Add(Me.txtTotalReceiveWt)
         Me.GBoxDetails.Controls.Add(Me.txtTotalIssueWt)
         Me.GBoxDetails.Controls.Add(Me.lblFineWt)
         Me.GBoxDetails.Controls.Add(Me.lblPercent)
@@ -192,6 +203,27 @@ Partial Class frmLotAdditionFinal
         Me.GBoxDetails.Size = New System.Drawing.Size(791, 162)
         Me.GBoxDetails.TabIndex = 27
         Me.GBoxDetails.TabStop = False
+        '
+        'txtPowder
+        '
+        Me.txtPowder.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtPowder.Location = New System.Drawing.Point(205, 82)
+        Me.txtPowder.Name = "txtPowder"
+        Me.txtPowder.ReadOnly = True
+        Me.txtPowder.Size = New System.Drawing.Size(55, 22)
+        Me.txtPowder.TabIndex = 932
+        Me.txtPowder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lblPowder
+        '
+        Me.lblPowder.AutoSize = True
+        Me.lblPowder.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblPowder.Location = New System.Drawing.Point(153, 85)
+        Me.lblPowder.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblPowder.Name = "lblPowder"
+        Me.lblPowder.Size = New System.Drawing.Size(49, 14)
+        Me.lblPowder.TabIndex = 931
+        Me.lblPowder.Text = "Powder"
         '
         'btnExit
         '
@@ -232,153 +264,165 @@ Partial Class frmLotAdditionFinal
         'txtActualRecieveFine
         '
         Me.txtActualRecieveFine.BackColor = System.Drawing.Color.White
+        Me.txtActualRecieveFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtActualRecieveFine.Location = New System.Drawing.Point(724, 97)
         Me.txtActualRecieveFine.Name = "txtActualRecieveFine"
         Me.txtActualRecieveFine.ReadOnly = True
-        Me.txtActualRecieveFine.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualRecieveFine.Size = New System.Drawing.Size(55, 22)
         Me.txtActualRecieveFine.TabIndex = 911
         Me.txtActualRecieveFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtActualIssueFine
         '
         Me.txtActualIssueFine.BackColor = System.Drawing.Color.White
+        Me.txtActualIssueFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtActualIssueFine.Location = New System.Drawing.Point(724, 76)
         Me.txtActualIssueFine.Name = "txtActualIssueFine"
         Me.txtActualIssueFine.ReadOnly = True
-        Me.txtActualIssueFine.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualIssueFine.Size = New System.Drawing.Size(55, 22)
         Me.txtActualIssueFine.TabIndex = 910
         Me.txtActualIssueFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtExtraRecieveFine
+        'txtTotalReceiveFine
         '
-        Me.txtExtraRecieveFine.BackColor = System.Drawing.Color.White
-        Me.txtExtraRecieveFine.Location = New System.Drawing.Point(724, 55)
-        Me.txtExtraRecieveFine.Name = "txtExtraRecieveFine"
-        Me.txtExtraRecieveFine.ReadOnly = True
-        Me.txtExtraRecieveFine.Size = New System.Drawing.Size(55, 21)
-        Me.txtExtraRecieveFine.TabIndex = 909
-        Me.txtExtraRecieveFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotalReceiveFine.BackColor = System.Drawing.Color.White
+        Me.txtTotalReceiveFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalReceiveFine.Location = New System.Drawing.Point(724, 55)
+        Me.txtTotalReceiveFine.Name = "txtTotalReceiveFine"
+        Me.txtTotalReceiveFine.ReadOnly = True
+        Me.txtTotalReceiveFine.Size = New System.Drawing.Size(55, 22)
+        Me.txtTotalReceiveFine.TabIndex = 909
+        Me.txtTotalReceiveFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtTotalIssueFine
         '
         Me.txtTotalIssueFine.BackColor = System.Drawing.Color.White
+        Me.txtTotalIssueFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalIssueFine.Location = New System.Drawing.Point(724, 34)
         Me.txtTotalIssueFine.Name = "txtTotalIssueFine"
         Me.txtTotalIssueFine.ReadOnly = True
-        Me.txtTotalIssueFine.Size = New System.Drawing.Size(55, 21)
+        Me.txtTotalIssueFine.Size = New System.Drawing.Size(55, 22)
         Me.txtTotalIssueFine.TabIndex = 908
         Me.txtTotalIssueFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtActualIssuePr
         '
         Me.txtActualIssuePr.BackColor = System.Drawing.Color.White
+        Me.txtActualIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtActualIssuePr.Location = New System.Drawing.Point(668, 76)
         Me.txtActualIssuePr.Name = "txtActualIssuePr"
         Me.txtActualIssuePr.ReadOnly = True
-        Me.txtActualIssuePr.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualIssuePr.Size = New System.Drawing.Size(55, 22)
         Me.txtActualIssuePr.TabIndex = 907
         Me.txtActualIssuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtActualReceivePr
         '
         Me.txtActualReceivePr.BackColor = System.Drawing.Color.White
-        Me.txtActualReceivePr.Location = New System.Drawing.Point(668, 97)
+        Me.txtActualReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtActualReceivePr.Location = New System.Drawing.Point(668, 98)
         Me.txtActualReceivePr.Name = "txtActualReceivePr"
         Me.txtActualReceivePr.ReadOnly = True
-        Me.txtActualReceivePr.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualReceivePr.Size = New System.Drawing.Size(55, 22)
         Me.txtActualReceivePr.TabIndex = 906
         Me.txtActualReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtExtraRecievePr
+        'txtTotalReceivePr
         '
-        Me.txtExtraRecievePr.BackColor = System.Drawing.Color.White
-        Me.txtExtraRecievePr.Location = New System.Drawing.Point(668, 56)
-        Me.txtExtraRecievePr.Name = "txtExtraRecievePr"
-        Me.txtExtraRecievePr.ReadOnly = True
-        Me.txtExtraRecievePr.Size = New System.Drawing.Size(55, 21)
-        Me.txtExtraRecievePr.TabIndex = 905
-        Me.txtExtraRecievePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotalReceivePr.BackColor = System.Drawing.Color.White
+        Me.txtTotalReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalReceivePr.Location = New System.Drawing.Point(668, 56)
+        Me.txtTotalReceivePr.Name = "txtTotalReceivePr"
+        Me.txtTotalReceivePr.ReadOnly = True
+        Me.txtTotalReceivePr.Size = New System.Drawing.Size(55, 22)
+        Me.txtTotalReceivePr.TabIndex = 905
+        Me.txtTotalReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtTotalIssuePr
         '
         Me.txtTotalIssuePr.BackColor = System.Drawing.Color.White
+        Me.txtTotalIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalIssuePr.Location = New System.Drawing.Point(668, 34)
         Me.txtTotalIssuePr.Name = "txtTotalIssuePr"
         Me.txtTotalIssuePr.ReadOnly = True
-        Me.txtTotalIssuePr.Size = New System.Drawing.Size(55, 21)
+        Me.txtTotalIssuePr.Size = New System.Drawing.Size(55, 22)
         Me.txtTotalIssuePr.TabIndex = 904
         Me.txtTotalIssuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtActualRecieveWt
         '
         Me.txtActualRecieveWt.BackColor = System.Drawing.Color.White
+        Me.txtActualRecieveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtActualRecieveWt.Location = New System.Drawing.Point(612, 97)
         Me.txtActualRecieveWt.Name = "txtActualRecieveWt"
         Me.txtActualRecieveWt.ReadOnly = True
-        Me.txtActualRecieveWt.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualRecieveWt.Size = New System.Drawing.Size(55, 22)
         Me.txtActualRecieveWt.TabIndex = 903
         Me.txtActualRecieveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtActualIssueWt
         '
         Me.txtActualIssueWt.BackColor = System.Drawing.Color.White
+        Me.txtActualIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtActualIssueWt.Location = New System.Drawing.Point(612, 76)
         Me.txtActualIssueWt.Name = "txtActualIssueWt"
         Me.txtActualIssueWt.ReadOnly = True
-        Me.txtActualIssueWt.Size = New System.Drawing.Size(55, 21)
+        Me.txtActualIssueWt.Size = New System.Drawing.Size(55, 22)
         Me.txtActualIssueWt.TabIndex = 902
         Me.txtActualIssueWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtExtraRecieveWt
+        'txtTotalReceiveWt
         '
-        Me.txtExtraRecieveWt.BackColor = System.Drawing.Color.White
-        Me.txtExtraRecieveWt.Location = New System.Drawing.Point(612, 55)
-        Me.txtExtraRecieveWt.Name = "txtExtraRecieveWt"
-        Me.txtExtraRecieveWt.ReadOnly = True
-        Me.txtExtraRecieveWt.Size = New System.Drawing.Size(55, 21)
-        Me.txtExtraRecieveWt.TabIndex = 901
-        Me.txtExtraRecieveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTotalReceiveWt.BackColor = System.Drawing.Color.White
+        Me.txtTotalReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalReceiveWt.Location = New System.Drawing.Point(612, 55)
+        Me.txtTotalReceiveWt.Name = "txtTotalReceiveWt"
+        Me.txtTotalReceiveWt.ReadOnly = True
+        Me.txtTotalReceiveWt.Size = New System.Drawing.Size(55, 22)
+        Me.txtTotalReceiveWt.TabIndex = 901
+        Me.txtTotalReceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtTotalIssueWt
         '
         Me.txtTotalIssueWt.BackColor = System.Drawing.Color.White
+        Me.txtTotalIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalIssueWt.Location = New System.Drawing.Point(612, 34)
         Me.txtTotalIssueWt.Name = "txtTotalIssueWt"
         Me.txtTotalIssueWt.ReadOnly = True
-        Me.txtTotalIssueWt.Size = New System.Drawing.Size(55, 21)
+        Me.txtTotalIssueWt.Size = New System.Drawing.Size(55, 22)
         Me.txtTotalIssueWt.TabIndex = 900
         Me.txtTotalIssueWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblFineWt
         '
         Me.lblFineWt.AutoSize = True
-        Me.lblFineWt.Font = New System.Drawing.Font("Times New Roman", 9.75!)
+        Me.lblFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblFineWt.Location = New System.Drawing.Point(728, 15)
         Me.lblFineWt.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblFineWt.Name = "lblFineWt"
-        Me.lblFineWt.Size = New System.Drawing.Size(30, 15)
+        Me.lblFineWt.Size = New System.Drawing.Size(29, 14)
         Me.lblFineWt.TabIndex = 899
         Me.lblFineWt.Text = "Fine"
         '
         'lblPercent
         '
         Me.lblPercent.AutoSize = True
-        Me.lblPercent.Font = New System.Drawing.Font("Times New Roman", 9.75!)
+        Me.lblPercent.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblPercent.Location = New System.Drawing.Point(684, 15)
         Me.lblPercent.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblPercent.Name = "lblPercent"
-        Me.lblPercent.Size = New System.Drawing.Size(18, 15)
+        Me.lblPercent.Size = New System.Drawing.Size(19, 14)
         Me.lblPercent.TabIndex = 898
         Me.lblPercent.Text = "%"
         '
         'lblWeight
         '
         Me.lblWeight.AutoSize = True
-        Me.lblWeight.Font = New System.Drawing.Font("Times New Roman", 9.75!)
+        Me.lblWeight.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblWeight.Location = New System.Drawing.Point(615, 15)
         Me.lblWeight.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblWeight.Name = "lblWeight"
-        Me.lblWeight.Size = New System.Drawing.Size(46, 15)
+        Me.lblWeight.Size = New System.Drawing.Size(47, 14)
         Me.lblWeight.TabIndex = 897
         Me.lblWeight.Text = "Weight"
         '
@@ -413,7 +457,7 @@ Partial Class frmLotAdditionFinal
         Me.lblExtraReceive.Name = "lblExtraReceive"
         Me.lblExtraReceive.Size = New System.Drawing.Size(81, 14)
         Me.lblExtraReceive.TabIndex = 893
-        Me.lblExtraReceive.Text = "Extra Receive"
+        Me.lblExtraReceive.Text = "Total Receive"
         '
         'lblTotalIssue
         '
@@ -429,47 +473,52 @@ Partial Class frmLotAdditionFinal
         'txtChain
         '
         Me.txtChain.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtChain.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtChain.Location = New System.Drawing.Point(74, 16)
         Me.txtChain.Name = "txtChain"
-        Me.txtChain.Size = New System.Drawing.Size(55, 21)
+        Me.txtChain.Size = New System.Drawing.Size(55, 22)
         Me.txtChain.TabIndex = 0
         Me.txtChain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtTotal
         '
         Me.txtTotal.BackColor = System.Drawing.Color.White
+        Me.txtTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotal.Location = New System.Drawing.Point(74, 104)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
-        Me.txtTotal.Size = New System.Drawing.Size(55, 21)
+        Me.txtTotal.Size = New System.Drawing.Size(55, 22)
         Me.txtTotal.TabIndex = 4
         Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtLoss
         '
         Me.txtLoss.BackColor = System.Drawing.Color.White
+        Me.txtLoss.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtLoss.Location = New System.Drawing.Point(74, 82)
         Me.txtLoss.Name = "txtLoss"
         Me.txtLoss.ReadOnly = True
-        Me.txtLoss.Size = New System.Drawing.Size(55, 21)
+        Me.txtLoss.Size = New System.Drawing.Size(55, 22)
         Me.txtLoss.TabIndex = 3
         Me.txtLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtSample
         '
         Me.txtSample.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtSample.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSample.Location = New System.Drawing.Point(74, 60)
         Me.txtSample.Name = "txtSample"
-        Me.txtSample.Size = New System.Drawing.Size(55, 21)
+        Me.txtSample.Size = New System.Drawing.Size(55, 22)
         Me.txtSample.TabIndex = 2
         Me.txtSample.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtBhuka
         '
         Me.txtBhuka.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtBhuka.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtBhuka.Location = New System.Drawing.Point(74, 38)
         Me.txtBhuka.Name = "txtBhuka"
-        Me.txtBhuka.Size = New System.Drawing.Size(55, 21)
+        Me.txtBhuka.Size = New System.Drawing.Size(55, 22)
         Me.txtBhuka.TabIndex = 1
         Me.txtBhuka.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -552,34 +601,34 @@ Partial Class frmLotAdditionFinal
         '
         Me.dgvIssue.MasterTemplate.AllowAddNewRow = False
         Me.dgvIssue.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.HeaderText = "Sr."
-        GridViewTextBoxColumn1.Name = "colGISrNo"
-        GridViewTextBoxColumn1.Width = 40
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.HeaderText = "Item Name"
-        GridViewTextBoxColumn2.Name = "colGIItemName"
-        GridViewTextBoxColumn2.Width = 145
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.HeaderText = "Issue Wt"
-        GridViewTextBoxColumn3.Name = "colGIIssueWt"
-        GridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn3.Width = 65
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.HeaderText = "Issue %"
-        GridViewTextBoxColumn4.Name = "colGIIssuePr"
-        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 65
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "FineWt"
-        GridViewTextBoxColumn5.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn5.Name = "colGIIssueFine"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 65
-        Me.dgvIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5})
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.HeaderText = "Sr."
+        GridViewTextBoxColumn21.Name = "colGISrNo"
+        GridViewTextBoxColumn21.Width = 40
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.HeaderText = "Item Name"
+        GridViewTextBoxColumn22.Name = "colGIItemName"
+        GridViewTextBoxColumn22.Width = 145
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.HeaderText = "Issue Wt"
+        GridViewTextBoxColumn23.Name = "colGIIssueWt"
+        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn23.Width = 65
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.HeaderText = "Issue %"
+        GridViewTextBoxColumn24.Name = "colGIIssuePr"
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 65
+        GridViewTextBoxColumn25.EnableExpressionEditor = False
+        GridViewTextBoxColumn25.FieldName = "FineWt"
+        GridViewTextBoxColumn25.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn25.Name = "colGIIssueFine"
+        GridViewTextBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn25.Width = 65
+        Me.dgvIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25})
         Me.dgvIssue.MasterTemplate.EnableGrouping = False
         Me.dgvIssue.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvIssue.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvIssue.MasterTemplate.ViewDefinition = TableViewDefinition5
         Me.dgvIssue.Name = "dgvIssue"
         Me.dgvIssue.ReadOnly = True
         Me.dgvIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -613,34 +662,34 @@ Partial Class frmLotAdditionFinal
         '
         Me.dgvReceive.MasterTemplate.AllowAddNewRow = False
         Me.dgvReceive.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.HeaderText = "Sr."
-        GridViewTextBoxColumn6.Name = "colGRSrNo"
-        GridViewTextBoxColumn6.Width = 40
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.HeaderText = "Item Name"
-        GridViewTextBoxColumn7.Name = "colGRItemName"
-        GridViewTextBoxColumn7.Width = 140
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn8.Name = "colGRReceiveWt"
-        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn8.Width = 80
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.HeaderText = "Receive %"
-        GridViewTextBoxColumn9.Name = "colGRReceivePr"
-        GridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn9.Width = 65
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "FineWt"
-        GridViewTextBoxColumn10.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn10.Name = "colGRReceiveFine"
-        GridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn10.Width = 65
-        Me.dgvReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
+        GridViewTextBoxColumn26.EnableExpressionEditor = False
+        GridViewTextBoxColumn26.HeaderText = "Sr."
+        GridViewTextBoxColumn26.Name = "colGRSrNo"
+        GridViewTextBoxColumn26.Width = 40
+        GridViewTextBoxColumn27.EnableExpressionEditor = False
+        GridViewTextBoxColumn27.HeaderText = "Item Name"
+        GridViewTextBoxColumn27.Name = "colGRItemName"
+        GridViewTextBoxColumn27.Width = 140
+        GridViewTextBoxColumn28.EnableExpressionEditor = False
+        GridViewTextBoxColumn28.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn28.Name = "colGRReceiveWt"
+        GridViewTextBoxColumn28.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn28.Width = 80
+        GridViewTextBoxColumn29.EnableExpressionEditor = False
+        GridViewTextBoxColumn29.HeaderText = "Receive %"
+        GridViewTextBoxColumn29.Name = "colGRReceivePr"
+        GridViewTextBoxColumn29.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn29.Width = 65
+        GridViewTextBoxColumn30.EnableExpressionEditor = False
+        GridViewTextBoxColumn30.FieldName = "FineWt"
+        GridViewTextBoxColumn30.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn30.Name = "colGRReceiveFine"
+        GridViewTextBoxColumn30.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn30.Width = 65
+        Me.dgvReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30})
         Me.dgvReceive.MasterTemplate.EnableGrouping = False
         Me.dgvReceive.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvReceive.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvReceive.MasterTemplate.ViewDefinition = TableViewDefinition6
         Me.dgvReceive.Name = "dgvReceive"
         Me.dgvReceive.ReadOnly = True
         Me.dgvReceive.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -651,8 +700,8 @@ Partial Class frmLotAdditionFinal
         'GBoxMain
         '
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GBoxMain.Controls.Add(Me.GroupBox1)
         Me.GBoxMain.Controls.Add(Me.txtLotRecieveId)
-        Me.GBoxMain.Controls.Add(Me.Label3)
         Me.GBoxMain.Controls.Add(Me.cmbTLabour)
         Me.GBoxMain.Controls.Add(Me.txtFrKarigar)
         Me.GBoxMain.Controls.Add(Me.cmbItem)
@@ -677,24 +726,48 @@ Partial Class frmLotAdditionFinal
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Melting Information"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbPowder)
+        Me.GroupBox1.Controls.Add(Me.rbKdm)
+        Me.GroupBox1.Location = New System.Drawing.Point(248, 47)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(162, 39)
+        Me.GroupBox1.TabIndex = 91
+        Me.GroupBox1.TabStop = False
+        '
+        'rbPowder
+        '
+        Me.rbPowder.AutoSize = True
+        Me.rbPowder.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.rbPowder.Location = New System.Drawing.Point(88, 16)
+        Me.rbPowder.Name = "rbPowder"
+        Me.rbPowder.Size = New System.Drawing.Size(67, 18)
+        Me.rbPowder.TabIndex = 1
+        Me.rbPowder.TabStop = True
+        Me.rbPowder.Text = "Powder"
+        Me.rbPowder.UseVisualStyleBackColor = True
+        '
+        'rbKdm
+        '
+        Me.rbKdm.AutoSize = True
+        Me.rbKdm.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.rbKdm.Location = New System.Drawing.Point(7, 16)
+        Me.rbKdm.Name = "rbKdm"
+        Me.rbKdm.Size = New System.Drawing.Size(49, 18)
+        Me.rbKdm.TabIndex = 0
+        Me.rbKdm.TabStop = True
+        Me.rbKdm.Text = "Kdm"
+        Me.rbKdm.UseVisualStyleBackColor = True
+        '
         'txtLotRecieveId
         '
-        Me.txtLotRecieveId.Location = New System.Drawing.Point(284, 53)
+        Me.txtLotRecieveId.Location = New System.Drawing.Point(176, 26)
         Me.txtLotRecieveId.Name = "txtLotRecieveId"
         Me.txtLotRecieveId.ReadOnly = True
-        Me.txtLotRecieveId.Size = New System.Drawing.Size(125, 20)
+        Me.txtLotRecieveId.Size = New System.Drawing.Size(10, 20)
         Me.txtLotRecieveId.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(206, 56)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 14)
-        Me.Label3.TabIndex = 812
-        Me.Label3.Text = "Lot Add No."
+        Me.txtLotRecieveId.Visible = False
         '
         'cmbTLabour
         '
@@ -708,6 +781,7 @@ Partial Class frmLotAdditionFinal
         '
         'txtFrKarigar
         '
+        Me.txtFrKarigar.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtFrKarigar.Location = New System.Drawing.Point(653, 25)
         Me.txtFrKarigar.Name = "txtFrKarigar"
         Me.txtFrKarigar.ReadOnly = True
@@ -716,6 +790,7 @@ Partial Class frmLotAdditionFinal
         '
         'cmbItem
         '
+        Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbItem.Location = New System.Drawing.Point(284, 25)
         Me.cmbItem.Name = "cmbItem"
         Me.cmbItem.Size = New System.Drawing.Size(125, 20)
@@ -732,6 +807,7 @@ Partial Class frmLotAdditionFinal
         '
         'txtIssuePr
         '
+        Me.txtIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssuePr.Location = New System.Drawing.Point(498, 53)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.ReadOnly = True
@@ -741,6 +817,7 @@ Partial Class frmLotAdditionFinal
         '
         'txtIssueWt
         '
+        Me.txtIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssueWt.Location = New System.Drawing.Point(498, 25)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.ReadOnly = True
@@ -895,6 +972,26 @@ Partial Class frmLotAdditionFinal
         Me.ColIssuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.ColIssuePr.Width = 105
         '
+        'lblReceivePr
+        '
+        Me.lblReceivePr.AutoSize = True
+        Me.lblReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblReceivePr.Location = New System.Drawing.Point(136, 20)
+        Me.lblReceivePr.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblReceivePr.Name = "lblReceivePr"
+        Me.lblReceivePr.Size = New System.Drawing.Size(65, 14)
+        Me.lblReceivePr.TabIndex = 933
+        Me.lblReceivePr.Text = "Receive %"
+        '
+        'txtReceivePr
+        '
+        Me.txtReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceivePr.Location = New System.Drawing.Point(205, 17)
+        Me.txtReceivePr.Name = "txtReceivePr"
+        Me.txtReceivePr.Size = New System.Drawing.Size(57, 22)
+        Me.txtReceivePr.TabIndex = 934
+        Me.txtReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'frmLotAdditionFinal
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -922,6 +1019,8 @@ Partial Class frmLotAdditionFinal
         CType(Me.dgvReceive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBoxMain.ResumeLayout(False)
         Me.GBoxMain.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.txtLotRecieveId, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -942,15 +1041,15 @@ Partial Class frmLotAdditionFinal
     Friend WithEvents btnDelete As Telerik.WinControls.UI.RadButton
     Friend WithEvents txtActualRecieveFine As TextBox
     Friend WithEvents txtActualIssueFine As TextBox
-    Friend WithEvents txtExtraRecieveFine As TextBox
+    Friend WithEvents txtTotalReceiveFine As TextBox
     Friend WithEvents txtTotalIssueFine As TextBox
     Friend WithEvents txtActualIssuePr As TextBox
     Friend WithEvents txtActualReceivePr As TextBox
-    Friend WithEvents txtExtraRecievePr As TextBox
+    Friend WithEvents txtTotalReceivePr As TextBox
     Friend WithEvents txtTotalIssuePr As TextBox
     Friend WithEvents txtActualRecieveWt As TextBox
     Friend WithEvents txtActualIssueWt As TextBox
-    Friend WithEvents txtExtraRecieveWt As TextBox
+    Friend WithEvents txtTotalReceiveWt As TextBox
     Friend WithEvents txtTotalIssueWt As TextBox
     Friend WithEvents lblFineWt As Label
     Friend WithEvents lblPercent As Label
@@ -975,7 +1074,6 @@ Partial Class frmLotAdditionFinal
     Friend WithEvents dgvReceive As Telerik.WinControls.UI.RadGridView
     Friend WithEvents GBoxMain As GroupBox
     Friend WithEvents txtLotRecieveId As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents cmbTLabour As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents txtFrKarigar As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents cmbItem As Telerik.WinControls.UI.RadDropDownList
@@ -1000,4 +1098,11 @@ Partial Class frmLotAdditionFinal
     Friend WithEvents ColIssueWt As ColumnHeader
     Friend WithEvents ColIssuePr As ColumnHeader
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents rbPowder As RadioButton
+    Friend WithEvents rbKdm As RadioButton
+    Friend WithEvents txtPowder As TextBox
+    Friend WithEvents lblPowder As Label
+    Friend WithEvents lblReceivePr As Label
+    Friend WithEvents txtReceivePr As TextBox
 End Class

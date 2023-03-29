@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmAcctOpIssue
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmAcctOpIssue_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvWipLotNo.AutoGenerateColumns = False
         dgvWipLotNo.DataSource = FetchAllRecords()

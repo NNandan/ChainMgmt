@@ -103,13 +103,13 @@ Partial Class frmLotAdditionRpt
         GridViewTextBoxColumn3.FieldName = "ItemName"
         GridViewTextBoxColumn3.HeaderText = "Item Name"
         GridViewTextBoxColumn3.Name = "colGRItemName"
-        GridViewTextBoxColumn3.Width = 140
+        GridViewTextBoxColumn3.Width = 130
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "ReceiveWt"
         GridViewTextBoxColumn4.HeaderText = "Receive Wt."
         GridViewTextBoxColumn4.Name = "colGRReceiveWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 70
+        GridViewTextBoxColumn4.Width = 80
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "ReceivePr"
         GridViewTextBoxColumn5.HeaderText = "Receive %"

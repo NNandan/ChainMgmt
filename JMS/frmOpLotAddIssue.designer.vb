@@ -141,7 +141,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtRemarks
         '
-        Me.txtRemarks.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtRemarks.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRemarks.Location = New System.Drawing.Point(558, 81)
         Me.txtRemarks.Name = "txtRemarks"
         Me.txtRemarks.Size = New System.Drawing.Size(124, 20)
@@ -160,7 +160,7 @@ Partial Class frmOpLotAddIssue
         '
         'cmbOperation
         '
-        Me.cmbOperation.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbOperation.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbOperation.Location = New System.Drawing.Point(546, 24)
         Me.cmbOperation.Name = "cmbOperation"
@@ -180,7 +180,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtLotAddNo
         '
-        Me.txtLotAddNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtLotAddNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtLotAddNo.Location = New System.Drawing.Point(293, 47)
         Me.txtLotAddNo.Name = "txtLotAddNo"
         Me.txtLotAddNo.Size = New System.Drawing.Size(116, 20)
@@ -199,7 +199,7 @@ Partial Class frmOpLotAddIssue
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Location = New System.Drawing.Point(293, 22)
         Me.cmbItem.Name = "cmbItem"
@@ -208,7 +208,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtIssueWt
         '
-        Me.txtIssueWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssueWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssueWt.Location = New System.Drawing.Point(363, 81)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.Size = New System.Drawing.Size(65, 20)
@@ -217,7 +217,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssuePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssuePr.Location = New System.Drawing.Point(429, 81)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(64, 20)
@@ -227,7 +227,7 @@ Partial Class frmOpLotAddIssue
         'cmbGItem
         '
         Me.cmbGItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbGItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbGItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbGItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbGItem.Location = New System.Drawing.Point(222, 81)
         Me.cmbGItem.Name = "cmbGItem"
@@ -236,7 +236,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtBagNo
         '
-        Me.txtBagNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtBagNo.Location = New System.Drawing.Point(138, 81)
         Me.txtBagNo.Name = "txtBagNo"
         Me.txtBagNo.Size = New System.Drawing.Size(83, 20)
@@ -244,7 +244,7 @@ Partial Class frmOpLotAddIssue
         '
         'cmbItemType
         '
-        Me.cmbItemType.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItemType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         RadListDataItem1.Text = "Bags"
         RadListDataItem2.Text = "Voucher"
         RadListDataItem3.Text = "Finished Lots"
@@ -280,7 +280,7 @@ Partial Class frmOpLotAddIssue
         '
         Me.dgvLotIssue.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvLotIssue.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvLotIssue.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvLotIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLotIssue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLotIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvLotIssue.Location = New System.Drawing.Point(2, 101)
@@ -340,27 +340,30 @@ Partial Class frmOpLotAddIssue
         '
         'btnDelete
         '
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnDelete.Location = New System.Drawing.Point(315, 401)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 15
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnCancel.Location = New System.Drawing.Point(392, 401)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 14
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(238, 401)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 13
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
@@ -384,7 +387,7 @@ Partial Class frmOpLotAddIssue
         '
         'txtLotNo
         '
-        Me.txtLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtLotNo.Location = New System.Drawing.Point(74, 47)
         Me.txtLotNo.Name = "txtLotNo"
         Me.txtLotNo.Size = New System.Drawing.Size(85, 20)

@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmSamplesRpt
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
 
     Dim iNTScancel As Boolean = False
     Dim iTScancel As Boolean = False
@@ -15,9 +15,9 @@ Public Class frmSamplesRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", CStr(sReportType), DbType.String))
             End With
 
@@ -171,7 +171,7 @@ Public Class frmSamplesRpt
                 .Add(dbManager.CreateParameter("@ActionType", "GetNonTestedSampleBag", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_UsedBags_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_LabData_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

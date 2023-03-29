@@ -60,7 +60,7 @@ Partial Class frmRptKarigarwiseLoss
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransactionDt"
+        GridViewTextBoxColumn1.FieldName = "TransDt"
         GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
         GridViewTextBoxColumn1.Name = "colTransDt"
         GridViewTextBoxColumn1.Width = 80
@@ -73,17 +73,17 @@ Partial Class frmRptKarigarwiseLoss
         GridViewTextBoxColumn3.FieldName = "LabourName"
         GridViewTextBoxColumn3.HeaderText = "Labour Name"
         GridViewTextBoxColumn3.Name = "colLabourName"
-        GridViewTextBoxColumn3.Width = 140
+        GridViewTextBoxColumn3.Width = 135
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "OperationName"
         GridViewTextBoxColumn4.HeaderText = "Operation Name"
         GridViewTextBoxColumn4.Name = "colOperationName"
-        GridViewTextBoxColumn4.Width = 140
+        GridViewTextBoxColumn4.Width = 135
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "OperationType"
         GridViewTextBoxColumn5.HeaderText = "Operation Type"
         GridViewTextBoxColumn5.Name = "colOperationType"
-        GridViewTextBoxColumn5.Width = 120
+        GridViewTextBoxColumn5.Width = 115
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "IssueWt"
         GridViewTextBoxColumn6.HeaderText = "Issue Wt."
@@ -136,7 +136,7 @@ Partial Class frmRptKarigarwiseLoss
         GridViewTextBoxColumn13.HeaderText = "Total Rec. Wt."
         GridViewTextBoxColumn13.Name = "colRecWt"
         GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn13.Width = 90
+        GridViewTextBoxColumn13.Width = 100
         Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewDecimalColumn1, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1

@@ -11,8 +11,8 @@ Public Class frmOpTransaction
     Dim strSQL As String = Nothing
     Dim TempRow As Integer
     Dim GridDoubleClick As Boolean
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -23,11 +23,11 @@ Public Class frmOpTransaction
                 Case FormState.AStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "New Record"
                     Me.btnSave.Enabled = True
-                    Me.btnSave.Text = "Save"
+                    Me.btnSave.Text = "&Save"
                     Me.btnDelete.Enabled = False
                 Case FormState.EStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "Edit Record"
-                    Me.btnSave.Text = "Update"
+                    Me.btnSave.Text = "&Update"
                     Me.btnDelete.Enabled = True
             End Select
         End Set
@@ -108,11 +108,14 @@ Public Class frmOpTransaction
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_OperationMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
+
         Dim dt As DataTable = New DataTable()
 
         dt.Load(dr)
@@ -143,9 +146,11 @@ Public Class frmOpTransaction
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        End With
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Dim dt As DataTable = New DataTable()

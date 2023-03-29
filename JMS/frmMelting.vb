@@ -20,6 +20,7 @@ Public Class frmMelting
     Dim iReceiptDetailId As Int16
     Dim iIssueId As Int16
     Dim iUsedBagId As Int16
+
     Dim dBalanceWt As Double
 
     Private Objerr As New ErrorProvider()
@@ -114,7 +115,7 @@ Public Class frmMelting
     End Sub
     Private Sub frmMelting_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        Me.filltemName()
+        Me.fillItemName()
         Me.fillLabour()
 
         Me.bindDataGridView()
@@ -124,7 +125,7 @@ Public Class frmMelting
         txtFrKarigar.Tag = CInt(UserId)
         txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
     End Sub
-    Private Sub filltemName()
+    Private Sub fillItemName()
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
@@ -239,8 +240,8 @@ Public Class frmMelting
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@MId", CInt(intMeltingId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
+                .Add(dbManager.CreateParameter("@MId", CInt(intMeltingId), DbType.Int16))
             End With
 
             dtData = dbManager.GetDataTable("SP_Melting_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -1060,6 +1061,11 @@ ErrHandler:
         End If
 
     End Sub
+
+    Private Sub txtSilverPr_Leave(sender As Object, e As EventArgs) Handles txtSilverPr.Leave
+        txtSilverPr.Text = Format(Val(txtSilverPr.Text), "0.00")
+    End Sub
+
     Private Sub frmMelting_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit

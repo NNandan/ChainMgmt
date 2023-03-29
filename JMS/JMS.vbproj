@@ -71,6 +71,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DataAccessHandler.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevExpress.XtraLayout.v15.1.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -79,6 +86,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
@@ -97,6 +105,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\TelerikExport.dll</HintPath>
     </Reference>
+    <Reference Include="UIAutomationClient" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -199,10 +208,22 @@
     <Compile Include="frmAcctOpTransaction.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmBakcup.Designer.vb">
+      <DependentUpon>frmBakcup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBakcup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBhukaBag.designer.vb">
       <DependentUpon>frmBhukaBag.vb</DependentUpon>
     </Compile>
     <Compile Include="frmBhukaBag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBhukaBagNotUpdated.Designer.vb">
+      <DependentUpon>frmBhukaBagNotUpdated.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBhukaBagNotUpdated.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCarbonReceiveRpt.Designer.vb">
@@ -295,6 +316,12 @@
     <Compile Include="frmKarigarMaster.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLayOut.Designer.vb">
+      <DependentUpon>frmLayOut.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLayOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListLabIssue.Designer.vb">
       <DependentUpon>frmListLabIssue.vb</DependentUpon>
     </Compile>
@@ -359,6 +386,12 @@
       <DependentUpon>frmLotFailBag.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLotFailBag.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLotFailBagNotUpdated.Designer.vb">
+      <DependentUpon>frmLotFailBagNotUpdated.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLotFailBagNotUpdated.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLotFailBagNotUsed.Designer.vb">
@@ -443,6 +476,12 @@
       <DependentUpon>frmLotAdditionIssue.vb</DependentUpon>
     </Compile>
     <Compile Include="frmLotAdditionIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgressBar.Designer.vb">
+      <DependentUpon>frmProgressBar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgressBar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRptCoreAddition.Designer.vb">
@@ -817,6 +856,12 @@
     <Compile Include="frmVaccumBag.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmVacuumBagNotUpdated.Designer.vb">
+      <DependentUpon>frmVacuumBagNotUpdated.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVacuumBagNotUpdated.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmWIPLotNoWise.Designer.vb">
       <DependentUpon>frmWIPLotNoWise.vb</DependentUpon>
     </Compile>
@@ -904,8 +949,14 @@
     <EmbeddedResource Include="frmAcctOpTransaction.resx">
       <DependentUpon>frmAcctOpTransaction.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBakcup.resx">
+      <DependentUpon>frmBakcup.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBhukaBag.resx">
       <DependentUpon>frmBhukaBag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBhukaBagNotUpdated.resx">
+      <DependentUpon>frmBhukaBagNotUpdated.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCarbonReceiveRpt.resx">
       <DependentUpon>frmCarbonReceiveRpt.vb</DependentUpon>
@@ -955,6 +1006,9 @@
     <EmbeddedResource Include="frmKarigarMaster.resx">
       <DependentUpon>frmKarigarMaster.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLayOut.resx">
+      <DependentUpon>frmLayOut.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListLabIssue.resx">
       <DependentUpon>frmListLabIssue.vb</DependentUpon>
     </EmbeddedResource>
@@ -984,6 +1038,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLotFailBag.resx">
       <DependentUpon>frmLotFailBag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLotFailBagNotUpdated.resx">
+      <DependentUpon>frmLotFailBagNotUpdated.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLotFailBagNotUsed.resx">
       <DependentUpon>frmLotFailBagNotUsed.vb</DependentUpon>
@@ -1026,6 +1083,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLotAdditionIssue.resx">
       <DependentUpon>frmLotAdditionIssue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgressBar.resx">
+      <DependentUpon>frmProgressBar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRptCoreAddition.resx">
       <DependentUpon>frmRptCoreAddition.vb</DependentUpon>
@@ -1212,6 +1272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVaccumBag.resx">
       <DependentUpon>frmVaccumBag.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVacuumBagNotUpdated.resx">
+      <DependentUpon>frmVacuumBagNotUpdated.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWIPLotNoWise.resx">
       <DependentUpon>frmWIPLotNoWise.vb</DependentUpon>

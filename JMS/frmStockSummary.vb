@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.IO
 Imports DataAccessHandler
 Public Class frmStockSummary
     Dim rs As New ClsResizer
@@ -7,6 +8,8 @@ Public Class frmStockSummary
 
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
+    Private connectionString As String = File.ReadAllText(System.IO.Path.Combine("C:\", "DBConnectionString.txt"))
+    Private bulider1 As SqlConnectionStringBuilder = Nothing
     Private Sub frmStockSummaryRuntime_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.WindowState = FormWindowState.Maximized
 
@@ -19,20 +22,24 @@ Public Class frmStockSummary
             Me.GetFinishedLots()
 
             '' Bags Started
+            '' Bags Not Created
             Me.GetBhukaBagNotCreated()
             Me.GetVacuumBagNotCreated()
             Me.GetSampleBagNotCreated()
 
+            '' Bags Not Received
             Me.GetBhukaBagNotReceived()
             Me.GetVacuumBagNotReceived()
             Me.GetSampleBagNotReceived()
             Me.GetLotFailBagNotReceived()
 
+            '' Bags Not Updated
             Me.GetBhukaBagNotUpdated()
             Me.GetVaccumBagNotUpdated()
             Me.GetSampleBagNotUpdated()
             Me.GetLotFailBagNotUpdated()
 
+            ''Bags Not Used
             Me.GetBhukaBagNotUsed()
             Me.GetVaccumBagNotUsed()
             Me.GetSampleBagNotUsed()
@@ -416,9 +423,9 @@ Public Class frmStockSummary
                 Next
             End If
 
-            'If sFWtTotal > 0 Then
-            '    sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
-            'End If
+            If sFWtTotal > 0 Then
+                sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
+            End If
 
             VacuumBagNCWt.Text = Format(sRWtTotal, "0.00")
             VacuumBagNCPr.Text = Format(sRPrTotal, "0.00")
@@ -936,9 +943,9 @@ Public Class frmStockSummary
                         sRWtTotal += Single.Parse(row("ReceiveWt"))
                     End If
 
-                    'If Not IsDBNull(dtData.Rows(0)("ReceivePr")) Then
-                    '    sRPrTotal += Single.Parse(row("ReceivePr"))
-                    'End If
+                    If Not IsDBNull(dtData.Rows(0)("ReceivePr")) Then
+                        sRPrTotal += Single.Parse(row("ReceivePr"))
+                    End If
 
                     If Not IsDBNull(dtData.Rows(0)("FineWt")) Then
                         sFWtTotal += Single.Parse(row("FineWt"))
@@ -1077,7 +1084,6 @@ Public Class frmStockSummary
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
-
             BhukaBagNuWt.Text = Format(sRWtTotal, "0.00")
             BhukaBagNuPr.Text = Format(sRPrTotal, "0.00")
             BhukaBagNuFw.Text = Format(sFWtTotal, "0.00")
@@ -1160,9 +1166,9 @@ Public Class frmStockSummary
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
-            LotFailBagWt.Text = Format(sRWtTotal, "0.00")
-            LotFailBagPr.Text = Format(sRPrTotal, "0.00")
-            LotFailBagFw.Text = Format(sFWtTotal, "0.00")
+            LotFailBagNuWt.Text = Format(sRWtTotal, "0.00")
+            LotFailBagNuPr.Text = Format(sRPrTotal, "0.00")
+            LotFailBagNuFw.Text = Format(sFWtTotal, "0.00")
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -1531,12 +1537,214 @@ Public Class frmStockSummary
         Dim ObjLotFailBagNotUsed As New frmLotFailBagNotUsed
         ObjLotFailBagNotUsed.ShowDialog()
     End Sub
+    Private Sub btnAccountClosing_Click(sender As Object, e As EventArgs) Handles btnAccountClosing.Click
+        Dim strCopyDatabase As String = Nothing
+        Dim strDatabaseName As String = Nothing
 
-    Private Sub VacuumBagWt_TextChanged(sender As Object, e As EventArgs) Handles VacuumBagWt.TextChanged
+        'sp_post_new_database
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            dtData = dbManager.GetDataTable("SP_CurrentDB_Select", CommandType.StoredProcedure)
+
+            If dtData.Rows.Count > 0 Then
+                strCopyDatabase = dtData.Rows(0).Item("CurrentDatabase")
+            End If
+
+            strDatabaseName = strCopyDatabase + Now.Month().ToString().PadLeft(2, "0")
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@CopyDatabase", strCopyDatabase, DbType.String))
+                .Add(dbManager.CreateParameter("@DatabaseName", strDatabaseName, DbType.String))
+            End With
+
+            dbManager.GetScalarValue("SP_Post_New_Database", CommandType.StoredProcedure, parameters.ToArray())
+
+            MessageBox.Show("New Database Created")
+
+            Me.DeleteStock()
+
+            Me.UpdateStock()
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
 
     End Sub
 
-    Private Sub BhukaBagNrWt_TextChanged(sender As Object, e As EventArgs) Handles BhukaBagNrWt.TextChanged
+    Private Sub xProcess()
+        '     Dim xSql As String
 
+
+        '     '==== =================Stock Clubing Process=======================================
+
+        '     '== Swapping Process===
+
+        '     DB.Execute "Delete TmpStockStonesDetail.* From TmpStockStonesDetail"
+
+        ' '== Keeping Data To Temperary Table===
+
+        '     xSql = " Insert Into TmpStockStonesDetail( Stock_ID,Category_ID,Location_ID,Item_TagNo,Packet_ID,Packet_Initial,Packet_Quantity,Packet_Weight,Packet_RateOn,Packet_Rate,Packet_Value,Packet_SalRate,Packet_SalValue,Packet_Quality,Packet_Seive,Packet_Color,Stone_ID,Quality_ID,Shape_ID) " &
+        '       " SELECT StockStonesDetail.Stock_ID As Stock_ID, StockStonesDetail.Category_ID As Category_ID, StockStonesDetail.Location_ID As Location_ID , StockStonesDetail.Item_TagNo As Item_TagNo , StonesPacketMaster.Packet_ID As Packet_ID , StonesPacketMaster.Packet_Initial As Packet_Initial, Sum(StockStonesDetail.Packet_Quantity) AS Packet_Quantity, Sum(StockStonesDetail.Packet_Weight) AS Packet_Weight, StockStonesDetail.Packet_RateOn, Avg(StockStonesDetail.Packet_Rate) AS Packet_Rate, (Packet_Weight*Packet_Rate) As Packet_Value , StockStonesDetail.Packet_SalRate, StockStonesDetail.Packet_SalValue, StockStonesDetail.Packet_Quality, StockStonesDetail.Packet_Seive, StockStonesDetail.Packet_Color, StockStonesDetail.Stone_ID, StockStonesDetail.Quality_ID, StockStonesDetail.Shape_ID " &
+        '       " FROM StonesPacketMaster INNER JOIN (StockStonesDetail INNER JOIN StonesPacketMaster01 ON StockStonesDetail.Packet_ID = StonesPacketMaster01.Packet_ID) ON StonesPacketMaster.Packet_ID = StonesPacketMaster01.TransferID Where StonesPacketMaster01.TransferID= " & Val(StoneTransfer.Columns("ID").value) & " " &
+        '       " GROUP BY StockStonesDetail.Stock_ID, StockStonesDetail.Category_ID, StockStonesDetail.Location_ID, StockStonesDetail.Item_TagNo, StonesPacketMaster.Packet_ID, StonesPacketMaster.Packet_Initial, StockStonesDetail.Packet_RateOn, StockStonesDetail.Packet_SalRate, StockStonesDetail.Packet_SalValue, StockStonesDetail.Packet_Quality, StockStonesDetail.Packet_Seive, StockStonesDetail.Packet_Color, StockStonesDetail.Stone_ID, StockStonesDetail.Quality_ID, StockStonesDetail.Shape_ID"
+
+        '     DB.Execute xSql
+
+        ' '== Removing Data From Real Table==
+
+        '     xSql = " DELETE StockStonesDetail.*, StonesPacketMaster01.TransferID" &
+        '        " FROM StockStonesDetail INNER JOIN StonesPacketMaster01 ON StockStonesDetail.Packet_ID = StonesPacketMaster01.Packet_ID " &
+        '        " WHERE (((StonesPacketMaster01.TransferID)=" & Val(StoneTransfer.Columns("ID").value) & "   ))"
+
+        '     DB.Execute xSql
+
+        ' '=== Transfering Data From Temperary Table To Real Table===
+
+        '     xSql = " insert into StockStonesDetail(Stock_ID,Category_ID,Location_ID,Item_TagNo,Packet_ID,Packet_Initial,Packet_Description,Packet_Units,Packet_Type,Packet_Quantity,Packet_Weight,Packet_RateOn,Packet_Purchase,Packet_PurRate,Commission_Rate,Commission_Value,Packet_NetAmount, Packet_Rate,Packet_Value,Packet_SalRate, Packet_SalValue,Packet_Quality,Packet_Seive,Packet_Color,Stone_ID,Quality_ID,Sieve_ID) " &
+        '        " SELECT TmpStockStonesDetail.Stock_ID, TmpStockStonesDetail.Category_ID, TmpStockStonesDetail.Location_ID, TmpStockStonesDetail.Item_TagNo, TmpStockStonesDetail.Packet_ID, TmpStockStonesDetail.Packet_Initial, TmpStockStonesDetail.Packet_Description, TmpStockStonesDetail.Packet_Units, TmpStockStonesDetail.Packet_Type, TmpStockStonesDetail.Packet_Quantity, TmpStockStonesDetail.Packet_Weight, TmpStockStonesDetail.Packet_RateOn, TmpStockStonesDetail.Packet_Purchase, TmpStockStonesDetail.Packet_PurRate, TmpStockStonesDetail.Commission_Rate, TmpStockStonesDetail.Commission_Value, TmpStockStonesDetail.Packet_NetAmount, TmpStockStonesDetail.Packet_Rate, " &
+        '        " TmpStockStonesDetail.Packet_Value, TmpStockStonesDetail.Packet_SalRate, TmpStockStonesDetail.Packet_SalValue, TmpStockStonesDetail.Packet_Quality, TmpStockStonesDetail.Packet_Seive, TmpStockStonesDetail.Packet_Color, TmpStockStonesDetail.Stone_ID, TmpStockStonesDetail.Quality_ID, TmpStockStonesDetail.Sieve_ID " &
+        '        " FROM TmpStockStonesDetail"
+
+        '     DB.Execute xSql
+
+        ' '========================Loose Stones Purchase Clubing Process====================
+
+
+        '     DB.Execute "Delete TmpStoneTransactionDetails.* From TmpStoneTransactionDetails"
+
+        ' '== Keeping Data To Temperary Table===
+
+        '     xSql = " Insert Into TmpStoneTransactionDetails( Voucher_Type,Voucher_No,Voucher_Date,Account_ID,Packet_ID,Packet_Initial,Packet_Pcs,Packet_Weight,Packet_Rate,Packet_Value,Packet_NetValue) " &
+        '           " SELECT StoneTransactionDetails.Voucher_Type As Voucher_Type, " &
+        '           " StoneTransactionDetails.Voucher_No As Voucher_No, StoneTransactionDetails.Voucher_Date As Voucher_Date , StoneTransactionDetails.Account_ID As Account_ID , " &
+        '           " StonesPacketMaster.Packet_ID As Packet_ID , StonesPacketMaster.Packet_Initial As Packet_Initial, Sum(StoneTransactionDetails.Packet_Pcs) AS Packet_Pcs, Sum(StoneTransactionDetails.Packet_Weight) AS Packet_Weight, " &
+        '           " Avg(StoneTransactionDetails.Packet_Rate) AS Packet_Rate, (Packet_Weight*Packet_Rate) As Packet_Value , (Packet_Weight*Packet_Rate) As Packet_NetValue  FROM StonesPacketMaster INNER JOIN (StoneTransactionDetails INNER JOIN StonesPacketMaster01 ON StoneTransactionDetails.Packet_ID = StonesPacketMaster01.Packet_ID) ON StonesPacketMaster.Packet_ID = StonesPacketMaster01.TransferID Where StonesPacketMaster01.TransferID= " & Val(StoneTransfer.Columns("ID").value) & " GROUP BY StoneTransactionDetails.Voucher_Type, StoneTransactionDetails.Voucher_No, StoneTransactionDetails.Voucher_Date,StoneTransactionDetails.Account_ID," &
+        '           " StonesPacketMaster.Packet_ID , StonesPacketMaster.Packet_Initial"
+
+
+        '     DB.Execute xSql
+
+        ' '== Removing Data From Real Table==
+
+        '     xSql = " DELETE StoneTransactionDetails.*, StonesPacketMaster01.TransferID" &
+        '        " FROM StoneTransactionDetails INNER JOIN StonesPacketMaster01 ON StoneTransactionDetails.Packet_ID = StonesPacketMaster01.Packet_ID " &
+        '        " WHERE (((StonesPacketMaster01.TransferID)=" & Val(StoneTransfer.Columns("ID").value) & "   ))"
+
+        '     DB.Execute xSql
+
+
+        ' '=== Transfering Data From Temperary Table To Real Table===
+
+        '     xSql = " Insert Into StoneTransactionDetails( Voucher_Type,Voucher_No,Voucher_Date,Account_ID,Packet_ID,Packet_Initial,Packet_Pcs, " &
+        '         " Packet_Weight,Packet_Rate,Packet_Value,Packet_NetValue)" &
+        '         " SELECT TmpStoneTransactionDetails.Voucher_Type As Voucher_Type, TmpStoneTransactionDetails.Voucher_No As Voucher_No, TmpStoneTransactionDetails.Voucher_Date As Voucher_Date ,TmpStoneTransactionDetails.Account_ID As Account_ID , TmpStoneTransactionDetails.Packet_ID As Packet_ID , TmpStoneTransactionDetails.Packet_Initial As Packet_Initial,TmpStoneTransactionDetails.Packet_Pcs AS Packet_Pcs, TmpStoneTransactionDetails.Packet_Weight AS Packet_Weight,TmpStoneTransactionDetails.Packet_Rate  AS Packet_Rate,TmpStoneTransactionDetails.Packet_Value  As Packet_Value ,TmpStoneTransactionDetails.Packet_NetValue As Packet_NetValue  From TmpStoneTransactiondetails "
+
+        '     DB.Execute xSql
+
+        ' '=========================== Setting Stones Details=====================
+
+        '     '== Swapping Process===
+
+        '     DB.Execute "Delete TmpSettingStoneDetail.* From TmpSettingStoneDetail"
+
+        ' '== Keeping Data To Temperary Table===
+
+        '     xSql = " Insert Into TmpSettingStoneDetail( Setting_Type,SEntry_ID,Item_ID,Item_TagNo,Item_Serial,Item_Date,Emp_ID,Entry_Type,Issue_Type,Packet_ID,Packet_Initial,Packet_Pcs,Packet_Weight,Packet_Rate,Packet_Amount,Packet_Count) " &
+        '       " SELECT SettingStoneDetails.Setting_Type As Setting_Type,SettingStoneDetails.SEntry_ID As SEntry_ID, SettingStoneDetails.Item_ID As Item_ID , SettingStoneDetails.Item_TagNo As Item_TagNo ,SettingStoneDetails.Item_Serial As Item_Serial,SettingStoneDetails.Item_Date,SettingStoneDetails.Emp_ID As Emp_ID ,SettingStoneDetails.Entry_Type As Entry_Type,SettingStoneDetails.Issue_Type As Issue_Type, StonesPacketMaster.Packet_ID As Packet_ID , StonesPacketMaster.Packet_Initial As Packet_Initial, Sum(SettingStoneDetails.Packet_Pcs) AS Packet_Pcs, Sum(SettingStoneDetails.Packet_Weight) AS Packet_Weight, Avg(SettingStoneDetails.Packet_Rate) AS Packet_Rate, (Packet_Weight*Packet_Rate) As Packet_Amount , SettingStoneDetails.Packet_Count " &
+        '       " FROM StonesPacketMaster INNER JOIN (SettingStoneDetails INNER JOIN StonesPacketMaster01 ON SettingStoneDetails.Packet_ID = StonesPacketMaster01.Packet_ID) ON StonesPacketMaster.Packet_ID = StonesPacketMaster01.TransferID Where StonesPacketMaster01.TransferID= " & Val(StoneTransfer.Columns("ID").value) & " " &
+        '       " GROUP BY SettingStoneDetails.Setting_Type, SettingStoneDetails.SEntry_ID, SettingStoneDetails.Item_ID, SettingStoneDetails.Item_TagNo,SettingStoneDetails.Item_Serial,SettingStoneDetails.Item_Date,SettingStoneDetails.Emp_ID,SettingStoneDetails.Entry_Type,SettingStoneDetails.Issue_Type,StonesPacketMaster.Packet_ID, StonesPacketMaster.Packet_Initial,SettingStoneDetails.Packet_Count"
+
+        '     DB.Execute xSql
+
+        ' '== Removing Data From Real Table==
+
+        '     xSql = " DELETE SettingStoneDetails.*, StonesPacketMaster01.TransferID" &
+        '        " FROM SettingStoneDetails INNER JOIN StonesPacketMaster01 ON SettingStoneDetails.Packet_ID = StonesPacketMaster01.Packet_ID " &
+        '        " WHERE (((StonesPacketMaster01.TransferID)=" & Val(StoneTransfer.Columns("ID").value) & "   ))"
+
+        '     DB.Execute xSql
+
+        ' '=== Transfering Data From Temperary Table To Real Table===
+
+        '     xSql = " insert into SettingStoneDetails(Setting_Type,SEntry_ID,Item_ID,Item_TagNo,Item_Serial,Item_Date,Emp_ID,Entry_Type,Issue_Type,Packet_ID,Packet_Initial,Packet_Pcs,Packet_Weight,Packet_Rate,Packet_Amount,Packet_Count) " &
+        '        " SELECT TmpSettingStoneDetail.Setting_Type, TmpSettingStoneDetail.SEntry_ID, TmpSettingStoneDetail.Item_ID, TmpSettingStoneDetail.Item_TagNo,TmpSettingStoneDetail.Item_Serial,TmpSettingStoneDetail.Item_Date,TmpSettingStoneDetail.Emp_ID,TmpSettingStoneDetail.Entry_Type,TmpSettingStoneDetail.Issue_Type,TmpSettingStoneDetail.Packet_ID, TmpSettingStoneDetail.Packet_Initial,TmpSettingStoneDetail.Packet_Pcs, TmpSettingStoneDetail.Packet_Weight,TmpSettingStoneDetail.Packet_Rate,TmpSettingStoneDetail.Packet_Amount, " &
+        '        " TmpSettingStoneDetail.Packet_Count " &
+        '        " FROM TmpSettingStoneDetail"
+
+        '     DB.Execute xSql
+
+
+        ''========================== SetterDetails========================
+
+        '     '== Swapping Process===
+
+        '     DB.Execute "Delete TmpSettersDetails.* From TmpSettersDetails"
+
+        ' '== Keeping Data To Temperary Table===
+
+        '     xSql = " Insert Into TmpSettersDetails( SEntry_ID,Emp_ID,Item_Date,Item_Id,Item_TagNo,Packet_ID,Packet_Initial,Packet_Pcs,Packet_Weight,Packet_CreditPcs) " &
+        '       " SELECT SettersDetails.SEntry_ID As SEntry_ID,SettersDetails.Emp_ID As Emp_ID, SettersDetails.Item_Date As Item_Date, SettersDetails.Item_Id As Item_Id , SettersDetails.Item_TagNo As Item_TagNo , StonesPacketMaster.Packet_ID As Packet_ID , StonesPacketMaster.Packet_Initial As Packet_Initial, " &
+        '       " Sum(SettersDetails.Packet_Pcs) AS Packet_Pcs, Sum(SettersDetails.Packet_Weight) AS Packet_Weight, Sum(SettersDetails.Packet_CreditPcs) As Packet_CreditPcs " &
+        '       " FROM StonesPacketMaster INNER JOIN (SettersDetails INNER JOIN StonesPacketMaster01 ON SettersDetails.Packet_ID = StonesPacketMaster01.Packet_ID) ON StonesPacketMaster.Packet_ID = StonesPacketMaster01.TransferID Where StonesPacketMaster01.TransferID= " & Val(StoneTransfer.Columns("ID").value) & " " &
+        '       " GROUP BY SettersDetails.SEntry_ID ,SettersDetails.Emp_ID, SettersDetails.Item_Date , SettersDetails.Item_Id , SettersDetails.Item_TagNo , StonesPacketMaster.Packet_ID , StonesPacketMaster.Packet_Initial "
+
+        '     DB.Execute xSql
+
+        ' '== Removing Data From Real Table==
+
+        '     xSql = " DELETE SettersDetails.*, StonesPacketMaster01.TransferID" &
+        '        " FROM SettersDetails INNER JOIN StonesPacketMaster01 ON SettersDetails.Packet_ID = StonesPacketMaster01.Packet_ID " &
+        '        " WHERE (((StonesPacketMaster01.TransferID)=" & Val(StoneTransfer.Columns("ID").value) & "   ))"
+
+        '     DB.Execute xSql
+
+        ' '=== Transfering Data From Temperary Table To Real Table===
+
+        '     xSql = " insert into SettersDetails(SEntry_ID,Emp_ID,Item_Date,Item_Id,Item_TagNo,Packet_ID,Packet_Initial,Packet_Pcs,Packet_Weight,Packet_CreditPcs) " &
+        '        " SELECT TmpSettersDetails.SEntry_ID, TmpSettersDetails.Emp_ID, TmpSettersDetails.Item_Date, TmpSettersDetails.Item_Id,TmpSettersDetails.Item_TagNo,TmpSettersDetails.Packet_ID, TmpSettersDetails.Packet_Initial, " &
+        '        " TmpSettersDetails.Packet_Pcs, TmpSettersDetails.Packet_Weight, TmpSettersDetails.Packet_CreditPcs " &
+        '        " FROM TmpSettersDetails"
+
+        '     DB.Execute xSql
+
+    End Sub
+    Private Sub DeleteStock()
+        Try
+
+            dbManager.Delete("SP_StockDetails_Delete", CommandType.StoredProcedure)
+
+            MessageBox.Show("Data Deleted !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
+    Private Sub UpdateStock()
+        Try
+
+            dbManager.Delete("SP_StockDetails_Update", CommandType.StoredProcedure)
+
+            MessageBox.Show("Data Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
+    Private Sub btnLBagNotUpdated_Click(sender As Object, e As EventArgs) Handles btnLBagNotUpdated.Click
+        Dim ObjLotFailBagNotUpdated As New frmLotFailBagNotUpdated
+        ObjLotFailBagNotUpdated.ShowDialog()
+    End Sub
+    Private Sub btnBBagNotUpdated_Click(sender As Object, e As EventArgs) Handles btnBBagNotUpdated.Click
+        Dim ObjBhukaBagNotUpdated As New frmBhukaBagNotUpdated
+        ObjBhukaBagNotUpdated.ShowDialog()
     End Sub
 End Class

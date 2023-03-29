@@ -44,7 +44,7 @@ Partial Class frmMeltingStockRpt
         '
         Me.lblMeltingStock.AutoSize = True
         Me.lblMeltingStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMeltingStock.Location = New System.Drawing.Point(288, 7)
+        Me.lblMeltingStock.Location = New System.Drawing.Point(288, 3)
         Me.lblMeltingStock.Name = "lblMeltingStock"
         Me.lblMeltingStock.Size = New System.Drawing.Size(158, 20)
         Me.lblMeltingStock.TabIndex = 2
@@ -54,10 +54,10 @@ Partial Class frmMeltingStockRpt
         '
         Me.dgvMeltingStock.BackColor = System.Drawing.SystemColors.Control
         Me.dgvMeltingStock.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvMeltingStock.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvMeltingStock.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvMeltingStock.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvMeltingStock.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvMeltingStock.Location = New System.Drawing.Point(6, 37)
+        Me.dgvMeltingStock.Location = New System.Drawing.Point(6, 33)
         '
         '
         '
@@ -73,42 +73,42 @@ Partial Class frmMeltingStockRpt
         GridViewTextBoxColumn2.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn2.HeaderText = "Melting Dt."
         GridViewTextBoxColumn2.Name = "colMeltingDt"
-        GridViewTextBoxColumn2.Width = 93
+        GridViewTextBoxColumn2.Width = 90
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "ItemName"
         GridViewTextBoxColumn3.HeaderText = "ItemName"
         GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 134
+        GridViewTextBoxColumn3.Width = 140
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "LotNumber"
         GridViewTextBoxColumn4.HeaderText = "Lot No."
         GridViewTextBoxColumn4.Name = "colLotNumber"
-        GridViewTextBoxColumn4.Width = 67
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.AllowGroup = False
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "ItemType"
         GridViewTextBoxColumn5.HeaderText = "Item Type"
         GridViewTextBoxColumn5.Name = "colItemType"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 84
+        GridViewTextBoxColumn5.Width = 120
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "RequirePr"
         GridViewTextBoxColumn6.HeaderText = "Require [%]"
         GridViewTextBoxColumn6.Name = "colRequirePr"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 79
+        GridViewTextBoxColumn6.Width = 90
         GridViewTextBoxColumn7.EnableExpressionEditor = False
         GridViewTextBoxColumn7.FieldName = "GrossWt"
         GridViewTextBoxColumn7.HeaderText = "Gross Wt."
         GridViewTextBoxColumn7.Name = "colGrossWt"
         GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 78
+        GridViewTextBoxColumn7.Width = 90
         GridViewTextBoxColumn8.EnableExpressionEditor = False
         GridViewTextBoxColumn8.FieldName = "ReceiveWt"
         GridViewTextBoxColumn8.HeaderText = "Receive Wt."
         GridViewTextBoxColumn8.Name = "colReceiveWt"
         GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn8.Width = 80
+        GridViewTextBoxColumn8.Width = 90
         Me.dgvMeltingStock.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8})
         Me.dgvMeltingStock.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvMeltingStock.MasterTemplate.ViewDefinition = TableViewDefinition1
@@ -116,16 +116,17 @@ Partial Class frmMeltingStockRpt
         Me.dgvMeltingStock.ReadOnly = True
         Me.dgvMeltingStock.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvMeltingStock.ShowGroupPanel = False
-        Me.dgvMeltingStock.Size = New System.Drawing.Size(707, 222)
+        Me.dgvMeltingStock.Size = New System.Drawing.Size(707, 228)
         Me.dgvMeltingStock.TabIndex = 3
         '
         'btnShow
         '
+        Me.btnShow.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnShow.Location = New System.Drawing.Point(325, 265)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(75, 25)
         Me.btnShow.TabIndex = 4
-        Me.btnShow.Text = "Show"
+        Me.btnShow.Text = "&Show"
         '
         'frmMeltingStockRpt
         '

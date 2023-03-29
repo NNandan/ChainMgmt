@@ -3,8 +3,8 @@ Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmListLabIssue
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Dim strSQL As String = Nothing
     Dim GridDoubleClick As Boolean
     Private Sub frmEditELabIssue_Load(sender As Object, e As EventArgs) Handles Me.Load

@@ -4,9 +4,10 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmAcctOpMelting
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmAcctOpMelting_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvWipLotNo.AutoGenerateColumns = False
+
         dgvWipLotNo.DataSource = FetchAllRecords()
         dgvWipLotNo.EnableFiltering = True
         dgvWipLotNo.MasterTemplate.ShowHeaderCellButtons = True
@@ -19,9 +20,12 @@ Public Class frmAcctOpMelting
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchOpStockMelting", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchOpStockMelting", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_OpStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception

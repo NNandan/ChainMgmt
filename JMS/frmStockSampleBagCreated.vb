@@ -35,10 +35,10 @@ Public Class frmStockSampleBagCreated
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "SampleBagCreatedDetails", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "SampleBagNotReceived", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_BagsStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

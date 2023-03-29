@@ -731,4 +731,13 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
+    Private Sub TestControlToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestControlToolStripMenuItem.Click
+        Try
+            Dim ObjMaterialMaster As New frmLayOut
+            ObjMaterialMaster.MdiParent = Me
+            ObjMaterialMaster.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

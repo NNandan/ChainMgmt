@@ -380,7 +380,7 @@ Public Class frmLotFailBag
                     txtUIssueFineWt.Text = dtData.Rows(0).Item("IssueFineWt").ToString()
 
                     txtUWtOnScale.Text = dtData.Rows(0).Item("WtOnScale").ToString()
-                    txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonRecieve").ToString()
+                    txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonReceive").ToString()
 
                     txtUGrossLoss.Text = dtData.Rows(0).Item("GrossLossWt").ToString()
 

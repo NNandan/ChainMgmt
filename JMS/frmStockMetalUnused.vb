@@ -20,7 +20,7 @@ Public Class frmStockMetalUnused
         Dim totalItemGFt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
         Dim totalItemGPr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
-        totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceivePr)  * 100)"
+        totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceiveWt)  * 100)"
 
         Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalNameItem, totalItemGWt, totalItemGFt, totalItemGPr})
         Me.dgvWipLotNo.SummaryRowsBottom.Add(totalRow)

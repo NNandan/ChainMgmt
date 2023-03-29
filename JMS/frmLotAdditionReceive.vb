@@ -88,7 +88,7 @@ Public Class frmLotAdditionReceive
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillOnlyItemName", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
@@ -117,42 +117,41 @@ Public Class frmLotAdditionReceive
             dbManager.CloseConnection(connection)
         End Try
     End Sub
-    Private Sub bindListView()
-        Dim parameters = New List(Of SqlParameter)()
-
-        With parameters
-            .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
-        End With
-
-        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
-
-        lstLotAddition.Items.Clear()
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
 
         Try
-            While dr.Read
-                Dim lvi As ListViewItem = New ListViewItem(dr("LotAdditionId").ToString())
-                lvi.SubItems.Add(dr("LotAdditionDt").ToString())
-                lvi.SubItems.Add(dr("LotNo").ToString())
-                lvi.SubItems.Add(dr("ItemId").ToString())
-                lvi.SubItems.Add(dr("ItemName").ToString())
-                lvi.SubItems.Add(dr("IssueWt").ToString())
-                lvi.SubItems.Add(dr("IssuePr").ToString())
-                lstLotAddition.Items.Add(lvi)
-            End While
-
-            If lstLotAddition.Items.Count > 0 Then
-                lstLotAddition.Items(0).Selected = True
-            End If
-
+            dgvLotReceive.DataSource = dtdata
+            dgvLotReceive.EnableFiltering = True
+            dgvLotReceive.MasterTemplate.ShowFilteringRow = False
+            dgvLotReceive.MasterTemplate.ShowHeaderCellButtons = True
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
-            dr.Close()
-            Objcn.Close()
+        End Try
+    End Sub
+
+    Private Function fetchAllRecords() As DataTable
+
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
         End Try
 
-    End Sub
+        Return dtData
+
+    End Function
     Private Sub txtRemark_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtRemark.Validating
         Try
             If cmbGridItem.Text.Trim <> "" And Val(txtReceiveWt.Text.Trim) > 0 And Val(txtReceivePr.Text.Trim) > 0 Then
@@ -460,33 +459,18 @@ Public Class frmLotAdditionReceive
 
         txtReceiveWt.Text = Format(Val(txtReceiveWt.Text), "0.000")
     End Sub
-    Private Sub lstLotAddition_DoubleClick(sender As Object, e As EventArgs) Handles lstLotAddition.DoubleClick
-        If lstLotAddition.Items.Count > 0 Then
 
-            Dim LotIssueId As Integer = lstLotAddition.SelectedItems(0).SubItems(0).Text
-
-            Fr_Mode = FormState.EStateMode
-
-            Me.Clear_Form()
-
-            fillHeaderFromListView(LotIssueId)
-
-            fillLotIssueDetail(LotIssueId)
-
-            Me.TabControl1.SelectedIndex = 0
-        End If
-    End Sub
-    Private Sub fillHeaderFromListView(ByVal intRecieveId As Integer)
+    Private Sub fillHeaderFromListView(ByVal iLotAddId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@LId", CInt(intRecieveId), DbType.Int16))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+            .Add(dbManager.CreateParameter("@LId", CInt(iLotAddId), DbType.Int16))
         End With
 
-        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
         If dr.Read = False Then
             Exit Sub
@@ -512,11 +496,11 @@ ErrHandler:
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@LId", CInt(intRecieveId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
+                .Add(dbManager.CreateParameter("@LId", CInt(intRecieveId), DbType.Int16))
             End With
 
-            dtData = dbManager.GetDataTable("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -591,51 +575,6 @@ ErrHandler:
             Objcn.Close()
         End Try
     End Sub
-    Private Sub GenerateMaxLotNo()
-        Dim connection As SqlConnection = Nothing
-
-        Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
-
-        Dim strMaxLotNo As String = Nothing
-
-        strSQL = ""
-        strSQL = "SELECT TOP 1 MaxLotNo FROM vwGetMaxLotNo ORDER BY MaxLotNo DESC"
-
-        Dim dr As SqlDataReader = dbManager.GetDataReader(strSQL, CommandType.Text, Objcn, parameters.ToArray())
-
-        Try
-            If dr.Read = False Then
-                Exit Sub
-            Else
-                strMaxLotNo = dr("MaxLotNo")
-                txtLotRecieveId.Text = IncrementString(strMaxLotNo)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
-        Finally
-            dr.Close()
-            Objcn.Close()
-        End Try
-    End Sub
-    Private Function IncrementString(ByVal Sender As String) As String
-        Dim Index As Integer
-        For Item As Integer = Sender.Length - 1 To 0 Step -1
-            Select Case Sender.Substring(Item, 1)
-                Case "000" To "999"
-                Case Else
-                    Index = Item
-                    Exit For
-            End Select
-        Next
-        If Index = Sender.Length - 1 Then
-            Return Sender & "1" '  Optionally throw an exception ?
-        Else
-            Dim x As Integer = Index + 1
-            Dim value As Integer = Integer.Parse(Sender.Substring(x)) + 1
-            Return Sender.Substring(0, x) & value.ToString()
-        End If
-    End Function
     Private Sub fillLabour()
 
         Dim parameters = New List(Of SqlParameter)()
@@ -686,8 +625,8 @@ ErrHandler:
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+            .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
         End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
@@ -817,8 +756,8 @@ ErrHandler:
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
+                .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
             End With
 
             dtData = dbManager.GetDataTable("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -851,7 +790,7 @@ ErrHandler:
     End Function
     Private Sub fillReceiveData(ByVal sLotNo As String)
         Dim dttable As New DataTable
-        dttable = FetchReceiveData(CStr(sLotNo))
+        dttable = fetchReceiveData(CStr(sLotNo))
 
         For Each Row As DataRow In dttable.Rows
             dgvReceive.Rows.Add(CStr(Row("SrNo")), CStr(Row("ItemName")), Format(Val(Row("ReceiveWt")), "0.000"), Format(Val(Row("ReceivePr")), "0.000"), Format(Val(Row("FineWt")), "0.000"))
@@ -1006,6 +945,7 @@ ErrHandler:
     End Sub
     Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
         If cmbLotNo.Text.Trim <> "" Then
+
             Me.fillLotIssueHeader(cmbLotNo.Text.Trim())
 
             ''Fill Receive Data Start
@@ -1235,14 +1175,14 @@ ErrHandler:
 
             GridDoubleClick = False
 
-            Me.bindListView()
+            Me.bindDataGridView()
 
             Fr_Mode = FormState.AStateMode
 
             TransDt.Focus()
             TransDt.Select()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -1269,5 +1209,37 @@ ErrHandler:
     End Function
     Private Sub cmbGridItem_GotFocus(sender As Object, e As EventArgs) Handles cmbGridItem.GotFocus
         'Me.cmbGridItem.MultiColumnComboBoxElement.ShowPopup()
+    End Sub
+
+    Private Sub dgvLotIssue_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvLotReceive.CellDoubleClick
+        If dgvLotReceive.SelectedRows.Count = 0 Then Exit Sub
+
+        If dgvLotReceive.Rows.Count > 0 Then
+            Dim iLotAddId As Int16 = Me.dgvLotReceive.SelectedRows(0).Cells(0).Value
+
+            Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
+
+            Me.fillHeaderFromListView(iLotAddId)
+
+            Me.fillDetailsFromListView(iLotAddId)
+
+            Me.TbLotAddReceive.SelectedIndex = 0
+        End If
+    End Sub
+    Private Sub fillDetailsFromListView(ByVal iLotAddId As Integer)
+        Dim dttable As New DataTable
+        dttable = FetchAllRecords(CInt(iLotAddId))
+
+        For Each Row As DataRow In dttable.Rows
+            dgvLotAddition.Rows.Add(1, CStr(Row("ItemType")), CStr(Row("LotNo")), Val(Row("ItemId")), CStr(Row("ItemName")), Format(Val(Row("IssueWt")), "0.00"), Format(Val(Row("IssuePr")), "0.00"), Format(Val(Row("FineWt")), "0.00"), Row("Remarks"), Row("IsChecked"), Val(Row("FineWt")), Val(Row("ReceiptDetailsId")))
+        Next
+
+        Me.GetSrNo(dgvLotAddition)
+        Me.GetSrNo(dgvIssue)
+        ''Me.Total()
+
+        dgvLotAddition.ReadOnly = True
     End Sub
 End Class

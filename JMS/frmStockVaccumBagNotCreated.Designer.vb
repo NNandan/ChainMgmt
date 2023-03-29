@@ -96,7 +96,7 @@ Partial Class frmStockVaccumBagNotCreated
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(389, 419)
+        Me.btnExit.Location = New System.Drawing.Point(389, 417)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 51
@@ -105,7 +105,7 @@ Partial Class frmStockVaccumBagNotCreated
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(313, 419)
+        Me.btnPrint.Location = New System.Drawing.Point(313, 417)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 52
@@ -115,7 +115,7 @@ Partial Class frmStockVaccumBagNotCreated
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 450)
+        Me.ClientSize = New System.Drawing.Size(780, 446)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.dgvWipLotNo)

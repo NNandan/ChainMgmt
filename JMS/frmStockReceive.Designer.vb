@@ -22,17 +22,26 @@ Partial Class frmStockReceive
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.tbStockReceive = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
@@ -56,15 +65,7 @@ Partial Class frmStockReceive
         Me.Label26 = New System.Windows.Forms.Label()
         Me.lblVoucherNo = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lstReceive = New System.Windows.Forms.ListView()
-        Me.CIReceiptId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CIReceiptDt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CfDeptId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CfDepartment = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CtDeptId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CtDepartment = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CReceiptNo = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.CCreatedBy = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.dgvStockReceive = New Telerik.WinControls.UI.RadGridView()
         Me.tbStockReceive.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
@@ -82,6 +83,8 @@ Partial Class frmStockReceive
         CType(Me.cmbtDepartment, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbfDepartment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.dgvStockReceive, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvStockReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbStockReceive
@@ -128,7 +131,7 @@ Partial Class frmStockReceive
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(441, 370)
+        Me.btnExit.Location = New System.Drawing.Point(438, 368)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 3
@@ -137,7 +140,7 @@ Partial Class frmStockReceive
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(363, 370)
+        Me.btnCancel.Location = New System.Drawing.Point(361, 368)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 2
@@ -146,7 +149,7 @@ Partial Class frmStockReceive
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(207, 370)
+        Me.btnSave.Location = New System.Drawing.Point(207, 368)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 0
@@ -155,7 +158,7 @@ Partial Class frmStockReceive
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(285, 370)
+        Me.btnDelete.Location = New System.Drawing.Point(284, 368)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 1
@@ -174,70 +177,70 @@ Partial Class frmStockReceive
         '
         Me.dgvReceive.MasterTemplate.AllowAddNewRow = False
         Me.dgvReceive.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.HeaderText = "Sr."
-        GridViewTextBoxColumn21.Name = "colSrNo"
-        GridViewTextBoxColumn21.Width = 42
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.FieldName = "ItemType"
-        GridViewTextBoxColumn22.HeaderText = "Item Type"
-        GridViewTextBoxColumn22.Name = "colItemType"
-        GridViewTextBoxColumn22.Width = 80
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.FieldName = "SlipBagNo"
-        GridViewTextBoxColumn23.HeaderText = "Slip/Bag No"
-        GridViewTextBoxColumn23.Name = "colSlipBagNo"
-        GridViewTextBoxColumn23.Width = 80
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.FieldName = "ItemId"
-        GridViewTextBoxColumn24.FormatString = "{0:F2}"
-        GridViewTextBoxColumn24.HeaderText = "Item Id"
-        GridViewTextBoxColumn24.IsVisible = False
-        GridViewTextBoxColumn24.Name = "colItemId"
-        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn24.Width = 75
-        GridViewTextBoxColumn25.EnableExpressionEditor = False
-        GridViewTextBoxColumn25.FieldName = "ItemName"
-        GridViewTextBoxColumn25.FormatString = "{0:F2}"
-        GridViewTextBoxColumn25.HeaderText = "Item Name"
-        GridViewTextBoxColumn25.Name = "colItemName"
-        GridViewTextBoxColumn25.Width = 185
-        GridViewTextBoxColumn26.EnableExpressionEditor = False
-        GridViewTextBoxColumn26.FieldName = "IssueWt"
-        GridViewTextBoxColumn26.FormatString = "{0:F2}"
-        GridViewTextBoxColumn26.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn26.Name = "colReceiveWt"
-        GridViewTextBoxColumn26.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn26.Width = 80
-        GridViewTextBoxColumn27.EnableExpressionEditor = False
-        GridViewTextBoxColumn27.FieldName = "IssuePr"
-        GridViewTextBoxColumn27.HeaderText = "Receive %"
-        GridViewTextBoxColumn27.Name = "colReceivePr"
-        GridViewTextBoxColumn27.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn27.Width = 80
-        GridViewTextBoxColumn28.EnableExpressionEditor = False
-        GridViewTextBoxColumn28.FieldName = "ConvPr"
-        GridViewTextBoxColumn28.HeaderText = "Conv %"
-        GridViewTextBoxColumn28.Name = "colConvPr"
-        GridViewTextBoxColumn28.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn28.Width = 70
-        GridViewTextBoxColumn29.EnableExpressionEditor = False
-        GridViewTextBoxColumn29.FieldName = "FineWt"
-        GridViewTextBoxColumn29.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn29.Name = "colFineWt"
-        GridViewTextBoxColumn29.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn29.Width = 80
-        GridViewTextBoxColumn30.EnableExpressionEditor = False
-        GridViewTextBoxColumn30.FieldName = "StockAdd"
-        GridViewTextBoxColumn30.HeaderText = "Stock Add"
-        GridViewTextBoxColumn30.IsVisible = False
-        GridViewTextBoxColumn30.Name = "colStockAdd"
-        GridViewTextBoxColumn30.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn30.Width = 80
-        Me.dgvReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Sr."
+        GridViewTextBoxColumn1.Name = "colSrNo"
+        GridViewTextBoxColumn1.Width = 42
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "ItemType"
+        GridViewTextBoxColumn2.HeaderText = "Item Type"
+        GridViewTextBoxColumn2.Name = "colItemType"
+        GridViewTextBoxColumn2.Width = 80
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "SlipBagNo"
+        GridViewTextBoxColumn3.HeaderText = "Slip/Bag No"
+        GridViewTextBoxColumn3.Name = "colSlipBagNo"
+        GridViewTextBoxColumn3.Width = 80
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "ItemId"
+        GridViewTextBoxColumn4.FormatString = "{0:F2}"
+        GridViewTextBoxColumn4.HeaderText = "Item Id"
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "colItemId"
+        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn4.Width = 75
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "ItemName"
+        GridViewTextBoxColumn5.FormatString = "{0:F2}"
+        GridViewTextBoxColumn5.HeaderText = "Item Name"
+        GridViewTextBoxColumn5.Name = "colItemName"
+        GridViewTextBoxColumn5.Width = 185
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "IssueWt"
+        GridViewTextBoxColumn6.FormatString = "{0:F2}"
+        GridViewTextBoxColumn6.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn6.Name = "colReceiveWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 80
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "IssuePr"
+        GridViewTextBoxColumn7.HeaderText = "Receive %"
+        GridViewTextBoxColumn7.Name = "colReceivePr"
+        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn7.Width = 80
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "ConvPr"
+        GridViewTextBoxColumn8.HeaderText = "Conv %"
+        GridViewTextBoxColumn8.Name = "colConvPr"
+        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn8.Width = 70
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "FineWt"
+        GridViewTextBoxColumn9.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn9.Name = "colFineWt"
+        GridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn9.Width = 80
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "StockAdd"
+        GridViewTextBoxColumn10.HeaderText = "Stock Add"
+        GridViewTextBoxColumn10.IsVisible = False
+        GridViewTextBoxColumn10.Name = "colStockAdd"
+        GridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn10.Width = 80
+        Me.dgvReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
         Me.dgvReceive.MasterTemplate.EnableGrouping = False
         Me.dgvReceive.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvReceive.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.dgvReceive.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvReceive.Name = "dgvReceive"
         Me.dgvReceive.ReadOnly = True
         Me.dgvReceive.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -398,7 +401,7 @@ Partial Class frmStockReceive
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lstReceive)
+        Me.TabPage2.Controls.Add(Me.dgvStockReceive)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(714, 510)
@@ -406,60 +409,68 @@ Partial Class frmStockReceive
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'lstReceive
+        'dgvStockReceive
         '
-        Me.lstReceive.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.CIReceiptId, Me.CIReceiptDt, Me.CfDeptId, Me.CfDepartment, Me.CtDeptId, Me.CtDepartment, Me.CReceiptNo, Me.CCreatedBy})
-        Me.lstReceive.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lstReceive.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstReceive.FullRowSelect = True
-        Me.lstReceive.GridLines = True
-        Me.lstReceive.Location = New System.Drawing.Point(0, 0)
-        Me.lstReceive.Name = "lstReceive"
-        Me.lstReceive.Size = New System.Drawing.Size(714, 510)
-        Me.lstReceive.TabIndex = 0
-        Me.lstReceive.UseCompatibleStateImageBehavior = False
-        Me.lstReceive.View = System.Windows.Forms.View.Details
+        Me.dgvStockReceive.BackColor = System.Drawing.Color.Transparent
+        Me.dgvStockReceive.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvStockReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvStockReceive.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvStockReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvStockReceive.Location = New System.Drawing.Point(-4, 1)
         '
-        'CIReceiptId
         '
-        Me.CIReceiptId.Text = "Receipt Id"
-        Me.CIReceiptId.Width = 80
         '
-        'CIReceiptDt
-        '
-        Me.CIReceiptDt.Text = "Receipt Dt."
-        Me.CIReceiptDt.Width = 80
-        '
-        'CfDeptId
-        '
-        Me.CfDeptId.Text = "Dept Id"
-        Me.CfDeptId.Width = 0
-        '
-        'CfDepartment
-        '
-        Me.CfDepartment.Text = "Fr Dept."
-        Me.CfDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.CfDepartment.Width = 125
-        '
-        'CtDeptId
-        '
-        Me.CtDeptId.Width = 0
-        '
-        'CtDepartment
-        '
-        Me.CtDepartment.Text = "To Dept."
-        Me.CtDepartment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.CtDepartment.Width = 125
-        '
-        'CReceiptNo
-        '
-        Me.CReceiptNo.Text = "Voucher No"
-        Me.CReceiptNo.Width = 110
-        '
-        'CCreatedBy
-        '
-        Me.CCreatedBy.Text = "Created By"
-        Me.CCreatedBy.Width = 203
+        Me.dgvStockReceive.MasterTemplate.AllowAddNewRow = False
+        Me.dgvStockReceive.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "ReceiptId"
+        GridViewTextBoxColumn11.HeaderText = "Receipt Id."
+        GridViewTextBoxColumn11.IsVisible = False
+        GridViewTextBoxColumn11.Name = "colReceiptId"
+        GridViewTextBoxColumn12.EnableExpressionEditor = False
+        GridViewTextBoxColumn12.FieldName = "ReceiptDt"
+        GridViewTextBoxColumn12.HeaderText = "Receipt Dt."
+        GridViewTextBoxColumn12.Name = "colReceiptDt"
+        GridViewTextBoxColumn12.Width = 100
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "FrDeptId"
+        GridViewTextBoxColumn13.HeaderText = "FrDept Id."
+        GridViewTextBoxColumn13.IsVisible = False
+        GridViewTextBoxColumn13.Name = "colFrDeptId"
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "FrDept"
+        GridViewTextBoxColumn14.HeaderText = "Fr Dept."
+        GridViewTextBoxColumn14.Name = "colFrDept"
+        GridViewTextBoxColumn14.Width = 175
+        GridViewTextBoxColumn15.EnableExpressionEditor = False
+        GridViewTextBoxColumn15.FieldName = "ToDeptId"
+        GridViewTextBoxColumn15.HeaderText = "ToDept Id."
+        GridViewTextBoxColumn15.IsVisible = False
+        GridViewTextBoxColumn15.Name = "colToDeptId"
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "ToDept"
+        GridViewTextBoxColumn16.HeaderText = "To Dept."
+        GridViewTextBoxColumn16.Name = "colToDept"
+        GridViewTextBoxColumn16.Width = 175
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "VoucherNo"
+        GridViewTextBoxColumn17.HeaderText = "Voucher No."
+        GridViewTextBoxColumn17.Name = "colVoucherNo"
+        GridViewTextBoxColumn17.Width = 100
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "CreatedBy"
+        GridViewTextBoxColumn18.HeaderText = "Created By."
+        GridViewTextBoxColumn18.Name = "colCreatedBy"
+        GridViewTextBoxColumn18.Width = 150
+        Me.dgvStockReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18})
+        Me.dgvStockReceive.MasterTemplate.EnableGrouping = False
+        Me.dgvStockReceive.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvStockReceive.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvStockReceive.Name = "dgvStockReceive"
+        Me.dgvStockReceive.ReadOnly = True
+        Me.dgvStockReceive.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvStockReceive.Size = New System.Drawing.Size(723, 509)
+        Me.dgvStockReceive.TabIndex = 1
         '
         'frmStockReceive
         '
@@ -469,6 +480,7 @@ Partial Class frmStockReceive
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.MaximizeBox = False
         Me.Name = "frmStockReceive"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Stock Receive"
@@ -490,6 +502,8 @@ Partial Class frmStockReceive
         CType(Me.cmbtDepartment, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbfDepartment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgvStockReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvStockReceive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -515,15 +529,7 @@ Partial Class frmStockReceive
     Friend WithEvents Label26 As Label
     Friend WithEvents lblVoucherNo As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents lstReceive As ListView
-    Friend WithEvents CIReceiptId As ColumnHeader
-    Friend WithEvents CIReceiptDt As ColumnHeader
-    Friend WithEvents CfDeptId As ColumnHeader
-    Friend WithEvents CfDepartment As ColumnHeader
-    Friend WithEvents CtDeptId As ColumnHeader
-    Friend WithEvents CtDepartment As ColumnHeader
-    Friend WithEvents CReceiptNo As ColumnHeader
-    Friend WithEvents CCreatedBy As ColumnHeader
     Friend WithEvents txtTransNo As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents cmbVoucherNo As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents dgvStockReceive As Telerik.WinControls.UI.RadGridView
 End Class

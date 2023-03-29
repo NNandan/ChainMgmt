@@ -147,7 +147,7 @@ Partial Class frmOpInterIssue
         '
         'txtIssueWt
         '
-        Me.txtIssueWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssueWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssueWt.Location = New System.Drawing.Point(434, 81)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.Size = New System.Drawing.Size(65, 20)
@@ -156,7 +156,7 @@ Partial Class frmOpInterIssue
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssuePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssuePr.Location = New System.Drawing.Point(500, 81)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(66, 20)
@@ -166,7 +166,7 @@ Partial Class frmOpInterIssue
         'cmbItem
         '
         Me.cmbItem.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Location = New System.Drawing.Point(245, 81)
         Me.cmbItem.Name = "cmbItem"
@@ -175,7 +175,7 @@ Partial Class frmOpInterIssue
         '
         'txtBagNo
         '
-        Me.txtBagNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtBagNo.Location = New System.Drawing.Point(138, 81)
         Me.txtBagNo.Name = "txtBagNo"
         Me.txtBagNo.Size = New System.Drawing.Size(106, 20)
@@ -183,7 +183,7 @@ Partial Class frmOpInterIssue
         '
         'cmbItemType
         '
-        Me.cmbItemType.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItemType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         RadListDataItem5.Text = "Bags"
         RadListDataItem6.Text = "Voucher"
         RadListDataItem7.Text = "Finished Lots"
@@ -220,7 +220,7 @@ Partial Class frmOpInterIssue
         '
         Me.dgvIssue.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvIssue.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvIssue.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvIssue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvIssue.Location = New System.Drawing.Point(2, 101)
@@ -275,56 +275,59 @@ Partial Class frmOpInterIssue
         Me.dgvIssue.ReadOnly = True
         Me.dgvIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvIssue.ShowGroupPanel = False
-        Me.dgvIssue.Size = New System.Drawing.Size(683, 294)
+        Me.dgvIssue.Size = New System.Drawing.Size(683, 291)
         Me.dgvIssue.TabIndex = 146
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(306, 401)
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(306, 398)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 13
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(383, 401)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(383, 398)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 12
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(229, 401)
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnSave.Location = New System.Drawing.Point(229, 398)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 11
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
         Me.lblTransDt.AutoSize = True
         Me.lblTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblTransDt.Location = New System.Drawing.Point(45, 25)
+        Me.lblTransDt.Location = New System.Drawing.Point(50, 25)
         Me.lblTransDt.Name = "lblTransDt"
-        Me.lblTransDt.Size = New System.Drawing.Size(60, 14)
+        Me.lblTransDt.Size = New System.Drawing.Size(56, 14)
         Me.lblTransDt.TabIndex = 11
-        Me.lblTransDt.Text = "Issue Dt.:"
+        Me.lblTransDt.Text = "Issue Dt."
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(25, 49)
+        Me.Label6.Location = New System.Drawing.Point(26, 50)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 14)
+        Me.Label6.Size = New System.Drawing.Size(76, 14)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Voucher No.:"
+        Me.Label6.Text = "Voucher No."
         '
         'txtVocucherNo
         '
-        Me.txtVocucherNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtVocucherNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtVocucherNo.Location = New System.Drawing.Point(109, 47)
         Me.txtVocucherNo.Name = "txtVocucherNo"
         Me.txtVocucherNo.Size = New System.Drawing.Size(85, 20)

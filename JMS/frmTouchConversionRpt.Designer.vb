@@ -61,12 +61,12 @@ Partial Class frmTouchConversionRpt
         GridViewTextBoxColumn1.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn1.HeaderText = "Trans Dt."
         GridViewTextBoxColumn1.Name = "colIssueDt"
-        GridViewTextBoxColumn1.Width = 110
+        GridViewTextBoxColumn1.Width = 90
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "VoucherNo"
         GridViewTextBoxColumn2.HeaderText = "Voucher No"
         GridViewTextBoxColumn2.Name = "colVoucherNo"
-        GridViewTextBoxColumn2.Width = 110
+        GridViewTextBoxColumn2.Width = 90
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "ItemType"
         GridViewTextBoxColumn3.HeaderText = "Item Type"
@@ -80,7 +80,7 @@ Partial Class frmTouchConversionRpt
         GridViewDecimalColumn1.HeaderText = "SlipBag No"
         GridViewDecimalColumn1.Name = "colSlipBagNo"
         GridViewDecimalColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn1.Width = 110
+        GridViewDecimalColumn1.Width = 90
         GridViewDecimalColumn2.AllowFiltering = False
         GridViewDecimalColumn2.AllowGroup = False
         GridViewDecimalColumn2.EnableExpressionEditor = False
@@ -89,7 +89,7 @@ Partial Class frmTouchConversionRpt
         GridViewDecimalColumn2.HeaderText = "Item Name"
         GridViewDecimalColumn2.Name = "colItemName"
         GridViewDecimalColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        GridViewDecimalColumn2.Width = 195
+        GridViewDecimalColumn2.Width = 175
         GridViewDecimalColumn3.AllowFiltering = False
         GridViewDecimalColumn3.AllowGroup = False
         GridViewDecimalColumn3.EnableExpressionEditor = False
@@ -97,31 +97,31 @@ Partial Class frmTouchConversionRpt
         GridViewDecimalColumn3.FormatString = "{0:F2}"
         GridViewDecimalColumn3.HeaderText = "Issue Wt"
         GridViewDecimalColumn3.Name = "colIssueWt"
-        GridViewDecimalColumn3.Width = 100
+        GridViewDecimalColumn3.Width = 90
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "IssuePr"
         GridViewTextBoxColumn4.HeaderText = "Issue %"
         GridViewTextBoxColumn4.Name = "colIssuePr"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 100
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "ConvPr"
         GridViewTextBoxColumn5.HeaderText = "Con. %"
         GridViewTextBoxColumn5.Name = "colConvPr"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 100
+        GridViewTextBoxColumn5.Width = 90
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "FineWt"
         GridViewTextBoxColumn6.HeaderText = "Fine Wt."
         GridViewTextBoxColumn6.Name = "colFineWt"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 100
+        GridViewTextBoxColumn6.Width = 90
         GridViewTextBoxColumn7.EnableExpressionEditor = False
         GridViewTextBoxColumn7.FieldName = "StockAdd"
         GridViewTextBoxColumn7.HeaderText = "Stock Add."
         GridViewTextBoxColumn7.Name = "colStockAdd"
         GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 100
+        GridViewTextBoxColumn7.Width = 90
         Me.dgvTouchConversion.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewDecimalColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7})
         Me.dgvTouchConversion.MasterTemplate.EnableGrouping = False
         Me.dgvTouchConversion.MasterTemplate.ShowRowHeaderColumn = False
@@ -129,13 +129,13 @@ Partial Class frmTouchConversionRpt
         Me.dgvTouchConversion.Name = "dgvTouchConversion"
         Me.dgvTouchConversion.ReadOnly = True
         Me.dgvTouchConversion.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvTouchConversion.Size = New System.Drawing.Size(1140, 691)
+        Me.dgvTouchConversion.Size = New System.Drawing.Size(1007, 699)
         Me.dgvTouchConversion.TabIndex = 5
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(576, 706)
+        Me.btnExit.Location = New System.Drawing.Point(512, 708)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 30
@@ -144,7 +144,7 @@ Partial Class frmTouchConversionRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(500, 706)
+        Me.btnPrint.Location = New System.Drawing.Point(436, 708)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 29
@@ -153,7 +153,7 @@ Partial Class frmTouchConversionRpt
         'frmTouchConversionRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1149, 738)
+        Me.ClientSize = New System.Drawing.Size(1014, 738)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvTouchConversion)

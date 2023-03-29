@@ -13,14 +13,14 @@ Public Class frmStockLossMetalReceived
 
         dgvWipLotNo.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
 
-        Dim totalNameItem As GridViewSummaryItem = New GridViewSummaryItem("colItemName", "Total", GridAggregateFunction.Count)
+        Dim totalItemName As GridViewSummaryItem = New GridViewSummaryItem("colItemName", "Total", GridAggregateFunction.Count)
         Dim totalItemGWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
         Dim totalItemGFt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
         Dim totalItemGPr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
-        totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceivePr)  * 100)"
+        totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceiveWt)  * 100)"
 
-        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalNameItem, totalItemGWt, totalItemGFt, totalItemGPr})
+        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalItemName, totalItemGWt, totalItemGFt, totalItemGPr})
         Me.dgvWipLotNo.SummaryRowsBottom.Add(totalRow)
 
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -32,9 +32,12 @@ Public Class frmStockLossMetalReceived
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "LossDeptReceiptDetails", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "LossDeptReceiptDetails", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception

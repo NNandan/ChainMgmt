@@ -1,10 +1,9 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmAcctOpTransaction
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmAcctOpTransaction_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvWipLotNo.AutoGenerateColumns = False
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -19,9 +18,12 @@ Public Class frmAcctOpTransaction
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchOpStockTransaction", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchOpStockTransaction", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_OpStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception

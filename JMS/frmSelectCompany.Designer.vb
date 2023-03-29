@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmSelectCompany
+Partial Class frmSelectMonthDetails
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -30,19 +30,20 @@ Partial Class frmSelectCompany
         '
         Me.TreeView1.Location = New System.Drawing.Point(2, 22)
         Me.TreeView1.Name = "TreeView1"
-        Me.TreeView1.Size = New System.Drawing.Size(414, 347)
+        Me.TreeView1.Size = New System.Drawing.Size(414, 334)
         Me.TreeView1.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(147, 4)
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label1.Location = New System.Drawing.Point(154, 4)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 13)
+        Me.Label1.Size = New System.Drawing.Size(96, 14)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "COMPANY SELECTION"
+        Me.Label1.Text = "Month Selection"
         '
-        'frmSelectCompany
+        'frmSelectMonthDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -50,8 +51,9 @@ Partial Class frmSelectCompany
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TreeView1)
         Me.MaximizeBox = False
-        Me.Name = "frmSelectCompany"
-        Me.Text = "Select Company"
+        Me.Name = "frmSelectMonthDetails"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Select Months"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

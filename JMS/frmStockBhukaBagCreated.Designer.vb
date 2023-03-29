@@ -22,13 +22,14 @@ Partial Class frmStockBhukaBagCreated
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dgvWipLotNo = New Telerik.WinControls.UI.RadGridView()
         Me.btnPrint = New Telerik.WinControls.UI.RadButton()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -51,48 +52,53 @@ Partial Class frmStockBhukaBagCreated
         '
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransDt"
-        GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn1.MinWidth = 6
-        GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 82
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotNo"
-        GridViewTextBoxColumn2.HeaderText = "Lot No"
-        GridViewTextBoxColumn2.MinWidth = 6
-        GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 122
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "OperationName"
-        GridViewTextBoxColumn3.HeaderText = "Operation"
-        GridViewTextBoxColumn3.MinWidth = 6
-        GridViewTextBoxColumn3.Name = "colOperationName"
-        GridViewTextBoxColumn3.Width = 280
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn4.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn4.MinWidth = 6
-        GridViewTextBoxColumn4.Name = "colReceiveWt"
-        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 93
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "ReceivePr"
-        GridViewTextBoxColumn5.HeaderText = "Receive %"
-        GridViewTextBoxColumn5.MinWidth = 6
-        GridViewTextBoxColumn5.Name = "colReceivePr"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 105
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "FineWt"
-        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn6.MinWidth = 6
-        GridViewTextBoxColumn6.Name = "colFineWt"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 93
-        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
+        GridViewTextBoxColumn15.EnableExpressionEditor = False
+        GridViewTextBoxColumn15.FieldName = "TransDt"
+        GridViewTextBoxColumn15.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn15.MinWidth = 6
+        GridViewTextBoxColumn15.Name = "colTransDt"
+        GridViewTextBoxColumn15.Width = 90
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "LotNo"
+        GridViewTextBoxColumn16.HeaderText = "Lot No"
+        GridViewTextBoxColumn16.MinWidth = 6
+        GridViewTextBoxColumn16.Name = "colLotNumber"
+        GridViewTextBoxColumn16.Width = 100
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "OperationName"
+        GridViewTextBoxColumn17.HeaderText = "Operation"
+        GridViewTextBoxColumn17.MinWidth = 6
+        GridViewTextBoxColumn17.Name = "colOperationName"
+        GridViewTextBoxColumn17.Width = 190
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn18.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn18.MinWidth = 6
+        GridViewTextBoxColumn18.Name = "colReceiveWt"
+        GridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn18.Width = 95
+        GridViewTextBoxColumn19.EnableExpressionEditor = False
+        GridViewTextBoxColumn19.FieldName = "ReceivePr"
+        GridViewTextBoxColumn19.HeaderText = "Receive %"
+        GridViewTextBoxColumn19.MinWidth = 6
+        GridViewTextBoxColumn19.Name = "colReceivePr"
+        GridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn19.Width = 95
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.FieldName = "FineWt"
+        GridViewTextBoxColumn20.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn20.MinWidth = 6
+        GridViewTextBoxColumn20.Name = "colFineWt"
+        GridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn20.Width = 95
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.FieldName = "BhukaBagNo"
+        GridViewTextBoxColumn21.HeaderText = "Bhuka Bag No"
+        GridViewTextBoxColumn21.Name = "colBhukaBagNo"
+        GridViewTextBoxColumn21.Width = 105
+        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -107,12 +113,12 @@ Partial Class frmStockBhukaBagCreated
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(311, 421)
+        Me.btnPrint.Location = New System.Drawing.Point(323, 420)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
-        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(311, 421, 110, 24)
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(323, 420, 110, 24)
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 54
         Me.btnPrint.Text = "&Print"
@@ -121,20 +127,19 @@ Partial Class frmStockBhukaBagCreated
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(389, 421)
+        Me.btnExit.Location = New System.Drawing.Point(401, 420)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(389, 421, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(401, 420, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 53
         Me.btnExit.Text = "E&xit"
         '
         'frmStockBhukaBagCreated
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(776, 450)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnExit)
@@ -144,7 +149,7 @@ Partial Class frmStockBhukaBagCreated
         Me.MaximizeBox = False
         Me.Name = "frmStockBhukaBagCreated"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Bhuka Bag Created"
+        Me.Text = "Scrap Bag Not Received"
         CType(Me.dgvWipLotNo.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvWipLotNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPrint, System.ComponentModel.ISupportInitialize).EndInit()

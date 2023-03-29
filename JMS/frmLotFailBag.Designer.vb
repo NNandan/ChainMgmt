@@ -461,6 +461,7 @@ Partial Class frmLotFailBag
         Me.txtCTransId.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.txtCTransId.Location = New System.Drawing.Point(210, 25)
         Me.txtCTransId.Name = "txtCTransId"
+        Me.txtCTransId.ReadOnly = True
         '
         '
         '
@@ -486,6 +487,7 @@ Partial Class frmLotFailBag
         Me.txtItemName.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtItemName.Location = New System.Drawing.Point(556, 51)
         Me.txtItemName.Name = "txtItemName"
+        Me.txtItemName.ReadOnly = True
         '
         '
         '
@@ -500,6 +502,7 @@ Partial Class frmLotFailBag
         Me.txtCLotFailPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtCLotFailPr.Location = New System.Drawing.Point(556, 105)
         Me.txtCLotFailPr.Name = "txtCLotFailPr"
+        Me.txtCLotFailPr.ReadOnly = True
         '
         '
         '
@@ -515,6 +518,7 @@ Partial Class frmLotFailBag
         Me.txtCLotFailWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtCLotFailWt.Location = New System.Drawing.Point(556, 78)
         Me.txtCLotFailWt.Name = "txtCLotFailWt"
+        Me.txtCLotFailWt.ReadOnly = True
         '
         '
         '
@@ -929,6 +933,7 @@ Partial Class frmLotFailBag
         Me.txtRGrossLoss.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRGrossLoss.Location = New System.Drawing.Point(619, 155)
         Me.txtRGrossLoss.Name = "txtRGrossLoss"
+        Me.txtRGrossLoss.ReadOnly = True
         '
         '
         '
@@ -959,6 +964,7 @@ Partial Class frmLotFailBag
         Me.txtRTotalWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRTotalWt.Location = New System.Drawing.Point(619, 103)
         Me.txtRTotalWt.Name = "txtRTotalWt"
+        Me.txtRTotalWt.ReadOnly = True
         '
         '
         '
@@ -1597,7 +1603,7 @@ Partial Class frmLotFailBag
         'txtUTransId
         '
         Me.txtUTransId.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtUTransId.Location = New System.Drawing.Point(207, 25)
+        Me.txtUTransId.Location = New System.Drawing.Point(219, 25)
         Me.txtUTransId.Name = "txtUTransId"
         '
         '
@@ -1620,7 +1626,7 @@ Partial Class frmLotFailBag
         '
         Me.UTransDt.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 25, 164, 20)
         Me.UTransDt.RootElement.StretchVertically = True
-        Me.UTransDt.Size = New System.Drawing.Size(85, 20)
+        Me.UTransDt.Size = New System.Drawing.Size(91, 20)
         Me.UTransDt.TabIndex = 41
         Me.UTransDt.TabStop = False
         Me.UTransDt.Text = "01/03/2021"

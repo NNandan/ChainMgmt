@@ -1,3 +1,3 @@
-﻿Public Class frmSelectCompany
+﻿Public Class frmSelectMonthDetails
 
 End Class

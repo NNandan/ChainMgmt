@@ -659,6 +659,7 @@ Partial Class frmAccountOpening
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmAccountOpening"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Account Opening"
         Me.ResumeLayout(False)
         Me.PerformLayout()

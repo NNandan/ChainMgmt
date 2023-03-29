@@ -108,7 +108,7 @@ Partial Class frmMetalUsedReport
         Me.dgvMeltingBagList.Name = "dgvMeltingBagList"
         Me.dgvMeltingBagList.ReadOnly = True
         Me.dgvMeltingBagList.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvMeltingBagList.Size = New System.Drawing.Size(712, 370)
+        Me.dgvMeltingBagList.Size = New System.Drawing.Size(712, 371)
         Me.dgvMeltingBagList.TabIndex = 16
         '
         'Label1
@@ -142,7 +142,7 @@ Partial Class frmMetalUsedReport
         'frmMetalUsedReport
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(724, 442)
+        Me.ClientSize = New System.Drawing.Size(724, 440)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.Label1)

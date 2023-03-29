@@ -47,7 +47,7 @@ Partial Class frmRptLotFail
         Me.dgvLotFailList.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLotFailList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLotFailList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvLotFailList.Location = New System.Drawing.Point(4, 5)
+        Me.dgvLotFailList.Location = New System.Drawing.Point(3, 2)
         '
         '
         '
@@ -108,7 +108,7 @@ Partial Class frmRptLotFail
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(300, 402)
+        Me.btnPrint.Location = New System.Drawing.Point(300, 400)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 1
@@ -117,7 +117,7 @@ Partial Class frmRptLotFail
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(378, 402)
+        Me.btnExit.Location = New System.Drawing.Point(378, 400)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 26

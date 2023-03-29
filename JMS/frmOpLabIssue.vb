@@ -1,11 +1,10 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Imports JMS.Common_Cls
 Public Class frmOpLabIssue
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Dim strSQL As String = Nothing
     Dim TempRow As Integer
     Dim GridDoubleClick As Boolean
@@ -51,9 +50,11 @@ Public Class frmOpLabIssue
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_OperationMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()

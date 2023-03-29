@@ -22,16 +22,16 @@ Partial Class frmOpStockBagsNotUsed
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn118 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn119 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn120 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn121 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn122 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn123 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn124 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn125 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn126 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition14 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabOpStock = New System.Windows.Forms.TabControl()
         Me.TabStock = New System.Windows.Forms.TabPage()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
@@ -107,14 +107,15 @@ Partial Class frmOpStockBagsNotUsed
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GBoxMain.Name = "GBoxMain"
         Me.GBoxMain.Padding = New System.Windows.Forms.Padding(4)
-        Me.GBoxMain.Size = New System.Drawing.Size(658, 428)
+        Me.GBoxMain.Size = New System.Drawing.Size(658, 429)
         Me.GBoxMain.TabIndex = 19
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Bags Not Created Details"
         '
         'txtReportPr
         '
-        Me.txtReportPr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtReportPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReportPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtReportPr.Location = New System.Drawing.Point(586, 33)
         Me.txtReportPr.Name = "txtReportPr"
         Me.txtReportPr.Size = New System.Drawing.Size(70, 20)
@@ -132,7 +133,8 @@ Partial Class frmOpStockBagsNotUsed
         '
         'txtBagNo
         '
-        Me.txtBagNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtBagNo.Location = New System.Drawing.Point(112, 33)
         Me.txtBagNo.Name = "txtBagNo"
         Me.txtBagNo.Size = New System.Drawing.Size(75, 20)
@@ -140,7 +142,8 @@ Partial Class frmOpStockBagsNotUsed
         '
         'TransDt
         '
-        Me.TransDt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.TransDt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.TransDt.Location = New System.Drawing.Point(39, 33)
         Me.TransDt.Mask = "00/00/0000"
         Me.TransDt.MaskType = Telerik.WinControls.UI.MaskType.Standard
@@ -152,7 +155,8 @@ Partial Class frmOpStockBagsNotUsed
         '
         'txtReceiveWt
         '
-        Me.txtReceiveWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtReceiveWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtReceiveWt.Location = New System.Drawing.Point(508, 33)
         Me.txtReceiveWt.Name = "txtReceiveWt"
         Me.txtReceiveWt.Size = New System.Drawing.Size(77, 20)
@@ -161,7 +165,8 @@ Partial Class frmOpStockBagsNotUsed
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssuePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssuePr.Location = New System.Drawing.Point(430, 33)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(77, 20)
@@ -170,7 +175,8 @@ Partial Class frmOpStockBagsNotUsed
         '
         'txtIssueWt
         '
-        Me.txtIssueWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssueWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssueWt.Location = New System.Drawing.Point(352, 33)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.Size = New System.Drawing.Size(77, 20)
@@ -179,8 +185,9 @@ Partial Class frmOpStockBagsNotUsed
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbItem.Location = New System.Drawing.Point(188, 33)
         Me.cmbItem.Name = "cmbItem"
         Me.cmbItem.Size = New System.Drawing.Size(163, 20)
@@ -199,7 +206,7 @@ Partial Class frmOpStockBagsNotUsed
         '
         Me.dgvUsedBags.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvUsedBags.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvUsedBags.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvUsedBags.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvUsedBags.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvUsedBags.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvUsedBags.Location = New System.Drawing.Point(2, 54)
@@ -208,50 +215,50 @@ Partial Class frmOpStockBagsNotUsed
         '
         Me.dgvUsedBags.MasterTemplate.AllowAddNewRow = False
         Me.dgvUsedBags.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn118.EnableExpressionEditor = False
-        GridViewTextBoxColumn118.HeaderText = "Sr. "
-        GridViewTextBoxColumn118.Name = "colSrNo"
-        GridViewTextBoxColumn118.Width = 35
-        GridViewTextBoxColumn119.EnableExpressionEditor = False
-        GridViewTextBoxColumn119.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn119.Name = "colTransDt"
-        GridViewTextBoxColumn119.Width = 75
-        GridViewTextBoxColumn120.EnableExpressionEditor = False
-        GridViewTextBoxColumn120.HeaderText = "Bag No."
-        GridViewTextBoxColumn120.Name = "colBagNo"
-        GridViewTextBoxColumn120.Width = 76
-        GridViewTextBoxColumn121.EnableExpressionEditor = False
-        GridViewTextBoxColumn121.HeaderText = "Item Id"
-        GridViewTextBoxColumn121.IsVisible = False
-        GridViewTextBoxColumn121.Name = "colItemId"
-        GridViewTextBoxColumn121.Width = 40
-        GridViewTextBoxColumn122.EnableExpressionEditor = False
-        GridViewTextBoxColumn122.HeaderText = "Item Name"
-        GridViewTextBoxColumn122.Name = "colItemName"
-        GridViewTextBoxColumn122.Width = 165
-        GridViewTextBoxColumn123.EnableExpressionEditor = False
-        GridViewTextBoxColumn123.HeaderText = "Issue Wt."
-        GridViewTextBoxColumn123.Name = "colIssueWt"
-        GridViewTextBoxColumn123.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn123.Width = 79
-        GridViewTextBoxColumn124.EnableExpressionEditor = False
-        GridViewTextBoxColumn124.HeaderText = "Issue %"
-        GridViewTextBoxColumn124.Name = "colIssuePr"
-        GridViewTextBoxColumn124.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn124.Width = 80
-        GridViewTextBoxColumn125.EnableExpressionEditor = False
-        GridViewTextBoxColumn125.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn125.Name = "colReceiveWt"
-        GridViewTextBoxColumn125.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn125.Width = 79
-        GridViewTextBoxColumn126.EnableExpressionEditor = False
-        GridViewTextBoxColumn126.HeaderText = "Report %"
-        GridViewTextBoxColumn126.Name = "colReportPr"
-        GridViewTextBoxColumn126.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn126.Width = 70
-        Me.dgvUsedBags.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn118, GridViewTextBoxColumn119, GridViewTextBoxColumn120, GridViewTextBoxColumn121, GridViewTextBoxColumn122, GridViewTextBoxColumn123, GridViewTextBoxColumn124, GridViewTextBoxColumn125, GridViewTextBoxColumn126})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Sr. "
+        GridViewTextBoxColumn1.Name = "colSrNo"
+        GridViewTextBoxColumn1.Width = 35
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn2.Name = "colTransDt"
+        GridViewTextBoxColumn2.Width = 75
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Bag No."
+        GridViewTextBoxColumn3.Name = "colBagNo"
+        GridViewTextBoxColumn3.Width = 76
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Item Id"
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "colItemId"
+        GridViewTextBoxColumn4.Width = 40
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "Item Name"
+        GridViewTextBoxColumn5.Name = "colItemName"
+        GridViewTextBoxColumn5.Width = 165
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn6.Name = "colIssueWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 79
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.HeaderText = "Issue %"
+        GridViewTextBoxColumn7.Name = "colIssuePr"
+        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn7.Width = 80
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn8.Name = "colReceiveWt"
+        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn8.Width = 79
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.HeaderText = "Report %"
+        GridViewTextBoxColumn9.Name = "colReportPr"
+        GridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn9.Width = 70
+        Me.dgvUsedBags.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9})
         Me.dgvUsedBags.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvUsedBags.MasterTemplate.ViewDefinition = TableViewDefinition14
+        Me.dgvUsedBags.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvUsedBags.Name = "dgvUsedBags"
         Me.dgvUsedBags.ReadOnly = True
         Me.dgvUsedBags.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -261,27 +268,30 @@ Partial Class frmOpStockBagsNotUsed
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(291, 400)
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(291, 399)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 9
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(368, 400)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(368, 399)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 8
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(214, 400)
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnSave.Location = New System.Drawing.Point(214, 399)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 7
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'frmOpStockBagsNotUsed
         '

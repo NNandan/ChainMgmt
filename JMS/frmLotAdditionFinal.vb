@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmLotAdditionFinal
@@ -46,29 +45,29 @@ Public Class frmLotAdditionFinal
     End Sub
     Private Sub txtTotalIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtTotalIssueWt.TextChanged
         Try
-            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtExtraRecieveWt.Text), "0.00")
+            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtTotalReceiveWt.Text), "0.00")
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
     Private Sub txtTotalIssueFine_TextChanged(sender As Object, e As EventArgs) Handles txtTotalIssueFine.TextChanged
         Try
-            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtExtraRecieveFine.Text)), "0.00")
+            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtTotalReceiveFine.Text)), "0.00")
             txtActualRecieveFine.Text = Format(Val(txtActualIssueFine.Text), "0.00")
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-    Private Sub txtExtraRecieveWt_TextChanged(sender As Object, e As EventArgs) Handles txtExtraRecieveWt.TextChanged
+    Private Sub txtExtraRecieveWt_TextChanged(sender As Object, e As EventArgs) Handles txtTotalReceiveWt.TextChanged
         Try
-            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtExtraRecieveWt.Text), "0.00")
+            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtTotalReceiveWt.Text), "0.00")
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-    Private Sub txtExtraRecieveFine_TextChanged(sender As Object, e As EventArgs) Handles txtExtraRecieveFine.TextChanged
+    Private Sub txtExtraRecieveFine_TextChanged(sender As Object, e As EventArgs) Handles txtTotalReceiveFine.TextChanged
         Try
-            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtExtraRecieveFine.Text)), "0.00")
+            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtTotalReceiveFine.Text)), "0.00")
             txtActualRecieveFine.Text = Format(Val(txtActualIssueFine.Text), "0.00")
         Catch ex As Exception
             Throw ex
@@ -77,8 +76,15 @@ Public Class frmLotAdditionFinal
     Private Sub txtActualIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualIssueWt.TextChanged
         Try
             txtActualReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
+            txtReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
 
-            txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+            If rbKdm.Checked = True Then
+                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtPowder.Text = 0
+            Else
+                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtLoss.Text = 0
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -86,6 +92,7 @@ Public Class frmLotAdditionFinal
     Private Sub txtActualIssueFine_TextChanged(sender As Object, e As EventArgs) Handles txtActualIssueFine.TextChanged
         Try
             txtActualReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
+            txtReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
         Catch ex As Exception
             Throw ex
         End Try
@@ -94,7 +101,14 @@ Public Class frmLotAdditionFinal
         Try
             txtActualIssuePr.Text = IIf(Val(txtActualRecieveFine.Text) = 0 Or Val(txtActualRecieveWt.Text) = 0, 0, Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00"))
             txtActualIssuePr.Text = Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00")
-            txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+
+            If rbKdm.Checked = True Then
+                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtPowder.Text = 0
+            Else
+                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtLoss.Text = 0
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -153,12 +167,13 @@ Public Class frmLotAdditionFinal
 
     End Sub
     Private Sub fillLotIssueHeader(ByVal sLotNo As String)
-
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+        End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
@@ -228,9 +243,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchReceiveData", DbType.String))
                 .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
             End With
@@ -247,9 +262,9 @@ ErrHandler:
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchLotNo", DbType.String))
         End With
 
@@ -271,11 +286,12 @@ ErrHandler:
         End Try
     End Sub
     Private Sub fillLabour()
-
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
         Dim dt As DataTable = New DataTable()
@@ -309,9 +325,9 @@ ErrHandler:
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
         End With
 
@@ -370,10 +386,10 @@ ErrHandler:
                 'dSumOfTotalReceiveFine += Convert.ToDecimal(row.Cells(4).Value)
             Next
 
-            txtExtraRecieveWt.Text = Format(dSumOfTotalReceiveWt, "0.00")
-            txtExtraRecieveFine.Text = Format(dSumOfTotalReceiveFine, "0.000")
+            txtTotalReceiveWt.Text = Format(dSumOfTotalReceiveWt, "0.00")
+            txtTotalReceiveFine.Text = Format(dSumOfTotalReceiveFine, "0.000")
 
-            txtExtraRecievePr.Text = Format((Val(dSumOfTotalReceiveFine) / Val(dSumOfTotalReceiveWt)) * 100, "0.00")
+            txtTotalReceivePr.Text = Format((Val(dSumOfTotalReceiveFine) / Val(dSumOfTotalReceiveWt)) * 100, "0.00")
 
         Catch ex As Exception
             Throw ex
@@ -392,7 +408,7 @@ ErrHandler:
         Try
             Call Clear_Form()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub bindListView()
@@ -514,11 +530,11 @@ ErrHandler:
                 .Add(dbManager.CreateParameter("@HIsOpening", 1, DbType.Boolean))
 
                 'For Transaction
-                .Add(dbManager.CreateParameter("@TReceiveWt", txtChain.Text, DbType.String))
-                .Add(dbManager.CreateParameter("@TReceivePr", txtActualReceivePr.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@TReceiveWt", txtChain.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@TReceivePr", txtActualIssuePr.Text.Trim(), DbType.String))
 
                 .Add(dbManager.CreateParameter("@TIssueWt", txtActualIssueWt.Text.Trim, DbType.String))
-                .Add(dbManager.CreateParameter("@TIssuePr", txtActualIssuePr.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@TIssuePr", txtActualReceivePr.Text.Trim, DbType.String))
                 'For Transaction
 
                 .Add(dbManager.CreateParameter("@DItemId", alParaval.Item(iValue), DbType.String))
@@ -602,6 +618,19 @@ ErrHandler:
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
+
+    Private Sub rbKdm_CheckedChanged(sender As Object, e As EventArgs) Handles rbKdm.CheckedChanged
+        Me.KDMCalculate()
+
+        If rbKdm.Checked = True Then
+            txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+            txtPowder.Text = 0
+        Else
+            txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+            txtLoss.Text = 0
+        End If
+    End Sub
+
     Private Sub cmbTLabour_Enter(sender As Object, e As EventArgs) Handles cmbTLabour.Enter
         cmbTLabour.ShowDropDown()
     End Sub
@@ -614,6 +643,7 @@ ErrHandler:
             txtLotRecieveId.Tag = ""
             txtLotRecieveId.Clear()
             TransDt.Value = DateTime.Now()
+            rbKdm.Checked = True
 
             'cmbGridItem.SelectedIndex = 0
             cmbItem.SelectedIndex = 0
@@ -636,18 +666,20 @@ ErrHandler:
             txtLoss.Clear()
             txtTotal.Clear()
 
+            txtPowder.Clear()
+            txtReceivePr.Clear()
             txtTotalIssueWt.Clear()
-            txtExtraRecieveWt.Clear()
+            txtTotalReceiveWt.Clear()
             txtActualIssueWt.Clear()
             txtActualRecieveWt.Clear()
 
             txtTotalIssuePr.Clear()
-            txtExtraRecievePr.Clear()
+            txtTotalReceivePr.Clear()
             txtActualReceivePr.Clear()
             txtActualIssuePr.Clear()
 
             txtTotalIssueFine.Clear()
-            txtExtraRecieveFine.Clear()
+            txtTotalReceiveFine.Clear()
             txtActualIssueFine.Clear()
             txtActualRecieveFine.Clear()
 
@@ -681,4 +713,13 @@ ErrHandler:
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
+    Private Sub KDMCalculate()
+        Me.GridIssueTotal()
+        Me.GridReceiveTotal()
+    End Sub
+
+    Private Sub PowderCalclulate()
+        Me.GridIssueTotal()
+        Me.GridReceiveTotal()
+    End Sub
 End Class

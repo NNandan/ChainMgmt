@@ -239,9 +239,9 @@ Public Class frmBhukaBag
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetRecordByBhukaSrNo", DbType.String))
                 .Add(dbManager.CreateParameter("@BId", cmbRBagtype.SelectedValue, DbType.Int16))
                 .Add(dbManager.CreateParameter("@BagSrNo", Convert.ToString(cmbRBagNo.SelectedItem.Text.Trim), DbType.String))
@@ -413,7 +413,7 @@ Public Class frmBhukaBag
                 txtUIssueFineWt.Text = dtData.Rows(0).Item("IssueFineWt").ToString()
 
                 txtUWtOnScale.Text = dtData.Rows(0).Item("WtOnScale").ToString()
-                txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonRecieve").ToString()
+                txtUcarbonReceive.Text = dtData.Rows(0).Item("CarbonReceive").ToString()
 
                 'txtUGrossLoss.Text = dtData.Rows(0).Item("GrossLossWt").ToString()
             Else

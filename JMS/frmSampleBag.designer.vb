@@ -239,7 +239,7 @@ Partial Class frmSampleBag
         'txtCTransId
         '
         Me.txtCTransId.BackColor = System.Drawing.Color.White
-        Me.txtCTransId.Location = New System.Drawing.Point(233, 83)
+        Me.txtCTransId.Location = New System.Drawing.Point(246, 83)
         Me.txtCTransId.Name = "txtCTransId"
         Me.txtCTransId.ReadOnly = True
         Me.txtCTransId.Size = New System.Drawing.Size(10, 22)
@@ -259,9 +259,10 @@ Partial Class frmSampleBag
         '
         Me.cmbCBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbCBagtype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbCBagtype.Location = New System.Drawing.Point(81, 85)
+        Me.cmbCBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbCBagtype.Location = New System.Drawing.Point(79, 85)
         Me.cmbCBagtype.Name = "cmbCBagtype"
-        Me.cmbCBagtype.Size = New System.Drawing.Size(148, 20)
+        Me.cmbCBagtype.Size = New System.Drawing.Size(165, 20)
         Me.cmbCBagtype.TabIndex = 833
         '
         'GroupBox6
@@ -280,11 +281,11 @@ Partial Class frmSampleBag
         '
         'dtfrom
         '
-        Me.dtfrom.Font = New System.Drawing.Font("Calibri", 9.0!)
+        Me.dtfrom.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dtfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtfrom.Location = New System.Drawing.Point(50, 20)
+        Me.dtfrom.Location = New System.Drawing.Point(38, 20)
         Me.dtfrom.Name = "dtfrom"
-        Me.dtfrom.Size = New System.Drawing.Size(83, 22)
+        Me.dtfrom.Size = New System.Drawing.Size(86, 22)
         Me.dtfrom.TabIndex = 0
         '
         'Label1
@@ -293,19 +294,19 @@ Partial Class frmSampleBag
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(22, 23)
+        Me.Label1.Location = New System.Drawing.Point(9, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(25, 14)
+        Me.Label1.Size = New System.Drawing.Size(17, 14)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Fr :"
+        Me.Label1.Text = "Fr"
         '
         'dtto
         '
-        Me.dtto.Font = New System.Drawing.Font("Calibri", 9.0!)
+        Me.dtto.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dtto.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dtto.Location = New System.Drawing.Point(185, 20)
         Me.dtto.Name = "dtto"
-        Me.dtto.Size = New System.Drawing.Size(83, 22)
+        Me.dtto.Size = New System.Drawing.Size(88, 22)
         Me.dtto.TabIndex = 1
         '
         'Label30
@@ -314,16 +315,16 @@ Partial Class frmSampleBag
         Me.Label30.BackColor = System.Drawing.Color.Transparent
         Me.Label30.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.Label30.ForeColor = System.Drawing.Color.Black
-        Me.Label30.Location = New System.Drawing.Point(156, 24)
+        Me.Label30.Location = New System.Drawing.Point(152, 24)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(30, 14)
+        Me.Label30.Size = New System.Drawing.Size(22, 14)
         Me.Label30.TabIndex = 1
-        Me.Label30.Text = "To :"
+        Me.Label30.Text = "To"
         '
         'lblBagType
         '
         Me.lblBagType.AutoSize = True
-        Me.lblBagType.Location = New System.Drawing.Point(11, 88)
+        Me.lblBagType.Location = New System.Drawing.Point(10, 88)
         Me.lblBagType.Name = "lblBagType"
         Me.lblBagType.Size = New System.Drawing.Size(65, 14)
         Me.lblBagType.TabIndex = 29
@@ -419,7 +420,7 @@ Partial Class frmSampleBag
         'btnCExit
         '
         Me.btnCExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCExit.Location = New System.Drawing.Point(385, 368)
+        Me.btnCExit.Location = New System.Drawing.Point(382, 368)
         Me.btnCExit.Name = "btnCExit"
         Me.btnCExit.Size = New System.Drawing.Size(75, 25)
         Me.btnCExit.TabIndex = 78
@@ -467,20 +468,20 @@ Partial Class frmSampleBag
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(307, 368)
+        Me.btnCancel.Location = New System.Drawing.Point(306, 368)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 39
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(229, 368)
+        Me.btnSave.Location = New System.Drawing.Point(230, 368)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 38
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'dgvTSampleBag
         '
@@ -601,7 +602,7 @@ Partial Class frmSampleBag
         GridViewTextBoxColumn12.Name = "colSampleWt"
         GridViewTextBoxColumn12.ReadOnly = True
         GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn12.Width = 80
+        GridViewTextBoxColumn12.Width = 90
         GridViewTextBoxColumn13.AllowFiltering = False
         GridViewTextBoxColumn13.AllowGroup = False
         GridViewTextBoxColumn13.EnableExpressionEditor = False
@@ -611,7 +612,7 @@ Partial Class frmSampleBag
         GridViewTextBoxColumn13.Name = "colReceivePr"
         GridViewTextBoxColumn13.ReadOnly = True
         GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn13.Width = 80
+        GridViewTextBoxColumn13.Width = 90
         GridViewTextBoxColumn14.AllowFiltering = False
         GridViewTextBoxColumn14.AllowGroup = False
         GridViewTextBoxColumn14.EnableExpressionEditor = False
@@ -621,7 +622,7 @@ Partial Class frmSampleBag
         GridViewTextBoxColumn14.Name = "colFineWt"
         GridViewTextBoxColumn14.ReadOnly = True
         GridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn14.Width = 80
+        GridViewTextBoxColumn14.Width = 90
         GridViewTextBoxColumn15.EnableExpressionEditor = False
         GridViewTextBoxColumn15.FieldName = "OperationId"
         GridViewTextBoxColumn15.HeaderText = "Operation Id."

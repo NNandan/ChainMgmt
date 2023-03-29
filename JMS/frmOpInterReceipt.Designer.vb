@@ -23,13 +23,13 @@ Partial Class frmOpInterReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOpInterReceipt))
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabOpStock = New System.Windows.Forms.TabControl()
         Me.TabStock = New System.Windows.Forms.TabPage()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
@@ -117,7 +117,7 @@ Partial Class frmOpInterReceipt
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(466, 61)
+        Me.Label1.Location = New System.Drawing.Point(466, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(215, 14)
         Me.Label1.TabIndex = 157
@@ -126,38 +126,41 @@ Partial Class frmOpInterReceipt
         'txtFineWt
         '
         Me.txtFineWt.BackColor = System.Drawing.Color.White
-        Me.txtFineWt.Location = New System.Drawing.Point(410, 80)
+        Me.txtFineWt.Location = New System.Drawing.Point(600, 80)
         Me.txtFineWt.Name = "txtFineWt"
         Me.txtFineWt.ReadOnly = True
-        Me.txtFineWt.Size = New System.Drawing.Size(83, 20)
+        Me.txtFineWt.Size = New System.Drawing.Size(84, 20)
         Me.txtFineWt.TabIndex = 6
         Me.txtFineWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtReceivePr
         '
-        Me.txtReceivePr.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtReceivePr.Location = New System.Drawing.Point(325, 80)
+        Me.txtReceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceivePr.Location = New System.Drawing.Point(517, 80)
         Me.txtReceivePr.Name = "txtReceivePr"
-        Me.txtReceivePr.Size = New System.Drawing.Size(84, 20)
+        Me.txtReceivePr.Size = New System.Drawing.Size(82, 20)
         Me.txtReceivePr.TabIndex = 5
         Me.txtReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtReceiveWt
         '
-        Me.txtReceiveWt.BackColor = System.Drawing.Color.LemonChiffon
-        Me.txtReceiveWt.Location = New System.Drawing.Point(242, 80)
+        Me.txtReceiveWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveWt.Location = New System.Drawing.Point(433, 80)
         Me.txtReceiveWt.Name = "txtReceiveWt"
-        Me.txtReceiveWt.Size = New System.Drawing.Size(82, 20)
+        Me.txtReceiveWt.Size = New System.Drawing.Size(83, 20)
         Me.txtReceiveWt.TabIndex = 4
         Me.txtReceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbItem.Location = New System.Drawing.Point(48, 80)
         Me.cmbItem.Name = "cmbItem"
-        Me.cmbItem.Size = New System.Drawing.Size(193, 20)
+        Me.cmbItem.Size = New System.Drawing.Size(384, 20)
         Me.cmbItem.TabIndex = 3
         '
         'txtSrNo
@@ -188,7 +191,7 @@ Partial Class frmOpInterReceipt
         '
         Me.dgvStockReceipt.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvStockReceipt.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvStockReceipt.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvStockReceipt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvStockReceipt.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvStockReceipt.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvStockReceipt.Location = New System.Drawing.Point(2, 101)
@@ -197,36 +200,36 @@ Partial Class frmOpInterReceipt
         '
         Me.dgvStockReceipt.MasterTemplate.AllowAddNewRow = False
         Me.dgvStockReceipt.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.HeaderText = "Sr. "
-        GridViewTextBoxColumn19.Name = "colSrNo"
-        GridViewTextBoxColumn19.Width = 45
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.HeaderText = "Item Id"
-        GridViewTextBoxColumn20.IsVisible = False
-        GridViewTextBoxColumn20.Name = "colItemId"
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.HeaderText = "Item Name"
-        GridViewTextBoxColumn21.Name = "colItemName"
-        GridViewTextBoxColumn21.Width = 195
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn22.Name = "colReceiveWt"
-        GridViewTextBoxColumn22.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn22.Width = 85
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.HeaderText = "Receive %"
-        GridViewTextBoxColumn23.Name = "colReceivePr"
-        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn23.Width = 85
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn24.Name = "colFineWt"
-        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn24.Width = 85
-        Me.dgvStockReceipt.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Sr. "
+        GridViewTextBoxColumn1.Name = "colSrNo"
+        GridViewTextBoxColumn1.Width = 45
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Item Id"
+        GridViewTextBoxColumn2.IsVisible = False
+        GridViewTextBoxColumn2.Name = "colItemId"
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Item Name"
+        GridViewTextBoxColumn3.Name = "colItemName"
+        GridViewTextBoxColumn3.Width = 385
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn4.Name = "colReceiveWt"
+        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn4.Width = 85
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "Receive %"
+        GridViewTextBoxColumn5.Name = "colReceivePr"
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 85
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn6.Name = "colFineWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 85
+        Me.dgvStockReceipt.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
         Me.dgvStockReceipt.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvStockReceipt.MasterTemplate.ViewDefinition = TableViewDefinition4
+        Me.dgvStockReceipt.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvStockReceipt.Name = "dgvStockReceipt"
         Me.dgvStockReceipt.ReadOnly = True
         Me.dgvStockReceipt.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -236,51 +239,55 @@ Partial Class frmOpInterReceipt
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(318, 401)
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(319, 400)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 10
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(395, 401)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(396, 400)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 9
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(241, 401)
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnSave.Location = New System.Drawing.Point(242, 400)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 8
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
         Me.lblTransDt.AutoSize = True
         Me.lblTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTransDt.Location = New System.Drawing.Point(44, 25)
+        Me.lblTransDt.Location = New System.Drawing.Point(49, 25)
         Me.lblTransDt.Name = "lblTransDt"
-        Me.lblTransDt.Size = New System.Drawing.Size(60, 14)
+        Me.lblTransDt.Size = New System.Drawing.Size(56, 14)
         Me.lblTransDt.TabIndex = 11
-        Me.lblTransDt.Text = "Issue Dt.:"
+        Me.lblTransDt.Text = "Issue Dt."
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(24, 49)
+        Me.Label6.Location = New System.Drawing.Point(30, 50)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 14)
+        Me.Label6.Size = New System.Drawing.Size(76, 14)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Voucher No.:"
+        Me.Label6.Text = "Voucher No."
         '
         'txtVocucherNo
         '
-        Me.txtVocucherNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtVocucherNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtVocucherNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtVocucherNo.Location = New System.Drawing.Point(109, 47)
         Me.txtVocucherNo.Name = "txtVocucherNo"
         Me.txtVocucherNo.Size = New System.Drawing.Size(85, 20)

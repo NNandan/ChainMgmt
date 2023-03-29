@@ -13,17 +13,16 @@ Public Class frmStockLotFailBags
         dgvWipLotNo.CurrentRow = Nothing
 
         Dim totalNameItem As GridViewSummaryItem = New GridViewSummaryItem("colOperationName", "Total", GridAggregateFunction.Count)
-        Dim totalItemGWt As GridViewSummaryItem = New GridViewSummaryItem("colTransferWt", "{0}", GridAggregateFunction.Sum)
-        Dim totalItemGFt As GridViewSummaryItem = New GridViewSummaryItem("colIssuePr", "{0}", GridAggregateFunction.Sum)
+        Dim totalItemGWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
+        Dim totalItemGFt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
-        'Dim totalItemGPr As GridViewSummaryItem = New GridViewSummaryItem("colIssuePr", "{0: 0.00}", GridAggregateFunction.None)
-        'totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colIssueWt)  * 100)"
+        Dim totalItemGPr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
+        totalItemGPr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceiveWt)  * 100)"
 
-        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalNameItem, totalItemGWt, totalItemGFt})
+        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalNameItem, totalItemGWt, totalItemGFt, totalItemGPr})
         Me.dgvWipLotNo.SummaryRowsBottom.Add(totalRow)
 
         dgvWipLotNo.DataSource = FetchAllRecords()
-
     End Sub
     Private Function FetchAllRecords() As DataTable
 
@@ -34,10 +33,10 @@ Public Class frmStockLotFailBags
             parameters.Clear()
 
             With parameters
-                .Add(dbManager.CreateParameter("@ActionType", "LotFailBagCreatedDetails", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "LotFailBagNotReceived", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_BagsStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -75,5 +74,21 @@ Public Class frmStockLotFailBags
         Finally
             Me.Cursor = Cursors.Default
         End Try
+    End Sub
+
+    Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
+        If TypeOf e.Row Is GridViewSummaryRowInfo Then
+
+            If e.Column.Name = "colOperationName" Then
+                e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            Else
+                e.CellElement.TextAlignment = ContentAlignment.MiddleRight
+            End If
+        End If
+
+        If TypeOf e.CellElement Is GridSummaryCellElement Then
+            Dim summaryFont As Font = New Font("Tahoma", 9, FontStyle.Bold)
+            e.CellElement.Font = summaryFont
+        End If
     End Sub
 End Class

@@ -6,7 +6,7 @@ Public Class frmOperationMaster
 
     Private mFr_State As FormState
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Objerr As New ErrorProvider()
     Private Property Fr_Mode() As FormState
         Get

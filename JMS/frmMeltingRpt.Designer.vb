@@ -95,7 +95,7 @@ Partial Class frmMeltingRpt
         '
         Me.ObjGrdView.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ObjGrdView.Cursor = System.Windows.Forms.Cursors.Default
-        Me.ObjGrdView.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.ObjGrdView.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ObjGrdView.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ObjGrdView.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.ObjGrdView.Location = New System.Drawing.Point(6, 22)
@@ -196,19 +196,19 @@ Partial Class frmMeltingRpt
         Me.txtItemName.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemName.Location = New System.Drawing.Point(388, 26)
         Me.txtItemName.Name = "txtItemName"
-        Me.txtItemName.Size = New System.Drawing.Size(84, 22)
+        Me.txtItemName.Size = New System.Drawing.Size(122, 22)
         Me.txtItemName.TabIndex = 14
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(308, 30)
+        Me.Label2.Location = New System.Drawing.Point(317, 31)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 14)
+        Me.Label2.Size = New System.Drawing.Size(68, 14)
         Me.Label2.TabIndex = 13
-        Me.Label2.Text = "Item Name :"
+        Me.Label2.Text = "Item Name"
         '
         'txtRequired
         '
@@ -223,18 +223,18 @@ Partial Class frmMeltingRpt
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(175, 30)
+        Me.Label1.Location = New System.Drawing.Point(185, 30)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 14)
+        Me.Label1.Size = New System.Drawing.Size(71, 14)
         Me.Label1.TabIndex = 11
-        Me.Label1.Text = "Required % :"
+        Me.Label1.Text = "Required %"
         '
         'cmbLotNo
         '
         Me.cmbLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLotNo.FormattingEnabled = True
-        Me.cmbLotNo.Location = New System.Drawing.Point(70, 25)
+        Me.cmbLotNo.Location = New System.Drawing.Point(62, 25)
         Me.cmbLotNo.Name = "cmbLotNo"
         Me.cmbLotNo.Size = New System.Drawing.Size(100, 22)
         Me.cmbLotNo.TabIndex = 10
@@ -243,12 +243,12 @@ Partial Class frmMeltingRpt
         '
         Me.lblLotNo.AutoSize = True
         Me.lblLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblLotNo.Location = New System.Drawing.Point(14, 28)
+        Me.lblLotNo.Location = New System.Drawing.Point(14, 29)
         Me.lblLotNo.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblLotNo.Name = "lblLotNo"
-        Me.lblLotNo.Size = New System.Drawing.Size(52, 14)
+        Me.lblLotNo.Size = New System.Drawing.Size(44, 14)
         Me.lblLotNo.TabIndex = 8
-        Me.lblLotNo.Text = "Lot No :"
+        Me.lblLotNo.Text = "Lot No"
         '
         'frmMeltingRpt
         '

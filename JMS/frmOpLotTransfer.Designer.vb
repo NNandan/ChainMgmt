@@ -22,18 +22,18 @@ Partial Class frmOpLotTransfer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn45 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn46 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn47 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn48 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn49 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn50 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn51 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn52 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn53 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn54 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn55 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabOpStock = New System.Windows.Forms.TabControl()
         Me.TabStock = New System.Windows.Forms.TabPage()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
@@ -73,6 +73,7 @@ Partial Class frmOpLotTransfer
         'TabOpStock
         '
         Me.TabOpStock.Controls.Add(Me.TabStock)
+        Me.TabOpStock.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.TabOpStock.Location = New System.Drawing.Point(-2, 2)
         Me.TabOpStock.Name = "TabOpStock"
         Me.TabOpStock.SelectedIndex = 0
@@ -82,10 +83,10 @@ Partial Class frmOpLotTransfer
         'TabStock
         '
         Me.TabStock.Controls.Add(Me.GBoxMain)
-        Me.TabStock.Location = New System.Drawing.Point(4, 22)
+        Me.TabStock.Location = New System.Drawing.Point(4, 23)
         Me.TabStock.Name = "TabStock"
         Me.TabStock.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabStock.Size = New System.Drawing.Size(750, 436)
+        Me.TabStock.Size = New System.Drawing.Size(750, 435)
         Me.TabStock.TabIndex = 0
         Me.TabStock.Text = "Lot Transfer"
         Me.TabStock.UseVisualStyleBackColor = True
@@ -128,7 +129,7 @@ Partial Class frmOpLotTransfer
         '
         'txtMainLotNo
         '
-        Me.txtMainLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtMainLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtMainLotNo.Location = New System.Drawing.Point(669, 33)
         Me.txtMainLotNo.Name = "txtMainLotNo"
         Me.txtMainLotNo.Size = New System.Drawing.Size(70, 20)
@@ -137,7 +138,7 @@ Partial Class frmOpLotTransfer
         '
         'txtToLotNo
         '
-        Me.txtToLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtToLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtToLotNo.Location = New System.Drawing.Point(601, 33)
         Me.txtToLotNo.Name = "txtToLotNo"
         Me.txtToLotNo.Size = New System.Drawing.Size(67, 20)
@@ -146,7 +147,7 @@ Partial Class frmOpLotTransfer
         '
         'txtFrLotNo
         '
-        Me.txtFrLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtFrLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtFrLotNo.Location = New System.Drawing.Point(532, 33)
         Me.txtFrLotNo.Name = "txtFrLotNo"
         Me.txtFrLotNo.Size = New System.Drawing.Size(68, 20)
@@ -155,7 +156,7 @@ Partial Class frmOpLotTransfer
         '
         'txtTransferPr
         '
-        Me.txtTransferPr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtTransferPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTransferPr.Location = New System.Drawing.Point(463, 33)
         Me.txtTransferPr.Name = "txtTransferPr"
         Me.txtTransferPr.Size = New System.Drawing.Size(68, 20)
@@ -164,7 +165,7 @@ Partial Class frmOpLotTransfer
         '
         'txtTransferWt
         '
-        Me.txtTransferWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtTransferWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTransferWt.Location = New System.Drawing.Point(395, 33)
         Me.txtTransferWt.Name = "txtTransferWt"
         Me.txtTransferWt.Size = New System.Drawing.Size(67, 20)
@@ -173,7 +174,7 @@ Partial Class frmOpLotTransfer
         '
         'cmbOperation
         '
-        Me.cmbOperation.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbOperation.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbOperation.Location = New System.Drawing.Point(253, 33)
         Me.cmbOperation.Name = "cmbOperation"
@@ -182,7 +183,7 @@ Partial Class frmOpLotTransfer
         '
         'TransDt
         '
-        Me.TransDt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.TransDt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TransDt.Location = New System.Drawing.Point(39, 33)
         Me.TransDt.Mask = "00/00/0000"
         Me.TransDt.MaskType = Telerik.WinControls.UI.MaskType.Standard
@@ -194,7 +195,7 @@ Partial Class frmOpLotTransfer
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Location = New System.Drawing.Point(112, 33)
         Me.cmbItem.Name = "cmbItem"
@@ -213,7 +214,7 @@ Partial Class frmOpLotTransfer
         '
         Me.dgvLotTransfer.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvLotTransfer.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvLotTransfer.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvLotTransfer.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLotTransfer.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLotTransfer.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvLotTransfer.Location = New System.Drawing.Point(2, 54)
@@ -222,58 +223,58 @@ Partial Class frmOpLotTransfer
         '
         Me.dgvLotTransfer.MasterTemplate.AllowAddNewRow = False
         Me.dgvLotTransfer.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn45.EnableExpressionEditor = False
-        GridViewTextBoxColumn45.HeaderText = "Sr. "
-        GridViewTextBoxColumn45.Name = "colSrNo"
-        GridViewTextBoxColumn45.Width = 35
-        GridViewTextBoxColumn46.EnableExpressionEditor = False
-        GridViewTextBoxColumn46.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn46.Name = "colTransDt"
-        GridViewTextBoxColumn46.Width = 75
-        GridViewTextBoxColumn47.EnableExpressionEditor = False
-        GridViewTextBoxColumn47.HeaderText = "Item Id"
-        GridViewTextBoxColumn47.IsVisible = False
-        GridViewTextBoxColumn47.Name = "colItemId"
-        GridViewTextBoxColumn47.Width = 40
-        GridViewTextBoxColumn48.EnableExpressionEditor = False
-        GridViewTextBoxColumn48.HeaderText = "Item Name"
-        GridViewTextBoxColumn48.Name = "colItemName"
-        GridViewTextBoxColumn48.Width = 142
-        GridViewTextBoxColumn49.EnableExpressionEditor = False
-        GridViewTextBoxColumn49.HeaderText = "Operation Id"
-        GridViewTextBoxColumn49.IsVisible = False
-        GridViewTextBoxColumn49.Name = "colOperationId"
-        GridViewTextBoxColumn49.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn49.Width = 40
-        GridViewTextBoxColumn50.EnableExpressionEditor = False
-        GridViewTextBoxColumn50.HeaderText = "Operation"
-        GridViewTextBoxColumn50.Name = "colOperationName"
-        GridViewTextBoxColumn50.Width = 142
-        GridViewTextBoxColumn51.EnableExpressionEditor = False
-        GridViewTextBoxColumn51.HeaderText = "Transfer Wt."
-        GridViewTextBoxColumn51.Name = "colTransferWt"
-        GridViewTextBoxColumn51.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn51.Width = 70
-        GridViewTextBoxColumn52.EnableExpressionEditor = False
-        GridViewTextBoxColumn52.HeaderText = "Transfer %"
-        GridViewTextBoxColumn52.Name = "colTransferPr"
-        GridViewTextBoxColumn52.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn52.Width = 70
-        GridViewTextBoxColumn53.EnableExpressionEditor = False
-        GridViewTextBoxColumn53.HeaderText = "Fr Lot No"
-        GridViewTextBoxColumn53.Name = "colFrLotNumber"
-        GridViewTextBoxColumn53.Width = 70
-        GridViewTextBoxColumn54.EnableExpressionEditor = False
-        GridViewTextBoxColumn54.HeaderText = "To Lot No"
-        GridViewTextBoxColumn54.Name = "colToLotNumber"
-        GridViewTextBoxColumn54.Width = 70
-        GridViewTextBoxColumn55.EnableExpressionEditor = False
-        GridViewTextBoxColumn55.HeaderText = "Main Lot No"
-        GridViewTextBoxColumn55.Name = "colMainLotNumber"
-        GridViewTextBoxColumn55.Width = 70
-        Me.dgvLotTransfer.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn45, GridViewTextBoxColumn46, GridViewTextBoxColumn47, GridViewTextBoxColumn48, GridViewTextBoxColumn49, GridViewTextBoxColumn50, GridViewTextBoxColumn51, GridViewTextBoxColumn52, GridViewTextBoxColumn53, GridViewTextBoxColumn54, GridViewTextBoxColumn55})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "Sr. "
+        GridViewTextBoxColumn1.Name = "colSrNo"
+        GridViewTextBoxColumn1.Width = 35
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn2.Name = "colTransDt"
+        GridViewTextBoxColumn2.Width = 75
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Item Id"
+        GridViewTextBoxColumn3.IsVisible = False
+        GridViewTextBoxColumn3.Name = "colItemId"
+        GridViewTextBoxColumn3.Width = 40
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Item Name"
+        GridViewTextBoxColumn4.Name = "colItemName"
+        GridViewTextBoxColumn4.Width = 142
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "Operation Id"
+        GridViewTextBoxColumn5.IsVisible = False
+        GridViewTextBoxColumn5.Name = "colOperationId"
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 40
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.HeaderText = "Operation"
+        GridViewTextBoxColumn6.Name = "colOperationName"
+        GridViewTextBoxColumn6.Width = 142
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.HeaderText = "Transfer Wt."
+        GridViewTextBoxColumn7.Name = "colTransferWt"
+        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn7.Width = 70
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.HeaderText = "Transfer %"
+        GridViewTextBoxColumn8.Name = "colTransferPr"
+        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn8.Width = 70
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.HeaderText = "Fr Lot No"
+        GridViewTextBoxColumn9.Name = "colFrLotNumber"
+        GridViewTextBoxColumn9.Width = 70
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.HeaderText = "To Lot No"
+        GridViewTextBoxColumn10.Name = "colToLotNumber"
+        GridViewTextBoxColumn10.Width = 70
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.HeaderText = "Main Lot No"
+        GridViewTextBoxColumn11.Name = "colMainLotNumber"
+        GridViewTextBoxColumn11.Width = 70
+        Me.dgvLotTransfer.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11})
         Me.dgvLotTransfer.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvLotTransfer.MasterTemplate.ViewDefinition = TableViewDefinition5
+        Me.dgvLotTransfer.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvLotTransfer.Name = "dgvLotTransfer"
         Me.dgvLotTransfer.ReadOnly = True
         Me.dgvLotTransfer.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -283,6 +284,7 @@ Partial Class frmOpLotTransfer
         '
         'btnDelete
         '
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnDelete.Location = New System.Drawing.Point(354, 400)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
@@ -291,6 +293,7 @@ Partial Class frmOpLotTransfer
         '
         'btnCancel
         '
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnCancel.Location = New System.Drawing.Point(431, 400)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
@@ -299,6 +302,7 @@ Partial Class frmOpLotTransfer
         '
         'btnSave
         '
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(277, 400)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)

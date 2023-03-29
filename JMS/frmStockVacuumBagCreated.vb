@@ -12,7 +12,7 @@ Public Class frmStockVacuumBagCreated
         dgvWipLotNo.MasterTemplate.ShowFilteringRow = False
         dgvWipLotNo.CurrentRow = Nothing
 
-        Dim totalItemName As GridViewSummaryItem = New GridViewSummaryItem("colItemName", "Total", GridAggregateFunction.Count)
+        Dim totalItemName As GridViewSummaryItem = New GridViewSummaryItem("colOperationName", "Total", GridAggregateFunction.Count)
         Dim totalReceiveTWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
         Dim totalReceiveFWt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
@@ -31,13 +31,13 @@ Public Class frmStockVacuumBagCreated
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
-                .Add(dbManager.CreateParameter("@ActionType", "VaccumBagCreatedDetails", DbType.String))
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "VaccumBagNotReceived", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_BagsStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -76,5 +76,21 @@ Public Class frmStockVacuumBagCreated
         Finally
             Me.Cursor = Cursors.Default
         End Try
+    End Sub
+
+    Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
+        If TypeOf e.Row Is GridViewSummaryRowInfo Then
+
+            If e.Column.Name = "colOperationName" Then
+                e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            Else
+                e.CellElement.TextAlignment = ContentAlignment.MiddleRight
+            End If
+        End If
+
+        If TypeOf e.CellElement Is GridSummaryCellElement Then
+            Dim summaryFont As Font = New Font("Tahoma", 9, FontStyle.Bold)
+            e.CellElement.Font = summaryFont
+        End If
     End Sub
 End Class

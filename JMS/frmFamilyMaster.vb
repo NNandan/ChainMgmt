@@ -7,8 +7,8 @@ Public Class frmFamilyMaster
 
     Private mFr_State As FormState
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -159,9 +159,9 @@ Public Class frmFamilyMaster
                 Try
 
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@FId", txtFamilyName.Tag, DbType.Int16))
                     End With
 

@@ -174,6 +174,7 @@ Partial Class frmInterDeptIssue
         '
         'txtConversion
         '
+        Me.txtConversion.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtConversion.Location = New System.Drawing.Point(601, 28)
         Me.txtConversion.Name = "txtConversion"
         Me.txtConversion.Size = New System.Drawing.Size(68, 20)
@@ -558,7 +559,7 @@ Partial Class frmInterDeptIssue
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(587, 63)
+        Me.Label2.Location = New System.Drawing.Point(587, 62)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 14)

@@ -22,6 +22,7 @@ Partial Class frmStockSummary
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GrpBWIP = New System.Windows.Forms.GroupBox()
         Me.btnWIPLots = New System.Windows.Forms.Button()
         Me.btnMeltingDetails = New System.Windows.Forms.Button()
@@ -196,7 +197,7 @@ Partial Class frmStockSummary
         Me.lblClosingStockPr = New System.Windows.Forms.Label()
         Me.lblClosingStockWt = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.btnLBagNotUpdated = New System.Windows.Forms.Button()
         Me.LotFailBagNuFw = New Telerik.WinControls.UI.RadTextBox()
         Me.LotFailBagNuPr = New Telerik.WinControls.UI.RadTextBox()
         Me.RadTextBox17 = New Telerik.WinControls.UI.RadTextBox()
@@ -205,9 +206,9 @@ Partial Class frmStockSummary
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnVBagNotUpdated = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnBBagNotUpdated = New System.Windows.Forms.Button()
         Me.SampleBagNuFw = New Telerik.WinControls.UI.RadTextBox()
         Me.SampleBagNuPr = New Telerik.WinControls.UI.RadTextBox()
         Me.VacuumBagNuFw = New Telerik.WinControls.UI.RadTextBox()
@@ -221,6 +222,8 @@ Partial Class frmStockSummary
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btnAccountClosing = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GrpBWIP.SuspendLayout()
         CType(Me.WipFGrossFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WipFGrossPr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2077,8 +2080,10 @@ Partial Class frmStockSummary
         'RadTextBox6
         '
         Me.RadTextBox6.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox6.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox6.Location = New System.Drawing.Point(239, 115)
         Me.RadTextBox6.Name = "RadTextBox6"
+        Me.RadTextBox6.ReadOnly = True
         '
         '
         '
@@ -2090,8 +2095,10 @@ Partial Class frmStockSummary
         'RadTextBox5
         '
         Me.RadTextBox5.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox5.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox5.Location = New System.Drawing.Point(181, 115)
         Me.RadTextBox5.Name = "RadTextBox5"
+        Me.RadTextBox5.ReadOnly = True
         '
         '
         '
@@ -2103,8 +2110,10 @@ Partial Class frmStockSummary
         'RadTextBox4
         '
         Me.RadTextBox4.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox4.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox4.Location = New System.Drawing.Point(124, 115)
         Me.RadTextBox4.Name = "RadTextBox4"
+        Me.RadTextBox4.ReadOnly = True
         '
         '
         '
@@ -2116,8 +2125,10 @@ Partial Class frmStockSummary
         'RadTextBox3
         '
         Me.RadTextBox3.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox3.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox3.Location = New System.Drawing.Point(239, 93)
         Me.RadTextBox3.Name = "RadTextBox3"
+        Me.RadTextBox3.ReadOnly = True
         '
         '
         '
@@ -2149,8 +2160,10 @@ Partial Class frmStockSummary
         'RadTextBox2
         '
         Me.RadTextBox2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox2.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox2.Location = New System.Drawing.Point(181, 93)
         Me.RadTextBox2.Name = "RadTextBox2"
+        Me.RadTextBox2.ReadOnly = True
         '
         '
         '
@@ -2162,8 +2175,10 @@ Partial Class frmStockSummary
         'RadTextBox1
         '
         Me.RadTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.RadTextBox1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadTextBox1.Location = New System.Drawing.Point(124, 93)
         Me.RadTextBox1.Name = "RadTextBox1"
+        Me.RadTextBox1.ReadOnly = True
         '
         '
         '
@@ -2281,8 +2296,10 @@ Partial Class frmStockSummary
         'txtClosingStockPr
         '
         Me.txtClosingStockPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtClosingStockPr.Location = New System.Drawing.Point(181, 137)
         Me.txtClosingStockPr.Name = "txtClosingStockPr"
+        Me.txtClosingStockPr.ReadOnly = True
         '
         '
         '
@@ -2295,8 +2312,10 @@ Partial Class frmStockSummary
         'txtClosingStockWt
         '
         Me.txtClosingStockWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtClosingStockWt.Location = New System.Drawing.Point(124, 137)
         Me.txtClosingStockWt.Name = "txtClosingStockWt"
+        Me.txtClosingStockWt.ReadOnly = True
         '
         '
         '
@@ -2309,8 +2328,10 @@ Partial Class frmStockSummary
         'IssueGrossFw
         '
         Me.IssueGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.IssueGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.IssueGrossFw.Location = New System.Drawing.Point(239, 71)
         Me.IssueGrossFw.Name = "IssueGrossFw"
+        Me.IssueGrossFw.ReadOnly = True
         '
         '
         '
@@ -2323,8 +2344,10 @@ Partial Class frmStockSummary
         'ReceiptGrossFw
         '
         Me.ReceiptGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ReceiptGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ReceiptGrossFw.Location = New System.Drawing.Point(239, 49)
         Me.ReceiptGrossFw.Name = "ReceiptGrossFw"
+        Me.ReceiptGrossFw.ReadOnly = True
         '
         '
         '
@@ -2337,8 +2360,10 @@ Partial Class frmStockSummary
         'IssueGrossPr
         '
         Me.IssueGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.IssueGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.IssueGrossPr.Location = New System.Drawing.Point(181, 71)
         Me.IssueGrossPr.Name = "IssueGrossPr"
+        Me.IssueGrossPr.ReadOnly = True
         '
         '
         '
@@ -2351,8 +2376,10 @@ Partial Class frmStockSummary
         'ReceiptGrossPr
         '
         Me.ReceiptGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ReceiptGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ReceiptGrossPr.Location = New System.Drawing.Point(181, 49)
         Me.ReceiptGrossPr.Name = "ReceiptGrossPr"
+        Me.ReceiptGrossPr.ReadOnly = True
         '
         '
         '
@@ -2365,8 +2392,10 @@ Partial Class frmStockSummary
         'IssueGrossWt
         '
         Me.IssueGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.IssueGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.IssueGrossWt.Location = New System.Drawing.Point(124, 71)
         Me.IssueGrossWt.Name = "IssueGrossWt"
+        Me.IssueGrossWt.ReadOnly = True
         '
         '
         '
@@ -2379,8 +2408,10 @@ Partial Class frmStockSummary
         'ReceiptGrossWt
         '
         Me.ReceiptGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ReceiptGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ReceiptGrossWt.Location = New System.Drawing.Point(124, 49)
         Me.ReceiptGrossWt.Name = "ReceiptGrossWt"
+        Me.ReceiptGrossWt.ReadOnly = True
         '
         '
         '
@@ -2393,8 +2424,10 @@ Partial Class frmStockSummary
         'txtClosingStockFw
         '
         Me.txtClosingStockFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtClosingStockFw.Location = New System.Drawing.Point(239, 137)
         Me.txtClosingStockFw.Name = "txtClosingStockFw"
+        Me.txtClosingStockFw.ReadOnly = True
         '
         '
         '
@@ -2437,12 +2470,12 @@ Partial Class frmStockSummary
         'btnUpdate
         '
         Me.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(20, 592)
+        Me.btnUpdate.Location = New System.Drawing.Point(20, 511)
         Me.btnUpdate.Name = "btnUpdate"
         '
         '
         '
-        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 592, 110, 24)
+        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 511, 110, 24)
         Me.btnUpdate.Size = New System.Drawing.Size(110, 24)
         Me.btnUpdate.TabIndex = 9
         Me.btnUpdate.Text = "Update Stock"
@@ -2571,7 +2604,7 @@ Partial Class frmStockSummary
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button7)
+        Me.GroupBox1.Controls.Add(Me.btnLBagNotUpdated)
         Me.GroupBox1.Controls.Add(Me.LotFailBagNuFw)
         Me.GroupBox1.Controls.Add(Me.LotFailBagNuPr)
         Me.GroupBox1.Controls.Add(Me.RadTextBox17)
@@ -2580,9 +2613,9 @@ Partial Class frmStockSummary
         Me.GroupBox1.Controls.Add(Me.Label30)
         Me.GroupBox1.Controls.Add(Me.Label34)
         Me.GroupBox1.Controls.Add(Me.Label38)
-        Me.GroupBox1.Controls.Add(Me.Button3)
+        Me.GroupBox1.Controls.Add(Me.btnVBagNotUpdated)
         Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button5)
+        Me.GroupBox1.Controls.Add(Me.btnBBagNotUpdated)
         Me.GroupBox1.Controls.Add(Me.SampleBagNuFw)
         Me.GroupBox1.Controls.Add(Me.SampleBagNuPr)
         Me.GroupBox1.Controls.Add(Me.VacuumBagNuFw)
@@ -2603,13 +2636,13 @@ Partial Class frmStockSummary
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bags Not Updated"
         '
-        'Button7
+        'btnLBagNotUpdated
         '
-        Me.Button7.Location = New System.Drawing.Point(320, 101)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(21, 20)
-        Me.Button7.TabIndex = 118
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.btnLBagNotUpdated.Location = New System.Drawing.Point(320, 104)
+        Me.btnLBagNotUpdated.Name = "btnLBagNotUpdated"
+        Me.btnLBagNotUpdated.Size = New System.Drawing.Size(21, 20)
+        Me.btnLBagNotUpdated.TabIndex = 118
+        Me.btnLBagNotUpdated.UseVisualStyleBackColor = True
         '
         'LotFailBagNuFw
         '
@@ -2685,29 +2718,29 @@ Partial Class frmStockSummary
         Me.Label38.TabIndex = 110
         Me.Label38.Text = "Gross Wt."
         '
-        'Button3
+        'btnVBagNotUpdated
         '
-        Me.Button3.Location = New System.Drawing.Point(320, 59)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(21, 20)
-        Me.Button3.TabIndex = 109
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnVBagNotUpdated.Location = New System.Drawing.Point(320, 60)
+        Me.btnVBagNotUpdated.Name = "btnVBagNotUpdated"
+        Me.btnVBagNotUpdated.Size = New System.Drawing.Size(21, 20)
+        Me.btnVBagNotUpdated.TabIndex = 109
+        Me.btnVBagNotUpdated.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(320, 81)
+        Me.Button4.Location = New System.Drawing.Point(320, 82)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(21, 20)
         Me.Button4.TabIndex = 108
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button5
+        'btnBBagNotUpdated
         '
-        Me.Button5.Location = New System.Drawing.Point(320, 37)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(21, 20)
-        Me.Button5.TabIndex = 107
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnBBagNotUpdated.Location = New System.Drawing.Point(320, 38)
+        Me.btnBBagNotUpdated.Name = "btnBBagNotUpdated"
+        Me.btnBBagNotUpdated.Size = New System.Drawing.Size(21, 20)
+        Me.btnBBagNotUpdated.TabIndex = 107
+        Me.btnBBagNotUpdated.UseVisualStyleBackColor = True
         '
         'SampleBagNuFw
         '
@@ -2883,11 +2916,22 @@ Partial Class frmStockSummary
         Me.Label44.TabIndex = 95
         Me.Label44.Text = "All Scrap Bags"
         '
+        'btnAccountClosing
+        '
+        Me.btnAccountClosing.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnAccountClosing.Location = New System.Drawing.Point(20, 536)
+        Me.btnAccountClosing.Name = "btnAccountClosing"
+        Me.btnAccountClosing.Size = New System.Drawing.Size(110, 24)
+        Me.btnAccountClosing.TabIndex = 170
+        Me.btnAccountClosing.Text = "Account Closing"
+        Me.btnAccountClosing.UseVisualStyleBackColor = True
+        '
         'frmStockSummary
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(927, 749)
+        Me.ClientSize = New System.Drawing.Size(961, 749)
+        Me.Controls.Add(Me.btnAccountClosing)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.lblClosingStockFw)
         Me.Controls.Add(Me.lblClosingStockPr)
@@ -3206,9 +3250,9 @@ Partial Class frmStockSummary
     Friend WithEvents Label30 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents Label38 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnVBagNotUpdated As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnBBagNotUpdated As Button
     Private WithEvents SampleBagNuFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents SampleBagNuPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents VacuumBagNuFw As Telerik.WinControls.UI.RadTextBox
@@ -3227,5 +3271,7 @@ Partial Class frmStockSummary
     Friend WithEvents RadTextBox17 As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents LotFailBagNuWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents Label47 As Label
-    Friend WithEvents Button7 As Button
+    Friend WithEvents btnLBagNotUpdated As Button
+    Friend WithEvents btnAccountClosing As Button
+    Friend WithEvents Timer1 As Timer
 End Class

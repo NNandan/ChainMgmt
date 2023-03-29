@@ -94,7 +94,7 @@ Partial Class frmEditBBags
         '
         '
         '
-        Me.cmbRBagNo.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 125, 20)
+        Me.cmbRBagNo.RootElement.ControlBounds = New System.Drawing.Rectangle(572, 24, 125, 20)
         Me.cmbRBagNo.RootElement.StretchVertically = True
         Me.cmbRBagNo.Size = New System.Drawing.Size(145, 20)
         Me.cmbRBagNo.TabIndex = 5
@@ -119,7 +119,7 @@ Partial Class frmEditBBags
         '
         '
         '
-        Me.cmbEBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 125, 20)
+        Me.cmbEBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(115, 27, 125, 20)
         Me.cmbEBagtype.RootElement.StretchVertically = True
         Me.cmbEBagtype.Size = New System.Drawing.Size(145, 20)
         Me.cmbEBagtype.TabIndex = 0
@@ -160,12 +160,12 @@ Partial Class frmEditBBags
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(433, 359)
+        Me.btnExit.Location = New System.Drawing.Point(433, 357)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(433, 359, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 803
         Me.btnExit.Text = "E&xit"
@@ -174,12 +174,12 @@ Partial Class frmEditBBags
         '
         Me.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(356, 359)
+        Me.btnCancel.Location = New System.Drawing.Point(356, 357)
         Me.btnCancel.Name = "btnCancel"
         '
         '
         '
-        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(356, 359, 110, 24)
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 802
         Me.btnCancel.Text = "&Cancel"
@@ -188,12 +188,12 @@ Partial Class frmEditBBags
         '
         Me.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUpdate.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUpdate.Location = New System.Drawing.Point(202, 359)
+        Me.btnUpdate.Location = New System.Drawing.Point(202, 357)
         Me.btnUpdate.Name = "btnUpdate"
         '
         '
         '
-        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(202, 359, 110, 24)
         Me.btnUpdate.Size = New System.Drawing.Size(75, 25)
         Me.btnUpdate.TabIndex = 800
         Me.btnUpdate.Text = "&Update"
@@ -202,12 +202,12 @@ Partial Class frmEditBBags
         '
         Me.btnDelete.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(279, 359)
+        Me.btnDelete.Location = New System.Drawing.Point(279, 357)
         Me.btnDelete.Name = "btnDelete"
         '
         '
         '
-        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(279, 359, 110, 24)
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 801
         Me.btnDelete.Text = "&Delete"
@@ -324,7 +324,7 @@ Partial Class frmEditBBags
         '
         '
         '
-        Me.dgvBhukaBag.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 240, 150)
+        Me.dgvBhukaBag.RootElement.ControlBounds = New System.Drawing.Rectangle(8, 34, 240, 150)
         Me.dgvBhukaBag.Size = New System.Drawing.Size(715, 290)
         Me.dgvBhukaBag.TabIndex = 30
         Me.dgvBhukaBag.ThemeName = "ControlDefault"

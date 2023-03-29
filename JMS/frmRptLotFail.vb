@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmRptLotFail
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub btnShow_Click(sender As Object, e As EventArgs)
         dgvLotFailList.PrintPreview()
     End Sub
@@ -29,9 +29,9 @@ Public Class frmRptLotFail
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchLotFailRpt", DbType.String))
             End With
 

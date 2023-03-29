@@ -11,14 +11,14 @@ Public Class frmStockVaccumBagNotCreated
         dgvWipLotNo.MasterTemplate.ShowFilteringRow = False
         dgvWipLotNo.CurrentRow = Nothing
 
-        Dim totalItemName As GridViewSummaryItem = New GridViewSummaryItem("colItemName", "Total", GridAggregateFunction.Count)
-        Dim totalReceiveTWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
-        Dim totalReceiveFWt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
+        Dim totalOperationName As GridViewSummaryItem = New GridViewSummaryItem("colOperationName", "Total", GridAggregateFunction.Count)
+        Dim totalReceiveWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
+        Dim totalReceiveFt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
         Dim totalReceivePr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
         totalReceivePr.AggregateExpression = "(Sum(colFineWt) / Sum(colReceiveWt)  * 100)"
 
-        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalItemName, totalReceiveTWt, totalReceiveFWt, totalReceivePr})
+        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalOperationName, totalReceiveWt, totalReceiveFt, totalReceivePr})
         Me.dgvWipLotNo.SummaryRowsBottom.Add(totalRow)
 
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -61,7 +61,7 @@ Public Class frmStockVaccumBagNotCreated
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 
-            If e.Column.Name = "colItemName" Then
+            If e.Column.Name = "colOperationName" Then
                 e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
             Else
                 e.CellElement.TextAlignment = ContentAlignment.MiddleRight

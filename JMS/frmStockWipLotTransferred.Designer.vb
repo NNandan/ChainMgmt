@@ -54,7 +54,7 @@ Partial Class frmStockWipLotTransferred
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransactionDt"
+        GridViewTextBoxColumn1.FieldName = "TransDt"
         GridViewTextBoxColumn1.HeaderText = "Trans. Dt."
         GridViewTextBoxColumn1.MinWidth = 8
         GridViewTextBoxColumn1.Name = "colTransactionDt"
@@ -65,19 +65,19 @@ Partial Class frmStockWipLotTransferred
         GridViewTextBoxColumn2.HeaderText = "Fr Lot No."
         GridViewTextBoxColumn2.MinWidth = 8
         GridViewTextBoxColumn2.Name = "colFrLotNumber"
-        GridViewTextBoxColumn2.Width = 110
+        GridViewTextBoxColumn2.Width = 100
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "ToLotNo"
         GridViewTextBoxColumn3.HeaderText = "To Lot No."
         GridViewTextBoxColumn3.MinWidth = 8
         GridViewTextBoxColumn3.Name = "colToLotNumber"
-        GridViewTextBoxColumn3.Width = 110
+        GridViewTextBoxColumn3.Width = 100
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "OperationName"
         GridViewTextBoxColumn4.HeaderText = "Operation Name"
         GridViewTextBoxColumn4.MinWidth = 8
         GridViewTextBoxColumn4.Name = "colOperationName"
-        GridViewTextBoxColumn4.Width = 190
+        GridViewTextBoxColumn4.Width = 205
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "TransferWt"
         GridViewTextBoxColumn5.HeaderText = "Transfer Wt."
@@ -105,13 +105,13 @@ Partial Class frmStockWipLotTransferred
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 451)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 449)
         Me.dgvWipLotNo.TabIndex = 2
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(384, 461)
+        Me.btnExit.Location = New System.Drawing.Point(386, 459)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
@@ -121,7 +121,7 @@ Partial Class frmStockWipLotTransferred
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(307, 461)
+        Me.btnPrint.Location = New System.Drawing.Point(309, 459)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(5)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)

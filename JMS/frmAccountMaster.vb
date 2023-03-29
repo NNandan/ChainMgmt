@@ -1,5 +1,4 @@
 ﻿Imports System.ComponentModel
-Imports System.Configuration
 Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI

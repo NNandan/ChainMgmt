@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmTouchConversionRpt
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmTouchConversionReport_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvTouchConversion.AutoGenerateColumns = False
         dgvTouchConversion.EnableFiltering = True

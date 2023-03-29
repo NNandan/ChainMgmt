@@ -22,13 +22,13 @@ Partial Class frmAcctOpLotAddReceive
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dgvWipLotNo = New Telerik.WinControls.UI.RadGridView()
         Me.lblTotal = New System.Windows.Forms.Label()
         CType(Me.dgvWipLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,7 +39,7 @@ Partial Class frmAcctOpLotAddReceive
         '
         Me.dgvWipLotNo.BackColor = System.Drawing.SystemColors.Control
         Me.dgvWipLotNo.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvWipLotNo.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvWipLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvWipLotNo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvWipLotNo.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvWipLotNo.Location = New System.Drawing.Point(3, 3)
@@ -48,42 +48,42 @@ Partial Class frmAcctOpLotAddReceive
         '
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "IssueDt"
-        GridViewTextBoxColumn7.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn7.Name = "colTransDt"
-        GridViewTextBoxColumn7.Width = 70
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "VoucherNo"
-        GridViewTextBoxColumn8.HeaderText = "Voucher No"
-        GridViewTextBoxColumn8.Name = "colVoucherNo"
-        GridViewTextBoxColumn8.Width = 105
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "ItemName"
-        GridViewTextBoxColumn9.HeaderText = "Item Name"
-        GridViewTextBoxColumn9.Name = "colItemName"
-        GridViewTextBoxColumn9.Width = 240
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "IssueWt"
-        GridViewTextBoxColumn10.HeaderText = "Issue Wt"
-        GridViewTextBoxColumn10.Name = "colIssueWt"
-        GridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn10.Width = 80
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "IssuePr"
-        GridViewTextBoxColumn11.HeaderText = "Issue %"
-        GridViewTextBoxColumn11.Name = "colIssuePr"
-        GridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn11.Width = 90
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "FineWt"
-        GridViewTextBoxColumn12.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn12.Name = "colFineWt"
-        GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn12.Width = 80
-        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "IssueDt"
+        GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn1.Name = "colTransDt"
+        GridViewTextBoxColumn1.Width = 70
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "VoucherNo"
+        GridViewTextBoxColumn2.HeaderText = "Voucher No"
+        GridViewTextBoxColumn2.Name = "colVoucherNo"
+        GridViewTextBoxColumn2.Width = 105
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "ItemName"
+        GridViewTextBoxColumn3.HeaderText = "Item Name"
+        GridViewTextBoxColumn3.Name = "colItemName"
+        GridViewTextBoxColumn3.Width = 240
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "IssueWt"
+        GridViewTextBoxColumn4.HeaderText = "Issue Wt"
+        GridViewTextBoxColumn4.Name = "colIssueWt"
+        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn4.Width = 80
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "IssuePr"
+        GridViewTextBoxColumn5.HeaderText = "Issue %"
+        GridViewTextBoxColumn5.Name = "colIssuePr"
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 90
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "FineWt"
+        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn6.Name = "colFineWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 80
+        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -102,8 +102,7 @@ Partial Class frmAcctOpLotAddReceive
         '
         'frmAcctOpLotAddReceive
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(669, 416)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.dgvWipLotNo)

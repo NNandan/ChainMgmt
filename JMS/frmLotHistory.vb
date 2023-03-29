@@ -1,11 +1,8 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
-Imports Telerik.WinControls.Data
 Public Class frmLotHistory
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmLotHistory_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.fillLotNo()
 
@@ -18,6 +15,9 @@ Public Class frmLotHistory
         dgwTransaction.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill
     End Sub
     Private Sub fillLotNo()
+
+        Dim connection As SqlConnection = Nothing
+
         Dim parameters = New List(Of SqlParameter)()
         parameters.Clear()
 
@@ -25,7 +25,7 @@ Public Class frmLotHistory
             .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoFromTran", DbType.String))
         End With
 
-        Dim dr = dbManager.GetDataReader("SP_Melting_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dr = dbManager.GetDataReader("SP_Melting_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Try
             While dr.Read
@@ -36,7 +36,7 @@ Public Class frmLotHistory
             MessageBox.Show("Error:- " & ex.Message)
         Finally
             dr.Close()
-            Objcn.Close()
+            dbManager.CloseConnection(connection)
         End Try
     End Sub
     Private Sub cmbLotNo_GotFocus(sender As Object, e As EventArgs) Handles cmbLotNo.GotFocus

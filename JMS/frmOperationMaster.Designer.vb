@@ -22,14 +22,14 @@ Partial Class frmOperationMaster
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDecimalColumn1 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDecimalColumn3 As Telerik.WinControls.UI.GridViewDecimalColumn = New Telerik.WinControls.UI.GridViewDecimalColumn()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -97,11 +97,11 @@ Partial Class frmOperationMaster
         Me.GroupBox1.Controls.Add(Me.btnDelete)
         Me.GroupBox1.Controls.Add(Me.dgvOperationList)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 180)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 161)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(699, 318)
+        Me.GroupBox1.Size = New System.Drawing.Size(699, 338)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Operation  Details"
@@ -109,7 +109,7 @@ Partial Class frmOperationMaster
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(439, 287)
+        Me.btnExit.Location = New System.Drawing.Point(439, 284)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 801
@@ -118,7 +118,7 @@ Partial Class frmOperationMaster
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(361, 287)
+        Me.btnCancel.Location = New System.Drawing.Point(361, 284)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 1
@@ -127,7 +127,7 @@ Partial Class frmOperationMaster
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(205, 287)
+        Me.btnSave.Location = New System.Drawing.Point(205, 284)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 0
@@ -136,7 +136,7 @@ Partial Class frmOperationMaster
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(283, 287)
+        Me.btnDelete.Location = New System.Drawing.Point(283, 284)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 2
@@ -149,54 +149,54 @@ Partial Class frmOperationMaster
         Me.dgvOperationList.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvOperationList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvOperationList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvOperationList.Location = New System.Drawing.Point(6, 30)
+        Me.dgvOperationList.Location = New System.Drawing.Point(6, 25)
         '
         '
         '
         Me.dgvOperationList.MasterTemplate.AllowAddNewRow = False
         Me.dgvOperationList.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "OperationId"
-        GridViewTextBoxColumn1.HeaderText = "Operation Id"
-        GridViewTextBoxColumn1.IsVisible = False
-        GridViewTextBoxColumn1.Name = "ColOperationId"
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "OperationName"
-        GridViewTextBoxColumn2.HeaderText = "Operation Name"
-        GridViewTextBoxColumn2.Name = "ColOperationName"
-        GridViewTextBoxColumn2.Width = 200
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "ItemId"
-        GridViewTextBoxColumn3.HeaderText = "Bag Id"
-        GridViewTextBoxColumn3.IsVisible = False
-        GridViewTextBoxColumn3.Name = "ColBagId"
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "ItemName"
-        GridViewTextBoxColumn4.HeaderText = "Bag Type"
-        GridViewTextBoxColumn4.Name = "ColBagType"
-        GridViewTextBoxColumn4.Width = 155
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "OperationTypeId"
-        GridViewTextBoxColumn5.HeaderText = "OperationType Id"
-        GridViewTextBoxColumn5.IsVisible = False
-        GridViewTextBoxColumn5.Name = "ColOperationTypeId"
-        GridViewTextBoxColumn5.Width = 108
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "OperationType"
-        GridViewTextBoxColumn6.HeaderText = "Operation Type"
-        GridViewTextBoxColumn6.Name = "ColOperationType"
-        GridViewTextBoxColumn6.Width = 180
-        GridViewDecimalColumn1.DataType = GetType(String)
-        GridViewDecimalColumn1.DecimalPlaces = 3
-        GridViewDecimalColumn1.EnableExpressionEditor = False
-        GridViewDecimalColumn1.FieldName = "MaxValueAllowed"
-        GridViewDecimalColumn1.HeaderText = "Max Value Allowed"
-        GridViewDecimalColumn1.Name = "ColMaxValueAllowed"
-        GridViewDecimalColumn1.Width = 130
-        Me.dgvOperationList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewDecimalColumn1})
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "OperationId"
+        GridViewTextBoxColumn13.HeaderText = "Operation Id"
+        GridViewTextBoxColumn13.IsVisible = False
+        GridViewTextBoxColumn13.Name = "ColOperationId"
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "OperationName"
+        GridViewTextBoxColumn14.HeaderText = "Operation Name"
+        GridViewTextBoxColumn14.Name = "ColOperationName"
+        GridViewTextBoxColumn14.Width = 200
+        GridViewTextBoxColumn15.EnableExpressionEditor = False
+        GridViewTextBoxColumn15.FieldName = "ItemId"
+        GridViewTextBoxColumn15.HeaderText = "Bag Id"
+        GridViewTextBoxColumn15.IsVisible = False
+        GridViewTextBoxColumn15.Name = "ColBagId"
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "ItemName"
+        GridViewTextBoxColumn16.HeaderText = "Bag Type"
+        GridViewTextBoxColumn16.Name = "ColBagType"
+        GridViewTextBoxColumn16.Width = 155
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "OperationTypeId"
+        GridViewTextBoxColumn17.HeaderText = "OperationType Id"
+        GridViewTextBoxColumn17.IsVisible = False
+        GridViewTextBoxColumn17.Name = "ColOperationTypeId"
+        GridViewTextBoxColumn17.Width = 108
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "OperationType"
+        GridViewTextBoxColumn18.HeaderText = "Operation Type"
+        GridViewTextBoxColumn18.Name = "ColOperationType"
+        GridViewTextBoxColumn18.Width = 180
+        GridViewDecimalColumn3.DataType = GetType(String)
+        GridViewDecimalColumn3.DecimalPlaces = 3
+        GridViewDecimalColumn3.EnableExpressionEditor = False
+        GridViewDecimalColumn3.FieldName = "MaxValueAllowed"
+        GridViewDecimalColumn3.HeaderText = "Max Value Allowed"
+        GridViewDecimalColumn3.Name = "ColMaxValueAllowed"
+        GridViewDecimalColumn3.Width = 130
+        Me.dgvOperationList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewDecimalColumn3})
         Me.dgvOperationList.MasterTemplate.EnableGrouping = False
         Me.dgvOperationList.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvOperationList.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvOperationList.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.dgvOperationList.Name = "dgvOperationList"
         Me.dgvOperationList.ReadOnly = True
         Me.dgvOperationList.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -219,7 +219,7 @@ Partial Class frmOperationMaster
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GBoxMain.Name = "GBoxMain"
         Me.GBoxMain.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GBoxMain.Size = New System.Drawing.Size(699, 159)
+        Me.GBoxMain.Size = New System.Drawing.Size(699, 144)
         Me.GBoxMain.TabIndex = 18
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Operation Information"
@@ -228,7 +228,7 @@ Partial Class frmOperationMaster
         '
         Me.txtMaxLossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtMaxLossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtMaxLossWt.Location = New System.Drawing.Point(178, 129)
+        Me.txtMaxLossWt.Location = New System.Drawing.Point(178, 111)
         Me.txtMaxLossWt.Name = "txtMaxLossWt"
         Me.txtMaxLossWt.Size = New System.Drawing.Size(56, 20)
         Me.txtMaxLossWt.TabIndex = 3
@@ -239,7 +239,7 @@ Partial Class frmOperationMaster
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(36, 132)
+        Me.Label1.Location = New System.Drawing.Point(36, 115)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(138, 14)
@@ -250,7 +250,7 @@ Partial Class frmOperationMaster
         '
         Me.cmbOperationType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbOperationType.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbOperationType.Location = New System.Drawing.Point(178, 97)
+        Me.cmbOperationType.Location = New System.Drawing.Point(178, 85)
         Me.cmbOperationType.Name = "cmbOperationType"
         Me.cmbOperationType.Size = New System.Drawing.Size(165, 20)
         Me.cmbOperationType.TabIndex = 2
@@ -259,7 +259,7 @@ Partial Class frmOperationMaster
         '
         Me.cmbBagType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbBagType.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbBagType.Location = New System.Drawing.Point(178, 65)
+        Me.cmbBagType.Location = New System.Drawing.Point(178, 59)
         Me.cmbBagType.Name = "cmbBagType"
         Me.cmbBagType.Size = New System.Drawing.Size(165, 20)
         Me.cmbBagType.TabIndex = 1
@@ -277,7 +277,7 @@ Partial Class frmOperationMaster
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(81, 100)
+        Me.Label3.Location = New System.Drawing.Point(81, 89)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 14)
@@ -288,7 +288,7 @@ Partial Class frmOperationMaster
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(115, 68)
+        Me.Label2.Location = New System.Drawing.Point(115, 63)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 14)

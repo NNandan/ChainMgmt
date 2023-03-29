@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmStockLotAddition
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmStockLotAddition_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvWipLotNo.AutoGenerateColumns = False
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -13,7 +13,7 @@ Public Class frmStockLotAddition
         dgvWipLotNo.MasterTemplate.ShowFilteringRow = False
         dgvWipLotNo.CurrentRow = Nothing
 
-        Me.CalculateTotal()
+        'Me.CalculateTotal()
     End Sub
     Private Function FetchAllRecords() As DataTable
 
@@ -21,9 +21,11 @@ Public Class frmStockLotAddition
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "LotAdditionStockDetails", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "LotAdditionStockDetails", DbType.String))
+            End With
             dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
@@ -33,22 +35,22 @@ Public Class frmStockLotAddition
         Return dtData
 
     End Function
-    Private Sub CalculateTotal()
-        Dim sReceiveWTotal As Single = 0
-        Dim sReceivePTotal As Single = 0
-        Dim sReceiveFTotal As Single = 0
+    'Private Sub CalculateTotal()
+    '    Dim sReceiveWTotal As Single = 0
+    '    Dim sReceivePTotal As Single = 0
+    '    Dim sReceiveFTotal As Single = 0
 
-        For Each row As GridViewRowInfo In dgvWipLotNo.Rows
-            sReceiveWTotal += Single.Parse(row.Cells(4).Value)
-            sReceiveFTotal += Single.Parse(row.Cells(6).Value)
-        Next
+    '    For Each row As GridViewRowInfo In dgvWipLotNo.Rows
+    '        sReceiveWTotal += Single.Parse(row.Cells(4).Value)
+    '        sReceiveFTotal += Single.Parse(row.Cells(6).Value)
+    '    Next
 
-        sReceivePTotal = Format((Val(sReceiveFTotal) / Val(sReceiveWTotal)) * 100, "0.00")
+    '    sReceivePTotal = Format((Val(sReceiveFTotal) / Val(sReceiveWTotal)) * 100, "0.00")
 
-        lblReceiveWt.Text = Format(sReceiveWTotal, "0.00")
-        lblReceivePr.Text = Format(sReceivePTotal, "0.00")
-        lblReceiveFw.Text = Format(sReceiveFTotal, "0.00")
-    End Sub
+    '    lblReceiveWt.Text = Format(sReceiveWTotal, "0.00")
+    '    lblReceivePr.Text = Format(sReceivePTotal, "0.00")
+    '    lblReceiveFw.Text = Format(sReceiveFTotal, "0.00")
+    'End Sub
     Private Sub frmStockLotAddition_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit
@@ -62,5 +64,8 @@ Public Class frmStockLotAddition
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
     End Sub
 End Class

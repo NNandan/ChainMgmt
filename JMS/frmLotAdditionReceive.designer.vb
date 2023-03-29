@@ -45,7 +45,19 @@ Partial Class frmLotAdditionReceive
         Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Me.TbLotAddReceive = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -94,16 +106,9 @@ Partial Class frmLotAdditionReceive
         Me.lblLotADate = New System.Windows.Forms.Label()
         Me.lblLotNo = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lstLotAddition = New System.Windows.Forms.ListView()
-        Me.ColLotAdditionId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColLotAdditionDt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColLotNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColItemId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColItemName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColIssueWt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColIssuePr = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.dgvLotReceive = New Telerik.WinControls.UI.RadGridView()
         Me.ObjEp = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.TabControl1.SuspendLayout()
+        Me.TbLotAddReceive.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,21 +140,23 @@ Partial Class frmLotAdditionReceive
         CType(Me.txtBalancePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBalanceWt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.dgvLotReceive, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvLotReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjEp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'TbLotAddReceive
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(5)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(815, 551)
-        Me.TabControl1.TabIndex = 6
+        Me.TbLotAddReceive.Controls.Add(Me.TabPage1)
+        Me.TbLotAddReceive.Controls.Add(Me.TabPage2)
+        Me.TbLotAddReceive.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TbLotAddReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.TbLotAddReceive.Location = New System.Drawing.Point(0, 0)
+        Me.TbLotAddReceive.Margin = New System.Windows.Forms.Padding(5)
+        Me.TbLotAddReceive.Name = "TbLotAddReceive"
+        Me.TbLotAddReceive.SelectedIndex = 0
+        Me.TbLotAddReceive.Size = New System.Drawing.Size(815, 551)
+        Me.TbLotAddReceive.TabIndex = 6
         '
         'TabPage1
         '
@@ -651,7 +658,7 @@ Partial Class frmLotAdditionReceive
         Me.GBoxMain.Size = New System.Drawing.Size(789, 96)
         Me.GBoxMain.TabIndex = 18
         Me.GBoxMain.TabStop = False
-        Me.GBoxMain.Text = "Lot Addition Information"
+        Me.GBoxMain.Text = "tbLotReceive"
         '
         'lblFineWt
         '
@@ -687,6 +694,7 @@ Partial Class frmLotAdditionReceive
         'cmbTLabour
         '
         Me.cmbTLabour.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbTLabour.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbTLabour.Location = New System.Drawing.Point(653, 53)
         Me.cmbTLabour.Name = "cmbTLabour"
         Me.cmbTLabour.Size = New System.Drawing.Size(128, 20)
@@ -703,6 +711,7 @@ Partial Class frmLotAdditionReceive
         'cmbItem
         '
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbItem.Location = New System.Drawing.Point(280, 26)
         Me.cmbItem.Name = "cmbItem"
         Me.cmbItem.Size = New System.Drawing.Size(125, 20)
@@ -824,7 +833,7 @@ Partial Class frmLotAdditionReceive
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lstLotAddition)
+        Me.TabPage2.Controls.Add(Me.dgvLotReceive)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(807, 524)
@@ -832,56 +841,88 @@ Partial Class frmLotAdditionReceive
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'lstLotAddition
+        'dgvLotReceive
         '
-        Me.lstLotAddition.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColLotAdditionId, Me.ColLotAdditionDt, Me.ColLotNumber, Me.ColItemId, Me.ColItemName, Me.ColIssueWt, Me.ColIssuePr})
-        Me.lstLotAddition.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lstLotAddition.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstLotAddition.FullRowSelect = True
-        Me.lstLotAddition.GridLines = True
-        Me.lstLotAddition.Location = New System.Drawing.Point(0, 0)
-        Me.lstLotAddition.Name = "lstLotAddition"
-        Me.lstLotAddition.Size = New System.Drawing.Size(807, 524)
-        Me.lstLotAddition.TabIndex = 0
-        Me.lstLotAddition.UseCompatibleStateImageBehavior = False
-        Me.lstLotAddition.View = System.Windows.Forms.View.Details
+        Me.dgvLotReceive.BackColor = System.Drawing.Color.Transparent
+        Me.dgvLotReceive.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvLotReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvLotReceive.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvLotReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvLotReceive.Location = New System.Drawing.Point(3, 5)
         '
-        'ColLotAdditionId
         '
-        Me.ColLotAdditionId.Text = "Lot Id."
-        Me.ColLotAdditionId.Width = 50
         '
-        'ColLotAdditionDt
-        '
-        Me.ColLotAdditionDt.Text = "Lot Dt."
-        Me.ColLotAdditionDt.Width = 81
-        '
-        'ColLotNumber
-        '
-        Me.ColLotNumber.Text = "Lot No"
-        Me.ColLotNumber.Width = 87
-        '
-        'ColItemId
-        '
-        Me.ColItemId.Text = "Item Id."
-        Me.ColItemId.Width = 0
-        '
-        'ColItemName
-        '
-        Me.ColItemName.Text = "Item Name"
-        Me.ColItemName.Width = 134
-        '
-        'ColIssueWt
-        '
-        Me.ColIssueWt.Text = "Issue Wt."
-        Me.ColIssueWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.ColIssueWt.Width = 96
-        '
-        'ColIssuePr
-        '
-        Me.ColIssuePr.Text = "Issue %"
-        Me.ColIssuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.ColIssuePr.Width = 105
+        Me.dgvLotReceive.MasterTemplate.AllowAddNewRow = False
+        Me.dgvLotReceive.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "LotAdditionId"
+        GridViewTextBoxColumn18.HeaderText = "LotAddition Id."
+        GridViewTextBoxColumn18.IsVisible = False
+        GridViewTextBoxColumn18.Name = "colLotAdditionId"
+        GridViewTextBoxColumn18.Width = 40
+        GridViewTextBoxColumn19.EnableExpressionEditor = False
+        GridViewTextBoxColumn19.FieldName = "LotAdditionDt"
+        GridViewTextBoxColumn19.HeaderText = "LotAddition Dt."
+        GridViewTextBoxColumn19.Name = "colLotAdditionDt"
+        GridViewTextBoxColumn19.Width = 120
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.FieldName = "ItemId"
+        GridViewTextBoxColumn20.HeaderText = "Item Id."
+        GridViewTextBoxColumn20.IsVisible = False
+        GridViewTextBoxColumn20.Name = "colItemId"
+        GridViewTextBoxColumn20.Width = 40
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.FieldName = "ItemName"
+        GridViewTextBoxColumn21.HeaderText = "Item Name"
+        GridViewTextBoxColumn21.Name = "colItemName"
+        GridViewTextBoxColumn21.Width = 145
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.FieldName = "LotNo"
+        GridViewTextBoxColumn22.HeaderText = "Lot No"
+        GridViewTextBoxColumn22.Name = "colLotNo"
+        GridViewTextBoxColumn22.Width = 100
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn23.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn23.Name = "colReceive Wt"
+        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn23.Width = 90
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.FieldName = "ReceivePr"
+        GridViewTextBoxColumn24.HeaderText = "Receive [%]"
+        GridViewTextBoxColumn24.Name = "colReceivePr"
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 90
+        GridViewTextBoxColumn25.EnableExpressionEditor = False
+        GridViewTextBoxColumn25.FieldName = "FrKarigarId"
+        GridViewTextBoxColumn25.HeaderText = "Fr Karigar Id."
+        GridViewTextBoxColumn25.IsVisible = False
+        GridViewTextBoxColumn25.Name = "colFrKarigarId"
+        GridViewTextBoxColumn25.Width = 40
+        GridViewTextBoxColumn26.EnableExpressionEditor = False
+        GridViewTextBoxColumn26.FieldName = "FrKarigar"
+        GridViewTextBoxColumn26.HeaderText = "Fr Employee"
+        GridViewTextBoxColumn26.Name = "colFrKarigar"
+        GridViewTextBoxColumn26.Width = 130
+        GridViewTextBoxColumn27.EnableExpressionEditor = False
+        GridViewTextBoxColumn27.FieldName = "ToKarigarId"
+        GridViewTextBoxColumn27.HeaderText = "To Emlpoyee"
+        GridViewTextBoxColumn27.IsVisible = False
+        GridViewTextBoxColumn27.Name = "colToKarigarId"
+        GridViewTextBoxColumn27.Width = 150
+        GridViewTextBoxColumn28.EnableExpressionEditor = False
+        GridViewTextBoxColumn28.FieldName = "ToKarigar"
+        GridViewTextBoxColumn28.HeaderText = "To Employee"
+        GridViewTextBoxColumn28.Name = "colToKarigar"
+        GridViewTextBoxColumn28.Width = 130
+        Me.dgvLotReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28})
+        Me.dgvLotReceive.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvLotReceive.MasterTemplate.ViewDefinition = TableViewDefinition5
+        Me.dgvLotReceive.Name = "dgvLotReceive"
+        Me.dgvLotReceive.ReadOnly = True
+        Me.dgvLotReceive.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvLotReceive.Size = New System.Drawing.Size(800, 515)
+        Me.dgvLotReceive.TabIndex = 1
         '
         'ObjEp
         '
@@ -893,14 +934,14 @@ Partial Class frmLotAdditionReceive
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(815, 551)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TbLotAddReceive)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmLotAdditionReceive"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lot Addition Receive"
-        Me.TabControl1.ResumeLayout(False)
+        Me.TbLotAddReceive.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GBoxDetails.ResumeLayout(False)
         Me.GBoxDetails.PerformLayout()
@@ -934,12 +975,14 @@ Partial Class frmLotAdditionReceive
         CType(Me.txtBalancePr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBalanceWt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgvLotReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvLotReceive, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjEp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TbLotAddReceive As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents GBoxRDetails As GroupBox
     Friend WithEvents GBoxMain As GroupBox
@@ -949,10 +992,6 @@ Partial Class frmLotAdditionReceive
     Friend WithEvents lblLotADate As Label
     Friend WithEvents lblLotNo As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents lstLotAddition As ListView
-    Friend WithEvents ColLotAdditionId As ColumnHeader
-    Friend WithEvents ColLotAdditionDt As ColumnHeader
-    Friend WithEvents ColLotNumber As ColumnHeader
     Friend WithEvents ObjEp As ErrorProvider
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
@@ -973,10 +1012,6 @@ Partial Class frmLotAdditionReceive
     Friend WithEvents cmbTLabour As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label3 As Label
     Friend WithEvents txtLotRecieveId As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents ColItemId As ColumnHeader
-    Friend WithEvents ColItemName As ColumnHeader
-    Friend WithEvents ColIssueWt As ColumnHeader
-    Friend WithEvents ColIssuePr As ColumnHeader
     Friend WithEvents dgvReceive As Telerik.WinControls.UI.RadGridView
     Friend WithEvents GBoxDetails As GroupBox
     Friend WithEvents GBoxIDetails As GroupBox
@@ -1005,4 +1040,5 @@ Partial Class frmLotAdditionReceive
     Friend WithEvents lblGTotalReceivePr As Label
     Friend WithEvents lblFineWt As Label
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents dgvLotReceive As Telerik.WinControls.UI.RadGridView
 End Class

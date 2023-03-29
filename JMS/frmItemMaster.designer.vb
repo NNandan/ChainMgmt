@@ -51,6 +51,9 @@ Partial Class frmItemMaster
         Me.lblFancysStatus = New System.Windows.Forms.Label()
         Me.lblRowCount = New System.Windows.Forms.Label()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
+        Me.chkCasting = New System.Windows.Forms.CheckBox()
+        Me.chkFancy = New System.Windows.Forms.CheckBox()
+        Me.chkChain = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -70,9 +73,6 @@ Partial Class frmItemMaster
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblIemName = New System.Windows.Forms.Label()
         Me.lblIemNamePcs = New System.Windows.Forms.Label()
-        Me.chkChain = New System.Windows.Forms.CheckBox()
-        Me.chkFancy = New System.Windows.Forms.CheckBox()
-        Me.chkCasting = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -310,6 +310,39 @@ Partial Class frmItemMaster
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Item Information"
         '
+        'chkCasting
+        '
+        Me.chkCasting.AutoSize = True
+        Me.chkCasting.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkCasting.Location = New System.Drawing.Point(223, 117)
+        Me.chkCasting.Name = "chkCasting"
+        Me.chkCasting.Size = New System.Drawing.Size(65, 18)
+        Me.chkCasting.TabIndex = 28
+        Me.chkCasting.Text = "Casting"
+        Me.chkCasting.UseVisualStyleBackColor = True
+        '
+        'chkFancy
+        '
+        Me.chkFancy.AutoSize = True
+        Me.chkFancy.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkFancy.Location = New System.Drawing.Point(129, 117)
+        Me.chkFancy.Name = "chkFancy"
+        Me.chkFancy.Size = New System.Drawing.Size(78, 18)
+        Me.chkFancy.TabIndex = 27
+        Me.chkFancy.Text = "For Fancy"
+        Me.chkFancy.UseVisualStyleBackColor = True
+        '
+        'chkChain
+        '
+        Me.chkChain.AutoSize = True
+        Me.chkChain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkChain.Location = New System.Drawing.Point(37, 117)
+        Me.chkChain.Name = "chkChain"
+        Me.chkChain.Size = New System.Drawing.Size(76, 18)
+        Me.chkChain.TabIndex = 26
+        Me.chkChain.Text = "For Chain"
+        Me.chkChain.UseVisualStyleBackColor = True
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -422,6 +455,7 @@ Partial Class frmItemMaster
         Me.txtItemCode.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtItemCode.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtItemCode.Location = New System.Drawing.Point(116, 58)
+        Me.txtItemCode.MaxLength = 3
         Me.txtItemCode.Name = "txtItemCode"
         Me.txtItemCode.Size = New System.Drawing.Size(75, 20)
         Me.txtItemCode.TabIndex = 1
@@ -517,39 +551,6 @@ Partial Class frmItemMaster
         Me.lblIemNamePcs.Size = New System.Drawing.Size(91, 14)
         Me.lblIemNamePcs.TabIndex = 1
         Me.lblIemNamePcs.Text = "Weight Per Pcs"
-        '
-        'chkChain
-        '
-        Me.chkChain.AutoSize = True
-        Me.chkChain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkChain.Location = New System.Drawing.Point(37, 117)
-        Me.chkChain.Name = "chkChain"
-        Me.chkChain.Size = New System.Drawing.Size(76, 18)
-        Me.chkChain.TabIndex = 26
-        Me.chkChain.Text = "For Chain"
-        Me.chkChain.UseVisualStyleBackColor = True
-        '
-        'chkFancy
-        '
-        Me.chkFancy.AutoSize = True
-        Me.chkFancy.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkFancy.Location = New System.Drawing.Point(129, 117)
-        Me.chkFancy.Name = "chkFancy"
-        Me.chkFancy.Size = New System.Drawing.Size(78, 18)
-        Me.chkFancy.TabIndex = 27
-        Me.chkFancy.Text = "For Fancy"
-        Me.chkFancy.UseVisualStyleBackColor = True
-        '
-        'chkCasting
-        '
-        Me.chkCasting.AutoSize = True
-        Me.chkCasting.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkCasting.Location = New System.Drawing.Point(223, 117)
-        Me.chkCasting.Name = "chkCasting"
-        Me.chkCasting.Size = New System.Drawing.Size(65, 18)
-        Me.chkCasting.TabIndex = 28
-        Me.chkCasting.Text = "Casting"
-        Me.chkCasting.UseVisualStyleBackColor = True
         '
         'frmItemMaster
         '

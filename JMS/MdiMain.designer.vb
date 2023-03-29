@@ -102,6 +102,7 @@ Partial Class frmMain
         Me.TestingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegisterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CreateCompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestControlToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.MainToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -382,7 +383,7 @@ Partial Class frmMain
         '
         Me.CreateBhukaBagsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditScrapBagsToolStripMenuItem})
         Me.CreateBhukaBagsToolStripMenuItem.Name = "CreateBhukaBagsToolStripMenuItem"
-        Me.CreateBhukaBagsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CreateBhukaBagsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.CreateBhukaBagsToolStripMenuItem.Text = "Scrap Bags"
         '
         'EditScrapBagsToolStripMenuItem
@@ -395,7 +396,7 @@ Partial Class frmMain
         '
         Me.LotFailBagToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditLotFailBagToolStripMenuItem})
         Me.LotFailBagToolStripMenuItem.Name = "LotFailBagToolStripMenuItem"
-        Me.LotFailBagToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LotFailBagToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.LotFailBagToolStripMenuItem.Text = "Lot Fail Bags"
         '
         'EditLotFailBagToolStripMenuItem
@@ -408,7 +409,7 @@ Partial Class frmMain
         '
         Me.VaccumeBagsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditVacuumBagsToolStripMenuItem})
         Me.VaccumeBagsToolStripMenuItem.Name = "VaccumeBagsToolStripMenuItem"
-        Me.VaccumeBagsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.VaccumeBagsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.VaccumeBagsToolStripMenuItem.Text = "Vacuum Bags"
         '
         'EditVacuumBagsToolStripMenuItem
@@ -421,7 +422,7 @@ Partial Class frmMain
         '
         Me.SampleBagsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditSampleBagsToolStripMenuItem})
         Me.SampleBagsToolStripMenuItem.Name = "SampleBagsToolStripMenuItem"
-        Me.SampleBagsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SampleBagsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.SampleBagsToolStripMenuItem.Text = "Sample Bags"
         '
         'EditSampleBagsToolStripMenuItem
@@ -433,7 +434,7 @@ Partial Class frmMain
         'EditBagsToolStripMenuItem
         '
         Me.EditBagsToolStripMenuItem.Name = "EditBagsToolStripMenuItem"
-        Me.EditBagsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EditBagsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.EditBagsToolStripMenuItem.Text = "Edit Bags"
         '
         'ToolsMenu
@@ -586,7 +587,7 @@ Partial Class frmMain
         '
         'WindowsMenu
         '
-        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeUserToolStripMenuItem, Me.TestingToolStripMenuItem, Me.RegisterToolStripMenuItem, Me.CreateCompanyToolStripMenuItem})
+        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeUserToolStripMenuItem, Me.TestingToolStripMenuItem, Me.RegisterToolStripMenuItem, Me.CreateCompanyToolStripMenuItem, Me.TestControlToolStripMenuItem})
         Me.WindowsMenu.Name = "WindowsMenu"
         Me.WindowsMenu.Size = New System.Drawing.Size(46, 20)
         Me.WindowsMenu.Text = "&Tools"
@@ -615,6 +616,12 @@ Partial Class frmMain
         Me.CreateCompanyToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
         Me.CreateCompanyToolStripMenuItem.Text = "Create Company"
         '
+        'TestControlToolStripMenuItem
+        '
+        Me.TestControlToolStripMenuItem.Name = "TestControlToolStripMenuItem"
+        Me.TestControlToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.TestControlToolStripMenuItem.Text = "Test Control"
+        '
         'MenuStrip
         '
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.EditMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.MainToolStripMenuItem1, Me.StockReportsToolStripMenuItem, Me.ToolStripMenuItem2, Me.ExitToolStripMenuItem})
@@ -636,13 +643,13 @@ Partial Class frmMain
         'StockIssueToolStripMenuItem
         '
         Me.StockIssueToolStripMenuItem.Name = "StockIssueToolStripMenuItem"
-        Me.StockIssueToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StockIssueToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.StockIssueToolStripMenuItem.Text = "Stock Issue"
         '
         'StockReceiveToolStripMenuItem
         '
         Me.StockReceiveToolStripMenuItem.Name = "StockReceiveToolStripMenuItem"
-        Me.StockReceiveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StockReceiveToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
         Me.StockReceiveToolStripMenuItem.Text = "Stock Receive"
         '
         'StockReportsToolStripMenuItem
@@ -954,4 +961,5 @@ Partial Class frmMain
     Friend WithEvents StampMasterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaterialMasterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents TestControlToolStripMenuItem As ToolStripMenuItem
 End Class

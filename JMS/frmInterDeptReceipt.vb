@@ -441,7 +441,7 @@ Public Class frmInterDeptReceipt
         Try
             Call Clear_Form()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub frmInterDeptReceipt_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
@@ -461,14 +461,13 @@ Public Class frmInterDeptReceipt
         End Try
     End Sub
     Private Sub cmbVoucherNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbVoucherNo.SelectedIndexChanged
-
         Dim dtData As DataTable = New DataTable()
 
         If cmbVoucherNo.SelectedIndex <> -1 Then
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchVoucherNoWiseDetails", DbType.String))
                 .Add(dbManager.CreateParameter("@VouNo", cmbVoucherNo.Text.Trim(), DbType.String))
             End With
@@ -545,16 +544,17 @@ Public Class frmInterDeptReceipt
         End Try
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If Not String.IsNullOrEmpty(txtId.Text) Then
+        If Not String.IsNullOrEmpty(txtId.Tag) Then
 
             If (MsgBox("[DELETION] Are You Sure To Delete This Entry ?", vbYesNo + vbDefaultButton2 + vbQuestion, "Attn : " + UserName.Trim()) = vbYes) Then
 
                 Try
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
-                        .Add(dbManager.CreateParameter("@RId", txtId.Text, DbType.Int16))
+                        .Clear()
+                        .Add(dbManager.CreateParameter("@RId", txtId.Tag, DbType.Int16))
+                        .Add(dbManager.CreateParameter("@VouNo", cmbVoucherNo.Text.Trim, DbType.String))
                     End With
 
                     dbManager.Delete("SP_Receipt_Delete", CommandType.StoredProcedure, parameters.ToArray())
@@ -618,7 +618,7 @@ Public Class frmInterDeptReceipt
             Me.fillVoucherNo()
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -660,7 +660,7 @@ Public Class frmInterDeptReceipt
 
             Me.fillDetailsFromListView(ReceiptId)
 
-            btnSave.Text = "Update"
+            btnSave.Text = "&Update"
 
             Me.TbDeptReceipt.SelectedIndex = 0
         End If

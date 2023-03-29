@@ -463,7 +463,7 @@ Partial Class frmVaccumBag
         Me.btnRCancel.Name = "btnRCancel"
         Me.btnRCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnRCancel.TabIndex = 28
-        Me.btnRCancel.Text = "Cancel"
+        Me.btnRCancel.Text = "&Cancel"
         '
         'btnRSave
         '
@@ -472,7 +472,7 @@ Partial Class frmVaccumBag
         Me.btnRSave.Name = "btnRSave"
         Me.btnRSave.Size = New System.Drawing.Size(75, 25)
         Me.btnRSave.TabIndex = 27
-        Me.btnRSave.Text = "Save"
+        Me.btnRSave.Text = "&Save"
         '
         'GRBoxDetails
         '
@@ -854,7 +854,7 @@ Partial Class frmVaccumBag
         Me.btnUCancel.Name = "btnUCancel"
         Me.btnUCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnUCancel.TabIndex = 22
-        Me.btnUCancel.Text = "Cancel"
+        Me.btnUCancel.Text = "&Cancel"
         '
         'btnUSave
         '
@@ -863,7 +863,7 @@ Partial Class frmVaccumBag
         Me.btnUSave.Name = "btnUSave"
         Me.btnUSave.Size = New System.Drawing.Size(75, 25)
         Me.btnUSave.TabIndex = 21
-        Me.btnUSave.Text = "Save"
+        Me.btnUSave.Text = "&Save"
         '
         'GUBoxMain
         '

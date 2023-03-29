@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmPartyMaster
@@ -7,8 +6,8 @@ Public Class frmPartyMaster
 
     Private mFr_State As FormState
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -98,9 +97,9 @@ Public Class frmPartyMaster
                 Try
 
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@PId", txtPartyName.Tag, DbType.Int16))
                     End With
 
@@ -201,7 +200,7 @@ Public Class frmPartyMaster
             Fr_Mode = FormState.AStateMode
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -224,9 +223,9 @@ Public Class frmPartyMaster
         Try
 
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@PName", CStr(txtPartyName.Text.Trim), DbType.String))
                 .Add(dbManager.CreateParameter("@ActionType", "SearchDuplicate", DbType.String))
             End With

@@ -13,8 +13,8 @@ Public Class frmOpMelting
 
     Dim GridDoubleClick As Boolean
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -39,9 +39,9 @@ Public Class frmOpMelting
             If Fr_Mode = FormState.AStateMode Then
 
                 Ep.Clear()
-                If Not errorvalid() Then
-                    Exit Sub
-                End If
+                'If Not errorvalid() Then
+                '    Exit Sub
+                'End If
 
                 Me.SaveData()
                 Me.btnCancel_Click(sender, e)
@@ -314,7 +314,6 @@ Public Class frmOpMelting
 
         ''For Master
         alParaval.Add(TransDt.Value.ToString())
-        alParaval.Add(txtVocucherNo.Text)
         alParaval.Add(cmbItem.SelectedValue)
         alParaval.Add(txtRequirePr.Text)
         alParaval.Add(txtTotalGrossWt.Text)
@@ -360,8 +359,6 @@ Public Class frmOpMelting
             With Hparameters
                 .Add(dbManager.CreateParameter("@HMeltingDt", alParaval.Item(iValue), DbType.DateTime))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@HMeltingLot", alParaval.Item(iValue), DbType.String))
-                iValue += 1
                 .Add(dbManager.CreateParameter("@HItemId", alParaval.Item(iValue), DbType.Int16))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HPercent", alParaval.Item(iValue), DbType.String))
@@ -391,8 +388,6 @@ Public Class frmOpMelting
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-                '.Add(dbManager.CreateParameter("@DLineNo", alParaval.Item(iValue), DbType.String))
-                'iValue += 1
             End With
 
             dbManager.Insert("SP_Melting_Save", CommandType.StoredProcedure, Hparameters.ToArray())
@@ -412,13 +407,4 @@ Public Class frmOpMelting
             Throw ex
         End Try
     End Sub
-    Private Function errorvalid() As Boolean
-        Dim bln As Boolean = True
-        If txtVocucherNo.Text.Trim.Length = 0 Then
-            Ep.SetError(txtVocucherNo, "Enter Lot No")
-            bln = False
-        End If
-        Return bln
-    End Function
-
 End Class

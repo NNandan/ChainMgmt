@@ -1,12 +1,8 @@
-﻿Imports System.Configuration
-Imports System.Data
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
-Imports System.Linq
-Imports System.IO
 Public Class frmAccountOpening
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Sub btnMelting_Click(sender As Object, e As EventArgs) Handles btnMelting.Click
         Try
             Show_ChildForm("frmOpMelting", Me.MdiParent, Me.Tag)
@@ -270,9 +266,9 @@ Public Class frmAccountOpening
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchOpStockLotTransfer", DbType.String))
             End With
 
@@ -313,9 +309,9 @@ Public Class frmAccountOpening
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchOpStockInterIssue", DbType.String))
             End With
 
@@ -356,9 +352,9 @@ Public Class frmAccountOpening
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchOpStockLabIssue", DbType.String))
             End With
 
@@ -605,7 +601,6 @@ Public Class frmAccountOpening
         If Double.TryParse(text, value) Then Return value
         Return 0
     End Function
-
     Private Function AsDouble(ByVal t As TextBox) As Double
         Dim val As Double
         Double.TryParse(t.Text, val)

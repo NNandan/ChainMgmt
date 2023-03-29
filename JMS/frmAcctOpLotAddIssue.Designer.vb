@@ -39,7 +39,7 @@ Partial Class frmAcctOpLotAddIssue
         '
         Me.dgvWipLotNo.BackColor = System.Drawing.SystemColors.Control
         Me.dgvWipLotNo.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvWipLotNo.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvWipLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvWipLotNo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvWipLotNo.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvWipLotNo.Location = New System.Drawing.Point(3, 4)
@@ -108,6 +108,7 @@ Partial Class frmAcctOpLotAddIssue
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.dgvWipLotNo)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "frmAcctOpLotAddIssue"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Op. Account Lot Addition Issue"

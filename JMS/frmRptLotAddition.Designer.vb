@@ -35,7 +35,7 @@ Partial Class frmRptLotAddition
         '
         Me.RadGridView1.BackColor = System.Drawing.SystemColors.Control
         Me.RadGridView1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.RadGridView1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RadGridView1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.RadGridView1.Location = New System.Drawing.Point(7, 35)
@@ -65,6 +65,7 @@ Partial Class frmRptLotAddition
         '
         'btnShow
         '
+        Me.btnShow.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnShow.Location = New System.Drawing.Point(312, 305)
         Me.btnShow.Name = "btnShow"
         Me.btnShow.Size = New System.Drawing.Size(75, 25)

@@ -11,14 +11,14 @@ Public Class frmStockBhukaBagCreated
         dgvWipLotNo.MasterTemplate.ShowFilteringRow = False
         dgvWipLotNo.CurrentRow = Nothing
 
-        Dim totalItemName As GridViewSummaryItem = New GridViewSummaryItem("colItemName", "Total", GridAggregateFunction.Count)
+        Dim totalOpName As GridViewSummaryItem = New GridViewSummaryItem("colOperationName", "Total", GridAggregateFunction.Count)
         Dim totalReceiveTWt As GridViewSummaryItem = New GridViewSummaryItem("colReceiveWt", "{0}", GridAggregateFunction.Sum)
         Dim totalReceiveFWt As GridViewSummaryItem = New GridViewSummaryItem("colFineWt", "{0}", GridAggregateFunction.Sum)
 
         Dim totalReceivePr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
         totalReceivePr.AggregateExpression = "((Sum(colFineWt) / Sum(colReceiveWt))  * 100)"
 
-        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalItemName, totalReceiveTWt, totalReceiveFWt, totalReceivePr})
+        Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalOpName, totalReceiveTWt, totalReceiveFWt, totalReceivePr})
         Me.dgvWipLotNo.SummaryRowsBottom.Add(totalRow)
 
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -32,10 +32,10 @@ Public Class frmStockBhukaBagCreated
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "BhukaBagCreatedDetails", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "BhukaBagNotReceived", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_BagsStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -78,7 +78,7 @@ Public Class frmStockBhukaBagCreated
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 
-            If e.Column.Name = "colItemName" Then
+            If e.Column.Name = "colOperationName" Then
                 e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
             Else
                 e.CellElement.TextAlignment = ContentAlignment.MiddleRight

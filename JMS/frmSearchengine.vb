@@ -9,7 +9,7 @@ Imports System.Data.SqlClient
 
 Public Class frmSearchengine
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
 
 #Region " D e c l a r a t i o n s "
 

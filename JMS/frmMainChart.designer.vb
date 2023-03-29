@@ -71,7 +71,7 @@ Partial Class frmMainChart
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
         Me.cmbLotNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtVaccume = New Telerik.WinControls.UI.RadTextBox()
-        Me.cmbItemName = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbItem = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtOprationType = New Telerik.WinControls.UI.RadTextBox()
         Me.txtTransNo = New Telerik.WinControls.UI.RadTextBox()
         Me.lblVaccume = New System.Windows.Forms.Label()
@@ -103,7 +103,7 @@ Partial Class frmMainChart
         Me.GBoxMain.SuspendLayout()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccume, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbItemName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOprationType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTransNo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -645,7 +645,7 @@ Partial Class frmMainChart
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.GBoxMain.Controls.Add(Me.cmbLotNo)
         Me.GBoxMain.Controls.Add(Me.txtVaccume)
-        Me.GBoxMain.Controls.Add(Me.cmbItemName)
+        Me.GBoxMain.Controls.Add(Me.cmbItem)
         Me.GBoxMain.Controls.Add(Me.txtOprationType)
         Me.GBoxMain.Controls.Add(Me.txtTransNo)
         Me.GBoxMain.Controls.Add(Me.lblVaccume)
@@ -696,20 +696,20 @@ Partial Class frmMainChart
         Me.txtVaccume.TabStop = False
         Me.txtVaccume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'cmbItemName
+        'cmbItem
         '
-        Me.cmbItemName.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.cmbItemName.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbItemName.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbItemName.Location = New System.Drawing.Point(450, 55)
-        Me.cmbItemName.Name = "cmbItemName"
+        Me.cmbItem.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbItem.Location = New System.Drawing.Point(450, 55)
+        Me.cmbItem.Name = "cmbItem"
         '
         '
         '
-        Me.cmbItemName.RootElement.ControlBounds = New System.Drawing.Rectangle(450, 55, 125, 20)
-        Me.cmbItemName.RootElement.StretchVertically = True
-        Me.cmbItemName.Size = New System.Drawing.Size(142, 20)
-        Me.cmbItemName.TabIndex = 3
+        Me.cmbItem.RootElement.ControlBounds = New System.Drawing.Rectangle(450, 55, 125, 20)
+        Me.cmbItem.RootElement.StretchVertically = True
+        Me.cmbItem.Size = New System.Drawing.Size(142, 20)
+        Me.cmbItem.TabIndex = 3
         '
         'txtOprationType
         '
@@ -856,7 +856,7 @@ Partial Class frmMainChart
         Me.GBoxMain.PerformLayout()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccume, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbItemName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOprationType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTransNo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -907,7 +907,7 @@ Partial Class frmMainChart
     Friend WithEvents CVaccum As ColumnHeader
     Private WithEvents txtOprationType As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtTransNo As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents cmbItemName As Telerik.WinControls.UI.RadDropDownList
+    Private WithEvents cmbItem As Telerik.WinControls.UI.RadDropDownList
     Private WithEvents btnCancel As Telerik.WinControls.UI.RadButton
     Private WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Private WithEvents txtVaccume As Telerik.WinControls.UI.RadTextBox

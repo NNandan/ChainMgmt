@@ -173,7 +173,7 @@ Partial Class frmOpLabIssue
         '
         'txtGFineWt
         '
-        Me.txtGFineWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtGFineWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtGFineWt.Location = New System.Drawing.Point(812, 87)
         Me.txtGFineWt.Name = "txtGFineWt"
         Me.txtGFineWt.Size = New System.Drawing.Size(89, 20)
@@ -182,7 +182,7 @@ Partial Class frmOpLabIssue
         '
         'txtGLossWt
         '
-        Me.txtGLossWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtGLossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtGLossWt.Location = New System.Drawing.Point(723, 87)
         Me.txtGLossWt.Name = "txtGLossWt"
         Me.txtGLossWt.Size = New System.Drawing.Size(88, 20)
@@ -191,7 +191,7 @@ Partial Class frmOpLabIssue
         '
         'txtRFineWt
         '
-        Me.txtRFineWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtRFineWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRFineWt.Location = New System.Drawing.Point(634, 87)
         Me.txtRFineWt.Name = "txtRFineWt"
         Me.txtRFineWt.Size = New System.Drawing.Size(88, 20)
@@ -200,7 +200,7 @@ Partial Class frmOpLabIssue
         '
         'txtRGrossWt
         '
-        Me.txtRGrossWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtRGrossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRGrossWt.Location = New System.Drawing.Point(540, 87)
         Me.txtRGrossWt.Name = "txtRGrossWt"
         Me.txtRGrossWt.Size = New System.Drawing.Size(93, 20)
@@ -209,7 +209,7 @@ Partial Class frmOpLabIssue
         '
         'UpdateDt
         '
-        Me.UpdateDt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.UpdateDt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.UpdateDt.Location = New System.Drawing.Point(39, 87)
         Me.UpdateDt.Mask = "00/00/0000"
         Me.UpdateDt.MaskType = Telerik.WinControls.UI.MaskType.Standard
@@ -221,7 +221,7 @@ Partial Class frmOpLabIssue
         '
         'cmbOperation
         '
-        Me.cmbOperation.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbOperation.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem1.Text = "Bags"
         RadListDataItem2.Text = "Voucher"
@@ -236,8 +236,9 @@ Partial Class frmOpLabIssue
         '
         'cmbLab
         '
-        Me.cmbLab.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbLab.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbLab.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbLab.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbLab.Location = New System.Drawing.Point(109, 50)
         Me.cmbLab.Name = "cmbLab"
         Me.cmbLab.Size = New System.Drawing.Size(125, 20)
@@ -245,7 +246,7 @@ Partial Class frmOpLabIssue
         '
         'txtReportPr
         '
-        Me.txtReportPr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtReportPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtReportPr.Location = New System.Drawing.Point(475, 87)
         Me.txtReportPr.Name = "txtReportPr"
         Me.txtReportPr.Size = New System.Drawing.Size(64, 20)
@@ -254,7 +255,7 @@ Partial Class frmOpLabIssue
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssuePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssuePr.Location = New System.Drawing.Point(405, 87)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(69, 20)
@@ -263,7 +264,7 @@ Partial Class frmOpLabIssue
         '
         'txtLotNo
         '
-        Me.txtLotNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtLotNo.Location = New System.Drawing.Point(109, 87)
         Me.txtLotNo.Name = "txtLotNo"
         Me.txtLotNo.Size = New System.Drawing.Size(85, 20)
@@ -271,7 +272,7 @@ Partial Class frmOpLabIssue
         '
         'txtIssueWt
         '
-        Me.txtIssueWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssueWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssueWt.Location = New System.Drawing.Point(332, 87)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.Size = New System.Drawing.Size(72, 20)
@@ -291,7 +292,7 @@ Partial Class frmOpLabIssue
         '
         Me.dgvLab.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvLab.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvLab.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvLab.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLab.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLab.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvLab.Location = New System.Drawing.Point(2, 108)
@@ -369,27 +370,30 @@ Partial Class frmOpLabIssue
         '
         'btnDelete
         '
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnDelete.Location = New System.Drawing.Point(424, 399)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 16
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnCancel.Location = New System.Drawing.Point(501, 399)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 15
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(347, 399)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 14
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '

@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmStockWipLotTransferred
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmStockWipLotTransferred_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvWipLotNo.AutoGenerateColumns = False
         dgvWipLotNo.DataSource = FetchAllRecords()
@@ -59,7 +59,19 @@ Public Class frmStockWipLotTransferred
         End Try
     End Sub
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
+        If TypeOf e.Row Is GridViewSummaryRowInfo Then
 
+            If e.Column.Name = "colOperationName" Then
+                e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            Else
+                e.CellElement.TextAlignment = ContentAlignment.MiddleRight
+            End If
+        End If
+
+        If TypeOf e.CellElement Is GridSummaryCellElement Then
+            Dim summaryFont As Font = New Font("Tahoma", 9, FontStyle.Bold)
+            e.CellElement.Font = summaryFont
+        End If
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         If dgvWipLotNo.RowCount > 0 Then

@@ -6,7 +6,7 @@ Imports System.Linq
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class frmRptLotAdditionOpStock
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmRptLotAdditionOpStock_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         With dgvLotAdditionStock

@@ -8,8 +8,8 @@ Public Class frmCoreAdditionIssue
 
     Dim strSQL As String = Nothing
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -20,11 +20,11 @@ Public Class frmCoreAdditionIssue
                 Case FormState.AStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "New"
                     Me.btnSave.Enabled = True
-                    Me.btnSave.Text = "Save"
+                    Me.btnSave.Text = "&Save"
                     Me.btnDelete.Enabled = False
                 Case FormState.EStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "Edit"
-                    Me.btnSave.Text = "Update"
+                    Me.btnSave.Text = "&Update"
                     Me.btnDelete.Enabled = True
             End Select
         End Set
@@ -201,18 +201,18 @@ Public Class frmCoreAdditionIssue
         End Try
 
     End Sub
-    Private Sub lstCoreAddition_DoubleClick(sender As Object, e As EventArgs) Handles lstCoreAddition.DoubleClick
-        If lstCoreAddition.Items.Count > 0 Then
-            Dim CoreIssueId As Integer = lstCoreAddition.SelectedItems(0).SubItems(0).Text
+    Private Sub lstCoreAddition_DoubleClick(sender As Object, e As EventArgs)
+        'If lstCoreAddition.Items.Count > 0 Then
+        '    Dim CoreIssueId As Integer = lstCoreAddition.SelectedItems(0).SubItems(0).Text
 
-            Fr_Mode = FormState.EStateMode
+        '    Fr_Mode = FormState.EStateMode
 
-            Me.Clear_Form()
+        '    Me.Clear_Form()
 
-            fillHeaderFromListView(CoreIssueId)
+        '    fillHeaderFromListView(CoreIssueId)
 
-            Me.TabControl1.SelectedIndex = 0
-        End If
+        '    Me.TabControl1.SelectedIndex = 0
+        'End If
     End Sub
     Private Sub fillHeaderFromListView(ByVal intCoreIssueId As Integer)
 
@@ -258,7 +258,7 @@ ErrHandler:
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_CoreAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
-        lstCoreAddition.Items.Clear()
+        'lstCoreAddition.Items.Clear()
 
         Try
 
@@ -274,12 +274,12 @@ ErrHandler:
                 lvi.SubItems.Add(dr("ToKarigarId").ToString())
                 lvi.SubItems.Add(dr("toKarigarName").ToString())
                 lvi.SubItems.Add(dr("CreatedBy").ToString())
-                lstCoreAddition.Items.Add(lvi)
+                'lstCoreAddition.Items.Add(lvi)
             End While
 
-            If lstCoreAddition.Items.Count > 0 Then
-                lstCoreAddition.Items(0).Selected = True
-            End If
+            'If lstCoreAddition.Items.Count > 0 Then
+            '    lstCoreAddition.Items(0).Selected = True
+            'End If
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

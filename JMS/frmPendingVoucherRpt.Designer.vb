@@ -46,7 +46,7 @@ Partial Class frmPendingBags
         Me.dgvMeltingBagList.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvMeltingBagList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvMeltingBagList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvMeltingBagList.Location = New System.Drawing.Point(4, 3)
+        Me.dgvMeltingBagList.Location = New System.Drawing.Point(4, 0)
         '
         '
         '
@@ -58,17 +58,17 @@ Partial Class frmPendingBags
         GridViewTextBoxColumn1.FieldName = "UsedBagDt"
         GridViewTextBoxColumn1.HeaderText = "Used Bag Dt."
         GridViewTextBoxColumn1.Name = "colUsedBagDt"
-        GridViewTextBoxColumn1.Width = 90
+        GridViewTextBoxColumn1.Width = 100
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "BagSrNo"
         GridViewTextBoxColumn2.HeaderText = "Bag Sr#"
         GridViewTextBoxColumn2.Name = "colBagSrNo"
-        GridViewTextBoxColumn2.Width = 90
+        GridViewTextBoxColumn2.Width = 110
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "ItemName"
         GridViewTextBoxColumn3.HeaderText = "Item Name"
         GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 120
+        GridViewTextBoxColumn3.Width = 160
         GridViewDecimalColumn1.AllowFiltering = False
         GridViewDecimalColumn1.AllowGroup = False
         GridViewDecimalColumn1.EnableExpressionEditor = False
@@ -77,7 +77,7 @@ Partial Class frmPendingBags
         GridViewDecimalColumn1.HeaderText = "Lot No."
         GridViewDecimalColumn1.IsVisible = False
         GridViewDecimalColumn1.Name = "colUsedInLotNo"
-        GridViewDecimalColumn1.Width = 100
+        GridViewDecimalColumn1.Width = 120
         GridViewTextBoxColumn4.AllowFiltering = False
         GridViewTextBoxColumn4.AllowGroup = False
         GridViewTextBoxColumn4.EnableExpressionEditor = False
@@ -86,7 +86,7 @@ Partial Class frmPendingBags
         GridViewTextBoxColumn4.HeaderText = "Recieve Wt."
         GridViewTextBoxColumn4.Name = "colRecieveWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 90
+        GridViewTextBoxColumn4.Width = 100
         GridViewDecimalColumn2.AllowFiltering = False
         GridViewDecimalColumn2.AllowGroup = False
         GridViewDecimalColumn2.EnableExpressionEditor = False
@@ -94,13 +94,13 @@ Partial Class frmPendingBags
         GridViewDecimalColumn2.FormatString = "{0:F2}"
         GridViewDecimalColumn2.HeaderText = "Receive [%]"
         GridViewDecimalColumn2.Name = "colReportPr"
-        GridViewDecimalColumn2.Width = 90
+        GridViewDecimalColumn2.Width = 100
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "BalanceWt"
         GridViewTextBoxColumn5.HeaderText = "Balance Wt."
         GridViewTextBoxColumn5.Name = "colBalanceWt"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 90
+        GridViewTextBoxColumn5.Width = 100
         Me.dgvMeltingBagList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewDecimalColumn1, GridViewTextBoxColumn4, GridViewDecimalColumn2, GridViewTextBoxColumn5})
         Me.dgvMeltingBagList.MasterTemplate.EnableGrouping = False
         Me.dgvMeltingBagList.MasterTemplate.ShowRowHeaderColumn = False
@@ -108,13 +108,13 @@ Partial Class frmPendingBags
         Me.dgvMeltingBagList.Name = "dgvMeltingBagList"
         Me.dgvMeltingBagList.ReadOnly = True
         Me.dgvMeltingBagList.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvMeltingBagList.Size = New System.Drawing.Size(686, 302)
+        Me.dgvMeltingBagList.Size = New System.Drawing.Size(667, 300)
         Me.dgvMeltingBagList.TabIndex = 19
         '
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(278, 309)
+        Me.btnPrint.Location = New System.Drawing.Point(271, 307)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 20
@@ -123,7 +123,7 @@ Partial Class frmPendingBags
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(355, 309)
+        Me.btnExit.Location = New System.Drawing.Point(348, 307)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 28
@@ -132,7 +132,7 @@ Partial Class frmPendingBags
         'frmPendingBags
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(694, 337)
+        Me.ClientSize = New System.Drawing.Size(672, 337)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvMeltingBagList)

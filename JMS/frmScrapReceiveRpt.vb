@@ -4,7 +4,7 @@ Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmScrapReceiveRpt
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
     Private Sub frmScrapReceiveReport_Load(sender As Object, e As EventArgs) Handles Me.Load
         tbScrapReport.SelectedIndex = 0
     End Sub

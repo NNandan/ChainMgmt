@@ -144,6 +144,7 @@ Partial Class frmRLotTransfer
         '
         'cmbOperation
         '
+        Me.cmbOperation.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbOperation.Location = New System.Drawing.Point(110, 30)
         Me.cmbOperation.Name = "cmbOperation"
         Me.cmbOperation.Size = New System.Drawing.Size(125, 20)
@@ -225,6 +226,7 @@ Partial Class frmRLotTransfer
         'txtReceiveWt
         '
         Me.txtReceiveWt.BackColor = System.Drawing.Color.White
+        Me.txtReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtReceiveWt.Location = New System.Drawing.Point(110, 146)
         Me.txtReceiveWt.Name = "txtReceiveWt"
         Me.txtReceiveWt.ReadOnly = True
@@ -234,6 +236,7 @@ Partial Class frmRLotTransfer
         '
         'txtReceivePr
         '
+        Me.txtReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtReceivePr.Location = New System.Drawing.Point(110, 117)
         Me.txtReceivePr.Name = "txtReceivePr"
         Me.txtReceivePr.ReadOnly = True
@@ -244,6 +247,7 @@ Partial Class frmRLotTransfer
         '
         'txtIssueWt
         '
+        Me.txtIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssueWt.Location = New System.Drawing.Point(110, 88)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.ReadOnly = True
@@ -254,6 +258,7 @@ Partial Class frmRLotTransfer
         '
         'txtIssuePr
         '
+        Me.txtIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtIssuePr.Location = New System.Drawing.Point(110, 59)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.ReadOnly = True
@@ -290,7 +295,7 @@ Partial Class frmRLotTransfer
         Me.cmbTLabour.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbTLabour.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbTLabour.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbTLabour.Location = New System.Drawing.Point(531, 58)
+        Me.cmbTLabour.Location = New System.Drawing.Point(531, 50)
         Me.cmbTLabour.Name = "cmbTLabour"
         Me.cmbTLabour.Size = New System.Drawing.Size(125, 20)
         Me.cmbTLabour.TabIndex = 1
@@ -313,7 +318,7 @@ Partial Class frmRLotTransfer
         '
         'txtTransNo
         '
-        Me.txtTransNo.Location = New System.Drawing.Point(196, 61)
+        Me.txtTransNo.Location = New System.Drawing.Point(196, 50)
         Me.txtTransNo.Name = "txtTransNo"
         Me.txtTransNo.Size = New System.Drawing.Size(10, 20)
         Me.txtTransNo.TabIndex = 812
@@ -323,7 +328,7 @@ Partial Class frmRLotTransfer
         '
         Me.cmbLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbLotNo.Location = New System.Drawing.Point(110, 61)
+        Me.cmbLotNo.Location = New System.Drawing.Point(110, 50)
         Me.cmbLotNo.Name = "cmbLotNo"
         Me.cmbLotNo.Size = New System.Drawing.Size(85, 20)
         Me.cmbLotNo.TabIndex = 0
@@ -343,7 +348,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(448, 61)
+        Me.Label2.Location = New System.Drawing.Point(448, 50)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 14)
@@ -386,7 +391,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label28.Location = New System.Drawing.Point(57, 64)
+        Me.Label28.Location = New System.Drawing.Point(57, 52)
         Me.Label28.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(48, 14)
@@ -416,7 +421,7 @@ Partial Class frmRLotTransfer
         Me.lstLotTransfer.UseCompatibleStateImageBehavior = False
         Me.lstLotTransfer.View = System.Windows.Forms.View.Details
         '
-        'frmTransferedLot
+        'frmRLotTransfer
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(692, 364)
@@ -424,7 +429,7 @@ Partial Class frmRLotTransfer
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
         Me.MaximizeBox = False
-        Me.Name = "frmTransferedLot"
+        Me.Name = "frmRLotTransfer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Receive Transfered Lot"
         Me.TabControl1.ResumeLayout(False)

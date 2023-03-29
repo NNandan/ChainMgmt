@@ -463,7 +463,7 @@ Partial Class frmMelting
         '
         Me.Rmccmb.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         '
-        '
+        'Rmccmb.NestedRadGridView
         '
         Me.Rmccmb.EditorControl.BackColor = System.Drawing.SystemColors.Window
         Me.Rmccmb.EditorControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -485,6 +485,7 @@ Partial Class frmMelting
         '
         Me.Rmccmb.EditorControl.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 240, 150)
         Me.Rmccmb.EditorControl.ShowGroupPanel = False
+        Me.Rmccmb.EditorControl.Size = New System.Drawing.Size(240, 150)
         Me.Rmccmb.EditorControl.TabIndex = 0
         Me.Rmccmb.Font = New System.Drawing.Font("Tahoma", 8.25!)
         Me.Rmccmb.Location = New System.Drawing.Point(145, 21)
@@ -672,6 +673,7 @@ Partial Class frmMelting
         '
         Me.txtMeltingNo.RootElement.ControlBounds = New System.Drawing.Rectangle(89, 56, 100, 20)
         Me.txtMeltingNo.RootElement.StretchVertically = True
+        Me.txtMeltingNo.Size = New System.Drawing.Size(100, 20)
         Me.txtMeltingNo.TabIndex = 809
         Me.txtMeltingNo.TabStop = False
         '
@@ -698,6 +700,7 @@ Partial Class frmMelting
         '
         Me.cmbItem.RootElement.ControlBounds = New System.Drawing.Rectangle(360, 56, 125, 20)
         Me.cmbItem.RootElement.StretchVertically = True
+        Me.cmbItem.Size = New System.Drawing.Size(125, 20)
         Me.cmbItem.TabIndex = 807
         '
         'cmbTLabour
@@ -780,11 +783,11 @@ Partial Class frmMelting
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.Label8.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.Label8.Location = New System.Drawing.Point(556, 55)
         Me.Label8.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(79, 15)
+        Me.Label8.Size = New System.Drawing.Size(79, 14)
         Me.Label8.TabIndex = 27
         Me.Label8.Text = "To Employee"
         '

@@ -1,6 +1,4 @@
-﻿Imports System.Collections.Specialized
-Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmStockBagsNotUsed

@@ -34,14 +34,17 @@ Partial Class frmEditBags
         Me.btnCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtLossFine = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel20 = New Telerik.WinControls.UI.RadLabel()
         Me.txtGrossLoss = New Telerik.WinControls.UI.RadTextBox()
         Me.txtReceiveFineWt = New Telerik.WinControls.UI.RadTextBox()
         Me.txtIssueFineWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadLabel19 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel18 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
         Me.txtIssueWt = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
         Me.txtIssuePr = New Telerik.WinControls.UI.RadTextBox()
@@ -76,9 +79,6 @@ Partial Class frmEditBags
         CType(Me.txtGrossLoss, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtReceiveFineWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssueFineWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssuePr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -228,14 +228,17 @@ Partial Class frmEditBags
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.txtLossFine)
         Me.GroupBox2.Controls.Add(Me.RadLabel20)
         Me.GroupBox2.Controls.Add(Me.txtGrossLoss)
         Me.GroupBox2.Controls.Add(Me.txtReceiveFineWt)
         Me.GroupBox2.Controls.Add(Me.txtIssueFineWt)
-        Me.GroupBox2.Controls.Add(Me.RadLabel19)
-        Me.GroupBox2.Controls.Add(Me.RadLabel18)
-        Me.GroupBox2.Controls.Add(Me.RadLabel17)
         Me.GroupBox2.Controls.Add(Me.txtIssueWt)
         Me.GroupBox2.Controls.Add(Me.RadLabel16)
         Me.GroupBox2.Controls.Add(Me.txtIssuePr)
@@ -257,6 +260,66 @@ Partial Class frmEditBags
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Details"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label6.Location = New System.Drawing.Point(531, 153)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 13)
+        Me.Label6.TabIndex = 41
+        Me.Label6.Text = "Loss Fine"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(520, 127)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 14)
+        Me.Label5.TabIndex = 40
+        Me.Label5.Text = "Gross Fine"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Label4.Location = New System.Drawing.Point(492, 102)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(90, 13)
+        Me.Label4.TabIndex = 39
+        Me.Label4.Text = "Receive Fine Wt."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(492, 75)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(90, 14)
+        Me.Label3.TabIndex = 38
+        Me.Label3.Text = "Issue  Fine Wt."
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(523, 49)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(60, 14)
+        Me.Label2.TabIndex = 37
+        Me.Label2.Text = "Issue Wt."
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(532, 23)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 14)
+        Me.Label1.TabIndex = 36
+        Me.Label1.Text = "Issue %"
+        '
         'txtLossFine
         '
         Me.txtLossFine.BackColor = System.Drawing.Color.Transparent
@@ -271,9 +334,8 @@ Partial Class frmEditBags
         Me.RadLabel20.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.RadLabel20.Location = New System.Drawing.Point(516, 153)
         Me.RadLabel20.Name = "RadLabel20"
-        Me.RadLabel20.Size = New System.Drawing.Size(57, 18)
+        Me.RadLabel20.Size = New System.Drawing.Size(2, 2)
         Me.RadLabel20.TabIndex = 34
-        Me.RadLabel20.Text = "Loss Fine"
         '
         'txtGrossLoss
         '
@@ -301,33 +363,6 @@ Partial Class frmEditBags
         Me.txtIssueFineWt.TabIndex = 31
         Me.txtIssueFineWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadLabel19
-        '
-        Me.RadLabel19.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadLabel19.Location = New System.Drawing.Point(509, 125)
-        Me.RadLabel19.Name = "RadLabel19"
-        Me.RadLabel19.Size = New System.Drawing.Size(63, 18)
-        Me.RadLabel19.TabIndex = 30
-        Me.RadLabel19.Text = "Gross Fine"
-        '
-        'RadLabel18
-        '
-        Me.RadLabel18.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadLabel18.Location = New System.Drawing.Point(475, 101)
-        Me.RadLabel18.Name = "RadLabel18"
-        Me.RadLabel18.Size = New System.Drawing.Size(98, 18)
-        Me.RadLabel18.TabIndex = 29
-        Me.RadLabel18.Text = "Receive Fine Wt."
-        '
-        'RadLabel17
-        '
-        Me.RadLabel17.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadLabel17.Location = New System.Drawing.Point(484, 76)
-        Me.RadLabel17.Name = "RadLabel17"
-        Me.RadLabel17.Size = New System.Drawing.Size(89, 18)
-        Me.RadLabel17.TabIndex = 28
-        Me.RadLabel17.Text = "Issue  Fine Wt."
-        '
         'txtIssueWt
         '
         Me.txtIssueWt.Location = New System.Drawing.Point(586, 46)
@@ -339,11 +374,10 @@ Partial Class frmEditBags
         'RadLabel16
         '
         Me.RadLabel16.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadLabel16.Location = New System.Drawing.Point(514, 49)
+        Me.RadLabel16.Location = New System.Drawing.Point(524, 49)
         Me.RadLabel16.Name = "RadLabel16"
-        Me.RadLabel16.Size = New System.Drawing.Size(58, 18)
+        Me.RadLabel16.Size = New System.Drawing.Size(2, 2)
         Me.RadLabel16.TabIndex = 26
-        Me.RadLabel16.Text = "Issue Wt."
         '
         'txtIssuePr
         '
@@ -356,11 +390,10 @@ Partial Class frmEditBags
         'RadLabel15
         '
         Me.RadLabel15.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadLabel15.Location = New System.Drawing.Point(521, 23)
+        Me.RadLabel15.Location = New System.Drawing.Point(531, 23)
         Me.RadLabel15.Name = "RadLabel15"
-        Me.RadLabel15.Size = New System.Drawing.Size(51, 18)
+        Me.RadLabel15.Size = New System.Drawing.Size(2, 2)
         Me.RadLabel15.TabIndex = 24
-        Me.RadLabel15.Text = "Issue %"
         '
         'txtCarbon
         '
@@ -470,7 +503,7 @@ Partial Class frmEditBags
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(19, 83)
+        Me.Label14.Location = New System.Drawing.Point(23, 83)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(65, 14)
         Me.Label14.TabIndex = 106
@@ -511,7 +544,7 @@ Partial Class frmEditBags
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(21, 56)
+        Me.Label15.Location = New System.Drawing.Point(29, 56)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(59, 14)
         Me.Label15.TabIndex = 105
@@ -521,7 +554,7 @@ Partial Class frmEditBags
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(11, 29)
+        Me.Label16.Location = New System.Drawing.Point(18, 29)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(73, 14)
         Me.Label16.TabIndex = 103
@@ -532,6 +565,7 @@ Partial Class frmEditBags
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(714, 438)
         Me.Controls.Add(Me.tbBhukaBag)
+        Me.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmEditBags"
@@ -553,9 +587,6 @@ Partial Class frmEditBags
         CType(Me.txtGrossLoss, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtReceiveFineWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIssueFineWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIssuePr, System.ComponentModel.ISupportInitialize).EndInit()
@@ -586,9 +617,6 @@ Partial Class frmEditBags
     Friend WithEvents txtGrossLoss As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtReceiveFineWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtIssueFineWt As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadLabel19 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel18 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel17 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtIssueWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel16 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtIssuePr As Telerik.WinControls.UI.RadTextBox
@@ -618,4 +646,10 @@ Partial Class frmEditBags
     Friend WithEvents rbVacuum As RadioButton
     Friend WithEvents rbSample As RadioButton
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class

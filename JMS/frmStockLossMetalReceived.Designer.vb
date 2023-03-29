@@ -66,7 +66,7 @@ Partial Class frmStockLossMetalReceived
         GridViewTextBoxColumn3.FieldName = "ItemName"
         GridViewTextBoxColumn3.HeaderText = "Item Name"
         GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 175
+        GridViewTextBoxColumn3.Width = 170
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "ReceiveWt"
         GridViewTextBoxColumn4.HeaderText = "Receive Wt."
@@ -94,21 +94,21 @@ Partial Class frmStockLossMetalReceived
         '
         '
         '
-        Me.dgvWipLotNo.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 240, 150)
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(630, 521)
+        Me.dgvWipLotNo.RootElement.ControlBounds = New System.Drawing.Rectangle(2, 0, 240, 150)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(627, 429)
         Me.dgvWipLotNo.TabIndex = 6
         '
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(323, 527)
+        Me.btnExit.Location = New System.Drawing.Point(309, 434)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(308, 435, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(87, 27)
         Me.btnExit.TabIndex = 45
         Me.btnExit.Text = "E&xit"
@@ -117,13 +117,13 @@ Partial Class frmStockLossMetalReceived
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(232, 527)
+        Me.btnPrint.Location = New System.Drawing.Point(221, 434)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(5)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
-        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(220, 435, 110, 24)
         Me.btnPrint.Size = New System.Drawing.Size(87, 27)
         Me.btnPrint.TabIndex = 44
         Me.btnPrint.Text = "&Print"
@@ -131,7 +131,7 @@ Partial Class frmStockLossMetalReceived
         'frmStockLossMetalReceived
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(634, 559)
+        Me.ClientSize = New System.Drawing.Size(630, 466)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvWipLotNo)

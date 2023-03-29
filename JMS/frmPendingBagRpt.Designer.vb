@@ -62,7 +62,7 @@ Partial Class frmPendingVoucher
         GridViewTextBoxColumn2.FieldName = "ItemName"
         GridViewTextBoxColumn2.HeaderText = "Item Name"
         GridViewTextBoxColumn2.Name = "colItemName"
-        GridViewTextBoxColumn2.Width = 140
+        GridViewTextBoxColumn2.Width = 240
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "IssueWt"
         GridViewTextBoxColumn3.HeaderText = "Issue Wt."
@@ -71,12 +71,12 @@ Partial Class frmPendingVoucher
         GridViewTextBoxColumn3.Width = 90
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "ReceivePr"
-        GridViewTextBoxColumn4.HeaderText = "Receive [%}"
+        GridViewTextBoxColumn4.HeaderText = "Receive [%]"
         GridViewTextBoxColumn4.Name = "colReceivePr"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "FineWt"
+        GridViewTextBoxColumn5.FieldName = "BalFineWt"
         GridViewTextBoxColumn5.HeaderText = "Fine Wt."
         GridViewTextBoxColumn5.Name = "colFineWt"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
@@ -100,7 +100,7 @@ Partial Class frmPendingVoucher
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(266, 308)
+        Me.btnPrint.Location = New System.Drawing.Point(274, 308)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 21
@@ -109,7 +109,7 @@ Partial Class frmPendingVoucher
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(342, 308)
+        Me.btnExit.Location = New System.Drawing.Point(350, 308)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 25

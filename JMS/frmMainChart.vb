@@ -13,6 +13,7 @@ Public Class frmMainChart
 
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
+    Dim iItemId As Int16
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -158,10 +159,11 @@ Public Class frmMainChart
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillOnlyItemName", DbType.String))
         End With
 
-        Dim dr = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
+
         Dim dt As DataTable = New DataTable()
 
         dt.Load(dr)
@@ -174,17 +176,17 @@ Public Class frmMainChart
             dt.Rows.InsertAt(row, 0)
 
             'Assign DataTable as DataSource.
-            cmbItemName.DataSource = dt
-            cmbItemName.DisplayMember = "ItemName"
-            cmbItemName.ValueMember = "ItemId"
+            cmbItem.DataSource = dt
+            cmbItem.DisplayMember = "ItemName"
+            cmbItem.ValueMember = "ItemId"
 
-            cmbItemName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            cmbItemName.AutoCompleteDataSource = AutoCompleteSource.ListItems
+            cmbItem.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbItem.AutoCompleteDataSource = AutoCompleteSource.ListItems
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
             dr.Close()
-            Objcn.Close()
+            dbManager.CloseConnection(connection)
         End Try
     End Sub
     Private Sub getLastLotNoValue()
@@ -206,7 +208,8 @@ Public Class frmMainChart
             Else
                 dr.Read()
                 txtTransNo.Text = dr("MaxTransId").ToString()
-                cmbItemName.SelectedIndex = dr("ItemId").ToString()
+                iItemId = dr("ItemId")
+                cmbItem.Text = dr("ItemName").ToString()
                 txtIssuePr.Text = Format(Val(dr("ReceivePr")), "0.00")
                 txtIssueWt.Text = Format(Val(dr("ReceiveWt")), "0.00")
                 txtReceivePr.Text = Format(Val(dr("IssuePr")), "0.00")
@@ -451,7 +454,7 @@ Public Class frmMainChart
                 .Clear()
                 .Add(dbManager.CreateParameter("@TDate", TransDt.Value.ToString(), DbType.DateTime))
                 .Add(dbManager.CreateParameter("@TLotNo", cmbLotNo.Text, DbType.String))
-                .Add(dbManager.CreateParameter("@TItemId", Val(cmbItemName.SelectedValue), DbType.Int16))
+                .Add(dbManager.CreateParameter("@TItemId", Val(iItemId), DbType.Int16))
 
                 .Add(dbManager.CreateParameter("@TOperationId", Val(cmbOperation.SelectedValue), DbType.Int16))
                 .Add(dbManager.CreateParameter("@TOperationTypeId", Val(txtOprationType.Tag), DbType.Int16))
@@ -721,11 +724,11 @@ Public Class frmMainChart
             txtOprationType.Clear()
             txtOprationType.Tag = ""
 
-            cmbItemName.Text = ""
-            cmbItemName.Enabled = True
+            cmbItem.Text = ""
+            cmbItem.Enabled = True
 
             cmbLotNo.Text = ""
-            cmbItemName.Enabled = True
+            cmbItem.Enabled = True
 
             txtVaccume.Clear()
 
@@ -777,7 +780,7 @@ Public Class frmMainChart
                 MessageBox.Show("Select Operation Name !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbOperation.Focus()
                 Return False
-            ElseIf val(txtReceiveWt.Text.Trim.Length) = 0 Then
+            ElseIf Val(txtReceiveWt.Text.Trim.Length) = 0 Then
                 MsgBox("Please Enter Receive Wt.", MsgBoxStyle.Critical)
                 txtReceiveWt.Focus()
                 Return False
@@ -797,11 +800,11 @@ Public Class frmMainChart
                 MessageBox.Show("Receive Wt. Cannot Be Greater than Issue Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbOperation.Focus()
                 Return False
-            ElseIf (txtOprationType.Tag = "4") And val(txtVaccume.Text.Trim) <= 0 Then      ''For Cutting
+            ElseIf (txtOprationType.Tag = "4") And Val(txtVaccume.Text.Trim) <= 0 Then      ''For Cutting
                 MessageBox.Show("Vaccume Wt. Cannot be 0 or (-)Negative !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbOperation.Focus()
                 Return False
-            ElseIf (txtOprationType.Tag = "5") And (val(txtReceivePr.Text) > val(txtIssuePr.Text)) Then     ''For Touch Change
+            ElseIf (txtOprationType.Tag = "5") And (Val(txtReceivePr.Text) > Val(txtIssuePr.Text)) Then     ''For Touch Change
                 MessageBox.Show("Receive % Cannot Be Greater than Issue % !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbOperation.Focus()
                 Return False
@@ -1029,9 +1032,9 @@ Public Class frmMainChart
                 .Add(dbManager.CreateParameter("@TId", txtTransNo.Text.Trim, DbType.Int16))
                 .Add(dbManager.CreateParameter("@TDate", TransDt.Value.ToString(), DbType.DateTime))
                 .Add(dbManager.CreateParameter("@TLotNo", cmbLotNo.Text, DbType.String))
-                .Add(dbManager.CreateParameter("@TItemId", Val(cmbItemName.SelectedValue), DbType.Int16))
+                .Add(dbManager.CreateParameter("@TItemId", Val(iItemId), DbType.Int16))
 
-                .Add(dbManager.CreateParameter("@TOperationId", Val(cmbOperation.SelectedIndex), DbType.Int16))
+                .Add(dbManager.CreateParameter("@TOperationId", Val(cmbOperation.SelectedValue), DbType.Int16))
                 .Add(dbManager.CreateParameter("@TOperationTypeId", Val(txtOprationType.Tag), DbType.Int16))
 
                 .Add(dbManager.CreateParameter("@TIssuePr", Convert.ToString(txtIssuePr.Text), DbType.String))

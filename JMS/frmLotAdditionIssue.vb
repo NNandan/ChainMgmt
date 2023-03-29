@@ -329,7 +329,7 @@ Public Class frmLotAdditionIssue
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillOnlyItemName", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
@@ -563,7 +563,7 @@ Public Class frmLotAdditionIssue
         Dim LotAdditionId As Integer = cmbLotNo.SelectedIndex.ToString()
 
         If cmbLotNo.Items.Count > 0 Then
-            fillHeaderFromListViewI(cmbLotNo.Text.Trim())
+            fillHeaderFromListViewI(Val(cmbLotNo.SelectedIndex))
         End If
 
         ''Fill Issue, Receive Data Start
@@ -732,7 +732,7 @@ Public Class frmLotAdditionIssue
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchDataForI", DbType.String))
             End With
 
             dtData = dbManager.GetDataTable("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -744,14 +744,14 @@ Public Class frmLotAdditionIssue
         Return dtData
 
     End Function
-    Private Sub fillHeaderFromListViewI(ByVal sLotNo As Integer)
+    Private Sub fillHeaderFromListViewI(ByVal iLotAddId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecordForI", DbType.String))
-            .Add(dbManager.CreateParameter("@LotNo", CStr(sLotNo), DbType.String))
+            .Add(dbManager.CreateParameter("@LId", CInt(iLotAddId), DbType.Int16))
         End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
@@ -779,14 +779,14 @@ Public Class frmLotAdditionIssue
 ErrHandler:
         MsgBox(Err.Description, MsgBoxStyle.Critical)
     End Sub
-    Private Sub fillHeaderFromListViewU(ByVal sLotNo As Integer)
+    Private Sub fillHeaderFromListViewU(ByVal iLotAddId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecordForU", DbType.String))
-            .Add(dbManager.CreateParameter("@LotNo", CStr(sLotNo), DbType.String))
+            .Add(dbManager.CreateParameter("@LId", CInt(iLotAddId), DbType.Int16))
         End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
@@ -841,9 +841,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchReceiveData", DbType.String))
                 .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
             End With
@@ -1125,12 +1125,12 @@ ErrHandler:
     Private Sub cmbItemType_GotFocus(sender As Object, e As EventArgs) Handles cmbItemType.GotFocus
         cmbItemType.ShowDropDown()
     End Sub
-    Private Sub fillDetailsFromListView(ByVal sLotNo As String)
+    Private Sub fillDetailsFromListView(ByVal iLotAddId As Integer)
         Dim dttable As New DataTable
-        dttable = FetchAllRecords(CStr(sLotNo))
+        dttable = FetchAllRecords(CInt(iLotAddId))
 
         For Each Row As DataRow In dttable.Rows
-            dgvLotAddition.Rows.Add(1, CStr(Row("ItemType")), CStr(Row("SlipBagNo")), Val(Row("ItemId")), CStr(Row("ItemName")), Format(Val(Row("IssueWt")), "0.00"), Format(Val(Row("IssuePr")), "0.00"), Format(Val(Row("FineWt")), "0.00"), Row("Remarks"), Row("IsChecked"), Val(Row("FineWt")), Val(Row("ReceiptDetailsId")))
+            dgvLotAddition.Rows.Add(1, CStr(Row("ItemType")), CStr(Row("LotNo")), Val(Row("ItemId")), CStr(Row("ItemName")), Format(Val(Row("IssueWt")), "0.00"), Format(Val(Row("IssuePr")), "0.00"), Format(Val(Row("FineWt")), "0.00"), Row("Remarks"), Row("IsChecked"), Val(Row("FineWt")), Val(Row("ReceiptDetailsId")))
         Next
 
         Me.GetSrNo(dgvLotAddition)
@@ -1139,7 +1139,7 @@ ErrHandler:
 
         dgvLotAddition.ReadOnly = True
     End Sub
-    Private Function FetchAllRecords(ByVal strLotNo As String) As DataTable
+    Private Function FetchAllRecords(ByVal iLotAddId As Integer) As DataTable
         Dim dtData As DataTable = New DataTable()
 
         Try
@@ -1147,8 +1147,8 @@ ErrHandler:
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
-                .Add(dbManager.CreateParameter("@LotNo", CStr(strLotNo), DbType.String))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchIsDetailRecord", DbType.String))
+                .Add(dbManager.CreateParameter("@LId", CInt(iLotAddId), DbType.Int16))
             End With
 
             dtData = dbManager.GetDataTable("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -1241,15 +1241,15 @@ ErrHandler:
         If dgvLotIssue.SelectedRows.Count = 0 Then Exit Sub
 
         If dgvLotIssue.Rows.Count > 0 Then
-            Dim LotNumber As String = Me.dgvLotIssue.SelectedRows(0).Cells(4).Value
+            Dim iLotAddId As Int16 = Me.dgvLotIssue.SelectedRows(0).Cells(0).Value
 
             Me.Clear_Form()
 
             Fr_Mode = FormState.EStateMode
 
-            Me.fillHeaderFromListViewU(LotNumber)
+            Me.fillHeaderFromListViewU(iLotAddId)
 
-            Me.fillDetailsFromListView(LotNumber)
+            Me.fillDetailsFromListView(iLotAddId)
 
             Me.TbLotAdditionIssue.SelectedIndex = 0
         End If

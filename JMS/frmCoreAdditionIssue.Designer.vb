@@ -22,6 +22,7 @@ Partial Class frmCoreAdditionIssue
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -54,17 +55,7 @@ Partial Class frmCoreAdditionIssue
         Me.LblLotADate = New System.Windows.Forms.Label()
         Me.lblLotNo = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.lstCoreAddition = New System.Windows.Forms.ListView()
-        Me.cCoreAdditionId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cCoreAdditionDt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cIssueWt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cIssuePr = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cCoreIssueWt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cLotNumber = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cFrKarigar = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cfrKarigarName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.cToKarigar = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ctoKarigarName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +66,8 @@ Partial Class frmCoreAdditionIssue
         CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -87,7 +80,7 @@ Partial Class frmCoreAdditionIssue
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(534, 317)
+        Me.TabControl1.Size = New System.Drawing.Size(609, 317)
         Me.TabControl1.TabIndex = 6
         '
         'TabPage1
@@ -102,14 +95,14 @@ Partial Class frmCoreAdditionIssue
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(5)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(5)
-        Me.TabPage1.Size = New System.Drawing.Size(526, 290)
+        Me.TabPage1.Size = New System.Drawing.Size(601, 290)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Information"
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(342, 258)
+        Me.btnExit.Location = New System.Drawing.Point(368, 257)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 931
@@ -118,7 +111,7 @@ Partial Class frmCoreAdditionIssue
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(265, 258)
+        Me.btnCancel.Location = New System.Drawing.Point(291, 257)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 1
@@ -127,7 +120,7 @@ Partial Class frmCoreAdditionIssue
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(111, 258)
+        Me.btnSave.Location = New System.Drawing.Point(137, 257)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 0
@@ -136,7 +129,7 @@ Partial Class frmCoreAdditionIssue
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(188, 258)
+        Me.btnDelete.Location = New System.Drawing.Point(214, 257)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 2
@@ -174,7 +167,7 @@ Partial Class frmCoreAdditionIssue
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5)
         Me.GBoxMain.Name = "GBoxMain"
         Me.GBoxMain.Padding = New System.Windows.Forms.Padding(5)
-        Me.GBoxMain.Size = New System.Drawing.Size(515, 242)
+        Me.GBoxMain.Size = New System.Drawing.Size(591, 242)
         Me.GBoxMain.TabIndex = 18
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Core Addition Information"
@@ -254,7 +247,7 @@ Partial Class frmCoreAdditionIssue
         '
         Me.cmbTLabour.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbTLabour.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbTLabour.Location = New System.Drawing.Point(357, 43)
+        Me.cmbTLabour.Location = New System.Drawing.Point(456, 43)
         Me.cmbTLabour.Name = "cmbTLabour"
         Me.cmbTLabour.Size = New System.Drawing.Size(128, 20)
         Me.cmbTLabour.TabIndex = 3
@@ -374,7 +367,7 @@ Partial Class frmCoreAdditionIssue
         '
         Me.txtFrKarigar.BackColor = System.Drawing.Color.White
         Me.txtFrKarigar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtFrKarigar.Location = New System.Drawing.Point(357, 16)
+        Me.txtFrKarigar.Location = New System.Drawing.Point(456, 16)
         Me.txtFrKarigar.Margin = New System.Windows.Forms.Padding(5)
         Me.txtFrKarigar.Name = "txtFrKarigar"
         Me.txtFrKarigar.ReadOnly = True
@@ -386,7 +379,7 @@ Partial Class frmCoreAdditionIssue
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!)
-        Me.Label1.Location = New System.Drawing.Point(280, 19)
+        Me.Label1.Location = New System.Drawing.Point(379, 19)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 15)
@@ -397,7 +390,7 @@ Partial Class frmCoreAdditionIssue
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!)
-        Me.Label2.Location = New System.Drawing.Point(278, 45)
+        Me.Label2.Location = New System.Drawing.Point(377, 45)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 15)
@@ -450,82 +443,32 @@ Partial Class frmCoreAdditionIssue
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lstCoreAddition)
+        Me.TabPage2.Controls.Add(Me.RadGridView1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(526, 290)
+        Me.TabPage2.Size = New System.Drawing.Size(601, 290)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'lstCoreAddition
+        'RadGridView1
         '
-        Me.lstCoreAddition.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.cCoreAdditionId, Me.cCoreAdditionDt, Me.cIssueWt, Me.cIssuePr, Me.cCoreIssueWt, Me.cLotNumber, Me.cFrKarigar, Me.cfrKarigarName, Me.cToKarigar, Me.ctoKarigarName})
-        Me.lstCoreAddition.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lstCoreAddition.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lstCoreAddition.FullRowSelect = True
-        Me.lstCoreAddition.GridLines = True
-        Me.lstCoreAddition.Location = New System.Drawing.Point(0, 0)
-        Me.lstCoreAddition.Name = "lstCoreAddition"
-        Me.lstCoreAddition.Size = New System.Drawing.Size(526, 290)
-        Me.lstCoreAddition.TabIndex = 0
-        Me.lstCoreAddition.UseCompatibleStateImageBehavior = False
-        Me.lstCoreAddition.View = System.Windows.Forms.View.Details
+        Me.RadGridView1.Location = New System.Drawing.Point(3, 4)
         '
-        'cCoreAdditionId
         '
-        Me.cCoreAdditionId.Text = "Trans No"
-        Me.cCoreAdditionId.Width = 0
         '
-        'cCoreAdditionDt
-        '
-        Me.cCoreAdditionDt.Text = "Trans Dt"
-        Me.cCoreAdditionDt.Width = 65
-        '
-        'cIssueWt
-        '
-        Me.cIssueWt.Text = "Issue Wt."
-        Me.cIssueWt.Width = 65
-        '
-        'cIssuePr
-        '
-        Me.cIssuePr.Text = "Issue %"
-        Me.cIssuePr.Width = 65
-        '
-        'cCoreIssueWt
-        '
-        Me.cCoreIssueWt.Text = "Core Wt."
-        Me.cCoreIssueWt.Width = 65
-        '
-        'cLotNumber
-        '
-        Me.cLotNumber.Text = "Lot No"
-        Me.cLotNumber.Width = 65
-        '
-        'cFrKarigar
-        '
-        Me.cFrKarigar.Text = "FrKarigar"
-        Me.cFrKarigar.Width = 0
-        '
-        'cfrKarigarName
-        '
-        Me.cfrKarigarName.Text = "Fr Karigar"
-        Me.cfrKarigarName.Width = 105
-        '
-        'cToKarigar
-        '
-        Me.cToKarigar.Text = "KarigarName"
-        Me.cToKarigar.Width = 0
-        '
-        'ctoKarigarName
-        '
-        Me.ctoKarigarName.Text = "To Karigar"
-        Me.ctoKarigarName.Width = 105
+        Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
+        Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.Name = "RadGridView1"
+        Me.RadGridView1.ReadOnly = True
+        Me.RadGridView1.Size = New System.Drawing.Size(596, 283)
+        Me.RadGridView1.TabIndex = 0
         '
         'frmCoreAdditionIssue
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(534, 317)
+        Me.ClientSize = New System.Drawing.Size(609, 317)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.KeyPreview = True
@@ -544,6 +487,8 @@ Partial Class frmCoreAdditionIssue
         CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -553,12 +498,6 @@ Partial Class frmCoreAdditionIssue
     Friend WithEvents GBoxMain As GroupBox
     Friend WithEvents lblLotNo As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents lstCoreAddition As ListView
-    Friend WithEvents cCoreAdditionId As ColumnHeader
-    Friend WithEvents cCoreAdditionDt As ColumnHeader
-    Friend WithEvents cIssueWt As ColumnHeader
-    Friend WithEvents cIssuePr As ColumnHeader
-    Friend WithEvents cCoreIssueWt As ColumnHeader
     Friend WithEvents txtTransNo As TextBox
     Friend WithEvents LblLotADate As Label
     Friend WithEvents TransDt As DateTimePicker
@@ -574,11 +513,6 @@ Partial Class frmCoreAdditionIssue
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lblTotalIssue As Label
-    Friend WithEvents cLotNumber As ColumnHeader
-    Friend WithEvents cFrKarigar As ColumnHeader
-    Friend WithEvents cfrKarigarName As ColumnHeader
-    Friend WithEvents cToKarigar As ColumnHeader
-    Friend WithEvents ctoKarigarName As ColumnHeader
     Friend WithEvents btnCancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnDelete As Telerik.WinControls.UI.RadButton
@@ -591,4 +525,5 @@ Partial Class frmCoreAdditionIssue
     Friend WithEvents txtCoreFw As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
 End Class

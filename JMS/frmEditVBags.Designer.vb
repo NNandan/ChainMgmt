@@ -22,16 +22,16 @@ Partial Class frmEditVBags
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.GCBoxMain = New System.Windows.Forms.GroupBox()
         Me.cmbRBagNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -84,7 +84,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.cmbRBagNo.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 125, 20)
+        Me.cmbRBagNo.RootElement.ControlBounds = New System.Drawing.Rectangle(572, 24, 125, 20)
         Me.cmbRBagNo.RootElement.StretchVertically = True
         Me.cmbRBagNo.Size = New System.Drawing.Size(145, 20)
         Me.cmbRBagNo.TabIndex = 5
@@ -109,7 +109,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.cmbEBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 125, 20)
+        Me.cmbEBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(115, 27, 125, 20)
         Me.cmbEBagtype.RootElement.StretchVertically = True
         Me.cmbEBagtype.Size = New System.Drawing.Size(145, 20)
         Me.cmbEBagtype.TabIndex = 0
@@ -155,7 +155,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(433, 359, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 803
         Me.btnExit.Text = "E&xit"
@@ -169,7 +169,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(356, 359, 110, 24)
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 802
         Me.btnCancel.Text = "&Cancel"
@@ -183,7 +183,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(202, 359, 110, 24)
         Me.btnUpdate.Size = New System.Drawing.Size(75, 25)
         Me.btnUpdate.TabIndex = 800
         Me.btnUpdate.Text = "&Update"
@@ -197,7 +197,7 @@ Partial Class frmEditVBags
         '
         '
         '
-        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(279, 359, 110, 24)
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 801
         Me.btnDelete.Text = "&Delete"
@@ -255,66 +255,66 @@ Partial Class frmEditVBags
         '
         Me.dgvVacuumBag.MasterTemplate.AllowAddNewRow = False
         Me.dgvVacuumBag.MasterTemplate.AllowColumnReorder = False
-        GridViewCheckBoxColumn2.AllowFiltering = False
-        GridViewCheckBoxColumn2.AllowGroup = False
-        GridViewCheckBoxColumn2.AllowResize = False
-        GridViewCheckBoxColumn2.EnableExpressionEditor = False
-        GridViewCheckBoxColumn2.EnableHeaderCheckBox = True
-        GridViewCheckBoxColumn2.MinWidth = 20
-        GridViewCheckBoxColumn2.Name = "colChkBox"
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "TransDt"
-        GridViewTextBoxColumn9.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn9.Name = "colTransDate"
-        GridViewTextBoxColumn9.Width = 90
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "OperationName"
-        GridViewTextBoxColumn10.HeaderText = "Operation"
-        GridViewTextBoxColumn10.Name = "colOperation"
-        GridViewTextBoxColumn10.Width = 150
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "LotNo"
-        GridViewTextBoxColumn11.HeaderText = "Lot No."
-        GridViewTextBoxColumn11.Name = "colLotNo"
-        GridViewTextBoxColumn11.Width = 90
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "BhukaWt"
-        GridViewTextBoxColumn12.HeaderText = "Vacuum Wt."
-        GridViewTextBoxColumn12.Name = "colVacuumWt"
-        GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn12.Width = 80
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "ReceivePr"
-        GridViewTextBoxColumn13.HeaderText = "Receive %"
-        GridViewTextBoxColumn13.Name = "colReceivePr"
-        GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn13.Width = 80
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "FineWt"
-        GridViewTextBoxColumn14.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn14.Name = "colFineWt"
-        GridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn14.Width = 80
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "ScrapBagNo"
-        GridViewTextBoxColumn15.HeaderText = "Bag No."
-        GridViewTextBoxColumn15.Name = "colBagNo"
-        GridViewTextBoxColumn15.Width = 100
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "TransId"
-        GridViewTextBoxColumn16.HeaderText = "Trans Id."
-        GridViewTextBoxColumn16.IsVisible = False
-        GridViewTextBoxColumn16.Name = "colTransId"
-        Me.dgvVacuumBag.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn2, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16})
+        GridViewCheckBoxColumn1.AllowFiltering = False
+        GridViewCheckBoxColumn1.AllowGroup = False
+        GridViewCheckBoxColumn1.AllowResize = False
+        GridViewCheckBoxColumn1.EnableExpressionEditor = False
+        GridViewCheckBoxColumn1.EnableHeaderCheckBox = True
+        GridViewCheckBoxColumn1.MinWidth = 20
+        GridViewCheckBoxColumn1.Name = "colChkBox"
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "TransDt"
+        GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn1.Name = "colTransDate"
+        GridViewTextBoxColumn1.Width = 90
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "OperationName"
+        GridViewTextBoxColumn2.HeaderText = "Operation"
+        GridViewTextBoxColumn2.Name = "colOperation"
+        GridViewTextBoxColumn2.Width = 150
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "LotNo"
+        GridViewTextBoxColumn3.HeaderText = "Lot No."
+        GridViewTextBoxColumn3.Name = "colLotNo"
+        GridViewTextBoxColumn3.Width = 90
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "BhukaWt"
+        GridViewTextBoxColumn4.HeaderText = "Vacuum Wt."
+        GridViewTextBoxColumn4.Name = "colVacuumWt"
+        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn4.Width = 80
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "ReceivePr"
+        GridViewTextBoxColumn5.HeaderText = "Receive %"
+        GridViewTextBoxColumn5.Name = "colReceivePr"
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 80
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "FineWt"
+        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn6.Name = "colFineWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 80
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "ScrapBagNo"
+        GridViewTextBoxColumn7.HeaderText = "Bag No."
+        GridViewTextBoxColumn7.Name = "colBagNo"
+        GridViewTextBoxColumn7.Width = 100
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "TransId"
+        GridViewTextBoxColumn8.HeaderText = "Trans Id."
+        GridViewTextBoxColumn8.IsVisible = False
+        GridViewTextBoxColumn8.Name = "colTransId"
+        Me.dgvVacuumBag.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn1, GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8})
         Me.dgvVacuumBag.MasterTemplate.EnableGrouping = False
         Me.dgvVacuumBag.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvVacuumBag.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvVacuumBag.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvVacuumBag.Name = "dgvVacuumBag"
         Me.dgvVacuumBag.RightToLeft = System.Windows.Forms.RightToLeft.No
         '
         '
         '
-        Me.dgvVacuumBag.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 240, 150)
+        Me.dgvVacuumBag.RootElement.ControlBounds = New System.Drawing.Rectangle(8, 34, 240, 150)
         Me.dgvVacuumBag.Size = New System.Drawing.Size(715, 290)
         Me.dgvVacuumBag.TabIndex = 30
         Me.dgvVacuumBag.ThemeName = "ControlDefault"

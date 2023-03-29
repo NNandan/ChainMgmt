@@ -14,8 +14,8 @@ Public Class frmOpInterIssue
 
     Dim dbltempCalculate As Double = 0
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Sub frmOpInterIssue_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.Clear_Form()
         Me.filltemName()

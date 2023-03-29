@@ -9,8 +9,8 @@ Public Class frmEditBags
 
     Dim strSQL As String = Nothing
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Sub frmEditBags_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If rbBhuka.Checked = True Then
             Me.fillBhukaBagType()

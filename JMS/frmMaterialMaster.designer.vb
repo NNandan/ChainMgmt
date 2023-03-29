@@ -283,6 +283,7 @@ Partial Class frmMaterialMaster
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(713, 502)
         Me.Controls.Add(Me.TabControl1)
+        Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.MaximizeBox = False
         Me.Name = "frmMaterialMaster"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

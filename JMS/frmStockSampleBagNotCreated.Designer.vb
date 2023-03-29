@@ -90,13 +90,13 @@ Partial Class frmStockSampleBagNotCreated
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 415)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(753, 416)
         Me.dgvWipLotNo.TabIndex = 5
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(391, 424)
+        Me.btnExit.Location = New System.Drawing.Point(382, 424)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 50
@@ -105,7 +105,7 @@ Partial Class frmStockSampleBagNotCreated
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(314, 424)
+        Me.btnPrint.Location = New System.Drawing.Point(305, 424)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 49
@@ -114,7 +114,7 @@ Partial Class frmStockSampleBagNotCreated
         'frmStockSampleBagNotCreated
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(780, 453)
+        Me.ClientSize = New System.Drawing.Size(757, 453)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvWipLotNo)

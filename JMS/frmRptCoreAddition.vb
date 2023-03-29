@@ -5,7 +5,7 @@ Imports Telerik.WinControls.UI
 Imports Telerik.WinControls.Data
 Public Class frmCoreAdditionRpt
     Dim strReportName As String = Nothing
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
 
     Private Sub frmRptCoreAddition_Load(sender As Object, e As EventArgs) Handles Me.Load
         dgvStockAddition.AutoGenerateColumns = False

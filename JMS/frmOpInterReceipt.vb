@@ -12,8 +12,8 @@ Public Class frmOpInterReceipt
     Dim TempRow As Integer
     Dim GridDoubleClick As Boolean
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Sub frmOpInterReceipt_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.Clear_Form()
         Me.filltemName()

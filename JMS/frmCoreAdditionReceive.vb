@@ -6,8 +6,8 @@ Public Class frmCoreAdditionReceive
 
     Private mFr_State As FormState
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -18,11 +18,11 @@ Public Class frmCoreAdditionReceive
                 Case FormState.AStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "New"
                     Me.btnSave.Enabled = True
-                    Me.btnSave.Text = "Save"
+                    Me.btnSave.Text = "&Save"
                     Me.btnDelete.Enabled = False
                 Case FormState.EStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "Edit"
-                    Me.btnSave.Text = "Update"
+                    Me.btnSave.Text = "&Update"
                     Me.btnDelete.Enabled = True
             End Select
         End Set

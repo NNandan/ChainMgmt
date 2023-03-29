@@ -29,19 +29,22 @@ Partial Class frmStockIssue
         Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TbStockIssue = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
+        Me.cmbParty = New Telerik.WinControls.UI.RadDropDownList()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
         Me.cmbItem = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtNarration = New Telerik.WinControls.UI.RadTextBox()
@@ -77,6 +80,7 @@ Partial Class frmStockIssue
         Me.TbStockIssue.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
+        CType(Me.cmbParty, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNarration, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,6 +132,7 @@ Partial Class frmStockIssue
         '
         'GBoxDetails
         '
+        Me.GBoxDetails.Controls.Add(Me.cmbParty)
         Me.GBoxDetails.Controls.Add(Me.btnExit)
         Me.GBoxDetails.Controls.Add(Me.cmbItem)
         Me.GBoxDetails.Controls.Add(Me.txtNarration)
@@ -151,10 +156,19 @@ Partial Class frmStockIssue
         Me.GBoxDetails.TabStop = False
         Me.GBoxDetails.Text = "Issue Details"
         '
+        'cmbParty
+        '
+        Me.cmbParty.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbParty.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbParty.Location = New System.Drawing.Point(346, 29)
+        Me.cmbParty.Name = "cmbParty"
+        Me.cmbParty.Size = New System.Drawing.Size(157, 20)
+        Me.cmbParty.TabIndex = 4
+        '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(434, 370)
+        Me.btnExit.Location = New System.Drawing.Point(434, 368)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 791
@@ -164,24 +178,24 @@ Partial Class frmStockIssue
         '
         Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbItem.Location = New System.Drawing.Point(50, 29)
+        Me.cmbItem.Location = New System.Drawing.Point(49, 29)
         Me.cmbItem.Name = "cmbItem"
-        Me.cmbItem.Size = New System.Drawing.Size(198, 20)
+        Me.cmbItem.Size = New System.Drawing.Size(121, 20)
         Me.cmbItem.TabIndex = 0
         '
         'txtNarration
         '
         Me.txtNarration.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtNarration.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtNarration.Location = New System.Drawing.Point(465, 28)
+        Me.txtNarration.Location = New System.Drawing.Point(503, 29)
         Me.txtNarration.Name = "txtNarration"
-        Me.txtNarration.Size = New System.Drawing.Size(236, 20)
-        Me.txtNarration.TabIndex = 4
+        Me.txtNarration.Size = New System.Drawing.Size(199, 20)
+        Me.txtNarration.TabIndex = 5
         '
         'lblTotalFineWt
         '
         Me.lblTotalFineWt.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalFineWt.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblTotalFineWt.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblTotalFineWt.Location = New System.Drawing.Point(406, 345)
         Me.lblTotalFineWt.Name = "lblTotalFineWt"
@@ -193,7 +207,7 @@ Partial Class frmStockIssue
         'lblTotalIssuePr
         '
         Me.lblTotalIssuePr.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalIssuePr.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblTotalIssuePr.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblTotalIssuePr.Location = New System.Drawing.Point(333, 345)
         Me.lblTotalIssuePr.Name = "lblTotalIssuePr"
@@ -205,7 +219,7 @@ Partial Class frmStockIssue
         'lblTotalIssueWt
         '
         Me.lblTotalIssueWt.BackColor = System.Drawing.Color.Transparent
-        Me.lblTotalIssueWt.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblTotalIssueWt.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblTotalIssueWt.Location = New System.Drawing.Point(260, 345)
         Me.lblTotalIssueWt.Name = "lblTotalIssueWt"
@@ -217,18 +231,18 @@ Partial Class frmStockIssue
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(214, 345)
         Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 15)
+        Me.Label3.Size = New System.Drawing.Size(38, 14)
         Me.Label3.TabIndex = 51
         Me.Label3.Text = "Total"
         '
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(356, 370)
+        Me.btnCancel.Location = New System.Drawing.Point(356, 368)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 6
@@ -237,7 +251,7 @@ Partial Class frmStockIssue
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(200, 370)
+        Me.btnSave.Location = New System.Drawing.Point(200, 368)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 5
@@ -246,7 +260,7 @@ Partial Class frmStockIssue
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(278, 370)
+        Me.btnDelete.Location = New System.Drawing.Point(278, 368)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 7
@@ -255,10 +269,10 @@ Partial Class frmStockIssue
         'txtFineWt
         '
         Me.txtFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtFineWt.Location = New System.Drawing.Point(396, 28)
+        Me.txtFineWt.Location = New System.Drawing.Point(287, 29)
         Me.txtFineWt.Name = "txtFineWt"
         Me.txtFineWt.ReadOnly = True
-        Me.txtFineWt.Size = New System.Drawing.Size(69, 20)
+        Me.txtFineWt.Size = New System.Drawing.Size(59, 20)
         Me.txtFineWt.TabIndex = 3
         Me.txtFineWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -266,9 +280,9 @@ Partial Class frmStockIssue
         '
         Me.txtGrossPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtGrossPr.Location = New System.Drawing.Point(323, 28)
+        Me.txtGrossPr.Location = New System.Drawing.Point(228, 29)
         Me.txtGrossPr.Name = "txtGrossPr"
-        Me.txtGrossPr.Size = New System.Drawing.Size(73, 20)
+        Me.txtGrossPr.Size = New System.Drawing.Size(59, 20)
         Me.txtGrossPr.TabIndex = 2
         Me.txtGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -276,16 +290,16 @@ Partial Class frmStockIssue
         '
         Me.txtGrossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtGrossWt.Location = New System.Drawing.Point(248, 28)
+        Me.txtGrossWt.Location = New System.Drawing.Point(171, 29)
         Me.txtGrossWt.Name = "txtGrossWt"
-        Me.txtGrossWt.Size = New System.Drawing.Size(75, 20)
+        Me.txtGrossWt.Size = New System.Drawing.Size(57, 20)
         Me.txtGrossWt.TabIndex = 1
         Me.txtGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtSrNo
         '
         Me.txtSrNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtSrNo.Location = New System.Drawing.Point(7, 28)
+        Me.txtSrNo.Location = New System.Drawing.Point(7, 29)
         Me.txtSrNo.Name = "txtSrNo"
         Me.txtSrNo.ReadOnly = True
         Me.txtSrNo.Size = New System.Drawing.Size(42, 20)
@@ -317,30 +331,41 @@ Partial Class frmStockIssue
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.HeaderText = "Item Name"
         GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 200
+        GridViewTextBoxColumn3.Width = 121
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FormatString = "{0:F2}"
         GridViewTextBoxColumn4.HeaderText = "Issue Wt."
         GridViewTextBoxColumn4.Name = "colIssueWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 75
+        GridViewTextBoxColumn4.Width = 60
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FormatString = "{0:F2}"
         GridViewTextBoxColumn5.HeaderText = "Issue %"
         GridViewTextBoxColumn5.Name = "colIssuePr"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 74
+        GridViewTextBoxColumn5.Width = 60
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FormatString = "{0:F2}"
         GridViewTextBoxColumn6.HeaderText = "Fine Wt."
         GridViewTextBoxColumn6.Name = "colFineWt"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 72
+        GridViewTextBoxColumn6.Width = 60
         GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.HeaderText = "Narration"
-        GridViewTextBoxColumn7.Name = "colNarration"
-        GridViewTextBoxColumn7.Width = 235
-        Me.dgvIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7})
+        GridViewTextBoxColumn7.FieldName = "PartyId"
+        GridViewTextBoxColumn7.HeaderText = "Party Id"
+        GridViewTextBoxColumn7.IsVisible = False
+        GridViewTextBoxColumn7.Name = "colPartyId"
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "PartyName"
+        GridViewTextBoxColumn8.HeaderText = "Party Name"
+        GridViewTextBoxColumn8.Name = "colParty"
+        GridViewTextBoxColumn8.Width = 158
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "Narration"
+        GridViewTextBoxColumn9.HeaderText = "Narration"
+        GridViewTextBoxColumn9.Name = "colNarration"
+        GridViewTextBoxColumn9.Width = 200
+        Me.dgvIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9})
         Me.dgvIssue.MasterTemplate.EnableGrouping = False
         Me.dgvIssue.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvIssue.MasterTemplate.ViewDefinition = TableViewDefinition1
@@ -411,7 +436,7 @@ Partial Class frmStockIssue
         '
         Me.lblLotNo.AutoSize = True
         Me.lblLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblLotNo.Location = New System.Drawing.Point(30, 56)
+        Me.lblLotNo.Location = New System.Drawing.Point(31, 56)
         Me.lblLotNo.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblLotNo.Name = "lblLotNo"
         Me.lblLotNo.Size = New System.Drawing.Size(72, 14)
@@ -430,6 +455,7 @@ Partial Class frmStockIssue
         'cmbtKarigar
         '
         Me.cmbtKarigar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbtKarigar.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbtKarigar.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbtKarigar.Location = New System.Drawing.Point(576, 51)
         Me.cmbtKarigar.Name = "cmbtKarigar"
@@ -457,7 +483,7 @@ Partial Class frmStockIssue
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(494, 56)
+        Me.Label2.Location = New System.Drawing.Point(494, 54)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 14)
@@ -479,7 +505,7 @@ Partial Class frmStockIssue
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(266, 56)
+        Me.Label1.Location = New System.Drawing.Point(266, 54)
         Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 14)
@@ -490,7 +516,7 @@ Partial Class frmStockIssue
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(271, 26)
+        Me.Label7.Location = New System.Drawing.Point(271, 27)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(52, 14)
@@ -541,47 +567,47 @@ Partial Class frmStockIssue
         '
         Me.dgvStockIssue.MasterTemplate.AllowAddNewRow = False
         Me.dgvStockIssue.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "IssueId"
-        GridViewTextBoxColumn8.HeaderText = "Issue Id."
-        GridViewTextBoxColumn8.IsVisible = False
-        GridViewTextBoxColumn8.Name = "colIssueId"
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "IssueDt"
-        GridViewTextBoxColumn9.HeaderText = "Issue Dt."
-        GridViewTextBoxColumn9.Name = "colIssueDt"
-        GridViewTextBoxColumn9.Width = 100
         GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "FrDeptId"
-        GridViewTextBoxColumn10.HeaderText = "FrDept Id."
+        GridViewTextBoxColumn10.FieldName = "IssueId"
+        GridViewTextBoxColumn10.HeaderText = "Issue Id."
         GridViewTextBoxColumn10.IsVisible = False
-        GridViewTextBoxColumn10.Name = "colFrDeptId"
+        GridViewTextBoxColumn10.Name = "colIssueId"
         GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "FrDept"
-        GridViewTextBoxColumn11.HeaderText = "Fr Dept."
-        GridViewTextBoxColumn11.Name = "colFrDept"
-        GridViewTextBoxColumn11.Width = 175
+        GridViewTextBoxColumn11.FieldName = "IssueDt"
+        GridViewTextBoxColumn11.HeaderText = "Issue Dt."
+        GridViewTextBoxColumn11.Name = "colIssueDt"
+        GridViewTextBoxColumn11.Width = 100
         GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "ToDeptId"
-        GridViewTextBoxColumn12.HeaderText = "ToDept Id."
+        GridViewTextBoxColumn12.FieldName = "FrDeptId"
+        GridViewTextBoxColumn12.HeaderText = "FrDept Id."
         GridViewTextBoxColumn12.IsVisible = False
-        GridViewTextBoxColumn12.Name = "colToDeptId"
+        GridViewTextBoxColumn12.Name = "colFrDeptId"
         GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "ToDept"
-        GridViewTextBoxColumn13.HeaderText = "To Dept."
-        GridViewTextBoxColumn13.Name = "colToDept"
+        GridViewTextBoxColumn13.FieldName = "FrDept"
+        GridViewTextBoxColumn13.HeaderText = "Fr Dept."
+        GridViewTextBoxColumn13.Name = "colFrDept"
         GridViewTextBoxColumn13.Width = 175
         GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "VoucherNo"
-        GridViewTextBoxColumn14.HeaderText = "Voucher No."
-        GridViewTextBoxColumn14.Name = "colVoucherNo"
-        GridViewTextBoxColumn14.Width = 100
+        GridViewTextBoxColumn14.FieldName = "ToDeptId"
+        GridViewTextBoxColumn14.HeaderText = "ToDept Id."
+        GridViewTextBoxColumn14.IsVisible = False
+        GridViewTextBoxColumn14.Name = "colToDeptId"
         GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "CreatedBy"
-        GridViewTextBoxColumn15.HeaderText = "Created By."
-        GridViewTextBoxColumn15.Name = "colCreatedBy"
-        GridViewTextBoxColumn15.Width = 150
-        Me.dgvStockIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15})
+        GridViewTextBoxColumn15.FieldName = "ToDept"
+        GridViewTextBoxColumn15.HeaderText = "To Dept."
+        GridViewTextBoxColumn15.Name = "colToDept"
+        GridViewTextBoxColumn15.Width = 175
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "VoucherNo"
+        GridViewTextBoxColumn16.HeaderText = "Voucher No."
+        GridViewTextBoxColumn16.Name = "colVoucherNo"
+        GridViewTextBoxColumn16.Width = 100
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "CreatedBy"
+        GridViewTextBoxColumn17.HeaderText = "Created By."
+        GridViewTextBoxColumn17.Name = "colCreatedBy"
+        GridViewTextBoxColumn17.Width = 150
+        Me.dgvStockIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17})
         Me.dgvStockIssue.MasterTemplate.EnableGrouping = False
         Me.dgvStockIssue.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvStockIssue.MasterTemplate.ViewDefinition = TableViewDefinition2
@@ -606,6 +632,7 @@ Partial Class frmStockIssue
         Me.TabPage1.ResumeLayout(False)
         Me.GBoxDetails.ResumeLayout(False)
         Me.GBoxDetails.PerformLayout()
+        CType(Me.cmbParty, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNarration, System.ComponentModel.ISupportInitialize).EndInit()
@@ -667,4 +694,5 @@ Partial Class frmStockIssue
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents dgvStockIssue As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents cmbParty As Telerik.WinControls.UI.RadDropDownList
 End Class

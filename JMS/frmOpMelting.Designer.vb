@@ -59,11 +59,11 @@ Partial Class frmOpMelting
         Me.btnCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.lblTransDt = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtVocucherNo = New Telerik.WinControls.UI.RadTextBox()
         Me.TransDt = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Ep = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TabOpStock.SuspendLayout()
         Me.TabStock.SuspendLayout()
         Me.GBoxMain.SuspendLayout()
@@ -143,7 +143,8 @@ Partial Class frmOpMelting
         '
         'cmbGItemName
         '
-        Me.cmbGItemName.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbGItemName.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbGItemName.Font = New System.Drawing.Font("Tahoma", 9.0!)
         RadListDataItem1.Text = "Bags"
         RadListDataItem2.Text = "Voucher"
         RadListDataItem3.Text = "Lot Add. Stock "
@@ -157,7 +158,7 @@ Partial Class frmOpMelting
         '
         'cmbItem
         '
-        Me.cmbItem.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Location = New System.Drawing.Point(332, 22)
         Me.cmbItem.Name = "cmbItem"
@@ -168,16 +169,16 @@ Partial Class frmOpMelting
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(252, 25)
+        Me.Label7.Location = New System.Drawing.Point(261, 25)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 14)
+        Me.Label7.Size = New System.Drawing.Size(68, 14)
         Me.Label7.TabIndex = 161
-        Me.Label7.Text = "Item Name :"
+        Me.Label7.Text = "Item Name"
         '
         'txtTotalGrossWt
         '
-        Me.txtTotalGrossWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtTotalGrossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTotalGrossWt.Location = New System.Drawing.Point(583, 22)
         Me.txtTotalGrossWt.Name = "txtTotalGrossWt"
         Me.txtTotalGrossWt.Size = New System.Drawing.Size(72, 20)
@@ -188,25 +189,25 @@ Partial Class frmOpMelting
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(509, 25)
+        Me.Label2.Location = New System.Drawing.Point(519, 25)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 14)
+        Me.Label2.Size = New System.Drawing.Size(61, 14)
         Me.Label2.TabIndex = 159
-        Me.Label2.Text = "Gross Wt. :"
+        Me.Label2.Text = "Gross Wt."
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(249, 49)
+        Me.Label1.Location = New System.Drawing.Point(258, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 14)
+        Me.Label1.Size = New System.Drawing.Size(71, 14)
         Me.Label1.TabIndex = 158
-        Me.Label1.Text = "Required % :"
+        Me.Label1.Text = "Required %"
         '
         'txtRequirePr
         '
-        Me.txtRequirePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtRequirePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRequirePr.Location = New System.Drawing.Point(332, 47)
         Me.txtRequirePr.Name = "txtRequirePr"
         Me.txtRequirePr.Size = New System.Drawing.Size(73, 20)
@@ -216,6 +217,7 @@ Partial Class frmOpMelting
         'txtFineWt
         '
         Me.txtFineWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtFineWt.Location = New System.Drawing.Point(577, 87)
         Me.txtFineWt.Name = "txtFineWt"
         Me.txtFineWt.Size = New System.Drawing.Size(76, 20)
@@ -224,8 +226,9 @@ Partial Class frmOpMelting
         '
         'cmbItemType
         '
-        Me.cmbItemType.BackColor = System.Drawing.Color.LemonChiffon
+        Me.cmbItemType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItemType.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbItemType.Font = New System.Drawing.Font("Tahoma", 9.0!)
         RadListDataItem4.Text = "Bags"
         RadListDataItem5.Text = "Voucher"
         RadListDataItem6.Text = "Lot Add. Stock"
@@ -239,7 +242,8 @@ Partial Class frmOpMelting
         '
         'txtGrossPr
         '
-        Me.txtGrossPr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtGrossPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtGrossPr.Location = New System.Drawing.Point(504, 87)
         Me.txtGrossPr.Name = "txtGrossPr"
         Me.txtGrossPr.Size = New System.Drawing.Size(72, 20)
@@ -248,7 +252,8 @@ Partial Class frmOpMelting
         '
         'txtBagNo
         '
-        Me.txtBagNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtBagNo.Location = New System.Drawing.Point(142, 87)
         Me.txtBagNo.Name = "txtBagNo"
         Me.txtBagNo.Size = New System.Drawing.Size(89, 20)
@@ -256,7 +261,8 @@ Partial Class frmOpMelting
         '
         'txtGrossWt
         '
-        Me.txtGrossWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtGrossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtGrossWt.Location = New System.Drawing.Point(431, 87)
         Me.txtGrossWt.Name = "txtGrossWt"
         Me.txtGrossWt.Size = New System.Drawing.Size(72, 20)
@@ -276,7 +282,7 @@ Partial Class frmOpMelting
         '
         Me.dgvMelting.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.dgvMelting.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvMelting.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvMelting.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvMelting.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvMelting.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvMelting.Location = New System.Drawing.Point(2, 108)
@@ -333,51 +339,45 @@ Partial Class frmOpMelting
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(303, 400)
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(303, 398)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 14
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(380, 400)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(380, 398)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 13
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(226, 400)
+        Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnSave.Location = New System.Drawing.Point(226, 398)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 12
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
         Me.lblTransDt.AutoSize = True
         Me.lblTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblTransDt.Location = New System.Drawing.Point(32, 27)
+        Me.lblTransDt.Location = New System.Drawing.Point(39, 25)
         Me.lblTransDt.Name = "lblTransDt"
-        Me.lblTransDt.Size = New System.Drawing.Size(71, 14)
+        Me.lblTransDt.Size = New System.Drawing.Size(67, 14)
         Me.lblTransDt.TabIndex = 11
-        Me.lblTransDt.Text = "Melting Dt.:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(51, 51)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 14)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Lot No.:"
+        Me.lblTransDt.Text = "Melting Dt."
         '
         'txtVocucherNo
         '
-        Me.txtVocucherNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtVocucherNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtVocucherNo.Enabled = False
         Me.txtVocucherNo.Location = New System.Drawing.Point(109, 48)
         Me.txtVocucherNo.MaxLength = 7
         Me.txtVocucherNo.Name = "txtVocucherNo"
@@ -408,6 +408,16 @@ Partial Class frmOpMelting
         '
         Me.Ep.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink
         Me.Ep.ContainerControl = Me
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label6.Location = New System.Drawing.Point(58, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(48, 14)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Lot No."
         '
         'frmOpMelting
         '
@@ -459,7 +469,6 @@ Partial Class frmOpMelting
     Friend WithEvents btnCancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Friend WithEvents lblTransDt As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents txtVocucherNo As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents TransDt As DateTimePicker
     Friend WithEvents cmbItemType As Telerik.WinControls.UI.RadDropDownList
@@ -473,4 +482,5 @@ Partial Class frmOpMelting
     Friend WithEvents cmbGItemName As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label3 As Label
     Friend WithEvents Ep As ErrorProvider
+    Friend WithEvents Label6 As Label
 End Class

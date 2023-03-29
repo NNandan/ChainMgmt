@@ -55,35 +55,35 @@ Partial Class frmStockLossTransaction
         GridViewTextBoxColumn1.FieldName = "TransDt"
         GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
         GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 105
+        GridViewTextBoxColumn1.Width = 90
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "LotNo"
         GridViewTextBoxColumn2.HeaderText = "Lot No"
         GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 128
+        GridViewTextBoxColumn2.Width = 100
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "operationname"
         GridViewTextBoxColumn3.HeaderText = "Operation Name"
         GridViewTextBoxColumn3.Name = "colOperationName"
-        GridViewTextBoxColumn3.Width = 233
+        GridViewTextBoxColumn3.Width = 200
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "ReceiveWt"
         GridViewTextBoxColumn4.HeaderText = "Receive Wt."
         GridViewTextBoxColumn4.Name = "colReceiveWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 140
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "ReceivePr"
         GridViewTextBoxColumn5.HeaderText = "Receive %"
         GridViewTextBoxColumn5.Name = "colReceivePr"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 140
+        GridViewTextBoxColumn5.Width = 90
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "FineWt"
         GridViewTextBoxColumn6.HeaderText = "Fine Wt."
         GridViewTextBoxColumn6.Name = "colFineWt"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 140
+        GridViewTextBoxColumn6.Width = 90
         Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
@@ -93,20 +93,20 @@ Partial Class frmStockLossTransaction
         '
         '
         '
-        Me.dgvWipLotNo.RootElement.ControlBounds = New System.Drawing.Rectangle(3, 1, 770, 409)
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(770, 409)
+        Me.dgvWipLotNo.RootElement.ControlBounds = New System.Drawing.Rectangle(3, 1, 240, 150)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(657, 412)
         Me.dgvWipLotNo.TabIndex = 42
         '
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(391, 415)
+        Me.btnExit.Location = New System.Drawing.Point(329, 417)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(335, 387, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(329, 418, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(87, 27)
         Me.btnExit.TabIndex = 58
         Me.btnExit.Text = "E&xit"
@@ -115,12 +115,12 @@ Partial Class frmStockLossTransaction
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(300, 415)
+        Me.btnPrint.Location = New System.Drawing.Point(240, 417)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
-        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(258, 387, 110, 24)
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(240, 418, 110, 24)
         Me.btnPrint.Size = New System.Drawing.Size(87, 27)
         Me.btnPrint.TabIndex = 57
         Me.btnPrint.Text = "&Print"
@@ -128,7 +128,7 @@ Partial Class frmStockLossTransaction
         'frmStockLossTransaction
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(775, 448)
+        Me.ClientSize = New System.Drawing.Size(662, 448)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvWipLotNo)

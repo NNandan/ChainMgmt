@@ -17,6 +17,14 @@ Public Class frmInterDeptIssue
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
 
+    Dim iReceiptId As Int16
+    Dim iReceiptDetailId As Int16
+    Dim iIssueId As Int16
+    Dim iUsedBagId As Int16
+    Dim iTransId As Int16
+
+    Dim dBalanceWt As Double
+
     Private Objerr As New ErrorProvider()
     Private Property Fr_Mode() As FormState
         Get
@@ -62,16 +70,15 @@ Public Class frmInterDeptIssue
         'Me.bindDataGridView()
 
         Me.Clear_Form()
-
     End Sub
     Private Sub fillDepartment()
 
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -114,7 +121,10 @@ Public Class frmInterDeptIssue
         Dim parameters = New List(Of SqlParameter)()
         parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
         Dim dt As DataTable = New DataTable()
@@ -170,7 +180,6 @@ Public Class frmInterDeptIssue
     End Sub
     Private Sub Clear_Form()
         Try
-
             '' For Header Field Start
             txtVocucherNo.Tag = ""
             txtVocucherNo.Clear()
@@ -325,7 +334,6 @@ Public Class frmInterDeptIssue
         Rmccmb.Columns(7).TextAlignment = ContentAlignment.MiddleRight
         Rmccmb.Columns(8).TextAlignment = ContentAlignment.MiddleRight
         Rmccmb.Columns(9).TextAlignment = ContentAlignment.MiddleRight
-        'Rmccmb.Columns(11).TextAlignment = ContentAlignment.MiddleRight
 
         Rmccmb.Columns(0).IsVisible = False
         Rmccmb.Columns(2).IsVisible = False
@@ -497,11 +505,10 @@ Public Class frmInterDeptIssue
                                     Format(Val(txtConversion.Text.Trim), "0.00"),
                                     Format(Val(txtFineWt.Text.Trim), "0.000"),
                                     Format(dbltempCalculate, "0.00"),
-                                    Val(txtIssueWt.Tag),
-                                    Val(txtIssuePr.Tag),
-                                    Val(txtConversion.Tag),     ''For Bag Id
-                                    Val(txtFineWt.Tag))         ''For Trans Id
-
+                                    Val(iReceiptId),
+                                    Val(iReceiptDetailId),
+                                    Val(iUsedBagId),
+                                    Val(iTransId))
             GetSrNo(dgvIssue)
         Else
             dgvIssue.Rows(TempRow).Cells(0).Value = txtSrNo.Text.Trim
@@ -514,7 +521,11 @@ Public Class frmInterDeptIssue
             dgvIssue.Rows(TempRow).Cells(7).Value = Format(Val(txtConversion.Text.Trim), "0.00")
             dgvIssue.Rows(TempRow).Cells(8).Value = Format(Val(txtFineWt.Text.Trim), "0.00")
             dgvIssue.Rows(TempRow).Cells(9).Value = Format(Val(txtStockAdd.Text.Trim), "0.00")
-            dgvIssue.Rows(TempRow).Cells(10).Value = Val(txtFineWt.Tag)
+            iReceiptId = Val(txtIssueWt.Tag)
+            iReceiptDetailId = Val(txtIssuePr.Tag)
+            iUsedBagId = Val(txtConversion.Tag)
+            iTransId = Val(txtFineWt.Tag)
+
             GridDoubleClick = False
         End If
 
@@ -526,15 +537,16 @@ Public Class frmInterDeptIssue
 
         cmbItemType.SelectedIndex = 0
         Rmccmb.Text = ""
+
         txtItemName.Tag = ""
-        txtItemName.Clear()
-        txtIssueWt.Tag = 0
-        txtIssueWt.Clear()
+        txtIssueWt.Tag = ""
         txtIssuePr.Tag = ""
+        txtConversion.Tag = ""
+
+        txtItemName.Clear()
+        txtIssueWt.Clear()
         txtIssuePr.Clear()
-        txtConversion.Tag = ""
         txtConversion.Clear()
-        txtConversion.Tag = ""
         txtFineWt.Clear()
         txtStockAdd.Clear()
 
@@ -1108,44 +1120,44 @@ ErrHandler:
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            txtIssueWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+            dBalanceWt = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
             txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReportPr").Value.ToString
 
-            txtConversion.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
+            iUsedBagId = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
         ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then  ''Voucher
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            txtIssueWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+            dBalanceWt = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
             txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiveWt").Value.ToString
 
-            txtIssuePr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
+            iReceiptId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
-            txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
+            iReceiptDetailId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
         ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 2 Then  ''Finished Lots
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            'txtIssueWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
             txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiveWt").Value.ToString
 
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
-            txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("TransId").Value.ToString
+            iTransId = Me.Rmccmb.EditorControl.CurrentRow.Cells("TransId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
         ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 3 Then  ''Lot Addition Stock
+
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            txtIssueWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("IssueWt").Value.ToString
+            iIssueId = Me.Rmccmb.EditorControl.CurrentRow.Cells("IssueId").Value.ToString
             txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
-            txtIssuePr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("IssueId").Value.ToString
+
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString

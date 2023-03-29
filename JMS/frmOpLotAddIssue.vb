@@ -13,8 +13,8 @@ Public Class frmOpLotAddIssue
     Dim TempRow As Integer
     Dim GridDoubleClick As Boolean
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -40,13 +40,14 @@ Public Class frmOpLotAddIssue
         Me.fillOperation()
     End Sub
     Private Sub fillOperation()
-
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_OperationMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
@@ -79,9 +80,12 @@ Public Class frmOpLotAddIssue
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        End With
+
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Dim dt As DataTable = New DataTable()
@@ -397,11 +401,6 @@ Public Class frmOpLotAddIssue
         End Try
 
     End Sub
-
-    Private Sub txtLotNo_KeyDown(sender As Object, e As KeyEventArgs) Handles txtLotNo.KeyDown
-
-    End Sub
-
     Private Sub frmOpLotAddIssue_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit

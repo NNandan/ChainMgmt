@@ -114,7 +114,7 @@ Partial Class frmOpStockIssue
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GBoxMain.Name = "GBoxMain"
         Me.GBoxMain.Padding = New System.Windows.Forms.Padding(4)
-        Me.GBoxMain.Size = New System.Drawing.Size(672, 427)
+        Me.GBoxMain.Size = New System.Drawing.Size(672, 428)
         Me.GBoxMain.TabIndex = 19
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Stock Issue Info."
@@ -122,7 +122,7 @@ Partial Class frmOpStockIssue
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(442, 15)
+        Me.Label1.Location = New System.Drawing.Point(442, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(222, 16)
         Me.Label1.TabIndex = 156
@@ -152,7 +152,7 @@ Partial Class frmOpStockIssue
         '
         'txtNarration
         '
-        Me.txtNarration.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtNarration.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtNarration.Location = New System.Drawing.Point(410, 87)
         Me.txtNarration.Name = "txtNarration"
         Me.txtNarration.Size = New System.Drawing.Size(259, 20)
@@ -170,7 +170,7 @@ Partial Class frmOpStockIssue
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssuePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssuePr.Location = New System.Drawing.Point(263, 87)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(72, 20)
@@ -179,7 +179,7 @@ Partial Class frmOpStockIssue
         '
         'txtIssueWt
         '
-        Me.txtIssueWt.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtIssueWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtIssueWt.Location = New System.Drawing.Point(190, 87)
         Me.txtIssueWt.Name = "txtIssueWt"
         Me.txtIssueWt.Size = New System.Drawing.Size(72, 20)
@@ -261,51 +261,53 @@ Partial Class frmOpStockIssue
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(319, 401)
+        Me.btnDelete.Location = New System.Drawing.Point(319, 398)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 10
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "&Delete"
         '
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(396, 401)
+        Me.btnCancel.Location = New System.Drawing.Point(396, 398)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 9
-        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(242, 401)
+        Me.btnSave.Location = New System.Drawing.Point(242, 398)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 8
-        Me.btnSave.Text = "Save"
+        Me.btnSave.Text = "&Save"
         '
         'lblTransDt
         '
         Me.lblTransDt.AutoSize = True
-        Me.lblTransDt.Location = New System.Drawing.Point(43, 25)
+        Me.lblTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblTransDt.Location = New System.Drawing.Point(49, 25)
         Me.lblTransDt.Name = "lblTransDt"
-        Me.lblTransDt.Size = New System.Drawing.Size(62, 16)
+        Me.lblTransDt.Size = New System.Drawing.Size(56, 14)
         Me.lblTransDt.TabIndex = 11
-        Me.lblTransDt.Text = "Issue Dt.:"
+        Me.lblTransDt.Text = "Issue Dt."
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 49)
+        Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label6.Location = New System.Drawing.Point(30, 49)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(85, 16)
+        Me.Label6.Size = New System.Drawing.Size(76, 14)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Voucher No.:"
+        Me.Label6.Text = "Voucher No."
         '
         'txtVocucherNo
         '
-        Me.txtVocucherNo.BackColor = System.Drawing.Color.LemonChiffon
+        Me.txtVocucherNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtVocucherNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtVocucherNo.Location = New System.Drawing.Point(109, 47)
         Me.txtVocucherNo.Name = "txtVocucherNo"

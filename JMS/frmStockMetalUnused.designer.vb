@@ -45,7 +45,7 @@ Partial Class frmStockMetalUnused
         Me.dgvWipLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvWipLotNo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvWipLotNo.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvWipLotNo.Location = New System.Drawing.Point(4, 2)
+        Me.dgvWipLotNo.Location = New System.Drawing.Point(3, 2)
         Me.dgvWipLotNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         '
         '
@@ -57,53 +57,53 @@ Partial Class frmStockMetalUnused
         GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
         GridViewTextBoxColumn1.MinWidth = 9
         GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 117
+        GridViewTextBoxColumn1.Width = 90
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "VoucherNo"
         GridViewTextBoxColumn2.HeaderText = "Voucher No"
         GridViewTextBoxColumn2.MinWidth = 9
         GridViewTextBoxColumn2.Name = "colVoucherNo"
-        GridViewTextBoxColumn2.Width = 174
+        GridViewTextBoxColumn2.Width = 95
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "ItemName"
         GridViewTextBoxColumn3.HeaderText = "Item Name"
         GridViewTextBoxColumn3.MinWidth = 9
         GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 183
+        GridViewTextBoxColumn3.Width = 173
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.FieldName = "ReceiveWt"
         GridViewTextBoxColumn4.HeaderText = "Receive Wt."
         GridViewTextBoxColumn4.MinWidth = 9
         GridViewTextBoxColumn4.Name = "colReceiveWt"
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 133
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "ReceivePr"
         GridViewTextBoxColumn5.HeaderText = "Receive %"
         GridViewTextBoxColumn5.MinWidth = 9
         GridViewTextBoxColumn5.Name = "colReceivePr"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 150
+        GridViewTextBoxColumn5.Width = 90
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "FineWt"
         GridViewTextBoxColumn6.HeaderText = "Fine Wt."
         GridViewTextBoxColumn6.MinWidth = 9
         GridViewTextBoxColumn6.Name = "colFineWt"
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 133
+        GridViewTextBoxColumn6.Width = 90
         Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(889, 498)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(625, 431)
         Me.dgvWipLotNo.TabIndex = 41
         '
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(380, 507)
+        Me.btnPrint.Location = New System.Drawing.Point(246, 438)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
@@ -113,7 +113,7 @@ Partial Class frmStockMetalUnused
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(457, 507)
+        Me.btnExit.Location = New System.Drawing.Point(323, 438)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
@@ -123,7 +123,7 @@ Partial Class frmStockMetalUnused
         'frmStockMetalUnused
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(897, 537)
+        Me.ClientSize = New System.Drawing.Size(630, 467)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvWipLotNo)

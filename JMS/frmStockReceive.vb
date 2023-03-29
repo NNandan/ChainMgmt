@@ -1,7 +1,5 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
-Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
 Public Class frmStockReceive
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
@@ -13,8 +11,8 @@ Public Class frmStockReceive
 
     Dim GridDoubleClick As Boolean
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -25,11 +23,11 @@ Public Class frmStockReceive
                 Case FormState.AStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "New Record"
                     Me.btnSave.Enabled = True
-                    Me.btnSave.Text = "Save"
+                    Me.btnSave.Text = "&Save"
                     Me.btnDelete.Enabled = False
                 Case FormState.EStateMode
                     CType(Me.ParentForm, frmMain).FormMode.Text = "Edit Record"
-                    Me.btnSave.Text = "Update"
+                    Me.btnSave.Text = "&Update"
                     Me.btnDelete.Enabled = True
             End Select
         End Set
@@ -53,7 +51,7 @@ Public Class frmStockReceive
         Me.fillLabour()
         Me.fillVoucherNo()
 
-        Me.bindListView()
+        Me.bindDataGridView()
 
         Me.Clear_Form()
 
@@ -65,6 +63,7 @@ Public Class frmStockReceive
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -104,14 +103,13 @@ Public Class frmStockReceive
         End Try
     End Sub
     Private Function fetchAllRecords() As DataTable
-
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchIssueData", DbType.String))
             End With
 
@@ -124,26 +122,19 @@ Public Class frmStockReceive
         Return dtData
 
     End Function
-    Private Sub bindListView()
-        Dim dtable As DataTable = fetchAllRecords()
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
 
-        lstReceive.Items.Clear()
+        Try
+            dgvStockReceive.DataSource = dtdata
+            dgvStockReceive.EnableFiltering = True
+            dgvStockReceive.MasterTemplate.ShowFilteringRow = False
+            dgvStockReceive.MasterTemplate.ShowHeaderCellButtons = True
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
 
-        For i As Integer = 0 To dtable.Rows.Count - 1
-            Dim drow As DataRow = dtable.Rows(i)
-
-            If drow.RowState <> DataRowState.Deleted Then
-                Dim lvi As ListViewItem = New ListViewItem(drow("ReceiptId").ToString())
-                lvi.SubItems.Add(drow("ReceiptDt").ToString())
-                lvi.SubItems.Add(drow("FrDeptId").ToString())
-                lvi.SubItems.Add(drow("FrDept").ToString())
-                lvi.SubItems.Add(drow("ToDeptId").ToString())
-                lvi.SubItems.Add(drow("ToDept").ToString())
-                lvi.SubItems.Add(drow("VoucherNo").ToString())
-                lvi.SubItems.Add(drow("CreatedBy").ToString())
-                lstReceive.Items.Add(lvi)
-            End If
-        Next
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not Validate_Fields() Then Exit Sub
@@ -162,9 +153,9 @@ Public Class frmStockReceive
     End Sub
     Private Sub fillLabour()
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -196,9 +187,9 @@ Public Class frmStockReceive
     End Sub
     Private Sub fillVoucherNo()
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchVoucherNo", DbType.String))
         End With
 
@@ -440,26 +431,11 @@ Public Class frmStockReceive
         End Try
 
     End Sub
-    Private Sub lstReceive_DoubleClick(sender As Object, e As EventArgs) Handles lstReceive.DoubleClick
-        If lstReceive.Items.Count > 0 Then
-
-            Dim ReceiveId As Integer = lstReceive.SelectedItems(0).SubItems(0).Text
-
-            Me.Clear_Form()
-
-            Fr_Mode = FormState.EStateMode
-
-            Me.fillHeaderFromListView(ReceiveId)
-
-            Me.fillDetailsFromListView(ReceiveId)
-
-            Me.tbStockReceive.SelectedIndex = 0
-        End If
-    End Sub
     Private Sub Clear_Form()
         Try
 
             '' For Header Field Start
+            cmbVoucherNo.Enabled = True
             cmbVoucherNo.SelectedIndex = 0
             TransDt.Value = DateTime.Now
 
@@ -473,6 +449,8 @@ Public Class frmStockReceive
 
             '' For Detail Field Start
             dgvReceive.DataSource = Nothing
+            dgvReceive.Rows.Clear()
+
             '' For Detail Field End
 
             GridDoubleClick = False
@@ -482,7 +460,7 @@ Public Class frmStockReceive
 
             'lblTotalFineWt.Text = 0.0
 
-            Me.bindListView()
+            Me.bindDataGridView()
 
             Fr_Mode = FormState.AStateMode
 
@@ -495,13 +473,13 @@ Public Class frmStockReceive
             txtFrKarigar.Tag = CInt(UserId)
             txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
 
-            cmbVoucherNo.Focus()
-            cmbVoucherNo.Select()
+            TransDt.Focus()
+            TransDt.Select()
 
             Me.fillVoucherNo()
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -545,9 +523,9 @@ Public Class frmStockReceive
 
         If cmbVoucherNo.SelectedIndex > 0 Then
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
                 .Add(dbManager.CreateParameter("@IId", cmbVoucherNo.SelectedValue, DbType.Int16))
             End With
@@ -577,9 +555,9 @@ Public Class frmStockReceive
 
                 Try
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@RId", txtTransNo.Text, DbType.Int16))
                     End With
 
@@ -600,9 +578,9 @@ Public Class frmStockReceive
     Private Sub fillHeaderFromListView(ByVal iReceiveId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@RId", CInt(iReceiveId), DbType.Int16))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
         End With
@@ -634,6 +612,8 @@ ErrHandler:
         Dim dttable As New DataTable
         dttable = fetchAllRecords(CInt(iReceiveId))
 
+        dgvReceive.DataSource = Nothing
+
         For Each ROW As DataRow In dttable.Rows
             dgvReceive.Rows.Add(1, CStr(ROW("ItemType")), CStr(ROW("SlipBagNo")), Val(ROW("ItemId")), CStr(ROW("ItemName")), Format(Val(ROW("ReceiveWt")), "0.00"), Format(Val(ROW("ReceivePr")), "0.00"), Format(Val(ROW("ConvPr")), "0.00"), Format(Val(ROW("FineWt")), "0.000"))
         Next
@@ -644,14 +624,43 @@ ErrHandler:
         dgvReceive.ReadOnly = True
 
     End Sub
+    Private Sub cmbVoucherNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbVoucherNo.SelectedIndexChanged
+        Dim dtData As DataTable = New DataTable()
+
+        If cmbVoucherNo.SelectedIndex <> -1 Then
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchIssueNoWiseDetails", DbType.String))
+                .Add(dbManager.CreateParameter("@IId", cmbVoucherNo.SelectedIndex, DbType.Int16))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_Issue_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+            Try
+
+                If dtData.Rows.Count > 0 Then
+                    dgvReceive.DataSource = dtData
+                End If
+
+                Me.Total()
+
+            Catch ex As Exception
+                MessageBox.Show("Error:- " & ex.Message)
+            Finally
+
+            End Try
+        End If
+    End Sub
     Private Function fetchAllRecords(ByVal iReceiveId As Integer) As DataTable
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@RId", CInt(iReceiveId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
             End With
@@ -664,6 +673,25 @@ ErrHandler:
 
         Return dtData
     End Function
+
+    Private Sub dgvStockReceive_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvStockReceive.CellDoubleClick
+        If dgvStockReceive.SelectedRows.Count = 0 Then Exit Sub
+
+        If dgvStockReceive.Rows.Count > 0 Then
+            Dim ReceiveId As Integer = Me.dgvStockReceive.SelectedRows(0).Cells(0).Value
+
+            Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
+
+            Me.fillHeaderFromListView(ReceiveId)
+
+            Me.fillDetailsFromListView(ReceiveId)
+
+            Me.tbStockReceive.SelectedIndex = 0
+        End If
+    End Sub
+
     Private Sub frmStockReceive_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit
@@ -688,5 +716,11 @@ ErrHandler:
     End Sub
     Private Sub cmbVoucherNo_GotFocus(sender As Object, e As EventArgs)
         cmbVoucherNo.ShowDropDown()
+    End Sub
+
+    Private Sub dgvReceive_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvReceive.ViewCellFormatting
+        If e.CellElement.ColumnInfo.Name = "colSrNo" AndAlso e.CellElement.Value Is Nothing Then
+            e.CellElement.Value = e.CellElement.RowIndex + 1
+        End If
     End Sub
 End Class

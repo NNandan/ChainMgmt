@@ -285,7 +285,7 @@ Partial Class frmSamplesRpt
         Me.dgvNtSampleLots.MasterTemplate.AllowAddNewRow = False
         Me.dgvNtSampleLots.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "TransactionDt"
+        GridViewTextBoxColumn9.FieldName = "TransDt"
         GridViewTextBoxColumn9.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn9.HeaderText = "Trans Dt."
         GridViewTextBoxColumn9.Name = "colTransactionDt"
@@ -439,7 +439,7 @@ Partial Class frmSamplesRpt
         Me.btnPrint.TabIndex = 27
         Me.btnPrint.Text = "&Print"
         '
-        'frmSamplesReport
+        'frmSamplesRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1022, 629)
@@ -450,7 +450,7 @@ Partial Class frmSamplesRpt
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
-        Me.Name = "frmSamplesReport"
+        Me.Name = "frmSamplesRpt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Samples Report"
         Me.tbSampleReport.ResumeLayout(False)

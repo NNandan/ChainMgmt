@@ -881,6 +881,7 @@ D:\Desktop Projects\JMS\JMS\bin\Release\zh-Hant\Microsoft.SqlServer.Types.resour
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.vbproj.ResolveComReference.cache
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAbout.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAccountMaster.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmChAccountOpening.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpBagNotCreated.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpBagNotUsed.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpInterDeptIssue.resources
@@ -892,19 +893,77 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpLotAddReceive.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpLotTransfer.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpMelting.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAcctOpTransaction.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmBackup.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmBhukaBag.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmBhukaBagNotUpdated.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCarbonReceiveRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCategoryMaster.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCDailyStockDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCompanyDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionIssueNew.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionReceive.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionRemoval.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmEditBags.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmEditLabIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFAccountClosing.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFAccountOpening.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFAllLotsRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFBalancePendingBags.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFBhukaBag.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFDailyStockDetails.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFDeptIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFDeptReceive.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFDetails.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFFinalizeLot.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFInterDeptIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFInterDeptIssueRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFInterDeptReceipt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFIssueReceive.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFIStockAddition.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFIStockRemoval.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFKarigarwiseLossRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFLabIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFLotHistoryRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFLotNowiseLossRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMelting.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMeltingAlloyReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMeltingRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMeltingwiseLossRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMetalUsedInBag.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMetalUsedReport.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFamilyMaster.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMStockAddition.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFMStockRemoval.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFOperationMaster.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFOperationwiseLossRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFPendingVoucherRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFReceiveGoldOthers.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFScrapBagNotUpdated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFSilverMeltingRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockAdditionIReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockAdditionMReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockAdditionVReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockBhukaBagCreated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockLogin.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockLossMetalReceived.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockSubtractionISReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockSubtractionMSReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockSubtractionVSReport.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockSummary.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockVaccumBagNotCreated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFStockVacuumBagNotUsed.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFVacBagNotUpdated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFVaccumBag.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFVaccumBagRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmVStockAddition.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFVStockRemoval.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFWorkDoneRpt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmGConvFactor.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmGTreeMaking.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmHollowBhukaBag.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmInterDeptReceipt.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmIssueHollow.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmItemMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmKarigarMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmLabIssue.resources
@@ -926,6 +985,7 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmILotTransfer.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMainChart.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMaterialMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMelting.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMeltingMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMeltingRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMeltingStockRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMetalUsedInBag.resources
@@ -933,8 +993,13 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMetalUsedReport.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmInterDeptIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmAllBhukaBagRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmLotAdditionIssue.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmChOperationMaster.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmNewLotNo.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOLabIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpStockBagsNotUpdated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpStockIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmProgressBar.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmReceiveHollow.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmStockAdditionRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmRptViewer.resources
@@ -948,7 +1013,6 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpLotAddReceive.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpLotTransfer.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpMelting.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpStockBagsNotUsed.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpStockIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpStockBags.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOpTransaction.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmRptKarigarwiseLoss.resources
@@ -992,7 +1056,6 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmStockVacuumBagCreated.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmStockWipLots.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmStockWipLotTransferred.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmStockWipMelting.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmTest.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmTouchConversionRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmTransactionStockRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmRLotTransfer.resources
@@ -1001,12 +1064,15 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmUserMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmVaccumBag.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmVaccumBagByNumber.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmVacuumBagNotUpdated.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmWIPLotDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmWIPLotNoWise.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmWIPSummaryRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmYearDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmYearMaster.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.Lock_Frm.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMain.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.Resources.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.RdfrmEditMelting.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.vbproj.GenerateResource.Cache
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.exe.licenses
 D:\Desktop Projects\JMS\JMS\obj\Release\RdlCompile.cache
@@ -1014,74 +1080,241 @@ D:\Desktop Projects\JMS\JMS\obj\Release\RdlCompile.compiled
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.exe
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.xml
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.pdb
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionReceiveNew.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmIssueHollow.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmReceiveHollow.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmHollowScrapBag.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.vbprojResolveAssemblyReference.cache
 D:\Desktop Projects\JMS\JMS\bin\Release\Microsoft.VisualBasic.PowerPacks.dll
 D:\Desktop Projects\JMS\JMS\bin\Release\Microsoft.VisualBasic.PowerPacks.xml
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmChAccountOpening.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaAccountClosing.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaAccountOpening.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaAllLotsRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaBalancePendingBags.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaBhukaBag.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaDailyStockDetails.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaDeptIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaDeptReceive.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaDetails.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaFinalizeLot.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaInterDeptIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaInterDeptIssueRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaInterDeptReceipt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaIssueReceive.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaIStockAddition.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaIStockRemoval.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaKarigarwiseLossRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaLabIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaLotHistoryRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaLotNowiseLossRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMelting.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMeltingAlloyReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMeltingRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMeltingwiseLossRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMetalUsedInBag.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMetalUsedReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMStockAddition.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaMStockRemoval.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaOperationMaster.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaOperationwiseLossRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaPendingVoucherRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaReceiveGoldOthers.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaScrapBagNotUpdated.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaSilverMeltingRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockAdditionIReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockAdditionMReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockAdditionVReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockBhukaBagCreated.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockLogin.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockLossMetalReceived.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockSubtractionISReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockSubtractionMSReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockSubtractionVSReport.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockSummary.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockVaccumBagNotCreated.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockVacuumBagNotUsed.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaVacBagNotUpdated.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaVaccumBagRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmVStockAddition.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaVStockRemoval.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaWorkDoneRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMeltingMaster.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmChOperationMaster.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmNewLotNo.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmOLabIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmWIPLotDetails.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmWIPSummaryRpt.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.RdfrmEditMelting.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmBackup.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaStockIssue.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFaVaccumBag.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmGConvFactor.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmGTreeMaking.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmfTruncateTable.resources
+D:\ChainSoftware\JMS\JMS\bin\Release\JMS.exe.config
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.vbproj.ResolveComReference.cache
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.exe
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.xml
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.pdb
+D:\ChainSoftware\JMS\JMS\bin\Release\JMS.exe
+D:\ChainSoftware\JMS\JMS\bin\Release\JMS.pdb
+D:\ChainSoftware\JMS\JMS\bin\Release\JMS.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\BarcodeStandard.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\DataAccessHandler.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Microsoft.ReportViewer.WinForms.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Microsoft.VisualBasic.PowerPacks.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.WinControls.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.WinControls.GridView.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.WinControls.Themes.TelerikMetro.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.WinControls.UI.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\TelerikCommon.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\TelerikExport.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Zen.Barcode.Core.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Fixed.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Documents.SpreadsheetStreaming.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Core.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Zip.dll
+D:\ChainSoftware\JMS\JMS\bin\Release\Microsoft.VisualBasic.PowerPacks.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Fixed.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Documents.SpreadsheetStreaming.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Core.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.xml
+D:\ChainSoftware\JMS\JMS\bin\Release\Telerik.Windows.Zip.xml
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAbout.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAccountMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmChAccountOpening.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpBagNotCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpBagNotUsed.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpInterDeptIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpIntReceipt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpLotAddIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpLotAddReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpLotTransfer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAcctOpTransaction.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmBackup.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmBhukaBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmBhukaBagNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCarbonReceiveRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCategoryMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCDailyStockDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCompanyDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCoreAdditionIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCoreAdditionReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCoreAdditionRemoval.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCStockLogin.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmfTruncateTable.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmEditBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmEditLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFAccountClosing.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFAccountOpening.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFAllLotsRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFBalancePendingBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFBhukaBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFDailyStockDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFDeptIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFDeptReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFFinalizeLot.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFInterDeptIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFInterDeptIssueRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFInterDeptReceipt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFIssueReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFIStockAddition.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFIStockRemoval.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFKarigarwiseLossRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFLotHistoryRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFLotNowiseLossRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMeltingAlloyReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMeltingRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMeltingwiseLossRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMetalUsedInBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMetalUsedReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFamilyMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMStockAddition.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFMStockRemoval.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFOperationMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFOperationwiseLossRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFPendingVoucherRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFReceiveGoldOthers.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFScrapBagNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFSilverMeltingRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockAdditionIReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockAdditionMReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockAdditionVReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockBhukaBagCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockLogin.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockLossMetalReceived.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockSubtractionISReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockSubtractionMSReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockSubtractionVSReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockSummary.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockVaccumBagNotCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFStockVacuumBagNotUsed.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFVacBagNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFVaccumBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFVaccumBagRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmVStockAddition.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFVStockRemoval.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmFWorkDoneRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmGConvFactor.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmGTreeMaking.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmHollowBhukaBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmInterDeptReceipt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmIssueHollow.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmItemMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmKarigarMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLabRptAgainstLotNo.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmListLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLessMetalIssued.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotAdditionFinal.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotAdditionNew.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLabMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLogin.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotAdditionReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotAdditionRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotFailBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotFailBagNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotFailBagNotUsed.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotHistory.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotNo.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmILotTransfer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMainChart.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMaterialMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMeltingFinalizeLot.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMeltingMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMeltingRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMeltingStockRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMetalUsedInBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmInterDeptIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmAllBhukaBagRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmLotAdditionIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmChOperationMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMetalUsedReport.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmNewLotNo.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpStockBagsNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpStockIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmProgressBar.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmReceiveHollow.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmCoreAdditionRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockAdditionRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptViewer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmSampleBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmSamplesRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpInterIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpInterReceipt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpLabIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpLotAddIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpLotAddReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpLotTransfer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpStockBagsNotUsed.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpStockBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOpTransaction.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptKarigarwiseLoss.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptLotAdditionOpStock.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmScrapReceiveRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmShowSearchengine.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStampMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmOperationLossRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmBhukaBagByNumber.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmPartyMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmPendingVoucher.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmPendingBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRegister.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptIssueDept.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptLotAddition.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptLotFail.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptLotTransfer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRptReceiveDept.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmScrapReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmSelectMonthDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockBagsNotUsed.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockBhukaBagCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockBhukaBagNotCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockDeptIssue.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockDeptReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockFinishedLots.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLossBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLossLabs.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLossMetalReceived.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLossTransaction.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLotAddition.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockLotFailBags.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockMetalUnused.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockReceive.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockSampleBagCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockSampleBagNotCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockSummary.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockVaccumBagNotCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockVacuumBagCreated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockWipLots.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockWipLotTransferred.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmStockWipMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmTouchConversionRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmTransactionStockRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmRLotTransfer.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmTruncateTable.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmUserMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmVaccumBag.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmVaccumBagByNumber.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmVacuumBagNotUpdated.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmWIPLotDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmWIPLotNoWise.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmWIPSummaryRpt.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmYearDetails.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmYearMaster.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.Lock_Frm.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.frmMain.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.Resources.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.RdfrmEditMelting.resources
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.vbproj.GenerateResource.Cache
+D:\ChainSoftware\JMS\JMS\obj\Release\JMS.exe.licenses
+D:\ChainSoftware\JMS\JMS\obj\Release\RdlCompile.cache
+D:\ChainSoftware\JMS\JMS\obj\Release\RdlCompile.compiled

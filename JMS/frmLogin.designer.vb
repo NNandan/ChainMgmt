@@ -99,7 +99,6 @@ Partial Class frmLogin
         Me.PasswordTextBox.Location = New System.Drawing.Point(318, 124)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.ReadOnly = True
         Me.PasswordTextBox.Size = New System.Drawing.Size(251, 22)
         Me.PasswordTextBox.TabIndex = 1
         Me.PasswordTextBox.Text = "123"
@@ -109,10 +108,9 @@ Partial Class frmLogin
         Me.UsernameTextBox.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameTextBox.Location = New System.Drawing.Point(318, 96)
         Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.ReadOnly = True
         Me.UsernameTextBox.Size = New System.Drawing.Size(251, 22)
         Me.UsernameTextBox.TabIndex = 0
-        Me.UsernameTextBox.Text = "Admin"
+        Me.UsernameTextBox.Text = "Nandan"
         '
         'Label2
         '

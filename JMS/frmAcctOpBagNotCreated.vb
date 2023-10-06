@@ -1,7 +1,5 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
-Imports Telerik.WinControls.UI
 Public Class frmAcctOpBagNotCreated
     Dim strReportName As String = Nothing
     Dim dbManager As New SqlHelper()
@@ -34,7 +32,6 @@ Public Class frmAcctOpBagNotCreated
         Return dtData
 
     End Function
-
     Private Sub frmAcctOpBagNotCreated_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit

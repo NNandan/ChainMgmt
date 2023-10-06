@@ -22,13 +22,13 @@ Partial Class frmStockWipMelting
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dgvWipLotNo = New Telerik.WinControls.UI.RadGridView()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
         Me.btnPrint = New Telerik.WinControls.UI.RadButton()
@@ -51,48 +51,48 @@ Partial Class frmStockWipMelting
         '
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "MeltingDt"
-        GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn1.MinWidth = 6
-        GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 82
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotNo"
-        GridViewTextBoxColumn2.HeaderText = "Lot No"
-        GridViewTextBoxColumn2.MinWidth = 6
-        GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 110
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "ItemName"
-        GridViewTextBoxColumn3.HeaderText = "Item Name"
-        GridViewTextBoxColumn3.MinWidth = 6
-        GridViewTextBoxColumn3.Name = "colItemName"
-        GridViewTextBoxColumn3.Width = 240
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn4.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn4.MinWidth = 6
-        GridViewTextBoxColumn4.Name = "colReceiveWt"
-        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 90
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "ReceivePr"
-        GridViewTextBoxColumn5.HeaderText = "Receive %"
-        GridViewTextBoxColumn5.MinWidth = 6
-        GridViewTextBoxColumn5.Name = "colReceivePr"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 90
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "FineWt"
-        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn6.MinWidth = 6
-        GridViewTextBoxColumn6.Name = "colFineWt"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 90
-        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "MeltingDt"
+        GridViewTextBoxColumn13.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn13.MinWidth = 6
+        GridViewTextBoxColumn13.Name = "colTransDt"
+        GridViewTextBoxColumn13.Width = 82
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "LotNo"
+        GridViewTextBoxColumn14.HeaderText = "Lot No"
+        GridViewTextBoxColumn14.MinWidth = 6
+        GridViewTextBoxColumn14.Name = "colLotNumber"
+        GridViewTextBoxColumn14.Width = 110
+        GridViewTextBoxColumn15.EnableExpressionEditor = False
+        GridViewTextBoxColumn15.FieldName = "ItemName"
+        GridViewTextBoxColumn15.HeaderText = "Item Name"
+        GridViewTextBoxColumn15.MinWidth = 6
+        GridViewTextBoxColumn15.Name = "colItemName"
+        GridViewTextBoxColumn15.Width = 240
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn16.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn16.MinWidth = 6
+        GridViewTextBoxColumn16.Name = "colReceiveWt"
+        GridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn16.Width = 90
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "ReceivePr"
+        GridViewTextBoxColumn17.HeaderText = "Receive %"
+        GridViewTextBoxColumn17.MinWidth = 6
+        GridViewTextBoxColumn17.Name = "colReceivePr"
+        GridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn17.Width = 90
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "FineWt"
+        GridViewTextBoxColumn18.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn18.MinWidth = 6
+        GridViewTextBoxColumn18.Name = "colFineWt"
+        GridViewTextBoxColumn18.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn18.Width = 90
+        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -102,7 +102,7 @@ Partial Class frmStockWipMelting
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(345, 427)
+        Me.btnExit.Location = New System.Drawing.Point(372, 427)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 45
@@ -111,7 +111,7 @@ Partial Class frmStockWipMelting
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(268, 427)
+        Me.btnPrint.Location = New System.Drawing.Point(295, 427)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 44
@@ -120,7 +120,7 @@ Partial Class frmStockWipMelting
         'frmStockWipMelting
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(705, 456)
+        Me.ClientSize = New System.Drawing.Size(704, 457)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvWipLotNo)

@@ -1,6 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
-Imports DataAccessHandler
+﻿Imports DataAccessHandler
 Public Class frmTruncateTable
     Dim dbManager As New SqlHelper()
     Dim strSQL As String = Nothing
@@ -104,6 +102,31 @@ Public Class frmTruncateTable
 
             strSQL = Nothing
             strSQL = "TRUNCATE TABLE tbltransaction"
+
+            dbManager.Delete(strSQL, CommandType.Text)
+
+            strSQL = Nothing
+            strSQL = "TRUNCATE TABLE tblCoreAdditionIssue"
+
+            dbManager.Delete(strSQL, CommandType.Text)
+
+            strSQL = Nothing
+            strSQL = "TRUNCATE TABLE tblCoreAdditionIssueDetails"
+
+            dbManager.Delete(strSQL, CommandType.Text)
+
+            strSQL = Nothing
+            strSQL = "TRUNCATE TABLE tblCoreAdditionReceive"
+
+            dbManager.Delete(strSQL, CommandType.Text)
+
+            strSQL = Nothing
+            strSQL = "TRUNCATE TABLE tblCoreAdditionReceiveDetails"
+
+            dbManager.Delete(strSQL, CommandType.Text)
+
+            strSQL = Nothing
+            strSQL = "TRUNCATE TABLE tblHollowIssue"
 
             dbManager.Delete(strSQL, CommandType.Text)
 

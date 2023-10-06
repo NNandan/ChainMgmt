@@ -22,19 +22,19 @@ Partial Class frmGTreeMaking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn56 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn57 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn58 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition11 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewTextBoxColumn59 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn60 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn61 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn62 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn63 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn64 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn65 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn66 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.btnCancel = New Telerik.WinControls.UI.RadButton()
@@ -145,7 +145,7 @@ Partial Class frmGTreeMaking
         'lblTotalPcs
         '
         Me.lblTotalPcs.AutoSize = True
-        Me.lblTotalPcs.Location = New System.Drawing.Point(529, 344)
+        Me.lblTotalPcs.Location = New System.Drawing.Point(555, 344)
         Me.lblTotalPcs.Name = "lblTotalPcs"
         Me.lblTotalPcs.Size = New System.Drawing.Size(32, 14)
         Me.lblTotalPcs.TabIndex = 27
@@ -158,7 +158,7 @@ Partial Class frmGTreeMaking
         Me.GroupBox2.Controls.Add(Me.txtDieNo)
         Me.GroupBox2.Controls.Add(Me.txtSrNo)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 135)
+        Me.GroupBox2.Location = New System.Drawing.Point(5, 135)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(591, 204)
         Me.GroupBox2.TabIndex = 25
@@ -168,9 +168,9 @@ Partial Class frmGTreeMaking
         'txtPcs
         '
         Me.txtPcs.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtPcs.Location = New System.Drawing.Point(301, 19)
+        Me.txtPcs.Location = New System.Drawing.Point(447, 19)
         Me.txtPcs.Name = "txtPcs"
-        Me.txtPcs.Size = New System.Drawing.Size(161, 20)
+        Me.txtPcs.Size = New System.Drawing.Size(138, 20)
         Me.txtPcs.TabIndex = 1
         '
         'dgvTreeMaking
@@ -180,56 +180,57 @@ Partial Class frmGTreeMaking
         Me.dgvTreeMaking.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvTreeMaking.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvTreeMaking.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvTreeMaking.Location = New System.Drawing.Point(2, 42)
+        Me.dgvTreeMaking.Location = New System.Drawing.Point(4, 41)
         '
         '
         '
         Me.dgvTreeMaking.MasterTemplate.AllowAddNewRow = False
-        GridViewTextBoxColumn56.EnableExpressionEditor = False
-        GridViewTextBoxColumn56.FieldName = "SrNo"
-        GridViewTextBoxColumn56.HeaderText = "Sr No."
-        GridViewTextBoxColumn56.Name = "colSrNo"
-        GridViewTextBoxColumn57.EnableExpressionEditor = False
-        GridViewTextBoxColumn57.FieldName = "DieNo"
-        GridViewTextBoxColumn57.HeaderText = "Die No."
-        GridViewTextBoxColumn57.Name = "colDieNo"
-        GridViewTextBoxColumn57.Width = 250
-        GridViewTextBoxColumn58.EnableExpressionEditor = False
-        GridViewTextBoxColumn58.FieldName = "Pcs"
-        GridViewTextBoxColumn58.HeaderText = "PCS."
-        GridViewTextBoxColumn58.Name = "colPcs"
-        GridViewTextBoxColumn58.Width = 162
-        Me.dgvTreeMaking.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn56, GridViewTextBoxColumn57, GridViewTextBoxColumn58})
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "SrNo"
+        GridViewTextBoxColumn1.HeaderText = "Sr No."
+        GridViewTextBoxColumn1.Name = "colSrNo"
+        GridViewTextBoxColumn1.Width = 42
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "DieNo"
+        GridViewTextBoxColumn2.HeaderText = "Die No."
+        GridViewTextBoxColumn2.Name = "colDieNo"
+        GridViewTextBoxColumn2.Width = 400
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "Pcs"
+        GridViewTextBoxColumn3.HeaderText = "Pcs."
+        GridViewTextBoxColumn3.Name = "colPcs"
+        GridViewTextBoxColumn3.Width = 140
+        Me.dgvTreeMaking.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3})
         Me.dgvTreeMaking.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvTreeMaking.MasterTemplate.ViewDefinition = TableViewDefinition11
+        Me.dgvTreeMaking.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvTreeMaking.Name = "dgvTreeMaking"
         Me.dgvTreeMaking.ReadOnly = True
         Me.dgvTreeMaking.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvTreeMaking.ShowGroupPanel = False
-        Me.dgvTreeMaking.Size = New System.Drawing.Size(598, 156)
+        Me.dgvTreeMaking.Size = New System.Drawing.Size(583, 156)
         Me.dgvTreeMaking.TabIndex = 0
         '
         'txtDieNo
         '
         Me.txtDieNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtDieNo.Location = New System.Drawing.Point(51, 19)
+        Me.txtDieNo.Location = New System.Drawing.Point(49, 19)
         Me.txtDieNo.Name = "txtDieNo"
-        Me.txtDieNo.Size = New System.Drawing.Size(246, 20)
+        Me.txtDieNo.Size = New System.Drawing.Size(397, 20)
         Me.txtDieNo.TabIndex = 0
         '
         'txtSrNo
         '
-        Me.txtSrNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtSrNo.Location = New System.Drawing.Point(0, 19)
+        Me.txtSrNo.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtSrNo.Location = New System.Drawing.Point(4, 19)
         Me.txtSrNo.Name = "txtSrNo"
-        Me.txtSrNo.Size = New System.Drawing.Size(48, 20)
+        Me.txtSrNo.Size = New System.Drawing.Size(44, 20)
         Me.txtSrNo.TabIndex = 0
         Me.txtSrNo.TabStop = False
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(255, 344)
+        Me.lblTotal.Location = New System.Drawing.Point(416, 343)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(35, 14)
         Me.lblTotal.TabIndex = 26
@@ -250,7 +251,7 @@ Partial Class frmGTreeMaking
         Me.GroupBox1.Controls.Add(Me.lblLotNo)
         Me.GroupBox1.Controls.Add(Me.cmbMaterial)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 6)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(591, 123)
         Me.GroupBox1.TabIndex = 24
@@ -260,20 +261,22 @@ Partial Class frmGTreeMaking
         'lblTreeNo
         '
         Me.lblTreeNo.AutoSize = True
-        Me.lblTreeNo.Location = New System.Drawing.Point(421, 27)
+        Me.lblTreeNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblTreeNo.Location = New System.Drawing.Point(420, 26)
         Me.lblTreeNo.Name = "lblTreeNo"
-        Me.lblTreeNo.Size = New System.Drawing.Size(57, 13)
+        Me.lblTreeNo.Size = New System.Drawing.Size(56, 14)
         Me.lblTreeNo.TabIndex = 157
         Me.lblTreeNo.Text = "Tree No."
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(213, 67)
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label3.Location = New System.Drawing.Point(210, 66)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.Size = New System.Drawing.Size(48, 14)
         Me.Label3.TabIndex = 156
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Material"
         '
         'Label9
         '
@@ -321,7 +324,7 @@ Partial Class frmGTreeMaking
         Me.txtTreeWeight.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTreeWeight.Location = New System.Drawing.Point(83, 63)
         Me.txtTreeWeight.Name = "txtTreeWeight"
-        Me.txtTreeWeight.Size = New System.Drawing.Size(106, 20)
+        Me.txtTreeWeight.Size = New System.Drawing.Size(90, 20)
         Me.txtTreeWeight.TabIndex = 2
         '
         'Label2
@@ -349,7 +352,7 @@ Partial Class frmGTreeMaking
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label26.Location = New System.Drawing.Point(27, 27)
+        Me.Label26.Location = New System.Drawing.Point(23, 27)
         Me.Label26.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(56, 14)
@@ -387,10 +390,10 @@ Partial Class frmGTreeMaking
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.DGVTreeMakList)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(600, 402)
+        Me.TabPage2.Size = New System.Drawing.Size(600, 401)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -399,62 +402,63 @@ Partial Class frmGTreeMaking
         '
         Me.DGVTreeMakList.BackColor = System.Drawing.Color.Transparent
         Me.DGVTreeMakList.Cursor = System.Windows.Forms.Cursors.Default
-        Me.DGVTreeMakList.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.DGVTreeMakList.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.DGVTreeMakList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.DGVTreeMakList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DGVTreeMakList.Location = New System.Drawing.Point(3, 0)
+        Me.DGVTreeMakList.Location = New System.Drawing.Point(2, 0)
         '
         '
         '
         Me.DGVTreeMakList.MasterTemplate.AllowAddNewRow = False
-        GridViewTextBoxColumn59.EnableExpressionEditor = False
-        GridViewTextBoxColumn59.FieldName = "TreeMakingId"
-        GridViewTextBoxColumn59.HeaderText = "MakingId"
-        GridViewTextBoxColumn59.Name = "colTreeMakingId"
-        GridViewTextBoxColumn59.Width = 100
-        GridViewTextBoxColumn60.EnableExpressionEditor = False
-        GridViewTextBoxColumn60.FieldName = "TMakingDt"
-        GridViewTextBoxColumn60.HeaderText = "TMakingDt"
-        GridViewTextBoxColumn60.Name = "colTMakingDt"
-        GridViewTextBoxColumn60.Width = 100
-        GridViewTextBoxColumn61.EnableExpressionEditor = False
-        GridViewTextBoxColumn61.FieldName = "LabourId"
-        GridViewTextBoxColumn61.HeaderText = "LabourId"
-        GridViewTextBoxColumn61.IsVisible = False
-        GridViewTextBoxColumn61.Name = "colLabourId"
-        GridViewTextBoxColumn62.EnableExpressionEditor = False
-        GridViewTextBoxColumn62.FieldName = "LabourName"
-        GridViewTextBoxColumn62.HeaderText = "LabourName"
-        GridViewTextBoxColumn62.Name = "colLabourName"
-        GridViewTextBoxColumn62.Width = 100
-        GridViewTextBoxColumn63.EnableExpressionEditor = False
-        GridViewTextBoxColumn63.FieldName = "MaterialId"
-        GridViewTextBoxColumn63.HeaderText = "MaterialId"
-        GridViewTextBoxColumn63.IsVisible = False
-        GridViewTextBoxColumn63.Name = "colMaterialId"
-        GridViewTextBoxColumn64.EnableExpressionEditor = False
-        GridViewTextBoxColumn64.FieldName = "MaterialName"
-        GridViewTextBoxColumn64.HeaderText = "MaterialName"
-        GridViewTextBoxColumn64.Name = "colMaterialName"
-        GridViewTextBoxColumn64.Width = 100
-        GridViewTextBoxColumn65.EnableExpressionEditor = False
-        GridViewTextBoxColumn65.FieldName = "TreeWt"
-        GridViewTextBoxColumn65.HeaderText = "TreeWt"
-        GridViewTextBoxColumn65.Name = "colTreeWt"
-        GridViewTextBoxColumn65.Width = 100
-        GridViewTextBoxColumn66.EnableExpressionEditor = False
-        GridViewTextBoxColumn66.FieldName = "TreeNo"
-        GridViewTextBoxColumn66.HeaderText = "TreeNo"
-        GridViewTextBoxColumn66.Name = "colTreeNo"
-        GridViewTextBoxColumn66.Width = 120
-        Me.DGVTreeMakList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn59, GridViewTextBoxColumn60, GridViewTextBoxColumn61, GridViewTextBoxColumn62, GridViewTextBoxColumn63, GridViewTextBoxColumn64, GridViewTextBoxColumn65, GridViewTextBoxColumn66})
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "TreeMakingId"
+        GridViewTextBoxColumn4.HeaderText = "MakingId"
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "colTreeMakingId"
+        GridViewTextBoxColumn4.Width = 100
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "TMakingDt"
+        GridViewTextBoxColumn5.HeaderText = "Tree Making Dt."
+        GridViewTextBoxColumn5.Name = "colTMakingDt"
+        GridViewTextBoxColumn5.Width = 100
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "LabourId"
+        GridViewTextBoxColumn6.HeaderText = "Labour Id."
+        GridViewTextBoxColumn6.IsVisible = False
+        GridViewTextBoxColumn6.Name = "colLabourId"
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "LabourName"
+        GridViewTextBoxColumn7.HeaderText = "Labour Name"
+        GridViewTextBoxColumn7.Name = "colLabourName"
+        GridViewTextBoxColumn7.Width = 150
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "MaterialId"
+        GridViewTextBoxColumn8.HeaderText = "Material Id."
+        GridViewTextBoxColumn8.IsVisible = False
+        GridViewTextBoxColumn8.Name = "colMaterialId"
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "MaterialName"
+        GridViewTextBoxColumn9.HeaderText = "Material Name"
+        GridViewTextBoxColumn9.Name = "colMaterialName"
+        GridViewTextBoxColumn9.Width = 150
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "TreeWt"
+        GridViewTextBoxColumn10.HeaderText = "Tree Wt."
+        GridViewTextBoxColumn10.Name = "colTreeWt"
+        GridViewTextBoxColumn10.Width = 90
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "TreeNo"
+        GridViewTextBoxColumn11.HeaderText = "Tree No."
+        GridViewTextBoxColumn11.Name = "colTreeNo"
+        GridViewTextBoxColumn11.Width = 110
+        Me.DGVTreeMakList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11})
         Me.DGVTreeMakList.MasterTemplate.EnableGrouping = False
         Me.DGVTreeMakList.MasterTemplate.ShowRowHeaderColumn = False
-        Me.DGVTreeMakList.MasterTemplate.ViewDefinition = TableViewDefinition12
+        Me.DGVTreeMakList.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.DGVTreeMakList.Name = "DGVTreeMakList"
         Me.DGVTreeMakList.ReadOnly = True
         Me.DGVTreeMakList.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.DGVTreeMakList.Size = New System.Drawing.Size(618, 396)
+        Me.DGVTreeMakList.Size = New System.Drawing.Size(597, 398)
         Me.DGVTreeMakList.TabIndex = 0
         '
         'Label1
@@ -473,6 +477,7 @@ Partial Class frmGTreeMaking
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "frmGTreeMaking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tree Making"

@@ -40,7 +40,7 @@ Public Class frmStockMetalUnused
                 .Add(dbManager.CreateParameter("@ActionType", "VoucherMetalUnusedDetails", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_fStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

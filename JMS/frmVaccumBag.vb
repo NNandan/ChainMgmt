@@ -356,9 +356,11 @@ Public Class frmVaccumBag
         Try
             Dim parameters = New List(Of SqlParameter)()
             parameters.Clear()
+
             With parameters
                 .Add(dbManager.CreateParameter("@ActionType", "FetchVUsedUBagData", DbType.String))
             End With
+
             dtData = dbManager.GetDataTable("SP_UsedBags_Select", CommandType.StoredProcedure, parameters.ToArray())
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -1034,7 +1036,6 @@ Public Class frmVaccumBag
             .Add(dbManager.CreateParameter("@BId", Val(cmbCBagtype.Tag), DbType.Int16))
             .Add(dbManager.CreateParameter("@LId", Val(cmbLabour.Tag), DbType.Int16))
             .Add(dbManager.CreateParameter("@BagSrNo", sBagNo, DbType.String))
-
         End With
 
         dt = dbManager.GetDataTable("SP_Transaction_Select", CommandType.StoredProcedure, parameters.ToArray())
@@ -1058,7 +1059,6 @@ Public Class frmVaccumBag
 
         End Try
     End Sub
-
     Private Function fetchAllDetails(ByVal sBagNo As String) As DataTable
         Dim dtData As DataTable = New DataTable()
 
@@ -1078,7 +1078,6 @@ Public Class frmVaccumBag
         End Try
         Return dtData
     End Function
-
     Private Sub cmbRBagNo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbRBagNo.SelectedIndexChanged
         If cmbRBagNo.SelectedIndex = -1 Then
             With dgvRVacuumBag

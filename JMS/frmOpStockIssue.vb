@@ -78,12 +78,9 @@ Public Class frmOpStockIssue
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
 
-        With parameters
-            .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
-        End With
-
+        parameters.Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Dim dt As DataTable = New DataTable()
@@ -364,7 +361,7 @@ Public Class frmOpStockIssue
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
                 .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
-                .Add(dbManager.CreateParameter("@HIsOpening", 0, DbType.Boolean))
+                .Add(dbManager.CreateParameter("@HIsOpening", 1, DbType.Boolean))
 
                 .Add(dbManager.CreateParameter("@DItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
@@ -429,11 +426,11 @@ Public Class frmOpStockIssue
     Private Sub fillHeaderFromListView(ByVal intIssueId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
 
         With parameters
-            .Clear()
             .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
-            .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FetchOpeningHeader", DbType.String))
         End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_StockIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
@@ -502,9 +499,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
 
             With parameters
-                .Clear()
                 .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
             End With
@@ -517,6 +514,47 @@ ErrHandler:
 
         Return dtData
     End Function
+
+    Private Sub dgvStockIssueList_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvStockIssueList.CellDoubleClick
+        If dgvStockIssueList.SelectedRows.Count = 0 Then Exit Sub
+
+        If dgvStockIssueList.Rows.Count > 0 Then
+            Dim IssueId As Integer = Me.dgvStockIssueList.SelectedRows(0).Cells(0).Value
+
+            Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
+
+            Me.fillHeaderFromListView(IssueId)
+
+            Me.fillDetailsFromListView(IssueId)
+
+            Me.TabOpStock.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub dgvStockIssue_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvStockIssue.CellDoubleClick
+        Try
+            If e.RowIndex = -1 Then Exit Sub
+
+            If e.RowIndex >= 0 And dgvStockIssue.Rows(e.RowIndex).Cells(0).Value <> Nothing Then
+                GridDoubleClick = True
+                txtSrNo.Text = dgvStockIssue.Rows(e.RowIndex).Cells(0).Value.ToString()
+                cmbItem.SelectedIndex = dgvStockIssue.Rows(e.RowIndex).Cells(1).Value.ToString()
+                cmbItem.Text = dgvStockIssue.Rows(e.RowIndex).Cells(2).Value.ToString()
+                txtGrossWt.Text = CStr(dgvStockIssue.Rows(e.RowIndex).Cells(3).Value)
+                txtGrossPr.Text = CStr(dgvStockIssue.Rows(e.RowIndex).Cells(4).Value)
+                txtFineWt.Text = dgvStockIssue.Rows(e.RowIndex).Cells(5).Value.ToString()
+                cmbParty.SelectedIndex = dgvStockIssue.Rows(e.RowIndex).Cells(6).Value.ToString()
+                cmbParty.Text = dgvStockIssue.Rows(e.RowIndex).Cells(7).Value.ToString()
+                txtNarration.Text = dgvStockIssue.Rows(e.RowIndex).Cells(8).Value.ToString()
+                TempRow = e.RowIndex
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Sub MessageBoxTimer(ByVal strMsg As String)
         Dim AckTime As Integer, InfoBox As Object
         InfoBox = CreateObject("WScript.Shell")
@@ -528,6 +566,36 @@ ErrHandler:
                 Exit Sub
         End Select
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If Not String.IsNullOrEmpty(txtVocucherNo.Text) And dgvStockIssue.Rows.Count > 0 Then
+            If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+
+                Try
+                    Dim parameters = New List(Of SqlParameter)()
+                    parameters.Clear()
+
+                    With parameters
+                        .Add(dbManager.CreateParameter("@IId", CInt(txtVocucherNo.Tag), DbType.Int16))
+                    End With
+
+                    dbManager.Delete("SP_StockIssue_Delete", CommandType.StoredProcedure, parameters.ToArray())
+
+                    MessageBox.Show("Record Deleted Successfully !!!")
+
+                    Me.Clear_Form()
+
+                Catch ex As Exception
+                    MessageBox.Show("Error:- " & ex.Message)
+                End Try
+            Else
+                MessageBox.Show("Please Select Record !!!")
+            End If
+        Else
+            MessageBox.Show("Delete This Record Only When You Sure !!!")
+        End If
+    End Sub
+
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim TmpLotNo As String = Nothing
         Try
@@ -540,9 +608,106 @@ ErrHandler:
 
                 Me.btnCancel_Click(sender, e)
             Else
-                'Me.UpdateData()
+                Me.UpdateData()
                 Me.btnCancel_Click(sender, e)
             End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
+    Private Sub UpdateData()
+        Dim alParaval As New ArrayList
+
+        Dim GridSrNo As String = Nothing
+        Dim ItemName As String = Nothing
+        Dim IssueWt As String = Nothing
+        Dim IssuePr As String = Nothing
+        Dim FineWt As String = Nothing
+        Dim PartyName As String = Nothing
+        Dim Narration As String = Nothing
+
+        Dim IRowCount As Integer = 0
+        Dim iValue As Integer = 0
+
+        ''For Master
+        alParaval.Add(TransDt.Value.ToString())
+        'alParaval.Add(cmbfDepartment.SelectedValue)
+        'alParaval.Add(cmbtDepartment.SelectedIndex)
+        alParaval.Add(txtVocucherNo.Text)
+        'alParaval.Add(txtFrKarigar.Tag)
+        'alParaval.Add(cmbtKarigar.SelectedValue)
+
+        ''For Details
+        For Each row As GridViewRowInfo In dgvStockIssue.Rows
+            If row.Cells(0).Value <> Nothing Then
+                If GridSrNo = "" Then
+                    GridSrNo = Val(row.Cells(0).Value)
+                    ItemName = row.Cells(2).Value.ToString()
+                    IssueWt = Val(row.Cells(3).Value)
+                    IssuePr = Val(row.Cells(4).Value)
+                    FineWt = Val(row.Cells(5).Value)
+                    PartyName = row.Cells(7).Value.ToString
+                    Narration = Convert.ToString(row.Cells(8).Value)
+                Else
+                    GridSrNo = GridSrNo & "|" & Val(row.Cells(0).Value)
+                    ItemName = ItemName & "|" & row.Cells(2).Value.ToString()
+                    IssueWt = IssueWt & "|" & Val(row.Cells(3).Value)
+                    IssuePr = IssuePr & "|" & Val(row.Cells(4).Value)
+                    FineWt = FineWt & "|" & Val(row.Cells(5).Value)
+                    PartyName = PartyName & "|" & row.Cells(7).Value.ToString()
+                    Narration = Narration & "|" & Convert.ToString(row.Cells(8).Value)
+                End If
+            End If
+            IRowCount += 1
+        Next
+
+        alParaval.Add(ItemName)
+        alParaval.Add(IssueWt)
+        alParaval.Add(IssuePr)
+        alParaval.Add(FineWt)
+        alParaval.Add(PartyName)
+        alParaval.Add(Narration)
+
+        Try
+            Dim Hparameters = New List(Of SqlParameter)()
+            Hparameters.Clear()
+            With Hparameters
+                .Add(dbManager.CreateParameter("@HIssueDt", alParaval.Item(iValue), DbType.DateTime))
+                iValue += 1
+                '.Add(dbManager.CreateParameter("@HfDeptId", alParaval.Item(iValue), DbType.Int16))
+                'iValue += 1
+                '.Add(dbManager.CreateParameter("@HtDeptId", alParaval.Item(iValue), DbType.Int16))
+                'iValue += 1
+
+                .Add(dbManager.CreateParameter("@HVoucherNo", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+
+                '.Add(dbManager.CreateParameter("@HFrKarigarId", alParaval.Item(iValue), DbType.Int16))
+                'iValue += 1
+                '.Add(dbManager.CreateParameter("@HToKarigarId", alParaval.Item(iValue), DbType.String))
+                'iValue += 1
+
+                .Add(dbManager.CreateParameter("@IId", CInt(txtVocucherNo.Tag), DbType.Int16))
+                .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
+
+                .Add(dbManager.CreateParameter("@DItemName", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DIssueWt", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DIssuePr", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DPartyName", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DNarration", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+            End With
+
+            dbManager.Update("SP_OStockIssue_Update", CommandType.StoredProcedure, Hparameters.ToArray())
+            MessageBox.Show("Data Updated !!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

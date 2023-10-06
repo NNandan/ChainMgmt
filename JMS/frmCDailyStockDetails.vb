@@ -1,0 +1,2531 @@
+﻿Imports System.Configuration
+Imports System.Data
+Imports System.Data.SqlClient
+Imports DataAccessHandler
+Imports Telerik.WinControls.UI
+Public Class frmCDailyStockDetails
+    Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
+    Private mFr_State As FormState
+    Dim strSQL As String = Nothing
+    Dim TempRow As Integer
+    Dim GridDoubleClick As Boolean
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
+    Private Sub frmCDailyStockDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'If dtUserRights.Rows.Count > 0 Then
+        '    Dim DtRow() As DataRow = dtUserRights.Select("FormName = 'ACCOUNT MASTER'")
+        '    USERADD = DtRow(0).Item(3)
+        '    USEREDIT = DtRow(0).Item(4)
+        '    USERVIEW = DtRow(0).Item(5)
+        '    USERDELETE = DtRow(0).Item(6)
+        '    DeptId = DtRow(0).Item(7)
+        '    If USEREDIT = False And USERDELETE = False Then
+        '        MsgBox("Insufficient Rights")
+        '    End If
+        'End If
+
+        cmbTLabour.Tag = CInt(UserId)
+        cmbTLabour.Text = Convert.ToString(KarigarName.Trim)
+        cmbTLabour.Enabled = False
+        txtActualMetal.Enabled = False
+        txtWtAsPerSystem.Enabled = False
+        txtActualFineWt.Enabled = False
+        txtFineWtSys.Enabled = False
+        txtFineDiff.Enabled = False
+        txtSrNo.Enabled = False
+        txtFineWtSys.Visible = False
+        txtFineDiff.Visible = False
+        lblTotFineWtSys.Visible = False
+        lblTotFineDiff.Visible = False
+
+        Me.ClearTotalByCategory()
+        Me.fillStockCategoryName()
+        Me.fillMelting()
+        Me.fillBoxName()
+        Me.FillStockList()
+        Me.Clear()
+        Me.TextBoxesReadOnly()
+    End Sub
+    Private Sub TextBoxesReadOnly()
+        txtVMUGrossWt.Enabled = False
+        txtVMUPr.Enabled = False
+        txtVMUFWt.Enabled = False
+
+        txtLASGWt.Enabled = False
+        txtLASPr.Enabled = False
+        txtLASFWt.Enabled = False
+
+        txtWIPLGWt.Enabled = False
+        txtWIPLPr.Enabled = False
+        txtWIPLFWt.Enabled = False
+
+        txtWIPMGWt.Enabled = False
+        txtWIPMPr.Enabled = False
+        txtWIPMFWt.Enabled = False
+
+        txtWIPTGWt.Enabled = False
+        txtWIPTPr.Enabled = False
+        txtWIPTFWt.Enabled = False
+
+        txtFLGWt.Enabled = False
+        txtFLPr.Enabled = False
+        txtFLFWt.Enabled = False
+
+        txtSBNCGWt.Enabled = False
+        txtSBNCPr.Enabled = False
+        txtSBNCFWt.Enabled = False
+
+        txtVBNCGWt.Enabled = False
+        txtVBNCPr.Enabled = False
+        txtVBNCFWt.Enabled = False
+
+        txtSMBNCGWt.Enabled = False
+        txtSMBNCPr.Enabled = False
+        txtSMBNCFWt.Enabled = False
+
+        txtSBNRGWt.Enabled = False
+        txtSBNRPr.Enabled = False
+        txtSBNRFWt.Enabled = False
+
+        txtVBNRGWt.Enabled = False
+        txtVBNRPr.Enabled = False
+        txtVBNRFWt.Enabled = False
+
+        txtSMBNRGWt.Enabled = False
+        txtSMBNRPr.Enabled = False
+        txtSMBNRFWt.Enabled = False
+
+        txtLFBNRGWt.Enabled = False
+        txtLFBNRPr.Enabled = False
+        txtLFBNRFWt.Enabled = False
+
+        txtSBNUGWt.Enabled = False
+        txtSBNUPr.Enabled = False
+        txtSBNUFWt.Enabled = False
+
+        txtVBNUGWt.Enabled = False
+        txtVBNUPr.Enabled = False
+        txtVBNUFWt.Enabled = False
+
+        txtSMBNUGWt.Enabled = False
+        txtSMBNUPr.Enabled = False
+        txtSMBNUFWt.Enabled = False
+
+        txtLFBNUGWt.Enabled = False
+        txtLFBNUPr.Enabled = False
+        txtLFBNUFWt.Enabled = False
+
+        txtSBNUsGWt.Enabled = False
+        txtSBNUsPr.Enabled = False
+        txtSBNUsFWt.Enabled = False
+
+        txtVBNUsGWt.Enabled = False
+        txtVBNUsPr.Enabled = False
+        txtVBNUsFWt.Enabled = False
+
+        txtSMBNUsGWt.Enabled = False
+        txtSMBNUsPr.Enabled = False
+        txtSMBNUsFWt.Enabled = False
+
+        txtLFBNUsGWt.Enabled = False
+        txtLFBNUsPr.Enabled = False
+        txtLFBNUsFWt.Enabled = False
+
+        txtXSBNUsGWt.Enabled = False
+        txtXSBNUsPr.Enabled = False
+        txtXSBNUsFWt.Enabled = False
+
+        txtSIHGWt.Enabled = False
+        txtSIHPr.Enabled = False
+        txtSIHFWt.Enabled = False
+    End Sub
+    Private Sub FillStockList()
+        Dim dtable As DataTable = fetchAllDetails()
+        'RadGridView1.Rows.Clear()
+        'For i As Integer = 0 To dtable.Rows.Count - 1
+        If dtable.Rows.Count > 0 Then
+            dgvStockList.DataSource = dtable
+            dgvStockList.ReadOnly = True
+        Else
+            dgvStockList.DataSource = dtable
+            dgvStockList.ReadOnly = True
+        End If
+        'Next
+    End Sub
+    Private Sub frmCDailyStockDetails_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        Try
+            If (e.KeyCode = Keys.Escape) Then   'for Exit
+                If MsgBox("Wish To Exit?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    CType(Me.ParentForm, frmMain).FormMode.Text = ""
+                    Me.Close()
+                End If
+            ElseIf e.KeyCode = Keys.Enter Then
+                Me.SelectNextControl(Me.ActiveControl, True, True, True, False) 'for Select Next Control
+            ElseIf e.KeyCode = Keys.OemQuotes Or e.KeyCode = Keys.OemPipe Then
+                e.SuppressKeyPress = True
+            End If
+            If e.KeyCode = Keys.F2 Then
+                txtSrNo.Clear()
+                cmbTLabour.SelectedIndex = 0
+                cmbCategoryName.SelectedIndex = 0
+                cmbMelting.SelectedIndex = 0
+                cmbMelting.Text = ""
+                cmbBoxName.SelectedIndex = 0
+                txtWtWithBox.Clear()
+                txtActualMetal.Clear()
+                txtWtAsPerSystem.Clear()
+                txtActualFineWt.Clear()
+                cmbCategoryName.Focus()
+            End If
+            With dgvStockDetails
+                If e.KeyCode = Keys.F12 Then
+                    If btnSave.Text = "&Save" Then
+                        .Rows.Remove(.CurrentRow)
+                    Else
+                        Dim ScrapDetailedId As Int16 = dgvStockDetails.SelectedRows(0).Cells(6).Value
+                        If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+                            Try
+                                If dgvStockDetails.RowCount > 0 Then
+                                    Dim StockId As Int16 = dgvStockDetails.SelectedRows(0).Cells(12).Value
+                                    If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+                                        Try
+                                            If dgvStockDetails.RowCount > 0 Then
+                                                Dim parameters = New List(Of SqlParameter)()
+                                                parameters.Clear()
+                                                With parameters
+                                                    .Add(dbManager.CreateParameter("@StockId", StockId, DbType.Int16))
+                                                End With
+                                                dbManager.Delete("SP_DailyStock_Delete", CommandType.StoredProcedure, parameters.ToArray())
+                                                MessageBox.Show("Stock Delete Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                                dgvStockDetails.RowCount = 0
+                                            End If
+                                        Catch ex As Exception
+                                            MessageBox.Show("Error:- " & ex.Message)
+                                        End Try
+                                    End If
+                                    .Rows.Remove(.CurrentRow)
+                                End If
+                            Catch ex As Exception
+                                MessageBox.Show("Error:- " & ex.Message)
+                            End Try
+                        End If
+                    End If
+                End If
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub cmbCategoryName_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbCategoryName.SelectedIndexChanged
+        If cmbCategoryName.SelectedIndex = 1 Then
+            Me.GetStockForVoucherMetalUnUsed()
+        ElseIf cmbCategoryName.SelectedIndex = 2 Then
+            Me.GetStockForLotAdditionStock()
+        ElseIf cmbCategoryName.SelectedIndex = 3 Then
+            Me.GetStockForWIPLots()
+        ElseIf cmbCategoryName.SelectedIndex = 4 Then
+            Me.GetStockForWIPMelting()
+        ElseIf cmbCategoryName.SelectedIndex = 5 Then
+            Me.GetStockForWIPLotsTransfered()
+        ElseIf cmbCategoryName.SelectedIndex = 6 Then
+            Me.GetStockForFinishedLots()
+        ElseIf cmbCategoryName.SelectedIndex = 7 Then
+            Me.GetStockForScrapBagNotCreated()
+        ElseIf cmbCategoryName.SelectedIndex = 8 Then
+            Me.GetStockForVacuumBagNotCreated()
+        ElseIf cmbCategoryName.SelectedIndex = 9 Then
+            Me.GetStockForSampleBagNotCreated()
+        ElseIf cmbCategoryName.SelectedIndex = 10 Then
+            Me.GetStockForScrapBagNotReceived()
+        ElseIf cmbCategoryName.SelectedIndex = 11 Then
+            Me.GetStockForVacuumBagNotReceived()
+        ElseIf cmbCategoryName.SelectedIndex = 12 Then
+            Me.GetStockForSampleBagNotReceived()
+        ElseIf cmbCategoryName.SelectedIndex = 13 Then
+            Me.GetStockForLotFailBagNotReceived()
+        ElseIf cmbCategoryName.SelectedIndex = 14 Then
+            Me.GetStockForScrapBagNotUpdated()
+        ElseIf cmbCategoryName.SelectedIndex = 15 Then
+            Me.GetStockForVacuumBagNotUpdated()
+        ElseIf cmbCategoryName.SelectedIndex = 16 Then
+            Me.GetStockForSampleBagNotUpdated()
+        ElseIf cmbCategoryName.SelectedIndex = 17 Then
+            Me.GetStockForLotFailBagNotUpdated()
+        ElseIf cmbCategoryName.SelectedIndex = 18 Then
+            Me.GetStockForScrapBagNotUsed()
+        ElseIf cmbCategoryName.SelectedIndex = 19 Then
+            Me.GetStockForVacuumBagNotUsed()
+        ElseIf cmbCategoryName.SelectedIndex = 20 Then
+            Me.GetStockForSampleBagNotUsed()
+        ElseIf cmbCategoryName.SelectedIndex = 21 Then
+            Me.GetStockForLotFailBagNotUsed()
+        ElseIf cmbCategoryName.SelectedIndex = 22 Then
+            Me.GetStockForExtraScrapBagNotReceived()
+        ElseIf cmbCategoryName.SelectedIndex = 23 Then
+            Me.GetStockForInHand()
+        End If
+    End Sub
+    Private Sub GetStockForVoucherMetalUnUsed()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForVoucherMetalUnUsed", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("VoucherMetalUnUsed").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForLotAdditionStock()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForLotAdditionStock", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("LotAdditionStock").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForWIPLots()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForWIPLots", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("WIPLots").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForWIPMelting()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForWIPMelting", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("WIPMelting").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForWIPLotsTransfered()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForWIPLotsTransfered", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("WIPLotsTransfered").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForFinishedLots()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForFinishedLots", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("FinishedLots").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForScrapBagNotCreated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForScrapBagNotCreated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ScrapBagNotCreated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForVacuumBagNotCreated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForVacuumBagNotCreated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("VacuumBagNotCreated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForSampleBagNotCreated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForSampleBagNotCreated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("SampleBagNotCreated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForScrapBagNotReceived()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForScrapBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ScrapBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForExtraScrapBagNotReceived()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForExtraScrapBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ExtraScrapBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForVacuumBagNotReceived()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForVacuumBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("VacuumBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForSampleBagNotReceived()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForSampleBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("SampleBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForLotFailBagNotReceived()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForLotFailBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("LotFailBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForScrapBagNotUpdated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForScrapBagNotUpdated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ScrapBagNotUpdated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForVacuumBagNotUpdated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForVacuumBagNotUpdated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("VacuumBagNotUpdated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForSampleBagNotUpdated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForSampleBagNotUpdated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("SampleBagNotUpdated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForLotFailBagNotUpdated()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForLotFailBagNotUpdated", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("LotFailBagNotUpdated").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForScrapBagNotUsed()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForScrapBagNotUsed", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ScrapBagNotUsed").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForVacuumBagNotUsed()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForVacuumBagNotUsed", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("VacuumBagNotUsed").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForSampleBagNotUsed()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForSampleBagNotUsed", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("SampleBagNotUsed").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForLotFailBagNotUsed()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForLotFailBagNotUsed", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("LotFailBagNotUsed").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub GetStockForExtraScrapBagReceive()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockDetailsForExtraScrapBagNotReceived", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("ExtraScrapBagNotReceived").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+
+    Private Sub GetStockForInHand()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "StockInHand", DbType.String))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                txtWtAsPerSystem.Text = dtData.Rows(0).Item("StockInHand").ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub cmbBoxName_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbBoxName.SelectedIndexChanged
+        If cmbBoxName.SelectedIndex > 0 Then
+            If Val(txtWtWithBox.Text) > 0 Then
+                Me.BoxActualMetal()
+            Else
+                txtActualMetal.Text = "0.00"
+                txtActualFineWt.Text = "0.00"
+            End If
+        End If
+    End Sub
+    Private Sub BoxActualMetal()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        Dim BoxWt As Double
+        Dim BoxWithMetal As Double
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "GetBoxWeight", DbType.String))
+            .Add(dbManager.CreateParameter("@BoxId", cmbBoxName.SelectedIndex, DbType.String))
+        End With
+        dtData = dbManager.GetDataTable("SP_BoxMaster_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                BoxWt = dtData.Rows(0).Item("BoxWt").ToString()
+                BoxWithMetal = txtWtWithBox.Text.ToString()
+                txtActualMetal.Text = Format(CDbl(BoxWithMetal) - CDbl(BoxWt), "0.00")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub ByBoxActualMetal()
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        Dim BoxWt As Double
+        Dim BoxWithMetal As Double
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "GetBoxWeightByName", DbType.String))
+            .Add(dbManager.CreateParameter("@BoxName", cmbBoxName.Text.Trim, DbType.String))
+        End With
+        dtData = dbManager.GetDataTable("SP_BoxMaster_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Try
+            If dtData.Rows.Count > 0 Then
+                BoxWt = dtData.Rows(0).Item("BoxWt").ToString()
+                BoxWithMetal = txtWtWithBox.Text.ToString()
+                txtActualMetal.Text = Format(CDbl(BoxWithMetal) - CDbl(BoxWt), "0.00")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub txtActualMetal_TextChanged(sender As Object, e As EventArgs) Handles txtActualMetal.TextChanged
+        'If Not cmbMelting.Text = "" Then
+        '    txtActualFineWt.Text = Format(CDbl(Convert.ToDouble((txtActualMetal.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+        '    txtFineDiff.Text = Format(CDbl(Convert.ToDouble((txtFineWtSys.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+        'End If
+        If Not cmbMelting.Text.Trim = "" Then
+            If Not txtWtWithBox.Text.Trim = "" Then
+                If Not cmbBoxName.Text = "" Then
+                    If Not txtActualMetal.Text = "" Then
+                        txtActualFineWt.Text = Format(CDbl(Convert.ToDouble((txtActualMetal.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+                        If Not txtActualFineWt.Text = "" Then
+                            If Not txtFineWtSys.Text = "" Then
+                                txtFineDiff.Text = Format(CDbl(Convert.ToDouble((txtFineWtSys.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+    Private Function ChkDuplicate() As Boolean
+        Dim exists As Boolean = False
+
+        If GridDoubleClick = False Then
+            For Each itm As GridViewRowInfo In dgvStockDetails.Rows
+                If itm.Cells(2).Value = CStr(cmbCategoryName.Text.Trim) And itm.Cells(4).Value = CStr(cmbMelting.Text.Trim) Then
+                    exists = True
+                End If
+            Next
+        End If
+
+        Return exists
+
+    End Function
+    Sub GetSrNo(ByRef grid As Telerik.WinControls.UI.RadGridView)
+        Try
+            For Each rowInfo As GridViewRowInfo In dgvStockDetails.Rows
+                rowInfo.Cells(0).Value = rowInfo.Index + 1
+            Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub TotalByCategory()
+        If btnSave.Text = "Update" Then
+            If cmbCategoryName.SelectedIndex = 1 Then
+                If cmbCategoryName.Text = "Voucher Metal Unused" Then
+                    txtVMUGrossWt.Text = Format(Val(txtVMUGrossWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtVMUFWt.Text = Format(Val(txtVMUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtVMUPr.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) / Convert.ToDouble(txtVMUGrossWt.Text) * 100)), "0.00")
+                    If txtVMUPr.Text = "NaN" Then
+                        txtVMUPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 2 Then
+                If cmbCategoryName.Text = "Lot Addition Stock" Then
+                    txtLASGWt.Text = Format(Val(txtLASGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtLASFWt.Text = Format(Val(txtLASFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtLASPr.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                    If txtLASPr.Text = "NaN" Then
+                        txtLASPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 3 Then
+                If cmbCategoryName.Text = "WIP Lots" Then
+                    txtWIPLGWt.Text = Format(Val(txtWIPLGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtWIPLFWt.Text = Format(Val(txtWIPLFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtWIPLPr.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) / Convert.ToDouble(txtWIPLGWt.Text) * 100)), "0.00")
+                    If txtWIPLPr.Text = "NaN" Then
+                        txtWIPLPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 4 Then
+                If cmbCategoryName.Text = "WIP Melting" Then
+                    txtWIPMGWt.Text = Format(Val(txtWIPMGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtWIPMFWt.Text = Format(Val(txtWIPMFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtWIPMPr.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) / Convert.ToDouble(txtWIPMGWt.Text) * 100)), "0.00")
+                    If txtWIPMPr.Text = "NaN" Then
+                        txtWIPMPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 5 Then
+                If cmbCategoryName.Text = "WIP Lots Transfered" Then
+                    txtWIPTGWt.Text = Format(Val(txtWIPTGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtWIPTFWt.Text = Format(Val(txtWIPTFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtWIPTPr.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) / Convert.ToDouble(txtWIPTGWt.Text) * 100)), "0.00")
+                    If txtWIPTPr.Text = "NaN" Then
+                        txtWIPTPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 6 Then
+                If cmbCategoryName.Text = "Finished Lots" Then
+                    txtFLGWt.Text = Format(Val(txtFLGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtFLFWt.Text = Format(Val(txtVBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtFLPr.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) / Convert.ToDouble(txtFLGWt.Text) * 100)), "0.00")
+                    If txtFLPr.Text = "NaN" Then
+                        txtFLPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 7 Then
+                If cmbCategoryName.Text = "Scrap Bag Not Created" Then
+                    txtSBNCGWt.Text = Format(Val(txtSBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSBNCFWt.Text = Format(Val(txtSBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) / Convert.ToDouble(txtSBNCGWt.Text) * 100)), "0.00")
+                    If txtSBNCPr.Text = "NaN" Then
+                        txtSBNCPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 8 Then
+                If cmbCategoryName.Text = "Vacuum Bag Not Created" Then
+                    txtVBNCGWt.Text = Format(Val(txtVBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtVBNCFWt.Text = Format(Val(txtVBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtVBNCPr.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) / Convert.ToDouble(txtVBNCGWt.Text) * 100)), "0.00")
+                    If txtVBNCPr.Text = "NaN" Then
+                        txtVBNCPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 9 Then
+                If cmbCategoryName.Text = "Sample Bag Not Created" Then
+                    txtSMBNCGWt.Text = Format(Val(txtSMBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSMBNCFWt.Text = Format(Val(txtSMBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSMBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) / Convert.ToDouble(txtSMBNCGWt.Text) * 100)), "0.00")
+                    If txtSMBNCPr.Text = "NaN" Then
+                        txtSMBNCPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 10 Then
+                If cmbCategoryName.Text = "Scrap Bag Not Received" Then
+                    txtSBNRGWt.Text = Format(Val(txtSBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSBNRFWt.Text = Format(Val(txtSBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) / Convert.ToDouble(txtSBNRGWt.Text) * 100)), "0.00")
+                    If txtSBNRPr.Text = "NaN" Then
+                        txtSBNRPr.Text = "0.00"
+                    End If
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 11 Then
+                If cmbCategoryName.Text = "Vacuum Bag Not Received" Then
+                    txtVBNRGWt.Text = Format(Val(txtVBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtVBNRFWt.Text = Format(Val(txtVBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtVBNRPr.Text = Format(CDbl(Convert.ToDouble((txtVBNRFWt.Text) / Convert.ToDouble(txtVBNRGWt.Text) * 100)), "0.00")
+                    If txtVBNRPr.Text = "NaN" Then
+                        txtVBNRPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 12 Then
+                If cmbCategoryName.Text = "Sample Bag Not Received" Then
+                    txtSMBNRGWt.Text = Format(Val(txtSMBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSMBNRFWt.Text = Format(Val(txtSMBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSMBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNRFWt.Text) / Convert.ToDouble(txtSMBNRGWt.Text) * 100)), "0.00")
+                    If txtSMBNRPr.Text = "NaN" Then
+                        txtSMBNRPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 13 Then
+                If cmbCategoryName.Text = "Lot Fail Bag Not Received" Then
+                    txtLFBNRGWt.Text = Format(Val(txtLFBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtLFBNRFWt.Text = Format(Val(txtLFBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtLFBNRPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNRFWt.Text) / Convert.ToDouble(txtLFBNRGWt.Text) * 100)), "0.00")
+                    If txtLFBNRPr.Text = "NaN" Then
+                        txtLFBNRPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 14 Then
+                If cmbCategoryName.Text = "Scrap Bag Not Updated" Then
+                    txtSBNUGWt.Text = Format(Val(txtSBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSBNUFWt.Text = Format(Val(txtSBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSBNUPr.Text = Format(CDbl(Convert.ToDouble((txtSBNUFWt.Text) / Convert.ToDouble(txtSBNUGWt.Text) * 100)), "0.00")
+                    If txtSBNUPr.Text = "NaN" Then
+                        txtSBNUPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 15 Then
+                If cmbCategoryName.Text = "Vacuum Bag Not Updated" Then
+                    txtVBNUGWt.Text = Format(Val(txtVBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtVBNUFWt.Text = Format(Val(txtVBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtVBNUPr.Text = Format(CDbl(Convert.ToDouble((txtVBNUFWt.Text) / Convert.ToDouble(txtVBNUGWt.Text) * 100)), "0.00")
+                    If txtVBNUPr.Text = "NaN" Then
+                        txtVBNUPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 16 Then
+                If cmbCategoryName.Text = "Sample Bag Not Updated" Then
+                    txtSMBNUGWt.Text = Format(Val(txtSMBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSMBNUFWt.Text = Format(Val(txtSMBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSMBNUPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNUFWt.Text) / Convert.ToDouble(txtSMBNUGWt.Text) * 100)), "0.00")
+                    If txtSMBNUPr.Text = "NaN" Then
+                        txtSMBNUPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 17 Then
+                If cmbCategoryName.Text = "Lot Fail Bag Not Updated" Then
+                    txtLFBNUGWt.Text = Format(Val(txtLFBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtLFBNUFWt.Text = Format(Val(txtLFBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtLFBNUPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNUFWt.Text) / Convert.ToDouble(txtLFBNUGWt.Text) * 100)), "0.00")
+                    If txtLFBNUPr.Text = "NaN" Then
+                        txtLFBNUPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 18 Then
+                If cmbCategoryName.Text = "Scrap Bag Not Used" Then
+                    txtSBNUsGWt.Text = Format(Val(txtSBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSBNUsFWt.Text = Format(Val(txtSBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtSBNUsFWt.Text) / Convert.ToDouble(txtSBNUsGWt.Text) * 100)), "0.00")
+                    If txtSBNUsPr.Text = "NaN" Then
+                        txtSBNUsPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 19 Then
+                If cmbCategoryName.Text = "Vacuum Bag Not Used" Then
+                    txtVBNUsGWt.Text = Format(Val(txtVBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtVBNUsFWt.Text = Format(Val(txtVBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtVBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtVBNUsFWt.Text) / Convert.ToDouble(txtVBNUsGWt.Text) * 100)), "0.00")
+                    If txtVBNUsPr.Text = "NaN" Then
+                        txtVBNUsPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 20 Then
+                If cmbCategoryName.Text = "Sample Bag Not Used" Then
+                    txtSMBNUsGWt.Text = Format(Val(txtSMBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSMBNUsFWt.Text = Format(Val(txtSMBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSMBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNUsFWt.Text) / Convert.ToDouble(txtSMBNUsGWt.Text) * 100)), "0.00")
+                    If txtSMBNUsPr.Text = "NaN" Then
+                        txtSMBNUsPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 21 Then
+                If cmbCategoryName.Text = "Lot Fail Bag Not Used" Then
+                    txtLFBNUsGWt.Text = Format(Val(txtLFBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtLFBNUsFWt.Text = Format(Val(txtLFBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtLFBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNUsFWt.Text) / Convert.ToDouble(txtLFBNUsGWt.Text) * 100)), "0.00")
+                    If txtLFBNUsPr.Text = "NaN" Then
+                        txtLFBNUsPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 22 Then
+                If cmbCategoryName.Text = "Extra Scrap Bag Not Received" Then
+                    txtXSBNUsGWt.Text = Format(Val(txtXSBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtXSBNUsFWt.Text = Format(Val(txtXSBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtXSBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtXSBNUsFWt.Text) / Convert.ToDouble(txtXSBNUsGWt.Text) * 100)), "0.00")
+                    If txtXSBNUsPr.Text = "NaN" Then
+                        txtXSBNUsPr.Text = "0.00"
+                    End If
+                End If
+            ElseIf cmbCategoryName.SelectedIndex = 23 Then
+                If cmbCategoryName.Text = "StockInHand" Then
+                    txtSIHGWt.Text = Format(Val(txtSIHGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                    txtSIHFWt.Text = Format(Val(txtSIHFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                    txtSIHPr.Text = Format(CDbl(Convert.ToDouble((txtSIHFWt.Text) / Convert.ToDouble(txtSIHGWt.Text) * 100)), "0.00")
+                    If txtSIHPr.Text = "NaN" Then
+                        txtSIHPr.Text = "0.00"
+                    End If
+                End If
+            End If
+        Else
+            If cmbCategoryName.SelectedIndex = 0 Then
+
+            ElseIf cmbCategoryName.SelectedIndex = 1 Then
+                txtVMUGrossWt.Text = Format(Val(txtVMUGrossWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtVMUFWt.Text = Format(Val(txtVMUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtVMUPr.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) / Convert.ToDouble(txtVMUGrossWt.Text) * 100)), "0.00")
+                If txtVMUPr.Text = "NaN" Then
+                    txtVMUPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 2 Then
+                txtLASGWt.Text = Format(Val(txtLASGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtLASFWt.Text = Format(Val(txtLASFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtLASPr.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                If txtLASPr.Text = "NaN" Then
+                    txtLASPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 3 Then
+                txtWIPLGWt.Text = Format(Val(txtWIPLGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtWIPLFWt.Text = Format(Val(txtWIPLFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtWIPLPr.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) / Convert.ToDouble(txtWIPLGWt.Text) * 100)), "0.00")
+                If txtWIPLPr.Text = "NaN" Then
+                    txtWIPLPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 4 Then
+                txtWIPMGWt.Text = Format(Val(txtWIPMGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtWIPMFWt.Text = Format(Val(txtWIPMFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtWIPMPr.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) / Convert.ToDouble(txtWIPMGWt.Text) * 100)), "0.00")
+                If txtWIPMPr.Text = "NaN" Then
+                    txtWIPMPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 5 Then
+                txtWIPTGWt.Text = Format(Val(txtWIPTGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtWIPTFWt.Text = Format(Val(txtWIPTFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtWIPTPr.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) / Convert.ToDouble(txtWIPTGWt.Text) * 100)), "0.00")
+                If txtWIPTPr.Text = "NaN" Then
+                    txtWIPTPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 6 Then
+                txtFLGWt.Text = Format(Val(txtFLGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtFLFWt.Text = Format(Val(txtVBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtFLPr.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) / Convert.ToDouble(txtFLGWt.Text) * 100)), "0.00")
+                If txtFLPr.Text = "NaN" Then
+                    txtFLPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 7 Then
+                txtSBNCGWt.Text = Format(Val(txtSBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSBNCFWt.Text = Format(Val(txtSBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) / Convert.ToDouble(txtSBNCGWt.Text) * 100)), "0.00")
+                If txtSBNCPr.Text = "NaN" Then
+                    txtSBNCPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 8 Then
+                txtVBNCGWt.Text = Format(Val(txtVBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtVBNCFWt.Text = Format(Val(txtVBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtVBNCPr.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) / Convert.ToDouble(txtVBNCGWt.Text) * 100)), "0.00")
+                If txtVBNCPr.Text = "NaN" Then
+                    txtVBNCPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 9 Then
+                txtSMBNCGWt.Text = Format(Val(txtSMBNCGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSMBNCFWt.Text = Format(Val(txtSMBNCFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSMBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) / Convert.ToDouble(txtSMBNCGWt.Text) * 100)), "0.00")
+                If txtSMBNCPr.Text = "NaN" Then
+                    txtSMBNCPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 10 Then
+                txtSBNRGWt.Text = Format(Val(txtSBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSBNRFWt.Text = Format(Val(txtSBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) / Convert.ToDouble(txtSBNRGWt.Text) * 100)), "0.00")
+                If txtSBNRPr.Text = "NaN" Then
+                    txtSBNRPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 11 Then
+                txtVBNRGWt.Text = Format(Val(txtVBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtVBNRFWt.Text = Format(Val(txtVBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtVBNRPr.Text = Format(CDbl(Convert.ToDouble((txtVBNRFWt.Text) / Convert.ToDouble(txtVBNRGWt.Text) * 100)), "0.00")
+                If txtVBNRPr.Text = "NaN" Then
+                    txtVBNRPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 12 Then
+                txtSMBNRGWt.Text = Format(Val(txtSMBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSMBNRFWt.Text = Format(Val(txtSMBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSMBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNRFWt.Text) / Convert.ToDouble(txtSMBNRGWt.Text) * 100)), "0.00")
+                If txtSMBNRPr.Text = "NaN" Then
+                    txtSMBNRPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 13 Then
+                txtLFBNRGWt.Text = Format(Val(txtLFBNRGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtLFBNRFWt.Text = Format(Val(txtLFBNRFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtLFBNRPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNRFWt.Text) / Convert.ToDouble(txtLFBNRGWt.Text) * 100)), "0.00")
+                If txtLFBNRPr.Text = "NaN" Then
+                    txtLFBNRPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 14 Then
+                txtSBNUGWt.Text = Format(Val(txtSBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSBNUFWt.Text = Format(Val(txtSBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSBNUPr.Text = Format(CDbl(Convert.ToDouble((txtSBNUFWt.Text) / Convert.ToDouble(txtSBNUGWt.Text) * 100)), "0.00")
+                If txtSBNUPr.Text = "NaN" Then
+                    txtSBNUPr.Text = "0.00"
+                End If
+
+
+            ElseIf cmbCategoryName.SelectedIndex = 15 Then
+                txtVBNUGWt.Text = Format(Val(txtVBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtVBNUFWt.Text = Format(Val(txtVBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtVBNUPr.Text = Format(CDbl(Convert.ToDouble((txtVBNUFWt.Text) / Convert.ToDouble(txtVBNUGWt.Text) * 100)), "0.00")
+                If txtVBNUPr.Text = "NaN" Then
+                    txtVBNUPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 16 Then
+                txtSMBNUGWt.Text = Format(Val(txtSMBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSMBNUFWt.Text = Format(Val(txtSMBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSMBNUPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNUFWt.Text) / Convert.ToDouble(txtSMBNUGWt.Text) * 100)), "0.00")
+                If txtSMBNUPr.Text = "NaN" Then
+                    txtSMBNUPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 17 Then
+                txtLFBNUGWt.Text = Format(Val(txtLFBNUGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtLFBNUFWt.Text = Format(Val(txtLFBNUFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtLFBNUPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNUFWt.Text) / Convert.ToDouble(txtLFBNUGWt.Text) * 100)), "0.00")
+                If txtLFBNUPr.Text = "NaN" Then
+                    txtLFBNUPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 18 Then
+                txtSBNUsGWt.Text = Format(Val(txtSBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSBNUsFWt.Text = Format(Val(txtSBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtSBNUsFWt.Text) / Convert.ToDouble(txtSBNUsGWt.Text) * 100)), "0.00")
+                If txtSBNUsPr.Text = "NaN" Then
+                    txtSBNUsPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 19 Then
+                txtVBNUsGWt.Text = Format(Val(txtVBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtVBNUsFWt.Text = Format(Val(txtVBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtVBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtVBNUsFWt.Text) / Convert.ToDouble(txtVBNUsGWt.Text) * 100)), "0.00")
+                If txtVBNUsPr.Text = "NaN" Then
+                    txtVBNUsPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 20 Then
+                txtSMBNUsGWt.Text = Format(Val(txtSMBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSMBNUsFWt.Text = Format(Val(txtSMBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSMBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNUsFWt.Text) / Convert.ToDouble(txtSMBNUsGWt.Text) * 100)), "0.00")
+                If txtSMBNUsPr.Text = "NaN" Then
+                    txtSMBNUsPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 21 Then
+                txtLFBNUsGWt.Text = Format(Val(txtLFBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtLFBNUsFWt.Text = Format(Val(txtLFBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtLFBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtLFBNUsFWt.Text) / Convert.ToDouble(txtLFBNUsGWt.Text) * 100)), "0.00")
+                If txtLFBNUsPr.Text = "NaN" Then
+                    txtLFBNUsPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 22 Then
+                txtXSBNUsGWt.Text = Format(Val(txtXSBNUsGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtXSBNUsFWt.Text = Format(Val(txtXSBNUsFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtXSBNUsPr.Text = Format(CDbl(Convert.ToDouble((txtXSBNUsFWt.Text) / Convert.ToDouble(txtXSBNUsGWt.Text) * 100)), "0.00")
+                If txtXSBNUsPr.Text = "NaN" Then
+                    txtXSBNUsPr.Text = "0.00"
+                End If
+
+            ElseIf cmbCategoryName.SelectedIndex = 23 Then
+                txtSIHGWt.Text = Format(Val(txtSIHGWt.Text) + Val(txtActualMetal.Text), "0.00")
+                txtSIHFWt.Text = Format(Val(txtSIHFWt.Text) + Val(txtActualFineWt.Text), "0.00")
+                txtSIHPr.Text = Format(CDbl(Convert.ToDouble((txtSIHFWt.Text) / Convert.ToDouble(txtSIHGWt.Text) * 100)), "0.00")
+                If txtSIHPr.Text = "NaN" Then
+                    txtSIHPr.Text = "0.00"
+                End If
+            End If
+        End If
+    End Sub
+    Sub fillGrid()
+
+        If btnSave.Text = "&Save" Then
+            If GridDoubleClick = False Then
+                dgvStockDetails.Rows.Add(Val(txtSrNo.Text.Trim),
+                                    cmbCategoryName.SelectedValue,
+                                    CStr(cmbCategoryName.Text.Trim),
+                                    Format(Val(cmbMelting.Text.Trim), "0.00"),
+                                    Format(Val(txtWtWithBox.Text.Trim), "0.00"),
+                                    cmbBoxName.SelectedValue,
+                                    CStr(cmbBoxName.Text.Trim),
+                                    Format(Val(txtActualMetal.Text.Trim), "0.000"),
+                                    Format(Val(txtWtAsPerSystem.Text.Trim), "0.000"),
+                                    Format(Val(txtActualFineWt.Text.Trim), "0.000"),
+                                    Format(Val(txtFineWtSys.Text.Trim), "0.000"),
+                                    Format(Val(txtFineDiff.Text.Trim), "0.000"),
+                                    1,
+                                    CStr(txtGRemark.Text.Trim()))
+                GetSrNo(dgvStockDetails)
+
+            Else
+                dgvStockDetails.Rows.Add(Val(txtSrNo.Text.Trim),
+                                  cmbCategoryName.SelectedValue,
+                                    CStr(cmbCategoryName.Text.Trim),
+                                    Format(Val(cmbMelting.Text.Trim), "0.00"),
+                                    Format(Val(txtWtWithBox.Text.Trim), "0.00"),
+                                    cmbBoxName.Tag,
+                                    CStr(cmbBoxName.Text.Trim),
+                                    Format(Val(txtActualMetal.Text.Trim), "0.000"),
+                                    Format(Val(txtWtAsPerSystem.Text.Trim), "0.000"),
+                                    Format(Val(txtActualFineWt.Text.Trim), "0.000"),
+                                    Format(Val(txtFineWtSys.Text.Trim), "0.000"),
+                                    Format(Val(txtFineDiff.Text.Trim), "0.000"),
+                                     1,
+                                    CStr(txtGRemark.Text.Trim()))
+                GetSrNo(dgvStockDetails)
+            End If
+            Me.Total()
+            'txtSrNo.Text = dgvStockDetails.RowCount + 1
+            'cmbCategoryName.SelectedIndex = 0
+            'cmbMelting.SelectedIndex = 0
+            'txtWtWithBox.Clear()
+            'cmbBoxName.SelectedIndex = 0
+            'txtActualMetal.Clear()
+            'txtWtAsPerSystem.Clear()
+            'txtActualFineWt.Clear()
+        Else
+            'If cmbItem.SelectedIndex > 0 Then
+            If GridDoubleClick = False Then
+                dgvStockDetails.Rows.Add(Val(txtSrNo.Text.Trim),
+                                    cmbCategoryName.SelectedValue,
+                                    CStr(cmbCategoryName.Text.Trim),
+                                    Format(Val(cmbMelting.Text.Trim), "0.00"),
+                                    Format(Val(txtWtWithBox.Text.Trim), "0.00"),
+                                    cmbBoxName.SelectedValue,
+                                    CStr(cmbBoxName.Text.Trim),
+                                    Format(Val(txtActualMetal.Text.Trim), "0.000"),
+                                    Format(Val(txtWtAsPerSystem.Text.Trim), "0.000"),
+                                    Format(Val(txtActualFineWt.Text.Trim), "0.000"),
+                                    Format(Val(txtFineWtSys.Text.Trim), "0.000"),
+                                    Format(Val(txtFineDiff.Text.Trim), "0.000"),
+                                    1,
+                                    CStr(txtGRemark.Text.Trim()))
+                GetSrNo(dgvStockDetails)
+            Else
+                dgvStockDetails.Rows.Add(Val(txtSrNo.Text.Trim),
+                                    cmbCategoryName.SelectedValue,
+                                    CStr(cmbCategoryName.Text.Trim),
+                                    Format(Val(cmbMelting.Text.Trim), "0.00"),
+                                    Format(Val(txtWtWithBox.Text.Trim), "0.00"),
+                                    cmbBoxName.Tag,
+                                    CStr(cmbBoxName.Text.Trim),
+                                    Format(Val(txtActualMetal.Text.Trim), "0.000"),
+                                    Format(Val(txtWtAsPerSystem.Text.Trim), "0.000"),
+                                    Format(Val(txtActualFineWt.Text.Trim), "0.000"),
+                                    Format(Val(txtFineWtSys.Text.Trim), "0.000"),
+                                    Format(Val(txtFineDiff.Text.Trim), "0.000"),
+                                    CStr(txtGRemark.Tag.Trim()),
+                                    CStr(txtGRemark.Text.Trim()))
+                'CStr(txtFineDiff.Tag.Trim()))
+                'dgvStockDetails.Rows.Add(Val(txtSrNo.Text.Trim), cmbCategoryName.Tag, cmbCategoryName.Text, cmbMelting.Text, txtWtWithBox.Text.Trim(), cmbBoxName.Tag, cmbBoxName.Text, Format(Val(txtActualMetal.Text.Trim), "0.00"), Format(Val(txtWtAsPerSystem.Text.Trim), "0.00"), Format(Val(txtActualFineWt.Text.Trim), "0.00"), Format(Val(txtFineWtSys.Text.Trim), "0.00"), Format(Val(txtFineDiff.Text.Trim), "0.00"), txtGRemark.Text, txtGRemark.Text, txtGRemark.Text, txtGRemark.Text, txtGRemark.Text)
+                GetSrNo(dgvStockDetails)
+            End If
+            Me.Total()
+            'txtSrNo.Text = dgvStockDetails.RowCount + 1
+            'cmbCategoryName.Text = ""
+            'cmbCategoryName.SelectedIndex = 0
+            'cmbMelting.Text = ""
+            'cmbMelting.SelectedIndex = 0
+            'txtWtWithBox.Clear()
+            'cmbBoxName.Text = ""
+            'cmbBoxName.SelectedIndex = 0
+            'txtActualMetal.Clear()
+            'txtWtAsPerSystem.Clear()
+            'txtActualFineWt.Clear()
+            'txtFineWtSys.Clear()
+            'txtFineDiff.Clear()
+            'txtGRemark.Clear()
+        End If
+    End Sub
+    Sub Total()
+        Dim sRPrTotal As Single = 0
+        Try
+            lblTotMeltPr.Text = 0.00
+            lblTotWtWithBox.Text = 0.00
+            lblTotActualMetal.Text = 0.00
+            lblTotWtAsPerSys.Text = 0.00
+            lblTotFineWtScale.Text = 0.00
+            lblTotFineWtSys.Text = 0.00
+            lblTotFineDiff.Text = 0.00
+
+            For Each row As GridViewRowInfo In dgvStockDetails.Rows
+                lblTotWtWithBox.Text = Format(Val(lblTotWtWithBox.Text) + Val(row.Cells(4).Value), "0.00")
+                lblTotActualMetal.Text = Format(Val(lblTotActualMetal.Text) + Val(row.Cells(7).Value), "0.00")
+                lblTotWtAsPerSys.Text = Format(Val(lblTotWtAsPerSys.Text) + Val(row.Cells(8).Value), "0.00")
+                lblTotFineWtScale.Text = Format(Val(lblTotFineWtScale.Text) + Val(row.Cells(9).Value), "0.00")
+                lblTotFineWtSys.Text = Format(Val(lblTotFineWtSys.Text) + Val(row.Cells(10).Value), "0.00")
+                lblTotFineDiff.Text = Format(Val(lblTotFineDiff.Text) + Val(row.Cells(11).Value), "0.000")
+            Next
+
+            If lblTotFineWtScale.Text > 0 Then
+                sRPrTotal = Format((Val(lblTotFineWtScale.Text) / Val(lblTotActualMetal.Text)) * 100, "0.000")
+            End If
+            lblTotMeltPr.Text = Format(sRPrTotal, "0.00")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub cmbMelting_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmbMelting.SelectedValueChanged
+        'If cmbCategoryName.SelectedIndex > 0 And Val(txtActualFineWt.Text.Trim) > 0 Then
+        '    txtFineWtSys.Text = Format(CDbl(Convert.ToDouble((txtWtAsPerSystem.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+        'End If
+    End Sub
+    Private Sub txtActualFineWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualFineWt.TextChanged
+        If Not cmbCategoryName.Text.Trim = "" Then
+            If Not cmbBoxName.Text.Trim = "" Then
+                If Not cmbMelting.Text = "" Then
+                    If Not txtWtAsPerSystem.Text = "" Then
+                        txtFineWtSys.Text = Format(CDbl(Convert.ToDouble((txtWtAsPerSystem.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+                    End If
+                End If
+            End If
+        End If
+    End Sub
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        If dgvStockDetails.RowCount > 0 Then
+            If btnSave.Text = "&Save" Then
+                If txtHRemark.Text.Trim <> "" Then
+                    Me.SaveData()
+                Else
+                    MsgBox("Please Give Remark")
+                End If
+            Else
+
+                If dgvStockDetails.RowCount > 0 Then
+                    Dim StockId = txtHRemark.Tag
+                    Me.DeleteByStockId(StockId)
+                    Me.UpdateData()
+                    btnSave.Text = "&Save"
+                    ' dgvStockDetails.DataSource = Nothing
+                Else
+                    MessageBox.Show("Please Enter Proper details")
+                End If
+            End If
+        End If
+        Me.FillStockList()
+        Me.Clear()
+    End Sub
+    Private Sub DeleteByStockId(StockId)
+        'If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+        Try
+            If dgvStockDetails.RowCount > 0 Then
+                Dim parameters = New List(Of SqlParameter)()
+                parameters.Clear()
+                With parameters
+                    .Add(dbManager.CreateParameter("@StockId", txtHRemark.Tag, DbType.Int16))
+                End With
+                dbManager.Delete("SP_DailyStock_Delete", CommandType.StoredProcedure, parameters.ToArray())
+                'MessageBox.Show("Stock Delete Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'dgvStockDetails.RowCount = 0
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        ' End If
+
+    End Sub
+    Private Sub SaveData()
+        Dim alParaval As New ArrayList
+
+        Dim LabourId As String = Nothing
+        Dim StockCategoryId As String = Nothing
+        Dim MeltingId As String = Nothing
+        Dim WtWithBox As String = ""
+        Dim BoxId As String = Nothing
+        Dim ActualMetalWt As String = ""
+        Dim WtAsPerSystem As String = ""
+        Dim FineWtAsPerScale As String = ""
+        Dim FineWtAsPerSystem As String = ""
+        Dim FineDiff As String = ""
+        Dim Remark As String = ""
+
+        Dim IRowCount As Integer = 0
+        Dim iValue As Integer = 0
+
+        alParaval.Add(cmbTLabour.Tag)
+        alParaval.Add(txtHRemark.Text)
+
+        For Each row As GridViewRowInfo In dgvStockDetails.Rows
+            If row.Cells(1).Value <> Nothing Then
+                If StockCategoryId = Nothing Then
+                    StockCategoryId = Convert.ToString(row.Cells(1).Value)
+                    MeltingId = Convert.ToString(row.Cells(3).Value)
+                    WtWithBox = Val(row.Cells(4).Value)
+                    BoxId = Val(row.Cells(5).Value)
+                    ActualMetalWt = Val(row.Cells(7).Value)
+                    WtAsPerSystem = Val(row.Cells(8).Value)
+                    FineWtAsPerScale = Val(row.Cells(9).Value)
+                    FineWtAsPerSystem = Val(row.Cells(10).Value)
+                    FineDiff = Val(row.Cells(11).Value)
+                    Remark = Convert.ToString(row.Cells(13).Value)
+                Else
+                    StockCategoryId = StockCategoryId & "|" & Convert.ToString(row.Cells(1).Value)
+                    MeltingId = MeltingId & "|" & Convert.ToString(row.Cells(3).Value)
+                    WtWithBox = WtWithBox & "|" & Val(row.Cells(4).Value)
+                    BoxId = BoxId & "|" & row.Cells(5).Value
+                    ActualMetalWt = ActualMetalWt & "|" & row.Cells(7).Value
+                    WtAsPerSystem = WtAsPerSystem & "|" & row.Cells(8).Value
+                    FineWtAsPerScale = FineWtAsPerScale & "|" & Val(row.Cells(9).Value)
+                    FineWtAsPerSystem = FineWtAsPerSystem & "|" & Val(row.Cells(10).Value)
+                    FineDiff = FineDiff & "|" & Val(row.Cells(11).Value)
+                    Remark = Remark & "|" & Convert.ToString(row.Cells(13).Value)
+                End If
+            End If
+            IRowCount += 1
+        Next
+
+        'alParaval.Add(LabourId)
+
+        alParaval.Add(StockCategoryId)
+        alParaval.Add(MeltingId)
+        alParaval.Add(WtWithBox)
+        alParaval.Add(BoxId)
+        alParaval.Add(ActualMetalWt)
+        alParaval.Add(WtAsPerSystem)
+        alParaval.Add(FineWtAsPerScale)
+        alParaval.Add(FineWtAsPerSystem)
+        alParaval.Add(FineDiff)
+        alParaval.Add(Remark)
+
+        Try
+            Dim Hparameters = New List(Of SqlParameter)()
+            Hparameters.Clear()
+
+            With Hparameters
+                .Add(dbManager.CreateParameter("@HLabourId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@HRemarks", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DStockCategoryId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DMeltingId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DWtWithBox", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DBoxId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DActualMetalWt", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DWtAsPerSystem", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineWtAsPerScale", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineWtAsPerSystem", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineDiff", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DGRemark", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
+                dbManager.Insert("SP_DailyStockDetails_Save", CommandType.StoredProcedure, Hparameters.ToArray())
+
+                MessageBox.Show("Data Saved !!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            End With
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
+    Private Sub UpdateData()
+        Dim alParaval As New ArrayList
+
+        Dim LabourId As String = Nothing
+        Dim StockCategoryId As String = Nothing
+        Dim MeltingId As String = Nothing
+        Dim WtWithBox As String = ""
+        Dim BoxId As String = Nothing
+        Dim ActualMetalWt As String = ""
+        Dim WtAsPerSystem As String = ""
+        Dim FineWtAsPerScale As String = ""
+        Dim FineWtAsPerSystem As String = ""
+        Dim FineDiff As String = ""
+        Dim Remark As String = ""
+
+        Dim IRowCount As Integer = 0
+        Dim iValue As Integer = 0
+
+        alParaval.Add(txtHRemark.Tag)
+        alParaval.Add(cmbTLabour.Tag)
+        alParaval.Add(txtHRemark.Text)
+
+        For Each row As GridViewRowInfo In dgvStockDetails.Rows
+            If row.Cells(1).Value <> Nothing Then
+                If StockCategoryId = Nothing Then
+                    StockCategoryId = Convert.ToString(row.Cells(1).Value)
+                    MeltingId = Convert.ToString(row.Cells(3).Value)
+                    WtWithBox = Val(row.Cells(4).Value)
+                    BoxId = Val(row.Cells(5).Value)
+                    ActualMetalWt = Val(row.Cells(7).Value)
+                    WtAsPerSystem = Val(row.Cells(8).Value)
+                    FineWtAsPerScale = Val(row.Cells(9).Value)
+                    FineWtAsPerSystem = Val(row.Cells(10).Value)
+                    FineDiff = Val(row.Cells(11).Value)
+                    Remark = Convert.ToString(row.Cells(13).Value)
+                Else
+                    StockCategoryId = StockCategoryId & "|" & Convert.ToString(row.Cells(1).Value)
+                    MeltingId = MeltingId & "|" & Convert.ToString(row.Cells(3).Value)
+                    WtWithBox = WtWithBox & "|" & Val(row.Cells(4).Value)
+                    BoxId = BoxId & "|" & row.Cells(5).Value
+                    ActualMetalWt = ActualMetalWt & "|" & row.Cells(7).Value
+                    WtAsPerSystem = WtAsPerSystem & "|" & row.Cells(8).Value
+                    FineWtAsPerScale = FineWtAsPerScale & "|" & Val(row.Cells(9).Value)
+                    FineWtAsPerSystem = FineWtAsPerSystem & "|" & Val(row.Cells(10).Value)
+                    FineDiff = FineDiff & "|" & Val(row.Cells(11).Value)
+                    Remark = Remark & "|" & Convert.ToString(row.Cells(13).Value)
+                End If
+            End If
+            IRowCount += 1
+        Next
+
+        'alParaval.Add(LabourId)
+
+        alParaval.Add(StockCategoryId)
+        alParaval.Add(MeltingId)
+        alParaval.Add(WtWithBox)
+        alParaval.Add(BoxId)
+        alParaval.Add(ActualMetalWt)
+        alParaval.Add(WtAsPerSystem)
+        alParaval.Add(FineWtAsPerScale)
+        alParaval.Add(FineWtAsPerSystem)
+        alParaval.Add(FineDiff)
+        alParaval.Add(Remark)
+
+        Try
+            Dim Hparameters = New List(Of SqlParameter)()
+            Hparameters.Clear()
+
+            With Hparameters
+                .Add(dbManager.CreateParameter("@StockId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@HLabourId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@HRemarks", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DStockCategoryId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DMeltingId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DWtWithBox", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DBoxId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DActualMetalWt", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DWtAsPerSystem", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineWtAsPerScale", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineWtAsPerSystem", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DFineDiff", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DGRemark", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
+            End With
+            dbManager.Insert("SP_DailyStockDetails_Update", CommandType.StoredProcedure, Hparameters.ToArray())
+
+            MessageBox.Show("Data Updated !!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+    End Sub
+    Private Sub dgvStockDetails_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvStockDetails.CellDoubleClick
+        Try
+            If e.RowIndex = -1 Then Exit Sub
+            If btnSave.Text = "Update" Then
+                If e.RowIndex >= 0 And dgvStockDetails.Rows(e.RowIndex).Cells(0).Value <> Nothing Then
+                    GridDoubleClick = True
+                    txtSrNo.Text = dgvStockDetails.Rows(e.RowIndex).Cells(0).Value.ToString()
+                    cmbCategoryName.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(1).Value.ToString()
+                    cmbCategoryName.Text = dgvStockDetails.Rows(e.RowIndex).Cells(2).Value.ToString()
+                    cmbMelting.Text = dgvStockDetails.Rows(e.RowIndex).Cells(3).Value.ToString()
+                    txtWtWithBox.Text = dgvStockDetails.Rows(e.RowIndex).Cells(4).Value.ToString()
+                    cmbBoxName.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(5).Value.ToString()
+                    cmbBoxName.Text = CStr(dgvStockDetails.Rows(e.RowIndex).Cells(6).Value)
+                    txtActualMetal.Text = CStr(dgvStockDetails.Rows(e.RowIndex).Cells(7).Value)
+                    txtWtAsPerSystem.Text = dgvStockDetails.Rows(e.RowIndex).Cells(8).Value.ToString()
+                    txtActualFineWt.Text = dgvStockDetails.Rows(e.RowIndex).Cells(9).Value.ToString()
+                    txtFineWtSys.Text = dgvStockDetails.Rows(e.RowIndex).Cells(10).Value.ToString()
+                    txtFineDiff.Text = dgvStockDetails.Rows(e.RowIndex).Cells(11).Value.ToString()
+                    txtGRemark.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(12).Value.ToString()
+                    txtGRemark.Text = dgvStockDetails.Rows(e.RowIndex).Cells(13).Value.ToString()
+                    'txtFineDiff.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(14).Value.ToString()
+                    TempRow = e.RowIndex
+                    cmbCategoryName.Focus()
+                End If
+                Dim StockCategoryId1 As Integer = cmbCategoryName.Tag
+                If StockCategoryId1 = 1 Then
+                    txtLASGWt.Text = Format(CDbl(Convert.ToDouble((txtLASGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtLASFWt.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtLASPr.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                    If txtLASPr.Text = "NaN" Then
+                        txtLASPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 2 Then
+                    txtVMUGrossWt.Text = Format(CDbl(Convert.ToDouble((txtVMUGrossWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtVMUFWt.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtVMUPr.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) / Convert.ToDouble(txtVMUGrossWt.Text) * 100)), "0.00")
+                    If txtVMUPr.Text = "NaN" Then
+                        txtVMUPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 3 Then
+                    txtWIPLGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPLGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPLFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPLPr.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) / Convert.ToDouble(txtWIPLGWt.Text) * 100)), "0.00")
+                    If txtWIPLPr.Text = "NaN" Then
+                        txtWIPLPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 4 Then
+                    txtWIPMGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPMGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPMFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPMPr.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) / Convert.ToDouble(txtWIPMGWt.Text) * 100)), "0.00")
+                    If txtWIPMPr.Text = "NaN" Then
+                        txtWIPMPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 5 Then
+                    txtWIPTGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPTGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPTFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPTPr.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) / Convert.ToDouble(txtWIPTGWt.Text) * 100)), "0.00")
+                    If txtWIPTPr.Text = "NaN" Then
+                        txtWIPTPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 6 Then
+                    txtFLGWt.Text = Format(CDbl(Convert.ToDouble((txtFLGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtFLFWt.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtFLPr.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) / Convert.ToDouble(txtFLGWt.Text) * 100)), "0.00")
+                    If txtFLPr.Text = "NaN" Then
+                        txtFLPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 7 Then
+                    txtSBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtSBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) / Convert.ToDouble(txtSBNCGWt.Text) * 100)), "0.00")
+                    If txtSBNCPr.Text = "NaN" Then
+                        txtSBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 8 Then
+                    txtVBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtVBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtVBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtVBNCPr.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                    If txtVBNCPr.Text = "NaN" Then
+                        txtVBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 9 Then
+                    txtSMBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtSMBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSMBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSMBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) / Convert.ToDouble(txtSMBNCGWt.Text) * 100)), "0.00")
+                    If txtSMBNCPr.Text = "NaN" Then
+                        txtSMBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 10 Then
+                    txtSBNRGWt.Text = Format(CDbl(Convert.ToDouble((txtSBNRGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSBNRFWt.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) / Convert.ToDouble(txtSBNRGWt.Text) * 100)), "0.00")
+                    If txtSBNRPr.Text = "NaN" Then
+                        txtSBNRPr.Text = "0.00"
+                    End If
+                End If
+
+            Else
+                If e.RowIndex >= 0 And dgvStockDetails.Rows(e.RowIndex).Cells(0).Value <> Nothing Then
+                    GridDoubleClick = True
+                    txtSrNo.Text = dgvStockDetails.Rows(e.RowIndex).Cells(0).Value.ToString()
+                    cmbCategoryName.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(1).Value.ToString()
+                    cmbCategoryName.Text = dgvStockDetails.Rows(e.RowIndex).Cells(2).Value.ToString()
+                    cmbMelting.Text = dgvStockDetails.Rows(e.RowIndex).Cells(3).Value.ToString()
+                    txtWtWithBox.Text = dgvStockDetails.Rows(e.RowIndex).Cells(4).Value.ToString()
+                    cmbBoxName.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(5).Value.ToString()
+                    cmbBoxName.Text = CStr(dgvStockDetails.Rows(e.RowIndex).Cells(6).Value)
+                    txtActualMetal.Text = CStr(dgvStockDetails.Rows(e.RowIndex).Cells(7).Value)
+                    txtWtAsPerSystem.Text = dgvStockDetails.Rows(e.RowIndex).Cells(8).Value.ToString()
+                    txtActualFineWt.Text = dgvStockDetails.Rows(e.RowIndex).Cells(9).Value.ToString()
+                    txtFineWtSys.Text = dgvStockDetails.Rows(e.RowIndex).Cells(10).Value.ToString()
+                    txtFineDiff.Text = dgvStockDetails.Rows(e.RowIndex).Cells(11).Value.ToString()
+                    ' txtGRemark.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(12).Value.ToString()
+                    txtGRemark.Text = dgvStockDetails.Rows(e.RowIndex).Cells(13).Value.ToString()
+                    'txtFineDiff.Tag = dgvStockDetails.Rows(e.RowIndex).Cells(14).Value.ToString()
+                    TempRow = e.RowIndex
+                    cmbCategoryName.Focus()
+                End If
+                Dim StockCategoryId1 As Integer = cmbCategoryName.Tag
+                If StockCategoryId1 = 1 Then
+                    txtLASGWt.Text = Format(CDbl(Convert.ToDouble((txtLASGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtLASFWt.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtLASPr.Text = Format(CDbl(Convert.ToDouble((txtLASFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                    If txtLASPr.Text = "NaN" Then
+                        txtLASPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 2 Then
+                    txtVMUGrossWt.Text = Format(CDbl(Convert.ToDouble((txtVMUGrossWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtVMUFWt.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtVMUPr.Text = Format(CDbl(Convert.ToDouble((txtVMUFWt.Text) / Convert.ToDouble(txtVMUGrossWt.Text) * 100)), "0.00")
+                    If txtVMUPr.Text = "NaN" Then
+                        txtVMUPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 3 Then
+                    txtWIPLGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPLGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPLFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPLPr.Text = Format(CDbl(Convert.ToDouble((txtWIPLFWt.Text) / Convert.ToDouble(txtWIPLGWt.Text) * 100)), "0.00")
+                    If txtWIPLPr.Text = "NaN" Then
+                        txtWIPLPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 4 Then
+                    txtWIPMGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPMGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPMFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPMPr.Text = Format(CDbl(Convert.ToDouble((txtWIPMFWt.Text) / Convert.ToDouble(txtWIPMGWt.Text) * 100)), "0.00")
+                    If txtWIPMPr.Text = "NaN" Then
+                        txtWIPMPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 5 Then
+                    txtWIPTGWt.Text = Format(CDbl(Convert.ToDouble((txtWIPTGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtWIPTFWt.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtWIPTPr.Text = Format(CDbl(Convert.ToDouble((txtWIPTFWt.Text) / Convert.ToDouble(txtWIPTGWt.Text) * 100)), "0.00")
+                    If txtWIPTPr.Text = "NaN" Then
+                        txtWIPTPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 6 Then
+                    txtFLGWt.Text = Format(CDbl(Convert.ToDouble((txtFLGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtFLFWt.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtFLPr.Text = Format(CDbl(Convert.ToDouble((txtFLFWt.Text) / Convert.ToDouble(txtFLGWt.Text) * 100)), "0.00")
+                    If txtFLPr.Text = "NaN" Then
+                        txtFLPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 7 Then
+                    txtSBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtSBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSBNCFWt.Text) / Convert.ToDouble(txtSBNCGWt.Text) * 100)), "0.00")
+                    If txtSBNCPr.Text = "NaN" Then
+                        txtSBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 8 Then
+                    txtVBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtVBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtVBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtVBNCPr.Text = Format(CDbl(Convert.ToDouble((txtVBNCFWt.Text) / Convert.ToDouble(txtLASGWt.Text) * 100)), "0.00")
+                    If txtVBNCPr.Text = "NaN" Then
+                        txtVBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 9 Then
+                    txtSMBNCGWt.Text = Format(CDbl(Convert.ToDouble((txtSMBNCGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSMBNCFWt.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSMBNCPr.Text = Format(CDbl(Convert.ToDouble((txtSMBNCFWt.Text) / Convert.ToDouble(txtSMBNCGWt.Text) * 100)), "0.00")
+                    If txtSMBNCPr.Text = "NaN" Then
+                        txtSMBNCPr.Text = "0.00"
+                    End If
+                End If
+                If StockCategoryId1 = 10 Then
+                    txtSBNRGWt.Text = Format(CDbl(Convert.ToDouble((txtSBNRGWt.Text) - Convert.ToDouble(txtActualMetal.Text))), "0.00")
+                    txtSBNRFWt.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+                    txtSBNRPr.Text = Format(CDbl(Convert.ToDouble((txtSBNRFWt.Text) / Convert.ToDouble(txtSBNRGWt.Text) * 100)), "0.00")
+                    If txtSBNRPr.Text = "NaN" Then
+                        txtSBNRPr.Text = "0.00"
+                    End If
+                End If
+            End If
+
+            With dgvStockDetails
+                GridDoubleClick = True
+            End With
+            With dgvStockDetails
+                .Rows.Remove(.CurrentRow)
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+    Private Sub dgvStockList_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvStockList.CellDoubleClick
+        If dgvStockList.Rows.Count > 0 Then
+            Dim StockId As Integer = dgvStockList.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Me.ClearTotalByCategory()
+            btnSave.Text = "Update"
+            Me.FillHeader(StockId)
+            Me.FillGrid(StockId)
+            Me.TbInformation.SelectedIndex = 0
+            Total()
+        End If
+    End Sub
+    Private Sub FillHeader(ByVal StockId As String)
+        Dim dttable As New DataTable
+        dttable = fetchAllHeaderUpdate(CStr(StockId))
+        Me.GetSrNo(dgvStockDetails)
+    End Sub
+    Private Function fetchAllHeaderUpdate(ByVal StockId As String) As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "TransHeaderStock", DbType.String))
+                .Add(dbManager.CreateParameter("@StockId", Trim(StockId), DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            cmbTLabour.Text = dtData.Rows(0).Item("LabourName").ToString()
+            txtHRemark.Text = dtData.Rows(0).Item("Remarks").ToString()
+            txtHRemark.Tag = StockId
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        Return dtData
+    End Function
+    Private Sub FillGrid(ByVal StockId As String)
+        Dim dttable As New DataTable
+        Dim dtData As New DataTable
+        dttable = fetchAllDetailsUpdate(CStr(StockId))
+        dgvStockDetails.DataSource = Nothing
+        dgvStockDetails.DataSource = dttable
+        Dim i As Integer
+        If dttable.Rows.Count > 0 Then
+            For i = 0 To dttable.Rows.Count - 1
+                Dim StockCategoryId1 As Integer = Convert.ToInt32(dttable.Rows(i)("StockCategoryId"))
+                If StockCategoryId1 = 1 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtLASGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtLASPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtLASFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 2 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtVMUGrossWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtVMUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtVMUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 3 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtWIPLGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtWIPLPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtWIPLFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 4 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtWIPMGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtWIPMPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtWIPMFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 5 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtWIPTGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtWIPTPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtWIPTFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 6 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtFLGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtFLPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtFLFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 7 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtSBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtSBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtSBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 8 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtVBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtVBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtVBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 9 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtSMBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtSMBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtSMBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+                If StockCategoryId1 = 10 Then
+                    dtData = TotalCalculateStockByCategoryId(StockId, StockCategoryId1)
+                    txtSBNRGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                    txtSBNRPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                    txtSBNRFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                End If
+            Next
+        Else
+        End If
+        Me.Total()
+        Me.GetSrNo(dgvStockDetails)
+    End Sub
+    Private Function TotalCalculateStockByCategoryId(ByVal stockId As Integer, ByVal stockCategoryId As Integer) As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FetchTotalByStockIDCategory", DbType.String))
+            .Add(dbManager.CreateParameter("@StockId", stockId, DbType.Int16))
+            .Add(dbManager.CreateParameter("@StockCategoryId", stockCategoryId, DbType.Int16))
+
+        End With
+        dtData = dbManager.GetDataTable("SP_DailyStock_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Return dtData
+    End Function
+    Private Function fetchAllDetailsUpdate(ByVal StockId As String) As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "TransUnFinalizeStockData", DbType.String))
+                .Add(dbManager.CreateParameter("@StockId", Trim(StockId), DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        Return dtData
+    End Function
+    Private Sub txtFineWtSys_TextChanged(sender As Object, e As EventArgs) Handles txtFineWtSys.TextChanged
+        If Not cmbMelting.Text.Trim = "" Then
+            txtActualFineWt.Text = Format(CDbl(Convert.ToDouble((txtActualMetal.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+            If Not txtActualFineWt.Text = "" And txtFineWtSys.Text = "" Then
+                txtFineDiff.Text = Format(CDbl(Convert.ToDouble((txtFineWtSys.Text) - Convert.ToDouble(txtActualFineWt.Text))), "0.00")
+            End If
+        Else
+
+        End If
+    End Sub
+    Private Sub txtGRemark_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtGRemark.Validating
+        Try
+            If btnSave.Text = "&Save" Then
+
+                'If txtHRemark.Text.Trim <> "" And
+                If cmbCategoryName.Text.Trim <> "" And cmbMelting.Text.Trim <> "" And cmbBoxName.Text.Trim <> "" And Format(Val(txtWtWithBox.Text.Trim), "0.00") > 0 And Format(Val(txtActualMetal.Text.Trim), "0.00") > 0 Then
+                    If dgvStockDetails.Rows.Count > 0 AndAlso ChkDuplicate() = True Then
+                        MsgBox("Duplicate Data")
+                    Else
+                        Me.TotalByCategory()
+                        Me.fillGrid()
+                        Me.Clear()
+                    End If
+                Else
+                    'ErrorProvider1.SetError(txtRequirePr, "Enter Required %")
+                    MsgBox("Enter Proper Details")
+                End If
+            Else
+                Me.TotalByCategory()
+                Me.fillGrid()
+                cmbCategoryName.SelectedIndex = 0
+                cmbMelting.Text = ""
+                cmbMelting.SelectedIndex = 0
+                cmbMelting.Text = ""
+                cmbBoxName.Text = ""
+                cmbBoxName.SelectedIndex = 0
+                txtWtWithBox.Clear()
+                txtActualMetal.Clear()
+                txtActualFineWt.Clear()
+                txtWtAsPerSystem.Clear()
+                txtFineWtSys.Clear()
+                txtFineDiff.Clear()
+                txtGRemark.Clear()
+                txtSrNo.Text = 1
+
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+        Me.Close()
+    End Sub
+    Private Sub dgvStockDetails_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvStockDetails.KeyDown
+        Try
+            If (e.KeyCode = Keys.Escape) Then   'for Exit
+                If MsgBox("Wish To Exit?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    CType(Me.ParentForm, frmMain).FormMode.Text = ""
+                    Me.Close()
+                End If
+            ElseIf e.KeyCode = Keys.Enter Then
+                Me.SelectNextControl(Me.ActiveControl, True, True, True, False) 'for Select Next Control
+            ElseIf e.KeyCode = Keys.OemQuotes Or e.KeyCode = Keys.OemPipe Then
+                e.SuppressKeyPress = True
+            End If
+            If e.KeyCode = Keys.F2 Then
+                txtSrNo.Clear()
+                cmbCategoryName.SelectedIndex = 0
+                cmbMelting.SelectedIndex = 0
+                cmbMelting.Text = ""
+                txtWtWithBox.Clear()
+                cmbBoxName.SelectedIndex = 0
+                txtActualMetal.Clear()
+                txtWtAsPerSystem.Clear()
+                txtActualFineWt.Clear()
+                txtGRemark.Clear()
+            End If
+            With dgvStockDetails
+                If e.KeyCode = Keys.F12 Then
+                    If btnSave.Text = "&Save" Then
+                        .Rows.Remove(.CurrentRow)
+                    Else
+                        Dim StockDetailsdId As Int16 = dgvStockDetails.SelectedRows(0).Cells(14).Value
+                        If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+                            Try
+                                If dgvStockDetails.RowCount > 0 Then
+                                    Dim parameters = New List(Of SqlParameter)()
+                                    parameters.Clear()
+                                    With parameters
+                                        .Add(dbManager.CreateParameter("@StockDetailsId", StockDetailsdId, DbType.Int16))
+                                    End With
+                                    dbManager.Delete("SP_DailyStock_Delete", CommandType.StoredProcedure, parameters.ToArray())
+                                    MessageBox.Show("Stock Delete Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    .Rows.Remove(.CurrentRow)
+                                End If
+                            Catch ex As Exception
+                                MessageBox.Show("Error:- " & ex.Message)
+                            End Try
+                        End If
+                    End If
+                End If
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        If btnSave.Text = "&Save" Then
+
+        Else
+            Me.DeleteData()
+        End If
+    End Sub
+    Private Sub DeleteData()
+        Dim StockId As Int16 = dgvStockDetails.SelectedRows(0).Cells(12).Value
+        If (MsgBox("Are You Sure To Delete This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+            Try
+                If dgvStockDetails.RowCount > 0 Then
+                    Dim parameters = New List(Of SqlParameter)()
+                    parameters.Clear()
+                    With parameters
+                        .Add(dbManager.CreateParameter("@StockId", StockId, DbType.Int16))
+                    End With
+                    dbManager.Delete("SP_DailyStock_Delete", CommandType.StoredProcedure, parameters.ToArray())
+                    MessageBox.Show("Stock Delete Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    dgvStockDetails.RowCount = 0
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error:- " & ex.Message)
+            End Try
+        End If
+    End Sub
+    Private Sub BtnFinalize_Click(sender As Object, e As EventArgs) Handles BtnFinalize.Click
+        Me.FinaliseStock()
+        Me.ClearTotalByCategory()
+        Me.FillStockList()
+    End Sub
+    Private Sub txtWtWithBox_TextChanged(sender As Object, e As EventArgs) Handles txtWtWithBox.TextChanged
+        If cmbBoxName.SelectedIndex > 0 Then
+            If txtWtWithBox.Text > 0 Then
+                Me.BoxActualMetal()
+            Else
+                txtActualMetal.Text = "0.00"
+                txtActualFineWt.Text = "0.00"
+            End If
+        Else
+            If Not cmbBoxName.Text = "---Select---" Then
+
+            Else
+                Me.ByBoxActualMetal()
+            End If
+        End If
+    End Sub
+    Private Sub FinaliseStock()
+        If (MsgBox("Are You Sure To Finalize This Record ?", vbYesNo + vbDefaultButton2 + vbQuestion, "User : " + UserName.Trim()) = vbYes) Then
+            Try
+                If btnSave.Text = "&Save" And txtHRemark.Tag = "" Then
+
+                    If dgvStockDetails.RowCount > 0 Then
+                        Dim parameters = New List(Of SqlParameter)()
+                        parameters.Clear()
+                        With parameters
+                            .Add(dbManager.CreateParameter("@ActionType", "SaveFinalize", DbType.String))
+                        End With
+                        dbManager.Update("SP_DailyStock_Finalize", CommandType.StoredProcedure, parameters.ToArray())
+                        MessageBox.Show("Stock Finalize Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        dgvStockDetails.RowCount = 0
+                    End If
+                Else
+                    Dim StockId As Integer = txtHRemark.Tag
+                    Dim parameters = New List(Of SqlParameter)()
+                    parameters.Clear()
+                    With parameters
+                        .Add(dbManager.CreateParameter("@ActionType", "UpdateFinalize", DbType.String))
+                        .Add(dbManager.CreateParameter("@StockId", StockId, DbType.Int16))
+                    End With
+                    dbManager.Update("SP_DailyStock_Finalize", CommandType.StoredProcedure, parameters.ToArray())
+                    MessageBox.Show("Stock Finalize Succesfully..!!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    dgvStockDetails.DataSource = Nothing
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Error:- " & ex.Message)
+            End Try
+        End If
+    End Sub
+    Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
+        Me.ClearTotalByCategory()
+        dgvStockDetails.RowCount = 0
+        Me.FillStockList()
+    End Sub
+    Private Sub ClearTotalByCategory()
+        btnSave.Text = "&Save"
+        GridDoubleClick = False
+        dgvStockDetails.DataSource = Nothing
+        txtHRemark.Clear()
+        cmbCategoryName.SelectedIndex = 0
+        cmbMelting.Text = ""
+        cmbMelting.SelectedIndex = 0
+        cmbMelting.Text = ""
+        cmbBoxName.Text = ""
+        cmbBoxName.SelectedIndex = 0
+        txtWtWithBox.Clear()
+        txtActualMetal.Clear()
+        txtActualFineWt.Clear()
+        txtWtAsPerSystem.Clear()
+        txtFineWtSys.Clear()
+        txtFineDiff.Clear()
+        txtGRemark.Clear()
+        txtSrNo.Text = 1
+
+        lblTotMeltPr.Text = "0.00"
+        lblTotWtWithBox.Text = "0.00"
+        lblTotActualMetal.Text = "0.00"
+        lblTotWtAsPerSys.Text = "0.00"
+        lblTotFineWtScale.Text = "0.00"
+        lblTotFineWtSys.Text = "0.00"
+        lblTotFineDiff.Text = "0.00"
+
+        txtLASGWt.Text = "0.00"
+        txtLASPr.Text = "0.00"
+        txtLASFWt.Text = "0.00"
+
+        txtVMUGrossWt.Text = "0.00"
+        txtVMUPr.Text = "0.00"
+        txtVMUFWt.Text = "0.00"
+
+        txtLASGWt.Text = "0.00"
+        txtLASPr.Text = "0.00"
+        txtLASFWt.Text = "0.00"
+
+        txtWIPLGWt.Text = "0.00"
+        txtWIPLPr.Text = "0.00"
+        txtWIPLFWt.Text = "0.00"
+
+        txtWIPMGWt.Text = "0.00"
+        txtWIPMPr.Text = "0.00"
+        txtWIPMFWt.Text = "0.00"
+
+        txtWIPTGWt.Text = "0.00"
+        txtWIPTPr.Text = "0.00"
+        txtWIPTFWt.Text = "0.00"
+
+        txtFLGWt.Text = "0.00"
+        txtFLPr.Text = "0.00"
+        txtFLFWt.Text = "0.00"
+
+        txtSBNCGWt.Text = "0.00"
+        txtSBNCPr.Text = "0.00"
+        txtSBNCFWt.Text = "0.00"
+
+        txtVBNCGWt.Text = "0.00"
+        txtVBNCPr.Text = "0.00"
+        txtVBNCFWt.Text = "0.00"
+
+        txtSMBNCGWt.Text = "0.00"
+        txtSMBNCPr.Text = "0.00"
+        txtSMBNCFWt.Text = "0.00"
+
+        txtSBNRGWt.Text = "0.00"
+        txtSBNRPr.Text = "0.00"
+        txtSBNRFWt.Text = "0.00"
+
+        txtVBNRGWt.Text = "0.00"
+        txtVBNRPr.Text = "0.00"
+        txtVBNRFWt.Text = "0.00"
+
+        txtSMBNRGWt.Text = "0.00"
+        txtSMBNRPr.Text = "0.00"
+        txtSMBNRFWt.Text = "0.00"
+
+        txtLFBNRGWt.Text = "0.00"
+        txtLFBNRPr.Text = "0.00"
+        txtLFBNRFWt.Text = "0.00"
+
+        txtSBNUGWt.Text = "0.00"
+        txtSBNUPr.Text = "0.00"
+        txtSBNUFWt.Text = "0.00"
+
+        txtVBNUGWt.Text = "0.00"
+        txtVBNUPr.Text = "0.00"
+        txtVBNUFWt.Text = "0.00"
+
+        txtSMBNUGWt.Text = "0.00"
+        txtSMBNUPr.Text = "0.00"
+        txtSMBNUFWt.Text = "0.00"
+
+        txtLFBNUGWt.Text = "0.00"
+        txtLFBNUPr.Text = "0.00"
+        txtLFBNUFWt.Text = "0.00"
+
+        txtSBNUsGWt.Text = "0.00"
+        txtSBNUsPr.Text = "0.00"
+        txtSBNUsFWt.Text = "0.00"
+
+        txtVBNUsGWt.Text = "0.00"
+        txtVBNUsPr.Text = "0.00"
+        txtVBNUsFWt.Text = "0.00"
+
+        txtSMBNUsGWt.Text = "0.00"
+        txtSMBNUsPr.Text = "0.00"
+        txtSMBNUsFWt.Text = "0.00"
+
+        txtLFBNUsGWt.Text = "0.00"
+        txtLFBNUsPr.Text = "0.00"
+        txtLFBNUsFWt.Text = "0.00"
+
+        txtXSBNUsGWt.Text = "0.00"
+        txtXSBNUsPr.Text = "0.00"
+        txtXSBNUsFWt.Text = "0.00"
+
+        txtSIHGWt.Text = "0.00"
+        txtSIHPr.Text = "0.00"
+        txtSIHFWt.Text = "0.00"
+    End Sub
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+        Try
+            If dgvStockDetails.RowCount > 0 Then
+                Me.Cursor = Cursors.WaitCursor
+                Me.dgvStockDetails.PrintPreview()
+            Else
+                MessageBox.Show("No Data to Print")
+            End If
+        Catch ex As Exception
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+    Private Sub txtWtAsPerSystem_TextChanged(sender As Object, e As EventArgs) Handles txtWtAsPerSystem.TextChanged
+        If Not txtWtAsPerSystem.Text = "" Then
+            If Not cmbMelting.Text.Trim = "" Then
+                If txtWtAsPerSystem.Text > 0 Then
+                    txtFineWtSys.Text = Format(CDbl(Convert.ToDouble((txtWtAsPerSystem.Text) * Convert.ToDouble(cmbMelting.Text) / 100)), "0.00")
+                End If
+            End If
+        End If
+        'If cmbCategoryName.SelectedIndex = 1 Then
+        '    Me.GetStockForWIP()
+        'ElseIf cmbCategoryName.SelectedIndex = 2 Then
+        '    Me.GetStockForVoucherMetalUnUsed()
+        'ElseIf cmbCategoryName.SelectedIndex = 3 Then
+        '    Me.GetStockForBagsNotCreated()
+        'ElseIf cmbCategoryName.SelectedIndex = 4 Then
+        '    Me.GetStockForScrapBagsNotReceived()
+        'ElseIf cmbCategoryName.SelectedIndex = 5 Then
+        '    Me.GetStockForVacBagsNotReceived()
+        'ElseIf cmbCategoryName.SelectedIndex = 6 Then
+        '    Me.GetStockForScrapBagsNotUpdated()
+        'ElseIf cmbCategoryName.SelectedIndex = 7 Then
+        '    Me.GetStockForVacBagsNotUpdated()
+        'ElseIf cmbCategoryName.SelectedIndex = 8 Then
+        '    Me.GetStockForScrapBagsNotUsed()
+        'ElseIf cmbCategoryName.SelectedIndex = 9 Then
+        '    Me.GetStockForVacBagsNotUsed()
+        'ElseIf cmbCategoryName.SelectedIndex = 10 Then
+        '    Me.GetStockForInHand()
+        'End If
+    End Sub
+    Private Sub BtnStockSummary_Click(sender As Object, e As EventArgs) Handles BtnStockSummary.Click
+        Me.Close()
+        Dim ObjScrapBagNotUpdate As New frmStockSummary
+        ObjScrapBagNotUpdate.ShowDialog()
+    End Sub
+    'Private Sub FetchDetails(StockId)
+    '    Dim dtData As DataTable = New DataTable()
+    '    Try
+    '        Dim parameters = New List(Of SqlParameter)()
+    '        parameters.Clear()
+    '        With parameters
+    '            .Add(dbManager.CreateParameter("@ActionType", "TransStockDetailsByLabour", DbType.String))
+    '            .Add(dbManager.CreateParameter("@StockId", StockId, DbType.String))
+    '        End With
+    '        dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+    '        If dtData.Rows.Count > 0 Then
+    '            cmbTLabour.Text = dtData.Rows(0).Item("LabourName").ToString()
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error:- " & ex.Message)
+    '    Finally
+    '    End Try
+    'End Sub
+    Private Function fetchAllDetails() As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
+            With parameters
+                .Add(dbManager.CreateParameter("@ActionType", "GetUnFinalizeStockDetails", DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        Return dtData
+    End Function
+    Private Sub Clear()
+        cmbTLabour.SelectedIndex = 0
+        'txtHRemark.Clear()
+        'cmbCategoryName.Text = ""
+        cmbCategoryName.SelectedIndex = 0
+        cmbMelting.Text = ""
+        cmbMelting.SelectedIndex = 0
+        cmbMelting.Text = ""
+        cmbBoxName.Text = ""
+        cmbBoxName.SelectedIndex = 0
+        txtWtWithBox.Clear()
+        txtActualMetal.Clear()
+        txtActualFineWt.Clear()
+        txtWtAsPerSystem.Clear()
+        txtFineWtSys.Clear()
+        txtFineDiff.Clear()
+        txtGRemark.Clear()
+        txtSrNo.Text = 1
+        dgvStockDetails.DataSource = Nothing
+    End Sub
+    Private Sub fillTakenByEmp()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FillCombo", DbType.String))
+        End With
+
+        Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            Dim row As DataRow = dt.NewRow()
+            row(0) = 0
+            row(1) = "---Select---"
+            dt.Rows.InsertAt(row, 0)
+            ''Insert the Default Item to DataTable.
+            'Dim trow As DataRow = dt.NewRow()
+            'trow(0) = 0
+            'trow(1) = "---Select---"
+            'dt.Rows.InsertAt(trow, 0)
+
+            cmbTLabour.DataSource = dt
+            cmbTLabour.DisplayMember = "LabourName"
+            cmbTLabour.ValueMember = "LabourId"
+
+            cmbTLabour.Refresh()
+            If cmbTLabour.Items.Count > 0 Then cmbTLabour.SelectedIndex = 0
+
+
+            'Set AutoCompleteMode.
+            cmbTLabour.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbTLabour.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+        End Try
+    End Sub
+    Private Sub fillStockCategoryName()
+        Dim connection As SqlConnection = Nothing
+
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+
+        With parameters
+            '.Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "GetStockCategory", DbType.String))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
+
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            'Insert the Default Item to DataTable.
+            Dim row As DataRow = dt.NewRow()
+            row(0) = 0
+            row(1) = "---Select---"
+            dt.Rows.InsertAt(row, 0)
+
+            'Assign DataTable as DataSource.
+            cmbCategoryName.DataSource = dt
+            cmbCategoryName.DisplayMember = "stockcategoryName"
+            cmbCategoryName.ValueMember = "StockCategoryId"
+            cmbCategoryName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbCategoryName.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            dbManager.CloseConnection(connection)
+        End Try
+    End Sub
+    Private Sub fillMelting()
+
+        Dim connection As SqlConnection = Nothing
+
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FillMeltingCmb", DbType.String))
+        End With
+
+        Dim dr = dbManager.GetDataReader("SP_MeltingMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            'Insert the Default Item to DataTable.
+            Dim row As DataRow = dt.NewRow()
+            'row(0) = 0
+            'row(1) = "---Select---"
+            'dt.Rows.InsertAt(row, 0)
+
+            'Assign DataTable as DataSource.
+            cmbMelting.DataSource = dt
+            cmbMelting.DisplayMember = "MeltingValue"
+            cmbMelting.ValueMember = "MeltingId"
+
+            'Newly Added
+            cmbMelting.Refresh()
+            If cmbMelting.Items.Count > 0 Then cmbMelting.Text = ""
+
+            cmbMelting.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbMelting.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            Objcn.Close()
+        End Try
+    End Sub
+    Private Sub fillBoxName()
+
+        Dim connection As SqlConnection = Nothing
+
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "GetBoxName", DbType.String))
+        End With
+
+        Dim dr = dbManager.GetDataReader("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            'Insert the Default Item to DataTable.
+            Dim row As DataRow = dt.NewRow()
+            row(0) = 0
+            row(1) = "---Select---"
+            dt.Rows.InsertAt(row, 0)
+
+            'Assign DataTable as DataSource.
+            cmbBoxName.DataSource = dt
+            cmbBoxName.DisplayMember = "BoxName"
+            cmbBoxName.ValueMember = "BoxId"
+
+            'Newly Added
+            cmbBoxName.Refresh()
+            If cmbBoxName.Items.Count > 0 Then cmbBoxName.SelectedIndex = 0
+
+            cmbBoxName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbBoxName.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            Objcn.Close()
+        End Try
+    End Sub
+End Class

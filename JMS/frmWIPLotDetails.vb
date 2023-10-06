@@ -45,7 +45,7 @@ Public Class frmWIPLotDetails
                 .Add(dbManager.CreateParameter("@ActionType", "WIPLotsAllDetails", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_fStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
             Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum
 
@@ -104,7 +104,7 @@ Public Class frmWIPLotDetails
                 .Add(dbManager.CreateParameter("@ActionType", "WIPLotsGoldDetails", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_fStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -151,7 +151,7 @@ Public Class frmWIPLotDetails
                 .Add(dbManager.CreateParameter("@ActionType", "WIPLotsOtherDetails", DbType.String))
             End With
 
-            dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+            dtData = dbManager.GetDataTable("SP_fStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -174,7 +174,6 @@ Public Class frmWIPLotDetails
             Throw ex
         End Try
     End Sub
-
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
             If dgvStockAll.RowCount > 0 Then

@@ -83,6 +83,7 @@ Partial Class frmGConvFactor
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -97,10 +98,10 @@ Partial Class frmGConvFactor
         Me.TabPage1.Controls.Add(Me.BtnCancel)
         Me.TabPage1.Controls.Add(Me.BtnDelete)
         Me.TabPage1.Controls.Add(Me.BtnSave)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(605, 362)
+        Me.TabPage1.Size = New System.Drawing.Size(605, 361)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Information"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -115,7 +116,7 @@ Partial Class frmGConvFactor
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(3, 110)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(522, 196)
+        Me.GroupBox2.Size = New System.Drawing.Size(597, 211)
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Conv % Factor Details"
@@ -123,6 +124,7 @@ Partial Class frmGConvFactor
         'cmbMaterial
         '
         Me.cmbMaterial.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbMaterial.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbMaterial.Location = New System.Drawing.Point(209, 19)
         Me.cmbMaterial.Name = "cmbMaterial"
         Me.cmbMaterial.Size = New System.Drawing.Size(143, 20)
@@ -147,6 +149,7 @@ Partial Class frmGConvFactor
         'txtConvPerFactor
         '
         Me.txtConvPerFactor.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtConvPerFactor.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtConvPerFactor.Location = New System.Drawing.Point(354, 19)
         Me.txtConvPerFactor.Name = "txtConvPerFactor"
         Me.txtConvPerFactor.Size = New System.Drawing.Size(151, 20)
@@ -156,7 +159,7 @@ Partial Class frmGConvFactor
         '
         Me.dgvConvFactor.BackColor = System.Drawing.Color.Transparent
         Me.dgvConvFactor.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvConvFactor.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvConvFactor.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvConvFactor.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvConvFactor.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.dgvConvFactor.Location = New System.Drawing.Point(5, 42)
@@ -202,7 +205,7 @@ Partial Class frmGConvFactor
         Me.dgvConvFactor.Name = "dgvConvFactor"
         Me.dgvConvFactor.ReadOnly = True
         Me.dgvConvFactor.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvConvFactor.Size = New System.Drawing.Size(500, 145)
+        Me.dgvConvFactor.Size = New System.Drawing.Size(587, 162)
         Me.dgvConvFactor.TabIndex = 42
         '
         'GroupBox1
@@ -216,7 +219,7 @@ Partial Class frmGConvFactor
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(3, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(522, 98)
+        Me.GroupBox1.Size = New System.Drawing.Size(597, 98)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Conv % Factor"
@@ -225,7 +228,7 @@ Partial Class frmGConvFactor
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label9.Location = New System.Drawing.Point(294, 67)
+        Me.Label9.Location = New System.Drawing.Point(367, 77)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(224, 14)
         Me.Label9.TabIndex = 157
@@ -235,7 +238,7 @@ Partial Class frmGConvFactor
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label10.Location = New System.Drawing.Point(6, 67)
+        Me.Label10.Location = New System.Drawing.Point(6, 77)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(251, 14)
         Me.Label10.TabIndex = 156
@@ -244,7 +247,7 @@ Partial Class frmGConvFactor
         'txtCreatedBy
         '
         Me.txtCreatedBy.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtCreatedBy.Location = New System.Drawing.Point(380, 19)
+        Me.txtCreatedBy.Location = New System.Drawing.Point(467, 19)
         Me.txtCreatedBy.Name = "txtCreatedBy"
         Me.txtCreatedBy.ReadOnly = True
         Me.txtCreatedBy.Size = New System.Drawing.Size(125, 20)
@@ -254,7 +257,7 @@ Partial Class frmGConvFactor
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblDate.Location = New System.Drawing.Point(32, 24)
+        Me.lblDate.Location = New System.Drawing.Point(12, 23)
         Me.lblDate.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(67, 14)
@@ -265,9 +268,9 @@ Partial Class frmGConvFactor
         '
         Me.TransDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.TransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TransDt.Location = New System.Drawing.Point(115, 19)
+        Me.TransDt.Location = New System.Drawing.Point(83, 19)
         Me.TransDt.Name = "TransDt"
-        Me.TransDt.Size = New System.Drawing.Size(114, 22)
+        Me.TransDt.Size = New System.Drawing.Size(90, 22)
         Me.TransDt.TabIndex = 35
         Me.TransDt.TabStop = False
         '
@@ -275,7 +278,7 @@ Partial Class frmGConvFactor
         '
         Me.lblCreatedBy.AutoSize = True
         Me.lblCreatedBy.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblCreatedBy.Location = New System.Drawing.Point(298, 22)
+        Me.lblCreatedBy.Location = New System.Drawing.Point(396, 22)
         Me.lblCreatedBy.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblCreatedBy.Name = "lblCreatedBy"
         Me.lblCreatedBy.Size = New System.Drawing.Size(67, 14)
@@ -284,7 +287,8 @@ Partial Class frmGConvFactor
         '
         'BtnExit
         '
-        Me.BtnExit.Location = New System.Drawing.Point(353, 312)
+        Me.BtnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnExit.Location = New System.Drawing.Point(375, 327)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(75, 25)
         Me.BtnExit.TabIndex = 46
@@ -292,7 +296,8 @@ Partial Class frmGConvFactor
         '
         'BtnCancel
         '
-        Me.BtnCancel.Location = New System.Drawing.Point(272, 312)
+        Me.BtnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnCancel.Location = New System.Drawing.Point(298, 327)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(75, 25)
         Me.BtnCancel.TabIndex = 45
@@ -300,7 +305,8 @@ Partial Class frmGConvFactor
         '
         'BtnDelete
         '
-        Me.BtnDelete.Location = New System.Drawing.Point(191, 312)
+        Me.BtnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnDelete.Location = New System.Drawing.Point(221, 327)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(75, 25)
         Me.BtnDelete.TabIndex = 44
@@ -308,7 +314,8 @@ Partial Class frmGConvFactor
         '
         'BtnSave
         '
-        Me.BtnSave.Location = New System.Drawing.Point(110, 312)
+        Me.BtnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnSave.Location = New System.Drawing.Point(144, 327)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(75, 25)
         Me.BtnSave.TabIndex = 43
@@ -317,10 +324,10 @@ Partial Class frmGConvFactor
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.dgvConvFactorList)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(605, 362)
+        Me.TabPage2.Size = New System.Drawing.Size(605, 361)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -329,10 +336,10 @@ Partial Class frmGConvFactor
         '
         Me.dgvConvFactorList.BackColor = System.Drawing.Color.Transparent
         Me.dgvConvFactorList.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvConvFactorList.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.dgvConvFactorList.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvConvFactorList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvConvFactorList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvConvFactorList.Location = New System.Drawing.Point(0, 0)
+        Me.dgvConvFactorList.Location = New System.Drawing.Point(1, 3)
         '
         '
         '
@@ -393,11 +400,12 @@ Partial Class frmGConvFactor
         '
         'frmGConvFactor
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(612, 391)
         Me.Controls.Add(Me.TabControl1)
+        Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "frmGConvFactor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Conv % Factor"

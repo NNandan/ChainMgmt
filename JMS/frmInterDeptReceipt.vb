@@ -156,7 +156,6 @@ Public Class frmInterDeptReceipt
         Finally
             dr.Close()
             Objcn.Close()
-            ''cmbTLabour.Enabled = False
         End Try
     End Sub
     Sub Total()
@@ -167,7 +166,7 @@ Public Class frmInterDeptReceipt
             lblTotalGrossPr.Text = 0.00
             lblTotalFineWt.Text = 0.00
 
-            For Each row As GridViewRowInfo In dgvReceipt.Rows
+            For Each row As GridViewRowInfo In dgvFinal.Rows
                 lblTotalGrossWt.Text = Format(Val(lblTotalGrossWt.Text) + CDbl(row.Cells(6).Value), "0.00")
                 lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(8).Value), "0.000")
             Next
@@ -192,19 +191,35 @@ Public Class frmInterDeptReceipt
         End Try
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If Not Validate_Fields() Then Exit Sub
-
+        Dim TmpLotNo As String = Nothing
         Try
             If Fr_Mode = FormState.AStateMode Then
-                Me.SaveData()
+                If Not Validate_Fields() Then Exit Sub
+                Dim Dt As DataTable = SaveData()
+
+                TmpLotNo = Dt.Rows(0).Item(0)
+
+                MessageBoxTimer(TmpLotNo)
                 Me.btnCancel_Click(sender, e)
             Else
+                If Not Validate_EditFields() Then Exit Sub
                 Me.UpdateData()
                 Me.btnCancel_Click(sender, e)
             End If
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         End Try
+    End Sub
+    Sub MessageBoxTimer(ByVal strMsg As String)
+        Dim AckTime As Integer, InfoBox As Object
+        InfoBox = CreateObject("WScript.Shell")
+        'Set the message box to close after 1 seconds
+        AckTime = 1
+        Select Case InfoBox.Popup("Receipt Number = " & strMsg.ToString(),
+        AckTime, "Newly Created Receipt Number", 0)
+            Case 1, -1
+                Exit Sub
+        End Select
     End Sub
     Private Function fetchAllRecords() As DataTable
 
@@ -247,7 +262,8 @@ Public Class frmInterDeptReceipt
 
         Return dtData
     End Function
-    Private Sub SaveData()
+    Private Function SaveData() As DataTable
+        Dim Dt As DataTable = Nothing
         Dim alParaval As New ArrayList
 
         Dim IssueId As String = ""
@@ -256,7 +272,7 @@ Public Class frmInterDeptReceipt
         Dim ReceivePr As String = ""
         Dim ReceiveWt As String = ""
         Dim FineWt As String = ""
-
+        Dim ForMelting As String = Nothing
         Dim IRowCount As Integer = 0
         Dim iValue As Integer = 0
 
@@ -267,7 +283,7 @@ Public Class frmInterDeptReceipt
         alParaval.Add(txtFrKarigar.Tag)
         alParaval.Add(cmbTLabour.SelectedValue)
 
-        For Each row As GridViewRowInfo In dgvReceipt.Rows
+        For Each row As GridViewRowInfo In dgvFinal.Rows
             If row.Cells(0).Value <> Nothing Then
                 If IssueId = "" Then
                     IssueId = Val(row.Cells(1).Value)
@@ -276,6 +292,7 @@ Public Class frmInterDeptReceipt
                     ReceiveWt = Val(row.Cells(6).Value)
                     ReceivePr = Val(row.Cells(7).Value)
                     FineWt = Val(row.Cells(8).Value)
+                    ForMelting = row.Cells(9).Value
                 Else
                     IssueId = IssueId & "|" & Val(row.Cells(1).Value)
                     PartyName = PartyName & "|" & Convert.ToString(row.Cells(3).Value)
@@ -283,6 +300,7 @@ Public Class frmInterDeptReceipt
                     ReceiveWt = ReceiveWt & "|" & row.Cells(6).Value
                     ReceivePr = ReceivePr & "|" & row.Cells(7).Value
                     FineWt = FineWt & "|" & row.Cells(8).Value
+                    ForMelting = ForMelting & "|" & row.Cells(9).Value
                 End If
             End If
             IRowCount += 1
@@ -294,7 +312,7 @@ Public Class frmInterDeptReceipt
         alParaval.Add(ReceiveWt)
         alParaval.Add(ReceivePr)
         alParaval.Add(FineWt)
-
+        alParaval.Add(ForMelting)
         Try
             Dim Hparameters = New List(Of SqlParameter)()
             Hparameters.Clear()
@@ -331,16 +349,19 @@ Public Class frmInterDeptReceipt
 
                 .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
+                .Add(dbManager.CreateParameter("@DChkforMelting", alParaval.Item(iValue), DbType.String))
+                iValue += 1
             End With
 
-            dbManager.Insert("SP_Receipt_Save", CommandType.StoredProcedure, Hparameters.ToArray())
-
+            Dt = dbManager.GetDataTable("SP_Receipt_Save", CommandType.StoredProcedure, Hparameters.ToArray())
             MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         End Try
-    End Sub
+        Return Dt
+
+    End Function
     Private Sub UpdateData()
         Dim alParaval As New ArrayList
 
@@ -350,7 +371,7 @@ Public Class frmInterDeptReceipt
         Dim ReceivePr As String = ""
         Dim ReceiveWt As String = ""
         Dim FineWt As String = ""
-
+        Dim ForMelting As String = Nothing
         Dim IRowCount As Integer = 0
         Dim iValue As Integer = 0
 
@@ -359,9 +380,9 @@ Public Class frmInterDeptReceipt
         alParaval.Add(cmbtDepartment.SelectedValue)
         alParaval.Add(cmbVoucherNo.Text.Trim())
         alParaval.Add(txtFrKarigar.Tag)
-        alParaval.Add(cmbTLabour.SelectedValue)
+        alParaval.Add(cmbTLabour.Tag)
 
-        For Each row As GridViewRowInfo In dgvReceipt.Rows
+        For Each row As GridViewRowInfo In dgvFinal.Rows
             If row.Cells(0).Value <> Nothing Then
                 If IssueId = "" Then
                     IssueId = Val(row.Cells(1).Value)
@@ -370,6 +391,8 @@ Public Class frmInterDeptReceipt
                     ReceiveWt = Val(row.Cells(6).Value)
                     ReceivePr = Val(row.Cells(7).Value)
                     FineWt = Val(row.Cells(8).Value)
+                    ForMelting = row.Cells(9).Value
+
                 Else
                     IssueId = IssueId & "|" & Val(row.Cells(1).Value)
                     PartyName = PartyName & "|" & Convert.ToString(row.Cells(3).Value)
@@ -377,6 +400,8 @@ Public Class frmInterDeptReceipt
                     ReceiveWt = ReceiveWt & "|" & row.Cells(6).Value
                     ReceivePr = ReceivePr & "|" & row.Cells(7).Value
                     FineWt = FineWt & "|" & row.Cells(8).Value
+                    ForMelting = ForMelting & "|" & row.Cells(9).Value
+
                 End If
             End If
             IRowCount += 1
@@ -388,12 +413,14 @@ Public Class frmInterDeptReceipt
         alParaval.Add(ReceiveWt)
         alParaval.Add(ReceivePr)
         alParaval.Add(FineWt)
+        alParaval.Add(ForMelting)
 
         Try
             Dim Hparameters = New List(Of SqlParameter)()
             Hparameters.Clear()
 
             With Hparameters
+                .Add(dbManager.CreateParameter("@RId", Val(txtId.Tag), DbType.Int16))
                 .Add(dbManager.CreateParameter("@HReceiptDt", alParaval.Item(iValue), DbType.DateTime))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HfDeptId ", alParaval.Item(iValue), DbType.Int16))
@@ -409,7 +436,6 @@ Public Class frmInterDeptReceipt
                 .Add(dbManager.CreateParameter("@HToKarigarId", alParaval.Item(iValue), DbType.Int16))
                 iValue += 1
 
-                .Add(dbManager.CreateParameter("@RId", Val(txtId.Tag), DbType.Int16))
                 .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
                 .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
 
@@ -426,10 +452,11 @@ Public Class frmInterDeptReceipt
 
                 .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
+                .Add(dbManager.CreateParameter("@DChkforMelting", alParaval.Item(iValue), DbType.String))
+                iValue += 1
             End With
 
             dbManager.Insert("SP_Receipt_Update", CommandType.StoredProcedure, Hparameters.ToArray())
-
             MessageBox.Show("Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
@@ -447,7 +474,6 @@ Public Class frmInterDeptReceipt
         Next
 
         Return exists
-
     End Function
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Try
@@ -518,14 +544,6 @@ Public Class frmInterDeptReceipt
 
         txtFrKarigar.Enabled = enable
         cmbTLabour.Enabled = enable
-
-        'txtSrNo.Enabled = enable
-        'cmbLotNo.Enabled = enable
-        'mccmbStock.Enabled = enable
-        'txtItemName.Enabled = enable
-        'txtReceiveWt.Enabled = enable
-        'txtReceivePr.Enabled = enable
-        'txtFineWt.Enabled = enable
 
         dgvReceipt.Enabled = enable
     End Sub
@@ -603,7 +621,8 @@ Public Class frmInterDeptReceipt
             dgvReceipt.DataSource = Nothing
             dgvReceipt.Rows.Clear()
             '' For Detail Field End
-
+            dgvFinal.DataSource = Nothing
+            dgvFinal.Rows.Clear()
             GridDoubleClick = False
 
             lblTotalGrossWt.Text = 0.0
@@ -636,7 +655,7 @@ Public Class frmInterDeptReceipt
     End Sub
     Private Function Validate_Fields() As Boolean
         Try
-            If Not dgvReceipt.RowCount > 0 Then
+            If Not dgvFinal.RowCount > 0 Then
                 MessageBox.Show("Cannot Save Without Detail Information!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 Return False
                 Exit Function
@@ -646,6 +665,28 @@ Public Class frmInterDeptReceipt
                 MessageBox.Show("Select Employee !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbTLabour.Focus()
                 Return False
+            End If
+
+            Return True
+        Catch ex As Exception
+            Return False
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Function
+    Private Function Validate_EditFields() As Boolean
+        Try
+            If Not dgvFinal.RowCount > 0 Then
+                MessageBox.Show("Cannot Save Without Detail Information!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                Return False
+                Exit Function
+            End If
+
+            If cmbTLabour.Text = "" Then
+                If cmbTLabour.Text = "---Select---" Then
+                    MessageBox.Show("Select Employee !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                    cmbTLabour.Focus()
+                    Return False
+                End If
             End If
 
             Return True
@@ -678,6 +719,87 @@ Public Class frmInterDeptReceipt
         End If
 
     End Sub
+    Private Sub FRWD_Click(sender As Object, e As EventArgs) Handles FRWD.Click
+        If dgvReceipt.RowCount > 0 Then
+            Try
+
+                With dgvReceipt
+                    If GridDoubleClick = False Then
+                        With dgvReceipt
+                            .SelectedRows.Contains(.CurrentRow)
+                        End With
+                    Else
+                        .Rows.Remove(.CurrentRow)
+                    End If
+                End With
+                With dgvFinal
+                    GridDoubleClick = False
+                End With
+                Me.fillGrid()
+            Catch
+            End Try
+        End If
+    End Sub
+    Private Sub dgvReceipt_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvReceipt.CellDoubleClick
+        Try
+            If e.RowIndex = -1 Then Exit Sub
+            If e.RowIndex >= 0 And dgvReceipt.Rows(e.RowIndex).Cells(0).Value <> Nothing Then
+                GridDoubleClick = True
+                txtSrNo.Text = dgvReceipt.Rows(e.RowIndex).Cells(0).Value.ToString()
+                txtSrNo.Tag = dgvReceipt.Rows(e.RowIndex).Cells(1).Value.ToString()
+                txtPartyName.Tag = dgvReceipt.Rows(e.RowIndex).Cells(2).Value.ToString()
+                txtPartyName.Text = dgvReceipt.Rows(e.RowIndex).Cells(3).Value.ToString()
+                txtItemName.Tag = dgvReceipt.Rows(e.RowIndex).Cells(4).Value.ToString()
+                txtItemName.Text = dgvReceipt.Rows(e.RowIndex).Cells(5).Value.ToString
+                txtReceiveWt.Text = dgvReceipt.Rows(e.RowIndex).Cells(6).Value.ToString()
+                txtReceivePr.Text = dgvReceipt.Rows(e.RowIndex).Cells(7).Value.ToString()
+
+                txtFineWt.Text = dgvReceipt.Rows(e.RowIndex).Cells(8).Value.ToString()
+
+                If IsNothing(dgvReceipt.Rows(e.RowIndex).Cells(9).Value) OrElse String.IsNullOrEmpty(dgvReceipt.Rows(e.RowIndex).Cells(9).Value) Then
+                    chkForMelting.Checked = False
+                Else
+                    chkForMelting.Checked = True
+                End If
+                TempRow = e.RowIndex
+            End If
+            BackWrd.Enabled = False
+            FRWD.Enabled = True
+            chkForMelting.Enabled = True
+            'With dgvReceipt
+            '    If GridDoubleClick = False Then
+            '        With dgvReceipt
+            '            .SelectedRows.Contains(.CurrentRow)
+            '        End With
+            '    Else
+            '        .Rows.Remove(.CurrentRow)
+            '    End If
+            'End With
+            'With GRDFinal
+            '    GridDoubleClick = False
+            'End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Sub fillGrid()
+        Try
+            If txtSrNo.Text.Trim() = "" Then
+                dgvFinal.DataSource = False
+            Else
+                dgvFinal.Rows.Add(Val(txtSrNo.Text.Trim), Val(txtSrNo.Tag), Val(txtPartyName.Tag), (txtPartyName.Text.Trim), Val(txtItemName.Tag), (txtItemName.Text.Trim), Format(Val(txtReceiveWt.Text.Trim), "0.00"), Format(Val(txtReceivePr.Text.Trim), "0.00"), Format(Val(txtFineWt.Text.Trim), "0.00"), chkForMelting.CheckState)
+                Me.Total()
+                txtSrNo.Clear()
+                txtPartyName.Clear()
+                txtItemName.Clear()
+                txtReceiveWt.Clear()
+                txtReceivePr.Clear()
+                txtFineWt.Clear()
+                chkForMelting.CheckState = False
+            End If
+        Catch
+        End Try
+    End Sub
     Private Sub fillHeaderFromListView(ByVal intReceiptId As Integer)
 
         Dim parameters = New List(Of SqlParameter)()
@@ -701,7 +823,9 @@ Public Class frmInterDeptReceipt
             cmbtDepartment.SelectedIndex = dr.Item("ToDeptId").ToString()
             txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString()
             txtFrKarigar.Text = dr.Item("FrKarigar").ToString()
-            cmbTLabour.SelectedValue = dr.Item("ToKarigarId").ToString()
+
+            cmbTLabour.SelectedIndex = dr.Item("ToKarigarId").ToString()
+            cmbTLabour.Text = CStr(dr.Item("ToKarigar"))
         End If
 
         dr.Close()

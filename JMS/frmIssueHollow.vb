@@ -10,8 +10,11 @@ Public Class frmIssueHollow
 
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
+    Dim iItemId As Int16 = 0
     Private Sub frmIssueHollow_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.Clear_Form()
+
+        Me.bindDataGridView()
 
         Me.fillLabour()
     End Sub
@@ -83,7 +86,15 @@ Public Class frmIssueHollow
             Me.TransDt.Value = DateTime.Now
 
             cmbItemType.SelectedIndex = -1
+
+            cmbtKarigar.Text = ""
             cmbtKarigar.SelectedIndex = -1
+
+            cmbItemType.Text = ""
+            cmbLotNo.Text = ""
+            txtCoreAddNo.Text = ""
+            txtItemName.Text = ""
+            txtItemName.Text = ""
 
             txtIssueWt.Clear()
             txtIssuePr.Clear()
@@ -131,8 +142,15 @@ Public Class frmIssueHollow
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
+    Private Sub cmbItemType_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbItemType.SelectedIndexChanged
+        If cmbItemType.SelectedIndex = 0 Then
+
+        Else
+            Me.fillLotNo()
+        End If
+    End Sub
     Private Sub SaveData()
-        Dim iOperationTypeId As Integer = 13 ''Operation Id for Hollow Issue
+        Dim iOperationTypeId As Integer = 15 ''Operation Id for Hollow Issue
 
         Try
             Dim parameters = New List(Of SqlParameter)()
@@ -145,12 +163,12 @@ Public Class frmIssueHollow
                 .Add(dbManager.CreateParameter("@HItemType", cmbItemType.Text.Trim, DbType.String))
                 .Add(dbManager.CreateParameter("@HSlipBagNo", cmbLotNo.Text.Trim, DbType.String))
                 .Add(dbManager.CreateParameter("@HCoreAddNo", txtCoreAddNo.Text.Trim, DbType.String))
-                .Add(dbManager.CreateParameter("@HItemBagId", 1, DbType.Int16))
+                .Add(dbManager.CreateParameter("@HItemBagId", txtItemName.Tag, DbType.Int16))
                 .Add(dbManager.CreateParameter("@HIssueWt", txtIssueWt.Text.Trim, DbType.String))
                 .Add(dbManager.CreateParameter("@HIssuePr", txtIssuePr.Text, DbType.String))
                 .Add(dbManager.CreateParameter("@HFineWt", txtFineWt.Text.Trim(), DbType.String))
-                .Add(dbManager.CreateParameter("@HFrKarigar", 1, DbType.Int16))
-                .Add(dbManager.CreateParameter("@HToKarigar", cmbtKarigar.SelectedIndex, DbType.String))
+                .Add(dbManager.CreateParameter("@HFrKarigar", txtFrKarigar.Tag, DbType.Int16))
+                .Add(dbManager.CreateParameter("@HToKarigar", cmbtKarigar.SelectedValue, DbType.String))
                 .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
             End With
 
@@ -161,6 +179,11 @@ Public Class frmIssueHollow
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         End Try
+    End Sub
+    Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
+        If cmbLotNo.SelectedIndex > -1 Then
+            bindIssueHeaderView()
+        End If
     End Sub
     Private Sub UpdateData()
         Dim iOperationTypeId As Integer = 13 ''Operation Id for Hollow Issue
@@ -173,10 +196,10 @@ Public Class frmIssueHollow
                 .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                 .Add(dbManager.CreateParameter("@HollowIssueDt", TransDt.Value.ToString(), DbType.DateTime))
                 .Add(dbManager.CreateParameter("@OperationTypeId", iOperationTypeId, DbType.Int16))
-                .Add(dbManager.CreateParameter("@HItemType", iOperationTypeId, DbType.String))
-                .Add(dbManager.CreateParameter("@HSlipBagNo", iOperationTypeId, DbType.String))
-                .Add(dbManager.CreateParameter("@HCoreAddNo", iOperationTypeId, DbType.String))
-                .Add(dbManager.CreateParameter("@HItemBagId", iOperationTypeId, DbType.Int16))
+                .Add(dbManager.CreateParameter("@HItemType", cmbItemType.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@HSlipBagNo", cmbLotNo, DbType.String))
+                .Add(dbManager.CreateParameter("@HCoreAddNo", txtCoreAddNo.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@HItemBagId", txtItemName.Tag, DbType.Int16))
                 .Add(dbManager.CreateParameter("@FrKarigar", txtFrKarigar.Text.Trim(), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ToKarigar", cmbtKarigar.SelectedIndex, DbType.String))
                 .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
@@ -191,7 +214,6 @@ Public Class frmIssueHollow
             MessageBox.Show("Error:- " & ex.Message)
         End Try
     End Sub
-
     Private Sub fillLabour()
         Dim connection As SqlConnection = Nothing
 
@@ -225,5 +247,155 @@ Public Class frmIssueHollow
             dr.Close()
             dbManager.CloseConnection(connection)
         End Try
+    End Sub
+    Private Sub fillLotNo()
+        Dim connection As SqlConnection = Nothing
+
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchLotNo", DbType.String))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_HollowIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+
+        If dr.HasRows = False Then
+            MessageBox.Show("No Data Exists !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+            Exit Sub
+        End If
+
+        Try
+            While dr.Read
+                If Not IsDBNull(dr.Item("LotNo")) Then
+                    cmbLotNo.Items.Add(dr.Item("LotNo"))
+                End If
+            End While
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            Objcn.Close()
+        End Try
+
+    End Sub
+    Private Sub dgvHollowIssue_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvHollowIssue.CellDoubleClick
+        If dgvHollowIssue.SelectedRows.Count = 0 Then Exit Sub
+
+        If dgvHollowIssue.Rows.Count > 0 Then
+
+            Dim MeltingId As Int16 = Me.dgvHollowIssue.SelectedRows(0).Cells(0).Value
+
+            Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
+
+            Me.fillHeaderFromGridView(MeltingId)
+
+            Me.TblHollowIssue.SelectedIndex = 0
+        End If
+    End Sub
+    Private Sub bindIssueHeaderView()
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoDetails", DbType.String))
+                .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(cmbLotNo.Text.Trim), DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_HollowIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+            txtTransNo.Text = dtData.Rows(0).Item(0)
+            txtCoreAddNo.Text = dtData.Rows(0).Item(1)
+            txtItemName.Tag = dtData.Rows(0).Item(2)
+            txtItemName.Text = dtData.Rows(0).Item(3)
+            txtIssueWt.Text = dtData.Rows(0).Item(4)
+            txtIssuePr.Text = dtData.Rows(0).Item(5)
+            txtFineWt.Text = dtData.Rows(0).Item(6)
+            txtFrKarigar.Tag = dtData.Rows(0).Item(7)
+            txtFrKarigar.Text = dtData.Rows(0).Item(8)
+            cmbtKarigar.Tag = dtData.Rows(0).Item(9)
+            cmbtKarigar.Text = dtData.Rows(0).Item(10)
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
+    Private Function fetchAllRecords() As DataTable
+
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_HollowIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+
+    End Function
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
+
+        Try
+            dgvHollowIssue.DataSource = dtdata
+            dgvHollowIssue.EnableFiltering = True
+            dgvHollowIssue.MasterTemplate.ShowFilteringRow = False
+            dgvHollowIssue.MasterTemplate.ShowHeaderCellButtons = True
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub fillHeaderFromGridView(ByVal intMeltingId As Integer)
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+            .Add(dbManager.CreateParameter("@HId", CInt(intMeltingId), DbType.Int16))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_HollowIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+
+        If dr.HasRows = False Then
+            Exit Sub
+        Else
+            dr.Read()
+            txtTransNo.Text = dr.Item("HollowIssueId").ToString
+            TransDt.Text = dr.Item("HollowIssueDt").ToString
+            cmbItemType.Text = dr.Item("ItemType").ToString
+            cmbLotNo.Text = dr.Item("SlipBagNo").ToString
+            txtCoreAddNo.Text = dr.Item("CoreAddNo").ToString
+            iItemId = dr.Item("ItemId").ToString
+            txtItemName.Text = dr.Item("ItemName").ToString
+            txtIssueWt.Text = dr.Item("IssueWt").ToString
+            txtIssuePr.Text = dr.Item("IssuePr").ToString
+            txtFineWt.Text = dr.Item("FineWt").ToString
+            txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString
+            txtFrKarigar.Text = dr.Item("FrKarigar").ToString
+            cmbtKarigar.Tag = dr.Item("ToKarigarId").ToString
+            cmbtKarigar.Text = dr.Item("toKarigarName").ToString
+        End If
+
+        dr.Close()
+        Objcn.Close()
+
+        Exit Sub
+ErrHandler:
+        MsgBox(Err.Description, MsgBoxStyle.Critical)
     End Sub
 End Class

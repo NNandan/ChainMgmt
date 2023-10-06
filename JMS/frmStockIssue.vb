@@ -60,7 +60,6 @@ Public Class frmStockIssue
         Me.fillGridCmbItemName()
         Me.fillParty()
         Me.Clear_Form()
-
     End Sub
     Private Sub fillDepartment()
         Dim connection As SqlConnection = Nothing
@@ -232,8 +231,6 @@ Public Class frmStockIssue
             .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FillOnlyItemName", DbType.String))
         End With
-
-
 
         Dim dr = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
@@ -567,7 +564,6 @@ Public Class frmStockIssue
         Catch ex As Exception
             Throw ex
         End Try
-
     End Sub
     Private Sub fillHeaderFromListView(ByVal intIssueId As Integer)
         Dim parameters = New List(Of SqlParameter)()
@@ -731,6 +727,7 @@ ErrHandler:
             TransDt.Value = DateTime.Now
 
             cmbfDepartment.SelectedIndex = 0
+            txtFrKarigar.Clear()
             cmbtKarigar.SelectedIndex = 0
             '' For Header Field End
 

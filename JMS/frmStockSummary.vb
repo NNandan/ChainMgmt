@@ -44,7 +44,7 @@ Public Class frmStockSummary
             Me.GetSampleBagNotUpdated()
             Me.GetLotFailBagNotUpdated()
 
-            'Me.TotalBagNotUpdated()
+            Me.TotalBagNotUpdated()
 
             ''Bags Not Used
             Me.GetBhukaBagNotUsed()
@@ -53,7 +53,7 @@ Public Class frmStockSummary
             Me.GetLotFailBagNotUsed()
             '' Bags Ended
 
-            'Me.TotalBagNotUsed()
+            Me.TotalBagNotUsed()
 
             Me.GetVoucherMetalUnused()
 
@@ -83,6 +83,21 @@ Public Class frmStockSummary
 
             txtOpeningStockFw.Text = Format(OpGrossFw, "0.00")
             ''Setting OpStock Value End
+            ''Daily Stock By Category Total Functionality
+            Me.ClearTotalByCategory()
+            Me.TotalStockByCategory()
+            lblTotalGrossByCategory.Text = "0.00"
+            lblTotalFWtByCategory.Text = "0.00"
+            lblTotalPrByCategory.Text = "0.00"
+
+            lblTotalGrossByCategory.Text = Format(((txtVMUGrossWt.Text) + (txtLASGWt.Text) + (txtWIPLGWt.Text) + (txtWIPMGWt.Text) + (txtWIPTGWt.Text) + (txtFLGWt.Text) + (txtSBNCGWt.Text) + (txtVBNCGWt.Text) + (txtSMBNCGWt.Text) + (txtSBNRGWt.Text) + (txtVBNRGWt.Text) + (txtSMBNRGWt.Text) + (txtLFBNRGWt.Text) + (txtSBNUGWt.Text) + (txtVBNUGWt.Text) + (txtSMBNUGWt.Text) + (txtLFBNUGWt.Text) + (txtSBNUsGWt.Text) + (txtVBNUsGWt.Text) + (txtSMBNUsGWt.Text) + (txtLFBNUsGWt.Text) + (txtXSBNUsGWt.Text) + (txtSIHGWt.Text)), "0.00")
+            lblTotalFWtByCategory.Text = Format(((txtVMUFWt.Text) + (txtLASFWt.Text) + (txtWIPLFWt.Text) + (txtWIPMFWt.Text) + (txtWIPTFWt.Text) + (txtFLFWt.Text) + (txtSBNCFWt.Text) + (txtVBNCFWt.Text) + (txtSMBNCFWt.Text) + (txtSBNRFWt.Text) + (txtVBNRFWt.Text) + (txtSMBNRFWt.Text) + (txtLFBNRFWt.Text) + (txtSBNUFWt.Text) + (txtVBNUFWt.Text) + (txtSMBNUFWt.Text) + (txtLFBNUFWt.Text) + (txtSBNUsFWt.Text) + (txtVBNUsFWt.Text) + (txtSMBNUsFWt.Text) + (txtLFBNUsFWt.Text) + (txtXSBNUsFWt.Text) + (txtSIHFWt.Text)), "0.00")
+            lblTotalPrByCategory.Text = Format((CDbl(lblTotalFWtByCategory.Text) / CDbl(lblTotalGrossByCategory.Text) * 100), "0.00")
+            If lblTotalPrByCategory.Text = "NaN" Then
+                lblTotalPrByCategory.Text = "0.00"
+            End If
+            Me.TotalDiff()
+
         Catch ex As Exception
 
         Finally
@@ -90,6 +105,369 @@ Public Class frmStockSummary
         End Try
 
     End Sub
+    Private Sub TotalDiff()
+        lblTotalDiffCatgr.Text = Format((CDbl(txtVMUDiff.Text) + CDbl(txtLASDiff.Text) + CDbl(txtWIPLDiff.Text) + CDbl(txtWIPMDiff.Text) + CDbl(txtWIPTDiff.Text) + CDbl(txtFLDiff.Text) + CDbl(txtSBNCDiff.Text) + CDbl(txtVBNCDiff.Text) + CDbl(txtSMBNCDiff.Text) + CDbl(txtSBNRDiff.Text) + CDbl(txtVBNRDiff.Text) + CDbl(txtSMBNRDiff.Text) + CDbl(txtLFBNRDiff.Text) + CDbl(txtSBNUDiff.Text) + CDbl(txtVBNUDiff.Text) + CDbl(txtSMBNUDiff.Text) + CDbl(txtLFBNUDiff.Text) + CDbl(txtSBNUsDiff.Text) + CDbl(txtVBNUsDiff.Text) + CDbl(txtSMBNUsDiff.Text) + CDbl(txtLFBNUsDiff.Text) + CDbl(txtXSBNUsDiff.Text) + CDbl(txtSIHDiff.Text)), "0.00")
+    End Sub
+    Private Sub ClearTotalByCategory()
+        txtVMUGrossWt.Text = "0.00"
+        txtVMUPr.Text = "0.00"
+        txtVMUFWt.Text = "0.00"
+
+        txtVMUDiff.Text = "0.00"
+
+        txtLASGWt.Text = "0.00"
+        txtLASPr.Text = "0.00"
+        txtLASFWt.Text = "0.00"
+
+        txtLASDiff.Text = "0.00"
+
+        txtWIPLGWt.Text = "0.00"
+        txtWIPLPr.Text = "0.00"
+        txtWIPLFWt.Text = "0.00"
+
+        txtWIPLDiff.Text = "0.00"
+
+        txtWIPMGWt.Text = "0.00"
+        txtWIPMPr.Text = "0.00"
+        txtWIPMFWt.Text = "0.00"
+
+        txtWIPMDiff.Text = "0.00"
+
+        txtWIPTGWt.Text = "0.00"
+        txtWIPTPr.Text = "0.00"
+        txtWIPTFWt.Text = "0.00"
+
+        txtWIPTDiff.Text = "0.00"
+
+        txtFLGWt.Text = "0.00"
+        txtFLPr.Text = "0.00"
+        txtFLFWt.Text = "0.00"
+
+        txtFLDiff.Text = "0.00"
+
+        txtSBNCGWt.Text = "0.00"
+        txtSBNCPr.Text = "0.00"
+        txtSBNCFWt.Text = "0.00"
+
+        txtSBNCDiff.Text = "0.00"
+
+        txtVBNCGWt.Text = "0.00"
+        txtVBNCPr.Text = "0.00"
+        txtVBNCFWt.Text = "0.00"
+
+        txtVBNCDiff.Text = "0.00"
+
+        txtSMBNCGWt.Text = "0.00"
+        txtSMBNCPr.Text = "0.00"
+        txtSMBNCFWt.Text = "0.00"
+
+        txtSMBNCDiff.Text = "0.00"
+
+        txtSBNRGWt.Text = "0.00"
+        txtSBNRPr.Text = "0.00"
+        txtSBNRFWt.Text = "0.00"
+
+        txtSBNRDiff.Text = "0.00"
+
+        txtVBNRGWt.Text = "0.00"
+        txtVBNRPr.Text = "0.00"
+        txtVBNRFWt.Text = "0.00"
+
+        txtVBNRDiff.Text = "0.00"
+
+        txtSMBNRGWt.Text = "0.00"
+        txtSMBNRPr.Text = "0.00"
+        txtSMBNRFWt.Text = "0.00"
+
+        txtSMBNRDiff.Text = "0.00"
+
+        txtLFBNRGWt.Text = "0.00"
+        txtLFBNRPr.Text = "0.00"
+        txtLFBNRFWt.Text = "0.00"
+
+        txtLFBNRDiff.Text = "0.00"
+
+        txtSBNUGWt.Text = "0.00"
+        txtSBNUPr.Text = "0.00"
+        txtSBNUFWt.Text = "0.00"
+
+        txtSBNUsDiff.Text = "0.00"
+
+        txtVBNUsGWt.Text = "0.00"
+        txtVBNUsPr.Text = "0.00"
+        txtVBNUsFWt.Text = "0.00"
+
+        txtVBNUsDiff.Text = "0.00"
+
+        txtSMBNUsGWt.Text = "0.00"
+        txtSMBNUsPr.Text = "0.00"
+        txtSMBNUsFWt.Text = "0.00"
+
+        txtSMBNUsDiff.Text = "0.00"
+
+        txtLFBNUsGWt.Text = "0.00"
+        txtLFBNUsPr.Text = "0.00"
+        txtLFBNUsFWt.Text = "0.00"
+
+        txtLFBNUsDiff.Text = "0.00"
+
+        txtXSBNUsGWt.Text = "0.00"
+        txtXSBNUsPr.Text = "0.00"
+        txtXSBNUsFWt.Text = "0.00"
+
+        txtXSBNUsDiff.Text = "0.00"
+
+        txtSIHGWt.Text = "0.00"
+        txtSIHPr.Text = "0.00"
+        txtSIHFWt.Text = "0.00"
+
+        txtSIHDiff.Text = "0.00"
+    End Sub
+    Private Sub TotalStockByCategory()
+        Dim dtData As New DataTable
+        Dim StockCategoryId1 As Integer = 1
+        If StockCategoryId1 = 1 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId1)
+            If dtData.Rows.Count > 0 Then
+                txtVMUGrossWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtVMUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtVMUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtVMUDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId2 As Integer = 2
+        If StockCategoryId2 = 2 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId2)
+            If dtData.Rows.Count > 0 Then
+                txtLASGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtLASPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtLASFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtLASDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId3 As Integer = 3
+        If StockCategoryId3 = 3 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId3)
+            If dtData.Rows.Count > 0 Then
+                txtWIPLGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtWIPLPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtWIPLFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtWIPLDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId4 As Integer = 4
+        If StockCategoryId4 = 4 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId4)
+            If dtData.Rows.Count > 0 Then
+                txtWIPMGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtWIPMPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtWIPMFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtWIPMDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId5 As Integer = 5
+        If StockCategoryId5 = 5 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId5)
+            If dtData.Rows.Count > 0 Then
+                txtWIPTGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtWIPTPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtWIPTFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtWIPTDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId6 As Integer = 6
+        If StockCategoryId6 = 6 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId6)
+            If dtData.Rows.Count > 0 Then
+                txtFLGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtFLPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtFLFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtFLDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId7 As Integer = 7
+        If StockCategoryId7 = 7 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId7)
+            If dtData.Rows.Count > 0 Then
+                txtSBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSBNCDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId8 As Integer = 8
+        If StockCategoryId8 = 8 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId8)
+            If dtData.Rows.Count > 0 Then
+                txtVBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtVBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtVBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtVBNCDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId9 As Integer = 9
+        If StockCategoryId9 = 9 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId9)
+            If dtData.Rows.Count > 0 Then
+                txtSMBNCGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSMBNCPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSMBNCFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSMBNCDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId10 As Integer = 10
+        If StockCategoryId10 = 10 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId10)
+            If dtData.Rows.Count > 0 Then
+                txtSBNRGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSBNRPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSBNRFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSBNRDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId11 As Integer = 11
+        If StockCategoryId11 = 11 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId11)
+            If dtData.Rows.Count > 0 Then
+                txtVBNRGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtVBNRPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtVBNRFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtVBNRDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId12 As Integer = 12
+        If StockCategoryId12 = 12 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId12)
+            If dtData.Rows.Count > 0 Then
+                txtSMBNRGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSMBNRPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSMBNRFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSMBNRDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId13 As Integer = 13
+        If StockCategoryId13 = 13 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId13)
+            If dtData.Rows.Count > 0 Then
+                txtLFBNRGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtLFBNRPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtLFBNRFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtLFBNRDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId14 As Integer = 14
+        If StockCategoryId14 = 14 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId14)
+            If dtData.Rows.Count > 0 Then
+                txtSBNUGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSBNUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSBNUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSBNUDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId15 As Integer = 15
+        If StockCategoryId15 = 15 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId15)
+            If dtData.Rows.Count > 0 Then
+                txtVBNUGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtVBNUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtVBNUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtVBNUDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId16 As Integer = 16
+        If StockCategoryId16 = 16 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId16)
+            If dtData.Rows.Count > 0 Then
+                txtSMBNUGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSMBNUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSMBNUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSMBNUDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId17 As Integer = 17
+        If StockCategoryId17 = 17 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId17)
+            If dtData.Rows.Count > 0 Then
+                txtLFBNUGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtLFBNUPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtLFBNUFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtLFBNUDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId18 As Integer = 18
+        If StockCategoryId18 = 18 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId18)
+            If dtData.Rows.Count > 0 Then
+                txtSBNUsGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSBNUsPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSBNUsFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSBNUsDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId19 As Integer = 19
+        If StockCategoryId19 = 19 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId19)
+            If dtData.Rows.Count > 0 Then
+                txtVBNUsGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtVBNUsPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtVBNUsFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtVBNUsDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId20 As Integer = 20
+        If StockCategoryId20 = 20 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId20)
+            If dtData.Rows.Count > 0 Then
+                txtSMBNUsGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSMBNUsPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSMBNUsFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSMBNUsDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId21 As Integer = 21
+        If StockCategoryId21 = 21 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId21)
+            If dtData.Rows.Count > 0 Then
+                txtLFBNUsGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtLFBNUsPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtLFBNUsFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtLFBNUsDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId22 As Integer = 22
+        If StockCategoryId22 = 22 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId22)
+            If dtData.Rows.Count > 0 Then
+                txtXSBNUsGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtXSBNUsPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtXSBNUsFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtXSBNUsDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+            End If
+        End If
+        Dim StockCategoryId23 As Integer = 23
+        If StockCategoryId23 = 23 Then
+            dtData = TotalCalculateStockByCategoryId(StockCategoryId23)
+            If dtData.Rows.Count > 0 Then
+                txtSIHGWt.Text = dtData.Rows(0).Item("TotalActualMetalWt").ToString()
+                txtSIHPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
+                txtSIHFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
+                txtSIHDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
+
+            End If
+        End If
+    End Sub
+    Private Function TotalCalculateStockByCategoryId(ByVal stockCategoryId As Integer) As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Dim parameters = New List(Of SqlParameter)()
+        parameters.Clear()
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FetchTotalStockByScale", DbType.String))
+            .Add(dbManager.CreateParameter("@StockCategoryId", stockCategoryId, DbType.Int16))
+        End With
+        dtData = dbManager.GetDataTable("SP_DailyStock_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Return dtData
+    End Function
     Private Sub ExpandCLose()
         RadCollapsiblePanel1.IsExpanded = False
         RadCollapsiblePanel2.IsExpanded = False
@@ -1373,8 +1751,9 @@ Public Class frmStockSummary
     GetValue(txtTotalBncWt.Text.Trim) +
     GetValue(txtTotalBnrWt.Text.Trim) +
     GetValue(txtTotalBnuWt.Text.Trim) +
-    GetValue(txtTotalBnusWt.Text.Trim) +
-    GetValue(txtTotalLossWt.Text.Trim)
+    GetValue(txtTotalBnusWt.Text.Trim)
+        '    +
+        'GetValue(txtTotalLossWt.Text.Trim)
 
         dTotalFw =
     GetValue(VoucherMetalFw.Text.Trim) +
@@ -1383,14 +1762,15 @@ Public Class frmStockSummary
     GetValue(txtTotalBncFw.Text.Trim) +
     GetValue(txtTotalBnrFw.Text.Trim) +
     GetValue(txtTotalBnuFw.Text.Trim) +
-    GetValue(txtTotalBnusFw.Text.Trim) +
-    GetValue(txtTotalLossFw.Text.Trim)
+    GetValue(txtTotalBnusFw.Text.Trim)
+        '    +
+        'GetValue(txtTotalLossFw.Text.Trim)
 
-        Label64.Text = Format(dTotalWt, "0.00")
+        lblStockInHandGWt.Text = Format(dTotalWt, "0.00")
 
-        Label63.Text = Format((Val(dTotalFw) / Val(dTotalWt)) * 100, "0.00")
+        lblStockInHandPr.Text = Format((Val(dTotalFw) / Val(dTotalWt)) * 100, "0.00")
 
-        Label62.Text = Format(dTotalFw, "0.00")
+        lblStockInHandFWt.Text = Format(dTotalFw, "0.00")
     End Sub
     Private Function GetValue(ByVal text As String) As Double
         If String.IsNullOrEmpty(text) Then Return 0
@@ -1711,6 +2091,7 @@ Public Class frmStockSummary
             txtTotalBnuPr.Text = "0.00"
         End If
     End Sub
+
     Private Sub TotalBagNotUsed()
         txtTotalBnusWt.Text = Format(Val(BhukaBagUWt.Text.Trim) + Val(VacuumBagUWt.Text.Trim) + Val(SampleBagUWt.Text.Trim) + Val(LotFailBagUWt.Text.Trim), "0.00")
         txtTotalBnusFw.Text = Format(Val(BhukaBagUFw.Text.Trim) + Val(VacuumBagUFw.Text.Trim) + Val(SampleBagUFw.Text.Trim) + Val(LotFailBagUFw.Text.Trim), "0.00")
@@ -1732,7 +2113,60 @@ Public Class frmStockSummary
         End If
 
     End Sub
-    Private Sub btnAccountClosing_Click_1(sender As Object, e As EventArgs) Handles btnAccountClosing.Click
+    Private Sub BtnCDailyStock_Click(sender As Object, e As EventArgs) Handles BtnCDailyStock.Click
+        Me.SaveData()
+        Me.Close()
+        Dim ObjScrapBagNotUpdate As New frmCStockLogin
+        ObjScrapBagNotUpdate.ShowDialog()
+    End Sub
+    Private Sub SaveData()
+        Try
+            Cursor.Current = Cursors.WaitCursor
+
+            Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
+
+            With parameters
+                '.Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
+
+                .Add(dbManager.CreateParameter("@DVoucherMetalUnUsed", VoucherMetalWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DLotAdditionStock", LotAddStockWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DWIPLots", WipLGrossWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DWIPMelting", WipMGrossWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DWIPLotsTransfered", WipTGrossWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DFinishedLots", WipFGrossWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DScrapBagNotCreated", BhukaBagNCWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DVacuumBagNotCreated", VacuumBagNCWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DSampleBagNotCreated", SampleBagNCWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DScrapBagNotReceived", BhukaBagNrWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DExtraScrapBagNotReceived", VacuumBagWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DVacuumBagNotReceived", VacuumBagWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DSampleBagNotReceived", SampleBagWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DLotFailBagNotReceived", LotFailBagWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DScrapBagNotUpdated", BhukaBagNuWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DVacuumBagNotUpdated", VacuumBagNuWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DSampleBagNotUpdated", SampleBagNuWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DLotFailBagNotUpdated", LotFailBagNuWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DScrapBagNotUsed", BhukaBagUWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DVacuumBagNotUsed", VacuumBagUWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DSampleBagNotUsed", SampleBagUWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DLotFailBagNotUsed", LotFailBagUWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@DStockInHand", lblStockInHandGWt.Text.Trim, DbType.String))
+            End With
+
+            dbManager.Insert("SP_DailyStock_Save", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            Cursor.Current = Cursors.Default
+        End Try
+    End Sub
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles BtnPrint.Click
+
+    End Sub
+
+    Private Sub btnVBagNotUpdated_Click(sender As Object, e As EventArgs) Handles btnVBagNotUpdated.Click
 
     End Sub
 End Class

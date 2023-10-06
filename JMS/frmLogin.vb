@@ -15,9 +15,9 @@ Public Class frmLogin
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetLogin", DbType.String))
                 .Add(dbManager.CreateParameter("@Uname", UsernameTextBox.Text.Trim(), DbType.String))
                 .Add(dbManager.CreateParameter("@UPass", PasswordTextBox.Text.Trim(), DbType.String))
@@ -27,7 +27,7 @@ Public Class frmLogin
 
             If dtData.Rows.Count > 0 Then
                 Me.Hide()
-
+                Me.CheckPeriodNo()
                 Dim ObjMain As New frmMain()
                 ObjMain.UserName.Text = dtData.Rows(0).Item("UserName").ToString()
                 UserName = dtData.Rows(0).Item("UserName").ToString()
@@ -35,6 +35,7 @@ Public Class frmLogin
                 KarigarName = dtData.Rows(0).Item("LabourName").ToString()
                 DeptId = dtData.Rows(0).Item("DeptId").ToString()
                 UserType = dtData.Rows(0).Item("UserType").ToString()
+                SWId = dtData.Rows(0).Item("SWId").ToString()
                 ObjMain.Show()
 
                 'Getting UserRights In DataTable
@@ -56,6 +57,23 @@ Public Class frmLogin
             PasswordTextBox.Focus()
         End If
     End Sub
+    Private Sub CheckPeriodNo()
+        Try
+
+            Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
+
+            With parameters
+                .Add(dbManager.CreateParameter("@ActionType", "CheckPeriodNo", DbType.String))
+            End With
+
+            Dim strName As Object = dbManager.GetScalarValue("SP_PeriodDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
     Private Sub PasswordTextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles PasswordTextBox.KeyDown
         If (e.KeyCode = Keys.Enter) Then
             btnLogin.Focus()
@@ -76,7 +94,7 @@ Public Class frmLogin
         Try
             End
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub Clear_Form()
@@ -87,7 +105,7 @@ Public Class frmLogin
             UsernameTextBox.Focus()
             UsernameTextBox.Select()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Function Validate_Fields() As Boolean
@@ -104,7 +122,7 @@ Public Class frmLogin
             Return True
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
     Private Function FetchAllRecords(ByVal iUserId As Integer) As DataTable

@@ -23,7 +23,7 @@ Module Functions
     Public UserType As String               'Used for USERTYPE while Login (SUPER, ADMIN, USER)
     Public KarigarName As String            'Used for Labour Name
     Public DeptId As Int16                  'Used for DeptId
-
+    Public SWId As Int16                    'Used for Sofware Id (Chain, Fancy, Casting)
     '---VARIABLE---
     Public dtUserRights As DataTable          'USED FOR USER RIGHTS THROUGHOUT THE APPLICATION 
 
@@ -183,6 +183,7 @@ Module Functions
     End Function
 
 #End Region
+
     Public Function ReplaceDBNull(ByVal pobjDBField As Object, Optional ByVal pstrReturnValue As String = "") As String
         If IsDBNull(pobjDBField) OrElse Trim(pobjDBField.ToString) = "" Then
             Return pstrReturnValue
@@ -326,7 +327,6 @@ Module Functions
             'AddHandler objForm.Load, AddressOf frmMain.Childfrm_Load
         End Try
     End Sub
-
     <Extension()>
     Sub PrintToPrinter(ByVal report As LocalReport)
         Dim pageSettings As PageSettings = New PageSettings()
@@ -335,7 +335,6 @@ Module Functions
 
         Print(report, pageSettings)
     End Sub
-
     <Extension()>
     Sub Print(ByVal report As LocalReport, ByVal pageSettings As PageSettings)
 

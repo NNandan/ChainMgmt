@@ -88,9 +88,11 @@ Public Class frmNewLotNo
         Dim connection As SqlConnection = Nothing
         Dim parameters = New List(Of SqlParameter)()
         parameters.Clear()
+
         With parameters
             .Add(dbManager.CreateParameter("@ActionType", "FetchTreeNo", DbType.String))
         End With
+
         Dim dr = dbManager.GetDataReader("SP_TreeMaking_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
         dt.Load(dr)
@@ -841,11 +843,13 @@ Public Class frmNewLotNo
             Dim dt As DataTable = New DataTable()
             If cmbOperation.SelectedIndex > 0 Then
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
+
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "FetchOpType", DbType.String))
                     .Add(dbManager.CreateParameter("@OId", cmbOperation.SelectedValue, DbType.Int16))
                 End With
+
                 Dim dr As SqlDataReader = dbManager.GetDataReader("SP_fOperationMaster_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
                 If dr.HasRows = True Then
@@ -884,10 +888,12 @@ ErrHandler:
             Dim dt As DataTable = New DataTable()
             If cmbOperation.SelectedIndex > 0 Then
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
+
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "CheckTreeNoExist", DbType.String))
                 End With
+
                 Dim dr As SqlDataReader = dbManager.GetDataReader("SP_TreeMaking_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
                 If dr.HasRows = True Then
@@ -922,11 +928,13 @@ ErrHandler:
     Private Sub fillHeaderFromDataView(ByVal iLotId As Integer)
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
+
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
                 .Add(dbManager.CreateParameter("@NId", CInt(iLotId), DbType.Int16))
             End With
+
             Dim dr As SqlDataReader = dbManager.GetDataReader("SP_NewLotNo_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
             If dr.HasRows = False Then
@@ -959,6 +967,7 @@ ErrHandler:
                 cmbStamp.SelectedIndex = dr.Item("stampId").ToString
                 txtOrderNo.Text = dr.Item("OrderNo").ToString
                 txtOpType.Tag = dr.Item("OperationTypeId").ToString
+
                 If txtOpType.Tag = "7" Or txtOpType.Tag = "9" Then
                     Me.ClearTreeDetails()
                     Me.TreeDetailsVisibleTrue()
@@ -968,6 +977,7 @@ ErrHandler:
                     Me.ClearTreeDetails()
                     Me.TreeDetailsVisibleFalse()
                 End If
+
             End If
             dr.Close()
             Objcn.Close()
@@ -980,11 +990,13 @@ ErrHandler:
     Private Sub FetchHeaderCasting(ByVal TransId As Integer)
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
+
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderCasting", DbType.String))
                 .Add(dbManager.CreateParameter("@TId", CInt(TransId), DbType.Int16))
             End With
+
             Dim dr As SqlDataReader = dbManager.GetDataReader("SP_TreeMaking_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
             If dr.HasRows = False Then
@@ -1011,7 +1023,6 @@ ErrHandler:
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub frmNewLotNo_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit
@@ -1021,6 +1032,7 @@ ErrHandler:
             ElseIf e.KeyCode = Keys.OemQuotes Or e.KeyCode = Keys.OemPipe Then
                 e.SuppressKeyPress = True
             End If
+
             If (e.Alt AndAlso (e.KeyCode = Keys.S)) Then
                 btnSave().PerformClick()
             End If
@@ -1062,12 +1074,14 @@ ErrHandler:
         Try
             Dim dt As DataTable = New DataTable()
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
+
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchConvFactor", DbType.String))
                 .Add(dbManager.CreateParameter("@MeltingId", cmbMelting.SelectedValue, DbType.String))
                 .Add(dbManager.CreateParameter("@MaterialId", lblTreeMaterial.Tag, DbType.String))
             End With
+
             Dim dr As SqlDataReader = dbManager.GetDataReader("SP_TreeMaking_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
             If dr.HasRows = True Then
@@ -1078,7 +1092,6 @@ ErrHandler:
 
         End Try
     End Sub
-
     Private Sub txtTreeMaterial_TextChanged(sender As Object, e As EventArgs)
         Try
             If cmbTreeNo.SelectedIndex > 0 And txtRecycleMetalPer.Text > 0 Then
@@ -1087,7 +1100,6 @@ ErrHandler:
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub cmbTreeNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbTreeNo.SelectedIndexChanged
         Try
             If cmbTreeNo.SelectedIndex > 0 And cmbMelting.SelectedIndex > 0 Then
@@ -1096,9 +1108,9 @@ ErrHandler:
                 If cmbOperation.SelectedIndex > 0 Then
 
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@ActionType", "FetchMaterialTreeWeight", DbType.String))
                         .Add(dbManager.CreateParameter("@TreeNo", cmbTreeNo.Text.Trim, DbType.String))
                     End With
@@ -1127,20 +1139,6 @@ ErrHandler:
         Catch ex As Exception
         End Try
     End Sub
-
-    'Private Sub cmbRecycleMetalPer_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs)
-    '    Try
-    '        txtConvFactor.Text = ""
-    '        txtTotalGoldWt.Text = ""
-    '        If cmbTreeNo.SelectedIndex > 0 And txtRecycleMetalPer.Text > 0 And txtTreeWeight.Text > 0 Then
-    '            Me.FillConvFactor()
-    '        Else
-
-    '        End If
-    '    Catch
-    '    End Try
-    'End Sub
-
     Private Sub txtConvFactor_TextChanged(sender As Object, e As EventArgs) Handles txtConvFactor.TextChanged
         Try
             If cmbMelting.SelectedIndex > 0 Then
@@ -1152,7 +1150,6 @@ ErrHandler:
 
         End Try
     End Sub
-
     Private Sub txtRecycleMetalPer_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRecycleMetalPer.KeyPress
         Try
             If Asc(e.KeyChar) <> 8 Then
@@ -1167,7 +1164,6 @@ ErrHandler:
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub cmbStamp_GotFocus(sender As Object, e As EventArgs) Handles cmbStamp.GotFocus
         cmbStamp.ShowDropDown()
     End Sub

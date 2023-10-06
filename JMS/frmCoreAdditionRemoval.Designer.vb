@@ -518,7 +518,7 @@ Partial Class frmCoreAdditionRemoval
         '
         Me.lblTotalIssue.AutoSize = True
         Me.lblTotalIssue.Font = New System.Drawing.Font("Times New Roman", 9.75!)
-        Me.lblTotalIssue.Location = New System.Drawing.Point(23, 14)
+        Me.lblTotalIssue.Location = New System.Drawing.Point(25, 14)
         Me.lblTotalIssue.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblTotalIssue.Name = "lblTotalIssue"
         Me.lblTotalIssue.Size = New System.Drawing.Size(125, 15)

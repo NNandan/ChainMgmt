@@ -250,6 +250,12 @@
     <Compile Include="frmCategoryMaster.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCDailyStockDetails.designer.vb">
+      <DependentUpon>frmCDailyStockDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCDailyStockDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCompanyDetails.Designer.vb">
       <DependentUpon>frmCompanyDetails.vb</DependentUpon>
     </Compile>
@@ -262,22 +268,10 @@
     <Compile Include="frmCoreAdditionIssue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCoreAdditionIssueNew.Designer.vb">
-      <DependentUpon>frmCoreAdditionIssueNew.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCoreAdditionIssueNew.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCoreAdditionReceive.designer.vb">
+    <Compile Include="frmCoreAdditionReceive.Designer.vb">
       <DependentUpon>frmCoreAdditionReceive.vb</DependentUpon>
     </Compile>
     <Compile Include="frmCoreAdditionReceive.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCoreAdditionReceiveNew.Designer.vb">
-      <DependentUpon>frmCoreAdditionReceiveNew.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCoreAdditionReceiveNew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCoreAdditionRemoval.Designer.vb">
@@ -286,166 +280,178 @@
     <Compile Include="frmCoreAdditionRemoval.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCStockLogin.designer.vb">
+      <DependentUpon>frmCStockLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCStockLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFTruncateTable.designer.vb">
+      <DependentUpon>frmFTruncateTable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFTruncateTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEditBags.Designer.vb">
       <DependentUpon>frmEditBags.vb</DependentUpon>
     </Compile>
     <Compile Include="frmEditBags.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaAccountClosing.designer.vb">
-      <DependentUpon>frmFaAccountClosing.vb</DependentUpon>
+    <Compile Include="frmFAccountClosing.designer.vb">
+      <DependentUpon>frmFAccountClosing.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaAccountClosing.vb">
+    <Compile Include="frmFAccountClosing.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaAccountOpening.designer.vb">
-      <DependentUpon>frmFaAccountOpening.vb</DependentUpon>
+    <Compile Include="frmFAccountOpening.designer.vb">
+      <DependentUpon>frmFAccountOpening.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaAccountOpening.vb">
+    <Compile Include="frmFAccountOpening.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaAllLotsRpt.designer.vb">
-      <DependentUpon>frmFaAllLotsRpt.vb</DependentUpon>
+    <Compile Include="frmFAllLotsRpt.designer.vb">
+      <DependentUpon>frmFAllLotsRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaAllLotsRpt.vb">
+    <Compile Include="frmFAllLotsRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaBalancePendingBags.designer.vb">
-      <DependentUpon>frmFaBalancePendingBags.vb</DependentUpon>
+    <Compile Include="frmFBalancePendingBags.designer.vb">
+      <DependentUpon>frmFBalancePendingBags.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaBalancePendingBags.vb">
+    <Compile Include="frmFBalancePendingBags.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaBhukaBag.designer.vb">
-      <DependentUpon>frmFaBhukaBag.vb</DependentUpon>
+    <Compile Include="frmFBhukaBag.designer.vb">
+      <DependentUpon>frmFBhukaBag.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaBhukaBag.vb">
+    <Compile Include="frmFBhukaBag.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaDailyStockDetails.designer.vb">
-      <DependentUpon>frmFaDailyStockDetails.vb</DependentUpon>
+    <Compile Include="frmFDailyStockDetails.designer.vb">
+      <DependentUpon>frmFDailyStockDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaDailyStockDetails.vb">
+    <Compile Include="frmFDailyStockDetails.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaDeptIssue.designer.vb">
-      <DependentUpon>frmFaDeptIssue.vb</DependentUpon>
+    <Compile Include="frmFDeptIssue.designer.vb">
+      <DependentUpon>frmFDeptIssue.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaDeptIssue.vb">
+    <Compile Include="frmFDeptIssue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaDeptReceive.designer.vb">
-      <DependentUpon>frmFaDeptReceive.vb</DependentUpon>
+    <Compile Include="frmFDeptReceive.designer.vb">
+      <DependentUpon>frmFDeptReceive.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaDeptReceive.vb">
+    <Compile Include="frmFDeptReceive.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaDetails.designer.vb">
-      <DependentUpon>frmFaDetails.vb</DependentUpon>
+    <Compile Include="frmFDetails.designer.vb">
+      <DependentUpon>frmFDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaDetails.vb">
+    <Compile Include="frmFDetails.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaFinalizeLot.designer.vb">
-      <DependentUpon>frmFaFinalizeLot.vb</DependentUpon>
+    <Compile Include="frmFFinalizeLot.designer.vb">
+      <DependentUpon>frmFFinalizeLot.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaFinalizeLot.vb">
+    <Compile Include="frmFFinalizeLot.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaInterDeptIssue.designer.vb">
-      <DependentUpon>frmFaInterDeptIssue.vb</DependentUpon>
+    <Compile Include="frmFInterDeptIssue.designer.vb">
+      <DependentUpon>frmFInterDeptIssue.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaInterDeptIssue.vb">
+    <Compile Include="frmFInterDeptIssue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaInterDeptIssueRpt.designer.vb">
-      <DependentUpon>frmFaInterDeptIssueRpt.vb</DependentUpon>
+    <Compile Include="frmFInterDeptIssueRpt.designer.vb">
+      <DependentUpon>frmFInterDeptIssueRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaInterDeptIssueRpt.vb">
+    <Compile Include="frmFInterDeptIssueRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaInterDeptReceipt.designer.vb">
-      <DependentUpon>frmFaInterDeptReceipt.vb</DependentUpon>
+    <Compile Include="frmFInterDeptReceipt.designer.vb">
+      <DependentUpon>frmFInterDeptReceipt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaInterDeptReceipt.vb">
+    <Compile Include="frmFInterDeptReceipt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaIssueReceive.designer.vb">
-      <DependentUpon>frmFaIssueReceive.vb</DependentUpon>
+    <Compile Include="frmFIssueReceive.designer.vb">
+      <DependentUpon>frmFIssueReceive.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaIssueReceive.vb">
+    <Compile Include="frmFIssueReceive.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaIStockAddition.designer.vb">
-      <DependentUpon>frmFaIStockAddition.vb</DependentUpon>
+    <Compile Include="frmFIStockAddition.designer.vb">
+      <DependentUpon>frmFIStockAddition.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaIStockAddition.vb">
+    <Compile Include="frmFIStockAddition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaIStockRemoval.designer.vb">
-      <DependentUpon>frmFaIStockRemoval.vb</DependentUpon>
+    <Compile Include="frmFIStockRemoval.designer.vb">
+      <DependentUpon>frmFIStockRemoval.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaIStockRemoval.vb">
+    <Compile Include="frmFIStockRemoval.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaKarigarwiseLossRpt.designer.vb">
-      <DependentUpon>frmFaKarigarwiseLossRpt.vb</DependentUpon>
+    <Compile Include="frmFKarigarwiseLossRpt.designer.vb">
+      <DependentUpon>frmFKarigarwiseLossRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaKarigarwiseLossRpt.vb">
+    <Compile Include="frmFKarigarwiseLossRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaLabIssue.designer.vb">
-      <DependentUpon>frmFaLabIssue.vb</DependentUpon>
+    <Compile Include="frmFLabIssue.designer.vb">
+      <DependentUpon>frmFLabIssue.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaLabIssue.vb">
+    <Compile Include="frmFLabIssue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaLotHistoryRpt.designer.vb">
-      <DependentUpon>frmFaLotHistoryRpt.vb</DependentUpon>
+    <Compile Include="frmFLotHistoryRpt.designer.vb">
+      <DependentUpon>frmFLotHistoryRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaLotHistoryRpt.vb">
+    <Compile Include="frmFLotHistoryRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaLotNowiseLossRpt.designer.vb">
-      <DependentUpon>frmFaLotNowiseLossRpt.vb</DependentUpon>
+    <Compile Include="frmFLotNowiseLossRpt.designer.vb">
+      <DependentUpon>frmFLotNowiseLossRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaLotNowiseLossRpt.vb">
+    <Compile Include="frmFLotNowiseLossRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMelting.designer.vb">
-      <DependentUpon>frmFaMelting.vb</DependentUpon>
+    <Compile Include="frmFMelting.designer.vb">
+      <DependentUpon>frmFMelting.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMelting.vb">
+    <Compile Include="frmFMelting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMeltingAlloyReport.designer.vb">
-      <DependentUpon>frmFaMeltingAlloyReport.vb</DependentUpon>
+    <Compile Include="frmFMeltingAlloyReport.designer.vb">
+      <DependentUpon>frmFMeltingAlloyReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMeltingAlloyReport.vb">
+    <Compile Include="frmFMeltingAlloyReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMeltingRpt.Designer.vb">
-      <DependentUpon>frmFaMeltingRpt.vb</DependentUpon>
+    <Compile Include="frmFMeltingRpt.Designer.vb">
+      <DependentUpon>frmFMeltingRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMeltingRpt.vb">
+    <Compile Include="frmFMeltingRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMeltingwiseLossRpt.designer.vb">
-      <DependentUpon>frmFaMeltingwiseLossRpt.vb</DependentUpon>
+    <Compile Include="frmFMeltingwiseLossRpt.designer.vb">
+      <DependentUpon>frmFMeltingwiseLossRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMeltingwiseLossRpt.vb">
+    <Compile Include="frmFMeltingwiseLossRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMetalUsedInBag.designer.vb">
-      <DependentUpon>frmFaMetalUsedInBag.vb</DependentUpon>
+    <Compile Include="frmFMetalUsedInBag.designer.vb">
+      <DependentUpon>frmFMetalUsedInBag.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMetalUsedInBag.vb">
+    <Compile Include="frmFMetalUsedInBag.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMetalUsedReport.Designer.vb">
-      <DependentUpon>frmFaMetalUsedReport.vb</DependentUpon>
+    <Compile Include="frmFMetalUsedReport.Designer.vb">
+      <DependentUpon>frmFMetalUsedReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMetalUsedReport.vb">
+    <Compile Include="frmFMetalUsedReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFamilyMaster.designer.vb">
@@ -454,166 +460,166 @@
     <Compile Include="frmFamilyMaster.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMStockAddition.designer.vb">
-      <DependentUpon>frmFaMStockAddition.vb</DependentUpon>
+    <Compile Include="frmFMStockAddition.designer.vb">
+      <DependentUpon>frmFMStockAddition.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMStockAddition.vb">
+    <Compile Include="frmFMStockAddition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaMStockRemoval.designer.vb">
-      <DependentUpon>frmFaMStockRemoval.vb</DependentUpon>
+    <Compile Include="frmFMStockRemoval.designer.vb">
+      <DependentUpon>frmFMStockRemoval.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaMStockRemoval.vb">
+    <Compile Include="frmFMStockRemoval.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaOperationMaster.designer.vb">
-      <DependentUpon>frmFaOperationMaster.vb</DependentUpon>
+    <Compile Include="frmFOperationMaster.designer.vb">
+      <DependentUpon>frmFOperationMaster.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaOperationMaster.vb">
+    <Compile Include="frmFOperationMaster.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaOperationwiseLossRpt.designer.vb">
-      <DependentUpon>frmFaOperationwiseLossRpt.vb</DependentUpon>
+    <Compile Include="frmFOperationwiseLossRpt.designer.vb">
+      <DependentUpon>frmFOperationwiseLossRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaOperationwiseLossRpt.vb">
+    <Compile Include="frmFOperationwiseLossRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaPendingVoucherRpt.designer.vb">
-      <DependentUpon>frmFaPendingVoucherRpt.vb</DependentUpon>
+    <Compile Include="frmFPendingVoucherRpt.designer.vb">
+      <DependentUpon>frmFPendingVoucherRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaPendingVoucherRpt.vb">
+    <Compile Include="frmFPendingVoucherRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaReceiveGoldOthers.designer.vb">
-      <DependentUpon>frmFaReceiveGoldOthers.vb</DependentUpon>
+    <Compile Include="frmFReceiveGoldOthers.designer.vb">
+      <DependentUpon>frmFReceiveGoldOthers.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaReceiveGoldOthers.vb">
+    <Compile Include="frmFReceiveGoldOthers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaScrapBagNotUpdated.designer.vb">
-      <DependentUpon>frmFaScrapBagNotUpdated.vb</DependentUpon>
+    <Compile Include="frmFScrapBagNotUpdated.designer.vb">
+      <DependentUpon>frmFScrapBagNotUpdated.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaScrapBagNotUpdated.vb">
+    <Compile Include="frmFScrapBagNotUpdated.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaSilverMeltingRpt.designer.vb">
-      <DependentUpon>frmFaSilverMeltingRpt.vb</DependentUpon>
+    <Compile Include="frmFSilverMeltingRpt.designer.vb">
+      <DependentUpon>frmFSilverMeltingRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaSilverMeltingRpt.vb">
+    <Compile Include="frmFSilverMeltingRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockAdditionIReport.designer.vb">
-      <DependentUpon>frmFaStockAdditionIReport.vb</DependentUpon>
+    <Compile Include="frmFStockAdditionIReport.designer.vb">
+      <DependentUpon>frmFStockAdditionIReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockAdditionIReport.vb">
+    <Compile Include="frmFStockAdditionIReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockAdditionMReport.designer.vb">
-      <DependentUpon>frmFaStockAdditionMReport.vb</DependentUpon>
+    <Compile Include="frmFStockAdditionMReport.designer.vb">
+      <DependentUpon>frmFStockAdditionMReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockAdditionMReport.vb">
+    <Compile Include="frmFStockAdditionMReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockAdditionVReport.designer.vb">
-      <DependentUpon>frmFaStockAdditionVReport.vb</DependentUpon>
+    <Compile Include="frmFStockAdditionVReport.designer.vb">
+      <DependentUpon>frmFStockAdditionVReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockAdditionVReport.vb">
+    <Compile Include="frmFStockAdditionVReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockBhukaBagCreated.Designer.vb">
-      <DependentUpon>frmFaStockBhukaBagCreated.vb</DependentUpon>
+    <Compile Include="frmFStockBhukaBagCreated.Designer.vb">
+      <DependentUpon>frmFStockBhukaBagCreated.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockBhukaBagCreated.vb">
+    <Compile Include="frmFStockBhukaBagCreated.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockIssue.designer.vb">
-      <DependentUpon>frmFaStockIssue.vb</DependentUpon>
+    <Compile Include="frmFStockIssue.designer.vb">
+      <DependentUpon>frmFStockIssue.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockIssue.vb">
+    <Compile Include="frmFStockIssue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockLogin.designer.vb">
-      <DependentUpon>frmFaStockLogin.vb</DependentUpon>
+    <Compile Include="frmFStockLogin.designer.vb">
+      <DependentUpon>frmFStockLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockLogin.vb">
+    <Compile Include="frmFStockLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockLossMetalReceived.Designer.vb">
-      <DependentUpon>frmFaStockLossMetalReceived.vb</DependentUpon>
+    <Compile Include="frmFStockLossMetalReceived.Designer.vb">
+      <DependentUpon>frmFStockLossMetalReceived.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockLossMetalReceived.vb">
+    <Compile Include="frmFStockLossMetalReceived.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockSubtractionISReport.designer.vb">
-      <DependentUpon>frmFaStockSubtractionISReport.vb</DependentUpon>
+    <Compile Include="frmFStockSubtractionISReport.designer.vb">
+      <DependentUpon>frmFStockSubtractionISReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockSubtractionISReport.vb">
+    <Compile Include="frmFStockSubtractionISReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockSubtractionMSReport.designer.vb">
-      <DependentUpon>frmFaStockSubtractionMSReport.vb</DependentUpon>
+    <Compile Include="frmFStockSubtractionMSReport.designer.vb">
+      <DependentUpon>frmFStockSubtractionMSReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockSubtractionMSReport.vb">
+    <Compile Include="frmFStockSubtractionMSReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockSubtractionVSReport.designer.vb">
-      <DependentUpon>frmFaStockSubtractionVSReport.vb</DependentUpon>
+    <Compile Include="frmFStockSubtractionVSReport.designer.vb">
+      <DependentUpon>frmFStockSubtractionVSReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockSubtractionVSReport.vb">
+    <Compile Include="frmFStockSubtractionVSReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockSummary.designer.vb">
-      <DependentUpon>frmFaStockSummary.vb</DependentUpon>
+    <Compile Include="frmFStockSummary.designer.vb">
+      <DependentUpon>frmFStockSummary.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockSummary.vb">
+    <Compile Include="frmFStockSummary.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockVaccumBagNotCreated.designer.vb">
-      <DependentUpon>frmFaStockVaccumBagNotCreated.vb</DependentUpon>
+    <Compile Include="frmFStockVaccumBagNotCreated.designer.vb">
+      <DependentUpon>frmFStockVaccumBagNotCreated.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockVaccumBagNotCreated.vb">
+    <Compile Include="frmFStockVaccumBagNotCreated.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaStockVacuumBagNotUsed.designer.vb">
-      <DependentUpon>frmFaStockVacuumBagNotUsed.vb</DependentUpon>
+    <Compile Include="frmFStockVacuumBagNotUsed.designer.vb">
+      <DependentUpon>frmFStockVacuumBagNotUsed.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaStockVacuumBagNotUsed.vb">
+    <Compile Include="frmFStockVacuumBagNotUsed.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaVacBagNotUpdated.designer.vb">
-      <DependentUpon>frmFaVacBagNotUpdated.vb</DependentUpon>
+    <Compile Include="frmFVacBagNotUpdated.designer.vb">
+      <DependentUpon>frmFVacBagNotUpdated.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaVacBagNotUpdated.vb">
+    <Compile Include="frmFVacBagNotUpdated.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaVaccumBag.designer.vb">
-      <DependentUpon>frmFaVaccumBag.vb</DependentUpon>
+    <Compile Include="frmFVaccumBag.designer.vb">
+      <DependentUpon>frmFVaccumBag.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaVaccumBag.vb">
+    <Compile Include="frmFVaccumBag.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaVaccumBagRpt.designer.vb">
-      <DependentUpon>frmFaVaccumBagRpt.vb</DependentUpon>
+    <Compile Include="frmFVaccumBagRpt.designer.vb">
+      <DependentUpon>frmFVaccumBagRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaVaccumBagRpt.vb">
+    <Compile Include="frmFVaccumBagRpt.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaVStockAddition.designer.vb">
-      <DependentUpon>frmFaVStockAddition.vb</DependentUpon>
+    <Compile Include="frmFVStockAddition.designer.vb">
+      <DependentUpon>frmFVStockAddition.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaVStockAddition.vb">
+    <Compile Include="frmFVStockAddition.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaVStockRemoval.designer.vb">
-      <DependentUpon>frmFaVStockRemoval.vb</DependentUpon>
+    <Compile Include="frmFVStockRemoval.designer.vb">
+      <DependentUpon>frmFVStockRemoval.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaVStockRemoval.vb">
+    <Compile Include="frmFVStockRemoval.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFaWorkDoneRpt.designer.vb">
-      <DependentUpon>frmFaWorkDoneRpt.vb</DependentUpon>
+    <Compile Include="frmFWorkDoneRpt.designer.vb">
+      <DependentUpon>frmFWorkDoneRpt.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFaWorkDoneRpt.vb">
+    <Compile Include="frmFWorkDoneRpt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGConvFactor.designer.vb">
@@ -628,10 +634,10 @@
     <Compile Include="frmGTreeMaking.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHollowScrapBag.Designer.vb">
-      <DependentUpon>frmHollowScrapBag.vb</DependentUpon>
+    <Compile Include="frmHollowBhukaBag.Designer.vb">
+      <DependentUpon>frmHollowBhukaBag.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmHollowScrapBag.vb">
+    <Compile Include="frmHollowBhukaBag.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInterDeptReceipt.designer.vb">
@@ -778,6 +784,12 @@
     <Compile Include="frmMelting.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMeltingFinalizeLot.designer.vb">
+      <DependentUpon>frmMeltingFinalizeLot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMeltingFinalizeLot.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMeltingMaster.designer.vb">
       <DependentUpon>frmMeltingMaster.vb</DependentUpon>
     </Compile>
@@ -800,12 +812,6 @@
       <DependentUpon>frmMetalUsedInBag.vb</DependentUpon>
     </Compile>
     <Compile Include="frmMetalUsedInBag.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMetalUsedReport.Designer.vb">
-      <DependentUpon>frmMetalUsedReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMetalUsedReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInterDeptIssue.Designer.vb">
@@ -832,6 +838,12 @@
     <Compile Include="frmChOperationMaster.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMetalUsedReport.designer.vb">
+      <DependentUpon>frmMetalUsedReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMetalUsedReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmNewLotNo.designer.vb">
       <DependentUpon>frmNewLotNo.vb</DependentUpon>
     </Compile>
@@ -850,13 +862,19 @@
     <Compile Include="frmOpStockBagsNotUpdated.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmOpStockIssue.designer.vb">
+      <DependentUpon>frmOpStockIssue.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpStockIssue.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmProgressBar.Designer.vb">
       <DependentUpon>frmProgressBar.vb</DependentUpon>
     </Compile>
     <Compile Include="frmProgressBar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReceiveHollow.Designer.vb">
+    <Compile Include="frmReceiveHollow.designer.vb">
       <DependentUpon>frmReceiveHollow.vb</DependentUpon>
     </Compile>
     <Compile Include="frmReceiveHollow.vb">
@@ -938,12 +956,6 @@
       <DependentUpon>frmOpStockBagsNotUsed.vb</DependentUpon>
     </Compile>
     <Compile Include="frmOpStockBagsNotUsed.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOpStockIssue.Designer.vb">
-      <DependentUpon>frmOpStockIssue.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmOpStockIssue.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmOpStockBags.Designer.vb">
@@ -1204,12 +1216,6 @@
     <Compile Include="frmStockWipMelting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTest.Designer.vb">
-      <DependentUpon>frmTest.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmTest.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmTouchConversionRpt.Designer.vb">
       <DependentUpon>frmTouchConversionRpt.vb</DependentUpon>
     </Compile>
@@ -1389,23 +1395,26 @@
     <EmbeddedResource Include="frmCategoryMaster.resx">
       <DependentUpon>frmCategoryMaster.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCDailyStockDetails.resx">
+      <DependentUpon>frmCDailyStockDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompanyDetails.resx">
       <DependentUpon>frmCompanyDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCoreAdditionIssue.resx">
       <DependentUpon>frmCoreAdditionIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCoreAdditionIssueNew.resx">
-      <DependentUpon>frmCoreAdditionIssueNew.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCoreAdditionReceive.resx">
       <DependentUpon>frmCoreAdditionReceive.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCoreAdditionReceiveNew.resx">
-      <DependentUpon>frmCoreAdditionReceiveNew.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCoreAdditionRemoval.resx">
       <DependentUpon>frmCoreAdditionRemoval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCStockLogin.resx">
+      <DependentUpon>frmCStockLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFTruncateTable.resx">
+      <DependentUpon>frmFTruncateTable.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditBags.resx">
       <DependentUpon>frmEditBags.vb</DependentUpon>
@@ -1413,167 +1422,167 @@
     <EmbeddedResource Include="frmEditLabIssue.resx">
       <DependentUpon>frmEditLabIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaAccountClosing.resx">
-      <DependentUpon>frmFaAccountClosing.vb</DependentUpon>
+    <EmbeddedResource Include="frmFAccountClosing.resx">
+      <DependentUpon>frmFAccountClosing.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaAccountOpening.resx">
-      <DependentUpon>frmFaAccountOpening.vb</DependentUpon>
+    <EmbeddedResource Include="frmFAccountOpening.resx">
+      <DependentUpon>frmFAccountOpening.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaAllLotsRpt.resx">
-      <DependentUpon>frmFaAllLotsRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFAllLotsRpt.resx">
+      <DependentUpon>frmFAllLotsRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaBalancePendingBags.resx">
-      <DependentUpon>frmFaBalancePendingBags.vb</DependentUpon>
+    <EmbeddedResource Include="frmFBalancePendingBags.resx">
+      <DependentUpon>frmFBalancePendingBags.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaBhukaBag.resx">
-      <DependentUpon>frmFaBhukaBag.vb</DependentUpon>
+    <EmbeddedResource Include="frmFBhukaBag.resx">
+      <DependentUpon>frmFBhukaBag.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaDailyStockDetails.resx">
-      <DependentUpon>frmFaDailyStockDetails.vb</DependentUpon>
+    <EmbeddedResource Include="frmFDailyStockDetails.resx">
+      <DependentUpon>frmFDailyStockDetails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaDeptIssue.resx">
-      <DependentUpon>frmFaDeptIssue.vb</DependentUpon>
+    <EmbeddedResource Include="frmFDeptIssue.resx">
+      <DependentUpon>frmFDeptIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaDeptReceive.resx">
-      <DependentUpon>frmFaDeptReceive.vb</DependentUpon>
+    <EmbeddedResource Include="frmFDeptReceive.resx">
+      <DependentUpon>frmFDeptReceive.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaDetails.resx">
-      <DependentUpon>frmFaDetails.vb</DependentUpon>
+    <EmbeddedResource Include="frmFDetails.resx">
+      <DependentUpon>frmFDetails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaFinalizeLot.resx">
-      <DependentUpon>frmFaFinalizeLot.vb</DependentUpon>
+    <EmbeddedResource Include="frmFFinalizeLot.resx">
+      <DependentUpon>frmFFinalizeLot.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaInterDeptIssue.resx">
-      <DependentUpon>frmFaInterDeptIssue.vb</DependentUpon>
+    <EmbeddedResource Include="frmFInterDeptIssue.resx">
+      <DependentUpon>frmFInterDeptIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaInterDeptIssueRpt.resx">
-      <DependentUpon>frmFaInterDeptIssueRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFInterDeptIssueRpt.resx">
+      <DependentUpon>frmFInterDeptIssueRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaInterDeptReceipt.resx">
-      <DependentUpon>frmFaInterDeptReceipt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFInterDeptReceipt.resx">
+      <DependentUpon>frmFInterDeptReceipt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaIssueReceive.resx">
-      <DependentUpon>frmFaIssueReceive.vb</DependentUpon>
+    <EmbeddedResource Include="frmFIssueReceive.resx">
+      <DependentUpon>frmFIssueReceive.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaIStockAddition.resx">
-      <DependentUpon>frmFaIStockAddition.vb</DependentUpon>
+    <EmbeddedResource Include="frmFIStockAddition.resx">
+      <DependentUpon>frmFIStockAddition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaIStockRemoval.resx">
-      <DependentUpon>frmFaIStockRemoval.vb</DependentUpon>
+    <EmbeddedResource Include="frmFIStockRemoval.resx">
+      <DependentUpon>frmFIStockRemoval.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaKarigarwiseLossRpt.resx">
-      <DependentUpon>frmFaKarigarwiseLossRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFKarigarwiseLossRpt.resx">
+      <DependentUpon>frmFKarigarwiseLossRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaLabIssue.resx">
-      <DependentUpon>frmFaLabIssue.vb</DependentUpon>
+    <EmbeddedResource Include="frmFLabIssue.resx">
+      <DependentUpon>frmFLabIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaLotHistoryRpt.resx">
-      <DependentUpon>frmFaLotHistoryRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFLotHistoryRpt.resx">
+      <DependentUpon>frmFLotHistoryRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaLotNowiseLossRpt.resx">
-      <DependentUpon>frmFaLotNowiseLossRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFLotNowiseLossRpt.resx">
+      <DependentUpon>frmFLotNowiseLossRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMelting.resx">
-      <DependentUpon>frmFaMelting.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMelting.resx">
+      <DependentUpon>frmFMelting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMeltingAlloyReport.resx">
-      <DependentUpon>frmFaMeltingAlloyReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMeltingAlloyReport.resx">
+      <DependentUpon>frmFMeltingAlloyReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMeltingRpt.resx">
-      <DependentUpon>frmFaMeltingRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMeltingRpt.resx">
+      <DependentUpon>frmFMeltingRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMeltingwiseLossRpt.resx">
-      <DependentUpon>frmFaMeltingwiseLossRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMeltingwiseLossRpt.resx">
+      <DependentUpon>frmFMeltingwiseLossRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMetalUsedInBag.resx">
-      <DependentUpon>frmFaMetalUsedInBag.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMetalUsedInBag.resx">
+      <DependentUpon>frmFMetalUsedInBag.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMetalUsedReport.resx">
-      <DependentUpon>frmFaMetalUsedReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMetalUsedReport.resx">
+      <DependentUpon>frmFMetalUsedReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFamilyMaster.resx">
       <DependentUpon>frmFamilyMaster.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMStockAddition.resx">
-      <DependentUpon>frmFaMStockAddition.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMStockAddition.resx">
+      <DependentUpon>frmFMStockAddition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaMStockRemoval.resx">
-      <DependentUpon>frmFaMStockRemoval.vb</DependentUpon>
+    <EmbeddedResource Include="frmFMStockRemoval.resx">
+      <DependentUpon>frmFMStockRemoval.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaOperationMaster.resx">
-      <DependentUpon>frmFaOperationMaster.vb</DependentUpon>
+    <EmbeddedResource Include="frmFOperationMaster.resx">
+      <DependentUpon>frmFOperationMaster.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaOperationwiseLossRpt.resx">
-      <DependentUpon>frmFaOperationwiseLossRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFOperationwiseLossRpt.resx">
+      <DependentUpon>frmFOperationwiseLossRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaPendingVoucherRpt.resx">
-      <DependentUpon>frmFaPendingVoucherRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFPendingVoucherRpt.resx">
+      <DependentUpon>frmFPendingVoucherRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaReceiveGoldOthers.resx">
-      <DependentUpon>frmFaReceiveGoldOthers.vb</DependentUpon>
+    <EmbeddedResource Include="frmFReceiveGoldOthers.resx">
+      <DependentUpon>frmFReceiveGoldOthers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaScrapBagNotUpdated.resx">
-      <DependentUpon>frmFaScrapBagNotUpdated.vb</DependentUpon>
+    <EmbeddedResource Include="frmFScrapBagNotUpdated.resx">
+      <DependentUpon>frmFScrapBagNotUpdated.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaSilverMeltingRpt.resx">
-      <DependentUpon>frmFaSilverMeltingRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFSilverMeltingRpt.resx">
+      <DependentUpon>frmFSilverMeltingRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockAdditionIReport.resx">
-      <DependentUpon>frmFaStockAdditionIReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockAdditionIReport.resx">
+      <DependentUpon>frmFStockAdditionIReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockAdditionMReport.resx">
-      <DependentUpon>frmFaStockAdditionMReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockAdditionMReport.resx">
+      <DependentUpon>frmFStockAdditionMReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockAdditionVReport.resx">
-      <DependentUpon>frmFaStockAdditionVReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockAdditionVReport.resx">
+      <DependentUpon>frmFStockAdditionVReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockBhukaBagCreated.resx">
-      <DependentUpon>frmFaStockBhukaBagCreated.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockBhukaBagCreated.resx">
+      <DependentUpon>frmFStockBhukaBagCreated.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockIssue.resx">
-      <DependentUpon>frmFaStockIssue.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockIssue.resx">
+      <DependentUpon>frmFStockIssue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockLogin.resx">
-      <DependentUpon>frmFaStockLogin.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockLogin.resx">
+      <DependentUpon>frmFStockLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockLossMetalReceived.resx">
-      <DependentUpon>frmFaStockLossMetalReceived.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockLossMetalReceived.resx">
+      <DependentUpon>frmFStockLossMetalReceived.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockSubtractionISReport.resx">
-      <DependentUpon>frmFaStockSubtractionISReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockSubtractionISReport.resx">
+      <DependentUpon>frmFStockSubtractionISReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockSubtractionMSReport.resx">
-      <DependentUpon>frmFaStockSubtractionMSReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockSubtractionMSReport.resx">
+      <DependentUpon>frmFStockSubtractionMSReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockSubtractionVSReport.resx">
-      <DependentUpon>frmFaStockSubtractionVSReport.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockSubtractionVSReport.resx">
+      <DependentUpon>frmFStockSubtractionVSReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockSummary.resx">
-      <DependentUpon>frmFaStockSummary.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockSummary.resx">
+      <DependentUpon>frmFStockSummary.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockVaccumBagNotCreated.resx">
-      <DependentUpon>frmFaStockVaccumBagNotCreated.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockVaccumBagNotCreated.resx">
+      <DependentUpon>frmFStockVaccumBagNotCreated.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaStockVacuumBagNotUsed.resx">
-      <DependentUpon>frmFaStockVacuumBagNotUsed.vb</DependentUpon>
+    <EmbeddedResource Include="frmFStockVacuumBagNotUsed.resx">
+      <DependentUpon>frmFStockVacuumBagNotUsed.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaVacBagNotUpdated.resx">
-      <DependentUpon>frmFaVacBagNotUpdated.vb</DependentUpon>
+    <EmbeddedResource Include="frmFVacBagNotUpdated.resx">
+      <DependentUpon>frmFVacBagNotUpdated.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaVaccumBag.resx">
-      <DependentUpon>frmFaVaccumBag.vb</DependentUpon>
+    <EmbeddedResource Include="frmFVaccumBag.resx">
+      <DependentUpon>frmFVaccumBag.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaVaccumBagRpt.resx">
-      <DependentUpon>frmFaVaccumBagRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFVaccumBagRpt.resx">
+      <DependentUpon>frmFVaccumBagRpt.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaVStockAddition.resx">
-      <DependentUpon>frmFaVStockAddition.vb</DependentUpon>
+    <EmbeddedResource Include="frmFVStockAddition.resx">
+      <DependentUpon>frmFVStockAddition.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaVStockRemoval.resx">
-      <DependentUpon>frmFaVStockRemoval.vb</DependentUpon>
+    <EmbeddedResource Include="frmFVStockRemoval.resx">
+      <DependentUpon>frmFVStockRemoval.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFaWorkDoneRpt.resx">
-      <DependentUpon>frmFaWorkDoneRpt.vb</DependentUpon>
+    <EmbeddedResource Include="frmFWorkDoneRpt.resx">
+      <DependentUpon>frmFWorkDoneRpt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGConvFactor.resx">
       <DependentUpon>frmGConvFactor.vb</DependentUpon>
@@ -1581,8 +1590,8 @@
     <EmbeddedResource Include="frmGTreeMaking.resx">
       <DependentUpon>frmGTreeMaking.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHollowScrapBag.resx">
-      <DependentUpon>frmHollowScrapBag.vb</DependentUpon>
+    <EmbeddedResource Include="frmHollowBhukaBag.resx">
+      <DependentUpon>frmHollowBhukaBag.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInterDeptReceipt.resx">
       <DependentUpon>frmInterDeptReceipt.vb</DependentUpon>
@@ -1653,6 +1662,9 @@
     <EmbeddedResource Include="frmMelting.resx">
       <DependentUpon>frmMelting.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMeltingFinalizeLot.resx">
+      <DependentUpon>frmMeltingFinalizeLot.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMeltingMaster.resx">
       <DependentUpon>frmMeltingMaster.vb</DependentUpon>
     </EmbeddedResource>
@@ -1664,9 +1676,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMetalUsedInBag.resx">
       <DependentUpon>frmMetalUsedInBag.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMetalUsedReport.resx">
-      <DependentUpon>frmMetalUsedReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInterDeptIssue.resx">
       <DependentUpon>frmInterDeptIssue.vb</DependentUpon>
@@ -1680,6 +1689,9 @@
     <EmbeddedResource Include="frmChOperationMaster.resx">
       <DependentUpon>frmChOperationMaster.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMetalUsedReport.resx">
+      <DependentUpon>frmMetalUsedReport.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNewLotNo.resx">
       <DependentUpon>frmNewLotNo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1688,6 +1700,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpStockBagsNotUpdated.resx">
       <DependentUpon>frmOpStockBagsNotUpdated.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpStockIssue.resx">
+      <DependentUpon>frmOpStockIssue.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProgressBar.resx">
       <DependentUpon>frmProgressBar.vb</DependentUpon>
@@ -1733,9 +1748,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpStockBagsNotUsed.resx">
       <DependentUpon>frmOpStockBagsNotUsed.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOpStockIssue.resx">
-      <DependentUpon>frmOpStockIssue.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOpStockBags.resx">
       <DependentUpon>frmOpStockBags.vb</DependentUpon>
@@ -1866,9 +1878,6 @@
     <EmbeddedResource Include="frmStockWipMelting.resx">
       <DependentUpon>frmStockWipMelting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTest.resx">
-      <DependentUpon>frmTest.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTouchConversionRpt.resx">
       <DependentUpon>frmTouchConversionRpt.vb</DependentUpon>
     </EmbeddedResource>
@@ -1948,7 +1957,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Reports\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

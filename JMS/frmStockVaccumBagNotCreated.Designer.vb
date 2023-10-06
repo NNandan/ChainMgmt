@@ -113,8 +113,7 @@ Partial Class frmStockVaccumBagNotCreated
         '
         'frmStockVaccumBagNotCreated
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(780, 446)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnExit)
@@ -123,7 +122,7 @@ Partial Class frmStockVaccumBagNotCreated
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frmStockVaccumBagNotCreated"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vaccum Bag Not Created"
         CType(Me.dgvWipLotNo.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvWipLotNo, System.ComponentModel.ISupportInitialize).EndInit()

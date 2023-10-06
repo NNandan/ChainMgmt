@@ -35,8 +35,8 @@ Partial Class frmFamilyMaster
         Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
         Me.lblIO = New System.Windows.Forms.Label()
-        Me.lblAccountName = New Telerik.WinControls.UI.RadLabel()
         Me.txtFamilyName = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
@@ -47,7 +47,6 @@ Partial Class frmFamilyMaster
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxMain.SuspendLayout()
-        CType(Me.lblAccountName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtFamilyName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -186,8 +185,8 @@ Partial Class frmFamilyMaster
         'GBoxMain
         '
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GBoxMain.Controls.Add(Me.Label1)
         Me.GBoxMain.Controls.Add(Me.lblIO)
-        Me.GBoxMain.Controls.Add(Me.lblAccountName)
         Me.GBoxMain.Controls.Add(Me.txtFamilyName)
         Me.GBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBoxMain.Location = New System.Drawing.Point(5, 5)
@@ -205,18 +204,8 @@ Partial Class frmFamilyMaster
         Me.lblIO.ForeColor = System.Drawing.Color.Maroon
         Me.lblIO.Location = New System.Drawing.Point(348, 34)
         Me.lblIO.Name = "lblIO"
-        Me.lblIO.Size = New System.Drawing.Size(15, 14)
+        Me.lblIO.Size = New System.Drawing.Size(0, 14)
         Me.lblIO.TabIndex = 22
-        Me.lblIO.Text = "*"
-        '
-        'lblAccountName
-        '
-        Me.lblAccountName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.lblAccountName.Location = New System.Drawing.Point(35, 32)
-        Me.lblAccountName.Name = "lblAccountName"
-        Me.lblAccountName.Size = New System.Drawing.Size(86, 18)
-        Me.lblAccountName.TabIndex = 6
-        Me.lblAccountName.Text = "Family Name"
         '
         'txtFamilyName
         '
@@ -226,6 +215,16 @@ Partial Class frmFamilyMaster
         Me.txtFamilyName.Name = "txtFamilyName"
         Me.txtFamilyName.Size = New System.Drawing.Size(220, 19)
         Me.txtFamilyName.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(48, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(74, 14)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Family Name"
         '
         'frmFamilyMaster
         '
@@ -248,7 +247,6 @@ Partial Class frmFamilyMaster
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBoxMain.ResumeLayout(False)
         Me.GBoxMain.PerformLayout()
-        CType(Me.lblAccountName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtFamilyName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -258,7 +256,6 @@ Partial Class frmFamilyMaster
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents GBoxMain As GroupBox
     Friend WithEvents lblIO As Label
-    Friend WithEvents lblAccountName As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txtFamilyName As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents GBoxDetails As GroupBox
     Private WithEvents btnExit As Telerik.WinControls.UI.RadButton
@@ -266,4 +263,5 @@ Partial Class frmFamilyMaster
     Private WithEvents btnCancel As Telerik.WinControls.UI.RadButton
     Private WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Private WithEvents btnDelete As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Label1 As Label
 End Class

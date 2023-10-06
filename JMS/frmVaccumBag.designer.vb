@@ -51,6 +51,7 @@ Partial Class frmVaccumBag
         Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.tbVaccumeBag = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -447,7 +448,7 @@ Partial Class frmVaccumBag
         '
         'txtMaxNo
         '
-        Me.txtMaxNo.Location = New System.Drawing.Point(586, 25)
+        Me.txtMaxNo.Location = New System.Drawing.Point(619, 25)
         Me.txtMaxNo.Name = "txtMaxNo"
         Me.txtMaxNo.Size = New System.Drawing.Size(100, 20)
         Me.txtMaxNo.TabIndex = 45
@@ -455,7 +456,7 @@ Partial Class frmVaccumBag
         'lblMaxNo
         '
         Me.lblMaxNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblMaxNo.Location = New System.Drawing.Point(532, 26)
+        Me.lblMaxNo.Location = New System.Drawing.Point(565, 26)
         Me.lblMaxNo.Name = "lblMaxNo"
         Me.lblMaxNo.Size = New System.Drawing.Size(50, 18)
         Me.lblMaxNo.TabIndex = 44
@@ -1365,46 +1366,50 @@ Partial Class frmVaccumBag
         GridViewTextBoxColumn16.IsVisible = False
         GridViewTextBoxColumn16.Name = "colUsedBagId"
         GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "BagSrNo"
-        GridViewTextBoxColumn17.HeaderText = "Bag No"
-        GridViewTextBoxColumn17.Name = "colBagSrNo"
-        GridViewTextBoxColumn17.Width = 80
+        GridViewTextBoxColumn17.FieldName = "ItemId"
+        GridViewTextBoxColumn17.HeaderText = "Item Id."
+        GridViewTextBoxColumn17.IsVisible = False
+        GridViewTextBoxColumn17.Name = "colItemId"
         GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.FieldName = "BagName"
-        GridViewTextBoxColumn18.HeaderText = "Bag Name"
-        GridViewTextBoxColumn18.Name = "colBagName"
-        GridViewTextBoxColumn18.Width = 155
+        GridViewTextBoxColumn18.FieldName = "BagSrNo"
+        GridViewTextBoxColumn18.HeaderText = "Bag Sr No"
+        GridViewTextBoxColumn18.Name = "colBagSrNo"
+        GridViewTextBoxColumn18.Width = 80
         GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn19.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn19.Name = "colReceiveWt"
-        GridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn19.Width = 90
+        GridViewTextBoxColumn19.FieldName = "BagName"
+        GridViewTextBoxColumn19.HeaderText = "Bag Name"
+        GridViewTextBoxColumn19.Name = "colBagName"
+        GridViewTextBoxColumn19.Width = 155
         GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.FieldName = "TFSampleWt"
-        GridViewTextBoxColumn20.HeaderText = "TF Sample Wt."
-        GridViewTextBoxColumn20.Name = "colTFSampleWt"
+        GridViewTextBoxColumn20.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn20.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn20.Name = "colReceiveWt"
         GridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn20.Width = 100
+        GridViewTextBoxColumn20.Width = 90
         GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.FieldName = "WtOnScale"
-        GridViewTextBoxColumn21.HeaderText = "Wt On Scale"
-        GridViewTextBoxColumn21.Name = "colWtOnScale"
+        GridViewTextBoxColumn21.FieldName = "TFSampleWt"
+        GridViewTextBoxColumn21.HeaderText = "TF Sample Wt."
+        GridViewTextBoxColumn21.Name = "colTFSampleWt"
         GridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn21.Width = 90
+        GridViewTextBoxColumn21.Width = 100
         GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.FieldName = "CarbonReceive"
-        GridViewTextBoxColumn22.HeaderText = "Carbon Receive"
-        GridViewTextBoxColumn22.Name = "colCarbonReceive"
-        GridViewTextBoxColumn22.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn22.Width = 110
+        GridViewTextBoxColumn22.FieldName = "WtOnScale"
+        GridViewTextBoxColumn22.HeaderText = "Wt On Scale"
+        GridViewTextBoxColumn22.Name = "colWtOnScale"
+        GridViewTextBoxColumn22.Width = 90
         GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.FieldName = "ReportPr"
-        GridViewTextBoxColumn23.HeaderText = "Report [%]"
-        GridViewTextBoxColumn23.Name = "colReportPr"
+        GridViewTextBoxColumn23.FieldName = "CarbonReceive"
+        GridViewTextBoxColumn23.HeaderText = "Carbon Receive"
+        GridViewTextBoxColumn23.Name = "colCarbonReceive"
         GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn23.Width = 90
-        Me.dgvFinalUpdate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23})
+        GridViewTextBoxColumn23.Width = 110
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.FieldName = "ReportPr"
+        GridViewTextBoxColumn24.HeaderText = "Report [%]"
+        GridViewTextBoxColumn24.Name = "colReportPr"
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 90
+        Me.dgvFinalUpdate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24})
         Me.dgvFinalUpdate.MasterTemplate.EnableGrouping = False
         Me.dgvFinalUpdate.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvFinalUpdate.MasterTemplate.ViewDefinition = TableViewDefinition5

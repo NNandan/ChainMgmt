@@ -22,7 +22,6 @@ Partial Class frmOpStockIssue
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOpStockIssue))
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -42,6 +41,7 @@ Partial Class frmOpStockIssue
         Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmOpStockIssue))
         Me.TabOpStock = New System.Windows.Forms.TabControl()
         Me.TabStock = New System.Windows.Forms.TabPage()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
@@ -49,7 +49,6 @@ Partial Class frmOpStockIssue
         Me.txtFineWt = New Telerik.WinControls.UI.RadTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Btn_Find = New System.Windows.Forms.Button()
         Me.txtNarration = New Telerik.WinControls.UI.RadTextBox()
         Me.txtGrossPr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtGrossWt = New Telerik.WinControls.UI.RadTextBox()
@@ -65,6 +64,8 @@ Partial Class frmOpStockIssue
         Me.TransDt = New System.Windows.Forms.DateTimePicker()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvStockIssueList = New Telerik.WinControls.UI.RadGridView()
+        Me.Btn_Find = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TabOpStock.SuspendLayout()
         Me.TabStock.SuspendLayout()
         Me.GBoxMain.SuspendLayout()
@@ -94,7 +95,7 @@ Partial Class frmOpStockIssue
         Me.TabOpStock.Location = New System.Drawing.Point(2, 2)
         Me.TabOpStock.Name = "TabOpStock"
         Me.TabOpStock.SelectedIndex = 0
-        Me.TabOpStock.Size = New System.Drawing.Size(784, 458)
+        Me.TabOpStock.Size = New System.Drawing.Size(822, 458)
         Me.TabOpStock.TabIndex = 0
         '
         'TabStock
@@ -103,7 +104,7 @@ Partial Class frmOpStockIssue
         Me.TabStock.Location = New System.Drawing.Point(4, 23)
         Me.TabStock.Name = "TabStock"
         Me.TabStock.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabStock.Size = New System.Drawing.Size(776, 431)
+        Me.TabStock.Size = New System.Drawing.Size(814, 431)
         Me.TabStock.TabIndex = 0
         Me.TabStock.Text = "Stock Issue"
         Me.TabStock.UseVisualStyleBackColor = True
@@ -111,6 +112,7 @@ Partial Class frmOpStockIssue
         'GBoxMain
         '
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GBoxMain.Controls.Add(Me.Label10)
         Me.GBoxMain.Controls.Add(Me.cmbParty)
         Me.GBoxMain.Controls.Add(Me.txtFineWt)
         Me.GBoxMain.Controls.Add(Me.Label1)
@@ -134,7 +136,7 @@ Partial Class frmOpStockIssue
         Me.GBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GBoxMain.Name = "GBoxMain"
         Me.GBoxMain.Padding = New System.Windows.Forms.Padding(4)
-        Me.GBoxMain.Size = New System.Drawing.Size(775, 428)
+        Me.GBoxMain.Size = New System.Drawing.Size(805, 425)
         Me.GBoxMain.TabIndex = 19
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Stock Issue Info."
@@ -143,7 +145,7 @@ Partial Class frmOpStockIssue
         '
         Me.cmbParty.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbParty.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbParty.Location = New System.Drawing.Point(476, 86)
+        Me.cmbParty.Location = New System.Drawing.Point(475, 98)
         Me.cmbParty.Name = "cmbParty"
         Me.cmbParty.Size = New System.Drawing.Size(123, 20)
         Me.cmbParty.TabIndex = 5
@@ -151,17 +153,17 @@ Partial Class frmOpStockIssue
         'txtFineWt
         '
         Me.txtFineWt.BackColor = System.Drawing.Color.White
-        Me.txtFineWt.Location = New System.Drawing.Point(378, 86)
+        Me.txtFineWt.Location = New System.Drawing.Point(376, 98)
         Me.txtFineWt.Name = "txtFineWt"
         Me.txtFineWt.ReadOnly = True
-        Me.txtFineWt.Size = New System.Drawing.Size(96, 20)
+        Me.txtFineWt.Size = New System.Drawing.Size(98, 20)
         Me.txtFineWt.TabIndex = 6
         Me.txtFineWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(442, 65)
+        Me.Label1.Location = New System.Drawing.Point(573, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(222, 16)
         Me.Label1.TabIndex = 156
@@ -174,42 +176,27 @@ Partial Class frmOpStockIssue
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 155
         '
-        'Btn_Find
-        '
-        Me.Btn_Find.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Btn_Find.BackgroundImage = CType(resources.GetObject("Btn_Find.BackgroundImage"), System.Drawing.Image)
-        Me.Btn_Find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Btn_Find.ForeColor = System.Drawing.Color.White
-        Me.Btn_Find.Location = New System.Drawing.Point(195, 47)
-        Me.Btn_Find.Name = "Btn_Find"
-        Me.Btn_Find.Size = New System.Drawing.Size(33, 21)
-        Me.Btn_Find.TabIndex = 154
-        Me.Btn_Find.TabStop = False
-        Me.Btn_Find.Text = "F1"
-        Me.Btn_Find.UseVisualStyleBackColor = False
-        '
         'txtNarration
         '
         Me.txtNarration.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtNarration.Location = New System.Drawing.Point(601, 86)
+        Me.txtNarration.Location = New System.Drawing.Point(599, 98)
         Me.txtNarration.Name = "txtNarration"
-        Me.txtNarration.Size = New System.Drawing.Size(164, 20)
+        Me.txtNarration.Size = New System.Drawing.Size(198, 20)
         Me.txtNarration.TabIndex = 7
         '
         'txtGrossPr
         '
         Me.txtGrossPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtGrossPr.Location = New System.Drawing.Point(279, 86)
+        Me.txtGrossPr.Location = New System.Drawing.Point(278, 98)
         Me.txtGrossPr.Name = "txtGrossPr"
-        Me.txtGrossPr.Size = New System.Drawing.Size(96, 20)
+        Me.txtGrossPr.Size = New System.Drawing.Size(97, 20)
         Me.txtGrossPr.TabIndex = 5
         Me.txtGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtGrossWt
         '
         Me.txtGrossWt.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtGrossWt.Location = New System.Drawing.Point(179, 86)
+        Me.txtGrossWt.Location = New System.Drawing.Point(179, 98)
         Me.txtGrossWt.Name = "txtGrossWt"
         Me.txtGrossWt.Size = New System.Drawing.Size(98, 20)
         Me.txtGrossWt.TabIndex = 4
@@ -219,14 +206,14 @@ Partial Class frmOpStockIssue
         '
         Me.cmbItem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItem.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbItem.Location = New System.Drawing.Point(39, 86)
+        Me.cmbItem.Location = New System.Drawing.Point(39, 98)
         Me.cmbItem.Name = "cmbItem"
-        Me.cmbItem.Size = New System.Drawing.Size(138, 20)
+        Me.cmbItem.Size = New System.Drawing.Size(139, 20)
         Me.cmbItem.TabIndex = 3
         '
         'txtSrNo
         '
-        Me.txtSrNo.Location = New System.Drawing.Point(3, 86)
+        Me.txtSrNo.Location = New System.Drawing.Point(3, 98)
         Me.txtSrNo.Name = "txtSrNo"
         Me.txtSrNo.ReadOnly = True
         Me.txtSrNo.Size = New System.Drawing.Size(35, 20)
@@ -240,7 +227,7 @@ Partial Class frmOpStockIssue
         Me.dgvStockIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvStockIssue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvStockIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvStockIssue.Location = New System.Drawing.Point(3, 108)
+        Me.dgvStockIssue.Location = New System.Drawing.Point(3, 120)
         '
         '
         '
@@ -289,7 +276,7 @@ Partial Class frmOpStockIssue
         GridViewTextBoxColumn9.HeaderText = "Narration"
         GridViewTextBoxColumn9.Name = "colNarration"
         GridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        GridViewTextBoxColumn9.Width = 260
+        GridViewTextBoxColumn9.Width = 200
         Me.dgvStockIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9})
         Me.dgvStockIssue.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvStockIssue.MasterTemplate.ViewDefinition = TableViewDefinition1
@@ -297,13 +284,13 @@ Partial Class frmOpStockIssue
         Me.dgvStockIssue.ReadOnly = True
         Me.dgvStockIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvStockIssue.ShowGroupPanel = False
-        Me.dgvStockIssue.Size = New System.Drawing.Size(762, 285)
+        Me.dgvStockIssue.Size = New System.Drawing.Size(795, 269)
         Me.dgvStockIssue.TabIndex = 146
         '
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(319, 398)
+        Me.btnDelete.Location = New System.Drawing.Point(374, 395)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 10
@@ -312,7 +299,7 @@ Partial Class frmOpStockIssue
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(396, 398)
+        Me.btnCancel.Location = New System.Drawing.Point(451, 395)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 9
@@ -321,7 +308,7 @@ Partial Class frmOpStockIssue
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(242, 398)
+        Me.btnSave.Location = New System.Drawing.Point(297, 395)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 8
@@ -341,7 +328,7 @@ Partial Class frmOpStockIssue
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(30, 49)
+        Me.Label6.Location = New System.Drawing.Point(30, 50)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 14)
         Me.Label6.TabIndex = 10
@@ -353,6 +340,7 @@ Partial Class frmOpStockIssue
         Me.txtVocucherNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtVocucherNo.Location = New System.Drawing.Point(109, 47)
         Me.txtVocucherNo.Name = "txtVocucherNo"
+        Me.txtVocucherNo.ReadOnly = True
         Me.txtVocucherNo.Size = New System.Drawing.Size(85, 20)
         Me.txtVocucherNo.TabIndex = 1
         '
@@ -371,7 +359,7 @@ Partial Class frmOpStockIssue
         Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(776, 346)
+        Me.TabPage1.Size = New System.Drawing.Size(814, 431)
         Me.TabPage1.TabIndex = 1
         Me.TabPage1.Text = "Edit Data"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -383,7 +371,7 @@ Partial Class frmOpStockIssue
         Me.dgvStockIssueList.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.dgvStockIssueList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvStockIssueList.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvStockIssueList.Location = New System.Drawing.Point(10, 10)
+        Me.dgvStockIssueList.Location = New System.Drawing.Point(3, 3)
         '
         '
         '
@@ -433,15 +421,41 @@ Partial Class frmOpStockIssue
         Me.dgvStockIssueList.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvStockIssueList.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.dgvStockIssueList.Name = "dgvStockIssueList"
+        Me.dgvStockIssueList.ReadOnly = True
         Me.dgvStockIssueList.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvStockIssueList.ShowGroupPanel = False
-        Me.dgvStockIssueList.Size = New System.Drawing.Size(756, 302)
+        Me.dgvStockIssueList.Size = New System.Drawing.Size(699, 302)
         Me.dgvStockIssueList.TabIndex = 0
+        '
+        'Btn_Find
+        '
+        Me.Btn_Find.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Find.BackgroundImage = CType(resources.GetObject("Btn_Find.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btn_Find.ForeColor = System.Drawing.Color.White
+        Me.Btn_Find.Location = New System.Drawing.Point(195, 47)
+        Me.Btn_Find.Name = "Btn_Find"
+        Me.Btn_Find.Size = New System.Drawing.Size(33, 21)
+        Me.Btn_Find.TabIndex = 154
+        Me.Btn_Find.TabStop = False
+        Me.Btn_Find.Text = "F1"
+        Me.Btn_Find.UseVisualStyleBackColor = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label10.Location = New System.Drawing.Point(7, 79)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(206, 14)
+        Me.Label10.TabIndex = 157
+        Me.Label10.Text = "Press  ( F2 )  to Clear Melting Details"
         '
         'frmOpStockIssue
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(784, 472)
+        Me.ClientSize = New System.Drawing.Size(826, 460)
         Me.Controls.Add(Me.TabOpStock)
         Me.KeyPreview = True
         Me.MaximizeBox = False
@@ -495,4 +509,5 @@ Partial Class frmOpStockIssue
     Friend WithEvents cmbParty As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents dgvStockIssueList As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents Label10 As Label
 End Class

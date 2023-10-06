@@ -29,29 +29,29 @@ Partial Class frmMain
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.mnuMaster = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AccountMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LabourMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CategoryMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChOperationMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FaOperationMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PartyMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FamilyMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LabMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UserMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccountMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LabourMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoryMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChOperationMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FaOperationMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PartyMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FamilyMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LabMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UserMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccountOpeningToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StampMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MaterialMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MeltingMasterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StampMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaterialMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MeltingMasterMnu = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuChTransaction = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChMeltingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LotNoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LotTransferToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsedLotTransferedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MainToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LabIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewLabIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditLabIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IssueMeltingMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReceiveMeltingMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IssueTransferMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReceiveTransferMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IssueReceiveChartMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChLabIMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChLabIssueMnu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChEditLabIssueMnu = New System.Windows.Forms.ToolStripMenuItem()
         Me.InterDepartmentTransferToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DepartmentIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DepartmentReceiptToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -100,7 +100,11 @@ Partial Class frmMain
         Me.CreateCompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TruncateDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.BackupDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChainDailyStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FancyDailyStockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteFancyTransactionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMain = New System.Windows.Forms.MenuStrip()
         Me.mnuAdmin = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChainAccountOpeningToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FancyAccountOpeningToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -119,15 +123,14 @@ Partial Class frmMain
         Me.mnuFaBags = New System.Windows.Forms.ToolStripMenuItem()
         Me.FaScrapBagsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FaVacuumBagsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuHollow = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HollowIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HollowReceiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CoreAdditionToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CoreAdditionIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CoreAdditionReceiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CastingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuCasting = New System.Windows.Forms.ToolStripMenuItem()
         Me.TreeMakingToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConvFactorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuHollow = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CoreAdditionIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CoreAdditionReceiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HollowIssueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HollowReceiveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFaReports = New System.Windows.Forms.ToolStripMenuItem()
         Me.FaStockSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FaWIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -194,7 +197,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.FormMode = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusStrip.SuspendLayout()
-        Me.MenuStrip.SuspendLayout()
+        Me.mnuMain.SuspendLayout()
         Me.statusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -202,7 +205,7 @@ Partial Class frmMain
         '
         Me.StatusStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 427)
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 371)
         Me.StatusStrip.Name = "StatusStrip"
         Me.StatusStrip.Padding = New System.Windows.Forms.Padding(1, 0, 16, 0)
         Me.StatusStrip.Size = New System.Drawing.Size(947, 22)
@@ -217,71 +220,71 @@ Partial Class frmMain
         '
         'mnuMaster
         '
-        Me.mnuMaster.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountMasterToolStripMenuItem, Me.LabourMasterToolStripMenuItem, Me.CategoryMasterToolStripMenuItem, Me.ChOperationMasterToolStripMenuItem, Me.FaOperationMasterToolStripMenuItem, Me.ItemMasterToolStripMenuItem, Me.PartyMasterToolStripMenuItem, Me.FamilyMasterToolStripMenuItem, Me.LabMasterToolStripMenuItem, Me.UserMasterToolStripMenuItem, Me.AccountOpeningToolStripMenuItem, Me.StampMasterToolStripMenuItem, Me.MaterialMasterToolStripMenuItem, Me.MeltingMasterToolStripMenuItem})
+        Me.mnuMaster.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AccountMnu, Me.LabourMnu, Me.CategoryMnu, Me.ChOperationMnu, Me.FaOperationMnu, Me.ItemMasterMnu, Me.PartyMasterMnu, Me.FamilyMasterMnu, Me.LabMasterMnu, Me.UserMasterMnu, Me.AccountOpeningToolStripMenuItem, Me.StampMasterMnu, Me.MaterialMasterMnu, Me.MeltingMasterMnu})
         Me.mnuMaster.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.mnuMaster.Name = "mnuMaster"
         Me.mnuMaster.Size = New System.Drawing.Size(55, 20)
         Me.mnuMaster.Text = "&Master"
         '
-        'AccountMasterToolStripMenuItem
+        'AccountMnu
         '
-        Me.AccountMasterToolStripMenuItem.Name = "AccountMasterToolStripMenuItem"
-        Me.AccountMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.AccountMasterToolStripMenuItem.Text = "Account Master"
+        Me.AccountMnu.Name = "AccountMnu"
+        Me.AccountMnu.Size = New System.Drawing.Size(200, 22)
+        Me.AccountMnu.Text = "Account Master"
         '
-        'LabourMasterToolStripMenuItem
+        'LabourMnu
         '
-        Me.LabourMasterToolStripMenuItem.Name = "LabourMasterToolStripMenuItem"
-        Me.LabourMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.LabourMasterToolStripMenuItem.Text = "Labour Master"
+        Me.LabourMnu.Name = "LabourMnu"
+        Me.LabourMnu.Size = New System.Drawing.Size(200, 22)
+        Me.LabourMnu.Text = "Labour Master"
         '
-        'CategoryMasterToolStripMenuItem
+        'CategoryMnu
         '
-        Me.CategoryMasterToolStripMenuItem.Name = "CategoryMasterToolStripMenuItem"
-        Me.CategoryMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.CategoryMasterToolStripMenuItem.Text = "Category Master"
+        Me.CategoryMnu.Name = "CategoryMnu"
+        Me.CategoryMnu.Size = New System.Drawing.Size(200, 22)
+        Me.CategoryMnu.Text = "Category Master"
         '
-        'ChOperationMasterToolStripMenuItem
+        'ChOperationMnu
         '
-        Me.ChOperationMasterToolStripMenuItem.Name = "ChOperationMasterToolStripMenuItem"
-        Me.ChOperationMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.ChOperationMasterToolStripMenuItem.Text = "Chain Operation Master"
+        Me.ChOperationMnu.Name = "ChOperationMnu"
+        Me.ChOperationMnu.Size = New System.Drawing.Size(200, 22)
+        Me.ChOperationMnu.Text = "Chain Operation Master"
         '
-        'FaOperationMasterToolStripMenuItem
+        'FaOperationMnu
         '
-        Me.FaOperationMasterToolStripMenuItem.Name = "FaOperationMasterToolStripMenuItem"
-        Me.FaOperationMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.FaOperationMasterToolStripMenuItem.Text = "Fancy Operation Master"
+        Me.FaOperationMnu.Name = "FaOperationMnu"
+        Me.FaOperationMnu.Size = New System.Drawing.Size(200, 22)
+        Me.FaOperationMnu.Text = "Fancy Operation Master"
         '
-        'ItemMasterToolStripMenuItem
+        'ItemMasterMnu
         '
-        Me.ItemMasterToolStripMenuItem.Name = "ItemMasterToolStripMenuItem"
-        Me.ItemMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.ItemMasterToolStripMenuItem.Text = "Item Master"
+        Me.ItemMasterMnu.Name = "ItemMasterMnu"
+        Me.ItemMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.ItemMasterMnu.Text = "Item Master"
         '
-        'PartyMasterToolStripMenuItem
+        'PartyMasterMnu
         '
-        Me.PartyMasterToolStripMenuItem.Name = "PartyMasterToolStripMenuItem"
-        Me.PartyMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.PartyMasterToolStripMenuItem.Text = "Party Master"
+        Me.PartyMasterMnu.Name = "PartyMasterMnu"
+        Me.PartyMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.PartyMasterMnu.Text = "Party Master"
         '
-        'FamilyMasterToolStripMenuItem
+        'FamilyMasterMnu
         '
-        Me.FamilyMasterToolStripMenuItem.Name = "FamilyMasterToolStripMenuItem"
-        Me.FamilyMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.FamilyMasterToolStripMenuItem.Text = "Family Master"
+        Me.FamilyMasterMnu.Name = "FamilyMasterMnu"
+        Me.FamilyMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.FamilyMasterMnu.Text = "Family Master"
         '
-        'LabMasterToolStripMenuItem
+        'LabMasterMnu
         '
-        Me.LabMasterToolStripMenuItem.Name = "LabMasterToolStripMenuItem"
-        Me.LabMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.LabMasterToolStripMenuItem.Text = "Lab Master"
+        Me.LabMasterMnu.Name = "LabMasterMnu"
+        Me.LabMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.LabMasterMnu.Text = "Lab Master"
         '
-        'UserMasterToolStripMenuItem
+        'UserMasterMnu
         '
-        Me.UserMasterToolStripMenuItem.Name = "UserMasterToolStripMenuItem"
-        Me.UserMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.UserMasterToolStripMenuItem.Text = "User Master"
+        Me.UserMasterMnu.Name = "UserMasterMnu"
+        Me.UserMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.UserMasterMnu.Text = "User Master"
         '
         'AccountOpeningToolStripMenuItem
         '
@@ -289,79 +292,79 @@ Partial Class frmMain
         Me.AccountOpeningToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
         Me.AccountOpeningToolStripMenuItem.Text = "Account Opening"
         '
-        'StampMasterToolStripMenuItem
+        'StampMasterMnu
         '
-        Me.StampMasterToolStripMenuItem.Name = "StampMasterToolStripMenuItem"
-        Me.StampMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.StampMasterToolStripMenuItem.Text = "Stamp Master"
+        Me.StampMasterMnu.Name = "StampMasterMnu"
+        Me.StampMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.StampMasterMnu.Text = "Stamp Master"
         '
-        'MaterialMasterToolStripMenuItem
+        'MaterialMasterMnu
         '
-        Me.MaterialMasterToolStripMenuItem.Name = "MaterialMasterToolStripMenuItem"
-        Me.MaterialMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.MaterialMasterToolStripMenuItem.Text = "Material Master"
+        Me.MaterialMasterMnu.Name = "MaterialMasterMnu"
+        Me.MaterialMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.MaterialMasterMnu.Text = "Material Master"
         '
-        'MeltingMasterToolStripMenuItem
+        'MeltingMasterMnu
         '
-        Me.MeltingMasterToolStripMenuItem.Name = "MeltingMasterToolStripMenuItem"
-        Me.MeltingMasterToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.MeltingMasterToolStripMenuItem.Text = "Melting Master"
+        Me.MeltingMasterMnu.Name = "MeltingMasterMnu"
+        Me.MeltingMasterMnu.Size = New System.Drawing.Size(200, 22)
+        Me.MeltingMasterMnu.Text = "Melting Master"
         '
         'mnuChTransaction
         '
-        Me.mnuChTransaction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChMeltingToolStripMenuItem, Me.LotNoToolStripMenuItem, Me.LotTransferToolStripMenuItem, Me.UsedLotTransferedToolStripMenuItem, Me.MainToolStripMenuItem, Me.LabIssueToolStripMenuItem, Me.InterDepartmentTransferToolStripMenuItem, Me.LotAdditionToolStripMenuItem, Me.ExtraScrapReceiveToolStripMenuItem})
+        Me.mnuChTransaction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IssueMeltingMnu, Me.ReceiveMeltingMnu, Me.IssueTransferMnu, Me.ReceiveTransferMnu, Me.IssueReceiveChartMnu, Me.ChLabIMnu, Me.InterDepartmentTransferToolStripMenuItem, Me.LotAdditionToolStripMenuItem, Me.ExtraScrapReceiveToolStripMenuItem})
         Me.mnuChTransaction.Name = "mnuChTransaction"
         Me.mnuChTransaction.Size = New System.Drawing.Size(84, 20)
         Me.mnuChTransaction.Text = "&Transactions"
         '
-        'ChMeltingToolStripMenuItem
+        'IssueMeltingMnu
         '
-        Me.ChMeltingToolStripMenuItem.Name = "ChMeltingToolStripMenuItem"
-        Me.ChMeltingToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.ChMeltingToolStripMenuItem.Text = "Issue Melting"
+        Me.IssueMeltingMnu.Name = "IssueMeltingMnu"
+        Me.IssueMeltingMnu.Size = New System.Drawing.Size(208, 22)
+        Me.IssueMeltingMnu.Text = "Issue Melting"
         '
-        'LotNoToolStripMenuItem
+        'ReceiveMeltingMnu
         '
-        Me.LotNoToolStripMenuItem.Name = "LotNoToolStripMenuItem"
-        Me.LotNoToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.LotNoToolStripMenuItem.Text = "Receive Melting"
+        Me.ReceiveMeltingMnu.Name = "ReceiveMeltingMnu"
+        Me.ReceiveMeltingMnu.Size = New System.Drawing.Size(208, 22)
+        Me.ReceiveMeltingMnu.Text = "Receive Melting"
         '
-        'LotTransferToolStripMenuItem
+        'IssueTransferMnu
         '
-        Me.LotTransferToolStripMenuItem.Name = "LotTransferToolStripMenuItem"
-        Me.LotTransferToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.LotTransferToolStripMenuItem.Text = "Issue Transfer"
+        Me.IssueTransferMnu.Name = "IssueTransferMnu"
+        Me.IssueTransferMnu.Size = New System.Drawing.Size(208, 22)
+        Me.IssueTransferMnu.Text = "Issue Transfer"
         '
-        'UsedLotTransferedToolStripMenuItem
+        'ReceiveTransferMnu
         '
-        Me.UsedLotTransferedToolStripMenuItem.Name = "UsedLotTransferedToolStripMenuItem"
-        Me.UsedLotTransferedToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.UsedLotTransferedToolStripMenuItem.Text = "Receive Transfer"
+        Me.ReceiveTransferMnu.Name = "ReceiveTransferMnu"
+        Me.ReceiveTransferMnu.Size = New System.Drawing.Size(208, 22)
+        Me.ReceiveTransferMnu.Text = "Receive Transfer"
         '
-        'MainToolStripMenuItem
+        'IssueReceiveChartMnu
         '
-        Me.MainToolStripMenuItem.Name = "MainToolStripMenuItem"
-        Me.MainToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.MainToolStripMenuItem.Text = "Issue Receive Chart"
+        Me.IssueReceiveChartMnu.Name = "IssueReceiveChartMnu"
+        Me.IssueReceiveChartMnu.Size = New System.Drawing.Size(208, 22)
+        Me.IssueReceiveChartMnu.Text = "Issue Receive Chart"
         '
-        'LabIssueToolStripMenuItem
+        'ChLabIMnu
         '
-        Me.LabIssueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewLabIssueToolStripMenuItem, Me.EditLabIssueToolStripMenuItem})
-        Me.LabIssueToolStripMenuItem.Name = "LabIssueToolStripMenuItem"
-        Me.LabIssueToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.LabIssueToolStripMenuItem.Text = "Lab Issue"
+        Me.ChLabIMnu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChLabIssueMnu, Me.ChEditLabIssueMnu})
+        Me.ChLabIMnu.Name = "ChLabIMnu"
+        Me.ChLabIMnu.Size = New System.Drawing.Size(208, 22)
+        Me.ChLabIMnu.Text = "Lab Issue"
         '
-        'NewLabIssueToolStripMenuItem
+        'ChLabIssueMnu
         '
-        Me.NewLabIssueToolStripMenuItem.Name = "NewLabIssueToolStripMenuItem"
-        Me.NewLabIssueToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.NewLabIssueToolStripMenuItem.Text = "Lab Issue"
+        Me.ChLabIssueMnu.Name = "ChLabIssueMnu"
+        Me.ChLabIssueMnu.Size = New System.Drawing.Size(145, 22)
+        Me.ChLabIssueMnu.Text = "Lab Issue"
         '
-        'EditLabIssueToolStripMenuItem
+        'ChEditLabIssueMnu
         '
-        Me.EditLabIssueToolStripMenuItem.Name = "EditLabIssueToolStripMenuItem"
-        Me.EditLabIssueToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.EditLabIssueToolStripMenuItem.Text = "Edit Lab Issue"
+        Me.ChEditLabIssueMnu.Name = "ChEditLabIssueMnu"
+        Me.ChEditLabIssueMnu.Size = New System.Drawing.Size(145, 22)
+        Me.ChEditLabIssueMnu.Text = "Edit Lab Issue"
         '
         'InterDepartmentTransferToolStripMenuItem
         '
@@ -619,7 +622,7 @@ Partial Class frmMain
         '
         'mnuTools
         '
-        Me.mnuTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeUserToolStripMenuItem, Me.TestingToolStripMenuItem, Me.RegisterToolStripMenuItem, Me.CreateCompanyToolStripMenuItem, Me.TruncateDataToolStripMenuItem, Me.TestDataToolStripMenuItem})
+        Me.mnuTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeUserToolStripMenuItem, Me.TestingToolStripMenuItem, Me.RegisterToolStripMenuItem, Me.CreateCompanyToolStripMenuItem, Me.TruncateDataToolStripMenuItem, Me.TestDataToolStripMenuItem, Me.BackupDataToolStripMenuItem, Me.ChainDailyStockToolStripMenuItem, Me.FancyDailyStockToolStripMenuItem, Me.DeleteFancyTransactionToolStripMenuItem})
         Me.mnuTools.Name = "mnuTools"
         Me.mnuTools.Size = New System.Drawing.Size(46, 20)
         Me.mnuTools.Text = "&Tools"
@@ -627,50 +630,74 @@ Partial Class frmMain
         'ChangeUserToolStripMenuItem
         '
         Me.ChangeUserToolStripMenuItem.Name = "ChangeUserToolStripMenuItem"
-        Me.ChangeUserToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ChangeUserToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.ChangeUserToolStripMenuItem.Text = "Change &User"
         '
         'TestingToolStripMenuItem
         '
         Me.TestingToolStripMenuItem.Name = "TestingToolStripMenuItem"
-        Me.TestingToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.TestingToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.TestingToolStripMenuItem.Text = "Change &Login Password"
         '
         'RegisterToolStripMenuItem
         '
         Me.RegisterToolStripMenuItem.Name = "RegisterToolStripMenuItem"
-        Me.RegisterToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.RegisterToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.RegisterToolStripMenuItem.Text = "Register"
         '
         'CreateCompanyToolStripMenuItem
         '
         Me.CreateCompanyToolStripMenuItem.Name = "CreateCompanyToolStripMenuItem"
-        Me.CreateCompanyToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.CreateCompanyToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.CreateCompanyToolStripMenuItem.Text = "Create Company"
         '
         'TruncateDataToolStripMenuItem
         '
         Me.TruncateDataToolStripMenuItem.Name = "TruncateDataToolStripMenuItem"
-        Me.TruncateDataToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
-        Me.TruncateDataToolStripMenuItem.Text = "Delete Transaction"
+        Me.TruncateDataToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.TruncateDataToolStripMenuItem.Text = "Delete Chain Transaction"
         '
         'TestDataToolStripMenuItem
         '
         Me.TestDataToolStripMenuItem.Name = "TestDataToolStripMenuItem"
-        Me.TestDataToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.TestDataToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.TestDataToolStripMenuItem.Text = "Test Data"
         '
-        'MenuStrip
+        'BackupDataToolStripMenuItem
         '
-        Me.MenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAdmin, Me.mnuMaster, Me.mnuChTransaction, Me.mnuFaTransaction, Me.mnuChBags, Me.mnuFaBags, Me.mnuHollow, Me.mnuChReports, Me.mnuFaReports, Me.mnuTools, Me.mnuAccount, Me.mnuStockReports, Me.mnuExit, Me.ToolStripMenuItem2})
-        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip.MdiWindowListItem = Me.mnuTools
-        Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
-        Me.MenuStrip.Size = New System.Drawing.Size(947, 24)
-        Me.MenuStrip.TabIndex = 5
-        Me.MenuStrip.Text = "MenuStrip"
+        Me.BackupDataToolStripMenuItem.Name = "BackupDataToolStripMenuItem"
+        Me.BackupDataToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.BackupDataToolStripMenuItem.Text = "Backup Data"
+        '
+        'ChainDailyStockToolStripMenuItem
+        '
+        Me.ChainDailyStockToolStripMenuItem.Name = "ChainDailyStockToolStripMenuItem"
+        Me.ChainDailyStockToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.ChainDailyStockToolStripMenuItem.Text = "Chain Daily Stock"
+        '
+        'FancyDailyStockToolStripMenuItem
+        '
+        Me.FancyDailyStockToolStripMenuItem.Name = "FancyDailyStockToolStripMenuItem"
+        Me.FancyDailyStockToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.FancyDailyStockToolStripMenuItem.Text = "Fancy Daily Stock"
+        '
+        'DeleteFancyTransactionToolStripMenuItem
+        '
+        Me.DeleteFancyTransactionToolStripMenuItem.Name = "DeleteFancyTransactionToolStripMenuItem"
+        Me.DeleteFancyTransactionToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.DeleteFancyTransactionToolStripMenuItem.Text = "Delete Fancy Transaction"
+        '
+        'mnuMain
+        '
+        Me.mnuMain.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAdmin, Me.mnuMaster, Me.mnuChTransaction, Me.mnuFaTransaction, Me.mnuChBags, Me.mnuFaBags, Me.mnuCasting, Me.mnuHollow, Me.mnuChReports, Me.mnuFaReports, Me.mnuTools, Me.mnuAccount, Me.mnuStockReports, Me.mnuExit, Me.ToolStripMenuItem2})
+        Me.mnuMain.Location = New System.Drawing.Point(0, 0)
+        Me.mnuMain.MdiWindowListItem = Me.mnuTools
+        Me.mnuMain.Name = "mnuMain"
+        Me.mnuMain.Padding = New System.Windows.Forms.Padding(7, 2, 0, 2)
+        Me.mnuMain.Size = New System.Drawing.Size(947, 24)
+        Me.mnuMain.TabIndex = 5
+        Me.mnuMain.Text = "MenuStrip"
         '
         'mnuAdmin
         '
@@ -784,50 +811,12 @@ Partial Class frmMain
         Me.FaVacuumBagsToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
         Me.FaVacuumBagsToolStripMenuItem.Text = "Vacuum Bags"
         '
-        'mnuHollow
+        'mnuCasting
         '
-        Me.mnuHollow.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HollowIssueToolStripMenuItem, Me.HollowReceiveToolStripMenuItem, Me.CoreAdditionToolStripMenuItem2, Me.CastingToolStripMenuItem})
-        Me.mnuHollow.Name = "mnuHollow"
-        Me.mnuHollow.Size = New System.Drawing.Size(57, 20)
-        Me.mnuHollow.Text = "Hollow"
-        '
-        'HollowIssueToolStripMenuItem
-        '
-        Me.HollowIssueToolStripMenuItem.Name = "HollowIssueToolStripMenuItem"
-        Me.HollowIssueToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.HollowIssueToolStripMenuItem.Text = "Hollow Issue"
-        '
-        'HollowReceiveToolStripMenuItem
-        '
-        Me.HollowReceiveToolStripMenuItem.Name = "HollowReceiveToolStripMenuItem"
-        Me.HollowReceiveToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.HollowReceiveToolStripMenuItem.Text = "Hollow Receive"
-        '
-        'CoreAdditionToolStripMenuItem2
-        '
-        Me.CoreAdditionToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CoreAdditionIssueToolStripMenuItem, Me.CoreAdditionReceiveToolStripMenuItem})
-        Me.CoreAdditionToolStripMenuItem2.Name = "CoreAdditionToolStripMenuItem2"
-        Me.CoreAdditionToolStripMenuItem2.Size = New System.Drawing.Size(155, 22)
-        Me.CoreAdditionToolStripMenuItem2.Text = "Core Addition"
-        '
-        'CoreAdditionIssueToolStripMenuItem
-        '
-        Me.CoreAdditionIssueToolStripMenuItem.Name = "CoreAdditionIssueToolStripMenuItem"
-        Me.CoreAdditionIssueToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.CoreAdditionIssueToolStripMenuItem.Text = "Core Addition Issue"
-        '
-        'CoreAdditionReceiveToolStripMenuItem
-        '
-        Me.CoreAdditionReceiveToolStripMenuItem.Name = "CoreAdditionReceiveToolStripMenuItem"
-        Me.CoreAdditionReceiveToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
-        Me.CoreAdditionReceiveToolStripMenuItem.Text = "Core Addition Receive"
-        '
-        'CastingToolStripMenuItem
-        '
-        Me.CastingToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TreeMakingToolStripMenuItem, Me.ConvFactorToolStripMenuItem})
-        Me.CastingToolStripMenuItem.Name = "CastingToolStripMenuItem"
-        Me.CastingToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
-        Me.CastingToolStripMenuItem.Text = "Casting"
+        Me.mnuCasting.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TreeMakingToolStripMenuItem, Me.ConvFactorToolStripMenuItem})
+        Me.mnuCasting.Name = "mnuCasting"
+        Me.mnuCasting.Size = New System.Drawing.Size(59, 20)
+        Me.mnuCasting.Text = "Casting"
         '
         'TreeMakingToolStripMenuItem
         '
@@ -840,6 +829,37 @@ Partial Class frmMain
         Me.ConvFactorToolStripMenuItem.Name = "ConvFactorToolStripMenuItem"
         Me.ConvFactorToolStripMenuItem.Size = New System.Drawing.Size(138, 22)
         Me.ConvFactorToolStripMenuItem.Text = "Conv Factor"
+        '
+        'mnuHollow
+        '
+        Me.mnuHollow.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CoreAdditionIssueToolStripMenuItem, Me.CoreAdditionReceiveToolStripMenuItem, Me.HollowIssueToolStripMenuItem, Me.HollowReceiveToolStripMenuItem})
+        Me.mnuHollow.Name = "mnuHollow"
+        Me.mnuHollow.Size = New System.Drawing.Size(57, 20)
+        Me.mnuHollow.Text = "Hollow"
+        '
+        'CoreAdditionIssueToolStripMenuItem
+        '
+        Me.CoreAdditionIssueToolStripMenuItem.Name = "CoreAdditionIssueToolStripMenuItem"
+        Me.CoreAdditionIssueToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.CoreAdditionIssueToolStripMenuItem.Text = "Core Issue"
+        '
+        'CoreAdditionReceiveToolStripMenuItem
+        '
+        Me.CoreAdditionReceiveToolStripMenuItem.Name = "CoreAdditionReceiveToolStripMenuItem"
+        Me.CoreAdditionReceiveToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.CoreAdditionReceiveToolStripMenuItem.Text = "Core Receive"
+        '
+        'HollowIssueToolStripMenuItem
+        '
+        Me.HollowIssueToolStripMenuItem.Name = "HollowIssueToolStripMenuItem"
+        Me.HollowIssueToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.HollowIssueToolStripMenuItem.Text = "Hollow Issue"
+        '
+        'HollowReceiveToolStripMenuItem
+        '
+        Me.HollowReceiveToolStripMenuItem.Name = "HollowReceiveToolStripMenuItem"
+        Me.HollowReceiveToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.HollowReceiveToolStripMenuItem.Text = "Hollow Receive"
         '
         'mnuFaReports
         '
@@ -1234,7 +1254,7 @@ Partial Class frmMain
         '
         Me.statusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.statusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolStripStatusLabel1, Me.UserName, Me.ToolStripStatusLabel2, Me.UserType, Me.ToolStripStatusLabel3, Me.FormMode})
-        Me.statusStrip1.Location = New System.Drawing.Point(0, 405)
+        Me.statusStrip1.Location = New System.Drawing.Point(0, 349)
         Me.statusStrip1.Name = "statusStrip1"
         Me.statusStrip1.Size = New System.Drawing.Size(947, 22)
         Me.statusStrip1.TabIndex = 11
@@ -1260,22 +1280,22 @@ Partial Class frmMain
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(947, 449)
+        Me.ClientSize = New System.Drawing.Size(947, 393)
         Me.Controls.Add(Me.statusStrip1)
-        Me.Controls.Add(Me.MenuStrip)
+        Me.Controls.Add(Me.mnuMain)
         Me.Controls.Add(Me.StatusStrip)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip
+        Me.MainMenuStrip = Me.mnuMain
         Me.Name = "frmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "                                                  "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
-        Me.MenuStrip.ResumeLayout(False)
-        Me.MenuStrip.PerformLayout()
+        Me.mnuMain.ResumeLayout(False)
+        Me.mnuMain.PerformLayout()
         Me.statusStrip1.ResumeLayout(False)
         Me.statusStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -1286,22 +1306,22 @@ Partial Class frmMain
     Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents mnuMaster As ToolStripMenuItem
-    Friend WithEvents AccountMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LabourMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CategoryMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ChOperationMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ItemMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FamilyMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LabMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UserMasterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccountMnu As ToolStripMenuItem
+    Friend WithEvents LabourMnu As ToolStripMenuItem
+    Friend WithEvents CategoryMnu As ToolStripMenuItem
+    Friend WithEvents ChOperationMnu As ToolStripMenuItem
+    Friend WithEvents ItemMasterMnu As ToolStripMenuItem
+    Friend WithEvents FamilyMasterMnu As ToolStripMenuItem
+    Friend WithEvents LabMasterMnu As ToolStripMenuItem
+    Friend WithEvents UserMasterMnu As ToolStripMenuItem
     Friend WithEvents mnuChTransaction As ToolStripMenuItem
-    Friend WithEvents ChMeltingToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LotNoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UsedLotTransferedToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MainToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LotTransferToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents IssueMeltingMnu As ToolStripMenuItem
+    Friend WithEvents ReceiveMeltingMnu As ToolStripMenuItem
+    Friend WithEvents ReceiveTransferMnu As ToolStripMenuItem
+    Friend WithEvents IssueReceiveChartMnu As ToolStripMenuItem
+    Friend WithEvents IssueTransferMnu As ToolStripMenuItem
     Friend WithEvents LotAdditionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LabIssueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChLabIMnu As ToolStripMenuItem
     Friend WithEvents InterDepartmentTransferToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DepartmentIssueToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DepartmentReceiptToolStripMenuItem As ToolStripMenuItem
@@ -1313,7 +1333,7 @@ Partial Class frmMain
     Friend WithEvents mnuChReports As ToolStripMenuItem
     Friend WithEvents mnuTools As ToolStripMenuItem
     Friend WithEvents TestingToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MenuStrip As MenuStrip
+    Friend WithEvents mnuMain As MenuStrip
     Friend WithEvents ReportByBagNumberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LotAdditionCreateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LotAdditionIssueToolStripMenuItem As ToolStripMenuItem
@@ -1326,7 +1346,7 @@ Partial Class frmMain
     Friend WithEvents OfficeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LotFailReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents WIPLotNoWiseToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PartyMasterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PartyMasterMnu As ToolStripMenuItem
     Friend WithEvents RegisterToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VaccumBagByNumberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StockSummaryToolStripMenuItem As ToolStripMenuItem
@@ -1365,7 +1385,7 @@ Partial Class frmMain
     Friend WithEvents FormMode As ToolStripStatusLabel
     Friend WithEvents AccountOpeningToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditBagsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NewLabIssueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChLabIssueMnu As ToolStripMenuItem
     Friend WithEvents LotAdditionOpStockToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LossReportToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents NewSamplesReportToolStripMenuItem As ToolStripMenuItem
@@ -1373,28 +1393,26 @@ Partial Class frmMain
     Friend WithEvents ScrapReceiveReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CarbonReceiveReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CreateCompanyToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EditLabIssueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChEditLabIssueMnu As ToolStripMenuItem
     Friend WithEvents mnuExit As ToolStripMenuItem
     Friend WithEvents MeltingReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExtraScrapReceiveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StockAdditionReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents StampMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MaterialMasterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents StampMasterMnu As ToolStripMenuItem
+    Friend WithEvents MaterialMasterMnu As ToolStripMenuItem
     Friend WithEvents TestRDLCReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TruncateDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LabReportAgainstLotNoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TestDataToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mnuHollow As ToolStripMenuItem
-    Friend WithEvents HollowIssueToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HollowReceiveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HollowBhukaBagsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents mnuFaTransaction As ToolStripMenuItem
-    Friend WithEvents CoreAdditionToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents CoreAdditionIssueToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CoreAdditionReceiveToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MeltingMasterToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents FaOperationMasterToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HollowBhukaBagsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mnuFaTransaction As ToolStripMenuItem
+    Friend WithEvents HollowIssueToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MeltingMasterMnu As ToolStripMenuItem
+    Friend WithEvents FaOperationMnu As ToolStripMenuItem
     Friend WithEvents CreateNewLotToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents IssueReceiveHandmadeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InterDepartmentTransferToolStripMenuItem1 As ToolStripMenuItem
@@ -1447,7 +1465,12 @@ Partial Class frmMain
     Friend WithEvents FaMeltingSilverReportToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FancyStockIssueToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
-    Friend WithEvents CastingToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HollowReceiveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mnuCasting As ToolStripMenuItem
     Friend WithEvents TreeMakingToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConvFactorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BackupDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChainDailyStockToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FancyDailyStockToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeleteFancyTransactionToolStripMenuItem As ToolStripMenuItem
 End Class

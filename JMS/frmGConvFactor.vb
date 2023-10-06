@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Public Class frmGConvFactor
@@ -502,6 +501,7 @@ Public Class frmGConvFactor
             End If
         End If
     End Sub
+
     'Private Function Validate_Fields() As Boolean
     '    Try
     '        'If FormState.AStateMode Then

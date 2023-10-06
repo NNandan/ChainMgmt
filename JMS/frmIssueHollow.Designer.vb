@@ -22,18 +22,20 @@ Partial Class frmIssueHollow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Me.TbStockIssue = New System.Windows.Forms.TabControl()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Me.TblHollowIssue = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
@@ -63,8 +65,8 @@ Partial Class frmIssueHollow
         Me.TransDt = New System.Windows.Forms.DateTimePicker()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvStockIssue = New Telerik.WinControls.UI.RadGridView()
-        Me.TbStockIssue.SuspendLayout()
+        Me.dgvHollowIssue = New Telerik.WinControls.UI.RadGridView()
+        Me.TblHollowIssue.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,22 +91,22 @@ Partial Class frmIssueHollow
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.dgvStockIssue, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvStockIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHollowIssue, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHollowIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TbStockIssue
+        'TblHollowIssue
         '
-        Me.TbStockIssue.Controls.Add(Me.TabPage1)
-        Me.TbStockIssue.Controls.Add(Me.TabPage2)
-        Me.TbStockIssue.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TbStockIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.TbStockIssue.Location = New System.Drawing.Point(0, 0)
-        Me.TbStockIssue.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
-        Me.TbStockIssue.Name = "TbStockIssue"
-        Me.TbStockIssue.SelectedIndex = 0
-        Me.TbStockIssue.Size = New System.Drawing.Size(669, 404)
-        Me.TbStockIssue.TabIndex = 7
+        Me.TblHollowIssue.Controls.Add(Me.TabPage1)
+        Me.TblHollowIssue.Controls.Add(Me.TabPage2)
+        Me.TblHollowIssue.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TblHollowIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.TblHollowIssue.Location = New System.Drawing.Point(0, 0)
+        Me.TblHollowIssue.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.TblHollowIssue.Name = "TblHollowIssue"
+        Me.TblHollowIssue.SelectedIndex = 0
+        Me.TblHollowIssue.Size = New System.Drawing.Size(669, 404)
+        Me.TblHollowIssue.TabIndex = 7
         '
         'TabPage1
         '
@@ -179,10 +181,12 @@ Partial Class frmIssueHollow
         Me.cmbItemType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItemType.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItemType.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        RadListDataItem3.Text = "Bags"
-        RadListDataItem4.Text = "Lots"
-        Me.cmbItemType.Items.Add(RadListDataItem3)
-        Me.cmbItemType.Items.Add(RadListDataItem4)
+        RadListDataItem1.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        RadListDataItem1.Text = "Bags"
+        RadListDataItem2.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        RadListDataItem2.Text = "Lots"
+        Me.cmbItemType.Items.Add(RadListDataItem1)
+        Me.cmbItemType.Items.Add(RadListDataItem2)
         Me.cmbItemType.Location = New System.Drawing.Point(108, 29)
         Me.cmbItemType.Name = "cmbItemType"
         Me.cmbItemType.Size = New System.Drawing.Size(125, 20)
@@ -227,7 +231,7 @@ Partial Class frmIssueHollow
         'lblLotNo
         '
         Me.lblLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblLotNo.Location = New System.Drawing.Point(34, 60)
+        Me.lblLotNo.Location = New System.Drawing.Point(34, 59)
         Me.lblLotNo.Name = "lblLotNo"
         Me.lblLotNo.Size = New System.Drawing.Size(71, 18)
         Me.lblLotNo.TabIndex = 865
@@ -340,7 +344,8 @@ Partial Class frmIssueHollow
         'txtTransNo
         '
         Me.txtTransNo.BackColor = System.Drawing.Color.White
-        Me.txtTransNo.Location = New System.Drawing.Point(169, 29)
+        Me.txtTransNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTransNo.Location = New System.Drawing.Point(160, 29)
         Me.txtTransNo.Margin = New System.Windows.Forms.Padding(5)
         Me.txtTransNo.Name = "txtTransNo"
         Me.txtTransNo.ReadOnly = True
@@ -397,7 +402,7 @@ Partial Class frmIssueHollow
         Me.TransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.TransDt.Location = New System.Drawing.Point(69, 29)
         Me.TransDt.Name = "TransDt"
-        Me.TransDt.Size = New System.Drawing.Size(98, 22)
+        Me.TransDt.Size = New System.Drawing.Size(90, 22)
         Me.TransDt.TabIndex = 0
         Me.TransDt.TabStop = False
         '
@@ -414,7 +419,7 @@ Partial Class frmIssueHollow
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.dgvStockIssue)
+        Me.TabPage2.Controls.Add(Me.dgvHollowIssue)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(661, 377)
@@ -422,80 +427,91 @@ Partial Class frmIssueHollow
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'dgvStockIssue
+        'dgvHollowIssue
         '
-        Me.dgvStockIssue.BackColor = System.Drawing.Color.Transparent
-        Me.dgvStockIssue.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvStockIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.dgvStockIssue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgvStockIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvStockIssue.Location = New System.Drawing.Point(2, 3)
+        Me.dgvHollowIssue.BackColor = System.Drawing.Color.Transparent
+        Me.dgvHollowIssue.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvHollowIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvHollowIssue.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvHollowIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvHollowIssue.Location = New System.Drawing.Point(2, 3)
         '
         '
         '
-        Me.dgvStockIssue.MasterTemplate.AllowAddNewRow = False
-        Me.dgvStockIssue.MasterTemplate.AllowColumnReorder = False
+        Me.dgvHollowIssue.MasterTemplate.AllowAddNewRow = False
+        Me.dgvHollowIssue.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "HollowIssueId"
+        GridViewTextBoxColumn1.HeaderText = "Hollow Issue Id"
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "colHollowIssueId"
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "HollowIssueDt"
+        GridViewTextBoxColumn2.HeaderText = "Issue Dt"
+        GridViewTextBoxColumn2.Name = "colHollowIssueDt"
+        GridViewTextBoxColumn2.Width = 80
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "ItemType"
+        GridViewTextBoxColumn3.HeaderText = "Item Type"
+        GridViewTextBoxColumn3.Name = "colItemType"
+        GridViewTextBoxColumn3.Width = 80
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "CoreAddNo"
+        GridViewTextBoxColumn4.HeaderText = "Core Add No"
+        GridViewTextBoxColumn4.Name = "colCoreAddNo"
+        GridViewTextBoxColumn4.Width = 100
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "HollowNo"
+        GridViewTextBoxColumn5.HeaderText = "Hollow No."
+        GridViewTextBoxColumn5.Name = "colHollowNo"
+        GridViewTextBoxColumn5.Width = 90
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "ItemId"
+        GridViewTextBoxColumn6.HeaderText = "Item Id."
+        GridViewTextBoxColumn6.IsVisible = False
+        GridViewTextBoxColumn6.Name = "colItemId"
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "ItemName"
+        GridViewTextBoxColumn7.HeaderText = "ItemN ame"
+        GridViewTextBoxColumn7.Name = "colItemName"
+        GridViewTextBoxColumn7.Width = 90
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "IssueWt"
+        GridViewTextBoxColumn8.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn8.Name = "colIssueWt"
+        GridViewTextBoxColumn8.Width = 80
         GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "IssueId"
-        GridViewTextBoxColumn9.HeaderText = "Issue Id."
-        GridViewTextBoxColumn9.IsVisible = False
-        GridViewTextBoxColumn9.Name = "colIssueId"
+        GridViewTextBoxColumn9.FieldName = "IssuePr"
+        GridViewTextBoxColumn9.HeaderText = "Issue [%]"
+        GridViewTextBoxColumn9.Name = "colIssuePr"
+        GridViewTextBoxColumn9.Width = 80
         GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "IssueDt"
-        GridViewTextBoxColumn10.HeaderText = "Issue Dt."
-        GridViewTextBoxColumn10.Name = "colIssueDt"
-        GridViewTextBoxColumn10.Width = 90
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "FrDeptId"
-        GridViewTextBoxColumn11.HeaderText = "FrDept Id."
-        GridViewTextBoxColumn11.IsVisible = False
-        GridViewTextBoxColumn11.Name = "colFrDeptId"
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "FrDept"
-        GridViewTextBoxColumn12.HeaderText = "Fr Dept."
-        GridViewTextBoxColumn12.Name = "colFrDept"
-        GridViewTextBoxColumn12.Width = 120
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "ToDeptId"
-        GridViewTextBoxColumn13.HeaderText = "ToDept Id."
-        GridViewTextBoxColumn13.IsVisible = False
-        GridViewTextBoxColumn13.Name = "colToDeptId"
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "ToDept"
-        GridViewTextBoxColumn14.HeaderText = "To Dept."
-        GridViewTextBoxColumn14.Name = "colToDept"
-        GridViewTextBoxColumn14.Width = 120
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "VoucherNo"
-        GridViewTextBoxColumn15.HeaderText = "Voucher No."
-        GridViewTextBoxColumn15.Name = "colVoucherNo"
-        GridViewTextBoxColumn15.Width = 90
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "CreatedBy"
-        GridViewTextBoxColumn16.HeaderText = "Created By."
-        GridViewTextBoxColumn16.Name = "colCreatedBy"
-        GridViewTextBoxColumn16.Width = 150
-        Me.dgvStockIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16})
-        Me.dgvStockIssue.MasterTemplate.EnableGrouping = False
-        Me.dgvStockIssue.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvStockIssue.MasterTemplate.ViewDefinition = TableViewDefinition2
-        Me.dgvStockIssue.Name = "dgvStockIssue"
-        Me.dgvStockIssue.ReadOnly = True
-        Me.dgvStockIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvStockIssue.Size = New System.Drawing.Size(659, 367)
-        Me.dgvStockIssue.TabIndex = 0
+        GridViewTextBoxColumn10.FieldName = "FineWt"
+        GridViewTextBoxColumn10.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn10.Name = "colFineWt"
+        GridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn10.Width = 80
+        Me.dgvHollowIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
+        Me.dgvHollowIssue.MasterTemplate.EnableGrouping = False
+        Me.dgvHollowIssue.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvHollowIssue.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvHollowIssue.Name = "dgvHollowIssue"
+        Me.dgvHollowIssue.ReadOnly = True
+        Me.dgvHollowIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvHollowIssue.Size = New System.Drawing.Size(659, 367)
+        Me.dgvHollowIssue.TabIndex = 0
         '
         'frmIssueHollow
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(669, 404)
-        Me.Controls.Add(Me.TbStockIssue)
+        Me.Controls.Add(Me.TblHollowIssue)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.MaximizeBox = False
         Me.Name = "frmIssueHollow"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Hollow Issue"
-        Me.TbStockIssue.ResumeLayout(False)
+        Me.TblHollowIssue.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GBoxDetails.ResumeLayout(False)
         Me.GBoxDetails.PerformLayout()
@@ -522,13 +538,13 @@ Partial Class frmIssueHollow
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgvStockIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvStockIssue, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHollowIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHollowIssue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TbStockIssue As TabControl
+    Friend WithEvents TblHollowIssue As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents GBoxDetails As GroupBox
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
@@ -543,7 +559,7 @@ Partial Class frmIssueHollow
     Friend WithEvents TransDt As DateTimePicker
     Friend WithEvents Label26 As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents dgvStockIssue As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents dgvHollowIssue As Telerik.WinControls.UI.RadGridView
     Friend WithEvents txtFineWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtIssuePr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtIssueWt As Telerik.WinControls.UI.RadTextBox

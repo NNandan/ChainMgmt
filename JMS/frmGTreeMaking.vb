@@ -21,11 +21,10 @@ Public Class frmGTreeMaking
     End Sub
     Private Sub FillEmployee()
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FillCombo", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)

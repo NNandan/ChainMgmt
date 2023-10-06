@@ -1256,48 +1256,41 @@ Public Class frmMainChart
         Me.Close()
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
-        Try
-            Me.Cursor = Cursors.WaitCursor
-
-            Dim rds1 As ReportDataSource = New ReportDataSource()
-            rds1.Name = "DataSet_Report"
-            rds1.Value = FetchAllRecords(cmbLotNo.Text.Trim)
-
-            '' Dynaimc Path
-            Dim path As String = Directory.GetCurrentDirectory()
-            Dim replace As String = path.Replace("\bin\Debug", "") & "\App_Data\" & "ReportExtraMove.rdlc"
-            Dim CRPath As String = System.IO.Path.GetDirectoryName(Application.StartupPath) & "\..\..\MainFolder\"
-            'report.Load(CRPath & "Sales_Report.rpt")
-            ''
-            Dim report As LocalReport = New LocalReport()
-
-            Dim path2 As String = Application.StartupPath & "\Report\RptReceipt.rdlc"
-
-            report.ReportPath = path
-
-            ''report.DataSources.Clear()
-            ''report.DataSources.Add(rds1)
-            ''PrintToPrinter(report)
-        Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
-        Finally
-            Me.Cursor = Cursors.Default
-        End Try
-
-        'Dim sLotNo As String = Nothing
-        'sLotNo = cmbLotNo.Text.Trim
-        'Dim frm As New frmRptViewer(sLotNo)
-        'frm.ShowDialog()
-        'frm.BringToFront()
-        'frm.Focus()
-
         'Try
-        '    Me.PrintRpt()
+        '    Me.Cursor = Cursors.WaitCursor
+
+        '    Dim rds1 As ReportDataSource = New ReportDataSource()
+        '    rds1.Name = "DataSet_Report"
+        '    rds1.Value = FetchAllRecords(cmbLotNo.Text.Trim)
+
+        '    '' Dynaimc Path
+        '    Dim path As String = Directory.GetCurrentDirectory()
+        '    Dim CRPath As String = path.Replace("\bin\Debug", "") & "\Reports\" & "RptReceipt.rdlc"
+        '    ''
+        '    Dim report As LocalReport = New LocalReport()
+
+        '    report.ReportPath = CRPath
+
         'Catch ex As Exception
         '    MessageBox.Show("Error:- " & ex.Message)
         'Finally
         '    Me.Cursor = Cursors.Default
         'End Try
+
+        Dim sLotNo As String = Nothing
+        sLotNo = cmbLotNo.Text.Trim
+        Dim frm As New frmRptViewer(sLotNo)
+        frm.ShowDialog()
+        frm.BringToFront()
+        frm.Focus()
+
+        Try
+            Me.PrintRpt()
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
 
     End Sub
     Private Sub txtReceiveWt_Validating(sender As Object, e As CancelEventArgs) Handles txtReceiveWt.Validating

@@ -50,9 +50,9 @@ Partial Class RdfrmEditMelting
         Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
         Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TbMelting = New System.Windows.Forms.TabControl()
         Me.lblTreeNo = New System.Windows.Forms.TabPage()
@@ -82,6 +82,8 @@ Partial Class RdfrmEditMelting
         Me.dgvReceive = New Telerik.WinControls.UI.RadGridView()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
         Me.GrpTreeDetails = New System.Windows.Forms.GroupBox()
+        Me.lblTotGoldNeed = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTotGoldNeed = New System.Windows.Forms.TextBox()
         Me.txtTreeNo = New System.Windows.Forms.TextBox()
         Me.lblFinePer = New System.Windows.Forms.Label()
@@ -109,8 +111,6 @@ Partial Class RdfrmEditMelting
         Me.Label28 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DgvLstNotFinalReceived = New Telerik.WinControls.UI.RadGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.lblTotGoldNeed = New System.Windows.Forms.Label()
         Me.TbMelting.SuspendLayout()
         Me.lblTreeNo.SuspendLayout()
         CType(Me.btnFinalize, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -607,6 +607,26 @@ Partial Class RdfrmEditMelting
         Me.GrpTreeDetails.TabStop = False
         Me.GrpTreeDetails.Text = "Tree Details"
         '
+        'lblTotGoldNeed
+        '
+        Me.lblTotGoldNeed.AutoSize = True
+        Me.lblTotGoldNeed.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotGoldNeed.Location = New System.Drawing.Point(110, 52)
+        Me.lblTotGoldNeed.Name = "lblTotGoldNeed"
+        Me.lblTotGoldNeed.Size = New System.Drawing.Size(110, 14)
+        Me.lblTotGoldNeed.TabIndex = 822
+        Me.lblTotGoldNeed.Text = "Total Gold Needed"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(164, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(56, 14)
+        Me.Label3.TabIndex = 821
+        Me.Label3.Text = "Tree No."
+        '
         'txtTotGoldNeed
         '
         Me.txtTotGoldNeed.Location = New System.Drawing.Point(224, 48)
@@ -870,10 +890,10 @@ Partial Class RdfrmEditMelting
         '
         Me.DgvLstNotFinalReceived.BackColor = System.Drawing.Color.Transparent
         Me.DgvLstNotFinalReceived.Cursor = System.Windows.Forms.Cursors.Default
-        Me.DgvLstNotFinalReceived.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.DgvLstNotFinalReceived.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.DgvLstNotFinalReceived.ForeColor = System.Drawing.Color.Black
         Me.DgvLstNotFinalReceived.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgvLstNotFinalReceived.Location = New System.Drawing.Point(3, 0)
+        Me.DgvLstNotFinalReceived.Location = New System.Drawing.Point(0, 0)
         '
         '
         '
@@ -885,93 +905,76 @@ Partial Class RdfrmEditMelting
         GridViewTextBoxColumn15.Name = "colReceiveId"
         GridViewTextBoxColumn16.EnableExpressionEditor = False
         GridViewTextBoxColumn16.FieldName = "MaterialId"
-        GridViewTextBoxColumn16.HeaderText = "MaterialId"
+        GridViewTextBoxColumn16.HeaderText = "Material Id."
         GridViewTextBoxColumn16.IsVisible = False
         GridViewTextBoxColumn16.Name = "colMaterialId"
         GridViewTextBoxColumn17.EnableExpressionEditor = False
         GridViewTextBoxColumn17.FieldName = "MaterialName"
-        GridViewTextBoxColumn17.HeaderText = "MaterialName"
+        GridViewTextBoxColumn17.HeaderText = "Material Name"
         GridViewTextBoxColumn17.Name = "colMaterialName"
-        GridViewTextBoxColumn17.Width = 100
+        GridViewTextBoxColumn17.Width = 140
         GridViewTextBoxColumn18.EnableExpressionEditor = False
         GridViewTextBoxColumn18.FieldName = "OperationTypeId"
-        GridViewTextBoxColumn18.HeaderText = "OperationTypeId"
+        GridViewTextBoxColumn18.HeaderText = "OperationType Id."
         GridViewTextBoxColumn18.IsVisible = False
         GridViewTextBoxColumn18.Name = "colOperationTypeId"
         GridViewTextBoxColumn19.EnableExpressionEditor = False
         GridViewTextBoxColumn19.FieldName = "OperationName"
-        GridViewTextBoxColumn19.HeaderText = "OperationName"
+        GridViewTextBoxColumn19.HeaderText = "Operation Name"
         GridViewTextBoxColumn19.Name = "colOperationName"
-        GridViewTextBoxColumn19.Width = 100
+        GridViewTextBoxColumn19.Width = 140
         GridViewTextBoxColumn20.EnableExpressionEditor = False
         GridViewTextBoxColumn20.FieldName = "ItemId"
-        GridViewTextBoxColumn20.HeaderText = "ItemId"
+        GridViewTextBoxColumn20.HeaderText = "Item Id."
         GridViewTextBoxColumn20.IsVisible = False
         GridViewTextBoxColumn20.Name = "colItemId"
         GridViewTextBoxColumn21.EnableExpressionEditor = False
         GridViewTextBoxColumn21.FieldName = "ItemName"
-        GridViewTextBoxColumn21.HeaderText = "colItemName"
+        GridViewTextBoxColumn21.HeaderText = "Item Name"
         GridViewTextBoxColumn21.Name = "colItemName"
-        GridViewTextBoxColumn21.Width = 100
+        GridViewTextBoxColumn21.Width = 140
         GridViewTextBoxColumn22.EnableExpressionEditor = False
         GridViewTextBoxColumn22.FieldName = "LotNo"
-        GridViewTextBoxColumn22.HeaderText = "colLotNo"
+        GridViewTextBoxColumn22.HeaderText = "Lot No."
         GridViewTextBoxColumn22.Name = "colLotNo"
         GridViewTextBoxColumn22.Width = 100
         GridViewTextBoxColumn23.EnableExpressionEditor = False
         GridViewTextBoxColumn23.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn23.HeaderText = "ReceiveWt"
+        GridViewTextBoxColumn23.HeaderText = "Receive Wt."
         GridViewTextBoxColumn23.Name = "colReceiveWt"
-        GridViewTextBoxColumn23.Width = 80
+        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn23.Width = 90
         GridViewTextBoxColumn24.EnableExpressionEditor = False
         GridViewTextBoxColumn24.FieldName = "ReceiveQty"
-        GridViewTextBoxColumn24.HeaderText = "ReceiveQty"
+        GridViewTextBoxColumn24.HeaderText = "Receive Qty."
         GridViewTextBoxColumn24.Name = "colReceiveQty"
-        GridViewTextBoxColumn24.Width = 80
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 90
+        GridViewCheckBoxColumn2.EnableExpressionEditor = False
+        GridViewCheckBoxColumn2.FieldName = "WorkDone"
+        GridViewCheckBoxColumn2.HeaderText = "Work Done"
+        GridViewCheckBoxColumn2.MinWidth = 20
+        GridViewCheckBoxColumn2.Name = "colWorkDone"
+        GridViewCheckBoxColumn2.Width = 90
         GridViewTextBoxColumn25.EnableExpressionEditor = False
-        GridViewTextBoxColumn25.FieldName = "WorkDone"
-        GridViewTextBoxColumn25.HeaderText = "WorkDone"
-        GridViewTextBoxColumn25.Name = "colWorkDone"
-        GridViewTextBoxColumn25.Width = 60
+        GridViewTextBoxColumn25.FieldName = "NewLotDt"
+        GridViewTextBoxColumn25.HeaderText = "New Lot Dt."
+        GridViewTextBoxColumn25.Name = "colNewLotDt"
+        GridViewTextBoxColumn25.Width = 90
         GridViewTextBoxColumn26.EnableExpressionEditor = False
-        GridViewTextBoxColumn26.FieldName = "NewLotDt"
-        GridViewTextBoxColumn26.HeaderText = "NewLotDt"
-        GridViewTextBoxColumn26.Name = "colNewLotDt"
-        GridViewTextBoxColumn26.Width = 100
-        GridViewTextBoxColumn27.EnableExpressionEditor = False
-        GridViewTextBoxColumn27.FieldName = "NewLotId"
-        GridViewTextBoxColumn27.HeaderText = "NewLotId"
-        GridViewTextBoxColumn27.Name = "colNewLotId"
-        GridViewTextBoxColumn27.Width = 80
-        Me.DgvLstNotFinalReceived.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27})
+        GridViewTextBoxColumn26.FieldName = "NewLotId"
+        GridViewTextBoxColumn26.HeaderText = "New Lot Id."
+        GridViewTextBoxColumn26.IsVisible = False
+        GridViewTextBoxColumn26.Name = "colNewLotId"
+        Me.DgvLstNotFinalReceived.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewCheckBoxColumn2, GridViewTextBoxColumn25, GridViewTextBoxColumn26})
         Me.DgvLstNotFinalReceived.MasterTemplate.ShowRowHeaderColumn = False
         Me.DgvLstNotFinalReceived.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.DgvLstNotFinalReceived.Name = "DgvLstNotFinalReceived"
         Me.DgvLstNotFinalReceived.ReadOnly = True
         Me.DgvLstNotFinalReceived.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.DgvLstNotFinalReceived.ShowGroupPanel = False
-        Me.DgvLstNotFinalReceived.Size = New System.Drawing.Size(793, 471)
+        Me.DgvLstNotFinalReceived.Size = New System.Drawing.Size(985, 555)
         Me.DgvLstNotFinalReceived.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(164, 20)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(56, 14)
-        Me.Label3.TabIndex = 821
-        Me.Label3.Text = "Tree No."
-        '
-        'lblTotGoldNeed
-        '
-        Me.lblTotGoldNeed.AutoSize = True
-        Me.lblTotGoldNeed.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotGoldNeed.Location = New System.Drawing.Point(110, 52)
-        Me.lblTotGoldNeed.Name = "lblTotGoldNeed"
-        Me.lblTotGoldNeed.Size = New System.Drawing.Size(110, 14)
-        Me.lblTotGoldNeed.TabIndex = 822
-        Me.lblTotGoldNeed.Text = "Total Gold Needed"
         '
         'RdfrmEditMelting
         '

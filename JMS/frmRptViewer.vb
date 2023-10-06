@@ -18,7 +18,11 @@ Public Class frmRptViewer
         rds1.Name = "DataSet_Report"
         rds1.Value = FetchAllRecords(_LotNo)
 
-        ReportViewer1.LocalReport.ReportPath = "D:\Desktop Projects\JMS\JMS\Report\RptReceipt.rdlc"
+        '' Dynaimc Path
+        Dim path As String = Directory.GetCurrentDirectory()
+        Dim CRPath As String = path.Replace("\bin\Debug", "") & "\Reports\" & "RptReceipt.rdlc"
+        ''
+        ReportViewer1.LocalReport.ReportPath = CRPath
         ReportViewer1.LocalReport.DataSources.Clear()
 
         ReportViewer1.PrinterSettings.DefaultPageSettings.PaperSize = New PaperSize("Custom", 550, 275)

@@ -1,7 +1,7 @@
 ﻿Imports System.Windows.Forms
 Imports JMS.Common_Cls
 Public Class frmMain
-    Private Sub LabourMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabourMasterToolStripMenuItem.Click
+    Private Sub LabourMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabourMnu.Click
         Try
             Dim ObjLabour As New frmKarigarMaster
             ObjLabour.MdiParent = Me
@@ -10,7 +10,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub AccountMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccountMasterToolStripMenuItem.Click
+    Private Sub AccountMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccountMnu.Click
         Try
             Dim ObjAccount As New frmAccountMaster
             ObjAccount.MdiParent = Me
@@ -19,7 +19,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub CategoryMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoryMasterToolStripMenuItem.Click
+    Private Sub CategoryMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoryMnu.Click
         Try
             Dim ObjCategory As New frmCategoryMaster
             ObjCategory.MdiParent = Me
@@ -28,7 +28,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub OperationMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChOperationMasterToolStripMenuItem.Click
+    Private Sub OperationMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChOperationMnu.Click
         Try
             Dim ObjOperation As New frmChOperationMaster
             ObjOperation.MdiParent = Me
@@ -37,7 +37,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub ItemMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemMasterToolStripMenuItem.Click
+    Private Sub ItemMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemMasterMnu.Click
         Try
             Dim ObjItem As New frmItemMaster
             ObjItem.MdiParent = Me
@@ -46,7 +46,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub MeltingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChMeltingToolStripMenuItem.Click
+    Private Sub MeltingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IssueMeltingMnu.Click
         Try
             Dim ObjMelting As New frmMelting
             ObjMelting.MdiParent = Me
@@ -55,7 +55,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub FamilyMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FamilyMasterToolStripMenuItem.Click
+    Private Sub FamilyMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FamilyMasterMnu.Click
         Try
             Dim ObjFamily As New frmFamilyMaster
             ObjFamily.MdiParent = Me
@@ -64,7 +64,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub LotNoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LotNoToolStripMenuItem.Click
+    Private Sub LotNoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReceiveMeltingMnu.Click
         Try
             Dim ObjLotNo As New frmLotNo
             ObjLotNo.MdiParent = Me
@@ -73,7 +73,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub MainToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MainToolStripMenuItem.Click
+    Private Sub MainToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IssueReceiveChartMnu.Click
         Try
             Dim ObjMainChart As New frmMainChart
             ObjMainChart.MdiParent = Me
@@ -82,7 +82,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub LotTransferToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LotTransferToolStripMenuItem.Click
+    Private Sub LotTransferToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IssueTransferMnu.Click
         Try
             Dim ObjILotTransfer As New frmILotTransfer
             ObjILotTransfer.MdiParent = Me
@@ -91,7 +91,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub UsedLotTransferedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsedLotTransferedToolStripMenuItem.Click
+    Private Sub UsedLotTransferedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReceiveTransferMnu.Click
         Try
             Dim ObjRLotTransfer As New frmRLotTransfer
             ObjRLotTransfer.MdiParent = Me
@@ -109,7 +109,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub LabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabIssueToolStripMenuItem.Click
+    Private Sub LabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChLabIMnu.Click
         Try
             Dim ObjLabIssue As New frmLabIssue
             ObjLabIssue.MdiParent = Me
@@ -118,7 +118,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub LabMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabMasterToolStripMenuItem.Click
+    Private Sub LabMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabMasterMnu.Click
         Try
             Dim ObjLabMaster As New frmLabMaster
             ObjLabMaster.MdiParent = Me
@@ -135,6 +135,30 @@ Public Class frmMain
             Catch a As Exception
             End Try
         Next
+
+        If SWId = 1 Then                        ''For Chain
+            Me.mnuFaTransaction.Visible = False
+            Me.mnuFaBags.Visible = False
+            Me.mnuCasting.Visible = False
+            Me.mnuHollow.Visible = False
+            Me.mnuFaReports.Visible = False
+        ElseIf SWId = 2 Then                    ''For Fancy
+            Me.mnuChTransaction.Visible = False
+            Me.mnuChBags.Visible = False
+            Me.mnuCasting.Visible = False
+            Me.mnuHollow.Visible = False
+            Me.mnuChReports.Visible = False
+        ElseIf SWId = 3 Then                    ''For Casting
+
+        Else                                    ''For Hollow
+
+        End If
+
+        'For Each Cntrl As Control In Me.Controls
+        '    If TypeOf Control Is MainMenu Then
+        '        Cntrl.Enabled = False
+        '    End If
+        'Next
 
         Me.Width = Screen.PrimaryScreen.WorkingArea.Width
         Me.Height = Screen.PrimaryScreen.WorkingArea.Height
@@ -156,7 +180,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub UserMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserMasterToolStripMenuItem.Click
+    Private Sub UserMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserMasterMnu.Click
         Try
             Dim ObjUserMaster As New frmUserMaster
             ObjUserMaster.MdiParent = Me
@@ -302,7 +326,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub PartyMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PartyMasterToolStripMenuItem.Click
+    Private Sub PartyMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PartyMasterMnu.Click
         Try
             Dim ObjPartyMaster As New frmPartyMaster
             ObjPartyMaster.MdiParent = Me
@@ -564,7 +588,7 @@ Public Class frmMain
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub NewLabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewLabIssueToolStripMenuItem.Click
+    Private Sub NewLabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChLabIssueMnu.Click
         Try
             Dim ObjLabIssue As New frmLabIssue
             ObjLabIssue.MdiParent = Me
@@ -573,7 +597,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub EditLabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditLabIssueToolStripMenuItem.Click
+    Private Sub EditLabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChEditLabIssueMnu.Click
         Try
             Dim ObjEditELabIssue As New frmListLabIssue
             ObjEditELabIssue.MdiParent = Me
@@ -648,7 +672,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub StampMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StampMasterToolStripMenuItem.Click
+    Private Sub StampMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StampMasterMnu.Click
         Try
             Dim ObjStampMaster As New frmStampMaster
             ObjStampMaster.MdiParent = Me
@@ -657,7 +681,7 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub MaterialMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaterialMasterToolStripMenuItem.Click
+    Private Sub MaterialMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaterialMasterMnu.Click
         Try
             Dim ObjMaterialMaster As New frmMaterialMaster
             ObjMaterialMaster.MdiParent = Me
@@ -685,51 +709,15 @@ Public Class frmMain
         End Try
     End Sub
     Private Sub TestDataToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestDataToolStripMenuItem.Click
-        Try
-            Dim ObjLabRptAgainstLotNo As New frmTest
-            ObjLabRptAgainstLotNo.MdiParent = Me
-            ObjLabRptAgainstLotNo.Show()
-        Catch ex As Exception
-            Throw ex
-        End Try
+        'Try
+        '    Dim ObjLabRptAgainstLotNo As New frmTest
+        '    ObjLabRptAgainstLotNo.MdiParent = Me
+        '    ObjLabRptAgainstLotNo.Show()
+        'Catch ex As Exception
+        '    Throw ex
+        'End Try
     End Sub
-    Private Sub HollowIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HollowIssueToolStripMenuItem.Click
-        Try
-            Dim ObjIssueHollow As New frmIssueHollow
-            ObjIssueHollow.MdiParent = Me
-            ObjIssueHollow.Show()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub HollowReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HollowReceiveToolStripMenuItem.Click
-        Try
-            Dim ObjReceiveHollow As New frmReceiveHollow
-            ObjReceiveHollow.MdiParent = Me
-            ObjReceiveHollow.Show()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub CoreAdditionIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoreAdditionIssueToolStripMenuItem.Click
-        Try
-            Dim ObjCoreAdditionIssue As New frmCoreAdditionIssueNew
-            ObjCoreAdditionIssue.MdiParent = Me
-            ObjCoreAdditionIssue.Show()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub CoreAdditionReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoreAdditionReceiveToolStripMenuItem.Click
-        Try
-            Dim ObjCoreAdditionReceive As New frmCoreAdditionReceiveNew
-            ObjCoreAdditionReceive.MdiParent = Me
-            ObjCoreAdditionReceive.Show()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub MeltingMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeltingMasterToolStripMenuItem.Click
+    Private Sub MeltingMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeltingMasterMnu.Click
         Try
             Dim ObjMeltingMaster As New frmMeltingMaster
             ObjMeltingMaster.MdiParent = Me
@@ -738,9 +726,9 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-    Private Sub FaOperationMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaOperationMasterToolStripMenuItem.Click
+    Private Sub FaOperationMasterToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaOperationMnu.Click
         Try
-            Dim ObjFaOperation As New frmFaOperationMaster
+            Dim ObjFaOperation As New frmFOperationMaster
             ObjFaOperation.MdiParent = Me
             ObjFaOperation.Show()
         Catch ex As Exception
@@ -749,7 +737,7 @@ Public Class frmMain
     End Sub
     Private Sub FancyAccountClosingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FancyAccountClosingToolStripMenuItem.Click
         Try
-            Dim ObjFaAccountOpening As New frmFaAccountClosing
+            Dim ObjFaAccountOpening As New frmFAccountClosing
             ObjFaAccountOpening.MdiParent = Me
             ObjFaAccountOpening.Show()
         Catch ex As Exception
@@ -766,7 +754,7 @@ Public Class frmMain
     End Sub
     Private Sub FancyAccountOpeningToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FancyAccountOpeningToolStripMenuItem.Click
         Try
-            Dim ObjFaAccountOpening As New frmFaAccountOpening
+            Dim ObjFaAccountOpening As New frmFAccountOpening
             ObjFaAccountOpening.MdiParent = Me
             ObjFaAccountOpening.Show()
         Catch ex As Exception
@@ -784,7 +772,7 @@ Public Class frmMain
     End Sub
     Private Sub FDepartmentIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FDepartmentIssueToolStripMenuItem.Click
         Try
-            Dim ObjFaInterDeptIssue As New frmFaInterDeptIssue
+            Dim ObjFaInterDeptIssue As New frmFInterDeptIssue
             ObjFaInterDeptIssue.MdiParent = Me
             ObjFaInterDeptIssue.Show()
         Catch ex As Exception
@@ -793,7 +781,7 @@ Public Class frmMain
     End Sub
     Private Sub FDepartmentReceiptToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FDepartmentReceiptToolStripMenuItem.Click
         Try
-            Dim ObjFaInterDeptIssue As New frmFaInterDeptReceipt
+            Dim ObjFaInterDeptIssue As New frmFInterDeptReceipt
             ObjFaInterDeptIssue.MdiParent = Me
             ObjFaInterDeptIssue.Show()
         Catch ex As Exception
@@ -802,7 +790,7 @@ Public Class frmMain
     End Sub
     Private Sub FaMeltingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaMeltingToolStripMenuItem.Click
         Try
-            Dim ObjFaMelting As New frmFaMelting
+            Dim ObjFaMelting As New frmFMelting
             ObjFaMelting.MdiParent = Me
             ObjFaMelting.Show()
         Catch ex As Exception
@@ -820,7 +808,7 @@ Public Class frmMain
     End Sub
     Private Sub FaLabIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaLabIssueToolStripMenuItem.Click
         Try
-            Dim ObjLabIssue As New frmFaLabIssue
+            Dim ObjLabIssue As New frmFLabIssue
             ObjLabIssue.MdiParent = Me
             ObjLabIssue.Show()
         Catch ex As Exception
@@ -838,7 +826,7 @@ Public Class frmMain
     End Sub
     Private Sub FaScrapBagsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaScrapBagsToolStripMenuItem.Click
         Try
-            Dim ObjBhukaBag As New frmFaBhukaBag
+            Dim ObjBhukaBag As New frmFBhukaBag
             ObjBhukaBag.MdiParent = Me
             ObjBhukaBag.Show()
         Catch ex As Exception
@@ -847,7 +835,7 @@ Public Class frmMain
     End Sub
     Private Sub FaVacuumBagsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaVacuumBagsToolStripMenuItem.Click
         Try
-            Dim ObjVaccumBag As New frmFaVaccumBag
+            Dim ObjVaccumBag As New frmFVaccumBag
             ObjVaccumBag.MdiParent = Me
             ObjVaccumBag.Show()
         Catch ex As Exception
@@ -856,7 +844,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockSummaryToolStripMenuItem.Click
         Try
-            Dim ObjStockSummary As New frmFaStockSummary
+            Dim ObjStockSummary As New frmFStockSummary
             ObjStockSummary.MdiParent = Me
             ObjStockSummary.Show()
         Catch ex As Exception
@@ -890,10 +878,9 @@ Public Class frmMain
             Throw ex
         End Try
     End Sub
-
     Private Sub FaVaccumBagsCreatedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaVaccumBagsCreatedToolStripMenuItem.Click
         Try
-            Dim ObjVaccumBagRpt As New frmFaVaccumBagRpt
+            Dim ObjVaccumBagRpt As New frmFVaccumBagRpt
             ObjVaccumBagRpt.MdiParent = Me
             ObjVaccumBagRpt.Show()
         Catch ex As Exception
@@ -902,7 +889,7 @@ Public Class frmMain
     End Sub
     Private Sub FaScrapBagsCreatedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaScrapBagsCreatedToolStripMenuItem.Click
         Try
-            Dim ObjStockBhukaBagCreated As New frmFaStockBhukaBagCreated
+            Dim ObjStockBhukaBagCreated As New frmFStockBhukaBagCreated
             ObjStockBhukaBagCreated.MdiParent = Me
             ObjStockBhukaBagCreated.Show()
         Catch ex As Exception
@@ -911,7 +898,7 @@ Public Class frmMain
     End Sub
     Private Sub FaBalancePendingInVoucherToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FaBalancePendingInVoucherToolStripMenuItem1.Click
         Try
-            Dim ObjPendingBagRpt As New frmFaPendingVoucherRpt
+            Dim ObjPendingBagRpt As New frmFPendingVoucherRpt
             ObjPendingBagRpt.MdiParent = Me
             ObjPendingBagRpt.Show()
         Catch ex As Exception
@@ -920,7 +907,7 @@ Public Class frmMain
     End Sub
     Private Sub FaBalancePendingInBagsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FaBalancePendingInBagsToolStripMenuItem1.Click
         Try
-            Dim ObjBalancePendingBags As New frmFaBalancePendingBags
+            Dim ObjBalancePendingBags As New frmFBalancePendingBags
             ObjBalancePendingBags.MdiParent = Me
             ObjBalancePendingBags.Show()
         Catch ex As Exception
@@ -929,7 +916,7 @@ Public Class frmMain
     End Sub
     Private Sub FaVoucherNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaVoucherNumberToolStripMenuItem.Click
         Try
-            Dim ObjMetalUsedReport As New frmFaMetalUsedReport
+            Dim ObjMetalUsedReport As New frmFMetalUsedReport
             ObjMetalUsedReport.MdiParent = Me
             ObjMetalUsedReport.Show()
         Catch ex As Exception
@@ -938,7 +925,7 @@ Public Class frmMain
     End Sub
     Private Sub FaBagNumberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaBagNumberToolStripMenuItem.Click
         Try
-            Dim ObjMetalUsedInBag As New frmFaMetalUsedInBag
+            Dim ObjMetalUsedInBag As New frmFMetalUsedInBag
             ObjMetalUsedInBag.MdiParent = Me
             ObjMetalUsedInBag.Show()
         Catch ex As Exception
@@ -947,7 +934,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockAddMeltingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockAddMeltingToolStripMenuItem.Click
         Try
-            Dim ObjStockAdditionReport As New frmFaStockAdditionMReport
+            Dim ObjStockAdditionReport As New frmFStockAdditionMReport
             ObjStockAdditionReport.MdiParent = Me
             ObjStockAdditionReport.Show()
         Catch ex As Exception
@@ -956,7 +943,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockAddVoucherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockAddVoucherToolStripMenuItem.Click
         Try
-            Dim ObjStockAdditionReport As New frmFaStockAdditionVReport
+            Dim ObjStockAdditionReport As New frmFStockAdditionVReport
             ObjStockAdditionReport.MdiParent = Me
             ObjStockAdditionReport.Show()
         Catch ex As Exception
@@ -965,7 +952,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockAddIssueReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockAddIssueReceiveToolStripMenuItem.Click
         Try
-            Dim ObjStockAdditionReport As New frmFaStockAdditionIReport
+            Dim ObjStockAdditionReport As New frmFStockAdditionIReport
             ObjStockAdditionReport.MdiParent = Me
             ObjStockAdditionReport.Show()
         Catch ex As Exception
@@ -974,7 +961,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockSubMeltingToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FaStockSubMeltingToolStripMenuItem1.Click
         Try
-            Dim ObjStockAdditionReport As New frmFaStockSubtractionMSReport
+            Dim ObjStockAdditionReport As New frmFStockSubtractionMSReport
             ObjStockAdditionReport.MdiParent = Me
             ObjStockAdditionReport.Show()
         Catch ex As Exception
@@ -983,7 +970,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockSubVoucherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockSubVoucherToolStripMenuItem.Click
         Try
-            Dim ObjStocksubtractionReport As New frmFaStockSubtractionVSReport
+            Dim ObjStocksubtractionReport As New frmFStockSubtractionVSReport
             ObjStocksubtractionReport.MdiParent = Me
             ObjStocksubtractionReport.Show()
         Catch ex As Exception
@@ -992,7 +979,7 @@ Public Class frmMain
     End Sub
     Private Sub FaStockSubIssueReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaStockSubIssueReceiveToolStripMenuItem.Click
         Try
-            Dim ObjStocksubtractionReport As New frmFaStockSubtractionISReport
+            Dim ObjStocksubtractionReport As New frmFStockSubtractionISReport
             ObjStocksubtractionReport.MdiParent = Me
             ObjStocksubtractionReport.Show()
         Catch ex As Exception
@@ -1001,7 +988,7 @@ Public Class frmMain
     End Sub
     Private Sub FaInterDeptIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaInterDeptIssueToolStripMenuItem.Click
         Try
-            Dim ObjInterDeptIssueRpt As New frmFaInterDeptIssueRpt
+            Dim ObjInterDeptIssueRpt As New frmFInterDeptIssueRpt
             ObjInterDeptIssueRpt.MdiParent = Me
             ObjInterDeptIssueRpt.Show()
         Catch ex As Exception
@@ -1010,7 +997,7 @@ Public Class frmMain
     End Sub
     Private Sub FaInterDeptReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaInterDeptReceiveToolStripMenuItem.Click
         Try
-            Dim ObjStockLossMetalReceived As New frmFaStockLossMetalReceived
+            Dim ObjStockLossMetalReceived As New frmFStockLossMetalReceived
             ObjStockLossMetalReceived.MdiParent = Me
             ObjStockLossMetalReceived.Show()
         Catch ex As Exception
@@ -1019,7 +1006,7 @@ Public Class frmMain
     End Sub
     Private Sub LabourwiseLossToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LabourwiseLossToolStripMenuItem.Click
         Try
-            Dim ObjKarigarwiseLossRpt As New frmFaKarigarwiseLossRpt
+            Dim ObjKarigarwiseLossRpt As New frmFKarigarwiseLossRpt
             ObjKarigarwiseLossRpt.MdiParent = Me
             ObjKarigarwiseLossRpt.Show()
         Catch ex As Exception
@@ -1028,7 +1015,7 @@ Public Class frmMain
     End Sub
     Private Sub MeltingwiseLossToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MeltingwiseLossToolStripMenuItem.Click
         Try
-            Dim ObjMeltingwiseLossRpt As New frmFaMeltingwiseLossRpt
+            Dim ObjMeltingwiseLossRpt As New frmFMeltingwiseLossRpt
             ObjMeltingwiseLossRpt.MdiParent = Me
             ObjMeltingwiseLossRpt.Show()
         Catch ex As Exception
@@ -1037,7 +1024,7 @@ Public Class frmMain
     End Sub
     Private Sub OperationWiseLossToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OperationWiseLossToolStripMenuItem.Click
         Try
-            Dim ObjOperationwiseLossRpt As New frmFaOperationwiseLossRpt
+            Dim ObjOperationwiseLossRpt As New frmFOperationwiseLossRpt
             ObjOperationwiseLossRpt.MdiParent = Me
             ObjOperationwiseLossRpt.Show()
         Catch ex As Exception
@@ -1046,7 +1033,7 @@ Public Class frmMain
     End Sub
     Private Sub LotNowiseLossToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LotNowiseLossToolStripMenuItem.Click
         Try
-            Dim ObjLotNowiseLossRpt As New frmFaLotNowiseLossRpt
+            Dim ObjLotNowiseLossRpt As New frmFLotNowiseLossRpt
             ObjLotNowiseLossRpt.MdiParent = Me
             ObjLotNowiseLossRpt.Show()
         Catch ex As Exception
@@ -1055,7 +1042,7 @@ Public Class frmMain
     End Sub
     Private Sub FaLotHistoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaLotHistoryToolStripMenuItem.Click
         Try
-            Dim ObjLotHistoryRpt As New frmFaLotHistoryRpt
+            Dim ObjLotHistoryRpt As New frmFLotHistoryRpt
             ObjLotHistoryRpt.MdiParent = Me
             ObjLotHistoryRpt.Show()
         Catch ex As Exception
@@ -1064,17 +1051,16 @@ Public Class frmMain
     End Sub
     Private Sub FaDetailsOfAllLotsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaDetailsOfAllLotsToolStripMenuItem.Click
         Try
-            Dim ObjAllLotsRpt As New frmFaAllLotsRpt
+            Dim ObjAllLotsRpt As New frmFAllLotsRpt
             ObjAllLotsRpt.MdiParent = Me
             ObjAllLotsRpt.Show()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-
     Private Sub FaMeltingReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaMeltingReportToolStripMenuItem.Click
         Try
-            Dim ObjMeltingRpt As New frmFaMeltingRpt
+            Dim ObjMeltingRpt As New frmFMeltingRpt
             ObjMeltingRpt.MdiParent = Me
             ObjMeltingRpt.Show()
         Catch ex As Exception
@@ -1083,7 +1069,7 @@ Public Class frmMain
     End Sub
     Private Sub FaMeltingAlloyReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaMeltingAlloyReportToolStripMenuItem.Click
         Try
-            Dim ObjMeltingAlloyReport As New frmFaMeltingAlloyReport
+            Dim ObjMeltingAlloyReport As New frmFMeltingAlloyReport
             ObjMeltingAlloyReport.MdiParent = Me
             ObjMeltingAlloyReport.Show()
         Catch ex As Exception
@@ -1092,7 +1078,7 @@ Public Class frmMain
     End Sub
     Private Sub FaWorkDoneReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaWorkDoneReportToolStripMenuItem.Click
         Try
-            Dim ObjWorkDoneRpt As New frmFaWorkDoneRpt
+            Dim ObjWorkDoneRpt As New frmFWorkDoneRpt
             ObjWorkDoneRpt.MdiParent = Me
             ObjWorkDoneRpt.Show()
         Catch ex As Exception
@@ -1101,7 +1087,7 @@ Public Class frmMain
     End Sub
     Private Sub FaMeltingSilverReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FaMeltingSilverReportToolStripMenuItem.Click
         Try
-            Dim ObjSilverMeltingRpt As New frmFaSilverMeltingRpt
+            Dim ObjSilverMeltingRpt As New frmFSilverMeltingRpt
             ObjSilverMeltingRpt.MdiParent = Me
             ObjSilverMeltingRpt.Show()
         Catch ex As Exception
@@ -1110,17 +1096,16 @@ Public Class frmMain
     End Sub
     Private Sub IssueReceiveHandmadeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IssueReceiveHandmadeToolStripMenuItem.Click
         Try
-            Dim ObjIssueReceive As New frmFaIssueReceive
+            Dim ObjIssueReceive As New frmFIssueReceive
             ObjIssueReceive.MdiParent = Me
             ObjIssueReceive.Show()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-
     Private Sub FancyStockIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FancyStockIssueToolStripMenuItem.Click
         Try
-            Dim ObjIssueReceive As New frmFaStockIssue
+            Dim ObjIssueReceive As New frmFStockIssue
             ObjIssueReceive.MdiParent = Me
             ObjIssueReceive.Show()
         Catch ex As Exception
@@ -1143,6 +1128,92 @@ Public Class frmMain
             ObjBackup.Show()
         Catch ex As Exception
 
+        End Try
+    End Sub
+    Private Sub HollowIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HollowIssueToolStripMenuItem.Click
+        Try
+            Dim ObjIssueHollow As New frmIssueHollow
+            ObjIssueHollow.MdiParent = Me
+            ObjIssueHollow.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub HollowReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HollowReceiveToolStripMenuItem.Click
+        Try
+            Dim ObjReceiveHollow As New frmReceiveHollow
+            ObjReceiveHollow.MdiParent = Me
+            ObjReceiveHollow.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub CoreAdditionIssueToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoreAdditionIssueToolStripMenuItem.Click
+        Try
+            Dim ObjCoreAdditionIssue As New frmCoreAdditionIssue
+            ObjCoreAdditionIssue.MdiParent = Me
+            ObjCoreAdditionIssue.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub CoreAdditionReceiveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoreAdditionReceiveToolStripMenuItem.Click
+        Try
+            Dim ObjCoreAdditionReceive As New frmCoreAdditionReceive
+            ObjCoreAdditionReceive.MdiParent = Me
+            ObjCoreAdditionReceive.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub HollowBhukaBagsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HollowBhukaBagsToolStripMenuItem.Click
+        Try
+            Dim ObjbukaBag As New frmHollowBhukaBag
+            ObjbukaBag.MdiParent = Me
+            ObjbukaBag.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub DisableMenu()
+        'On Error Resume Next
+        'For Each Cntrl In frmMain.Controls
+        '    If TypeOf Cntrl Is Menu Then
+        '        If Cntrl.Name = "mnuMain" Or Cntrl.Name = "mnuCompany" Or Cntrl.Name = "mnuSelectCompany" Or Cntrl.Name = "m001" Or Cntrl.Name = "m007" Or Cntrl.Name = "mnuExit" Or Cntrl.Name = "mnuExitApp" Or Cntrl.Name = "mnuExitMenu" Or Cntrl.Name = "m090" Then
+        '        Else
+        '            Cntrl.Visible = False
+        '        End If
+        '    End If
+        'Next Cntrl
+    End Sub
+
+    Private Sub ChainDailyStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChainDailyStockToolStripMenuItem.Click
+        Try
+            Dim ObjbukaBag As New frmCDailyStockDetails
+            ObjbukaBag.MdiParent = Me
+            ObjbukaBag.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub FancyDailyStockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FancyDailyStockToolStripMenuItem.Click
+        Try
+            Dim ObjbukaBag As New frmFDailyStockDetails
+            ObjbukaBag.MdiParent = Me
+            ObjbukaBag.Show()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub DeleteFancyTransactionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteFancyTransactionToolStripMenuItem.Click
+        Try
+            Dim ObjBackup As New frmfTruncateTable
+            ObjBackup.MdiParent = Me
+            ObjBackup.Show()
+        Catch ex As Exception
         End Try
     End Sub
 End Class

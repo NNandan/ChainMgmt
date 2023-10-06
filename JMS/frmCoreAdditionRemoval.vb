@@ -450,4 +450,41 @@ Public Class frmCoreAdditionRemoval
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
+
+    Private Sub UpdateData()
+
+        Dim iOperationTypeId As Integer = 15 ''Operation Id for Core Addition Issue
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
+
+            With parameters
+                .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
+                .Add(dbManager.CreateParameter("@CoreRemovalDt", TransDt.Value.ToString(), DbType.DateTime))
+                .Add(dbManager.CreateParameter("@ItemId", Val(txtTransNo.Tag), DbType.Int16))
+                .Add(dbManager.CreateParameter("@OperationTypeId", iOperationTypeId, DbType.Int16))
+                .Add(dbManager.CreateParameter("@IssueWt", txtIssueWeight.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@IssuePr", txtIssuePercent.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@ReceiveWt", txtChainReceiveWt.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@ReceivePr", txtReceivePr.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@LotNumber", cmbLotNo.SelectedItem.ToString(), DbType.String))
+                .Add(dbManager.CreateParameter("@MeltingPr", txtMeltingPr.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@BhukaWt", txtBhukaReceiveWt.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@SampleWt", txtSampleReceiveWt.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@CoreRemainsWt", txtCoreRemains.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@LossWt", txtLossWt.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@FrKarigar", txtFrKarigar.Tag.Trim(), DbType.Int16))
+                .Add(dbManager.CreateParameter("@ToKarigar", cmbTLabour.SelectedIndex, DbType.String))
+                .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
+            End With
+
+            dbManager.Insert("SP_CoreAdditionRemoval_Save", CommandType.StoredProcedure, parameters.ToArray())
+
+            MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+    End Sub
 End Class

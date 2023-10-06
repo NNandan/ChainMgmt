@@ -22,14 +22,14 @@ Partial Class frmStockVacuumBagCreated
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dgvWipLotNo = New Telerik.WinControls.UI.RadGridView()
         Me.btnPrint = New Telerik.WinControls.UI.RadButton()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -52,63 +52,63 @@ Partial Class frmStockVacuumBagCreated
         '
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransDt"
-        GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
-        GridViewTextBoxColumn1.MinWidth = 6
-        GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 90
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotNo"
-        GridViewTextBoxColumn2.HeaderText = "Lot No"
-        GridViewTextBoxColumn2.MinWidth = 6
-        GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 100
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "OperationName"
-        GridViewTextBoxColumn3.HeaderText = "Operation"
-        GridViewTextBoxColumn3.MinWidth = 6
-        GridViewTextBoxColumn3.Name = "colOperationName"
-        GridViewTextBoxColumn3.Width = 190
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn4.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn4.MinWidth = 6
-        GridViewTextBoxColumn4.Name = "colReceiveWt"
-        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn4.Width = 90
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "ReceivePr"
-        GridViewTextBoxColumn5.HeaderText = "Receive %"
-        GridViewTextBoxColumn5.MinWidth = 6
-        GridViewTextBoxColumn5.Name = "colReceivePr"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 90
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "FineWt"
-        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn6.MinWidth = 6
-        GridViewTextBoxColumn6.Name = "colFineWt"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 90
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "VaccumeBagNo"
-        GridViewTextBoxColumn7.HeaderText = "Vaccume Bag No"
-        GridViewTextBoxColumn7.Name = "colVaccumeBagNo"
-        GridViewTextBoxColumn7.Width = 115
-        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7})
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "TransDt"
+        GridViewTextBoxColumn8.HeaderText = "Trans. Dt"
+        GridViewTextBoxColumn8.MinWidth = 6
+        GridViewTextBoxColumn8.Name = "colTransDt"
+        GridViewTextBoxColumn8.Width = 90
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "LotNo"
+        GridViewTextBoxColumn9.HeaderText = "Lot No"
+        GridViewTextBoxColumn9.MinWidth = 6
+        GridViewTextBoxColumn9.Name = "colLotNumber"
+        GridViewTextBoxColumn9.Width = 90
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "OperationName"
+        GridViewTextBoxColumn10.HeaderText = "Operation"
+        GridViewTextBoxColumn10.MinWidth = 6
+        GridViewTextBoxColumn10.Name = "colOperationName"
+        GridViewTextBoxColumn10.Width = 180
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn11.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn11.MinWidth = 6
+        GridViewTextBoxColumn11.Name = "colReceiveWt"
+        GridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn11.Width = 90
+        GridViewTextBoxColumn12.EnableExpressionEditor = False
+        GridViewTextBoxColumn12.FieldName = "ReceivePr"
+        GridViewTextBoxColumn12.HeaderText = "Receive [%]"
+        GridViewTextBoxColumn12.MinWidth = 6
+        GridViewTextBoxColumn12.Name = "colReceivePr"
+        GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn12.Width = 90
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "FineWt"
+        GridViewTextBoxColumn13.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn13.MinWidth = 6
+        GridViewTextBoxColumn13.Name = "colFineWt"
+        GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn13.Width = 90
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "VaccumeBagNo"
+        GridViewTextBoxColumn14.HeaderText = "Vaccume Bag No"
+        GridViewTextBoxColumn14.Name = "colVaccumeBagNo"
+        GridViewTextBoxColumn14.Width = 110
+        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(761, 427)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(736, 427)
         Me.dgvWipLotNo.TabIndex = 7
         '
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(315, 434)
+        Me.btnPrint.Location = New System.Drawing.Point(303, 435)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 56
@@ -117,7 +117,7 @@ Partial Class frmStockVacuumBagCreated
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(391, 434)
+        Me.btnExit.Location = New System.Drawing.Point(379, 435)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 55
@@ -127,7 +127,7 @@ Partial Class frmStockVacuumBagCreated
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(766, 463)
+        Me.ClientSize = New System.Drawing.Size(740, 463)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.dgvWipLotNo)

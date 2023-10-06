@@ -1,8 +1,6 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
-Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class RdfrmEditMelting
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
@@ -19,27 +17,27 @@ Public Class RdfrmEditMelting
     Dim Objcn As SqlConnection = New SqlConnection()
 
     Private Objerr As New ErrorProvider()
+
     Private Sub RdfrmEditMelting_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.fillLotNo()
         Me.fillItem()
         Me.fillMaterial()
         Me.ListNtFinalReceived()
-        Me.Clear_Form()
+        'Me.Clear_Form()
     End Sub
     Private Sub ListNtFinalReceived()
         Dim dtable As DataTable = fetchAllFancys()
         DgvLstNotFinalReceived.DataSource = dtable
     End Sub
-
     Private Function fetchAllFancys() As DataTable
 
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "ListNotFinaliseReceived", DbType.String))
             End With
 
@@ -71,7 +69,6 @@ Public Class RdfrmEditMelting
     End Property
     Private Sub fillLotNo()
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
             .Clear()
@@ -230,17 +227,17 @@ ErrHandler:
     End Sub
     Private Sub TreeDetailsVisibleFalse()
         GrpTreeDetails.Visible = False
-        lblScrapPer.Visible = False
-        txtScrapPer.Visible = False
-        lblFinePer.Visible = False
-        txtFinePer.Visible = False
-        lblValue.Visible = False
-        txtScrapWtGm.Visible = False
-        txtFineWtGm.Visible = False
-        lblTreeNo.Visible = False
-        txtTreeNo.Visible = False
-        lblTotGoldNeed.Visible = False
-        txtTotGoldNeed.Visible = False
+        'lblScrapPer.Visible = False
+        'txtScrapPer.Visible = False
+        'lblFinePer.Visible = False
+        'txtFinePer.Visible = False
+        'lblValue.Visible = False
+        'txtScrapWtGm.Visible = False
+        'txtFineWtGm.Visible = False
+        'lblTreeNo.Visible = False
+        'txtTreeNo.Visible = False
+        'lblTotGoldNeed.Visible = False
+        'txtTotGoldNeed.Visible = False
     End Sub
     Private Sub ClearTreeDetails()
         txtScrapPer.Text = ""
@@ -252,17 +249,17 @@ ErrHandler:
     End Sub
     Private Sub TreeDetailsVisibleTrue()
         GrpTreeDetails.Visible = True
-        lblScrapPer.Visible = True
-        txtScrapPer.Visible = True
-        lblFinePer.Visible = True
-        txtFinePer.Visible = True
-        lblValue.Visible = True
-        txtScrapWtGm.Visible = True
-        txtFineWtGm.Visible = True
-        lblTreeNo.Visible = True
-        txtTreeNo.Visible = True
-        lblTotGoldNeed.Visible = True
-        txtTotGoldNeed.Visible = True
+        'lblScrapPer.Visible = True
+        'txtScrapPer.Visible = True
+        'lblFinePer.Visible = True
+        'txtFinePer.Visible = True
+        'lblValue.Visible = True
+        'txtScrapWtGm.Visible = True
+        'txtFineWtGm.Visible = True
+        'lblTreeNo.Visible = True
+        'txtTreeNo.Visible = True
+        'lblTotGoldNeed.Visible = True
+        'txtTotGoldNeed.Visible = True
     End Sub
     Private Function CheckTransNoExist() As Boolean
         Try
@@ -527,7 +524,7 @@ ErrHandler:
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Try
             Me.ListNtFinalReceived()
-            Me.Clear_Form()
+            'Me.Clear_Form()
             cmbLotNo.SelectedIndex = 0
 
         Catch ex As Exception
@@ -588,15 +585,15 @@ ErrHandler:
         End Try
     End Function
     Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
-        Me.Clear_Form()
         If cmbLotNo.SelectedIndex > 0 Then
-            'Fr_Mode = FormState.EStateMode
+            Fr_Mode = FormState.EStateMode
+            Clear_Form()
             Dim MeltingId As Integer = Val(cmbLotNo.SelectedValue)
-
             Me.fillHeader(MeltingId)
-
             Me.BindReceiveDetails()
             Me.BindIssueDetails()
+        Else
+            btnCancel_Click(sender, e)
         End If
     End Sub
     Private Sub btnFinalize_Click(sender As Object, e As EventArgs) Handles btnFinalize.Click
@@ -617,14 +614,15 @@ ErrHandler:
             dItotalWt = lblITotalWt.Text
             sLotNo = cmbLotNo.Text.Trim
 
-            'Dim frm As New frmMeltingFinalizeLot(sLotNo)
-            'frm.ShowDialog()
-            'frm.BringToFront()
-            'frm.Focus()
+            Dim frm As New frmMeltingFinalizeLot(sLotNo)
+            frm.ShowDialog()
+            frm.BringToFront()
+            frm.Focus()
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         End Try
+
     End Sub
     Private Sub SaveRData()
 

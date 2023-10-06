@@ -13,7 +13,7 @@ JMS
  <param name="sender"></param>
  <param name="e"></param>
 </member>
-<member name="M:JMS.frmFaStockIssue.frmOpeingStock_Load(System.Object,System.EventArgs)">
+<member name="M:JMS.frmFStockIssue.frmOpeingStock_Load(System.Object,System.EventArgs)">
  <summary>
  
  </summary>

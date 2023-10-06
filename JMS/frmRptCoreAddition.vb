@@ -34,9 +34,9 @@ Public Class frmCoreAdditionRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchCoreRptData", DbType.String))
             End With
 
@@ -49,7 +49,6 @@ Public Class frmCoreAdditionRpt
         Return dtData
 
     End Function
-
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
             Me.Cursor = Cursors.WaitCursor

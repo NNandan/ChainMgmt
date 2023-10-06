@@ -77,7 +77,6 @@ Public Class frmStockVacuumBagCreated
             Me.Cursor = Cursors.Default
         End Try
     End Sub
-
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 

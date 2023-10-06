@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Public Class frmCoreAdditionReceive
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
@@ -41,6 +40,7 @@ Public Class frmCoreAdditionReceive
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -75,7 +75,10 @@ Public Class frmCoreAdditionReceive
 
         Dim parameters = New List(Of SqlParameter)()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchLotNoForCoreAdditionReceive", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoForCoreAdditionReceive", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_Transaction_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
@@ -104,6 +107,7 @@ Public Class frmCoreAdditionReceive
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -145,6 +149,7 @@ Public Class frmCoreAdditionReceive
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@CId", Val(intCoreIssueId), DbType.Int16))
             .Add(dbManager.CreateParameter("@ActionType", "FetchRecord", DbType.String))
         End With
@@ -180,6 +185,7 @@ ErrHandler:
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchRecord", DbType.String))
             .Add(dbManager.CreateParameter("@CId", cmbLotNo.SelectedIndex, DbType.Int16))
         End With
@@ -222,9 +228,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                 .Add(dbManager.CreateParameter("@CoreAdditionDt", TransDt.Value.ToString(), DbType.DateTime))
                 .Add(dbManager.CreateParameter("@GoldBhukaRecWt", txtGoldPlusCoreWireGross.Text.Trim(), DbType.String))
@@ -260,9 +266,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                 .Add(dbManager.CreateParameter("@CoreAdditionDt", TransDt.Value.ToString(), DbType.DateTime))
                 .Add(dbManager.CreateParameter("@GoldBhukaRecWt", txtGoldPlusCoreWireGross.Text.Trim(), DbType.String))
@@ -532,6 +538,7 @@ ErrHandler:
                 Dim parameters = New List(Of SqlParameter)()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@CId", Val(txtTransNo.Text), DbType.Int16))
                 End With
 

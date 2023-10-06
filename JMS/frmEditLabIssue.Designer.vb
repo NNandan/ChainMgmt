@@ -120,7 +120,8 @@ Partial Class frmEditLabIssue
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(418, 332)
+        Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnCancel.Location = New System.Drawing.Point(408, 332)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 143
@@ -128,7 +129,8 @@ Partial Class frmEditLabIssue
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(339, 332)
+        Me.btnUpdate.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnUpdate.Location = New System.Drawing.Point(329, 332)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 25)
         Me.btnUpdate.TabIndex = 142
@@ -162,6 +164,7 @@ Partial Class frmEditLabIssue
         '
         Me.cmbLab.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbLab.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbLab.Font = New System.Drawing.Font("Tahoma", 9.0!)
         RadListDataItem1.Text = "Admin"
         RadListDataItem2.Text = "User"
         Me.cmbLab.Items.Add(RadListDataItem1)
@@ -184,10 +187,10 @@ Partial Class frmEditLabIssue
         'rbReBagSample
         '
         Me.rbReBagSample.AutoSize = True
-        Me.rbReBagSample.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbReBagSample.Location = New System.Drawing.Point(682, 19)
+        Me.rbReBagSample.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.rbReBagSample.Location = New System.Drawing.Point(676, 19)
         Me.rbReBagSample.Name = "rbReBagSample"
-        Me.rbReBagSample.Size = New System.Drawing.Size(87, 17)
+        Me.rbReBagSample.Size = New System.Drawing.Size(93, 18)
         Me.rbReBagSample.TabIndex = 133
         Me.rbReBagSample.TabStop = True
         Me.rbReBagSample.Text = "Bag Samples"
@@ -196,10 +199,10 @@ Partial Class frmEditLabIssue
         'rbReLotSample
         '
         Me.rbReLotSample.AutoSize = True
-        Me.rbReLotSample.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbReLotSample.Location = New System.Drawing.Point(581, 19)
+        Me.rbReLotSample.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.rbReLotSample.Location = New System.Drawing.Point(573, 19)
         Me.rbReLotSample.Name = "rbReLotSample"
-        Me.rbReLotSample.Size = New System.Drawing.Size(83, 17)
+        Me.rbReLotSample.Size = New System.Drawing.Size(91, 18)
         Me.rbReLotSample.TabIndex = 132
         Me.rbReLotSample.TabStop = True
         Me.rbReLotSample.Text = "Lot Samples"
@@ -270,7 +273,7 @@ Partial Class frmEditLabIssue
         Me.txtOperation.Location = New System.Drawing.Point(143, 67)
         Me.txtOperation.Name = "txtOperation"
         Me.txtOperation.ReadOnly = True
-        Me.txtOperation.Size = New System.Drawing.Size(100, 20)
+        Me.txtOperation.Size = New System.Drawing.Size(150, 20)
         Me.txtOperation.TabIndex = 173
         Me.txtOperation.TabStop = False
         '
@@ -319,11 +322,11 @@ Partial Class frmEditLabIssue
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(78, 70)
+        Me.Label2.Location = New System.Drawing.Point(48, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 14)
+        Me.Label2.Size = New System.Drawing.Size(92, 14)
         Me.Label2.TabIndex = 168
-        Me.Label2.Text = "Operation"
+        Me.Label2.Text = "Operation/Item"
         '
         'txtTotalLossFine
         '
@@ -571,7 +574,7 @@ Partial Class frmEditLabIssue
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.MaximizeBox = False
         Me.Name = "frmEditLabIssue"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Edit Lab Issue"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)

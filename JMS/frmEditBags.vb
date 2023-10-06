@@ -128,17 +128,17 @@ Public Class frmEditBags
                 TransDt.Text = dtData.Rows(0).Item("UsedBagDt").ToString()
 
                 txtReceivePr.Text = dtData.Rows(0).Item("ReportPr").ToString()
-                txtReceiveWt.Text = dtData.Rows(0).Item("RecieveWt").ToString()
+                txtReceiveWt.Text = dtData.Rows(0).Item("ReceiveWt").ToString()
 
                 txtSample.Text = dtData.Rows(0).Item("TFSampleWt").ToString()
                 txtWtOnScale.Text = dtData.Rows(0).Item("WtOnScale").ToString()
-                txtCarbon.Text = dtData.Rows(0).Item("CarbonRecieve").ToString()
+                txtCarbon.Text = dtData.Rows(0).Item("CarbonReceive").ToString()
 
                 txtIssuePr.Text = dtData.Rows(0).Item("IssuePr").ToString()
                 txtIssueWt.Text = dtData.Rows(0).Item("IssueWt").ToString()
 
                 txtIssueFineWt.Text = dtData.Rows(0).Item("IssueFineWt").ToString()
-                txtReceiveFineWt.Text = dtData.Rows(0).Item("RecieveFineWt").ToString()
+                'txtReceiveFineWt.Text = dtData.Rows(0).Item("RecieveFineWt").ToString()
             Else
                 MessageBox.Show("No Data Found !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If

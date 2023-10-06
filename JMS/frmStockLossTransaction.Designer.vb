@@ -101,13 +101,13 @@ Partial Class frmStockLossTransaction
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(329, 417)
+        Me.btnExit.Location = New System.Drawing.Point(330, 419)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(329, 418, 110, 24)
-        Me.btnExit.Size = New System.Drawing.Size(87, 27)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(329, 417, 110, 24)
+        Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 58
         Me.btnExit.Text = "E&xit"
         '
@@ -115,13 +115,13 @@ Partial Class frmStockLossTransaction
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(240, 417)
+        Me.btnPrint.Location = New System.Drawing.Point(253, 419)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
-        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(240, 418, 110, 24)
-        Me.btnPrint.Size = New System.Drawing.Size(87, 27)
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(240, 417, 110, 24)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 57
         Me.btnPrint.Text = "&Print"
         '

@@ -93,7 +93,7 @@ Partial Class frmSamplesRpt
         Me.tbSampleReport.Margin = New System.Windows.Forms.Padding(7)
         Me.tbSampleReport.Name = "tbSampleReport"
         Me.tbSampleReport.SelectedIndex = 0
-        Me.tbSampleReport.Size = New System.Drawing.Size(1022, 582)
+        Me.tbSampleReport.Size = New System.Drawing.Size(997, 475)
         Me.tbSampleReport.TabIndex = 1
         '
         'TabPage1
@@ -104,7 +104,7 @@ Partial Class frmSamplesRpt
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(7)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(7)
-        Me.TabPage1.Size = New System.Drawing.Size(1014, 555)
+        Me.TabPage1.Size = New System.Drawing.Size(989, 448)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Not Tested Samples (Bags)"
         '
@@ -127,17 +127,17 @@ Partial Class frmSamplesRpt
         GridViewTextBoxColumn1.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn1.HeaderText = "Trans Dt."
         GridViewTextBoxColumn1.Name = "colTransactionDt"
-        GridViewTextBoxColumn1.Width = 113
+        GridViewTextBoxColumn1.Width = 90
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "LotNo"
         GridViewTextBoxColumn2.HeaderText = "Lot No"
         GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 120
+        GridViewTextBoxColumn2.Width = 110
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "OperationName"
         GridViewTextBoxColumn3.HeaderText = "Operation Name"
         GridViewTextBoxColumn3.Name = "colOperationName"
-        GridViewTextBoxColumn3.Width = 173
+        GridViewTextBoxColumn3.Width = 150
         GridViewDecimalColumn1.AllowFiltering = False
         GridViewDecimalColumn1.AllowGroup = False
         GridViewDecimalColumn1.EnableExpressionEditor = False
@@ -145,7 +145,7 @@ Partial Class frmSamplesRpt
         GridViewDecimalColumn1.FormatString = "{0:F2}"
         GridViewDecimalColumn1.HeaderText = "Sample Wt."
         GridViewDecimalColumn1.Name = "colSampleWt"
-        GridViewDecimalColumn1.Width = 120
+        GridViewDecimalColumn1.Width = 90
         GridViewDecimalColumn2.AllowFiltering = False
         GridViewDecimalColumn2.AllowGroup = False
         GridViewDecimalColumn2.EnableExpressionEditor = False
@@ -153,7 +153,7 @@ Partial Class frmSamplesRpt
         GridViewDecimalColumn2.FormatString = "{0:F2}"
         GridViewDecimalColumn2.HeaderText = "Receive %"
         GridViewDecimalColumn2.Name = "colReceivePr"
-        GridViewDecimalColumn2.Width = 120
+        GridViewDecimalColumn2.Width = 90
         GridViewDecimalColumn3.AllowFiltering = False
         GridViewDecimalColumn3.AllowGroup = False
         GridViewDecimalColumn3.EnableExpressionEditor = False
@@ -161,7 +161,7 @@ Partial Class frmSamplesRpt
         GridViewDecimalColumn3.FormatString = "{0:F2}"
         GridViewDecimalColumn3.HeaderText = "Fine Wt."
         GridViewDecimalColumn3.Name = "colFineWt"
-        GridViewDecimalColumn3.Width = 120
+        GridViewDecimalColumn3.Width = 90
         Me.dgvNtSampleBags.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewDecimalColumn1, GridViewDecimalColumn2, GridViewDecimalColumn3})
         Me.dgvNtSampleBags.MasterTemplate.EnableGrouping = False
         Me.dgvNtSampleBags.MasterTemplate.ShowRowHeaderColumn = False
@@ -169,7 +169,7 @@ Partial Class frmSamplesRpt
         Me.dgvNtSampleBags.Name = "dgvNtSampleBags"
         Me.dgvNtSampleBags.ReadOnly = True
         Me.dgvNtSampleBags.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvNtSampleBags.Size = New System.Drawing.Size(1013, 545)
+        Me.dgvNtSampleBags.Size = New System.Drawing.Size(990, 500)
         Me.dgvNtSampleBags.TabIndex = 5
         '
         'TabPage2
@@ -178,7 +178,7 @@ Partial Class frmSamplesRpt
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(1014, 555)
+        Me.TabPage2.Size = New System.Drawing.Size(989, 448)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Tested Samples (Bags)"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -202,17 +202,17 @@ Partial Class frmSamplesRpt
         GridViewTextBoxColumn4.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn4.HeaderText = "Trans Dt."
         GridViewTextBoxColumn4.Name = "colTransactionDt"
-        GridViewTextBoxColumn4.Width = 113
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.FieldName = "LabName"
         GridViewTextBoxColumn5.HeaderText = "Lab Name"
         GridViewTextBoxColumn5.Name = "colLabName"
-        GridViewTextBoxColumn5.Width = 193
+        GridViewTextBoxColumn5.Width = 160
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.FieldName = "OperationName"
         GridViewTextBoxColumn6.HeaderText = "Operation Name"
         GridViewTextBoxColumn6.Name = "colOperationName"
-        GridViewTextBoxColumn6.Width = 173
+        GridViewTextBoxColumn6.Width = 210
         GridViewDecimalColumn4.AllowFiltering = False
         GridViewDecimalColumn4.AllowGroup = False
         GridViewDecimalColumn4.EnableExpressionEditor = False
@@ -220,7 +220,7 @@ Partial Class frmSamplesRpt
         GridViewDecimalColumn4.FormatString = "{0:F2}"
         GridViewDecimalColumn4.HeaderText = "Lot No"
         GridViewDecimalColumn4.Name = "colLotNo"
-        GridViewDecimalColumn4.Width = 113
+        GridViewDecimalColumn4.Width = 107
         GridViewDecimalColumn5.AllowFiltering = False
         GridViewDecimalColumn5.AllowGroup = False
         GridViewDecimalColumn5.EnableExpressionEditor = False
@@ -256,7 +256,7 @@ Partial Class frmSamplesRpt
         Me.dgvTSampleBags.Name = "dgvTSampleBags"
         Me.dgvTSampleBags.ReadOnly = True
         Me.dgvTSampleBags.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvTSampleBags.Size = New System.Drawing.Size(1013, 545)
+        Me.dgvTSampleBags.Size = New System.Drawing.Size(990, 500)
         Me.dgvTSampleBags.TabIndex = 6
         '
         'TabPage3
@@ -265,7 +265,7 @@ Partial Class frmSamplesRpt
         Me.TabPage3.Location = New System.Drawing.Point(4, 23)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1014, 555)
+        Me.TabPage3.Size = New System.Drawing.Size(989, 448)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Not Tested Samples (Lots)"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -289,7 +289,7 @@ Partial Class frmSamplesRpt
         GridViewTextBoxColumn9.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn9.HeaderText = "Trans Dt."
         GridViewTextBoxColumn9.Name = "colTransactionDt"
-        GridViewTextBoxColumn9.Width = 167
+        GridViewTextBoxColumn9.Width = 90
         GridViewTextBoxColumn10.EnableExpressionEditor = False
         GridViewTextBoxColumn10.FieldName = "LotNo"
         GridViewTextBoxColumn10.HeaderText = "Lot No"
@@ -331,7 +331,7 @@ Partial Class frmSamplesRpt
         Me.dgvNtSampleLots.Name = "dgvNtSampleLots"
         Me.dgvNtSampleLots.ReadOnly = True
         Me.dgvNtSampleLots.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvNtSampleLots.Size = New System.Drawing.Size(1013, 545)
+        Me.dgvNtSampleLots.Size = New System.Drawing.Size(990, 500)
         Me.dgvNtSampleLots.TabIndex = 5
         '
         'TabPage4
@@ -340,7 +340,7 @@ Partial Class frmSamplesRpt
         Me.TabPage4.Location = New System.Drawing.Point(4, 23)
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(1014, 555)
+        Me.TabPage4.Size = New System.Drawing.Size(989, 448)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Tested Samples (Lots)"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -364,7 +364,7 @@ Partial Class frmSamplesRpt
         GridViewTextBoxColumn12.FormatString = "{0:dd/MM/yyyy}"
         GridViewTextBoxColumn12.HeaderText = "Trans Dt."
         GridViewTextBoxColumn12.Name = "colTransactionDt"
-        GridViewTextBoxColumn12.Width = 120
+        GridViewTextBoxColumn12.Width = 90
         GridViewTextBoxColumn13.EnableExpressionEditor = False
         GridViewTextBoxColumn13.FieldName = "LabName"
         GridViewTextBoxColumn13.HeaderText = "Lab Name"
@@ -374,7 +374,7 @@ Partial Class frmSamplesRpt
         GridViewTextBoxColumn14.FieldName = "OperationName"
         GridViewTextBoxColumn14.HeaderText = "Operation Name"
         GridViewTextBoxColumn14.Name = "colOperationName"
-        GridViewTextBoxColumn14.Width = 207
+        GridViewTextBoxColumn14.Width = 210
         GridViewDecimalColumn10.AllowFiltering = False
         GridViewDecimalColumn10.AllowGroup = False
         GridViewDecimalColumn10.EnableExpressionEditor = False
@@ -418,13 +418,13 @@ Partial Class frmSamplesRpt
         Me.dgvTSampleLots.Name = "dgvTSampleLots"
         Me.dgvTSampleLots.ReadOnly = True
         Me.dgvTSampleLots.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvTSampleLots.Size = New System.Drawing.Size(1013, 545)
+        Me.dgvTSampleLots.Size = New System.Drawing.Size(990, 500)
         Me.dgvTSampleLots.TabIndex = 5
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(515, 595)
+        Me.btnExit.Location = New System.Drawing.Point(497, 480)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 28
@@ -433,7 +433,7 @@ Partial Class frmSamplesRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(439, 595)
+        Me.btnPrint.Location = New System.Drawing.Point(421, 480)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 27
@@ -442,7 +442,7 @@ Partial Class frmSamplesRpt
         'frmSamplesRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1022, 629)
+        Me.ClientSize = New System.Drawing.Size(997, 510)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.tbSampleReport)

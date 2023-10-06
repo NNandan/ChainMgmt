@@ -22,28 +22,34 @@ Partial Class frmLabIssue
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim GridViewCheckBoxColumn1 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewCheckBoxColumn2 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition7 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition8 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim GridViewCheckBoxColumn3 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewCheckBoxColumn4 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
+        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition9 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn36 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn37 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn38 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition10 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -111,6 +117,8 @@ Partial Class frmLabIssue
         Me.rbReLotSample = New System.Windows.Forms.RadioButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.RptUpdateDt = New System.Windows.Forms.DateTimePicker()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.DgvLabList = New Telerik.WinControls.UI.RadGridView()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +163,9 @@ Partial Class frmLabIssue
         CType(Me.txtIssuePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxRptUpdate.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.DgvLabList, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvLabList.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -162,6 +173,7 @@ Partial Class frmLabIssue
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.TabControl1.Location = New System.Drawing.Point(0, 4)
         Me.TabControl1.Name = "TabControl1"
@@ -191,7 +203,7 @@ Partial Class frmLabIssue
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(506, 542)
+        Me.btnExit.Location = New System.Drawing.Point(493, 532)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 799
@@ -200,7 +212,7 @@ Partial Class frmLabIssue
         'btnIEdit
         '
         Me.btnIEdit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnIEdit.Location = New System.Drawing.Point(352, 542)
+        Me.btnIEdit.Location = New System.Drawing.Point(339, 532)
         Me.btnIEdit.Name = "btnIEdit"
         Me.btnIEdit.Size = New System.Drawing.Size(75, 25)
         Me.btnIEdit.TabIndex = 144
@@ -209,7 +221,7 @@ Partial Class frmLabIssue
         'btnCopy
         '
         Me.btnCopy.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCopy.Location = New System.Drawing.Point(693, 79)
+        Me.btnCopy.Location = New System.Drawing.Point(693, 75)
         Me.btnCopy.Name = "btnCopy"
         Me.btnCopy.Size = New System.Drawing.Size(75, 25)
         Me.btnCopy.TabIndex = 143
@@ -218,7 +230,7 @@ Partial Class frmLabIssue
         'btnICancel
         '
         Me.btnICancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnICancel.Location = New System.Drawing.Point(429, 542)
+        Me.btnICancel.Location = New System.Drawing.Point(416, 532)
         Me.btnICancel.Name = "btnICancel"
         Me.btnICancel.Size = New System.Drawing.Size(75, 25)
         Me.btnICancel.TabIndex = 142
@@ -227,7 +239,7 @@ Partial Class frmLabIssue
         'btnISave
         '
         Me.btnISave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnISave.Location = New System.Drawing.Point(275, 542)
+        Me.btnISave.Location = New System.Drawing.Point(262, 532)
         Me.btnISave.Name = "btnISave"
         Me.btnISave.Size = New System.Drawing.Size(75, 25)
         Me.btnISave.TabIndex = 141
@@ -240,7 +252,7 @@ Partial Class frmLabIssue
         Me.dgvDataSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvDataSave.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvDataSave.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvDataSave.Location = New System.Drawing.Point(8, 362)
+        Me.dgvDataSave.Location = New System.Drawing.Point(8, 352)
         '
         '
         '
@@ -248,7 +260,7 @@ Partial Class frmLabIssue
         Me.dgvDataSave.MasterTemplate.AllowColumnReorder = False
         Me.dgvDataSave.MasterTemplate.EnableGrouping = False
         Me.dgvDataSave.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvDataSave.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvDataSave.MasterTemplate.ViewDefinition = TableViewDefinition7
         Me.dgvDataSave.Name = "dgvDataSave"
         Me.dgvDataSave.ReadOnly = True
         Me.dgvDataSave.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -263,7 +275,7 @@ Partial Class frmLabIssue
         Me.dgvLabIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvLabIssue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvLabIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvLabIssue.Location = New System.Drawing.Point(8, 163)
+        Me.dgvLabIssue.Location = New System.Drawing.Point(8, 158)
         '
         '
         '
@@ -272,7 +284,7 @@ Partial Class frmLabIssue
         Me.dgvLabIssue.MasterTemplate.EnableFiltering = True
         Me.dgvLabIssue.MasterTemplate.EnableGrouping = False
         Me.dgvLabIssue.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvLabIssue.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvLabIssue.MasterTemplate.ViewDefinition = TableViewDefinition8
         Me.dgvLabIssue.Name = "dgvLabIssue"
         Me.dgvLabIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvLabIssue.Size = New System.Drawing.Size(785, 190)
@@ -283,9 +295,10 @@ Partial Class frmLabIssue
         Me.GBoxFilter.Controls.Add(Me.GroupBox3)
         Me.GBoxFilter.Location = New System.Drawing.Point(330, 8)
         Me.GBoxFilter.Name = "GBoxFilter"
-        Me.GBoxFilter.Size = New System.Drawing.Size(316, 150)
+        Me.GBoxFilter.Size = New System.Drawing.Size(316, 146)
         Me.GBoxFilter.TabIndex = 134
         Me.GBoxFilter.TabStop = False
+        Me.GBoxFilter.Visible = False
         '
         'GroupBox3
         '
@@ -353,7 +366,7 @@ Partial Class frmLabIssue
         Me.GBoxMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBoxMain.Location = New System.Drawing.Point(8, 8)
         Me.GBoxMain.Name = "GBoxMain"
-        Me.GBoxMain.Size = New System.Drawing.Size(316, 150)
+        Me.GBoxMain.Size = New System.Drawing.Size(316, 146)
         Me.GBoxMain.TabIndex = 1
         Me.GBoxMain.TabStop = False
         '
@@ -362,10 +375,10 @@ Partial Class frmLabIssue
         Me.cmbLab.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbLab.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbLab.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        RadListDataItem1.Text = "Admin"
-        RadListDataItem2.Text = "User"
-        Me.cmbLab.Items.Add(RadListDataItem1)
-        Me.cmbLab.Items.Add(RadListDataItem2)
+        RadListDataItem3.Text = "Admin"
+        RadListDataItem4.Text = "User"
+        Me.cmbLab.Items.Add(RadListDataItem3)
+        Me.cmbLab.Items.Add(RadListDataItem4)
         Me.cmbLab.Location = New System.Drawing.Point(92, 47)
         Me.cmbLab.Name = "cmbLab"
         Me.cmbLab.Size = New System.Drawing.Size(139, 20)
@@ -375,7 +388,7 @@ Partial Class frmLabIssue
         '
         Me.grpMain1.Controls.Add(Me.rbBagSample)
         Me.grpMain1.Controls.Add(Me.rbLotSample)
-        Me.grpMain1.Location = New System.Drawing.Point(92, 71)
+        Me.grpMain1.Location = New System.Drawing.Point(92, 67)
         Me.grpMain1.Name = "grpMain1"
         Me.grpMain1.Size = New System.Drawing.Size(139, 73)
         Me.grpMain1.TabIndex = 132
@@ -462,60 +475,60 @@ Partial Class frmLabIssue
         '
         Me.dgvLabReceipt.MasterTemplate.AllowAddNewRow = False
         Me.dgvLabReceipt.MasterTemplate.AllowColumnReorder = False
-        GridViewCheckBoxColumn1.EnableExpressionEditor = False
-        GridViewCheckBoxColumn1.MinWidth = 20
-        GridViewCheckBoxColumn1.Name = "colChkBox"
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransactionId"
-        GridViewTextBoxColumn1.HeaderText = "Trans Id."
-        GridViewTextBoxColumn1.IsVisible = False
-        GridViewTextBoxColumn1.Name = "colTransactionId"
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotNo"
-        GridViewTextBoxColumn2.HeaderText = "Lot No."
-        GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 100
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "OperationId"
-        GridViewTextBoxColumn3.HeaderText = "Operation Id."
-        GridViewTextBoxColumn3.IsVisible = False
-        GridViewTextBoxColumn3.Name = "colOperationId"
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "OperationName"
-        GridViewTextBoxColumn4.HeaderText = "Operation"
-        GridViewTextBoxColumn4.Name = "colOperation Name"
-        GridViewTextBoxColumn4.Width = 345
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "IssueWt"
-        GridViewTextBoxColumn5.HeaderText = "Issue Wt."
-        GridViewTextBoxColumn5.Name = "colIssueWt"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 95
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "IssuePr"
-        GridViewTextBoxColumn6.HeaderText = "Issue %"
-        GridViewTextBoxColumn6.Name = "colIssuePr"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 95
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "FineWt"
-        GridViewTextBoxColumn7.HeaderText = "Fine Wt,"
-        GridViewTextBoxColumn7.Name = "colFineWt"
-        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 95
-        Me.dgvLabReceipt.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn1, GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7})
+        GridViewCheckBoxColumn3.EnableExpressionEditor = False
+        GridViewCheckBoxColumn3.MinWidth = 20
+        GridViewCheckBoxColumn3.Name = "colChkBox"
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.FieldName = "LabIssueId"
+        GridViewTextBoxColumn20.HeaderText = "Lab Id."
+        GridViewTextBoxColumn20.IsVisible = False
+        GridViewTextBoxColumn20.Name = "colLabIssueId"
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.FieldName = "LotNo"
+        GridViewTextBoxColumn21.HeaderText = "Lot No."
+        GridViewTextBoxColumn21.Name = "colLotNo"
+        GridViewTextBoxColumn21.Width = 100
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.FieldName = "GId"
+        GridViewTextBoxColumn22.HeaderText = "Operation Id."
+        GridViewTextBoxColumn22.IsVisible = False
+        GridViewTextBoxColumn22.Name = "colOperationId"
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.FieldName = "GName"
+        GridViewTextBoxColumn23.HeaderText = "Operation/Item"
+        GridViewTextBoxColumn23.Name = "colOperationName"
+        GridViewTextBoxColumn23.Width = 345
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.FieldName = "IssueWt"
+        GridViewTextBoxColumn24.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn24.Name = "colIssueWt"
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 95
+        GridViewTextBoxColumn25.EnableExpressionEditor = False
+        GridViewTextBoxColumn25.FieldName = "IssuePr"
+        GridViewTextBoxColumn25.HeaderText = "Issue %"
+        GridViewTextBoxColumn25.Name = "colIssuePr"
+        GridViewTextBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn25.Width = 95
+        GridViewTextBoxColumn26.EnableExpressionEditor = False
+        GridViewTextBoxColumn26.FieldName = "FineWt"
+        GridViewTextBoxColumn26.HeaderText = "Fine Wt,"
+        GridViewTextBoxColumn26.Name = "colFineWt"
+        GridViewTextBoxColumn26.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn26.Width = 95
+        Me.dgvLabReceipt.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn3, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26})
         Me.dgvLabReceipt.MasterTemplate.EnableGrouping = False
         Me.dgvLabReceipt.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvLabReceipt.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.dgvLabReceipt.MasterTemplate.ViewDefinition = TableViewDefinition6
         Me.dgvLabReceipt.Name = "dgvLabReceipt"
         Me.dgvLabReceipt.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvLabReceipt.Size = New System.Drawing.Size(793, 470)
+        Me.dgvLabReceipt.Size = New System.Drawing.Size(793, 464)
         Me.dgvLabReceipt.TabIndex = 143
         '
         'btnRCancel
         '
         Me.btnRCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRCancel.Location = New System.Drawing.Point(418, 539)
+        Me.btnRCancel.Location = New System.Drawing.Point(416, 531)
         Me.btnRCancel.Name = "btnRCancel"
         Me.btnRCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnRCancel.TabIndex = 142
@@ -524,7 +537,7 @@ Partial Class frmLabIssue
         'btnRSave
         '
         Me.btnRSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRSave.Location = New System.Drawing.Point(339, 539)
+        Me.btnRSave.Location = New System.Drawing.Point(339, 531)
         Me.btnRSave.Name = "btnRSave"
         Me.btnRSave.Size = New System.Drawing.Size(75, 25)
         Me.btnRSave.TabIndex = 141
@@ -595,11 +608,11 @@ Partial Class frmLabIssue
         Me.ReceiptDt.CalendarMonthBackground = System.Drawing.Color.LemonChiffon
         Me.ReceiptDt.Checked = False
         Me.ReceiptDt.CustomFormat = "mm-dd-yyyy"
-        Me.ReceiptDt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ReceiptDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ReceiptDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.ReceiptDt.Location = New System.Drawing.Point(86, 17)
         Me.ReceiptDt.Name = "ReceiptDt"
-        Me.ReceiptDt.Size = New System.Drawing.Size(90, 21)
+        Me.ReceiptDt.Size = New System.Drawing.Size(90, 22)
         Me.ReceiptDt.TabIndex = 130
         '
         'TabPage3
@@ -629,62 +642,62 @@ Partial Class frmLabIssue
         '
         Me.dgvLabReport.MasterTemplate.AllowAddNewRow = False
         Me.dgvLabReport.MasterTemplate.AllowColumnReorder = False
-        GridViewCheckBoxColumn2.EnableExpressionEditor = False
-        GridViewCheckBoxColumn2.EnableHeaderCheckBox = True
-        GridViewCheckBoxColumn2.MinWidth = 20
-        GridViewCheckBoxColumn2.Name = "colChkBox"
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "TransactionId"
-        GridViewTextBoxColumn8.HeaderText = "Trans. Id."
-        GridViewTextBoxColumn8.IsVisible = False
-        GridViewTextBoxColumn8.Name = "ColTransactionId"
-        GridViewTextBoxColumn8.Width = 10
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "LotNo"
-        GridViewTextBoxColumn9.HeaderText = "Lot No."
-        GridViewTextBoxColumn9.Name = "colLotNumber"
-        GridViewTextBoxColumn9.Width = 100
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "OperationId"
-        GridViewTextBoxColumn10.HeaderText = "Operation Id."
-        GridViewTextBoxColumn10.IsVisible = False
-        GridViewTextBoxColumn10.Name = "colOperationId"
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "OperationName"
-        GridViewTextBoxColumn11.HeaderText = "Operation"
-        GridViewTextBoxColumn11.Name = "colOperationName"
-        GridViewTextBoxColumn11.Width = 345
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "IssueWt"
-        GridViewTextBoxColumn12.HeaderText = "Issue Wt."
-        GridViewTextBoxColumn12.Name = "colIssueWt"
-        GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn12.Width = 95
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "IssuePr"
-        GridViewTextBoxColumn13.HeaderText = "Issue %"
-        GridViewTextBoxColumn13.Name = "colIssuePr"
-        GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn13.Width = 95
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "FineWt"
-        GridViewTextBoxColumn14.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn14.Name = "colFineWt"
-        GridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn14.Width = 95
-        Me.dgvLabReport.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn2, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14})
+        GridViewCheckBoxColumn4.EnableExpressionEditor = False
+        GridViewCheckBoxColumn4.EnableHeaderCheckBox = True
+        GridViewCheckBoxColumn4.MinWidth = 20
+        GridViewCheckBoxColumn4.Name = "colChkBox"
+        GridViewTextBoxColumn27.EnableExpressionEditor = False
+        GridViewTextBoxColumn27.FieldName = "LabIssueId"
+        GridViewTextBoxColumn27.HeaderText = "Lab Id."
+        GridViewTextBoxColumn27.IsVisible = False
+        GridViewTextBoxColumn27.Name = "colLabIssueId"
+        GridViewTextBoxColumn27.Width = 10
+        GridViewTextBoxColumn28.EnableExpressionEditor = False
+        GridViewTextBoxColumn28.FieldName = "LotNo"
+        GridViewTextBoxColumn28.HeaderText = "Lot No."
+        GridViewTextBoxColumn28.Name = "colLotNumber"
+        GridViewTextBoxColumn28.Width = 100
+        GridViewTextBoxColumn29.EnableExpressionEditor = False
+        GridViewTextBoxColumn29.FieldName = "GId"
+        GridViewTextBoxColumn29.HeaderText = "Operation Id."
+        GridViewTextBoxColumn29.IsVisible = False
+        GridViewTextBoxColumn29.Name = "colOperationId"
+        GridViewTextBoxColumn30.EnableExpressionEditor = False
+        GridViewTextBoxColumn30.FieldName = "GName"
+        GridViewTextBoxColumn30.HeaderText = "Operation/Item"
+        GridViewTextBoxColumn30.Name = "colOperationName"
+        GridViewTextBoxColumn30.Width = 345
+        GridViewTextBoxColumn31.EnableExpressionEditor = False
+        GridViewTextBoxColumn31.FieldName = "IssueWt"
+        GridViewTextBoxColumn31.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn31.Name = "colIssueWt"
+        GridViewTextBoxColumn31.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn31.Width = 95
+        GridViewTextBoxColumn32.EnableExpressionEditor = False
+        GridViewTextBoxColumn32.FieldName = "IssuePr"
+        GridViewTextBoxColumn32.HeaderText = "Issue %"
+        GridViewTextBoxColumn32.Name = "colIssuePr"
+        GridViewTextBoxColumn32.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn32.Width = 95
+        GridViewTextBoxColumn33.EnableExpressionEditor = False
+        GridViewTextBoxColumn33.FieldName = "FineWt"
+        GridViewTextBoxColumn33.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn33.Name = "colFineWt"
+        GridViewTextBoxColumn33.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn33.Width = 95
+        Me.dgvLabReport.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewCheckBoxColumn4, GridViewTextBoxColumn27, GridViewTextBoxColumn28, GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33})
         Me.dgvLabReport.MasterTemplate.EnableGrouping = False
         Me.dgvLabReport.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvLabReport.MasterTemplate.ViewDefinition = TableViewDefinition4
+        Me.dgvLabReport.MasterTemplate.ViewDefinition = TableViewDefinition9
         Me.dgvLabReport.Name = "dgvLabReport"
         Me.dgvLabReport.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvLabReport.Size = New System.Drawing.Size(793, 327)
+        Me.dgvLabReport.Size = New System.Drawing.Size(793, 320)
         Me.dgvLabReport.TabIndex = 144
         '
         'btnUCancel
         '
         Me.btnUCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUCancel.Location = New System.Drawing.Point(406, 540)
+        Me.btnUCancel.Location = New System.Drawing.Point(406, 530)
         Me.btnUCancel.Name = "btnUCancel"
         Me.btnUCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnUCancel.TabIndex = 143
@@ -693,7 +706,7 @@ Partial Class frmLabIssue
         'btnUSave
         '
         Me.btnUSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUSave.Location = New System.Drawing.Point(327, 540)
+        Me.btnUSave.Location = New System.Drawing.Point(327, 530)
         Me.btnUSave.Name = "btnUSave"
         Me.btnUSave.Size = New System.Drawing.Size(75, 25)
         Me.btnUSave.TabIndex = 142
@@ -726,14 +739,15 @@ Partial Class frmLabIssue
         Me.GroupBox5.Controls.Add(Me.Label3)
         Me.GroupBox5.Controls.Add(Me.lblReceiveGrossWt)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 386)
+        Me.GroupBox5.Location = New System.Drawing.Point(5, 378)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(792, 146)
+        Me.GroupBox5.Size = New System.Drawing.Size(793, 146)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         '
         'txtTotalLossFine
         '
+        Me.txtTotalLossFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalLossFine.Location = New System.Drawing.Point(279, 116)
         Me.txtTotalLossFine.Name = "txtTotalLossFine"
         Me.txtTotalLossFine.ReadOnly = True
@@ -744,6 +758,7 @@ Partial Class frmLabIssue
         '
         'txtTotalRecTotal
         '
+        Me.txtTotalRecTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalRecTotal.Location = New System.Drawing.Point(279, 92)
         Me.txtTotalRecTotal.Name = "txtTotalRecTotal"
         Me.txtTotalRecTotal.ReadOnly = True
@@ -754,6 +769,7 @@ Partial Class frmLabIssue
         '
         'txtSampleGrossTotal
         '
+        Me.txtSampleGrossTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleGrossTotal.Location = New System.Drawing.Point(279, 68)
         Me.txtSampleGrossTotal.Name = "txtSampleGrossTotal"
         Me.txtSampleGrossTotal.ReadOnly = True
@@ -764,6 +780,7 @@ Partial Class frmLabIssue
         '
         'txtSampleGrossPr
         '
+        Me.txtSampleGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleGrossPr.Location = New System.Drawing.Point(200, 67)
         Me.txtSampleGrossPr.Name = "txtSampleGrossPr"
         Me.txtSampleGrossPr.ReadOnly = True
@@ -774,6 +791,7 @@ Partial Class frmLabIssue
         '
         'txtSampleFineTotal
         '
+        Me.txtSampleFineTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleFineTotal.Location = New System.Drawing.Point(279, 44)
         Me.txtSampleFineTotal.Name = "txtSampleFineTotal"
         Me.txtSampleFineTotal.ReadOnly = True
@@ -784,6 +802,7 @@ Partial Class frmLabIssue
         '
         'txtSampleFinePr
         '
+        Me.txtSampleFinePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleFinePr.Location = New System.Drawing.Point(200, 43)
         Me.txtSampleFinePr.Name = "txtSampleFinePr"
         Me.txtSampleFinePr.ReadOnly = True
@@ -795,6 +814,7 @@ Partial Class frmLabIssue
         '
         'txtDiff
         '
+        Me.txtDiff.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtDiff.Location = New System.Drawing.Point(279, 20)
         Me.txtDiff.Name = "txtDiff"
         Me.txtDiff.ReadOnly = True
@@ -805,6 +825,7 @@ Partial Class frmLabIssue
         '
         'txtTotalLossWt
         '
+        Me.txtTotalLossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalLossWt.Location = New System.Drawing.Point(125, 115)
         Me.txtTotalLossWt.Name = "txtTotalLossWt"
         Me.txtTotalLossWt.ReadOnly = True
@@ -816,6 +837,7 @@ Partial Class frmLabIssue
         'txtLabRptPr
         '
         Me.txtLabRptPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtLabRptPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtLabRptPr.Location = New System.Drawing.Point(125, 19)
         Me.txtLabRptPr.Name = "txtLabRptPr"
         Me.txtLabRptPr.Size = New System.Drawing.Size(71, 20)
@@ -824,6 +846,7 @@ Partial Class frmLabIssue
         '
         'txtTotalRecWt
         '
+        Me.txtTotalRecWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtTotalRecWt.Location = New System.Drawing.Point(125, 91)
         Me.txtTotalRecWt.Name = "txtTotalRecWt"
         Me.txtTotalRecWt.ReadOnly = True
@@ -835,6 +858,7 @@ Partial Class frmLabIssue
         'txtSampleGrossRec
         '
         Me.txtSampleGrossRec.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtSampleGrossRec.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleGrossRec.Location = New System.Drawing.Point(125, 67)
         Me.txtSampleGrossRec.Name = "txtSampleGrossRec"
         Me.txtSampleGrossRec.Size = New System.Drawing.Size(71, 20)
@@ -844,6 +868,7 @@ Partial Class frmLabIssue
         'txtSampleFineRec
         '
         Me.txtSampleFineRec.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtSampleFineRec.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtSampleFineRec.Location = New System.Drawing.Point(125, 43)
         Me.txtSampleFineRec.Name = "txtSampleFineRec"
         Me.txtSampleFineRec.Size = New System.Drawing.Size(71, 20)
@@ -987,7 +1012,7 @@ Partial Class frmLabIssue
         '
         Me.rbReBagSample.AutoSize = True
         Me.rbReBagSample.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.rbReBagSample.Location = New System.Drawing.Point(440, 17)
+        Me.rbReBagSample.Location = New System.Drawing.Point(675, 17)
         Me.rbReBagSample.Name = "rbReBagSample"
         Me.rbReBagSample.Size = New System.Drawing.Size(93, 18)
         Me.rbReBagSample.TabIndex = 133
@@ -999,7 +1024,7 @@ Partial Class frmLabIssue
         '
         Me.rbReLotSample.AutoSize = True
         Me.rbReLotSample.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.rbReLotSample.Location = New System.Drawing.Point(335, 17)
+        Me.rbReLotSample.Location = New System.Drawing.Point(570, 17)
         Me.rbReLotSample.Name = "rbReLotSample"
         Me.rbReLotSample.Size = New System.Drawing.Size(91, 18)
         Me.rbReLotSample.TabIndex = 132
@@ -1028,10 +1053,63 @@ Partial Class frmLabIssue
         Me.RptUpdateDt.Size = New System.Drawing.Size(90, 21)
         Me.RptUpdateDt.TabIndex = 130
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.DgvLabList)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(802, 573)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Edit Data"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'DgvLabList
+        '
+        Me.DgvLabList.BackColor = System.Drawing.Color.Transparent
+        Me.DgvLabList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.DgvLabList.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.DgvLabList.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.DgvLabList.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvLabList.Location = New System.Drawing.Point(3, 3)
+        '
+        '
+        '
+        GridViewTextBoxColumn34.EnableExpressionEditor = False
+        GridViewTextBoxColumn34.FieldName = "LabIssueId"
+        GridViewTextBoxColumn34.HeaderText = "ID"
+        GridViewTextBoxColumn34.Name = "colLabIssueId"
+        GridViewTextBoxColumn34.Width = 85
+        GridViewTextBoxColumn35.EnableExpressionEditor = False
+        GridViewTextBoxColumn35.FieldName = "UpdateDt"
+        GridViewTextBoxColumn35.HeaderText = "UpdateDt"
+        GridViewTextBoxColumn35.Name = "colUpdateDt"
+        GridViewTextBoxColumn35.Width = 200
+        GridViewTextBoxColumn36.EnableExpressionEditor = False
+        GridViewTextBoxColumn36.FieldName = "LotNo"
+        GridViewTextBoxColumn36.HeaderText = "LotNo"
+        GridViewTextBoxColumn36.Name = "colLotNo"
+        GridViewTextBoxColumn36.Width = 150
+        GridViewTextBoxColumn37.EnableExpressionEditor = False
+        GridViewTextBoxColumn37.FieldName = "LabReport"
+        GridViewTextBoxColumn37.HeaderText = "LabReport %"
+        GridViewTextBoxColumn37.Name = "colLabReport"
+        GridViewTextBoxColumn37.Width = 100
+        GridViewTextBoxColumn38.EnableExpressionEditor = False
+        GridViewTextBoxColumn38.FieldName = "ReceiveFineWt"
+        GridViewTextBoxColumn38.HeaderText = "ReceiveFineWt"
+        GridViewTextBoxColumn38.Name = "colReceiveFineWt"
+        GridViewTextBoxColumn38.Width = 150
+        Me.DgvLabList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn34, GridViewTextBoxColumn35, GridViewTextBoxColumn36, GridViewTextBoxColumn37, GridViewTextBoxColumn38})
+        Me.DgvLabList.MasterTemplate.ViewDefinition = TableViewDefinition10
+        Me.DgvLabList.Name = "DgvLabList"
+        Me.DgvLabList.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.DgvLabList.Size = New System.Drawing.Size(703, 369)
+        Me.DgvLabList.TabIndex = 1
+        '
         'frmLabIssue
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(809, 601)
+        Me.ClientSize = New System.Drawing.Size(809, 588)
         Me.Controls.Add(Me.TabControl1)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
@@ -1089,6 +1167,9 @@ Partial Class frmLabIssue
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBoxRptUpdate.ResumeLayout(False)
         Me.GBoxRptUpdate.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.DgvLabList.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvLabList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1165,4 +1246,6 @@ Partial Class frmLabIssue
     Friend WithEvents chkRAll As CheckBox
     Friend WithEvents btnIEdit As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents DgvLabList As Telerik.WinControls.UI.RadGridView
 End Class

@@ -134,7 +134,7 @@ Partial Class frmStockAdditionRpt
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(453, 355)
+        Me.btnExit.Location = New System.Drawing.Point(466, 355)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 27
@@ -143,7 +143,7 @@ Partial Class frmStockAdditionRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(376, 355)
+        Me.btnPrint.Location = New System.Drawing.Point(389, 355)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 26

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmAccountOpening
+Partial Class frmChAccountOpening
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,7 +25,7 @@ Partial Class frmAccountOpening
         Me.btnStockIssue = New System.Windows.Forms.Button()
         Me.btnStockReceipt = New System.Windows.Forms.Button()
         Me.btnMelting = New System.Windows.Forms.Button()
-        Me.btnBagCreated = New System.Windows.Forms.Button()
+        Me.btnBagReceived = New System.Windows.Forms.Button()
         Me.btnTransactions = New System.Windows.Forms.Button()
         Me.btnLotTransfer = New System.Windows.Forms.Button()
         Me.btnStockIIssue = New System.Windows.Forms.Button()
@@ -81,14 +81,19 @@ Partial Class frmAccountOpening
         Me.btnBhukaBagNotUsed = New System.Windows.Forms.Button()
         Me.btnGetTotal = New System.Windows.Forms.Button()
         Me.lblTest = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.BtnBhukaBagNotUpdaed = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnStockIssue
         '
         Me.btnStockIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnStockIssue.Location = New System.Drawing.Point(12, 34)
+        Me.btnStockIssue.Location = New System.Drawing.Point(19, 33)
         Me.btnStockIssue.Name = "btnStockIssue"
-        Me.btnStockIssue.Size = New System.Drawing.Size(137, 23)
+        Me.btnStockIssue.Size = New System.Drawing.Size(163, 23)
         Me.btnStockIssue.TabIndex = 0
         Me.btnStockIssue.Text = "Stock Issue"
         Me.btnStockIssue.UseVisualStyleBackColor = True
@@ -96,9 +101,9 @@ Partial Class frmAccountOpening
         'btnStockReceipt
         '
         Me.btnStockReceipt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnStockReceipt.Location = New System.Drawing.Point(12, 58)
+        Me.btnStockReceipt.Location = New System.Drawing.Point(19, 56)
         Me.btnStockReceipt.Name = "btnStockReceipt"
-        Me.btnStockReceipt.Size = New System.Drawing.Size(137, 23)
+        Me.btnStockReceipt.Size = New System.Drawing.Size(163, 23)
         Me.btnStockReceipt.TabIndex = 1
         Me.btnStockReceipt.Text = "Receipt Dept."
         Me.btnStockReceipt.UseVisualStyleBackColor = True
@@ -106,29 +111,29 @@ Partial Class frmAccountOpening
         'btnMelting
         '
         Me.btnMelting.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnMelting.Location = New System.Drawing.Point(12, 82)
+        Me.btnMelting.Location = New System.Drawing.Point(19, 80)
         Me.btnMelting.Name = "btnMelting"
-        Me.btnMelting.Size = New System.Drawing.Size(137, 23)
+        Me.btnMelting.Size = New System.Drawing.Size(163, 23)
         Me.btnMelting.TabIndex = 2
         Me.btnMelting.Text = "Melting"
         Me.btnMelting.UseVisualStyleBackColor = True
         '
-        'btnBagCreated
+        'btnBagReceived
         '
-        Me.btnBagCreated.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnBagCreated.Location = New System.Drawing.Point(12, 106)
-        Me.btnBagCreated.Name = "btnBagCreated"
-        Me.btnBagCreated.Size = New System.Drawing.Size(137, 23)
-        Me.btnBagCreated.TabIndex = 3
-        Me.btnBagCreated.Text = "Bhuka Bag Created"
-        Me.btnBagCreated.UseVisualStyleBackColor = True
+        Me.btnBagReceived.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnBagReceived.Location = New System.Drawing.Point(19, 104)
+        Me.btnBagReceived.Name = "btnBagReceived"
+        Me.btnBagReceived.Size = New System.Drawing.Size(163, 23)
+        Me.btnBagReceived.TabIndex = 3
+        Me.btnBagReceived.Text = "Bhuka Bag Not Received"
+        Me.btnBagReceived.UseVisualStyleBackColor = True
         '
         'btnTransactions
         '
         Me.btnTransactions.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnTransactions.Location = New System.Drawing.Point(12, 154)
+        Me.btnTransactions.Location = New System.Drawing.Point(19, 178)
         Me.btnTransactions.Name = "btnTransactions"
-        Me.btnTransactions.Size = New System.Drawing.Size(137, 23)
+        Me.btnTransactions.Size = New System.Drawing.Size(163, 24)
         Me.btnTransactions.TabIndex = 5
         Me.btnTransactions.Text = "WIP Lots"
         Me.btnTransactions.UseVisualStyleBackColor = True
@@ -136,9 +141,9 @@ Partial Class frmAccountOpening
         'btnLotTransfer
         '
         Me.btnLotTransfer.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnLotTransfer.Location = New System.Drawing.Point(12, 178)
+        Me.btnLotTransfer.Location = New System.Drawing.Point(19, 203)
         Me.btnLotTransfer.Name = "btnLotTransfer"
-        Me.btnLotTransfer.Size = New System.Drawing.Size(137, 23)
+        Me.btnLotTransfer.Size = New System.Drawing.Size(163, 23)
         Me.btnLotTransfer.TabIndex = 6
         Me.btnLotTransfer.Text = "Lot Transfer"
         Me.btnLotTransfer.UseVisualStyleBackColor = True
@@ -146,9 +151,9 @@ Partial Class frmAccountOpening
         'btnStockIIssue
         '
         Me.btnStockIIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnStockIIssue.Location = New System.Drawing.Point(12, 202)
+        Me.btnStockIIssue.Location = New System.Drawing.Point(19, 227)
         Me.btnStockIIssue.Name = "btnStockIIssue"
-        Me.btnStockIIssue.Size = New System.Drawing.Size(137, 23)
+        Me.btnStockIIssue.Size = New System.Drawing.Size(163, 23)
         Me.btnStockIIssue.TabIndex = 7
         Me.btnStockIIssue.Text = "Issue Dept."
         Me.btnStockIIssue.UseVisualStyleBackColor = True
@@ -156,9 +161,9 @@ Partial Class frmAccountOpening
         'btnLabIssue
         '
         Me.btnLabIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnLabIssue.Location = New System.Drawing.Point(12, 226)
+        Me.btnLabIssue.Location = New System.Drawing.Point(19, 252)
         Me.btnLabIssue.Name = "btnLabIssue"
-        Me.btnLabIssue.Size = New System.Drawing.Size(137, 23)
+        Me.btnLabIssue.Size = New System.Drawing.Size(163, 23)
         Me.btnLabIssue.TabIndex = 8
         Me.btnLabIssue.Text = "Lab Issue"
         Me.btnLabIssue.UseVisualStyleBackColor = True
@@ -166,16 +171,16 @@ Partial Class frmAccountOpening
         'btnLotIssue
         '
         Me.btnLotIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnLotIssue.Location = New System.Drawing.Point(12, 250)
+        Me.btnLotIssue.Location = New System.Drawing.Point(19, 278)
         Me.btnLotIssue.Name = "btnLotIssue"
-        Me.btnLotIssue.Size = New System.Drawing.Size(137, 23)
+        Me.btnLotIssue.Size = New System.Drawing.Size(163, 23)
         Me.btnLotIssue.TabIndex = 9
         Me.btnLotIssue.Text = "Lot Add. Stock"
         Me.btnLotIssue.UseVisualStyleBackColor = True
         '
         'btnOpStockIssue
         '
-        Me.btnOpStockIssue.Location = New System.Drawing.Point(319, 35)
+        Me.btnOpStockIssue.Location = New System.Drawing.Point(361, 32)
         Me.btnOpStockIssue.Name = "btnOpStockIssue"
         Me.btnOpStockIssue.Size = New System.Drawing.Size(21, 20)
         Me.btnOpStockIssue.TabIndex = 14
@@ -183,7 +188,7 @@ Partial Class frmAccountOpening
         '
         'txtOpIssueWt
         '
-        Me.txtOpIssueWt.Location = New System.Drawing.Point(151, 36)
+        Me.txtOpIssueWt.Location = New System.Drawing.Point(188, 33)
         Me.txtOpIssueWt.Name = "txtOpIssueWt"
         Me.txtOpIssueWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpIssueWt.TabIndex = 11
@@ -191,7 +196,7 @@ Partial Class frmAccountOpening
         '
         'txtIssuePr
         '
-        Me.txtIssuePr.Location = New System.Drawing.Point(207, 36)
+        Me.txtIssuePr.Location = New System.Drawing.Point(244, 33)
         Me.txtIssuePr.Name = "txtIssuePr"
         Me.txtIssuePr.Size = New System.Drawing.Size(55, 20)
         Me.txtIssuePr.TabIndex = 12
@@ -199,7 +204,7 @@ Partial Class frmAccountOpening
         '
         'txtOpIssueFw
         '
-        Me.txtOpIssueFw.Location = New System.Drawing.Point(263, 36)
+        Me.txtOpIssueFw.Location = New System.Drawing.Point(300, 33)
         Me.txtOpIssueFw.Name = "txtOpIssueFw"
         Me.txtOpIssueFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpIssueFw.TabIndex = 13
@@ -207,7 +212,7 @@ Partial Class frmAccountOpening
         '
         'txtOpReceiptWt
         '
-        Me.txtOpReceiptWt.Location = New System.Drawing.Point(151, 60)
+        Me.txtOpReceiptWt.Location = New System.Drawing.Point(188, 57)
         Me.txtOpReceiptWt.Name = "txtOpReceiptWt"
         Me.txtOpReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpReceiptWt.TabIndex = 15
@@ -215,7 +220,7 @@ Partial Class frmAccountOpening
         '
         'txtReceiptPr
         '
-        Me.txtReceiptPr.Location = New System.Drawing.Point(207, 60)
+        Me.txtReceiptPr.Location = New System.Drawing.Point(244, 57)
         Me.txtReceiptPr.Name = "txtReceiptPr"
         Me.txtReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtReceiptPr.TabIndex = 16
@@ -223,7 +228,7 @@ Partial Class frmAccountOpening
         '
         'txtOpReceiptFw
         '
-        Me.txtOpReceiptFw.Location = New System.Drawing.Point(263, 60)
+        Me.txtOpReceiptFw.Location = New System.Drawing.Point(300, 57)
         Me.txtOpReceiptFw.Name = "txtOpReceiptFw"
         Me.txtOpReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpReceiptFw.TabIndex = 17
@@ -231,7 +236,7 @@ Partial Class frmAccountOpening
         '
         'btnOpStockReceipt
         '
-        Me.btnOpStockReceipt.Location = New System.Drawing.Point(319, 59)
+        Me.btnOpStockReceipt.Location = New System.Drawing.Point(361, 54)
         Me.btnOpStockReceipt.Name = "btnOpStockReceipt"
         Me.btnOpStockReceipt.Size = New System.Drawing.Size(21, 20)
         Me.btnOpStockReceipt.TabIndex = 18
@@ -239,7 +244,7 @@ Partial Class frmAccountOpening
         '
         'txtOpMReceiptWt
         '
-        Me.txtOpMReceiptWt.Location = New System.Drawing.Point(151, 84)
+        Me.txtOpMReceiptWt.Location = New System.Drawing.Point(188, 81)
         Me.txtOpMReceiptWt.Name = "txtOpMReceiptWt"
         Me.txtOpMReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpMReceiptWt.TabIndex = 19
@@ -247,7 +252,7 @@ Partial Class frmAccountOpening
         '
         'txtOpMReceiptPr
         '
-        Me.txtOpMReceiptPr.Location = New System.Drawing.Point(207, 84)
+        Me.txtOpMReceiptPr.Location = New System.Drawing.Point(244, 81)
         Me.txtOpMReceiptPr.Name = "txtOpMReceiptPr"
         Me.txtOpMReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpMReceiptPr.TabIndex = 20
@@ -255,7 +260,7 @@ Partial Class frmAccountOpening
         '
         'txtOpMReceiptFw
         '
-        Me.txtOpMReceiptFw.Location = New System.Drawing.Point(263, 84)
+        Me.txtOpMReceiptFw.Location = New System.Drawing.Point(300, 81)
         Me.txtOpMReceiptFw.Name = "txtOpMReceiptFw"
         Me.txtOpMReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpMReceiptFw.TabIndex = 21
@@ -263,7 +268,7 @@ Partial Class frmAccountOpening
         '
         'txtOpBhukaBagCreatedWt
         '
-        Me.txtOpBhukaBagCreatedWt.Location = New System.Drawing.Point(151, 108)
+        Me.txtOpBhukaBagCreatedWt.Location = New System.Drawing.Point(188, 105)
         Me.txtOpBhukaBagCreatedWt.Name = "txtOpBhukaBagCreatedWt"
         Me.txtOpBhukaBagCreatedWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBhukaBagCreatedWt.TabIndex = 23
@@ -271,7 +276,7 @@ Partial Class frmAccountOpening
         '
         'txtOpBhukaBagCreatedPr
         '
-        Me.txtOpBhukaBagCreatedPr.Location = New System.Drawing.Point(207, 108)
+        Me.txtOpBhukaBagCreatedPr.Location = New System.Drawing.Point(244, 105)
         Me.txtOpBhukaBagCreatedPr.Name = "txtOpBhukaBagCreatedPr"
         Me.txtOpBhukaBagCreatedPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBhukaBagCreatedPr.TabIndex = 24
@@ -279,7 +284,7 @@ Partial Class frmAccountOpening
         '
         'txtOpBhukaBagCreatedFw
         '
-        Me.txtOpBhukaBagCreatedFw.Location = New System.Drawing.Point(263, 108)
+        Me.txtOpBhukaBagCreatedFw.Location = New System.Drawing.Point(300, 105)
         Me.txtOpBhukaBagCreatedFw.Name = "txtOpBhukaBagCreatedFw"
         Me.txtOpBhukaBagCreatedFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBhukaBagCreatedFw.TabIndex = 25
@@ -287,7 +292,7 @@ Partial Class frmAccountOpening
         '
         'txtOpTReceiptWt
         '
-        Me.txtOpTReceiptWt.Location = New System.Drawing.Point(151, 156)
+        Me.txtOpTReceiptWt.Location = New System.Drawing.Point(188, 179)
         Me.txtOpTReceiptWt.Name = "txtOpTReceiptWt"
         Me.txtOpTReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpTReceiptWt.TabIndex = 31
@@ -295,7 +300,7 @@ Partial Class frmAccountOpening
         '
         'txtOpTReceiptPr
         '
-        Me.txtOpTReceiptPr.Location = New System.Drawing.Point(207, 156)
+        Me.txtOpTReceiptPr.Location = New System.Drawing.Point(244, 179)
         Me.txtOpTReceiptPr.Name = "txtOpTReceiptPr"
         Me.txtOpTReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpTReceiptPr.TabIndex = 32
@@ -303,7 +308,7 @@ Partial Class frmAccountOpening
         '
         'txtOpTReceiptFw
         '
-        Me.txtOpTReceiptFw.Location = New System.Drawing.Point(263, 156)
+        Me.txtOpTReceiptFw.Location = New System.Drawing.Point(300, 179)
         Me.txtOpTReceiptFw.Name = "txtOpTReceiptFw"
         Me.txtOpTReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpTReceiptFw.TabIndex = 33
@@ -311,7 +316,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLReceiptWt
         '
-        Me.txtOpLReceiptWt.Location = New System.Drawing.Point(151, 180)
+        Me.txtOpLReceiptWt.Location = New System.Drawing.Point(188, 202)
         Me.txtOpLReceiptWt.Name = "txtOpLReceiptWt"
         Me.txtOpLReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLReceiptWt.TabIndex = 35
@@ -319,7 +324,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLReceiptPr
         '
-        Me.txtOpLReceiptPr.Location = New System.Drawing.Point(207, 180)
+        Me.txtOpLReceiptPr.Location = New System.Drawing.Point(244, 202)
         Me.txtOpLReceiptPr.Name = "txtOpLReceiptPr"
         Me.txtOpLReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLReceiptPr.TabIndex = 36
@@ -327,7 +332,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLReceiptFw
         '
-        Me.txtOpLReceiptFw.Location = New System.Drawing.Point(263, 180)
+        Me.txtOpLReceiptFw.Location = New System.Drawing.Point(300, 202)
         Me.txtOpLReceiptFw.Name = "txtOpLReceiptFw"
         Me.txtOpLReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLReceiptFw.TabIndex = 37
@@ -335,7 +340,7 @@ Partial Class frmAccountOpening
         '
         'txtOpIReceiptWt
         '
-        Me.txtOpIReceiptWt.Location = New System.Drawing.Point(151, 204)
+        Me.txtOpIReceiptWt.Location = New System.Drawing.Point(188, 228)
         Me.txtOpIReceiptWt.Name = "txtOpIReceiptWt"
         Me.txtOpIReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpIReceiptWt.TabIndex = 39
@@ -343,7 +348,7 @@ Partial Class frmAccountOpening
         '
         'txtOpIReceiptPr
         '
-        Me.txtOpIReceiptPr.Location = New System.Drawing.Point(207, 204)
+        Me.txtOpIReceiptPr.Location = New System.Drawing.Point(244, 228)
         Me.txtOpIReceiptPr.Name = "txtOpIReceiptPr"
         Me.txtOpIReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpIReceiptPr.TabIndex = 40
@@ -351,7 +356,7 @@ Partial Class frmAccountOpening
         '
         'txtOpIReceiptFw
         '
-        Me.txtOpIReceiptFw.Location = New System.Drawing.Point(263, 204)
+        Me.txtOpIReceiptFw.Location = New System.Drawing.Point(300, 228)
         Me.txtOpIReceiptFw.Name = "txtOpIReceiptFw"
         Me.txtOpIReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpIReceiptFw.TabIndex = 41
@@ -359,7 +364,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLabReceiptWt
         '
-        Me.txtOpLabReceiptWt.Location = New System.Drawing.Point(151, 228)
+        Me.txtOpLabReceiptWt.Location = New System.Drawing.Point(188, 253)
         Me.txtOpLabReceiptWt.Name = "txtOpLabReceiptWt"
         Me.txtOpLabReceiptWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLabReceiptWt.TabIndex = 43
@@ -367,7 +372,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLabReceiptPr
         '
-        Me.txtOpLabReceiptPr.Location = New System.Drawing.Point(207, 228)
+        Me.txtOpLabReceiptPr.Location = New System.Drawing.Point(244, 253)
         Me.txtOpLabReceiptPr.Name = "txtOpLabReceiptPr"
         Me.txtOpLabReceiptPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLabReceiptPr.TabIndex = 44
@@ -375,7 +380,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLabReceiptFw
         '
-        Me.txtOpLabReceiptFw.Location = New System.Drawing.Point(263, 228)
+        Me.txtOpLabReceiptFw.Location = New System.Drawing.Point(300, 253)
         Me.txtOpLabReceiptFw.Name = "txtOpLabReceiptFw"
         Me.txtOpLabReceiptFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLabReceiptFw.TabIndex = 45
@@ -383,7 +388,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLotIssuetWt
         '
-        Me.txtOpLotIssuetWt.Location = New System.Drawing.Point(151, 252)
+        Me.txtOpLotIssuetWt.Location = New System.Drawing.Point(188, 279)
         Me.txtOpLotIssuetWt.Name = "txtOpLotIssuetWt"
         Me.txtOpLotIssuetWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLotIssuetWt.TabIndex = 47
@@ -391,7 +396,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLoIIssuePr
         '
-        Me.txtOpLoIIssuePr.Location = New System.Drawing.Point(207, 252)
+        Me.txtOpLoIIssuePr.Location = New System.Drawing.Point(244, 279)
         Me.txtOpLoIIssuePr.Name = "txtOpLoIIssuePr"
         Me.txtOpLoIIssuePr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLoIIssuePr.TabIndex = 48
@@ -399,7 +404,7 @@ Partial Class frmAccountOpening
         '
         'txtOpLotIssueFw
         '
-        Me.txtOpLotIssueFw.Location = New System.Drawing.Point(263, 252)
+        Me.txtOpLotIssueFw.Location = New System.Drawing.Point(300, 279)
         Me.txtOpLotIssueFw.Name = "txtOpLotIssueFw"
         Me.txtOpLotIssueFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpLotIssueFw.TabIndex = 49
@@ -407,7 +412,7 @@ Partial Class frmAccountOpening
         '
         'btnMeltingDetails
         '
-        Me.btnMeltingDetails.Location = New System.Drawing.Point(319, 84)
+        Me.btnMeltingDetails.Location = New System.Drawing.Point(361, 78)
         Me.btnMeltingDetails.Name = "btnMeltingDetails"
         Me.btnMeltingDetails.Size = New System.Drawing.Size(21, 20)
         Me.btnMeltingDetails.TabIndex = 22
@@ -415,7 +420,7 @@ Partial Class frmAccountOpening
         '
         'btnBhukaBagCreated
         '
-        Me.btnBhukaBagCreated.Location = New System.Drawing.Point(319, 108)
+        Me.btnBhukaBagCreated.Location = New System.Drawing.Point(361, 103)
         Me.btnBhukaBagCreated.Name = "btnBhukaBagCreated"
         Me.btnBhukaBagCreated.Size = New System.Drawing.Size(21, 20)
         Me.btnBhukaBagCreated.TabIndex = 26
@@ -423,15 +428,15 @@ Partial Class frmAccountOpening
         '
         'btnTransDetails
         '
-        Me.btnTransDetails.Location = New System.Drawing.Point(319, 155)
+        Me.btnTransDetails.Location = New System.Drawing.Point(361, 179)
         Me.btnTransDetails.Name = "btnTransDetails"
-        Me.btnTransDetails.Size = New System.Drawing.Size(21, 20)
+        Me.btnTransDetails.Size = New System.Drawing.Size(21, 21)
         Me.btnTransDetails.TabIndex = 34
         Me.btnTransDetails.UseVisualStyleBackColor = True
         '
         'btnLotTransferDetails
         '
-        Me.btnLotTransferDetails.Location = New System.Drawing.Point(319, 179)
+        Me.btnLotTransferDetails.Location = New System.Drawing.Point(361, 205)
         Me.btnLotTransferDetails.Name = "btnLotTransferDetails"
         Me.btnLotTransferDetails.Size = New System.Drawing.Size(21, 20)
         Me.btnLotTransferDetails.TabIndex = 38
@@ -439,7 +444,7 @@ Partial Class frmAccountOpening
         '
         'btnInterDeptIssue
         '
-        Me.btnInterDeptIssue.Location = New System.Drawing.Point(319, 203)
+        Me.btnInterDeptIssue.Location = New System.Drawing.Point(361, 231)
         Me.btnInterDeptIssue.Name = "btnInterDeptIssue"
         Me.btnInterDeptIssue.Size = New System.Drawing.Size(21, 20)
         Me.btnInterDeptIssue.TabIndex = 42
@@ -447,7 +452,7 @@ Partial Class frmAccountOpening
         '
         'btnLabIssueDetails
         '
-        Me.btnLabIssueDetails.Location = New System.Drawing.Point(319, 227)
+        Me.btnLabIssueDetails.Location = New System.Drawing.Point(361, 256)
         Me.btnLabIssueDetails.Name = "btnLabIssueDetails"
         Me.btnLabIssueDetails.Size = New System.Drawing.Size(21, 20)
         Me.btnLabIssueDetails.TabIndex = 46
@@ -455,7 +460,7 @@ Partial Class frmAccountOpening
         '
         'btnLotAddIssue
         '
-        Me.btnLotAddIssue.Location = New System.Drawing.Point(319, 252)
+        Me.btnLotAddIssue.Location = New System.Drawing.Point(361, 282)
         Me.btnLotAddIssue.Name = "btnLotAddIssue"
         Me.btnLotAddIssue.Size = New System.Drawing.Size(21, 20)
         Me.btnLotAddIssue.TabIndex = 50
@@ -464,7 +469,7 @@ Partial Class frmAccountOpening
         'lblReceiveWt
         '
         Me.lblReceiveWt.AutoSize = True
-        Me.lblReceiveWt.Location = New System.Drawing.Point(165, 301)
+        Me.lblReceiveWt.Location = New System.Drawing.Point(195, 320)
         Me.lblReceiveWt.Name = "lblReceiveWt"
         Me.lblReceiveWt.Size = New System.Drawing.Size(28, 13)
         Me.lblReceiveWt.TabIndex = 145
@@ -474,7 +479,7 @@ Partial Class frmAccountOpening
         'lblReceivePr
         '
         Me.lblReceivePr.AutoSize = True
-        Me.lblReceivePr.Location = New System.Drawing.Point(225, 301)
+        Me.lblReceivePr.Location = New System.Drawing.Point(255, 320)
         Me.lblReceivePr.Name = "lblReceivePr"
         Me.lblReceivePr.Size = New System.Drawing.Size(28, 13)
         Me.lblReceivePr.TabIndex = 146
@@ -484,7 +489,7 @@ Partial Class frmAccountOpening
         'lblReceiveFw
         '
         Me.lblReceiveFw.AutoSize = True
-        Me.lblReceiveFw.Location = New System.Drawing.Point(278, 301)
+        Me.lblReceiveFw.Location = New System.Drawing.Point(308, 320)
         Me.lblReceiveFw.Name = "lblReceiveFw"
         Me.lblReceiveFw.Size = New System.Drawing.Size(28, 13)
         Me.lblReceiveFw.TabIndex = 147
@@ -495,17 +500,17 @@ Partial Class frmAccountOpening
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(154, 16)
+        Me.Label1.Location = New System.Drawing.Point(191, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 14)
         Me.Label1.TabIndex = 148
-        Me.Label1.Text = "Gross Wt,"
+        Me.Label1.Text = "Gross Wt."
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(224, 16)
+        Me.Label2.Location = New System.Drawing.Point(262, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(19, 14)
         Me.Label2.TabIndex = 149
@@ -515,18 +520,18 @@ Partial Class frmAccountOpening
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(266, 16)
+        Me.Label3.Location = New System.Drawing.Point(300, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label3.Size = New System.Drawing.Size(54, 14)
+        Me.Label3.Size = New System.Drawing.Size(50, 14)
         Me.Label3.TabIndex = 150
-        Me.Label3.Text = "Fine Wt."
+        Me.Label3.Text = "Fine Wt"
         '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTotal.Location = New System.Drawing.Point(98, 301)
+        Me.lblTotal.Location = New System.Drawing.Point(130, 319)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(38, 14)
         Me.lblTotal.TabIndex = 151
@@ -535,16 +540,16 @@ Partial Class frmAccountOpening
         'btnBagNotUsed
         '
         Me.btnBagNotUsed.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnBagNotUsed.Location = New System.Drawing.Point(12, 130)
+        Me.btnBagNotUsed.Location = New System.Drawing.Point(19, 153)
         Me.btnBagNotUsed.Name = "btnBagNotUsed"
-        Me.btnBagNotUsed.Size = New System.Drawing.Size(137, 23)
+        Me.btnBagNotUsed.Size = New System.Drawing.Size(163, 23)
         Me.btnBagNotUsed.TabIndex = 4
         Me.btnBagNotUsed.Text = "Bhuka Bag Not Used"
         Me.btnBagNotUsed.UseVisualStyleBackColor = True
         '
         'txtOpBagNotUsedWt
         '
-        Me.txtOpBagNotUsedWt.Location = New System.Drawing.Point(151, 132)
+        Me.txtOpBagNotUsedWt.Location = New System.Drawing.Point(188, 154)
         Me.txtOpBagNotUsedWt.Name = "txtOpBagNotUsedWt"
         Me.txtOpBagNotUsedWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBagNotUsedWt.TabIndex = 27
@@ -552,7 +557,7 @@ Partial Class frmAccountOpening
         '
         'txtOpBagNotUsedPr
         '
-        Me.txtOpBagNotUsedPr.Location = New System.Drawing.Point(207, 132)
+        Me.txtOpBagNotUsedPr.Location = New System.Drawing.Point(244, 154)
         Me.txtOpBagNotUsedPr.Name = "txtOpBagNotUsedPr"
         Me.txtOpBagNotUsedPr.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBagNotUsedPr.TabIndex = 28
@@ -560,7 +565,7 @@ Partial Class frmAccountOpening
         '
         'txtOpBagNotUsedFw
         '
-        Me.txtOpBagNotUsedFw.Location = New System.Drawing.Point(263, 132)
+        Me.txtOpBagNotUsedFw.Location = New System.Drawing.Point(300, 154)
         Me.txtOpBagNotUsedFw.Name = "txtOpBagNotUsedFw"
         Me.txtOpBagNotUsedFw.Size = New System.Drawing.Size(55, 20)
         Me.txtOpBagNotUsedFw.TabIndex = 29
@@ -568,7 +573,7 @@ Partial Class frmAccountOpening
         '
         'btnBhukaBagNotUsed
         '
-        Me.btnBhukaBagNotUsed.Location = New System.Drawing.Point(319, 132)
+        Me.btnBhukaBagNotUsed.Location = New System.Drawing.Point(361, 128)
         Me.btnBhukaBagNotUsed.Name = "btnBhukaBagNotUsed"
         Me.btnBhukaBagNotUsed.Size = New System.Drawing.Size(21, 20)
         Me.btnBhukaBagNotUsed.TabIndex = 30
@@ -576,7 +581,8 @@ Partial Class frmAccountOpening
         '
         'btnGetTotal
         '
-        Me.btnGetTotal.Location = New System.Drawing.Point(13, 300)
+        Me.btnGetTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnGetTotal.Location = New System.Drawing.Point(43, 315)
         Me.btnGetTotal.Name = "btnGetTotal"
         Me.btnGetTotal.Size = New System.Drawing.Size(67, 23)
         Me.btnGetTotal.TabIndex = 157
@@ -593,10 +599,57 @@ Partial Class frmAccountOpening
         Me.lblTest.TabIndex = 158
         Me.lblTest.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'frmAccountOpening
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(361, 153)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(21, 20)
+        Me.Button1.TabIndex = 163
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(300, 129)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(55, 20)
+        Me.TextBox1.TabIndex = 162
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(244, 129)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(55, 20)
+        Me.TextBox2.TabIndex = 161
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(188, 129)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(55, 20)
+        Me.TextBox3.TabIndex = 160
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'BtnBhukaBagNotUpdaed
+        '
+        Me.BtnBhukaBagNotUpdaed.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnBhukaBagNotUpdaed.Location = New System.Drawing.Point(19, 128)
+        Me.BtnBhukaBagNotUpdaed.Name = "BtnBhukaBagNotUpdaed"
+        Me.BtnBhukaBagNotUpdaed.Size = New System.Drawing.Size(163, 23)
+        Me.BtnBhukaBagNotUpdaed.TabIndex = 159
+        Me.BtnBhukaBagNotUpdaed.Text = "Bhuka Bag Not Updated"
+        Me.BtnBhukaBagNotUpdaed.UseVisualStyleBackColor = True
+        '
+        'frmChAccountOpening
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(393, 347)
+        Me.ClientSize = New System.Drawing.Size(403, 353)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.BtnBhukaBagNotUpdaed)
         Me.Controls.Add(Me.lblTest)
         Me.Controls.Add(Me.btnGetTotal)
         Me.Controls.Add(Me.btnBhukaBagNotUsed)
@@ -652,15 +705,15 @@ Partial Class frmAccountOpening
         Me.Controls.Add(Me.btnStockIIssue)
         Me.Controls.Add(Me.btnLotTransfer)
         Me.Controls.Add(Me.btnTransactions)
-        Me.Controls.Add(Me.btnBagCreated)
+        Me.Controls.Add(Me.btnBagReceived)
         Me.Controls.Add(Me.btnMelting)
         Me.Controls.Add(Me.btnStockReceipt)
         Me.Controls.Add(Me.btnStockIssue)
         Me.KeyPreview = True
         Me.MaximizeBox = False
-        Me.Name = "frmAccountOpening"
+        Me.Name = "frmChAccountOpening"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Account Opening"
+        Me.Text = "Chain Account Opening"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -669,7 +722,7 @@ Partial Class frmAccountOpening
     Friend WithEvents btnStockIssue As Button
     Friend WithEvents btnStockReceipt As Button
     Friend WithEvents btnMelting As Button
-    Friend WithEvents btnBagCreated As Button
+    Friend WithEvents btnBagReceived As Button
     Friend WithEvents btnTransactions As Button
     Friend WithEvents btnLotTransfer As Button
     Friend WithEvents btnStockIIssue As Button
@@ -725,4 +778,9 @@ Partial Class frmAccountOpening
     Friend WithEvents btnBhukaBagNotUsed As Button
     Friend WithEvents btnGetTotal As Button
     Friend WithEvents lblTest As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents BtnBhukaBagNotUpdaed As Button
 End Class

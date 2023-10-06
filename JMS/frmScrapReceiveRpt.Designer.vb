@@ -391,7 +391,7 @@ Partial Class frmScrapReceiveRpt
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(390, 415)
+        Me.btnExit.Location = New System.Drawing.Point(391, 414)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 28
@@ -400,7 +400,7 @@ Partial Class frmScrapReceiveRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(313, 415)
+        Me.btnPrint.Location = New System.Drawing.Point(314, 414)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 27

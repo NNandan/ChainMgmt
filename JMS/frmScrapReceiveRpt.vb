@@ -13,9 +13,9 @@ Public Class frmScrapReceiveRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", CStr(sReportType), DbType.String))
             End With
 

@@ -91,9 +91,9 @@ Public Class frmScrapReceive
             Try
 
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@SId", txtTransId.Text, DbType.Int16))
                 End With
 
@@ -118,9 +118,9 @@ Public Class frmScrapReceive
         Dim objLI As ListViewItem
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -185,9 +185,9 @@ Public Class frmScrapReceive
                 txtWeight.Focus()
             Else
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@ExtraScrapDt", TransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@LabourId", cmbLabour.SelectedValue, DbType.Int16))
@@ -220,9 +220,9 @@ Public Class frmScrapReceive
                 txtWeight.Focus()
             Else
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@ExtraScrapDt", TransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@LabourId", cmbLabour.SelectedValue, DbType.Int16))
@@ -248,9 +248,9 @@ Public Class frmScrapReceive
                 txtWeight.Focus()
             Else
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@ExtraScrapDt", TransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@LabourId", cmbLabour.SelectedValue, DbType.Int16))
@@ -281,9 +281,9 @@ Public Class frmScrapReceive
                 txtWeight.Focus()
             Else
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@ExtraScrapDt", TransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@LabourId", cmbLabour.SelectedValue, DbType.Int16))
@@ -346,9 +346,9 @@ Public Class frmScrapReceive
                 txtWeight.Focus()
             Else
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
-
+     
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@ExtraScrapDt", TransDt.Value.ToString(), DbType.DateTime))
                     .Add(dbManager.CreateParameter("@LabourId", cmbLabour.SelectedValue, DbType.Int16))
@@ -369,11 +369,10 @@ Public Class frmScrapReceive
         End If
     End Sub
     Private Sub fillLotNo()
-
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchLotNo", DbType.String))
         End With
 
@@ -396,9 +395,9 @@ Public Class frmScrapReceive
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -438,9 +437,9 @@ Public Class frmScrapReceive
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
         End With
 
@@ -460,7 +459,6 @@ Public Class frmScrapReceive
             cmbOperation.DataSource = dt
             cmbOperation.DisplayMember = "OperationName"
             cmbOperation.ValueMember = "OperationId"
-
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -534,11 +532,10 @@ Public Class frmScrapReceive
         Me.TbScrapBags.SelectedIndex = 0
     End Sub
     Private Sub bindListView(ByVal iScrapId As Integer)
-
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchRecord", DbType.String))
             .Add(dbManager.CreateParameter("@SId", CInt(iScrapId), DbType.Int16))
         End With
@@ -576,9 +573,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
             End With
 

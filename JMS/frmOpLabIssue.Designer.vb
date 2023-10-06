@@ -146,7 +146,7 @@ Partial Class frmOpLabIssue
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(680, 22)
+        Me.Label1.Location = New System.Drawing.Point(680, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(215, 14)
         Me.Label1.TabIndex = 150

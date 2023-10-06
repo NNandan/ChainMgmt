@@ -90,7 +90,7 @@ Partial Class frmStockVaccumBagNotCreated
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 409)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 411)
         Me.dgvWipLotNo.TabIndex = 4
         '
         'btnExit

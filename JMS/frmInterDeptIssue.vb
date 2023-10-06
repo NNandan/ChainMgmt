@@ -67,8 +67,6 @@ Public Class frmInterDeptIssue
         Me.fillDepartment()
         Me.fillLabour()
 
-        'Me.bindDataGridView()
-
         Me.Clear_Form()
     End Sub
     Private Sub fillDepartment()
@@ -123,7 +121,7 @@ Public Class frmInterDeptIssue
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -330,17 +328,17 @@ Public Class frmInterDeptIssue
 
         Rmccmb.Columns(1).TextAlignment = ContentAlignment.MiddleLeft
         Rmccmb.Columns(5).TextAlignment = ContentAlignment.MiddleLeft
-        Rmccmb.Columns(6).TextAlignment = ContentAlignment.MiddleRight
-        Rmccmb.Columns(7).TextAlignment = ContentAlignment.MiddleRight
+        Rmccmb.Columns(7).TextAlignment = ContentAlignment.MiddleLeft
         Rmccmb.Columns(8).TextAlignment = ContentAlignment.MiddleRight
         Rmccmb.Columns(9).TextAlignment = ContentAlignment.MiddleRight
+        Rmccmb.Columns(10).TextAlignment = ContentAlignment.MiddleRight
 
         Rmccmb.Columns(0).IsVisible = False
         Rmccmb.Columns(2).IsVisible = False
         Rmccmb.Columns(3).IsVisible = False
         Rmccmb.Columns(4).IsVisible = False
-        Rmccmb.Columns(9).IsVisible = False
-        Rmccmb.Columns(10).IsVisible = False
+        Rmccmb.Columns(6).IsVisible = False
+        Rmccmb.Columns(11).IsVisible = False
 
         Me.Rmccmb.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         Me.Rmccmb.AutoSizeDropDownToBestFit = True
@@ -367,7 +365,7 @@ Public Class frmInterDeptIssue
         Rmccmb.DataSource = Nothing
 
         Rmccmb.DataSource = dt
-        Rmccmb.DisplayMember = "LotNo"
+        Rmccmb.DisplayMember = "LotAdditionNo"
         Rmccmb.ValueMember = "ItemId"
 
         Rmccmb.Columns(1).TextAlignment = ContentAlignment.MiddleLeft
@@ -508,6 +506,7 @@ Public Class frmInterDeptIssue
                                     Val(iReceiptId),
                                     Val(iReceiptDetailId),
                                     Val(iUsedBagId),
+                                    Val(iIssueId),
                                     Val(iTransId))
             GetSrNo(dgvIssue)
         Else
@@ -521,10 +520,11 @@ Public Class frmInterDeptIssue
             dgvIssue.Rows(TempRow).Cells(7).Value = Format(Val(txtConversion.Text.Trim), "0.00")
             dgvIssue.Rows(TempRow).Cells(8).Value = Format(Val(txtFineWt.Text.Trim), "0.00")
             dgvIssue.Rows(TempRow).Cells(9).Value = Format(Val(txtStockAdd.Text.Trim), "0.00")
-            iReceiptId = Val(txtIssueWt.Tag)
-            iReceiptDetailId = Val(txtIssuePr.Tag)
-            iUsedBagId = Val(txtConversion.Tag)
-            iTransId = Val(txtFineWt.Tag)
+            dgvIssue.Rows(TempRow).Cells(10).Value = Val(iReceiptId)
+            dgvIssue.Rows(TempRow).Cells(11).Value = Val(iReceiptDetailId)
+            dgvIssue.Rows(TempRow).Cells(12).Value = Val(iUsedBagId)
+            dgvIssue.Rows(TempRow).Cells(13).Value = Val(iIssueId)
+            dgvIssue.Rows(TempRow).Cells(14).Value = Val(iTransId)
 
             GridDoubleClick = False
         End If
@@ -572,7 +572,7 @@ Public Class frmInterDeptIssue
         Try
             Call Clear_Form()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -730,6 +730,7 @@ ErrHandler:
         Dim ReceiptId As String = Nothing
         Dim ReceiptDetailId As String = Nothing
         Dim UsedBagId As String = Nothing
+        Dim IssueId As String = Nothing
         Dim TransId As String = Nothing
 
         Dim IRowCount As Integer = 0
@@ -756,7 +757,8 @@ ErrHandler:
                     ReceiptId = Val(row.Cells(10).Value)
                     ReceiptDetailId = Val(row.Cells(11).Value)
                     UsedBagId = Val(row.Cells(12).Value)
-                    TransId = Val(row.Cells(13).Value)
+                    IssueId = Val(row.Cells(13).Value)
+                    TransId = Val(row.Cells(14).Value)
                 Else
                     GridSrNo = GridSrNo & "|" & Val(row.Cells(0).Value)
                     ItemType = ItemType & "|" & Convert.ToString(row.Cells(1).Value)
@@ -771,7 +773,8 @@ ErrHandler:
                     ReceiptId = ReceiptId & "|" & Val(row.Cells(10).Value)
                     ReceiptDetailId = ReceiptDetailId & "|" & Val(row.Cells(11).Value)
                     UsedBagId = UsedBagId & "|" & Val(row.Cells(12).Value)
-                    TransId = TransId & "|" & Val(row.Cells(13).Value)
+                    IssueId = IssueId & "|" & Val(row.Cells(13).Value)
+                    TransId = TransId & "|" & Val(row.Cells(14).Value)
                 End If
             End If
             IRowCount += 1
@@ -789,6 +792,7 @@ ErrHandler:
         alParaval.Add(ReceiptId)
         alParaval.Add(ReceiptDetailId)
         alParaval.Add(UsedBagId)
+        alParaval.Add(IssueId)
         alParaval.Add(TransId)
 
         Try
@@ -840,6 +844,8 @@ ErrHandler:
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DUsedBagId", alParaval.Item(iValue), DbType.String))
                 iValue += 1
+                .Add(dbManager.CreateParameter("@DIssueId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
                 .Add(dbManager.CreateParameter("@DTransId", alParaval.Item(iValue), DbType.String))
                 iValue += 1
             End With
@@ -881,7 +887,13 @@ ErrHandler:
                 txtConversion.Text = dgvIssue.Rows(e.RowIndex).Cells(7).Value.ToString()
                 txtFineWt.Text = dgvIssue.Rows(e.RowIndex).Cells(8).Value.ToString()
                 txtStockAdd.Text = dgvIssue.Rows(e.RowIndex).Cells(9).Value.ToString()
-                txtFineWt.Tag = dgvIssue.Rows(TempRow).Cells(10).Value.ToString
+
+                iReceiptId = dgvIssue.Rows(e.RowIndex).Cells(10).Value.ToString()
+                iReceiptDetailId = dgvIssue.Rows(e.RowIndex).Cells(11).Value.ToString()
+                iUsedBagId = dgvIssue.Rows(e.RowIndex).Cells(12).Value.ToString()
+                iIssueId = dgvIssue.Rows(e.RowIndex).Cells(13).Value.ToString()
+                iTransId = dgvIssue.Rows(e.RowIndex).Cells(14).Value.ToString()
+
                 TempRow = e.RowIndex
             End If
 
@@ -1127,19 +1139,19 @@ ErrHandler:
 
             iUsedBagId = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then  ''Voucher
+        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then      ''Voucher
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
             dBalanceWt = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
-            txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiveWt").Value.ToString
+            txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
-            iReceiptId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
+            iReceiptId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
-            iReceiptDetailId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
-            txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 2 Then  ''Finished Lots
+            iReceiptDetailId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
+            ''txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
+        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 2 Then       ''Finished Lots
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
@@ -1149,14 +1161,12 @@ ErrHandler:
 
             iTransId = Me.Rmccmb.EditorControl.CurrentRow.Cells("TransId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 3 Then  ''Lot Addition Stock
-
+        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 3 Then       ''Lot Addition Stock
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
             iIssueId = Me.Rmccmb.EditorControl.CurrentRow.Cells("IssueId").Value.ToString
             txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
-
 
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 

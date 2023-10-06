@@ -21,9 +21,9 @@ Public Class frmStockDeptReceive
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "LossDeptReceiptDetails", DbType.String))
             End With
 

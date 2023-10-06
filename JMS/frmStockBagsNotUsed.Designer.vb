@@ -103,13 +103,13 @@ Partial Class frmStockBagsNotUsed
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(794, 408)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(794, 410)
         Me.dgvWipLotNo.TabIndex = 7
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(399, 417)
+        Me.btnExit.Location = New System.Drawing.Point(411, 418)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 27
@@ -118,7 +118,7 @@ Partial Class frmStockBagsNotUsed
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(322, 417)
+        Me.btnPrint.Location = New System.Drawing.Point(334, 418)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 26

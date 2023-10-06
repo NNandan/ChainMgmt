@@ -32,9 +32,9 @@ Public Class frmStockAdditionRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchStockAddition", DbType.String))
             End With
 

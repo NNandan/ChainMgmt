@@ -31,9 +31,9 @@ Public Class frmStockWipLots
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "WIPLotsDetails", DbType.String))
             End With
 

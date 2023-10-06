@@ -26,7 +26,6 @@ Public Class frmMetalUsedReport
         dgvMeltingBagList.DataSource = FetchAllRecords()
     End Sub
     Private Function FetchAllRecords() As DataTable
-
         Dim dtData As DataTable = New DataTable()
 
         Try
@@ -44,7 +43,6 @@ Public Class frmMetalUsedReport
         End Try
 
         Return dtData
-
     End Function
     Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
@@ -94,7 +92,7 @@ Public Class frmMetalUsedReport
             doc.LeftFooter = "Page [Page #] of [Total Pages]"
             doc.LeftHeader = "[Time Printed]"
             doc.MiddleFooter = "***"
-            doc.MiddleHeader = "Report Name"
+            doc.MiddleHeader = "Metal Used By Voucher Number"
             doc.RightHeader = "[Date Printed]"
 
             Dim dialog As New RadPrintPreviewDialog(doc)
@@ -102,6 +100,7 @@ Public Class frmMetalUsedReport
 
             dialog.ThemeName = Me.dgvMeltingBagList.ThemeName
             dialog.ShowDialog()
+
 
         Catch ex As Exception
         Finally

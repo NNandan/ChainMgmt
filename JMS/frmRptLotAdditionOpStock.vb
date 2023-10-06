@@ -38,9 +38,9 @@ Public Class frmRptLotAdditionOpStock
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchLotAdditionStock", DbType.String))
             End With
 
@@ -63,10 +63,9 @@ Public Class frmRptLotAdditionOpStock
             Dim dSumOfWt As Double = 0
 
             For Each row As GridViewRowInfo In e.Group
-
                 dSumOfWt += 1
-
             Next
+
             e.FormatString = [String].Format("There are {0} {1} and {2} of them is(are) from France.", iLotNoCount, e.Value, dSumOfWt)
         End If
     End Sub

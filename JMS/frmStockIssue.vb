@@ -2,7 +2,6 @@
 Imports DataAccessHandler
 Imports Telerik.WinControls.UI
 Imports Telerik.WinControls.UI.Data
-
 Public Class frmStockIssue
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
 
@@ -112,7 +111,7 @@ Public Class frmStockIssue
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -214,7 +213,7 @@ Public Class frmStockIssue
     End Sub
     Private Sub txtNarration_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNarration.Validating
         Try
-            If cmbItem.SelectedIndex > 0 And Val(txtGrossWt.Text.Trim) > 0 And Val(txtGrossPr.Text.Trim) > 0 Then
+            If cmbItem.SelectedIndex > 0 And Val(txtGrossWt.Text.Trim) > 0 And Val(txtGrossPr.Text.Trim) > 0 And cmbParty.SelectedIndex > 0 Then
                 Me.fillGrid()
                 Me.Total()
             Else
@@ -233,6 +232,8 @@ Public Class frmStockIssue
             .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FillOnlyItemName", DbType.String))
         End With
+
+
 
         Dim dr = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
@@ -512,6 +513,7 @@ Public Class frmStockIssue
             lblTotalIssueWt.Text = 0.00
             lblTotalIssuePr.Text = 0.00
             lblTotalFineWt.Text = 0.000
+
             For Each row As GridViewRowInfo In dgvIssue.Rows
                 lblTotalIssueWt.Text = Format(Val(lblTotalIssueWt.Text) + Val(row.Cells(3).Value), "0.00")
                 lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(5).Value), "0.000")
@@ -568,11 +570,10 @@ Public Class frmStockIssue
 
     End Sub
     Private Sub fillHeaderFromListView(ByVal intIssueId As Integer)
-
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
         End With
@@ -588,9 +589,10 @@ Public Class frmStockIssue
             TransDt.Text = dr.Item("IssueDt").ToString()
             cmbfDepartment.SelectedIndex = dr.Item("FrDeptId").ToString()
             cmbtDepartment.SelectedIndex = dr.Item("ToDeptId").ToString()
-
             txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString()
             txtFrKarigar.Text = dr.Item("FrKarigar").ToString()
+
+            cmbtKarigar.SelectedIndex = dr.Item("ToKarigarId").ToString()
             cmbtKarigar.Text = CStr(dr.Item("ToKarigar"))
         End If
 
@@ -627,14 +629,13 @@ ErrHandler:
 
             Try
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@IId", CInt(txtVocucherNo.Tag), DbType.Int16))
                 End With
 
                 dbManager.Delete("SP_StockIssue_Delete", CommandType.StoredProcedure, parameters.ToArray())
-
                 MessageBox.Show("Record Deleted Successfully !!!")
 
                 Me.Clear_Form()
@@ -678,9 +679,9 @@ ErrHandler:
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
             End With
@@ -762,7 +763,7 @@ ErrHandler:
             cmbfDepartment.Enabled = False
 
             cmbtDepartment.SelectedIndex = 4
-            cmbtDepartment.Enabled = False
+            'cmbtDepartment.Enabled = False
 
             txtFrKarigar.Tag = CInt(UserId)
             txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
@@ -787,7 +788,7 @@ ErrHandler:
                 MessageBox.Show("Select Department !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbfDepartment.Focus()
                 Return False
-            ElseIf cmbtKarigar.SelectedIndex = -1 Or cmbtKarigar.SelectedIndex = 0 Then
+            ElseIf cmbtKarigar.SelectedIndex = -1 Or cmbtKarigar.SelectedIndex = 0 Or cmbtKarigar.Text.Contains("---Select---") Then
                 MessageBox.Show("Select To Karigar !", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbtKarigar.Focus()
                 Return False

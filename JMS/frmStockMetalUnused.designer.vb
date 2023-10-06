@@ -97,7 +97,7 @@ Partial Class frmStockMetalUnused
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(625, 431)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(625, 432)
         Me.dgvWipLotNo.TabIndex = 41
         '
         'btnPrint

@@ -278,7 +278,7 @@ Partial Class frmAccountMaster
         Me.MaximizeBox = False
         Me.Name = "frmAccountMaster"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Melting Account Master"
+        Me.Text = "Account Master"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GBoxDetails.ResumeLayout(False)

@@ -101,7 +101,7 @@ Partial Class frmLabMaster
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(431, 280)
+        Me.btnExit.Location = New System.Drawing.Point(437, 279)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 800
@@ -110,7 +110,7 @@ Partial Class frmLabMaster
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(353, 280)
+        Me.btnCancel.Location = New System.Drawing.Point(359, 279)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 22
@@ -119,7 +119,7 @@ Partial Class frmLabMaster
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(275, 280)
+        Me.btnDelete.Location = New System.Drawing.Point(281, 279)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 21
@@ -128,7 +128,7 @@ Partial Class frmLabMaster
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(198, 280)
+        Me.btnSave.Location = New System.Drawing.Point(204, 279)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 20

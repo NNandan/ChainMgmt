@@ -127,7 +127,7 @@ Partial Class frmRptReceiveDept
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblTotal.Location = New System.Drawing.Point(419, 488)
+        Me.lblTotal.Location = New System.Drawing.Point(422, 486)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(43, 14)
         Me.lblTotal.TabIndex = 10

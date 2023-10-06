@@ -108,8 +108,8 @@ Partial Class frmStockLossMetalReceived
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(308, 435, 110, 24)
-        Me.btnExit.Size = New System.Drawing.Size(87, 27)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(309, 434, 110, 24)
+        Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 45
         Me.btnExit.Text = "E&xit"
         '
@@ -117,14 +117,14 @@ Partial Class frmStockLossMetalReceived
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(221, 434)
+        Me.btnPrint.Location = New System.Drawing.Point(231, 434)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(5)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
-        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(220, 435, 110, 24)
-        Me.btnPrint.Size = New System.Drawing.Size(87, 27)
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(221, 434, 110, 24)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 44
         Me.btnPrint.Text = "&Print"
         '

@@ -19,9 +19,9 @@ Public Class frmTransactionStockRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "TransactionStock", DbType.String))
             End With
 
@@ -152,9 +152,12 @@ Public Class frmTransactionStockRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchLabIssuedDataByTrans", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchLabIssuedDataByTrans", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_LabData_Select", CommandType.StoredProcedure, parameters.ToArray())
 
             If dtData.Rows.Count > 0 Then

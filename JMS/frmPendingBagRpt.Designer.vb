@@ -76,7 +76,7 @@ Partial Class frmPendingVoucher
         GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "BalFineWt"
+        GridViewTextBoxColumn5.FieldName = "FineWt"
         GridViewTextBoxColumn5.HeaderText = "Fine Wt."
         GridViewTextBoxColumn5.Name = "colFineWt"
         GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight

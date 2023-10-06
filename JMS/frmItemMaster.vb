@@ -184,13 +184,12 @@ Public Class frmItemMaster
 
     End Function
     Private Sub fillCategory()
-
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -419,6 +418,10 @@ Public Class frmItemMaster
             cmbType.SelectedIndex = 0
             cmbMaterial.SelectedIndex = 0
 
+            chkChain.Checked = False
+            chkFancy.Checked = False
+            chkCasting.Checked = False
+
             dgvItemList.DataSource = FetchAllDetails()
 
             Fr_Mode = FormState.AStateMode
@@ -427,7 +430,6 @@ Public Class frmItemMaster
             btnDelete.Enabled = False
 
             txtItemName.Focus()
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

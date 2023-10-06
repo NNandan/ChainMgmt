@@ -141,7 +141,7 @@ Public Class frmLogin
 
             If dtData.Rows(0).Item("Version_No") <> "1.0.0001" Then
 LINE1:
-                MsgBox(" Version Expired Please Contact Chain Experts ON +91 9821210759", MsgBoxStyle.Critical)
+                MsgBox(" Version Expired Please Contact Chain Experts ON +91 9821279134", MsgBoxStyle.Critical)
                 End
             End If
         Catch ex As Exception
@@ -168,4 +168,6 @@ LINE1:
         Return dtData
 
     End Function
+
+
 End Class

@@ -64,7 +64,7 @@ Partial Class frmLogin
         '
         '
         '
-        Me.btnClose.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnClose.RootElement.ControlBounds = New System.Drawing.Rectangle(401, 154, 110, 24)
         Me.btnClose.Size = New System.Drawing.Size(75, 25)
         Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "Close"
@@ -78,7 +78,7 @@ Partial Class frmLogin
         '
         '
         '
-        Me.btnLogin.RootElement.ControlBounds = New System.Drawing.Rectangle(0, 0, 110, 24)
+        Me.btnLogin.RootElement.ControlBounds = New System.Drawing.Rectangle(318, 154, 110, 24)
         Me.btnLogin.Size = New System.Drawing.Size(75, 25)
         Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "Login"

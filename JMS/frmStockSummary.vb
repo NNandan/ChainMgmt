@@ -7,8 +7,7 @@ Public Class frmStockSummary
     Dim iRowCnt As Integer = 0
 
     Dim dbManager As New SqlHelper()
-    Dim Objcn As SqlConnection = New SqlConnection()
-    Private connectionString As String = File.ReadAllText(System.IO.Path.Combine("C:\", "DBConnectionString.txt"))
+    Private connectionString As String = File.ReadAllText(System.IO.Path.Combine("D:\", "DBConn.txt"))
     Private bulider1 As SqlConnectionStringBuilder = Nothing
     Private Sub frmStockSummaryRuntime_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.WindowState = FormWindowState.Maximized
@@ -21,11 +20,15 @@ Public Class frmStockSummary
             Me.GetWIPLotTransfered()
             Me.GetFinishedLots()
 
+            Me.TotalWIPTotal()
+
             '' Bags Started
             '' Bags Not Created
             Me.GetBhukaBagNotCreated()
             Me.GetVacuumBagNotCreated()
             Me.GetSampleBagNotCreated()
+
+            Me.TotalBagNotCreated()
 
             '' Bags Not Received
             Me.GetBhukaBagNotReceived()
@@ -33,11 +36,15 @@ Public Class frmStockSummary
             Me.GetSampleBagNotReceived()
             Me.GetLotFailBagNotReceived()
 
+            Me.TotalBagNotReceived()
+
             '' Bags Not Updated
             Me.GetBhukaBagNotUpdated()
             Me.GetVaccumBagNotUpdated()
             Me.GetSampleBagNotUpdated()
             Me.GetLotFailBagNotUpdated()
+
+            'Me.TotalBagNotUpdated()
 
             ''Bags Not Used
             Me.GetBhukaBagNotUsed()
@@ -46,18 +53,23 @@ Public Class frmStockSummary
             Me.GetLotFailBagNotUsed()
             '' Bags Ended
 
+            'Me.TotalBagNotUsed()
+
             Me.GetVoucherMetalUnused()
 
             Me.GetLotAdditionStock()
 
-            Me.GetLossBag()
+            Me.GetBagLoss()
             Me.GetLossTransaction()
             Me.GetLossLab()
+
+            Me.TotalLosswt()
 
             Me.GetMetalReceipt()
             Me.GetMetalIssue()
 
             Me.GetTxtTotal()
+            ExpandClose()
 
             ''Setting OpStock Value Start
 
@@ -77,6 +89,14 @@ Public Class frmStockSummary
             Me.Cursor = Cursors.Default
         End Try
 
+    End Sub
+    Private Sub ExpandCLose()
+        RadCollapsiblePanel1.IsExpanded = False
+        RadCollapsiblePanel2.IsExpanded = False
+        RadCollapsiblePanel3.IsExpanded = False
+        RadCollapsiblePanel4.IsExpanded = False
+        RadCollapsiblePanel5.IsExpanded = False
+        RadCollapsiblePanel6.IsExpanded = False
     End Sub
     Private Sub CreateGroupBoxForWIPLots()
         Dim groupBox1 As GroupBox = New GroupBox()
@@ -835,7 +855,7 @@ Public Class frmStockSummary
             MessageBox.Show("Error:- " & ex.Message)
         End Try
     End Sub
-    Private Sub GetLossBag()
+    Private Sub GetBagLoss()
         Dim dtData As DataTable = New DataTable()
 
         Dim sRWtTotal As Single = 0
@@ -1166,9 +1186,9 @@ Public Class frmStockSummary
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
-            LotFailBagNuWt.Text = Format(sRWtTotal, "0.00")
-            LotFailBagNuPr.Text = Format(sRPrTotal, "0.00")
-            LotFailBagNuFw.Text = Format(sFWtTotal, "0.00")
+            SampleBagNuWt.Text = Format(sRWtTotal, "0.00")
+            SampleBagNuPr.Text = Format(sRPrTotal, "0.00")
+            SampleBagNuFw.Text = Format(sFWtTotal, "0.00")
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -1316,77 +1336,6 @@ Public Class frmStockSummary
         Dim ObjStockLossLabs As New frmStockLossLabs
         ObjStockLossLabs.ShowDialog()
     End Sub
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        ''creating And initializing the connection string
-        'Dim myConnectionString As SqlConnection = New SqlConnection("Data Source=(local)\SQLEXPRESS;Initial Catalog=Chain;Integrated Security=True;Pooling=False")
-        ''since we need to create a New database set the Initial Catalog as Master
-        ''Which means we are creating database under master DB
-        Dim strMyDBName As String = Today.Date()
-        Dim myCommand As String
-        myCommand = "CREATE database my_db"
-        Dim cmd As SqlCommand = New SqlCommand(myCommand, Objcn)
-        Try
-            cmd.Connection.Open()
-            cmd.ExecuteNonQuery()
-            cmd.Connection.Close()
-        Catch
-            MsgBox(" Already installed database", MsgBoxStyle.Critical, " Chain Experts- Warning")
-        End Try
-        ''Creating table to the dynamicaly created database
-        Try
-            'Dim cn As SqlConnection = New SqlConnection("Data Source=(local)\SQLEXPRESS;Initial Catalog=my_db;Integrated Security=True;Pooling=False")
-            ''here the connection string Is initialized with Initial Catalog as my_db
-            Dim sql As String
-            sql = "CREATE TABLE customer(cus_name varchar(50) NULL,address varchar(50) NULL,mobno numeric(18, 0) NULL,tin varchar(50) NULL,kg varchar(50) NULL)"
-            cmd = New SqlCommand(sql, Objcn)
-            cmd.Connection.Open()
-            cmd.ExecuteNonQuery()
-            cmd.Connection.Close()
-
-        Catch
-            MsgBox(" Already installed database", MsgBoxStyle.Critical, "Chain - Warning")
-        End Try
-
-        'Dim connectionString As String = ' CONNECTION STRING IS HERE
-        'Dim conn As New SqlClient.SqlConnection(connectionString)
-        Dim ObjCmd As New SqlClient.SqlCommand
-        Dim objReader As System.IO.StreamReader
-
-        Try
-            cmd.CommandType = CommandType.Text
-            cmd.Connection = Objcn
-
-            'Dim file As New FileInfo("C:\Temp\table.sql")
-            'Dim script As String = file.OpenText().ReadToEnd()
-            'Dim conn As New SqlConnection(Objcn)
-            'Dim server As New Server(New ServerConnection(conn))
-            'server.ConnectionContext.ExecuteNonQuery(script)
-
-            'objReader = New System.IO.StreamReader("C:\dbs\table.sql")
-            objReader = New System.IO.StreamReader("C:\Temp\table.sql")
-            cmd.CommandText = objReader.ReadToEnd
-            cmd.ExecuteNonQuery()
-
-            objReader = New System.IO.StreamReader("C:\dbs\view.sql")
-            cmd.CommandText = objReader.ReadToEnd
-            cmd.ExecuteNonQuery()
-
-            objReader = New System.IO.StreamReader("C:\dbs\sp.sql")
-            cmd.CommandText = objReader.ReadToEnd
-            cmd.ExecuteNonQuery()
-
-            objReader = New System.IO.StreamReader("C:\dbs\udf.sql")
-            cmd.CommandText = objReader.ReadToEnd
-            cmd.ExecuteNonQuery()
-
-            objReader.Close()
-            Objcn.Close()
-            Objcn = Nothing
-            MsgBox("New Database Created")
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
     Private Sub btnLBagCreated_Click(sender As Object, e As EventArgs) Handles btnLBagCreated.Click
         Dim ObjStockLotFailBags As New frmStockLotFailBags
         ObjStockLotFailBags.ShowDialog()
@@ -1418,54 +1367,30 @@ Public Class frmStockSummary
         Dim dTotalFw As Double = 0
 
         dTotalWt =
-    GetValue(WipLGrossWt.Text.Trim) +
-    GetValue(WipMGrossWt.Text.Trim) +
-    GetValue(WipTGrossWt.Text.Trim) +
-    GetValue(WipFGrossWt.Text.Trim) +
-    GetValue(BhukaBagNCWt.Text.Trim) +
-    GetValue(VacuumBagNCWt.Text.Trim) +
-    GetValue(SampleBagNCWt.Text.Trim) +
-    GetValue(BhukaBagNrWt.Text.Trim) +
-    GetValue(VacuumBagWt.Text.Trim) +
-    GetValue(SampleBagWt.Text.Trim) +
-    GetValue(LotFailBagWt.Text.Trim) +
-    GetValue(BhukaBagUWt.Text.Trim) +
-    GetValue(VacuumBagUWt.Text.Trim) +
-    GetValue(SampleBagUWt.Text.Trim) +
-    GetValue(LotFailBagUWt.Text.Trim) +
     GetValue(VoucherMetalWt.Text.Trim) +
     GetValue(LotAddStockWt.Text.Trim) +
-    GetValue(LossBagsWt.Text.Trim) +
-    GetValue(LossTransWt.Text.Trim) +
-    GetValue(LabReceiveWt.Text.Trim)
+    GetValue(txtTotalWWt.Text.Trim) +
+    GetValue(txtTotalBncWt.Text.Trim) +
+    GetValue(txtTotalBnrWt.Text.Trim) +
+    GetValue(txtTotalBnuWt.Text.Trim) +
+    GetValue(txtTotalBnusWt.Text.Trim) +
+    GetValue(txtTotalLossWt.Text.Trim)
 
         dTotalFw =
-    GetValue(WipLGrossFw.Text.Trim) +
-    GetValue(WipMGrossFw.Text.Trim) +
-    GetValue(WipTGrossFw.Text.Trim) +
-    GetValue(WipFGrossFw.Text.Trim) +
-    GetValue(BhukaBagNCFw.Text.Trim) +
-    GetValue(VacuumBagNCFw.Text.Trim) +
-    GetValue(SampleBagNCFw.Text.Trim) +
-    GetValue(BhukaBagNrFw.Text.Trim) +
-    GetValue(VacuumBagFw.Text.Trim) +
-    GetValue(SampleBagFw.Text.Trim) +
-    GetValue(LotFailBagFw.Text.Trim) +
-    GetValue(BhukaBagUFw.Text.Trim) +
-    GetValue(VacuumBagUFw.Text.Trim) +
-    GetValue(SampleBagUFw.Text.Trim) +
-    GetValue(LotFailBagUFw.Text.Trim) +
     GetValue(VoucherMetalFw.Text.Trim) +
     GetValue(LotAddStockFw.Text.Trim) +
-    GetValue(LossBagsFw.Text.Trim) +
-    GetValue(LossTransFw.Text.Trim) +
-    GetValue(LabReceiveFw.Text.Trim)
+    GetValue(txtTotalWFw.Text.Trim) +
+    GetValue(txtTotalBncFw.Text.Trim) +
+    GetValue(txtTotalBnrFw.Text.Trim) +
+    GetValue(txtTotalBnuFw.Text.Trim) +
+    GetValue(txtTotalBnusFw.Text.Trim) +
+    GetValue(txtTotalLossFw.Text.Trim)
 
-        lblGrossWt.Text = Format(dTotalWt, "0.00")
+        Label64.Text = Format(dTotalWt, "0.00")
 
-        lblGrossPr.Text = Format((Val(dTotalFw) / Val(dTotalWt)) * 100, "0.00")
+        Label63.Text = Format((Val(dTotalFw) / Val(dTotalWt)) * 100, "0.00")
 
-        lblGrossFw.Text = Format(dTotalFw, "0.00")
+        Label62.Text = Format(dTotalFw, "0.00")
     End Sub
     Private Function GetValue(ByVal text As String) As Double
         If String.IsNullOrEmpty(text) Then Return 0
@@ -1503,7 +1428,7 @@ Public Class frmStockSummary
         Dim ObjLessMetalIssued As New frmLessMetalIssued
         ObjLessMetalIssued.ShowDialog()
     End Sub
-    Private Sub txtClosingStockWt_TextChanged(sender As Object, e As EventArgs) Handles txtClosingStockWt.TextChanged
+    Private Sub txtClosingStockWt_TextChanged(sender As Object, e As EventArgs)
         'Dim dfinalWt As Double = 0
         'Dim dFinalFw As Double = 0
 
@@ -1517,7 +1442,7 @@ Public Class frmStockSummary
         'End If
 
     End Sub
-    Private Sub btnShow_Click(sender As Object, e As EventArgs) Handles btnShow.Click
+    Private Sub btnShow_Click(sender As Object, e As EventArgs)
         Dim dfinalWt As Double = 0
         Dim dFinalFw As Double = 0
 
@@ -1525,19 +1450,19 @@ Public Class frmStockSummary
 
         Double.TryParse(txtClosingStockFw.Text, dFinalFw)
 
-        If dfinalWt > 0 And dFinalFw > 0 Then
-            lblDiffFw.Text = Val(txtClosingStockFw.Text - lblGrossFw.Text)
-        End If
+        'If dfinalWt > 0 And dFinalFw > 0 Then
+        '    lblDiffFw.Text = Val(txtClosingStockFw.Text - lblGrossFw.Text)
+        'End If
     End Sub
     Private Sub btnOpStock_Click(sender As Object, e As EventArgs) Handles btnOpStock.Click
-        Dim ObjAccountOpening As New frmAccountOpening
+        Dim ObjAccountOpening As New frmChAccountOpening
         ObjAccountOpening.ShowDialog()
     End Sub
     Private Sub btnLBagNotUsed_Click(sender As Object, e As EventArgs) Handles btnLBagNotUsed.Click
         Dim ObjLotFailBagNotUsed As New frmLotFailBagNotUsed
         ObjLotFailBagNotUsed.ShowDialog()
     End Sub
-    Private Sub btnAccountClosing_Click(sender As Object, e As EventArgs) Handles btnAccountClosing.Click
+    Private Sub btnAccountClosing_Click(sender As Object, e As EventArgs)
         Dim strCopyDatabase As String = Nothing
         Dim strDatabaseName As String = Nothing
 
@@ -1579,7 +1504,6 @@ Public Class frmStockSummary
         End Try
 
     End Sub
-
     Private Sub xProcess()
         '     Dim xSql As String
 
@@ -1746,5 +1670,69 @@ Public Class frmStockSummary
     Private Sub btnBBagNotUpdated_Click(sender As Object, e As EventArgs) Handles btnBBagNotUpdated.Click
         Dim ObjBhukaBagNotUpdated As New frmBhukaBagNotUpdated
         ObjBhukaBagNotUpdated.ShowDialog()
+    End Sub
+    Private Sub TotalWIPTotal()
+        txtTotalWWt.Text = Format(Val(WipLGrossWt.Text.Trim) + Val(WipMGrossWt.Text.Trim) + Val(WipTGrossWt.Text.Trim) + Val(WipFGrossWt.Text.Trim), "0.00")
+        txtTotalWFw.Text = Format(Val((WipLGrossFw.Text.Trim) + Val(WipMGrossFw.Text.Trim) + Val(WipTGrossFw.Text.Trim) + Val(WipFGrossFw.Text.Trim)), "0.00")
+
+        If Val(txtTotalWFw.Text) > 0 Then
+            txtTotalWPr.Text = Format(CDbl((txtTotalWFw.Text.Trim) / (txtTotalWWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalWPr.Text = "0.00"
+        End If
+    End Sub
+    Private Sub TotalBagNotCreated()
+        txtTotalBncWt.Text = Format(Val(BhukaBagNCWt.Text.Trim) + Val(VacuumBagNCWt.Text.Trim) + Val(SampleBagNCWt.Text.Trim), "0.00")
+        txtTotalBncFw.Text = Format(Val(BhukaBagNCFw.Text.Trim) + Val(VacuumBagNCFw.Text.Trim) + Val(SampleBagNCFw.Text.Trim), "0.00")
+
+        If Val(txtTotalBncFw.Text) > 0 Then
+            txtTotalBncPr.Text = Format(CDbl((txtTotalBncFw.Text.Trim) / (txtTotalBncWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalBncPr.Text = "0.00"
+        End If
+    End Sub
+    Private Sub TotalBagNotReceived()
+        txtTotalBnrWt.Text = Format(Val(BhukaBagNrWt.Text.Trim) + Val(VacuumBagWt.Text.Trim) + Val(SampleBagWt.Text.Trim) + Val(LotFailBagWt.Text.Trim), "0.00")
+        txtTotalBnrFw.Text = Format(Val(BhukaBagNrFw.Text.Trim) + Val(VacuumBagFw.Text.Trim) + Val(SampleBagFw.Text.Trim) + Val(LotFailBagFw.Text.Trim), "0.00")
+
+        If Val(txtTotalBnrFw.Text) > 0 Then
+            txtTotalBnrPr.Text = Format(CDbl((txtTotalBnrFw.Text.Trim) / (txtTotalBnrWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalBnrPr.Text = "0.00"
+        End If
+    End Sub
+    Private Sub TotalBagNotUpdated()
+        txtTotalBnuWt.Text = Format(Val(BhukaBagNuWt.Text.Trim) + Val(VacuumBagNuWt.Text.Trim) + Val(SampleBagNuWt.Text.Trim) + Val(LotFailBagNuWt.Text.Trim), "0.00")
+        txtTotalBnuFw.Text = Format(Val(BhukaBagNuFw.Text.Trim) + Val(VacuumBagNuFw.Text.Trim) + Val(SampleBagNuFw.Text.Trim) + Val(LotFailBagNuFw.Text.Trim), "0.00")
+
+        If Val(txtTotalBnuFw.Text) > 0 Then
+            txtTotalBnuPr.Text = Format(CDbl((txtTotalBnuFw.Text.Trim) / (txtTotalBnuWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalBnuPr.Text = "0.00"
+        End If
+    End Sub
+    Private Sub TotalBagNotUsed()
+        txtTotalBnusWt.Text = Format(Val(BhukaBagUWt.Text.Trim) + Val(VacuumBagUWt.Text.Trim) + Val(SampleBagUWt.Text.Trim) + Val(LotFailBagUWt.Text.Trim), "0.00")
+        txtTotalBnusFw.Text = Format(Val(BhukaBagUFw.Text.Trim) + Val(VacuumBagUFw.Text.Trim) + Val(SampleBagUFw.Text.Trim) + Val(LotFailBagUFw.Text.Trim), "0.00")
+
+        If Val(txtTotalBnuFw.Text) > 0 Then
+            txtTotalBnusPr.Text = Format(CDbl((txtTotalBnusFw.Text.Trim) / (txtTotalBnusWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalBnusPr.Text = "0.00"
+        End If
+    End Sub
+    Private Sub TotalLosswt()
+        txtTotalLossWt.Text = Format(Val(LossBagsWt.Text.Trim) + Val(LossTransWt.Text.Trim) + Val(LabReceiveWt.Text.Trim), "0.00")
+        txtTotalLossFw.Text = Format(Val(LossBagsFw.Text.Trim) + Val(LossTransFw.Text.Trim) + Val(LabReceiveFw.Text.Trim), "0.00")
+
+        If Val(txtTotalBnuFw.Text) > 0 Then
+            txtTotalLossPr.Text = Format(CDbl((txtTotalLossFw.Text.Trim) / (txtTotalLossWt.Text.Trim) * 100), "0.00")
+        Else
+            txtTotalLossPr.Text = "0.00"
+        End If
+
+    End Sub
+    Private Sub btnAccountClosing_Click_1(sender As Object, e As EventArgs) Handles btnAccountClosing.Click
+
     End Sub
 End Class

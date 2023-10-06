@@ -29,14 +29,13 @@ Public Class frmRptKarigarwiseLoss
         dgvWipLotNo.DataSource = FetchAllRecords()
     End Sub
     Private Function FetchAllRecords() As DataTable
-
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetKarigarWiseLossReport", DbType.String))
             End With
 

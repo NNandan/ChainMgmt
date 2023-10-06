@@ -13,9 +13,9 @@ Public Class frmVaccumBagByNumber
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "GetVacuumBagForReport", DbType.String))
         End With
 

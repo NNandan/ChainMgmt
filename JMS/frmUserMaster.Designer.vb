@@ -29,6 +29,7 @@ Partial Class frmUserMaster
         Dim GridViewCheckBoxColumn4 As Telerik.WinControls.UI.GridViewCheckBoxColumn = New Telerik.WinControls.UI.GridViewCheckBoxColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUserMaster))
         Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
@@ -42,6 +43,8 @@ Partial Class frmUserMaster
         Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.dgvUserDetails = New Telerik.WinControls.UI.RadGridView()
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
+        Me.Txt_Emp_ID = New System.Windows.Forms.TextBox()
+        Me.Btn_Find = New System.Windows.Forms.Button()
         Me.txtUserName = New Telerik.WinControls.UI.RadTextBox()
         Me.cmbDept = New Telerik.WinControls.UI.RadDropDownList()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -230,6 +233,8 @@ Partial Class frmUserMaster
         '
         'GBoxMain
         '
+        Me.GBoxMain.Controls.Add(Me.Txt_Emp_ID)
+        Me.GBoxMain.Controls.Add(Me.Btn_Find)
         Me.GBoxMain.Controls.Add(Me.txtUserName)
         Me.GBoxMain.Controls.Add(Me.cmbDept)
         Me.GBoxMain.Controls.Add(Me.Label6)
@@ -249,6 +254,28 @@ Partial Class frmUserMaster
         Me.GBoxMain.TabIndex = 0
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "User Information"
+        '
+        'Txt_Emp_ID
+        '
+        Me.Txt_Emp_ID.Location = New System.Drawing.Point(557, 22)
+        Me.Txt_Emp_ID.Name = "Txt_Emp_ID"
+        Me.Txt_Emp_ID.Size = New System.Drawing.Size(67, 22)
+        Me.Txt_Emp_ID.TabIndex = 156
+        '
+        'Btn_Find
+        '
+        Me.Btn_Find.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btn_Find.BackgroundImage = CType(resources.GetObject("Btn_Find.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Find.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Find.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Btn_Find.ForeColor = System.Drawing.Color.White
+        Me.Btn_Find.Location = New System.Drawing.Point(625, 23)
+        Me.Btn_Find.Name = "Btn_Find"
+        Me.Btn_Find.Size = New System.Drawing.Size(33, 21)
+        Me.Btn_Find.TabIndex = 155
+        Me.Btn_Find.TabStop = False
+        Me.Btn_Find.Text = "F1"
+        Me.Btn_Find.UseVisualStyleBackColor = False
         '
         'txtUserName
         '
@@ -271,11 +298,11 @@ Partial Class frmUserMaster
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(311, 56)
+        Me.Label6.Location = New System.Drawing.Point(320, 56)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 14)
+        Me.Label6.Size = New System.Drawing.Size(52, 14)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "Fr. Dept :"
+        Me.Label6.Text = "Fr. Dept"
         '
         'cmbUType
         '
@@ -296,11 +323,11 @@ Partial Class frmUserMaster
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label5.Location = New System.Drawing.Point(328, 26)
+        Me.Label5.Location = New System.Drawing.Point(336, 26)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(43, 14)
+        Me.Label5.Size = New System.Drawing.Size(35, 14)
         Me.Label5.TabIndex = 28
-        Me.Label5.Text = "Type :"
+        Me.Label5.Text = "Type"
         '
         'txtConfirmPass
         '
@@ -452,4 +479,6 @@ Partial Class frmUserMaster
     Friend WithEvents cmbDept As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label6 As Label
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents Btn_Find As Button
+    Friend WithEvents Txt_Emp_ID As TextBox
 End Class

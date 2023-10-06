@@ -7,8 +7,8 @@ Imports JMS.Common_Cls
 Public Class frmEditLabIssue
     Private mFr_State As FormState
 
-    Dim dbManager As New SqlHelper(ConfigurationManager.ConnectionStrings("ConString").ToString())
-    Dim Objcn As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ConString").ToString())
+    Dim dbManager As New SqlHelper()
+    Dim Objcn As SqlConnection = New SqlConnection()
     Dim iLabIssueId As Integer
     Public Sub New(ByVal iLabId As Integer)
         InitializeComponent()
@@ -86,8 +86,8 @@ ErrHandler:
         Try
             MskUpdateDt.Text = dt.Rows(0).Item("UpdateDt").ToString
             txtTransId.Tag = dt.Rows(0).Item("TransactionId").ToString
-            txtLotNo.Text = dt.Rows(0).Item("LotNumber").ToString
-            txtOperation.Tag = dt.Rows(0).Item("OperationId").ToString
+            txtLotNo.Text = dt.Rows(0).Item("LotNo").ToString
+            txtOperation.Tag = dt.Rows(0).Item("IOId").ToString
             txtOperation.Text = dt.Rows(0).Item("OperationName").ToString
             txtIssueWt.Text = dt.Rows(0).Item("IssueWt").ToString
             txtIssuePr.Text = dt.Rows(0).Item("IssuePr").ToString
@@ -365,16 +365,14 @@ ErrHandler:
             txtIssuePr.Clear()
             txtFineWt.Clear()
 
-            btnUpdate.Text = "Update"
-
-            Fr_Mode = FormState.AStateMode
+            btnUpdate.Text = "&Update"
 
             btnUpdate.Enabled = True
 
             TransDt.Focus()
             TransDt.Select()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -382,7 +380,26 @@ ErrHandler:
         Try
             Call Clear_Form()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+    Function CheckForAlphaCharacters(ByVal StringToCheck As String)
+
+        For i = 0 To StringToCheck.Length - 1
+            If Char.IsLetter(StringToCheck.Chars(i)) Then
+                Return True
+            End If
+        Next
+
+        Return False
+
+    End Function
+
+    Private Sub txtLotNo_TextChanged(sender As Object, e As EventArgs) Handles txtLotNo.TextChanged
+        If CheckForAlphaCharacters(txtLotNo.Text.Trim) Then
+            rbReBagSample.Checked = True
+        Else
+            rbReLotSample.Checked = True
+        End If
     End Sub
 End Class

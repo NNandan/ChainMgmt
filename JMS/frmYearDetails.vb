@@ -70,9 +70,12 @@ Public Class frmYearDetails
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
             dt = dbManager.GetDataTable("SP_YearMaster_Select", CommandType.StoredProcedure, parameters.ToArray())
 
             dgvYear.DataSource = Nothing
@@ -102,11 +105,12 @@ Public Class frmYearDetails
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@UId", CInt(iUserId), DbType.Int16))
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchUserRights", DbType.String))
-
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@UId", CInt(iUserId), DbType.Int16))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchUserRights", DbType.String))
+            End With
             dtData = dbManager.GetDataTable("SP_UserRights_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception

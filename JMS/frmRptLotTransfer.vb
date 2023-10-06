@@ -40,9 +40,9 @@ Public Class frmRptLotTransfer
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoTransferReport", DbType.String))
             End With
 

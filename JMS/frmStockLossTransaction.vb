@@ -33,9 +33,12 @@ Public Class frmStockLossTransaction
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "LossTransactionDetails", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "LossTransactionDetails", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
@@ -78,7 +81,6 @@ Public Class frmStockLossTransaction
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 

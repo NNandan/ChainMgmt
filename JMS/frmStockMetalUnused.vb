@@ -36,6 +36,7 @@ Public Class frmStockMetalUnused
             parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "VoucherMetalUnusedDetails", DbType.String))
             End With
 

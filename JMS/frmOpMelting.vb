@@ -141,9 +141,12 @@ Public Class frmOpMelting
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        End With
+
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Dim dt As DataTable = New DataTable()

@@ -102,7 +102,7 @@ Partial Class frmStockSampleBagCreated
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 412)
+        Me.dgvWipLotNo.Size = New System.Drawing.Size(773, 413)
         Me.dgvWipLotNo.TabIndex = 8
         '
         'btnExit

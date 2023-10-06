@@ -30,9 +30,9 @@ Public Class frmStockWipMelting
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "WIPMeltingDetails", DbType.String))
             End With
 

@@ -148,9 +148,9 @@ Public Class frmCategoryMaster
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchRecord", DbType.String))
                 .Add(dbManager.CreateParameter("@CId", CInt(iCategoryId), DbType.Int16))
             End With
@@ -269,11 +269,10 @@ Public Class frmCategoryMaster
     End Function
     Private Function IsExists() As Boolean
         Try
-
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "SearchDuplicate", DbType.String))
                 .Add(dbManager.CreateParameter("@CName", CStr(txtCategoryName.Text.Trim), DbType.String))
             End With

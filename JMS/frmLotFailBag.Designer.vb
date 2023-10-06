@@ -23,6 +23,7 @@ Partial Class frmLotFailBag
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewDateTimeColumn1 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
         Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
@@ -30,35 +31,28 @@ Partial Class frmLotFailBag
         Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim SortDescriptor1 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
         Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewDateTimeColumn1 As Telerik.WinControls.UI.GridViewDateTimeColumn = New Telerik.WinControls.UI.GridViewDateTimeColumn()
         Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim SortDescriptor2 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.tbLotFail = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.GCBoxDetails = New System.Windows.Forms.GroupBox()
+        Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.lblBhukaTotal = New System.Windows.Forms.Label()
-        Me.lblCBhukaTotal = New System.Windows.Forms.Label()
         Me.btnCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
-        Me.btnDelete = New Telerik.WinControls.UI.RadButton()
-        Me.dgvCLotFail = New Telerik.WinControls.UI.RadGridView()
         Me.GCBoxMain = New System.Windows.Forms.GroupBox()
+        Me.txtMaxNo = New Telerik.WinControls.UI.RadTextBox()
+        Me.lblMaxNo = New System.Windows.Forms.Label()
         Me.txtCTransId = New Telerik.WinControls.UI.RadTextBox()
         Me.lblItemName = New System.Windows.Forms.Label()
         Me.txtItemName = New Telerik.WinControls.UI.RadTextBox()
@@ -78,15 +72,16 @@ Partial Class frmLotFailBag
         Me.lblKarigarName = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GRBoxDetails = New System.Windows.Forms.GroupBox()
+        Me.btnREdit = New Telerik.WinControls.UI.RadButton()
         Me.btnRExit = New Telerik.WinControls.UI.RadButton()
         Me.btnRCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnRSave = New Telerik.WinControls.UI.RadButton()
         Me.dgvRLotFail = New Telerik.WinControls.UI.RadGridView()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.GRBoxMain = New System.Windows.Forms.GroupBox()
-        Me.cmbRBagtype = New Telerik.WinControls.UI.RadDropDownList()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.cmbRBagNo = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbRBagNo = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.txtRBagName = New Telerik.WinControls.UI.RadTextBox()
+        Me.lblRBagSrNo = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.txtRGrossLoss = New Telerik.WinControls.UI.RadTextBox()
         Me.txtRCarbon = New Telerik.WinControls.UI.RadTextBox()
@@ -108,12 +103,14 @@ Partial Class frmLotFailBag
         Me.lblLotNo = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnUSave = New Telerik.WinControls.UI.RadButton()
+        Me.btnUEdit = New Telerik.WinControls.UI.RadButton()
         Me.btnUExit = New Telerik.WinControls.UI.RadButton()
         Me.btnUCancel = New Telerik.WinControls.UI.RadButton()
-        Me.btnUSave = New Telerik.WinControls.UI.RadButton()
         Me.GUBoxMain = New System.Windows.Forms.GroupBox()
-        Me.cmbUpdBagtype = New Telerik.WinControls.UI.RadDropDownList()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.cmbUpdBagNo = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.txtUBagSrNo = New Telerik.WinControls.UI.RadTextBox()
+        Me.lblUBagSrNo = New System.Windows.Forms.Label()
         Me.RadCollapsiblePanel1 = New Telerik.WinControls.UI.RadCollapsiblePanel()
         Me.txtUcarbonReceive = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUWtOnScale = New Telerik.WinControls.UI.RadTextBox()
@@ -124,7 +121,7 @@ Partial Class frmLotFailBag
         Me.txtUGrossLoss = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUreceiveFineWt = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUreceiveWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtUreceivePr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtUReceivePr = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
@@ -137,19 +134,18 @@ Partial Class frmLotFailBag
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.txtUTransId = New Telerik.WinControls.UI.RadTextBox()
         Me.UTransDt = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.cmbULotFailNo = New Telerik.WinControls.UI.RadDropDownList()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.lblUBagType = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.dgvFinalUpdate = New Telerik.WinControls.UI.RadGridView()
         Me.tbLotFail.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.GCBoxDetails.SuspendLayout()
+        CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCLotFail, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCLotFail.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GCBoxMain.SuspendLayout()
+        CType(Me.txtMaxNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCTransId, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtItemName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCLotFailPr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -161,14 +157,17 @@ Partial Class frmLotFailBag
         CType(Me.cmbCLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GRBoxDetails.SuspendLayout()
+        CType(Me.btnREdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRSave, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRLotFail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRLotFail.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GRBoxMain.SuspendLayout()
-        CType(Me.cmbRBagtype, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRBagNo.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRBagName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRGrossLoss, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRCarbon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,11 +179,15 @@ Partial Class frmLotFailBag
         CType(Me.txtRTransId, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RTransDt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnUEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUCancel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GUBoxMain.SuspendLayout()
-        CType(Me.cmbUpdBagtype, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUBagSrNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadCollapsiblePanel1.PanelContainer.SuspendLayout()
         CType(Me.txtUcarbonReceive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,7 +199,7 @@ Partial Class frmLotFailBag
         CType(Me.txtUGrossLoss, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUreceiveFineWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUreceiveWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtUreceivePr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUReceivePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -209,7 +212,9 @@ Partial Class frmLotFailBag
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUTransId, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UTransDt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbULotFailNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.dgvFinalUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvFinalUpdate.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbLotFail
@@ -217,6 +222,7 @@ Partial Class frmLotFailBag
         Me.tbLotFail.Controls.Add(Me.TabPage1)
         Me.tbLotFail.Controls.Add(Me.TabPage2)
         Me.tbLotFail.Controls.Add(Me.TabPage3)
+        Me.tbLotFail.Controls.Add(Me.TabPage4)
         Me.tbLotFail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbLotFail.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbLotFail.Location = New System.Drawing.Point(0, 0)
@@ -227,7 +233,10 @@ Partial Class frmLotFailBag
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.GCBoxDetails)
+        Me.TabPage1.Controls.Add(Me.btnDelete)
+        Me.TabPage1.Controls.Add(Me.btnExit)
+        Me.TabPage1.Controls.Add(Me.btnCancel)
+        Me.TabPage1.Controls.Add(Me.btnSave)
         Me.TabPage1.Controls.Add(Me.GCBoxMain)
         Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
@@ -237,26 +246,15 @@ Partial Class frmLotFailBag
         Me.TabPage1.Text = "Create LotFail  Bag"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'GCBoxDetails
+        'btnDelete
         '
-        Me.GCBoxDetails.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GCBoxDetails.Controls.Add(Me.btnExit)
-        Me.GCBoxDetails.Controls.Add(Me.Label17)
-        Me.GCBoxDetails.Controls.Add(Me.lblBhukaTotal)
-        Me.GCBoxDetails.Controls.Add(Me.lblCBhukaTotal)
-        Me.GCBoxDetails.Controls.Add(Me.btnCancel)
-        Me.GCBoxDetails.Controls.Add(Me.btnSave)
-        Me.GCBoxDetails.Controls.Add(Me.btnDelete)
-        Me.GCBoxDetails.Controls.Add(Me.dgvCLotFail)
-        Me.GCBoxDetails.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GCBoxDetails.Location = New System.Drawing.Point(5, 188)
-        Me.GCBoxDetails.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GCBoxDetails.Name = "GCBoxDetails"
-        Me.GCBoxDetails.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GCBoxDetails.Size = New System.Drawing.Size(691, 290)
-        Me.GCBoxDetails.TabIndex = 25
-        Me.GCBoxDetails.TabStop = False
-        Me.GCBoxDetails.Text = "Bags Details"
+        Me.btnDelete.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnDelete.Location = New System.Drawing.Point(278, 261)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 25)
+        Me.btnDelete.TabIndex = 23
+        Me.btnDelete.Text = "&Delete"
         '
         'btnExit
         '
@@ -264,40 +262,9 @@ Partial Class frmLotFailBag
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnExit.Location = New System.Drawing.Point(430, 261)
         Me.btnExit.Name = "btnExit"
-        '
-        '
-        '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(430, 261, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
-        Me.btnExit.TabIndex = 38
+        Me.btnExit.TabIndex = 22
         Me.btnExit.Text = "E&xit"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(573, 236)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(15, 14)
-        Me.Label17.TabIndex = 37
-        Me.Label17.Text = "0"
-        '
-        'lblBhukaTotal
-        '
-        Me.lblBhukaTotal.AutoSize = True
-        Me.lblBhukaTotal.Location = New System.Drawing.Point(517, 236)
-        Me.lblBhukaTotal.Name = "lblBhukaTotal"
-        Me.lblBhukaTotal.Size = New System.Drawing.Size(15, 14)
-        Me.lblBhukaTotal.TabIndex = 36
-        Me.lblBhukaTotal.Text = "0"
-        '
-        'lblCBhukaTotal
-        '
-        Me.lblCBhukaTotal.AutoSize = True
-        Me.lblCBhukaTotal.Location = New System.Drawing.Point(390, 236)
-        Me.lblCBhukaTotal.Name = "lblCBhukaTotal"
-        Me.lblCBhukaTotal.Size = New System.Drawing.Size(38, 14)
-        Me.lblCBhukaTotal.TabIndex = 35
-        Me.lblCBhukaTotal.Text = "Total"
         '
         'btnCancel
         '
@@ -305,12 +272,8 @@ Partial Class frmLotFailBag
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnCancel.Location = New System.Drawing.Point(354, 261)
         Me.btnCancel.Name = "btnCancel"
-        '
-        '
-        '
-        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(354, 261, 110, 24)
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
-        Me.btnCancel.TabIndex = 1
+        Me.btnCancel.TabIndex = 21
         Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
@@ -319,117 +282,15 @@ Partial Class frmLotFailBag
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnSave.Location = New System.Drawing.Point(202, 261)
         Me.btnSave.Name = "btnSave"
-        '
-        '
-        '
-        Me.btnSave.RootElement.ControlBounds = New System.Drawing.Rectangle(202, 261, 110, 24)
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
-        Me.btnSave.TabIndex = 0
+        Me.btnSave.TabIndex = 19
         Me.btnSave.Text = "&Save"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(278, 261)
-        Me.btnDelete.Name = "btnDelete"
-        '
-        '
-        '
-        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(278, 261, 110, 24)
-        Me.btnDelete.Size = New System.Drawing.Size(75, 25)
-        Me.btnDelete.TabIndex = 2
-        Me.btnDelete.Text = "&Delete"
-        '
-        'dgvCLotFail
-        '
-        Me.dgvCLotFail.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvCLotFail.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvCLotFail.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.dgvCLotFail.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgvCLotFail.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvCLotFail.Location = New System.Drawing.Point(5, 21)
-        '
-        '
-        '
-        Me.dgvCLotFail.MasterTemplate.AllowAddNewRow = False
-        Me.dgvCLotFail.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "LotFailId"
-        GridViewTextBoxColumn1.HeaderText = "LotFailId"
-        GridViewTextBoxColumn1.IsVisible = False
-        GridViewTextBoxColumn1.Name = "ColLotFailId"
-        GridViewTextBoxColumn2.DataType = GetType(Date)
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotFailDt"
-        GridViewTextBoxColumn2.FormatString = "{0:dd/MM/yyyy}"
-        GridViewTextBoxColumn2.HeaderText = "Lot Fail Dt."
-        GridViewTextBoxColumn2.Name = "ColLotFailDt"
-        GridViewTextBoxColumn2.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
-        GridViewTextBoxColumn2.Width = 93
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "OperationId"
-        GridViewTextBoxColumn3.HeaderText = "Operation Id."
-        GridViewTextBoxColumn3.IsVisible = False
-        GridViewTextBoxColumn3.Name = "ColOperationId"
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "OperationName"
-        GridViewTextBoxColumn4.HeaderText = "Operation"
-        GridViewTextBoxColumn4.Name = "colOperation"
-        GridViewTextBoxColumn4.Width = 110
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "LotNo"
-        GridViewTextBoxColumn5.HeaderText = "Lot No."
-        GridViewTextBoxColumn5.Name = "colLotNo"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 80
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "LotFailWt"
-        GridViewTextBoxColumn6.HeaderText = "LotFail Wt."
-        GridViewTextBoxColumn6.Name = "ColLotFailWt"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 85
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "LotFailPr"
-        GridViewTextBoxColumn7.HeaderText = "LotFail [ %]"
-        GridViewTextBoxColumn7.Name = "ColLotFailPr"
-        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 85
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "LabourId"
-        GridViewTextBoxColumn8.HeaderText = "Labour Id."
-        GridViewTextBoxColumn8.IsVisible = False
-        GridViewTextBoxColumn8.Name = "ColLabourId"
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "LabourName"
-        GridViewTextBoxColumn9.HeaderText = "Labour"
-        GridViewTextBoxColumn9.Name = "ColLabourName"
-        GridViewTextBoxColumn9.Width = 115
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "Remark"
-        GridViewTextBoxColumn10.HeaderText = "Remark"
-        GridViewTextBoxColumn10.Name = "ColRemark"
-        GridViewTextBoxColumn10.Width = 115
-        Me.dgvCLotFail.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
-        Me.dgvCLotFail.MasterTemplate.EnableGrouping = False
-        Me.dgvCLotFail.MasterTemplate.ShowRowHeaderColumn = False
-        SortDescriptor1.PropertyName = "ColLotFailDt"
-        Me.dgvCLotFail.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
-        Me.dgvCLotFail.MasterTemplate.ViewDefinition = TableViewDefinition1
-        Me.dgvCLotFail.Name = "dgvCLotFail"
-        Me.dgvCLotFail.ReadOnly = True
-        Me.dgvCLotFail.RightToLeft = System.Windows.Forms.RightToLeft.No
-        '
-        '
-        '
-        Me.dgvCLotFail.RootElement.ControlBounds = New System.Drawing.Rectangle(5, 21, 240, 150)
-        Me.dgvCLotFail.ShowGroupPanel = False
-        Me.dgvCLotFail.Size = New System.Drawing.Size(681, 207)
-        Me.dgvCLotFail.TabIndex = 16
         '
         'GCBoxMain
         '
         Me.GCBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GCBoxMain.Controls.Add(Me.txtMaxNo)
+        Me.GCBoxMain.Controls.Add(Me.lblMaxNo)
         Me.GCBoxMain.Controls.Add(Me.txtCTransId)
         Me.GCBoxMain.Controls.Add(Me.lblItemName)
         Me.GCBoxMain.Controls.Add(Me.txtItemName)
@@ -456,16 +317,38 @@ Partial Class frmLotFailBag
         Me.GCBoxMain.TabStop = False
         Me.GCBoxMain.Text = "Lot Fail Information"
         '
+        'txtMaxNo
+        '
+        Me.txtMaxNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtMaxNo.Location = New System.Drawing.Point(256, 25)
+        Me.txtMaxNo.Name = "txtMaxNo"
+        Me.txtMaxNo.ReadOnly = True
+        Me.txtMaxNo.Size = New System.Drawing.Size(65, 20)
+        Me.txtMaxNo.TabIndex = 45
+        Me.txtMaxNo.Visible = False
+        '
+        'lblMaxNo
+        '
+        Me.lblMaxNo.AutoSize = True
+        Me.lblMaxNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMaxNo.Location = New System.Drawing.Point(207, 28)
+        Me.lblMaxNo.Name = "lblMaxNo"
+        Me.lblMaxNo.Size = New System.Drawing.Size(46, 14)
+        Me.lblMaxNo.TabIndex = 44
+        Me.lblMaxNo.Text = "Bag No"
+        Me.lblMaxNo.Visible = False
+        '
         'txtCTransId
         '
         Me.txtCTransId.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtCTransId.Location = New System.Drawing.Point(210, 25)
+        Me.txtCTransId.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtCTransId.Location = New System.Drawing.Point(323, 25)
         Me.txtCTransId.Name = "txtCTransId"
         Me.txtCTransId.ReadOnly = True
         '
         '
         '
-        Me.txtCTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(210, 25, 100, 20)
+        Me.txtCTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(323, 25, 100, 20)
         Me.txtCTransId.RootElement.StretchVertically = True
         Me.txtCTransId.Size = New System.Drawing.Size(10, 20)
         Me.txtCTransId.TabIndex = 43
@@ -620,7 +503,7 @@ Partial Class frmLotFailBag
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(482, 81)
+        Me.Label7.Location = New System.Drawing.Point(483, 81)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 14)
         Me.Label7.TabIndex = 16
@@ -685,12 +568,13 @@ Partial Class frmLotFailBag
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(706, 484)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Receive LotFail  Bag"
+        Me.TabPage2.Text = "Receive LotFail Bag"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GRBoxDetails
         '
         Me.GRBoxDetails.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GRBoxDetails.Controls.Add(Me.btnREdit)
         Me.GRBoxDetails.Controls.Add(Me.btnRExit)
         Me.GRBoxDetails.Controls.Add(Me.btnRCancel)
         Me.GRBoxDetails.Controls.Add(Me.btnRSave)
@@ -701,21 +585,30 @@ Partial Class frmLotFailBag
         Me.GRBoxDetails.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.GRBoxDetails.Name = "GRBoxDetails"
         Me.GRBoxDetails.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GRBoxDetails.Size = New System.Drawing.Size(691, 276)
+        Me.GRBoxDetails.Size = New System.Drawing.Size(691, 285)
         Me.GRBoxDetails.TabIndex = 26
         Me.GRBoxDetails.TabStop = False
         Me.GRBoxDetails.Text = "Bags Details"
+        '
+        'btnREdit
+        '
+        Me.btnREdit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnREdit.Location = New System.Drawing.Point(272, 253)
+        Me.btnREdit.Name = "btnREdit"
+        Me.btnREdit.Size = New System.Drawing.Size(75, 25)
+        Me.btnREdit.TabIndex = 807
+        Me.btnREdit.Text = "&Edit"
         '
         'btnRExit
         '
         Me.btnRExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnRExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRExit.Location = New System.Drawing.Point(392, 244)
+        Me.btnRExit.Location = New System.Drawing.Point(428, 253)
         Me.btnRExit.Name = "btnRExit"
         '
         '
         '
-        Me.btnRExit.RootElement.ControlBounds = New System.Drawing.Rectangle(392, 244, 110, 24)
+        Me.btnRExit.RootElement.ControlBounds = New System.Drawing.Rectangle(428, 253, 110, 24)
         Me.btnRExit.Size = New System.Drawing.Size(75, 25)
         Me.btnRExit.TabIndex = 76
         Me.btnRExit.Text = "E&xit"
@@ -724,12 +617,12 @@ Partial Class frmLotFailBag
         '
         Me.btnRCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnRCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRCancel.Location = New System.Drawing.Point(315, 244)
+        Me.btnRCancel.Location = New System.Drawing.Point(350, 253)
         Me.btnRCancel.Name = "btnRCancel"
         '
         '
         '
-        Me.btnRCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(315, 244, 110, 24)
+        Me.btnRCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(350, 253, 110, 24)
         Me.btnRCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnRCancel.TabIndex = 75
         Me.btnRCancel.Text = "&Cancel"
@@ -738,12 +631,12 @@ Partial Class frmLotFailBag
         '
         Me.btnRSave.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnRSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRSave.Location = New System.Drawing.Point(238, 244)
+        Me.btnRSave.Location = New System.Drawing.Point(194, 253)
         Me.btnRSave.Name = "btnRSave"
         '
         '
         '
-        Me.btnRSave.RootElement.ControlBounds = New System.Drawing.Rectangle(238, 244, 110, 24)
+        Me.btnRSave.RootElement.ControlBounds = New System.Drawing.Rectangle(194, 253, 110, 24)
         Me.btnRSave.Size = New System.Drawing.Size(75, 25)
         Me.btnRSave.TabIndex = 74
         Me.btnRSave.Text = "&Save"
@@ -755,82 +648,79 @@ Partial Class frmLotFailBag
         Me.dgvRLotFail.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvRLotFail.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvRLotFail.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvRLotFail.Location = New System.Drawing.Point(7, 30)
+        Me.dgvRLotFail.Location = New System.Drawing.Point(7, 25)
         '
         '
         '
         Me.dgvRLotFail.MasterTemplate.AllowAddNewRow = False
         Me.dgvRLotFail.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "LotFailId"
-        GridViewTextBoxColumn11.HeaderText = "LotFail Id."
-        GridViewTextBoxColumn11.IsVisible = False
-        GridViewTextBoxColumn11.Name = "colLotFailId"
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "LotFailId"
+        GridViewTextBoxColumn1.HeaderText = "LotFail Id."
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "colLotFailId"
         GridViewDateTimeColumn1.EnableExpressionEditor = False
-        GridViewDateTimeColumn1.FieldName = "LotFailDt"
-        GridViewDateTimeColumn1.HeaderText = "Lot Fail Dt."
-        GridViewDateTimeColumn1.Name = "colLotFailDt"
-        GridViewDateTimeColumn1.Width = 82
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "LotNo"
-        GridViewTextBoxColumn12.HeaderText = "Lot No."
-        GridViewTextBoxColumn12.Name = "colLotNumber"
-        GridViewTextBoxColumn12.Width = 76
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "OperationId"
-        GridViewTextBoxColumn13.HeaderText = "OperationId"
-        GridViewTextBoxColumn13.IsVisible = False
-        GridViewTextBoxColumn13.Name = "colOperationId"
-        GridViewTextBoxColumn13.Width = 94
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "OperationName"
-        GridViewTextBoxColumn14.HeaderText = "Operation Name"
-        GridViewTextBoxColumn14.Name = "colOperationName"
-        GridViewTextBoxColumn14.Width = 172
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "LabourId"
-        GridViewTextBoxColumn15.HeaderText = "Labour Id."
-        GridViewTextBoxColumn15.IsVisible = False
-        GridViewTextBoxColumn15.Name = "colLabourId"
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "LabourName"
-        GridViewTextBoxColumn16.HeaderText = "Labour Name"
-        GridViewTextBoxColumn16.Name = "colLabourName"
-        GridViewTextBoxColumn16.Width = 94
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "LotFailWt"
-        GridViewTextBoxColumn17.HeaderText = "LotFail Wt."
-        GridViewTextBoxColumn17.Name = "colLotFailWt"
-        GridViewTextBoxColumn17.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
-        GridViewTextBoxColumn17.Width = 88
-        GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.FieldName = "LotFailPr"
-        GridViewTextBoxColumn18.HeaderText = "LotFail %"
-        GridViewTextBoxColumn18.Name = "colLotFailPr"
-        GridViewTextBoxColumn18.Width = 83
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.FieldName = "BagNumber"
-        GridViewTextBoxColumn19.HeaderText = "Bag No."
-        GridViewTextBoxColumn19.Name = "colBagNumber"
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.FieldName = "Remark"
-        GridViewTextBoxColumn20.HeaderText = "Remark"
-        GridViewTextBoxColumn20.Name = "colRemark"
-        Me.dgvRLotFail.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn11, GridViewDateTimeColumn1, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20})
+        GridViewDateTimeColumn1.FieldName = "LotFailBagNo"
+        GridViewDateTimeColumn1.HeaderText = "LotFail Bag"
+        GridViewDateTimeColumn1.Name = "colLotFailBag"
+        GridViewDateTimeColumn1.Width = 83
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "LotNo"
+        GridViewTextBoxColumn2.HeaderText = "Lot No."
+        GridViewTextBoxColumn2.Name = "colLotNo"
+        GridViewTextBoxColumn2.Width = 80
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "OperationId"
+        GridViewTextBoxColumn3.HeaderText = "Operation Id."
+        GridViewTextBoxColumn3.IsVisible = False
+        GridViewTextBoxColumn3.Name = "colOperationId"
+        GridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn3.Width = 100
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "OperationName"
+        GridViewTextBoxColumn4.HeaderText = "Operation Name"
+        GridViewTextBoxColumn4.Name = "colOperationName"
+        GridViewTextBoxColumn4.Width = 120
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "LotFailWt"
+        GridViewTextBoxColumn5.HeaderText = "LotFail Wt."
+        GridViewTextBoxColumn5.Name = "colLotFailWt"
+        GridViewTextBoxColumn5.SortOrder = Telerik.WinControls.UI.RadSortOrder.Ascending
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 80
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "LotFailPr"
+        GridViewTextBoxColumn6.HeaderText = "LotFail  [%]"
+        GridViewTextBoxColumn6.Name = "colLotFailPr"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 80
+        GridViewTextBoxColumn7.EnableExpressionEditor = False
+        GridViewTextBoxColumn7.FieldName = "FineWt"
+        GridViewTextBoxColumn7.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn7.Name = "colFineWt"
+        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn7.Width = 80
+        GridViewTextBoxColumn8.EnableExpressionEditor = False
+        GridViewTextBoxColumn8.FieldName = "Remark"
+        GridViewTextBoxColumn8.HeaderText = "Remark"
+        GridViewTextBoxColumn8.Name = "colRemark"
+        GridViewTextBoxColumn8.Width = 160
+        Me.dgvRLotFail.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewDateTimeColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8})
         Me.dgvRLotFail.MasterTemplate.EnableGrouping = False
         Me.dgvRLotFail.MasterTemplate.ShowRowHeaderColumn = False
-        SortDescriptor2.PropertyName = "colLotFailWt"
-        Me.dgvRLotFail.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor2})
-        Me.dgvRLotFail.MasterTemplate.ViewDefinition = TableViewDefinition2
+        SortDescriptor1.PropertyName = "colLotFailWt"
+        Me.dgvRLotFail.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor1})
+        Me.dgvRLotFail.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvRLotFail.Name = "dgvRLotFail"
         Me.dgvRLotFail.ReadOnly = True
         Me.dgvRLotFail.RightToLeft = System.Windows.Forms.RightToLeft.No
         '
         '
         '
-        Me.dgvRLotFail.RootElement.ControlBounds = New System.Drawing.Rectangle(7, 30, 240, 150)
-        Me.dgvRLotFail.Size = New System.Drawing.Size(678, 206)
+        Me.dgvRLotFail.RootElement.ControlBounds = New System.Drawing.Rectangle(7, 25, 240, 150)
+        Me.dgvRLotFail.Size = New System.Drawing.Size(678, 220)
         Me.dgvRLotFail.TabIndex = 73
+        Me.dgvRLotFail.TabStop = False
         '
         'Label16
         '
@@ -845,9 +735,9 @@ Partial Class frmLotFailBag
         'GRBoxMain
         '
         Me.GRBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GRBoxMain.Controls.Add(Me.cmbRBagtype)
-        Me.GRBoxMain.Controls.Add(Me.Label18)
         Me.GRBoxMain.Controls.Add(Me.cmbRBagNo)
+        Me.GRBoxMain.Controls.Add(Me.txtRBagName)
+        Me.GRBoxMain.Controls.Add(Me.lblRBagSrNo)
         Me.GRBoxMain.Controls.Add(Me.Label12)
         Me.GRBoxMain.Controls.Add(Me.txtRGrossLoss)
         Me.GRBoxMain.Controls.Add(Me.txtRCarbon)
@@ -877,45 +767,55 @@ Partial Class frmLotFailBag
         Me.GRBoxMain.TabStop = False
         Me.GRBoxMain.Text = "Receive LotFail Bag"
         '
-        'cmbRBagtype
-        '
-        Me.cmbRBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbRBagtype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbRBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbRBagtype.Location = New System.Drawing.Point(109, 51)
-        Me.cmbRBagtype.Name = "cmbRBagtype"
-        '
-        '
-        '
-        Me.cmbRBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(109, 51, 125, 20)
-        Me.cmbRBagtype.RootElement.StretchVertically = True
-        Me.cmbRBagtype.Size = New System.Drawing.Size(145, 20)
-        Me.cmbRBagtype.TabIndex = 49
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label18.Location = New System.Drawing.Point(47, 54)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(59, 14)
-        Me.Label18.TabIndex = 48
-        Me.Label18.Text = "Bag Type"
-        '
         'cmbRBagNo
         '
         Me.cmbRBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbRBagNo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        '
+        'cmbRBagNo.NestedRadGridView
+        '
+        Me.cmbRBagNo.EditorControl.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbRBagNo.EditorControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbRBagNo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmbRBagNo.EditorControl.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowAddNewRow = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowCellContextMenu = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowColumnChooser = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.EnableGrouping = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.ShowFilteringRow = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.cmbRBagNo.EditorControl.Name = "NestedRadGridView"
+        Me.cmbRBagNo.EditorControl.ReadOnly = True
+        Me.cmbRBagNo.EditorControl.ShowGroupPanel = False
+        Me.cmbRBagNo.EditorControl.Size = New System.Drawing.Size(240, 150)
+        Me.cmbRBagNo.EditorControl.TabIndex = 0
         Me.cmbRBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbRBagNo.Location = New System.Drawing.Point(109, 77)
+        Me.cmbRBagNo.Location = New System.Drawing.Point(109, 51)
         Me.cmbRBagNo.Name = "cmbRBagNo"
+        Me.cmbRBagNo.Size = New System.Drawing.Size(147, 20)
+        Me.cmbRBagNo.TabIndex = 50
+        Me.cmbRBagNo.TabStop = False
         '
+        'txtRBagName
         '
+        Me.txtRBagName.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtRBagName.Location = New System.Drawing.Point(109, 77)
+        Me.txtRBagName.Name = "txtRBagName"
+        Me.txtRBagName.ReadOnly = True
+        Me.txtRBagName.Size = New System.Drawing.Size(147, 20)
+        Me.txtRBagName.TabIndex = 49
         '
-        Me.cmbRBagNo.RootElement.ControlBounds = New System.Drawing.Rectangle(109, 77, 125, 20)
-        Me.cmbRBagNo.RootElement.StretchVertically = True
-        Me.cmbRBagNo.Size = New System.Drawing.Size(85, 20)
-        Me.cmbRBagNo.TabIndex = 47
+        'lblRBagSrNo
+        '
+        Me.lblRBagSrNo.AutoSize = True
+        Me.lblRBagSrNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblRBagSrNo.Location = New System.Drawing.Point(47, 54)
+        Me.lblRBagSrNo.Name = "lblRBagSrNo"
+        Me.lblRBagSrNo.Size = New System.Drawing.Size(59, 14)
+        Me.lblRBagSrNo.TabIndex = 48
+        Me.lblRBagSrNo.Text = "Bag Type"
         '
         'Label12
         '
@@ -1025,6 +925,7 @@ Partial Class frmLotFailBag
         Me.txtRLotFailPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRLotFailPr.Location = New System.Drawing.Point(109, 129)
         Me.txtRLotFailPr.Name = "txtRLotFailPr"
+        Me.txtRLotFailPr.ReadOnly = True
         '
         '
         '
@@ -1040,6 +941,7 @@ Partial Class frmLotFailBag
         Me.txtRLotFailWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRLotFailWt.Location = New System.Drawing.Point(109, 103)
         Me.txtRLotFailWt.Name = "txtRLotFailWt"
+        Me.txtRLotFailWt.ReadOnly = True
         '
         '
         '
@@ -1052,12 +954,12 @@ Partial Class frmLotFailBag
         'txtRTransId
         '
         Me.txtRTransId.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtRTransId.Location = New System.Drawing.Point(238, 25)
+        Me.txtRTransId.Location = New System.Drawing.Point(213, 25)
         Me.txtRTransId.Name = "txtRTransId"
         '
         '
         '
-        Me.txtRTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(238, 25, 100, 20)
+        Me.txtRTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(213, 25, 100, 20)
         Me.txtRTransId.RootElement.StretchVertically = True
         Me.txtRTransId.Size = New System.Drawing.Size(10, 20)
         Me.txtRTransId.TabIndex = 34
@@ -1075,7 +977,7 @@ Partial Class frmLotFailBag
         '
         Me.RTransDt.RootElement.ControlBounds = New System.Drawing.Rectangle(109, 25, 164, 20)
         Me.RTransDt.RootElement.StretchVertically = True
-        Me.RTransDt.Size = New System.Drawing.Size(89, 20)
+        Me.RTransDt.Size = New System.Drawing.Size(100, 20)
         Me.RTransDt.TabIndex = 33
         Me.RTransDt.TabStop = False
         Me.RTransDt.Text = "01/03/2021"
@@ -1155,11 +1057,11 @@ Partial Class frmLotFailBag
         '
         Me.lblLotNo.AutoSize = True
         Me.lblLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblLotNo.Location = New System.Drawing.Point(22, 80)
+        Me.lblLotNo.Location = New System.Drawing.Point(44, 80)
         Me.lblLotNo.Name = "lblLotNo"
-        Me.lblLotNo.Size = New System.Drawing.Size(84, 14)
+        Me.lblLotNo.Size = New System.Drawing.Size(62, 14)
         Me.lblLotNo.TabIndex = 3
-        Me.lblLotNo.Text = "LotFail Bag No"
+        Me.lblLotNo.Text = "Bag Name"
         '
         'Label15
         '
@@ -1173,9 +1075,10 @@ Partial Class frmLotFailBag
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnUSave)
+        Me.TabPage3.Controls.Add(Me.btnUEdit)
         Me.TabPage3.Controls.Add(Me.btnUExit)
         Me.TabPage3.Controls.Add(Me.btnUCancel)
-        Me.TabPage3.Controls.Add(Me.btnUSave)
         Me.TabPage3.Controls.Add(Me.GUBoxMain)
         Me.TabPage3.Location = New System.Drawing.Point(4, 23)
         Me.TabPage3.Name = "TabPage3"
@@ -1185,16 +1088,36 @@ Partial Class frmLotFailBag
         Me.TabPage3.Text = "Update LotFail  Bag"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'btnUSave
+        '
+        Me.btnUSave.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnUSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnUSave.Location = New System.Drawing.Point(199, 445)
+        Me.btnUSave.Name = "btnUSave"
+        Me.btnUSave.Size = New System.Drawing.Size(75, 25)
+        Me.btnUSave.TabIndex = 808
+        Me.btnUSave.Text = "&Save"
+        '
+        'btnUEdit
+        '
+        Me.btnUEdit.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnUEdit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnUEdit.Location = New System.Drawing.Point(276, 445)
+        Me.btnUEdit.Name = "btnUEdit"
+        Me.btnUEdit.Size = New System.Drawing.Size(75, 25)
+        Me.btnUEdit.TabIndex = 807
+        Me.btnUEdit.Text = "&Edit"
+        '
         'btnUExit
         '
         Me.btnUExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUExit.Location = New System.Drawing.Point(382, 370)
+        Me.btnUExit.Location = New System.Drawing.Point(430, 445)
         Me.btnUExit.Name = "btnUExit"
         '
         '
         '
-        Me.btnUExit.RootElement.ControlBounds = New System.Drawing.Rectangle(382, 370, 110, 24)
+        Me.btnUExit.RootElement.ControlBounds = New System.Drawing.Rectangle(430, 445, 110, 24)
         Me.btnUExit.Size = New System.Drawing.Size(75, 25)
         Me.btnUExit.TabIndex = 77
         Me.btnUExit.Text = "E&xit"
@@ -1203,40 +1126,26 @@ Partial Class frmLotFailBag
         '
         Me.btnUCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnUCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUCancel.Location = New System.Drawing.Point(304, 370)
+        Me.btnUCancel.Location = New System.Drawing.Point(353, 445)
         Me.btnUCancel.Name = "btnUCancel"
         '
         '
         '
-        Me.btnUCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(304, 370, 110, 24)
+        Me.btnUCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(353, 445, 110, 24)
         Me.btnUCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnUCancel.TabIndex = 23
         Me.btnUCancel.Text = "&Cancel"
         '
-        'btnUSave
-        '
-        Me.btnUSave.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUSave.Location = New System.Drawing.Point(227, 370)
-        Me.btnUSave.Name = "btnUSave"
-        '
-        '
-        '
-        Me.btnUSave.RootElement.ControlBounds = New System.Drawing.Rectangle(227, 370, 110, 24)
-        Me.btnUSave.Size = New System.Drawing.Size(75, 25)
-        Me.btnUSave.TabIndex = 22
-        Me.btnUSave.Text = "&Save"
-        '
         'GUBoxMain
         '
         Me.GUBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GUBoxMain.Controls.Add(Me.cmbUpdBagtype)
-        Me.GUBoxMain.Controls.Add(Me.Label19)
+        Me.GUBoxMain.Controls.Add(Me.cmbUpdBagNo)
+        Me.GUBoxMain.Controls.Add(Me.txtUBagSrNo)
+        Me.GUBoxMain.Controls.Add(Me.lblUBagSrNo)
         Me.GUBoxMain.Controls.Add(Me.RadCollapsiblePanel1)
         Me.GUBoxMain.Controls.Add(Me.txtUTransId)
         Me.GUBoxMain.Controls.Add(Me.UTransDt)
-        Me.GUBoxMain.Controls.Add(Me.cmbULotFailNo)
-        Me.GUBoxMain.Controls.Add(Me.Label28)
+        Me.GUBoxMain.Controls.Add(Me.lblUBagType)
         Me.GUBoxMain.Controls.Add(Me.Label29)
         Me.GUBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
         Me.GUBoxMain.Location = New System.Drawing.Point(8, 9)
@@ -1247,30 +1156,55 @@ Partial Class frmLotFailBag
         Me.GUBoxMain.TabStop = False
         Me.GUBoxMain.Text = "Update LotFail Bag"
         '
-        'cmbUpdBagtype
+        'cmbUpdBagNo
         '
-        Me.cmbUpdBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbUpdBagtype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbUpdBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbUpdBagtype.Location = New System.Drawing.Point(120, 52)
-        Me.cmbUpdBagtype.Name = "cmbUpdBagtype"
+        Me.cmbUpdBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        '
+        'cmbUpdBagNo.NestedRadGridView
+        '
+        Me.cmbUpdBagNo.EditorControl.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbUpdBagNo.EditorControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbUpdBagNo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmbUpdBagNo.EditorControl.Location = New System.Drawing.Point(0, 0)
         '
         '
         '
-        Me.cmbUpdBagtype.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 52, 125, 20)
-        Me.cmbUpdBagtype.RootElement.StretchVertically = True
-        Me.cmbUpdBagtype.Size = New System.Drawing.Size(145, 20)
-        Me.cmbUpdBagtype.TabIndex = 50
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowAddNewRow = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowCellContextMenu = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowColumnChooser = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.EnableGrouping = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.ShowFilteringRow = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.cmbUpdBagNo.EditorControl.Name = "NestedRadGridView"
+        Me.cmbUpdBagNo.EditorControl.ReadOnly = True
+        Me.cmbUpdBagNo.EditorControl.ShowGroupPanel = False
+        Me.cmbUpdBagNo.EditorControl.Size = New System.Drawing.Size(240, 150)
+        Me.cmbUpdBagNo.EditorControl.TabIndex = 0
+        Me.cmbUpdBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbUpdBagNo.Location = New System.Drawing.Point(120, 50)
+        Me.cmbUpdBagNo.Name = "cmbUpdBagNo"
+        Me.cmbUpdBagNo.Size = New System.Drawing.Size(145, 20)
+        Me.cmbUpdBagNo.TabIndex = 52
+        Me.cmbUpdBagNo.TabStop = False
         '
-        'Label19
+        'txtUBagSrNo
         '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(58, 55)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(59, 14)
-        Me.Label19.TabIndex = 44
-        Me.Label19.Text = "Bag Type"
+        Me.txtUBagSrNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtUBagSrNo.Location = New System.Drawing.Point(120, 75)
+        Me.txtUBagSrNo.Name = "txtUBagSrNo"
+        Me.txtUBagSrNo.ReadOnly = True
+        Me.txtUBagSrNo.Size = New System.Drawing.Size(145, 20)
+        Me.txtUBagSrNo.TabIndex = 51
+        '
+        'lblUBagSrNo
+        '
+        Me.lblUBagSrNo.AutoSize = True
+        Me.lblUBagSrNo.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUBagSrNo.Location = New System.Drawing.Point(56, 53)
+        Me.lblUBagSrNo.Name = "lblUBagSrNo"
+        Me.lblUBagSrNo.Size = New System.Drawing.Size(61, 14)
+        Me.lblUBagSrNo.TabIndex = 44
+        Me.lblUBagSrNo.Text = "Bag Sr No"
         '
         'RadCollapsiblePanel1
         '
@@ -1290,7 +1224,7 @@ Partial Class frmLotFailBag
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUGrossLoss)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceiveFineWt)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceiveWt)
-        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceivePr)
+        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUReceivePr)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.RadLabel11)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.RadLabel10)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.RadLabel9)
@@ -1316,6 +1250,7 @@ Partial Class frmLotFailBag
         Me.txtUcarbonReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUcarbonReceive.Location = New System.Drawing.Point(565, 118)
         Me.txtUcarbonReceive.Name = "txtUcarbonReceive"
+        Me.txtUcarbonReceive.ReadOnly = True
         '
         '
         '
@@ -1331,6 +1266,7 @@ Partial Class frmLotFailBag
         Me.txtUWtOnScale.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUWtOnScale.Location = New System.Drawing.Point(565, 93)
         Me.txtUWtOnScale.Name = "txtUWtOnScale"
+        Me.txtUWtOnScale.ReadOnly = True
         '
         '
         '
@@ -1346,6 +1282,7 @@ Partial Class frmLotFailBag
         Me.txtUIssueFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUIssueFineWt.Location = New System.Drawing.Point(565, 68)
         Me.txtUIssueFineWt.Name = "txtUIssueFineWt"
+        Me.txtUIssueFineWt.ReadOnly = True
         '
         '
         '
@@ -1361,6 +1298,7 @@ Partial Class frmLotFailBag
         Me.txtUIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUIssueWt.Location = New System.Drawing.Point(565, 43)
         Me.txtUIssueWt.Name = "txtUIssueWt"
+        Me.txtUIssueWt.ReadOnly = True
         '
         '
         '
@@ -1376,6 +1314,7 @@ Partial Class frmLotFailBag
         Me.txtUIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUIssuePr.Location = New System.Drawing.Point(565, 18)
         Me.txtUIssuePr.Name = "txtUIssuePr"
+        Me.txtUIssuePr.ReadOnly = True
         '
         '
         '
@@ -1391,6 +1330,7 @@ Partial Class frmLotFailBag
         Me.txtULossFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtULossFine.Location = New System.Drawing.Point(117, 118)
         Me.txtULossFine.Name = "txtULossFine"
+        Me.txtULossFine.ReadOnly = True
         '
         '
         '
@@ -1406,6 +1346,7 @@ Partial Class frmLotFailBag
         Me.txtUGrossLoss.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUGrossLoss.Location = New System.Drawing.Point(117, 93)
         Me.txtUGrossLoss.Name = "txtUGrossLoss"
+        Me.txtUGrossLoss.ReadOnly = True
         '
         '
         '
@@ -1421,6 +1362,7 @@ Partial Class frmLotFailBag
         Me.txtUreceiveFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUreceiveFineWt.Location = New System.Drawing.Point(117, 68)
         Me.txtUreceiveFineWt.Name = "txtUreceiveFineWt"
+        Me.txtUreceiveFineWt.ReadOnly = True
         '
         '
         '
@@ -1436,6 +1378,7 @@ Partial Class frmLotFailBag
         Me.txtUreceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtUreceiveWt.Location = New System.Drawing.Point(117, 43)
         Me.txtUreceiveWt.Name = "txtUreceiveWt"
+        Me.txtUreceiveWt.ReadOnly = True
         '
         '
         '
@@ -1445,20 +1388,20 @@ Partial Class frmLotFailBag
         Me.txtUreceiveWt.TabIndex = 11
         Me.txtUreceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtUreceivePr
+        'txtUReceivePr
         '
-        Me.txtUreceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtUreceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtUreceivePr.Location = New System.Drawing.Point(117, 18)
-        Me.txtUreceivePr.Name = "txtUreceivePr"
+        Me.txtUReceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtUReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtUReceivePr.Location = New System.Drawing.Point(117, 18)
+        Me.txtUReceivePr.Name = "txtUReceivePr"
         '
         '
         '
-        Me.txtUreceivePr.RootElement.ControlBounds = New System.Drawing.Rectangle(117, 18, 100, 20)
-        Me.txtUreceivePr.RootElement.StretchVertically = True
-        Me.txtUreceivePr.Size = New System.Drawing.Size(60, 20)
-        Me.txtUreceivePr.TabIndex = 10
-        Me.txtUreceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtUReceivePr.RootElement.ControlBounds = New System.Drawing.Rectangle(117, 18, 100, 20)
+        Me.txtUReceivePr.RootElement.StretchVertically = True
+        Me.txtUReceivePr.Size = New System.Drawing.Size(60, 20)
+        Me.txtUReceivePr.TabIndex = 10
+        Me.txtUReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadLabel11
         '
@@ -1603,12 +1546,12 @@ Partial Class frmLotFailBag
         'txtUTransId
         '
         Me.txtUTransId.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtUTransId.Location = New System.Drawing.Point(219, 25)
+        Me.txtUTransId.Location = New System.Drawing.Point(222, 25)
         Me.txtUTransId.Name = "txtUTransId"
         '
         '
         '
-        Me.txtUTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(207, 25, 100, 20)
+        Me.txtUTransId.RootElement.ControlBounds = New System.Drawing.Rectangle(214, 25, 100, 20)
         Me.txtUTransId.RootElement.StretchVertically = True
         Me.txtUTransId.Size = New System.Drawing.Size(10, 20)
         Me.txtUTransId.TabIndex = 42
@@ -1626,46 +1569,111 @@ Partial Class frmLotFailBag
         '
         Me.UTransDt.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 25, 164, 20)
         Me.UTransDt.RootElement.StretchVertically = True
-        Me.UTransDt.Size = New System.Drawing.Size(91, 20)
+        Me.UTransDt.Size = New System.Drawing.Size(100, 20)
         Me.UTransDt.TabIndex = 41
         Me.UTransDt.TabStop = False
         Me.UTransDt.Text = "01/03/2021"
         Me.UTransDt.Value = New Date(2021, 3, 1, 16, 27, 25, 218)
         '
-        'cmbULotFailNo
+        'lblUBagType
         '
-        Me.cmbULotFailNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbULotFailNo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbULotFailNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbULotFailNo.Location = New System.Drawing.Point(120, 79)
-        Me.cmbULotFailNo.Name = "cmbULotFailNo"
-        '
-        '
-        '
-        Me.cmbULotFailNo.RootElement.ControlBounds = New System.Drawing.Rectangle(120, 79, 125, 20)
-        Me.cmbULotFailNo.RootElement.StretchVertically = True
-        Me.cmbULotFailNo.Size = New System.Drawing.Size(85, 20)
-        Me.cmbULotFailNo.TabIndex = 40
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(33, 82)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(84, 14)
-        Me.Label28.TabIndex = 3
-        Me.Label28.Text = "LotFail Bag No"
+        Me.lblUBagType.AutoSize = True
+        Me.lblUBagType.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUBagType.Location = New System.Drawing.Point(58, 78)
+        Me.lblUBagType.Name = "lblUBagType"
+        Me.lblUBagType.Size = New System.Drawing.Size(59, 14)
+        Me.lblUBagType.TabIndex = 3
+        Me.lblUBagType.Text = "Bag Type"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(43, 28)
+        Me.Label29.Location = New System.Drawing.Point(44, 28)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(73, 14)
         Me.Label29.TabIndex = 1
         Me.Label29.Text = "Transfer Dt."
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.dgvFinalUpdate)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(706, 484)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Edit Data"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'dgvFinalUpdate
+        '
+        Me.dgvFinalUpdate.BackColor = System.Drawing.Color.Transparent
+        Me.dgvFinalUpdate.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvFinalUpdate.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvFinalUpdate.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvFinalUpdate.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvFinalUpdate.Location = New System.Drawing.Point(2, 2)
+        '
+        '
+        '
+        Me.dgvFinalUpdate.MasterTemplate.AllowAddNewRow = False
+        Me.dgvFinalUpdate.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn9.EnableExpressionEditor = False
+        GridViewTextBoxColumn9.FieldName = "UsedBagId"
+        GridViewTextBoxColumn9.HeaderText = "UsedBag Id."
+        GridViewTextBoxColumn9.IsVisible = False
+        GridViewTextBoxColumn9.Name = "colUsedBagId"
+        GridViewTextBoxColumn10.EnableExpressionEditor = False
+        GridViewTextBoxColumn10.FieldName = "BagName"
+        GridViewTextBoxColumn10.HeaderText = "Bag Name"
+        GridViewTextBoxColumn10.IsVisible = False
+        GridViewTextBoxColumn10.Name = "colBagName"
+        GridViewTextBoxColumn10.Width = 100
+        GridViewTextBoxColumn11.EnableExpressionEditor = False
+        GridViewTextBoxColumn11.FieldName = "BagSrNo"
+        GridViewTextBoxColumn11.HeaderText = "Bag Sr No"
+        GridViewTextBoxColumn11.Name = "colBagSrNo"
+        GridViewTextBoxColumn11.Width = 120
+        GridViewTextBoxColumn12.EnableExpressionEditor = False
+        GridViewTextBoxColumn12.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn12.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn12.Name = "colReceiveWt"
+        GridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn12.Width = 90
+        GridViewTextBoxColumn13.EnableExpressionEditor = False
+        GridViewTextBoxColumn13.FieldName = "TFSampleWt"
+        GridViewTextBoxColumn13.HeaderText = "TF Sample Wt."
+        GridViewTextBoxColumn13.Name = "colTFSampleWt"
+        GridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn13.Width = 90
+        GridViewTextBoxColumn14.EnableExpressionEditor = False
+        GridViewTextBoxColumn14.FieldName = "WtOnScale"
+        GridViewTextBoxColumn14.HeaderText = "Wt On Scale"
+        GridViewTextBoxColumn14.Name = "colWtOnScale"
+        GridViewTextBoxColumn14.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn14.Width = 90
+        GridViewTextBoxColumn15.EnableExpressionEditor = False
+        GridViewTextBoxColumn15.FieldName = "CarbonReceive"
+        GridViewTextBoxColumn15.HeaderText = "Carbon Receive"
+        GridViewTextBoxColumn15.Name = "colCarbonReceive"
+        GridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn15.Width = 110
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "ReportPr"
+        GridViewTextBoxColumn16.HeaderText = "Report [%]"
+        GridViewTextBoxColumn16.Name = "colReportPr"
+        GridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn16.Width = 90
+        Me.dgvFinalUpdate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16})
+        Me.dgvFinalUpdate.MasterTemplate.EnableGrouping = False
+        Me.dgvFinalUpdate.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvFinalUpdate.MasterTemplate.ViewDefinition = TableViewDefinition4
+        Me.dgvFinalUpdate.Name = "dgvFinalUpdate"
+        Me.dgvFinalUpdate.ReadOnly = True
+        Me.dgvFinalUpdate.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvFinalUpdate.Size = New System.Drawing.Size(702, 480)
+        Me.dgvFinalUpdate.TabIndex = 0
         '
         'frmLotFailBag
         '
@@ -1681,16 +1689,13 @@ Partial Class frmLotFailBag
         Me.Text = "LotFail Bags"
         Me.tbLotFail.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.GCBoxDetails.ResumeLayout(False)
-        Me.GCBoxDetails.PerformLayout()
+        CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCLotFail.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCLotFail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GCBoxMain.ResumeLayout(False)
         Me.GCBoxMain.PerformLayout()
+        CType(Me.txtMaxNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCTransId, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtItemName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCLotFailPr, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1703,6 +1708,7 @@ Partial Class frmLotFailBag
         Me.TabPage2.ResumeLayout(False)
         Me.GRBoxDetails.ResumeLayout(False)
         Me.GRBoxDetails.PerformLayout()
+        CType(Me.btnREdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRCancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRSave, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1710,8 +1716,10 @@ Partial Class frmLotFailBag
         CType(Me.dgvRLotFail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GRBoxMain.ResumeLayout(False)
         Me.GRBoxMain.PerformLayout()
-        CType(Me.cmbRBagtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRBagNo.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRBagName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRGrossLoss, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRCarbon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1723,12 +1731,16 @@ Partial Class frmLotFailBag
         CType(Me.txtRTransId, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RTransDt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnUEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUCancel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GUBoxMain.ResumeLayout(False)
         Me.GUBoxMain.PerformLayout()
-        CType(Me.cmbUpdBagtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUBagSrNo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadCollapsiblePanel1.PanelContainer.ResumeLayout(False)
         Me.RadCollapsiblePanel1.PanelContainer.PerformLayout()
         CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1741,7 +1753,7 @@ Partial Class frmLotFailBag
         CType(Me.txtUGrossLoss, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUreceiveFineWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUreceiveWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtUreceivePr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUReceivePr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1754,14 +1766,15 @@ Partial Class frmLotFailBag
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUTransId, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UTransDt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbULotFailNo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.dgvFinalUpdate.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvFinalUpdate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents tbLotFail As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents GCBoxDetails As GroupBox
     Friend WithEvents GCBoxMain As GroupBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
@@ -1785,19 +1798,12 @@ Partial Class frmLotFailBag
     Friend WithEvents GRBoxDetails As GroupBox
     Friend WithEvents Label16 As Label
     Friend WithEvents GUBoxMain As GroupBox
-    Friend WithEvents Label28 As Label
+    Friend WithEvents lblUBagType As Label
     Friend WithEvents Label29 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents lblCBhukaTotal As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents lblBhukaTotal As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
+    Friend WithEvents lblRBagSrNo As Label
+    Friend WithEvents lblUBagSrNo As Label
     Friend WithEvents lblItemName As Label
-    Private WithEvents dgvCLotFail As Telerik.WinControls.UI.RadGridView
-    Private WithEvents btnDelete As Telerik.WinControls.UI.RadButton
-    Private WithEvents btnCancel As Telerik.WinControls.UI.RadButton
-    Private WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Private WithEvents cmbCLotNo As Telerik.WinControls.UI.RadDropDownList
     Private WithEvents TransDt As Telerik.WinControls.UI.RadDateTimePicker
     Private WithEvents txtCLotFailPr As Telerik.WinControls.UI.RadTextBox
@@ -1820,7 +1826,6 @@ Partial Class frmLotFailBag
     Private WithEvents btnRSave As Telerik.WinControls.UI.RadButton
     Private WithEvents txtUTransId As Telerik.WinControls.UI.RadTextBox
     Private WithEvents UTransDt As Telerik.WinControls.UI.RadDateTimePicker
-    Private WithEvents cmbULotFailNo As Telerik.WinControls.UI.RadDropDownList
     Private WithEvents RadCollapsiblePanel1 As Telerik.WinControls.UI.RadCollapsiblePanel
     Private WithEvents txtUcarbonReceive As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtUWtOnScale As Telerik.WinControls.UI.RadTextBox
@@ -1831,7 +1836,7 @@ Partial Class frmLotFailBag
     Private WithEvents txtUGrossLoss As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtUreceiveFineWt As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtUreceiveWt As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents txtUreceivePr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtUReceivePr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
     Private WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
     Private WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
@@ -1843,13 +1848,23 @@ Partial Class frmLotFailBag
     Private WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
     Private WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
     Private WithEvents btnUCancel As Telerik.WinControls.UI.RadButton
-    Private WithEvents btnUSave As Telerik.WinControls.UI.RadButton
-    Private WithEvents cmbRBagNo As Telerik.WinControls.UI.RadDropDownList
-    Private WithEvents cmbRBagtype As Telerik.WinControls.UI.RadDropDownList
-    Private WithEvents cmbUpdBagtype As Telerik.WinControls.UI.RadDropDownList
-    Private WithEvents btnExit As Telerik.WinControls.UI.RadButton
     Private WithEvents btnRExit As Telerik.WinControls.UI.RadButton
     Private WithEvents btnUExit As Telerik.WinControls.UI.RadButton
     Private WithEvents txtItemName As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtCTransId As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents cmbRBagNo As Telerik.WinControls.UI.RadMultiColumnComboBox
+    Friend WithEvents txtRBagName As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtUBagSrNo As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents cmbUpdBagNo As Telerik.WinControls.UI.RadMultiColumnComboBox
+    Friend WithEvents btnREdit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnUEdit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents dgvFinalUpdate As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents btnUSave As Telerik.WinControls.UI.RadButton
+    Friend WithEvents txtMaxNo As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents lblMaxNo As Label
+    Friend WithEvents btnDelete As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnCancel As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
 End Class

@@ -47,9 +47,9 @@ Public Class frmWIPLotNoWise
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetAllWIPLots", DbType.String))
             End With
 
@@ -94,7 +94,7 @@ Public Class frmWIPLotNoWise
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-    Private Sub btnPrint_Click_1(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
             If dgvWipLotNo.RowCount > 0 Then
                 Me.Cursor = Cursors.WaitCursor
@@ -120,6 +120,5 @@ Public Class frmWIPLotNoWise
         Finally
             Me.Cursor = Cursors.Default
         End Try
-
     End Sub
 End Class

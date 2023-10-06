@@ -107,7 +107,7 @@ Partial Class frmAcctOpLabIssue
         '
         Me.lblTotal.AutoSize = True
         Me.lblTotal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotal.Location = New System.Drawing.Point(380, 397)
+        Me.lblTotal.Location = New System.Drawing.Point(381, 396)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(38, 14)
         Me.lblTotal.TabIndex = 25

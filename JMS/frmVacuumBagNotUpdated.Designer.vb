@@ -107,13 +107,13 @@ Partial Class frmVacuumBagNotUpdated
         '
         Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(245, 429)
+        Me.btnPrint.Location = New System.Drawing.Point(258, 429)
         Me.btnPrint.Name = "btnPrint"
         '
         '
         '
         Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(245, 429, 110, 24)
-        Me.btnPrint.Size = New System.Drawing.Size(87, 27)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 60
         Me.btnPrint.Text = "&Print"
         '
@@ -127,7 +127,7 @@ Partial Class frmVacuumBagNotUpdated
         '
         '
         Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(336, 429, 110, 24)
-        Me.btnExit.Size = New System.Drawing.Size(87, 27)
+        Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 59
         Me.btnExit.Text = "E&xit"
         '
@@ -139,6 +139,7 @@ Partial Class frmVacuumBagNotUpdated
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.dgvWipLotNo)
         Me.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.MaximizeBox = False
         Me.Name = "frmVacuumBagNotUpdated"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VacuumBag Not Updated"

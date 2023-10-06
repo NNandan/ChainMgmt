@@ -355,9 +355,11 @@ Public Class frmOpInterIssue
     End Sub
     Private Sub fillConversion()
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_AccountMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
         Dim dt As DataTable = New DataTable()

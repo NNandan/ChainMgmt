@@ -38,9 +38,9 @@ Public Class frmPendingBags
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 parameters.Add(dbManager.CreateParameter("@ActionType", "GetStockData", DbType.String))
             End With
 

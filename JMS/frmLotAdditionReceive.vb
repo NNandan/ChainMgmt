@@ -174,8 +174,8 @@ Public Class frmLotAdditionReceive
             dgvLotAddition.Rows.Add(Val(txtSrNo.Text.Trim),
                                     Convert.ToInt32(cmbGridItem.SelectedValue),
                                     cmbGridItem.Text.Trim(),
-                                    Format(Val(txtReceiveWt.Text.Trim), "0.000"),
-                                    Format(Val(txtReceivePr.Text.Trim), "0.000"),
+                                    Format(Val(txtReceiveWt.Text.Trim), "0.00"),
+                                    Format(Val(txtReceivePr.Text.Trim), "0.00"),
                                     Format(Val(txtFineWt.Text.Trim), "0.000"),
                                     txtRemark.Text.Trim(),
                                     txtReceivePr.Tag,
@@ -225,7 +225,7 @@ Public Class frmLotAdditionReceive
     Private Sub SaveData()
         Dim alParaval As New ArrayList
 
-        Dim iOperationId As Integer = 7  ''Operation Id for Lot Addition Receive
+        Dim iOperationId As Integer = 23  ''Operation Id for Lot Addition Receive
         Dim iOperationTypeId As Integer = 10 ''Operation Type Id for Lot Addition Receive
 
         Dim GridSrNo As String = ""
@@ -445,7 +445,7 @@ Public Class frmLotAdditionReceive
         End Try
     End Sub
     Private Sub txtReceivePr_Leave(sender As Object, e As EventArgs) Handles txtReceiveWt.Leave
-        txtReceiveWt.Text = Format(Val(txtReceiveWt.Text), "0.000")
+        txtReceiveWt.Text = Format(Val(txtReceiveWt.Text), "0.00")
     End Sub
     Private Sub txtReceiveWt_KeyPress(sender As Object, e As KeyPressEventArgs)
         numdotkeypress(e, txtReceivePr, Me)
@@ -581,7 +581,7 @@ ErrHandler:
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -637,8 +637,8 @@ ErrHandler:
             dr.Read()
             txtLotRecieveId.Tag = dr.Item("LotAdditionId").ToString
             txtLotRecieveId.Text = dr.Item("LotAdditionNo").ToString
-            cmbItem.SelectedIndex = dr.Item("ItemId").ToString
-
+            'cmbItem.SelectedIndex = dr.Item("ItemId").ToString
+            cmbItem.Text = dr.Item("ItemName").ToString
             txtBalanceWt.Text = dr.Item("IssueWt").ToString
             txtBalancePr.Text = dr.Item("IssuePr").ToString
             lblFineWt.Text = Format(Val(txtBalancePr.Text) * Val(txtBalanceWt.Text) / 100, "0.000")

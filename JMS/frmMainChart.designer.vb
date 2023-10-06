@@ -22,8 +22,10 @@ Partial Class frmMainChart
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnPrint = New Telerik.WinControls.UI.RadButton()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
         Me.btnDelete = New Telerik.WinControls.UI.RadButton()
         Me.chkLotFinal = New System.Windows.Forms.CheckBox()
@@ -69,6 +71,7 @@ Partial Class frmMainChart
         Me.CtLabour = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.COperationId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
+        Me.cmbPartyName = New Telerik.WinControls.UI.RadDropDownList()
         Me.cmbLotNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtVaccume = New Telerik.WinControls.UI.RadTextBox()
         Me.cmbItem = New Telerik.WinControls.UI.RadDropDownList()
@@ -81,8 +84,10 @@ Partial Class frmMainChart
         Me.lblOpreationType = New System.Windows.Forms.Label()
         Me.lblTransactionNo = New System.Windows.Forms.Label()
         Me.lblTransactionDt = New System.Windows.Forms.Label()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.btnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,11 +106,13 @@ Partial Class frmMainChart
         CType(Me.cmbOperation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxDetails.SuspendLayout()
         Me.GBoxMain.SuspendLayout()
+        CType(Me.cmbPartyName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtVaccume, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOprationType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTransNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -123,6 +130,7 @@ Partial Class frmMainChart
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.White
+        Me.TabPage1.Controls.Add(Me.btnPrint)
         Me.TabPage1.Controls.Add(Me.btnExit)
         Me.TabPage1.Controls.Add(Me.btnDelete)
         Me.TabPage1.Controls.Add(Me.chkLotFinal)
@@ -141,32 +149,46 @@ Partial Class frmMainChart
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Information"
         '
+        'btnPrint
+        '
+        Me.btnPrint.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnPrint.Location = New System.Drawing.Point(647, 467)
+        Me.btnPrint.Name = "btnPrint"
+        '
+        '
+        '
+        Me.btnPrint.RootElement.ControlBounds = New System.Drawing.Rectangle(647, 467, 110, 24)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
+        Me.btnPrint.TabIndex = 4
+        Me.btnPrint.Text = "P&rint"
+        '
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(580, 467)
+        Me.btnExit.Location = New System.Drawing.Point(570, 467)
         Me.btnExit.Name = "btnExit"
         '
         '
         '
-        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(580, 467, 110, 24)
+        Me.btnExit.RootElement.ControlBounds = New System.Drawing.Rectangle(570, 467, 110, 24)
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
-        Me.btnExit.TabIndex = 842
+        Me.btnExit.TabIndex = 3
         Me.btnExit.Text = "E&xit"
         '
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(426, 467)
+        Me.btnDelete.Location = New System.Drawing.Point(416, 467)
         Me.btnDelete.Name = "btnDelete"
         '
         '
         '
-        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(426, 467, 110, 24)
+        Me.btnDelete.RootElement.ControlBounds = New System.Drawing.Rectangle(416, 467, 110, 24)
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
-        Me.btnDelete.TabIndex = 841
+        Me.btnDelete.TabIndex = 1
         Me.btnDelete.Text = "&Delete"
         '
         'chkLotFinal
@@ -175,7 +197,7 @@ Partial Class frmMainChart
         Me.chkLotFinal.Location = New System.Drawing.Point(906, 467)
         Me.chkLotFinal.Name = "chkLotFinal"
         Me.chkLotFinal.Size = New System.Drawing.Size(71, 18)
-        Me.chkLotFinal.TabIndex = 840
+        Me.chkLotFinal.TabIndex = 5
         Me.chkLotFinal.Text = "Lot Final"
         Me.chkLotFinal.UseVisualStyleBackColor = True
         '
@@ -183,26 +205,26 @@ Partial Class frmMainChart
         '
         Me.btnCancel.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(503, 467)
+        Me.btnCancel.Location = New System.Drawing.Point(493, 467)
         Me.btnCancel.Name = "btnCancel"
         '
         '
         '
-        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(503, 467, 110, 24)
+        Me.btnCancel.RootElement.ControlBounds = New System.Drawing.Rectangle(493, 467, 110, 24)
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
-        Me.btnCancel.TabIndex = 1
+        Me.btnCancel.TabIndex = 2
         Me.btnCancel.Text = "&Cancel"
         '
         'btnSave
         '
         Me.btnSave.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(349, 467)
+        Me.btnSave.Location = New System.Drawing.Point(339, 467)
         Me.btnSave.Name = "btnSave"
         '
         '
         '
-        Me.btnSave.RootElement.ControlBounds = New System.Drawing.Rectangle(349, 467, 110, 24)
+        Me.btnSave.RootElement.ControlBounds = New System.Drawing.Rectangle(339, 467, 110, 24)
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 0
         Me.btnSave.Text = "&Save"
@@ -558,7 +580,7 @@ Partial Class frmMainChart
         Me.lvList.MultiSelect = False
         Me.lvList.Name = "lvList"
         Me.lvList.Size = New System.Drawing.Size(971, 249)
-        Me.lvList.TabIndex = 0
+        Me.lvList.TabIndex = 1
         Me.lvList.UseCompatibleStateImageBehavior = False
         Me.lvList.View = System.Windows.Forms.View.Details
         '
@@ -643,6 +665,7 @@ Partial Class frmMainChart
         'GBoxMain
         '
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GBoxMain.Controls.Add(Me.cmbPartyName)
         Me.GBoxMain.Controls.Add(Me.cmbLotNo)
         Me.GBoxMain.Controls.Add(Me.txtVaccume)
         Me.GBoxMain.Controls.Add(Me.cmbItem)
@@ -665,6 +688,14 @@ Partial Class frmMainChart
         Me.GBoxMain.TabStop = False
         Me.GBoxMain.Text = "Lot Information"
         '
+        'cmbPartyName
+        '
+        Me.cmbPartyName.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbPartyName.Location = New System.Drawing.Point(110, 55)
+        Me.cmbPartyName.Name = "cmbPartyName"
+        Me.cmbPartyName.Size = New System.Drawing.Size(188, 20)
+        Me.cmbPartyName.TabIndex = 795
+        '
         'cmbLotNo
         '
         Me.cmbLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -677,7 +708,7 @@ Partial Class frmMainChart
         Me.cmbLotNo.RootElement.ControlBounds = New System.Drawing.Rectangle(805, 21, 125, 20)
         Me.cmbLotNo.RootElement.StretchVertically = True
         Me.cmbLotNo.Size = New System.Drawing.Size(85, 20)
-        Me.cmbLotNo.TabIndex = 4
+        Me.cmbLotNo.TabIndex = 0
         '
         'txtVaccume
         '
@@ -708,7 +739,7 @@ Partial Class frmMainChart
         '
         Me.cmbItem.RootElement.ControlBounds = New System.Drawing.Rectangle(450, 55, 125, 20)
         Me.cmbItem.RootElement.StretchVertically = True
-        Me.cmbItem.Size = New System.Drawing.Size(142, 20)
+        Me.cmbItem.Size = New System.Drawing.Size(197, 20)
         Me.cmbItem.TabIndex = 3
         '
         'txtOprationType
@@ -731,18 +762,19 @@ Partial Class frmMainChart
         '
         Me.txtTransNo.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.txtTransNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtTransNo.Location = New System.Drawing.Point(111, 21)
+        Me.txtTransNo.Location = New System.Drawing.Point(197, 20)
         Me.txtTransNo.Name = "txtTransNo"
         Me.txtTransNo.ReadOnly = True
         '
         '
         '
-        Me.txtTransNo.RootElement.ControlBounds = New System.Drawing.Rectangle(111, 21, 100, 20)
+        Me.txtTransNo.RootElement.ControlBounds = New System.Drawing.Rectangle(197, 20, 100, 20)
         Me.txtTransNo.RootElement.StretchVertically = True
-        Me.txtTransNo.Size = New System.Drawing.Size(85, 20)
+        Me.txtTransNo.Size = New System.Drawing.Size(10, 22)
         Me.txtTransNo.TabIndex = 0
         Me.txtTransNo.TabStop = False
         Me.txtTransNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtTransNo.Visible = False
         '
         'lblVaccume
         '
@@ -781,7 +813,7 @@ Partial Class frmMainChart
         '
         Me.TransDt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TransDt.Location = New System.Drawing.Point(111, 55)
+        Me.TransDt.Location = New System.Drawing.Point(110, 20)
         Me.TransDt.Name = "TransDt"
         Me.TransDt.Size = New System.Drawing.Size(85, 22)
         Me.TransDt.TabIndex = 1
@@ -802,23 +834,27 @@ Partial Class frmMainChart
         '
         Me.lblTransactionNo.AutoSize = True
         Me.lblTransactionNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblTransactionNo.Location = New System.Drawing.Point(18, 24)
+        Me.lblTransactionNo.Location = New System.Drawing.Point(19, 24)
         Me.lblTransactionNo.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblTransactionNo.Name = "lblTransactionNo"
-        Me.lblTransactionNo.Size = New System.Drawing.Size(89, 14)
+        Me.lblTransactionNo.Size = New System.Drawing.Size(87, 14)
         Me.lblTransactionNo.TabIndex = 1
-        Me.lblTransactionNo.Text = "Transaction No"
+        Me.lblTransactionNo.Text = "Transaction Dt"
         '
         'lblTransactionDt
         '
         Me.lblTransactionDt.AutoSize = True
         Me.lblTransactionDt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblTransactionDt.Location = New System.Drawing.Point(20, 58)
+        Me.lblTransactionDt.Location = New System.Drawing.Point(37, 58)
         Me.lblTransactionDt.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblTransactionDt.Name = "lblTransactionDt"
-        Me.lblTransactionDt.Size = New System.Drawing.Size(87, 14)
+        Me.lblTransactionDt.Size = New System.Drawing.Size(70, 14)
         Me.lblTransactionDt.TabIndex = 1
-        Me.lblTransactionDt.Text = "Transaction Dt"
+        Me.lblTransactionDt.Text = "Party Name"
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
         '
         'frmMainChart
         '
@@ -834,6 +870,7 @@ Partial Class frmMainChart
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.btnPrint, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -854,11 +891,13 @@ Partial Class frmMainChart
         Me.GBoxDetails.ResumeLayout(False)
         Me.GBoxMain.ResumeLayout(False)
         Me.GBoxMain.PerformLayout()
+        CType(Me.cmbPartyName, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtVaccume, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOprationType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTransNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -924,4 +963,7 @@ Partial Class frmMainChart
     Private WithEvents cmbLotNo As Telerik.WinControls.UI.RadDropDownList
     Private WithEvents btnDelete As Telerik.WinControls.UI.RadButton
     Private WithEvents btnExit As Telerik.WinControls.UI.RadButton
+    Private WithEvents btnPrint As Telerik.WinControls.UI.RadButton
+    Friend WithEvents cmbPartyName As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

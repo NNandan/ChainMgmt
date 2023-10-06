@@ -93,7 +93,6 @@ Public Class frmLotHistory
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
     Private Sub frmLotHistory_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit

@@ -43,6 +43,7 @@ Partial Class frmKarigarMaster
         Me.txtKarigarName = New Telerik.WinControls.UI.RadTextBox()
         Me.lblKarigarName = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.TabPage1.SuspendLayout()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,10 +56,12 @@ Partial Class frmKarigarMaster
         CType(Me.txtBoxWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtKarigarName, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.RadButton1)
         Me.TabPage1.Controls.Add(Me.btnExit)
         Me.TabPage1.Controls.Add(Me.btnCancel)
         Me.TabPage1.Controls.Add(Me.btnSave)
@@ -78,7 +81,7 @@ Partial Class frmKarigarMaster
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.btnExit.Location = New System.Drawing.Point(428, 438)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(75, 25)
+        Me.btnExit.Size = New System.Drawing.Size(69, 24)
         Me.btnExit.TabIndex = 3
         Me.btnExit.Text = "E&xit"
         '
@@ -148,14 +151,14 @@ Partial Class frmKarigarMaster
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "BoxWeight"
         GridViewTextBoxColumn3.HeaderText = "Box Wt."
-        GridViewTextBoxColumn3.Name = "colBoxWeight"
+        GridViewTextBoxColumn3.Name = "ColBoxWeight"
         GridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn3.Width = 100
         GridViewCheckBoxColumn1.EnableExpressionEditor = False
         GridViewCheckBoxColumn1.FieldName = "InHouse"
         GridViewCheckBoxColumn1.HeaderText = "In House"
         GridViewCheckBoxColumn1.MinWidth = 20
-        GridViewCheckBoxColumn1.Name = "chkInHouse"
+        GridViewCheckBoxColumn1.Name = "ChkInHouse"
         GridViewCheckBoxColumn1.Width = 90
         Me.dgvKarigarList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewCheckBoxColumn1})
         Me.dgvKarigarList.MasterTemplate.EnableGrouping = False
@@ -225,7 +228,7 @@ Partial Class frmKarigarMaster
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(52, 55)
+        Me.Label1.Location = New System.Drawing.Point(53, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 14)
         Me.Label1.TabIndex = 4
@@ -254,7 +257,7 @@ Partial Class frmKarigarMaster
         '
         Me.lblKarigarName.AutoSize = True
         Me.lblKarigarName.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblKarigarName.Location = New System.Drawing.Point(25, 28)
+        Me.lblKarigarName.Location = New System.Drawing.Point(26, 27)
         Me.lblKarigarName.Name = "lblKarigarName"
         Me.lblKarigarName.Size = New System.Drawing.Size(79, 14)
         Me.lblKarigarName.TabIndex = 1
@@ -270,6 +273,14 @@ Partial Class frmKarigarMaster
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(712, 502)
         Me.TabControl1.TabIndex = 4
+        '
+        'RadButton1
+        '
+        Me.RadButton1.Location = New System.Drawing.Point(527, 437)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(110, 24)
+        Me.RadButton1.TabIndex = 23
+        Me.RadButton1.Text = "RadButton1"
         '
         'frmKarigarMaster
         '
@@ -296,6 +307,7 @@ Partial Class frmKarigarMaster
         CType(Me.txtBoxWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtKarigarName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -316,4 +328,5 @@ Partial Class frmKarigarMaster
     Friend WithEvents lblIT As Label
     Friend WithEvents lblIO As Label
     Friend WithEvents ChkInHouse As CheckBox
+    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
 End Class

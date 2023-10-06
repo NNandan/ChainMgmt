@@ -19,9 +19,9 @@ Public Class frmTouchConversionRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchTouchConversionData", DbType.String))
             End With
 

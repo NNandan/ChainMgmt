@@ -9,6 +9,7 @@ Public Class frmKarigarMaster
 
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
+    Dim isChecked As Boolean = True
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -60,9 +61,7 @@ Public Class frmKarigarMaster
         If Not Validate_Fields() Then Exit Sub
 
         Try
-
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             If Fr_Mode = FormState.AStateMode Then
 
@@ -73,18 +72,22 @@ Public Class frmKarigarMaster
                 End If
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@LName", txtKarigarName.Text.Trim(), DbType.String))
                     .Add(dbManager.CreateParameter("@LBoxWeight", txtBoxWt.Text, DbType.Decimal))
                     .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
 
                     If ChkInHouse.Checked = True Then
+                        .Add(dbManager.CreateParameter("@IsInHouse", 1, DbType.Boolean))
+                    Else
                         .Add(dbManager.CreateParameter("@IsInHouse", 0, DbType.Boolean))
                     End If
 
                 End With
             Else
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@LName", txtKarigarName.Text.Trim(), DbType.String))
                     .Add(dbManager.CreateParameter("@LBoxWeight", txtBoxWt.Text, DbType.Decimal))
@@ -92,6 +95,8 @@ Public Class frmKarigarMaster
                     .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
 
                     If ChkInHouse.Checked = True Then
+                        .Add(dbManager.CreateParameter("@IsInHouse", 1, DbType.Boolean))
+                    Else
                         .Add(dbManager.CreateParameter("@IsInHouse", 0, DbType.Boolean))
                     End If
 
@@ -100,7 +105,7 @@ Public Class frmKarigarMaster
 
             dbManager.Insert("SP_LabourMaster_Save", CommandType.StoredProcedure, parameters.ToArray())
 
-            MessageBox.Show("Data Saved !!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data Saved !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Me.btnCancel_Click(sender, e)
 
@@ -115,9 +120,9 @@ Public Class frmKarigarMaster
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
             End With
 
@@ -132,12 +137,11 @@ Public Class frmKarigarMaster
     End Function
     Private Function FetchAllRecords(ByVal iKarigarId As Integer) As DataTable
         Dim dtData As DataTable = New DataTable()
-
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@LId", CInt(iKarigarId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchFancy", DbType.String))
             End With
@@ -155,9 +159,9 @@ Public Class frmKarigarMaster
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "SearchFancy", DbType.String))
                 .Add(dbManager.CreateParameter("@LName", CStr(sKarigarName), DbType.String))
             End With
@@ -192,7 +196,9 @@ Public Class frmKarigarMaster
             txtKarigarName.Text = dgvKarigarList.Rows(e.RowIndex).Cells(1).Value.ToString()
             txtBoxWt.Text = Convert.ToString(dgvKarigarList.Rows(e.RowIndex).Cells(2).Value)
 
-            If IsNothing(dgvKarigarList.Rows(e.RowIndex).Cells(3).Value) OrElse String.IsNullOrEmpty(dgvKarigarList.Rows(e.RowIndex).Cells(3).Value) Then
+            isChecked = Convert.ToString(dgvKarigarList.Rows(e.RowIndex).Cells(3).Value)
+
+            If isChecked = True Then
                 ChkInHouse.Checked = True
             Else
                 ChkInHouse.Checked = False
@@ -200,7 +206,7 @@ Public Class frmKarigarMaster
 
             txtKarigarName.Focus()
             txtKarigarName.Select()
-            ChkInHouse.Checked = True
+
         Else
             Me.Clear_Form()
         End If
@@ -212,9 +218,9 @@ Public Class frmKarigarMaster
 
                 Try
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@LId", txtKarigarName.Tag, DbType.Int16))
                     End With
 
@@ -267,6 +273,10 @@ Public Class frmKarigarMaster
     Private Sub txtBoxWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBoxWt.KeyPress
         numdotkeypress(e, txtBoxWt, Me)
     End Sub
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Dim appPath As String = Application.UserAppDataPath
+        MsgBox(appPath)
+    End Sub
     Private Sub Clear_Form()
         Try
             btnSave.Text = "&Save"
@@ -281,7 +291,7 @@ Public Class frmKarigarMaster
             Fr_Mode = FormState.AStateMode
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -331,7 +341,7 @@ Public Class frmKarigarMaster
             Return True
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Function

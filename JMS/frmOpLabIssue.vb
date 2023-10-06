@@ -18,9 +18,12 @@ Public Class frmOpLabIssue
         Dim dt As DataTable = New DataTable()
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillCombo", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillCombo", DbType.String))
+        End With
+
 
         Dim dr = dbManager.GetDataReader("SP_LabMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 

@@ -147,7 +147,7 @@ Partial Class frmRLotTransfer
         Me.cmbOperation.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.cmbOperation.Location = New System.Drawing.Point(110, 30)
         Me.cmbOperation.Name = "cmbOperation"
-        Me.cmbOperation.Size = New System.Drawing.Size(125, 20)
+        Me.cmbOperation.Size = New System.Drawing.Size(184, 20)
         Me.cmbOperation.TabIndex = 0
         '
         'Label21
@@ -348,7 +348,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label2.Location = New System.Drawing.Point(448, 50)
+        Me.Label2.Location = New System.Drawing.Point(449, 53)
         Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 14)
@@ -359,7 +359,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(242, 28)
+        Me.Label7.Location = New System.Drawing.Point(243, 28)
         Me.Label7.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 14)
@@ -380,7 +380,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label26.Location = New System.Drawing.Point(47, 27)
+        Me.Label26.Location = New System.Drawing.Point(48, 28)
         Me.Label26.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(58, 14)
@@ -391,7 +391,7 @@ Partial Class frmRLotTransfer
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label28.Location = New System.Drawing.Point(57, 52)
+        Me.Label28.Location = New System.Drawing.Point(58, 53)
         Me.Label28.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(48, 14)

@@ -331,11 +331,11 @@ Partial Class frmCoreAdditionReceive
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label13.Location = New System.Drawing.Point(66, 345)
         Me.Label13.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(60, 14)
+        Me.Label13.Size = New System.Drawing.Size(64, 14)
         Me.Label13.TabIndex = 840
         Me.Label13.Text = "Total Wt."
         '

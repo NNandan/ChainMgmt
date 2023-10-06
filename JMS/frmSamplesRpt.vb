@@ -165,9 +165,9 @@ Public Class frmSamplesRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetNonTestedSampleBag", DbType.String))
             End With
 
@@ -212,9 +212,9 @@ Public Class frmSamplesRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchTestedSampleBag", DbType.String))
             End With
 
@@ -258,9 +258,9 @@ Public Class frmSamplesRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchNonTestedSampleLot", DbType.String))
             End With
 
@@ -305,9 +305,9 @@ Public Class frmSamplesRpt
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchTestedSampleLot", DbType.String))
             End With
 

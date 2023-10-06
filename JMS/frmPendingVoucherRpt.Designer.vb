@@ -81,7 +81,7 @@ Partial Class frmPendingBags
         GridViewTextBoxColumn4.AllowFiltering = False
         GridViewTextBoxColumn4.AllowGroup = False
         GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "RecieveWt"
+        GridViewTextBoxColumn4.FieldName = "ReceiveWt"
         GridViewTextBoxColumn4.FormatString = "{0:F2}"
         GridViewTextBoxColumn4.HeaderText = "Recieve Wt."
         GridViewTextBoxColumn4.Name = "colRecieveWt"
@@ -108,7 +108,7 @@ Partial Class frmPendingBags
         Me.dgvMeltingBagList.Name = "dgvMeltingBagList"
         Me.dgvMeltingBagList.ReadOnly = True
         Me.dgvMeltingBagList.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvMeltingBagList.Size = New System.Drawing.Size(667, 300)
+        Me.dgvMeltingBagList.Size = New System.Drawing.Size(667, 302)
         Me.dgvMeltingBagList.TabIndex = 19
         '
         'btnPrint

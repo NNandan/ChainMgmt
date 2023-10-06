@@ -238,7 +238,6 @@ Public Class Common_Cls
     End Property
 #End Region
 
-
 #Region "Properties For Common variables "
 
     Public Shared Property Comm_Dtbl() As DataTable

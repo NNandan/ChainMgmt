@@ -22,17 +22,17 @@ Partial Class frmWIPLotNoWise
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn36 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn37 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn38 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn39 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn40 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dgvWipLotNo = New Telerik.WinControls.UI.RadGridView()
         Me.lblIssueWt = New System.Windows.Forms.Label()
         Me.lblIssuePr = New System.Windows.Forms.Label()
@@ -42,14 +42,10 @@ Partial Class frmWIPLotNoWise
         Me.lblReceiveFw = New System.Windows.Forms.Label()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
         Me.btnPrint = New Telerik.WinControls.UI.RadButton()
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
-        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
         CType(Me.dgvWipLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvWipLotNo.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnPrint, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvWipLotNo
@@ -66,77 +62,77 @@ Partial Class frmWIPLotNoWise
         '
         Me.dgvWipLotNo.MasterTemplate.AllowAddNewRow = False
         Me.dgvWipLotNo.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.DataType = GetType(Date)
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransDt"
-        GridViewTextBoxColumn1.FormatString = "{0:dd/MM/yyyy}"
-        GridViewTextBoxColumn1.HeaderText = "Trans. Dt."
-        GridViewTextBoxColumn1.MinWidth = 8
-        GridViewTextBoxColumn1.Name = "colTransDt"
-        GridViewTextBoxColumn1.Width = 85
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.FieldName = "LotNo"
-        GridViewTextBoxColumn2.HeaderText = "Lot No"
-        GridViewTextBoxColumn2.MinWidth = 8
-        GridViewTextBoxColumn2.Name = "colLotNumber"
-        GridViewTextBoxColumn2.Width = 90
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.FieldName = "ItemName"
-        GridViewTextBoxColumn3.HeaderText = "Item Name"
-        GridViewTextBoxColumn3.MinWidth = 8
-        GridViewTextBoxColumn3.Name = "ColItemName"
-        GridViewTextBoxColumn3.Width = 100
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.FieldName = "OperationName"
-        GridViewTextBoxColumn4.HeaderText = "Operation Name"
-        GridViewTextBoxColumn4.MinWidth = 8
-        GridViewTextBoxColumn4.Name = "colOperationName"
-        GridViewTextBoxColumn4.Width = 150
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "IssueWt"
-        GridViewTextBoxColumn5.HeaderText = "Issue Wt."
-        GridViewTextBoxColumn5.MinWidth = 8
-        GridViewTextBoxColumn5.Name = "colIssueWt"
-        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn5.Width = 90
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.FieldName = "IssuePr"
-        GridViewTextBoxColumn6.HeaderText = "Issue %"
-        GridViewTextBoxColumn6.MinWidth = 8
-        GridViewTextBoxColumn6.Name = "colIssuePr"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 90
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.FieldName = "IssueFine"
-        GridViewTextBoxColumn7.HeaderText = "Issue Fine Wt."
-        GridViewTextBoxColumn7.MinWidth = 8
-        GridViewTextBoxColumn7.Name = "colIssueFine"
-        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 90
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.FieldName = "ReceiveWt"
-        GridViewTextBoxColumn8.HeaderText = "Receive Wt."
-        GridViewTextBoxColumn8.MinWidth = 8
-        GridViewTextBoxColumn8.Name = "colReceiveWt"
-        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn8.Width = 90
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "ReceivePr"
-        GridViewTextBoxColumn9.HeaderText = "Receive %"
-        GridViewTextBoxColumn9.MinWidth = 8
-        GridViewTextBoxColumn9.Name = "colReceivePr"
-        GridViewTextBoxColumn9.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn9.Width = 90
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "RecieveFine"
-        GridViewTextBoxColumn10.HeaderText = "Recieve Fine Wt."
-        GridViewTextBoxColumn10.MinWidth = 8
-        GridViewTextBoxColumn10.Name = "colRecieveFine"
-        GridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn10.Width = 110
-        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
+        GridViewTextBoxColumn31.DataType = GetType(Date)
+        GridViewTextBoxColumn31.EnableExpressionEditor = False
+        GridViewTextBoxColumn31.FieldName = "TransDt"
+        GridViewTextBoxColumn31.FormatString = "{0:dd/MM/yyyy}"
+        GridViewTextBoxColumn31.HeaderText = "Trans. Dt."
+        GridViewTextBoxColumn31.MinWidth = 8
+        GridViewTextBoxColumn31.Name = "colTransDt"
+        GridViewTextBoxColumn31.Width = 85
+        GridViewTextBoxColumn32.EnableExpressionEditor = False
+        GridViewTextBoxColumn32.FieldName = "LotNo"
+        GridViewTextBoxColumn32.HeaderText = "Lot No"
+        GridViewTextBoxColumn32.MinWidth = 8
+        GridViewTextBoxColumn32.Name = "colLotNumber"
+        GridViewTextBoxColumn32.Width = 90
+        GridViewTextBoxColumn33.EnableExpressionEditor = False
+        GridViewTextBoxColumn33.FieldName = "ItemName"
+        GridViewTextBoxColumn33.HeaderText = "Item Name"
+        GridViewTextBoxColumn33.MinWidth = 8
+        GridViewTextBoxColumn33.Name = "ColItemName"
+        GridViewTextBoxColumn33.Width = 100
+        GridViewTextBoxColumn34.EnableExpressionEditor = False
+        GridViewTextBoxColumn34.FieldName = "OperationName"
+        GridViewTextBoxColumn34.HeaderText = "Operation Name"
+        GridViewTextBoxColumn34.MinWidth = 8
+        GridViewTextBoxColumn34.Name = "colOperationName"
+        GridViewTextBoxColumn34.Width = 150
+        GridViewTextBoxColumn35.EnableExpressionEditor = False
+        GridViewTextBoxColumn35.FieldName = "IssueWt"
+        GridViewTextBoxColumn35.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn35.MinWidth = 8
+        GridViewTextBoxColumn35.Name = "colIssueWt"
+        GridViewTextBoxColumn35.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn35.Width = 90
+        GridViewTextBoxColumn36.EnableExpressionEditor = False
+        GridViewTextBoxColumn36.FieldName = "IssuePr"
+        GridViewTextBoxColumn36.HeaderText = "Issue %"
+        GridViewTextBoxColumn36.MinWidth = 8
+        GridViewTextBoxColumn36.Name = "colIssuePr"
+        GridViewTextBoxColumn36.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn36.Width = 90
+        GridViewTextBoxColumn37.EnableExpressionEditor = False
+        GridViewTextBoxColumn37.FieldName = "IssueFine"
+        GridViewTextBoxColumn37.HeaderText = "Issue Fine Wt."
+        GridViewTextBoxColumn37.MinWidth = 8
+        GridViewTextBoxColumn37.Name = "colIssueFine"
+        GridViewTextBoxColumn37.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn37.Width = 90
+        GridViewTextBoxColumn38.EnableExpressionEditor = False
+        GridViewTextBoxColumn38.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn38.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn38.MinWidth = 8
+        GridViewTextBoxColumn38.Name = "colReceiveWt"
+        GridViewTextBoxColumn38.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn38.Width = 90
+        GridViewTextBoxColumn39.EnableExpressionEditor = False
+        GridViewTextBoxColumn39.FieldName = "ReceivePr"
+        GridViewTextBoxColumn39.HeaderText = "Receive %"
+        GridViewTextBoxColumn39.MinWidth = 8
+        GridViewTextBoxColumn39.Name = "colReceivePr"
+        GridViewTextBoxColumn39.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn39.Width = 90
+        GridViewTextBoxColumn40.EnableExpressionEditor = False
+        GridViewTextBoxColumn40.FieldName = "RecieveFine"
+        GridViewTextBoxColumn40.HeaderText = "Recieve Fine Wt."
+        GridViewTextBoxColumn40.MinWidth = 8
+        GridViewTextBoxColumn40.Name = "colRecieveFine"
+        GridViewTextBoxColumn40.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn40.Width = 110
+        Me.dgvWipLotNo.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewTextBoxColumn35, GridViewTextBoxColumn36, GridViewTextBoxColumn37, GridViewTextBoxColumn38, GridViewTextBoxColumn39, GridViewTextBoxColumn40})
         Me.dgvWipLotNo.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvWipLotNo.MasterTemplate.ViewDefinition = TableViewDefinition4
         Me.dgvWipLotNo.Name = "dgvWipLotNo"
         Me.dgvWipLotNo.ReadOnly = True
         Me.dgvWipLotNo.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -199,46 +195,28 @@ Partial Class frmWIPLotNoWise
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(860, 849)
+        Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnExit.Location = New System.Drawing.Point(492, 476)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(5)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(125, 44)
+        Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 26
         Me.btnExit.Text = "E&xit"
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(730, 849)
+        Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnPrint.Location = New System.Drawing.Point(415, 476)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(5)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(125, 44)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 27
         Me.btnPrint.Text = "&Print"
-        '
-        'RadButton1
-        '
-        Me.RadButton1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadButton1.Location = New System.Drawing.Point(492, 477)
-        Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(75, 25)
-        Me.RadButton1.TabIndex = 29
-        Me.RadButton1.Text = "E&xit"
-        '
-        'RadButton2
-        '
-        Me.RadButton2.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadButton2.Location = New System.Drawing.Point(415, 477)
-        Me.RadButton2.Name = "RadButton2"
-        Me.RadButton2.Size = New System.Drawing.Size(75, 25)
-        Me.RadButton2.TabIndex = 28
-        Me.RadButton2.Text = "&Print"
         '
         'frmWIPLotNoWise
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(982, 507)
-        Me.Controls.Add(Me.RadButton1)
-        Me.Controls.Add(Me.RadButton2)
+        Me.ClientSize = New System.Drawing.Size(982, 506)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.lblReceiveFw)
@@ -259,8 +237,6 @@ Partial Class frmWIPLotNoWise
         CType(Me.dgvWipLotNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnPrint, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -275,6 +251,4 @@ Partial Class frmWIPLotNoWise
     Friend WithEvents lblReceiveFw As Label
     Friend WithEvents btnExit As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnPrint As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
 End Class

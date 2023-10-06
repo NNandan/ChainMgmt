@@ -108,7 +108,7 @@ Partial Class frmRptLotFail
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(300, 400)
+        Me.btnPrint.Location = New System.Drawing.Point(301, 400)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 1

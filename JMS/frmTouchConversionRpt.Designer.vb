@@ -129,13 +129,13 @@ Partial Class frmTouchConversionRpt
         Me.dgvTouchConversion.Name = "dgvTouchConversion"
         Me.dgvTouchConversion.ReadOnly = True
         Me.dgvTouchConversion.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvTouchConversion.Size = New System.Drawing.Size(1007, 699)
+        Me.dgvTouchConversion.Size = New System.Drawing.Size(1007, 537)
         Me.dgvTouchConversion.TabIndex = 5
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(512, 708)
+        Me.btnExit.Location = New System.Drawing.Point(512, 545)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 30
@@ -144,7 +144,7 @@ Partial Class frmTouchConversionRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(436, 708)
+        Me.btnPrint.Location = New System.Drawing.Point(436, 545)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 29
@@ -153,7 +153,7 @@ Partial Class frmTouchConversionRpt
         'frmTouchConversionRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1014, 738)
+        Me.ClientSize = New System.Drawing.Size(1014, 576)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvTouchConversion)

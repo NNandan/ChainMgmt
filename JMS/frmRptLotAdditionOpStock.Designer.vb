@@ -53,7 +53,7 @@ Partial Class frmRptLotAdditionOpStock
         '
         Me.dgvLotAdditionStock.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "LotNumber"
+        GridViewTextBoxColumn1.FieldName = "LotNo"
         GridViewTextBoxColumn1.HeaderText = "Lot No."
         GridViewTextBoxColumn1.Name = "colLotNumber"
         GridViewTextBoxColumn1.Width = 100

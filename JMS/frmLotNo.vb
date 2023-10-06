@@ -233,7 +233,7 @@ Public Class frmLotNo
         parameters.Clear()
 
         With parameters
-            parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            parameters.Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
@@ -262,20 +262,6 @@ Public Class frmLotNo
             dr.Close()
             dbManager.CloseConnection(connection)
         End Try
-    End Sub
-    Private Sub lstLotNo_DoubleClick(sender As Object, e As EventArgs)
-        'If lstLotNo.Items.Count > 0 Then
-
-        '    Dim TransId As Integer = lstLotNo.SelectedItems(0).SubItems(0).Text
-
-        '    Me.Clear_Form()
-
-        '    btnSave.Text = "&Update"
-
-        '    fillRecordFromListView(TransId)
-
-        '    Me.TabControl1.SelectedIndex = 0
-        'End If
     End Sub
     Private Sub fillRecordFromListView(ByVal TransId As Integer)
         Dim dttable As New DataTable
@@ -313,6 +299,8 @@ Public Class frmLotNo
                 txtLossWt.Text = dttable.Rows(0).Item("LossWt").ToString()
                 txtFrKarigar.Tag = dttable.Rows(0).Item("FrLabourId").ToString()
                 txtFrKarigar.Text = dttable.Rows(0).Item("FrLabour").ToString()
+                cmbTLabour.SelectedIndex = dttable.Rows(0).Item("ToLabourId").ToString()
+                cmbTLabour.Text = dttable.Rows(0).Item("ToLabour").ToString()
                 cmbTLabour.Enabled = True
             End If
         End If
@@ -327,8 +315,8 @@ Public Class frmLotNo
                 .Add(dbManager.CreateParameter("@TLotNo", cmbLotNo.Text.Trim, DbType.String))
                 .Add(dbManager.CreateParameter("@TItemId", txtItemName.Tag, DbType.Int16))
 
-                .Add(dbManager.CreateParameter("@TfLabourId", txtFrKarigar.Tag, DbType.Int16))
-                .Add(dbManager.CreateParameter("@TtLabourId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
+                .Add(dbManager.CreateParameter("@TfLabourName", CStr(txtFrKarigar.Text.Trim), DbType.String))
+                .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
 
                 .Add(dbManager.CreateParameter("@TOperationId", Val(txtOperation.Tag), DbType.Int16))
                 .Add(dbManager.CreateParameter("@TOperationTypeId", 1, DbType.Int16))
@@ -361,14 +349,8 @@ Public Class frmLotNo
             With Hparameters
                 .Clear()
                 .Add(dbManager.CreateParameter("@TDate", TransDt.Value.ToString(), DbType.DateTime))
-                .Add(dbManager.CreateParameter("@TLotNo", cmbLotNo.Text, DbType.String))
-                .Add(dbManager.CreateParameter("@TItemId", txtItemName.Tag, DbType.Int16))
 
-                .Add(dbManager.CreateParameter("@TfLabourId", txtFrKarigar.Tag, DbType.Int16))
-                .Add(dbManager.CreateParameter("@TtLabourId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
-
-                .Add(dbManager.CreateParameter("@TOperationId", Val(txtOperation.Tag), DbType.Int16))
-                .Add(dbManager.CreateParameter("@TOperationTypeId", 1, DbType.Int16))
+                .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
 
                 .Add(dbManager.CreateParameter("@TIssuePr", txtIssuePr.Text, DbType.String))
                 .Add(dbManager.CreateParameter("@TIssueWt", txtIssueWt.Text, DbType.String))
@@ -543,7 +525,7 @@ Public Class frmLotNo
         End If
     End Sub
 
-    Private Sub dgwLotNo_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgwLotNo.CellDoubleClick
+    Private Sub dgwLotNo_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles MasterTemplate.CellDoubleClick, dgwLotNo.CellDoubleClick
         If dgwLotNo.SelectedRows.Count = 0 Then Exit Sub
 
         If dgwLotNo.Rows.Count > 0 Then
@@ -551,6 +533,8 @@ Public Class frmLotNo
             Dim TransId As Integer = dgwLotNo.SelectedRows(0).Cells(0).Value
 
             Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
 
             btnSave.Text = "&Update"
 
@@ -604,12 +588,23 @@ Public Class frmLotNo
                 MessageBox.Show("Select Item Name !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 txtItemName.Focus()
                 Return False
-            ElseIf cmbTLabour.SelectedIndex = -1 Or cmbTLabour.SelectedIndex = 0 Then
+            ElseIf cmbTLabour.SelectedIndex = -1 Or cmbTLabour.SelectedIndex = 0 Then ''cmbTLabour.Text.Contains("---Select---") Then
                 MessageBox.Show("Select To Employee !", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbTLabour.Focus()
                 Return False
-                'ElseIf (Val(txtReceiveWt.Text.Trim) + Val(txtSampleWt.Text.Trim) + Val(txtBhukaWt.Text.Trim)) >= Val(txtIssueWt.Text.Trim) Then
-            ElseIf Val(txtReceiveWt.Text + txtSampleWt.Text + txtBhukaWt.Text) >= val(txtIssueWt.Text) Then
+            ElseIf txtReceiveWt.Text.Trim.Length = 0 Then
+                MessageBox.Show("Enter Receive Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                txtReceiveWt.Focus()
+                Return False
+            ElseIf txtBhukaWt.Text.Trim.Length = 0 Then
+                MessageBox.Show("Enter Bhuka Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                txtBhukaWt.Focus()
+                Return False
+            ElseIf txtSampleWt.Text.Trim.Length = 0 Then
+                MessageBox.Show("Enter Sample Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                txtSampleWt.Focus()
+                Return False
+            ElseIf Val(txtReceiveWt.Text + txtSampleWt.Text + txtBhukaWt.Text) >= Val(txtIssueWt.Text) Then
                 MessageBox.Show("Receive Wt. Should not Be More than Issue Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 txtReceiveWt.Focus()
                 Return False

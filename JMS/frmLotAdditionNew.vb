@@ -36,7 +36,7 @@ Public Class frmLotAdditionNew
         Me.Clear_Form()
 
         Me.fillLotNo()
-        Me.fillLabourName()
+        Me.fillLabour()
         Me.fillGridItemName()
 
         Me.bindDataGridView()
@@ -237,13 +237,13 @@ Public Class frmLotAdditionNew
         cmbGridItem.Focus()
 
     End Sub
-    Private Sub fillLabourName()
+    Private Sub fillLabour()
 
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -347,8 +347,8 @@ Public Class frmLotAdditionNew
 
         Dim alParaval As New ArrayList
 
-        Dim iOperationId As Integer = 5 ''Operation Id for Lot Addition Create
-        Dim iOperationTypeId As Integer = 8 ''Operation Type Id for Lot Addition Create
+        Dim iOperationId As Integer = 21     ''Operation Id for Lot Addition Create
+        Dim iOperationTypeId As Integer = 8  ''Operation Type Id for Lot Addition Create
 
         Dim GridSrNo As String = ""
         Dim ItemId As String = ""
@@ -595,8 +595,8 @@ Public Class frmLotAdditionNew
             cmbLotNo.Text = dr.Item("LotNo").ToString
             txtItemName.Tag = dr.Item("ItemId").ToString
             txtItemName.Text = dr.Item("ItemName").ToString
-            txtReceiveWt.Text = dr.Item("IssuePr").ToString
-            txtReceivePr.Text = dr.Item("IssueWt").ToString
+            txtReceiveWt.Text = dr.Item("IssueWt").ToString
+            txtReceivePr.Text = dr.Item("IssuePr").ToString
             txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString
             txtFrKarigar.Text = dr.Item("FrKarigar").ToString
             cmbTLabour.SelectedIndex = dr.Item("ToKarigarId").ToString
@@ -660,7 +660,6 @@ ErrHandler:
     Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
         If cmbLotNo.Text.Trim <> "" Then
             Me.getLastLotNoAmt()
-
             'If blnCheckExists() = False Then
             '    Me.GetMaxLotNo()
             'End If
@@ -674,6 +673,7 @@ ErrHandler:
                 GridDoubleClick = True
                 txtSrNo.Text = dgvLotAddition.Rows(e.RowIndex).Cells(0).Value.ToString()
                 cmbGridItem.SelectedIndex = dgvLotAddition.Rows(e.RowIndex).Cells(1).Value.ToString()
+                cmbGridItem.Text = dgvLotAddition.Rows(e.RowIndex).Cells(2).Value.ToString()
                 txtIssueWt.Text = CStr(dgvLotAddition.Rows(e.RowIndex).Cells(3).Value)
                 txtIssuePr.Text = CStr(dgvLotAddition.Rows(e.RowIndex).Cells(4).Value)
                 txtFineWt.Text = CStr(dgvLotAddition.Rows(e.RowIndex).Cells(5).Value)

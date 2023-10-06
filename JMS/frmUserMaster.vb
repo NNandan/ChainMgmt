@@ -1,7 +1,5 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
-Imports Telerik.WinControls.Data
 Imports Telerik.WinControls.UI
 Public Class frmUserMaster
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
@@ -80,9 +78,9 @@ Public Class frmUserMaster
 
                 Try
                     Dim parameters = New List(Of SqlParameter)()
-                    parameters.Clear()
 
                     With parameters
+                        .Clear()
                         .Add(dbManager.CreateParameter("@UId", cmbLabour.SelectedValue, DbType.Int16))
                     End With
 
@@ -150,6 +148,7 @@ Public Class frmUserMaster
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -181,9 +180,9 @@ Public Class frmUserMaster
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
         End With
 
@@ -523,9 +522,9 @@ Public Class frmUserMaster
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
             End With
 
@@ -545,6 +544,7 @@ Public Class frmUserMaster
             Dim parameters = New List(Of SqlParameter)()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@UId", CInt(LabourId), DbType.Int16))
                 .Add(dbManager.CreateParameter("@ActionType", "FetchUserRights", DbType.String))
             End With
@@ -598,6 +598,44 @@ ErrHandler:
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
+    End Sub
+
+    Private Sub Btn_Find_Click(sender As Object, e As EventArgs) Handles Btn_Find.Click
+        Try
+            If Txt_Emp_ID.Text.Trim = "" Then
+                Dim Sql As String
+                Dim Colwidth As String = ""
+                Colwidth = "150|75|200|200"
+                Sql = "SELECT  Name, Patient_ID, [Family], Address, [Social-Security-No], City, State, Country FROM Get_Patient_Info_Vw"
+                Call ShowSearchengine(Txt_Emp_ID, Sql, 1, "Name", Colwidth, , 0)
+            End If
+
+            'Validating Mandatory fields for locating
+            If Txt_Emp_ID.Text.Trim = "" Then
+                'MessageBox.Show("Invalid Employee ID,Please Check", Product_Name, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Txt_Emp_ID.Focus() : Exit Sub
+            End If
+
+
+            'If Locate_EmpDetails(Txt_Emp_ID.Text.Trim) Then
+            '    If Locate_Userdetails(Txt_Emp_ID.Text.Trim) Then
+            '        Tr_Mode = Tran_Mode.Edit_Mode
+            '        Txt_Username.ReadOnly = True
+            '        Txt_CurrPWD.Enabled = True
+            '        Txt_CurrPWD.Focus()
+            '    Else
+            '        Txt_CurrPWD.Enabled = False
+            '        Txt_Username.ReadOnly = False
+            '        Txt_Username.Focus()
+            '    End If
+
+            'Else
+            '    MessageBox.Show("Employee ID does not exists, Please Check", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub fillDetailsFromListView(ByVal intUserId As Integer)
         Dim dttable As New DataTable

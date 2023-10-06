@@ -79,7 +79,6 @@ Public Class frmStockLossBags
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
     Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 

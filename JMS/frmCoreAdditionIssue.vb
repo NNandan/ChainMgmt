@@ -1,5 +1,4 @@
-﻿Imports System.Configuration
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Public Class frmCoreAdditionIssue
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
@@ -34,7 +33,7 @@ Public Class frmCoreAdditionIssue
 
         Me.fillLabour()
         Me.fillLotNo()
-        Me.bindListView()
+        Me.bindGridView()
     End Sub
     Private Sub txtCoreWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCoreWt.KeyPress
         numdotkeypress(e, txtCoreWt, Me)
@@ -46,7 +45,7 @@ Public Class frmCoreAdditionIssue
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
@@ -73,14 +72,14 @@ Public Class frmCoreAdditionIssue
             dbManager.CloseConnection(connection)
         End Try
     End Sub
-    Private Sub fillLotNo()
 
+    Private Sub fillLotNo()
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoForLotAddition", DbType.String))
         End With
 
@@ -99,7 +98,7 @@ Public Class frmCoreAdditionIssue
             'Assign DataTable as DataSource.
             cmbLotNo.DataSource = dt
             cmbLotNo.DisplayMember = "LotNo"
-            cmbLotNo.ValueMember = "TransactionId"
+            cmbLotNo.ValueMember = "TransId"
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
@@ -219,6 +218,7 @@ Public Class frmCoreAdditionIssue
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchRecord", DbType.String))
             .Add(dbManager.CreateParameter("@CId", Val(intCoreIssueId), DbType.Int16))
         End With
@@ -249,7 +249,7 @@ Public Class frmCoreAdditionIssue
 ErrHandler:
         MsgBox(Err.Description, MsgBoxStyle.Critical)
     End Sub
-    Private Sub bindListView()
+    Private Sub bindGridView()
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
@@ -289,26 +289,26 @@ ErrHandler:
         End Try
 
     End Sub
-    Private Function fetchAllRecords() As DataTable
+    'Private Function fetchAllRecords() As DataTable
 
-        Dim dtData As DataTable = New DataTable()
+    '    Dim dtData As DataTable = New DataTable()
 
-        Try
-            Dim parameters = New List(Of SqlParameter)()
+    '    Try
+    '        Dim parameters = New List(Of SqlParameter)()
 
-            With parameters
-                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
-            End With
+    '        With parameters
+    '            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+    '        End With
 
-            dtData = dbManager.GetDataTable("SP_CoreAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+    '        dtData = dbManager.GetDataTable("SP_CoreAdditionIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
 
-        Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
-        End Try
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error:- " & ex.Message)
+    '    End Try
 
-        Return dtData
+    '    Return dtData
 
-    End Function
+    'End Function
     Private Sub txtIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtIssueWt.TextChanged
         Try
 
@@ -329,9 +329,9 @@ ErrHandler:
 
             Try
                 Dim parameters = New List(Of SqlParameter)()
-                parameters.Clear()
 
                 With parameters
+                    .Clear()
                     .Add(dbManager.CreateParameter("@CId", Val(txtTransNo.Text), DbType.Int16))
                 End With
 
@@ -472,8 +472,10 @@ ErrHandler:
 
             txtTransNo.Tag = ""
             txtTransNo.Clear()
+
             cmbLotNo.SelectedIndex = -1
             cmbTLabour.SelectedIndex = -1
+
             txtIssueWt.Clear()
             txtIssuePr.Clear()
             txtCoreWt.Clear()
@@ -518,5 +520,25 @@ ErrHandler:
             Return False
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Function
+    Private Function fetchAllRecords() As DataTable
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_StockIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+
     End Function
 End Class

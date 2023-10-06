@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
-Public Class frmAccountOpening
+Public Class frmChAccountOpening
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
     Private Sub btnMelting_Click(sender As Object, e As EventArgs) Handles btnMelting.Click
@@ -21,7 +21,7 @@ Public Class frmAccountOpening
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub btnUsedBags_Click(sender As Object, e As EventArgs) Handles btnBagCreated.Click
+    Private Sub btnUsedBags_Click(sender As Object, e As EventArgs) Handles btnBagReceived.Click
         Try
             Show_ChildForm("frmOpStockBags", Me.MdiParent, Me.Tag)
         Catch ex As Exception
@@ -724,5 +724,12 @@ Public Class frmAccountOpening
 
         OpGrossPr = Format((Val(dTotalFw) / Val(dTotalWt)) * 100, "0.00")
 
+    End Sub
+
+    Private Sub BtnBhukaBagNotUpdaed_Click(sender As Object, e As EventArgs) Handles BtnBhukaBagNotUpdaed.Click
+        Try
+            Show_ChildForm("frmOpStockBagsNotUpdated", Me.MdiParent, Me.Tag)
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

@@ -1,5 +1,7 @@
-Imports System.Data.SqlClient
-
+Imports Microsoft.Reporting.WinForms
+Imports System.Drawing.Printing
+Imports System.IO
+Imports System.Runtime.CompilerServices
 Module Functions
     Declare Function SetParent Lib "user32" (ByVal hWndChild As Integer, ByVal hWndNewParent As Integer) As Integer
     Declare Sub keybd_event Lib "user32" (ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
@@ -7,6 +9,9 @@ Module Functions
     Public Const LOCALE_SSHORTDATE = &H1F
     Public Declare Function GetSystemDefaultLCID Lib "kernel32" () As Long
     Public Declare Function SetLocaleInfo Lib "kernel32" Alias "SetLocaleInfoA" (ByVal Locale As Long, ByVal LCType As Long, ByVal lpLCData As String) As Boolean
+
+    Private m_streams As List(Of Stream)
+    Private m_currentPageIndex As Integer = 0
     Public Enum FormState
         AStateMode = 0
         EStateMode = 1
@@ -14,10 +19,10 @@ Module Functions
     End Enum
     '---LOGIN---
     Public UserId As Integer                'Used for Userid while login
-    Public UserName As String               'User for UserName while Login
-    Public UserType As String               'User for USERTYPE while Login (SUPER, ADMIN, USER)
-    Public KarigarName As String
-    Public DeptId As Int16                  'User for
+    Public UserName As String               'Used for UserName while Login
+    Public UserType As String               'Used for USERTYPE while Login (SUPER, ADMIN, USER)
+    Public KarigarName As String            'Used for Labour Name
+    Public DeptId As Int16                  'Used for DeptId
 
     '---VARIABLE---
     Public dtUserRights As DataTable          'USED FOR USER RIGHTS THROUGHOUT THE APPLICATION 
@@ -38,7 +43,6 @@ Module Functions
     Public OpGrossWt As Double = 0
     Public OpGrossPr As Double = 0
     Public OpGrossFw As Double = 0
-
 
 #Region "KEYPRESS"
     Sub numkeypress(ByVal han As KeyPressEventArgs, ByVal sen As Control, ByVal frm As System.Windows.Forms.Form)
@@ -262,7 +266,7 @@ Module Functions
                                 Optional ByVal Def_Rowsdiplayed As Short = 0
                                 )
         Try
-            With frmSearchengine
+            With frmShowSearchengine
                 .Clear_Values()
                 .Req_Ctrl = Req_Ctrl
                 .Req_Qry = Req_Qry
@@ -318,6 +322,66 @@ Module Functions
 
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            'AddHandler objForm.Load, AddressOf frmMain.Childfrm_Load
         End Try
     End Sub
+
+    <Extension()>
+    Sub PrintToPrinter(ByVal report As LocalReport)
+        Dim pageSettings As PageSettings = New PageSettings()
+
+        pageSettings.PrinterSettings.DefaultPageSettings.PaperSize = New PaperSize("Custom", 650, 325)
+
+        Print(report, pageSettings)
+    End Sub
+
+    <Extension()>
+    Sub Print(ByVal report As LocalReport, ByVal pageSettings As PageSettings)
+
+        Dim deviceInfo As String = $"<DeviceInfo>
+                    <OutputFormat>EMF</OutputFormat>
+                    <PageWidth>{pageSettings.PaperSize.Width * 100}in</PageWidth>
+                    <PageHeight>{pageSettings.PaperSize.Height * 100}in</PageHeight>
+                    <MarginTop>{pageSettings.Margins.Top * 100}in</MarginTop>
+                    <MarginLeft>{pageSettings.Margins.Left * 100}in</MarginLeft>
+                    <MarginRight>{pageSettings.Margins.Right * 100}in</MarginRight>
+                    <MarginBottom>{pageSettings.Margins.Bottom * 100}in</MarginBottom>
+                </DeviceInfo>"
+
+        Dim warnings As Warning()
+        Dim streams = New List(Of Stream)()
+        Dim pageIndex = 0
+        report.Render("Image", deviceInfo, Function(name, fileNameExtension, encoding, mimeType, willSeek)
+                                               Dim stream As MemoryStream = New MemoryStream()
+                                               streams.Add(stream)
+                                               Return stream
+                                           End Function, warnings)
+
+        For Each stream As Stream In streams
+            stream.Position = 0
+        Next
+
+        If streams Is Nothing OrElse streams.Count = 0 Then Throw New Exception("No stream to print.")
+
+        Using printDocument As PrintDocument = New PrintDocument()
+            printDocument.DefaultPageSettings = pageSettings
+
+            If Not printDocument.PrinterSettings.IsValid Then
+                Throw New Exception("Can't find the default printer.")
+            End If
+        End Using
+    End Sub
+    Public Function fnEnCryptDeCrypt(ByVal Text As String) As String
+        Dim strTempChar As String = "", i As Integer
+        For i = 1 To Len(Text)
+            If Asc(Mid$(Text, i, 1)) < 128 Then
+                strTempChar = CType(Asc(Mid$(Text, i, 1)) + 128, String)
+            ElseIf Asc(Mid$(Text, i, 1)) > 128 Then
+                strTempChar = CType(Asc(Mid$(Text, i, 1)) - 128, String)
+            End If
+            Mid$(Text, i, 1) = Chr(CType(strTempChar, Integer))
+        Next i
+        Return Text
+    End Function
 End Module

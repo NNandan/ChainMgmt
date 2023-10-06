@@ -33,7 +33,7 @@ Public Class frmPendingVoucher
 
         Dim totalPr As GridViewSummaryItem = New GridViewSummaryItem("colReceivePr", "{0: 0.00}", GridAggregateFunction.None)
 
-        totalPr.AggregateExpression = "(Sum(colFineWt) / Sum(colBalanceWt)  * 100)"
+        totalPr.AggregateExpression = "(Sum(colFineWt) / Sum(colIssueWt)  * 100)"
 
         Dim totalRow As GridViewSummaryRowItem = New GridViewSummaryRowItem(New GridViewSummaryItem() {totalNameItem, totalItemGWt, totalItemGFt, totalPr, totalItemBWt})
         Me.dgvMeltingBagList.SummaryRowsBottom.Add(totalRow)
@@ -42,14 +42,13 @@ Public Class frmPendingVoucher
 
     End Sub
     Private Function FetchAllRecords() As DataTable
-
         Dim dtData As DataTable = New DataTable()
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "GetStockData", DbType.String))
             End With
 

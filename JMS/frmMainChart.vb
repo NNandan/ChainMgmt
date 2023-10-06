@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Imports DataAccessHandler
 Imports System.ComponentModel
+Imports System.IO
+Imports Microsoft.Reporting.WinForms
+
 Public Class frmMainChart
     Dim USERADD, USEREDIT, USERVIEW, USERDELETE As Boolean      'USED FOR RIGHT MANAGEMAENT
 
@@ -14,6 +17,7 @@ Public Class frmMainChart
     Dim dbManager As New SqlHelper()
     Dim Objcn As SqlConnection = New SqlConnection()
     Dim iItemId As Int16
+
     Private Property Fr_Mode() As FormState
         Get
             Return mFr_State
@@ -36,6 +40,7 @@ Public Class frmMainChart
     Private Sub frmMainChart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.fillLotNo()
         Me.Clear_Form()
+        Me.fillPartyName()
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not Common_Validate_Fields() Then Exit Sub
@@ -43,11 +48,11 @@ Public Class frmMainChart
         Try
             If btnSave.Text = "&Save" Then
                 Me.SaveData()
+                Me.btnCancel_Click(sender, e)
             Else
                 Me.UpdateData()
+                Me.btnCancel_Click(sender, e)
             End If
-
-            Me.btnCancel_Click(sender, e)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -90,7 +95,7 @@ Public Class frmMainChart
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -142,6 +147,7 @@ Public Class frmMainChart
             cmbOperation.DataSource = dt
             cmbOperation.DisplayMember = "OperationName"
             cmbOperation.ValueMember = "OperationId"
+            cmbOperation.SelectedIndex = 0
 
             cmbOperation.AutoCompleteMode = AutoCompleteMode.SuggestAppend ' This is necessary
             cmbOperation.AutoCompleteDataSource = AutoCompleteSource.ListItems
@@ -179,6 +185,43 @@ Public Class frmMainChart
             cmbItem.DataSource = dt
             cmbItem.DisplayMember = "ItemName"
             cmbItem.ValueMember = "ItemId"
+
+            cmbItem.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbItem.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            dbManager.CloseConnection(connection)
+        End Try
+    End Sub
+    Private Sub fillPartyName()
+        Dim connection As SqlConnection = Nothing
+
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_PartyMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
+
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            'Insert the Default Item to DataTable.
+            Dim row As DataRow = dt.NewRow()
+            row(0) = 0
+            row(1) = "---Select---"
+            dt.Rows.InsertAt(row, 0)
+
+            'Assign DataTable as DataSource.
+            cmbPartyName.DataSource = dt
+            cmbPartyName.DisplayMember = "PartyName"
+            cmbPartyName.ValueMember = "PartyId"
 
             cmbItem.AutoCompleteMode = AutoCompleteMode.SuggestAppend
             cmbItem.AutoCompleteDataSource = AutoCompleteSource.ListItems
@@ -243,6 +286,58 @@ Public Class frmMainChart
 
         Return dtData
     End Function
+    'Private Function FetchAllRecords(sLotNo As String) As DataTable
+    '    Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum
+
+    '    Dim dtData As DataTable = New DataTable()
+    '    Dim NewDt As DataTable = New DataTable()
+
+    '    Try
+    '        Dim parameters = New List(Of SqlParameter)()
+    '        parameters.Clear()
+
+    '        With parameters
+    '            .Add(dbManager.CreateParameter("@ActionType", "PrintReceipt", DbType.String))
+    '            .Add(dbManager.CreateParameter("@TLotNo", Trim(sLotNo), DbType.String))
+    '        End With
+
+    '        dtData = dbManager.GetDataTable("SP_Transaction_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+    '        NewDt = dtData.Clone()
+
+    '        Dim dcolColumn As DataColumn = New DataColumn("BarCode", GetType(System.Byte()))
+    '        NewDt.Columns.Add(dcolColumn)
+
+    '        Dim Img As Image = barcode.Draw(Trim(cmbLotNo.Text.Trim), 50)
+    '        'PictureBox1.Image = Img
+
+    '        For Each sourcerow As DataRow In dtData.Rows
+    '            Dim destRow As DataRow = NewDt.NewRow()
+    '            destRow("TransactionId") = sourcerow("TransactionId")
+    '            destRow("TransactionDt") = sourcerow("TransactionDt")
+    '            destRow("LotNo") = sourcerow("LotNo")
+    '            destRow("ItemName") = sourcerow("ItemName")
+    '            destRow("ReceiveWt") = sourcerow("ReceiveWt")
+    '            destRow("ReceivePr") = sourcerow("ReceivePr")
+    '            destRow("LabourName") = sourcerow("LabourName")
+
+    '            If Img IsNot Nothing Then
+    '                Dim ms As MemoryStream = New MemoryStream()
+    '                Img.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
+    '                Dim imagedata As Byte() = ms.ToArray()
+    '                destRow("BarCode") = imagedata
+    '                'destRow("LotNo") = ms.ToArray()
+    '            End If
+    '            NewDt.Rows.Add(destRow)
+    '        Next
+
+    '    Catch ex As Exception
+    '        MessageBox.Show("Error:- " & ex.Message)
+    '    End Try
+
+    '    Return NewDt
+
+    'End Function
     Private Sub txtReceivedWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtReceiveWt.KeyPress
         numdotkeypress(e, txtReceiveWt, Me)
     End Sub
@@ -253,6 +348,13 @@ Public Class frmMainChart
         Dim strLotName As String = Nothing
         Dim intId As Integer = 0
         Dim intNewSelIndex As Integer = 0
+
+        Try
+            If e.KeyCode = Keys.Tab Then cmbOperation.Select()
+            ''If Len(Txt_Pat_Employer.Text) > 150 Then Txt_Pat_Employer.ScrollBars = ScrollBars.Both Else Txt_Pat_Employer.ScrollBars = ScrollBars.None
+        Catch ex As Exception
+
+        End Try
 
         If e.KeyCode = Keys.Delete Then
             If lvList.SelectedItems.Count = 0 Then
@@ -309,7 +411,7 @@ Public Class frmMainChart
         End If
     End Sub
     Private Sub txtSample_Enter(sender As Object, e As EventArgs) Handles txtSample.Enter
-        If cmbOperation.SelectedIndex = -1 Or cmbOperation.SelectedIndex = 0 Then
+        If cmbOperation.SelectedIndex = 0 Then
             MessageBox.Show("Please Fill Operation")
             cmbOperation.Focus()
         ElseIf txtReceiveWt.Text.Trim.Length = 0 Then
@@ -321,7 +423,7 @@ Public Class frmMainChart
         End If
     End Sub
     Private Sub txtBhuka_Enter(sender As Object, e As EventArgs)
-        If cmbOperation.SelectedIndex = -1 Or cmbOperation.SelectedIndex = 0 Then
+        If cmbOperation.SelectedIndex = 0 Then
             MessageBox.Show("Please Fill Operation")
             cmbOperation.Focus()
         ElseIf txtReceiveWt.Text.Trim.Length = 0 Then
@@ -330,7 +432,7 @@ Public Class frmMainChart
         End If
     End Sub
     Private Sub txtReceivedWt_Enter(sender As Object, e As EventArgs) Handles txtReceiveWt.Enter
-        If cmbOperation.SelectedIndex = -1 Then
+        If cmbOperation.SelectedIndex = 0 Then
             MessageBox.Show("Please Fill Operation")
             cmbOperation.Focus()
         End If
@@ -469,8 +571,10 @@ Public Class frmMainChart
                 .Add(dbManager.CreateParameter("@TSampleWt", Val(txtSample.Text), DbType.String))
                 .Add(dbManager.CreateParameter("@TVaccumeWt", Convert.ToString(txtVaccume.Text), DbType.String))
 
-                .Add(dbManager.CreateParameter("@TfLabourId", Val(txtFrKarigar.Tag), DbType.Int16))
-                .Add(dbManager.CreateParameter("@TtLabourId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
+                .Add(dbManager.CreateParameter("@TfLabourName", CStr(txtFrKarigar.Text.Trim), DbType.String))
+                .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
+
+                .Add(dbManager.CreateParameter("@TPartyName", CStr(cmbPartyName.Text.Trim), DbType.String))
 
                 If String.IsNullOrEmpty(txtLossWt.Text) = False Then
                     .Add(dbManager.CreateParameter("@TLossWt", Convert.ToString(txtLossWt.Text), DbType.String))
@@ -551,19 +655,19 @@ Public Class frmMainChart
         End Try
     End Sub
     Private Sub cmbLotNo_KeyDown(sender As Object, e As KeyEventArgs) Handles cmbLotNo.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Tab Then
             e.Handled = True
             cmbOperation.Focus()
         End If
     End Sub
     Private Sub cmbOperation_KeyDown(sender As Object, e As KeyEventArgs) Handles cmbOperation.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Tab Then
             e.Handled = True
             txtReceiveWt.Focus()
         End If
     End Sub
     Private Sub txtReceiveWt_KeyDown(sender As Object, e As KeyEventArgs) Handles txtReceiveWt.KeyDown
-        If e.KeyCode = Keys.Enter Then
+        If e.KeyCode = Keys.Tab Then
             txtBhukaWt.Focus()
         End If
     End Sub
@@ -611,7 +715,7 @@ Public Class frmMainChart
         End Try
     End Sub
     Private Sub txtBhukaWt_Enter(sender As Object, e As EventArgs) Handles txtBhukaWt.Enter
-        If cmbOperation.SelectedIndex = -1 Then
+        If cmbOperation.SelectedIndex = 0 Then
             MessageBox.Show("Please Fill Operation")
             cmbOperation.Focus()
         ElseIf txtReceiveWt.Text.Trim = "" Then
@@ -692,7 +796,7 @@ Public Class frmMainChart
         If cmbLotNo.Text.Trim = "" Then
             MessageBox.Show("Select LotNo")
             cmbLotNo.Focus()
-        ElseIf cmbOperation.SelectedIndex = -1 Then
+        ElseIf cmbOperation.SelectedIndex = 0 Then
             MessageBox.Show("Select Operation")
             cmbOperation.Focus()
         ElseIf txtReceiveWt.Text.Trim = "" Then
@@ -717,6 +821,7 @@ Public Class frmMainChart
         Try
             '' For Header Field Start
             txtTransNo.Clear()
+            TransDt.CustomFormat = "dd/MM/yyyy"
             TransDt.Value = DateTime.Now
 
             btnSave.Text = "&Save"
@@ -776,8 +881,8 @@ Public Class frmMainChart
                 MessageBox.Show("Select Lot No !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbLotNo.Focus()
                 Return False
-            ElseIf cmbOperation.SelectedIndex = -1 Then
-                MessageBox.Show("Select Operation Name !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+            ElseIf cmbOperation.SelectedIndex = 0 Then
+                MessageBox.Show("Select Operation !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbOperation.Focus()
                 Return False
             ElseIf Val(txtReceiveWt.Text.Trim.Length) = 0 Then
@@ -836,7 +941,62 @@ Public Class frmMainChart
             If (MsgBox("[DELETION] Are You Sure To Delete This Entry ?", vbYesNo + vbDefaultButton2 + vbQuestion, "Attn : " + UserName.Trim()) = vbYes) Then
                 Try
                     Me.DeleteData()
+                    Dim LotNo As String = Nothing
+                    LotNo = cmbLotNo.Text.ToString
                     Me.btnCancel_Click(sender, e)
+                    cmbLotNo.Text = LotNo
+                    Dim parameters = New List(Of SqlParameter)()
+
+                    With parameters
+                        .Clear()
+                        .Add(dbManager.CreateParameter("@ActionType", "SelectLotNo", DbType.String))
+                        .Add(dbManager.CreateParameter("@TLotNo", cmbLotNo.Text.Trim(), DbType.String))
+                    End With
+
+                    Dim dr As SqlDataReader = dbManager.GetDataReader("SP_Transaction_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+
+                    lvList.Items.Clear()
+
+                    Try
+
+                        If dr.HasRows Then
+                            lvList.BeginUpdate()
+                            While dr.Read
+                                Dim lvi As ListViewItem = New ListViewItem(dr("TransId").ToString())
+                                lvi.SubItems.Add(dr("LotNo").ToString())
+                                lvi.SubItems.Add(dr("OperationName").ToString())
+                                lvi.SubItems.Add(dr("IssuePr").ToString())
+                                lvi.SubItems.Add(dr("IssueWt").ToString())
+                                lvi.SubItems.Add(dr("ReceiveWt").ToString())
+                                lvi.SubItems.Add(dr("BhukaWt").ToString())
+                                lvi.SubItems.Add(dr("SampleWt").ToString())
+                                lvi.SubItems.Add(dr("ReceivePr").ToString())
+                                lvi.SubItems.Add(dr("LossWt").ToString())
+                                lvi.SubItems.Add(dr("VacuumWt").ToString())
+                                lvi.SubItems.Add(dr("FrLabour").ToString())
+                                lvi.SubItems.Add(dr("ToLabour").ToString())
+                                lvi.SubItems.Add(dr("LotNoDone").ToString())
+                                lvi.SubItems.Add(dr("OperationId").ToString())
+                                lvList.Items.Add(lvi)
+                            End While
+                            lvList.EndUpdate()
+                        End If
+
+                        If lvList.Items.Count > 0 Then
+                            lvList.Items(0).Selected = True
+                        End If
+
+                        Me.fillOperationType()
+
+                        cmbOperation.Focus()
+                        cmbOperation.Select()
+
+                    Catch ex As Exception
+                        MessageBox.Show("Error:- " & ex.Message)
+                    Finally
+                        dr.Close()
+                        Objcn.Close()
+                    End Try
                 Catch ex As Exception
                     MessageBox.Show("Error:- " & ex.Message)
                 End Try
@@ -871,7 +1031,7 @@ Public Class frmMainChart
 
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
     Private Function CheckSampleBag(ByVal Trn_ID As Integer) As Boolean
@@ -933,7 +1093,7 @@ Public Class frmMainChart
 
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
     Private Function CheckLotTransferUsed(ByVal Trn_ID As Integer) As Boolean
@@ -1095,9 +1255,60 @@ Public Class frmMainChart
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Try
+            Me.Cursor = Cursors.WaitCursor
+
+            Dim rds1 As ReportDataSource = New ReportDataSource()
+            rds1.Name = "DataSet_Report"
+            rds1.Value = FetchAllRecords(cmbLotNo.Text.Trim)
+
+            '' Dynaimc Path
+            Dim path As String = Directory.GetCurrentDirectory()
+            Dim replace As String = path.Replace("\bin\Debug", "") & "\App_Data\" & "ReportExtraMove.rdlc"
+            Dim CRPath As String = System.IO.Path.GetDirectoryName(Application.StartupPath) & "\..\..\MainFolder\"
+            'report.Load(CRPath & "Sales_Report.rpt")
+            ''
+            Dim report As LocalReport = New LocalReport()
+
+            Dim path2 As String = Application.StartupPath & "\Report\RptReceipt.rdlc"
+
+            report.ReportPath = path
+
+            ''report.DataSources.Clear()
+            ''report.DataSources.Add(rds1)
+            ''PrintToPrinter(report)
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            Me.Cursor = Cursors.Default
+        End Try
+
+        'Dim sLotNo As String = Nothing
+        'sLotNo = cmbLotNo.Text.Trim
+        'Dim frm As New frmRptViewer(sLotNo)
+        'frm.ShowDialog()
+        'frm.BringToFront()
+        'frm.Focus()
+
+        'Try
+        '    Me.PrintRpt()
+        'Catch ex As Exception
+        '    MessageBox.Show("Error:- " & ex.Message)
+        'Finally
+        '    Me.Cursor = Cursors.Default
+        'End Try
+
+    End Sub
     Private Sub txtReceiveWt_Validating(sender As Object, e As CancelEventArgs) Handles txtReceiveWt.Validating
         Try
-            If Not txtOprationType.Tag = 5 Then
+            If txtReceiveWt.Text.Trim.Length = 0 Then
+                MessageBox.Show("Enter Receive Wt. !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                txtReceiveWt.Focus()
+                Exit Sub
+            End If
+
+            If Not Val(txtOprationType.Tag) = 5 Then
                 If Val(txtReceiveWt.Text.Trim) > Val(txtIssueWt.Text.Trim) Then
                     e.Cancel = True
                     MsgBox("Receive Wt. Cannot be Greater than Issue Wt.", MsgBoxStyle.Critical)
@@ -1108,6 +1319,46 @@ Public Class frmMainChart
             Throw ex
         End Try
 
+    End Sub
+    Private Sub PrintRpt()
+        Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum
+
+        Dim Img As Image = barcode.Draw(Trim(cmbLotNo.Text), 20)
+
+        'for item sales 
+        Dim dtItem As DataTable
+
+        'declaring printing format class
+        Dim c As New PrintingFormat
+
+        Printer.NewPrint()
+
+        Printer.Print(Img, 75, 25)
+
+        ''spacing
+        Printer.Print(" ")
+
+        dtItem = New DataTable
+
+        dtItem = FetchAllRecords(cmbLotNo.Text.Trim)
+
+        Printer.SetFont("Courier New", 9, FontStyle.Bold)
+        Printer.Print(dtItem.Rows(0).Item("TransactionDt"))
+        Printer.Print("Lot No.  :" & dtItem.Rows(0).Item("LotNo"))
+        Printer.Print("Item     :" & dtItem.Rows(0).Item("ItemName"))
+        Printer.Print("Rec Wt.  :" & dtItem.Rows(0).Item("ReceiveWt"))
+        Printer.Print("Rec %    :" & dtItem.Rows(0).Item("ReceivePr"))
+        Printer.Print("Employee :" & dtItem.Rows(0).Item("LabourName"))
+
+        'Release the job for actual printing
+        Printer.DoPrint()
+    End Sub
+
+    Private Sub cmbTLabour_KeyDown(sender As Object, e As KeyEventArgs) Handles cmbTLabour.KeyDown
+        If e.KeyCode = Keys.Tab Then
+            e.Handled = True
+            btnSave.Focus()
+        End If
     End Sub
     Private Function Validate_OperationsTypeFields() As Boolean
         Dim dblNewVaccumWt As Double
@@ -1206,4 +1457,58 @@ Public Class frmMainChart
             MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
+
+    Private Function FetchAllRecords(sLotNo As String) As DataTable
+        Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum
+
+        Dim dtData As DataTable = New DataTable()
+        Dim NewDt As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "PrintReceipt", DbType.String))
+                .Add(dbManager.CreateParameter("@TLotNo", Trim(sLotNo), DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_Transaction_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+            NewDt = dtData.Clone()
+
+            Dim dcolColumn As DataColumn = New DataColumn("BarCode", GetType(System.Byte()))
+            NewDt.Columns.Add(dcolColumn)
+
+            Dim Img As Image = barcode.Draw(Trim(cmbLotNo.Text.Trim), 20)
+            'PictureBox1.Image = Img
+
+            For Each sourcerow As DataRow In dtData.Rows
+                Dim destRow As DataRow = NewDt.NewRow()
+                destRow("TransactionId") = sourcerow("TransactionId")
+                destRow("TransactionDt") = sourcerow("TransactionDt")
+                destRow("LotNo") = sourcerow("LotNo")
+                destRow("ItemName") = sourcerow("ItemName")
+                destRow("ReceiveWt") = sourcerow("ReceiveWt")
+                destRow("ReceivePr") = sourcerow("ReceivePr")
+                destRow("LabourName") = sourcerow("LabourName")
+                If Img IsNot Nothing Then
+                    Dim ms As MemoryStream = New MemoryStream()
+                    Img.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
+                    Dim imagedata As Byte() = ms.ToArray()
+                    destRow("BarCode") = imagedata
+                    'destRow("LotNo") = ms.ToArray()
+                End If
+                NewDt.Rows.Add(destRow)
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return NewDt
+
+    End Function
+
+
 End Class

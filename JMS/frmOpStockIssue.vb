@@ -34,18 +34,56 @@ Public Class frmOpStockIssue
             End Select
         End Set
     End Property
-    Private Sub frmOpeningStock_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frmOpeningStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Clear_Form()
         Me.filltemName()
+        Me.fillParty()
+        Me.bindDataGridView()
     End Sub
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
+
+        Try
+            dgvStockIssueList.DataSource = dtdata
+            dgvStockIssueList.EnableFiltering = True
+            dgvStockIssueList.MasterTemplate.ShowFilteringRow = False
+            dgvStockIssueList.MasterTemplate.ShowHeaderCellButtons = True
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Function fetchAllRecords() As DataTable
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchOStockIssueData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_OpStockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+
+    End Function
     Private Sub filltemName()
 
         Dim connection As SqlConnection = Nothing
 
         Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillItemName", DbType.String))
+        End With
+
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_ItemMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
 
         Dim dt As DataTable = New DataTable()
@@ -72,6 +110,40 @@ Public Class frmOpStockIssue
             dbManager.CloseConnection(connection)
         End Try
     End Sub
+    Private Sub fillParty()
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillPartyCmb", DbType.String))
+        End With
+
+        Dim dr = dbManager.GetDataReader("SP_PartyMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
+        Dim dt As DataTable = New DataTable()
+
+        dt.Load(dr)
+
+        Try
+            ''Insert the Default Item to DataTable.
+            Dim trow As DataRow = dt.NewRow()
+            trow(0) = 0
+            trow(1) = "---Select---"
+            dt.Rows.InsertAt(trow, 0)
+
+            cmbParty.DataSource = dt
+            cmbParty.DisplayMember = "PartyName"
+            cmbParty.ValueMember = "PartyId"
+
+            'Set AutoCompleteMode.
+            cmbParty.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbParty.AutoCompleteDataSource = AutoCompleteSource.ListItems
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            dr.Close()
+            Objcn.Close()
+        End Try
+    End Sub
     Private Function ChkDuplicate() As Boolean
         Dim exists As Boolean = False
 
@@ -86,16 +158,16 @@ Public Class frmOpStockIssue
         Return exists
 
     End Function
-    Private Sub txtIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtIssueWt.TextChanged
+    Private Sub txtIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtGrossWt.TextChanged
         Try
-            txtFineWt.Text = Format((Val(txtIssueWt.Text) * Val(txtIssuePr.Text)) / 100, "0.000")
+            txtFineWt.Text = Format((Val(txtGrossWt.Text) * Val(txtGrossPr.Text)) / 100, "0.000")
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-    Private Sub txtIssuePr_TextChanged(sender As Object, e As EventArgs) Handles txtIssuePr.TextChanged
+    Private Sub txtIssuePr_TextChanged(sender As Object, e As EventArgs) Handles txtGrossPr.TextChanged
         Try
-            txtFineWt.Text = Format((Val(txtIssueWt.Text) * Val(txtIssuePr.Text)) / 100, "0.000")
+            txtFineWt.Text = Format((Val(txtGrossWt.Text) * Val(txtGrossPr.Text)) / 100, "0.000")
         Catch ex As Exception
             Throw ex
         End Try
@@ -114,8 +186,8 @@ Public Class frmOpStockIssue
             cmbItem.Text = ""
             cmbItem.Enabled = True
 
-            txtIssueWt.Clear()
-            txtIssuePr.Clear()
+            txtGrossWt.Clear()
+            txtGrossPr.Clear()
             txtNarration.Clear()
             txtNarration.Clear()
 
@@ -145,13 +217,13 @@ Public Class frmOpStockIssue
     End Sub
     Private Sub Btn_Find_Click(sender As Object, e As EventArgs) Handles Btn_Find.Click
         Try
-            If txtVocucherNo.Text.Trim = "" Then
-                Dim Sql As String
-                Dim Colwidth As String = ""
-                Colwidth = "75|200|50|"
-                Sql = "SELECT     [Bank Name], BankAcc_ID AS [bank Account ID], Acc_No AS [Account No], Acc_Balance AS [Balance Amount]  FROM Get_Bank_Account_Master_Vw where Br_Code = " & txtVocucherNo.Text & ""
-                Call ShowSearchengine(TextBox1, Sql, 1, "Account Name", Colwidth, , 0)
-            End If
+            'If txtVocucherNo.Text.Trim = "" Then
+            '    Dim Sql As String
+            '    Dim Colwidth As String = ""
+            '    Colwidth = "75|200|50|"
+            '    Sql = "SELECT     [Bank Name], BankAcc_ID AS [bank Account ID], Acc_No AS [Account No], Acc_Balance AS [Balance Amount]  FROM Get_Bank_Account_Master_Vw where Br_Code = " & txtVocucherNo.Text & ""
+            '    Call ShowSearchengine(TextBox1, Sql, 1, "Account Name", Colwidth, , 0)
+            'End If
 
             'Validating Mandatory fields for locating
             If txtVocucherNo.Text.Trim = "" Then
@@ -170,33 +242,41 @@ Public Class frmOpStockIssue
         End Try
     End Sub
     Sub fillGrid()
+
         If GridDoubleClick = False Then
             dgvStockIssue.Rows.Add(Val(txtSrNo.Text.Trim),
-                                    Val(cmbItem.SelectedValue),
-                                    cmbItem.Text.Trim(),
-                                    Format(Val(txtIssueWt.Text.Trim), "0.00"),
-                                    Format(Val(txtIssuePr.Text.Trim), "0.00"),
-                                    Format(Val(txtFineWt.Text.Trim), "0.000"),
-                                    CStr(txtNarration.Text.Trim))
+                                    cmbItem.SelectedValue,
+                                    cmbItem.Text.Trim,
+                                    Format(CDbl(txtGrossWt.Text.Trim), "0.00"),
+                                    Format(CDbl(txtGrossPr.Text.Trim), "0.00"),
+                                    Format(CDbl(txtFineWt.Text.Trim), "0.000"),
+                                    cmbParty.SelectedValue,
+                                    cmbParty.Text.Trim,
+                                    CStr(txtNarration.Text.Trim()))
             GetSrNo(dgvStockIssue)
         Else
             dgvStockIssue.Rows(TempRow).Cells(0).Value = txtSrNo.Text.Trim
-            dgvStockIssue.Rows(TempRow).Cells(1).Value = cmbItem.SelectedIndex
+            dgvStockIssue.Rows(TempRow).Cells(1).Value = cmbItem.SelectedValue
             dgvStockIssue.Rows(TempRow).Cells(2).Value = cmbItem.Text.Trim
-            dgvStockIssue.Rows(TempRow).Cells(3).Value = Format(CDbl(txtIssueWt.Text.Trim), "0.00")
-            dgvStockIssue.Rows(TempRow).Cells(4).Value = Format(CDbl(txtIssuePr.Text.Trim), "0.00")
-            dgvStockIssue.Rows(TempRow).Cells(5).Value = Format(CDbl(txtFineWt.Text.Trim), "0.00")
-            dgvStockIssue.Rows(TempRow).Cells(6).Value = CStr(txtNarration.Text.Trim)
+            dgvStockIssue.Rows(TempRow).Cells(3).Value = Format(CDbl(txtGrossWt.Text.Trim), "0.00")
+            dgvStockIssue.Rows(TempRow).Cells(4).Value = Format(CDbl(txtGrossPr.Text.Trim), "0.00")
+            dgvStockIssue.Rows(TempRow).Cells(5).Value = Format(CDbl(txtFineWt.Text.Trim), "0.000")
+            dgvStockIssue.Rows(TempRow).Cells(6).Value = cmbParty.SelectedValue
+            dgvStockIssue.Rows(TempRow).Cells(7).Value = cmbParty.Text.Trim
+            dgvStockIssue.Rows(TempRow).Cells(8).Value = CStr(txtNarration.Text.Trim)
+            GridDoubleClick = False
         End If
-
+        ' Me.Total()
         dgvStockIssue.TableElement.ScrollToRow(dgvStockIssue.Rows.Last)
 
         txtSrNo.Text = dgvStockIssue.RowCount + 1
         cmbItem.SelectedIndex = 0
-        txtIssueWt.Clear()
-        txtIssuePr.Clear()
+        txtGrossWt.Clear()
+        txtGrossPr.Clear()
+        txtFineWt.Clear()
+        cmbParty.SelectedIndex = 0
         txtNarration.Clear()
-        txtNarration.Clear()
+        cmbItem.Focus()
     End Sub
     Sub GetSrNo(ByRef grid As Telerik.WinControls.UI.RadGridView)
         Try
@@ -207,14 +287,17 @@ Public Class frmOpStockIssue
             Throw ex
         End Try
     End Sub
-    Private Sub SaveData()
+    Private Function SaveData() As DataTable
+        Dim Dt As DataTable = Nothing
+
         Dim alParaval As New ArrayList
 
         Dim GridSrNo As String = Nothing
-        Dim ItemId As String = Nothing
+        Dim ItemName As String = Nothing
         Dim IssueWt As String = Nothing
         Dim IssuePr As String = Nothing
         Dim FineWt As String = Nothing
+        Dim PartyName As String = Nothing
         Dim Narration As String = Nothing
 
         Dim IRowCount As Integer = 0
@@ -224,36 +307,40 @@ Public Class frmOpStockIssue
         alParaval.Add(TransDt.Value.ToString())
         alParaval.Add(1)
         alParaval.Add(4)
+        alParaval.Add(100)
+        alParaval.Add(100)
         alParaval.Add(txtVocucherNo.Text.Trim)
-        alParaval.Add(100)
-        alParaval.Add(100)
+
 
         ''For Details
         For Each row As GridViewRowInfo In dgvStockIssue.Rows
             If row.Cells(0).Value <> Nothing Then
                 If GridSrNo = "" Then
                     GridSrNo = Val(row.Cells(0).Value)
-                    ItemId = Val(row.Cells(1).Value)
+                    ItemName = row.Cells(2).Value.ToString()
                     IssueWt = Val(row.Cells(3).Value)
                     IssuePr = Val(row.Cells(4).Value)
-                    FineWt = Val(row.Cells(5).Value)
-                    Narration = Convert.ToString(row.Cells(6).Value)
+                    FineWt = Convert.ToDouble(row.Cells(5).Value)
+                    PartyName = row.Cells(7).Value.ToString
+                    Narration = Convert.ToString(row.Cells(8).Value)
                 Else
                     GridSrNo = GridSrNo & "|" & Val(row.Cells(0).Value)
-                    ItemId = ItemId & "|" & Val(row.Cells(1).Value)
+                    ItemName = ItemName & "|" & row.Cells(2).Value.ToString()
                     IssueWt = IssueWt & "|" & Val(row.Cells(3).Value)
                     IssuePr = IssuePr & "|" & Val(row.Cells(4).Value)
                     FineWt = FineWt & "|" & Val(row.Cells(5).Value)
-                    Narration = Narration & "|" & Convert.ToString(row.Cells(6).Value)
+                    PartyName = PartyName & "|" & row.Cells(7).Value.ToString()
+                    Narration = Narration & "|" & Convert.ToString(row.Cells(8).Value)
                 End If
             End If
             IRowCount += 1
         Next
 
-        alParaval.Add(ItemId)
+        alParaval.Add(ItemName)
         alParaval.Add(IssueWt)
         alParaval.Add(IssuePr)
         alParaval.Add(FineWt)
+        alParaval.Add(PartyName)
         alParaval.Add(Narration)
 
         Try
@@ -268,55 +355,59 @@ Public Class frmOpStockIssue
                 .Add(dbManager.CreateParameter("@HtDeptId", alParaval.Item(iValue), DbType.Int16))
                 iValue += 1
 
-                .Add(dbManager.CreateParameter("@HVoucherNo", alParaval.Item(iValue), DbType.String))
-                iValue += 1
-
                 .Add(dbManager.CreateParameter("@HFrKarigarId", alParaval.Item(iValue), DbType.Int16))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HToKarigarId", alParaval.Item(iValue), DbType.Int16))
                 iValue += 1
 
+                .Add(dbManager.CreateParameter("@HVoucherNo", alParaval.Item(iValue), DbType.String))
+                iValue += 1
                 .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
                 .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
                 .Add(dbManager.CreateParameter("@HIsOpening", 0, DbType.Boolean))
 
-                .Add(dbManager.CreateParameter("@DItemId", alParaval.Item(iValue), DbType.String))
+                .Add(dbManager.CreateParameter("@DItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DIssueWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DIssuePr", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-
                 .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-
+                .Add(dbManager.CreateParameter("@DPartyName", alParaval.Item(iValue), DbType.String))
+                iValue += 1
                 .Add(dbManager.CreateParameter("@DNarration", alParaval.Item(iValue), DbType.String))
                 iValue += 1
             End With
 
-            dbManager.Insert("SP_StockIssue_Save", CommandType.StoredProcedure, Hparameters.ToArray())
+            Dt = dbManager.GetDataTable("SP_OStockIssue_Save", CommandType.StoredProcedure, Hparameters.ToArray())
 
-            MessageBox.Show("Data Saved !!!", Product_Name, MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            Cursor.Current = Cursors.Default
         End Try
-    End Sub
+
+        Return Dt
+
+    End Function
     Private Sub TextBox1_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyDown
         Try
             If e.KeyCode = Keys.F1 Then Call Btn_Find_Click(Nothing, Nothing)
         Catch ex As Exception
         End Try
     End Sub
-    Private Sub txtIssueWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIssueWt.KeyPress
-        numdotkeypress(e, txtIssueWt, Me)
+    Private Sub txtIssueWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGrossWt.KeyPress
+        numdotkeypress(e, txtGrossWt, Me)
     End Sub
-    Private Sub txtIssuePr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIssuePr.KeyPress
-        numdotkeypress(e, txtIssuePr, Me)
+    Private Sub txtIssuePr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtGrossPr.KeyPress
+        numdotkeypress(e, txtGrossPr, Me)
     End Sub
     Private Sub txtNarration_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNarration.Validating
         Try
-            If cmbItem.Text.Trim <> "" And txtIssueWt.Text.Trim <> "" And Val(txtIssueWt.Text.Trim) > 0 And Val(txtIssuePr.Text.Trim) > 0 Then
+            If cmbItem.Text.Trim <> "" And txtGrossWt.Text.Trim <> "" And Val(txtGrossWt.Text.Trim) > 0 And Val(txtGrossPr.Text.Trim) > 0 Then
 
                 'ErrorProvider1.SetError(txtRequirePr, "")
 
@@ -334,11 +425,119 @@ Public Class frmOpStockIssue
             Throw ex
         End Try
     End Sub
+
+    Private Sub fillHeaderFromListView(ByVal intIssueId As Integer)
+
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
+            .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_StockIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+
+        If dr.HasRows = False Then
+            Exit Sub
+        Else
+            dr.Read()
+            txtVocucherNo.Tag = dr.Item("IssueId").ToString()
+            txtVocucherNo.Text = dr.Item("VoucherNo").ToString()
+            TransDt.Text = dr.Item("IssueDt").ToString()
+            'cmbfDepartment.SelectedIndex = dr.Item("FrDeptId").ToString()
+            'cmbtDepartment.SelectedIndex = dr.Item("ToDeptId").ToString()
+            'txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString()
+            'txtFrKarigar.Text = dr.Item("FrKarigar").ToString()
+
+            'cmbtKarigar.SelectedIndex = dr.Item("ToKarigarId").ToString()
+            'cmbtKarigar.Text = CStr(dr.Item("ToKarigar"))
+        End If
+
+        dr.Close()
+        Objcn.Close()
+
+        Exit Sub
+ErrHandler:
+        MsgBox(Err.Description, MsgBoxStyle.Critical)
+    End Sub
+    Private Sub fillDetailsFromListView(ByVal intIssueId As Integer)
+        Dim dttable As New DataTable
+        dttable = fetchAllRecords(CInt(intIssueId))
+
+        For Each ROW As DataRow In dttable.Rows
+            dgvStockIssue.Rows.Add(1, Val(ROW("ItemId")), CStr(ROW("ItemName")), Format(Val(ROW("IssueWt")), "0.00"), Format(Val(ROW("IssuePr")), "0.00"), Format(Val(ROW("FineWt")), "0.000"), Val(ROW("PartyId")), CStr(ROW("PartyName")), CStr(ROW("Narration")))
+        Next
+
+        Me.GetSrNo(dgvStockIssue)
+        'Me.Total()
+
+        dgvStockIssue.ReadOnly = True
+
+    End Sub
+    'Sub Total()
+    '    Dim sRPrTotal As Single = 0
+
+    '    Try
+    '        lblTotalIssueWt.Text = 0.00
+    '        lblTotalIssuePr.Text = 0.00
+    '        lblTotalFineWt.Text = 0.000
+    '        For Each row As GridViewRowInfo In dgvIssue.Rows
+    '            lblTotalIssueWt.Text = Format(Val(lblTotalIssueWt.Text) + Val(row.Cells(3).Value), "0.00")
+    '            lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(5).Value), "0.000")
+    '        Next
+
+    '        If lblTotalFineWt.Text > 0 Then
+    '            sRPrTotal = Format((Val(lblTotalFineWt.Text) / Val(lblTotalIssueWt.Text)) * 100, "0.000")
+    '        End If
+
+    '        lblTotalIssuePr.Text = Format(sRPrTotal, "0.00")
+
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Sub
+    Private Function fetchAllRecords(ByVal intIssueId As Integer) As DataTable
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
+                .Add(dbManager.CreateParameter("@ActionType", "FetchDetailRecord", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_StockIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+    End Function
+    Sub MessageBoxTimer(ByVal strMsg As String)
+        Dim AckTime As Integer, InfoBox As Object
+        InfoBox = CreateObject("WScript.Shell")
+        'Set the message box to close after 1 seconds
+        AckTime = 1
+        Select Case InfoBox.Popup("Click OK (Chain Saved Successfully With New Lot Number = " & strMsg.ToString(),
+        AckTime, "Newly Created Lot Number", 0)
+            Case 1, -1
+                Exit Sub
+        End Select
+    End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        'If Not Validate_Fields() Then Exit Sub
+        Dim TmpLotNo As String = Nothing
         Try
             If Fr_Mode = FormState.AStateMode Then
-                Me.SaveData()
+                Dim Dt As DataTable = Me.SaveData()
+
+                TmpLotNo = Dt.Rows(0).Item(0)
+
+                MessageBoxTimer(TmpLotNo)
+
                 Me.btnCancel_Click(sender, e)
             Else
                 'Me.UpdateData()
@@ -349,7 +548,7 @@ Public Class frmOpStockIssue
             MessageBox.Show("Error:- " & ex.Message)
         End Try
     End Sub
-    Private Sub frmOpStockIssue_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+    Private Sub frmOpStockIssue_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit
                 If MsgBox("Wish To Exit?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then

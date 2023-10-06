@@ -43,107 +43,6 @@ Public Class frmLotAdditionFinal
         Me.Clear_Form()
 
     End Sub
-    Private Sub txtTotalIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtTotalIssueWt.TextChanged
-        Try
-            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtTotalReceiveWt.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtTotalIssueFine_TextChanged(sender As Object, e As EventArgs) Handles txtTotalIssueFine.TextChanged
-        Try
-            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtTotalReceiveFine.Text)), "0.00")
-            txtActualRecieveFine.Text = Format(Val(txtActualIssueFine.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtExtraRecieveWt_TextChanged(sender As Object, e As EventArgs) Handles txtTotalReceiveWt.TextChanged
-        Try
-            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtTotalReceiveWt.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtExtraRecieveFine_TextChanged(sender As Object, e As EventArgs) Handles txtTotalReceiveFine.TextChanged
-        Try
-            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtTotalReceiveFine.Text)), "0.00")
-            txtActualRecieveFine.Text = Format(Val(txtActualIssueFine.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtActualIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualIssueWt.TextChanged
-        Try
-            txtActualReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
-            txtReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
-
-            If rbKdm.Checked = True Then
-                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
-                txtPowder.Text = 0
-            Else
-                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
-                txtLoss.Text = 0
-            End If
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtActualIssueFine_TextChanged(sender As Object, e As EventArgs) Handles txtActualIssueFine.TextChanged
-        Try
-            txtActualReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
-            txtReceivePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtActualRecieveWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualRecieveWt.TextChanged
-        Try
-            txtActualIssuePr.Text = IIf(Val(txtActualRecieveFine.Text) = 0 Or Val(txtActualRecieveWt.Text) = 0, 0, Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00"))
-            txtActualIssuePr.Text = Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00")
-
-            If rbKdm.Checked = True Then
-                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
-                txtPowder.Text = 0
-            Else
-                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
-                txtLoss.Text = 0
-            End If
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtActualRecieveFine_TextChanged(sender As Object, e As EventArgs) Handles txtActualRecieveFine.TextChanged
-        Try
-            txtActualIssuePr.Text = IIf(Val(txtActualRecieveFine.Text) = 0 Or Val(txtActualRecieveWt.Text) = 0, 0, Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00"))
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtChain_TextChanged(sender As Object, e As EventArgs) Handles txtChain.TextChanged
-        Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
-            txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtBhuka_TextChanged(sender As Object, e As EventArgs) Handles txtBhuka.TextChanged
-        Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
-            txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Private Sub txtSample_TextChanged(sender As Object, e As EventArgs) Handles txtSample.TextChanged
-        Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
-            txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
     Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Telerik.WinControls.UI.Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
         If cmbLotNo.Text.Trim <> "" Then
             Me.fillLotIssueHeader(cmbLotNo.Text.Trim())
@@ -163,16 +62,17 @@ Public Class frmLotAdditionFinal
                 Me.GridIssueTotal()
             End If
             ''Fill Issue Data End
-        End If
 
+            Me.ActualIssue()
+        End If
     End Sub
     Private Sub fillLotIssueHeader(ByVal sLotNo As String)
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+            .Add(dbManager.CreateParameter("@LotNo", Convert.ToString(sLotNo), DbType.String))
         End With
 
         Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
@@ -184,6 +84,7 @@ Public Class frmLotAdditionFinal
             txtLotRecieveId.Tag = dr.Item("LotAdditionId").ToString
             txtLotRecieveId.Text = dr.Item("LotAdditionNo").ToString
             cmbItem.SelectedIndex = dr.Item("ItemId").ToString
+            cmbItem.Text = dr.Item("ItemName").ToString
             txtIssueWt.Text = dr.Item("IssueWt").ToString
             txtIssuePr.Text = dr.Item("IssuePr").ToString
             txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString
@@ -206,7 +107,6 @@ ErrHandler:
             dgvReceive.Rows.Add(CStr(Row("SrNo")), CStr(Row("ItemName")), Format(Val(Row("ReceiveWt")), "0.00"), Format(Val(Row("ReceivePr")), "0.00"), Format(Val(Row("FineWt")), "0.000"))
         Next
 
-        'Me.GetSrNo(dgvReceive)
     End Sub
     Private Sub fillIssueData(ByVal sLotNo As String)
         Dim dttable As New DataTable
@@ -216,7 +116,6 @@ ErrHandler:
             dgvIssue.Rows.Add(CStr(Row("SrNo")), CStr(Row("ItemName")), Format(Val(Row("IssueWt")), "0.00"), Format(Val(Row("IssuePr")), "0.00"), Format(Val(Row("FineWt")), "0.000"))
         Next
 
-        'Me.GetSrNo(dgvIssue)
     End Sub
     Private Function FetchIssueData(ByVal strLotNo As String) As DataTable
         Dim dtData As DataTable = New DataTable()
@@ -290,7 +189,7 @@ ErrHandler:
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -383,7 +282,6 @@ ErrHandler:
             For Each row As GridViewRowInfo In dgvReceive.Rows
                 dSumOfTotalReceiveWt += Convert.ToDecimal(row.Cells(2).Value)
                 dSumOfTotalReceiveFine += Convert.ToDecimal(row.Cells(2).Value) * Convert.ToDecimal(row.Cells(3).Value) / 100
-                'dSumOfTotalReceiveFine += Convert.ToDecimal(row.Cells(4).Value)
             Next
 
             txtTotalReceiveWt.Text = Format(dSumOfTotalReceiveWt, "0.00")
@@ -411,40 +309,41 @@ ErrHandler:
             MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-    Private Sub bindListView()
-        Dim parameters = New List(Of SqlParameter)()
-        parameters.Clear()
-
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
-
-        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
-
-        lstLotAddition.Items.Clear()
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
 
         Try
-            While dr.Read
-                Dim lvi As ListViewItem = New ListViewItem(dr("LotAdditionId").ToString())
-                lvi.SubItems.Add(dr("LotAdditionDt").ToString())
-                lvi.SubItems.Add(dr("LotNo").ToString())
-                lvi.SubItems.Add(dr("ItemId").ToString())
-                lvi.SubItems.Add(dr("ItemName").ToString())
-                lvi.SubItems.Add(dr("IssueWt").ToString())
-                lvi.SubItems.Add(dr("IssuePr").ToString())
-                lstLotAddition.Items.Add(lvi)
-            End While
-
-            If lstLotAddition.Items.Count > 0 Then
-                lstLotAddition.Items(0).Selected = True
-            End If
-
+            dgvLotFinal.DataSource = dtdata
+            dgvLotFinal.EnableFiltering = True
+            dgvLotFinal.MasterTemplate.ShowFilteringRow = False
+            dgvLotFinal.MasterTemplate.ShowHeaderCellButtons = True
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
-            dr.Close()
-            Objcn.Close()
         End Try
 
     End Sub
+    Private Function fetchAllRecords() As DataTable
+
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_LotAdditionReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+
+    End Function
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not Validate_Fields() Then Exit Sub
 
@@ -462,8 +361,8 @@ ErrHandler:
     Private Sub SaveData()
         Dim alParaval As New ArrayList
 
-        Dim iOperationId As Integer = 8      ''Operation Id for Lot Addition Final
-        Dim iOperationTypeId As Integer = 11 ''Operation Type Id for Lot Addition Final
+        Dim iOperationId As Integer = 24      ''Operation Id for Lot Addition Final
+        Dim iOperationTypeId As Integer = 11  ''Operation Type Id for Lot Addition Final
 
         Dim GridSrNo As String = ""
         Dim ItemId As String = ""
@@ -618,9 +517,8 @@ ErrHandler:
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
     End Sub
-
     Private Sub rbKdm_CheckedChanged(sender As Object, e As EventArgs) Handles rbKdm.CheckedChanged
-        Me.KDMCalculate()
+        Me.Calculate()
 
         If rbKdm.Checked = True Then
             txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
@@ -630,7 +528,6 @@ ErrHandler:
             txtLoss.Text = 0
         End If
     End Sub
-
     Private Sub cmbTLabour_Enter(sender As Object, e As EventArgs) Handles cmbTLabour.Enter
         cmbTLabour.ShowDropDown()
     End Sub
@@ -687,20 +584,22 @@ ErrHandler:
 
             GridDoubleClick = False
 
-            Me.bindListView()
+            Me.bindDataGridView()
 
             Fr_Mode = FormState.AStateMode
 
             TransDt.Focus()
             TransDt.Select()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+        Me.Calculate()
+    End Sub
     Private Function Validate_Fields() As Boolean
         Try
-
             If cmbLotNo.Text.Trim() = "" Then
                 MessageBox.Show("Enter Lot Number !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbLotNo.Focus()
@@ -710,16 +609,150 @@ ErrHandler:
             Return True
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
-    Private Sub KDMCalculate()
-        Me.GridIssueTotal()
-        Me.GridReceiveTotal()
+    Private Sub Calculate()
+        Me.ActualReceiveWt()
+        Me.ActualReceivePr()
+    End Sub
+    Private Sub ActualIssue()
+        Try
+            txtActualIssueWt.Text = Format(Val(txtTotalIssueWt.Text) - Val(txtTotalReceiveWt.Text), "0.00")
+            txtActualIssueFine.Text = Format((Val(txtTotalIssueFine.Text) - Val(txtTotalReceiveFine.Text)), "0.00")
+
+            txtActualRecieveFine.Text = Format(Val(txtActualIssueFine.Text), "0.00")
+
+            txtActualIssuePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
-    Private Sub PowderCalclulate()
-        Me.GridIssueTotal()
-        Me.GridReceiveTotal()
+    Private Sub txtChain_TextChanged(sender As Object, e As EventArgs) Handles txtChain.TextChanged
+        Try
+            If rbKdm.Checked = True Then
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            Else
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtActualIssueWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualIssueWt.TextChanged
+        Try
+            If rbKdm.Checked = True Then
+                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtPowder.Text = 0
+            Else
+                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtLoss.Text = 0
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtActualRecieveWt_TextChanged(sender As Object, e As EventArgs) Handles txtActualRecieveWt.TextChanged
+        Try
+            ''txtActualIssuePr.Text = IIf(Val(txtActualRecieveFine.Text) = 0 Or Val(txtActualRecieveWt.Text) = 0, 0, Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00"))
+            ''txtActualIssuePr.Text = Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00")
+
+            'txtActualIssuePr.Text = IIf(Val(txtActualIssueFine.Text) = 0 Or Val(txtActualIssueWt.Text) = 0, 0, Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00"))
+            'txtActualIssuePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
+
+            If rbKdm.Checked = True Then
+                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtPowder.Text = 0
+            Else
+                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtLoss.Text = 0
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtBhuka_TextChanged(sender As Object, e As EventArgs) Handles txtBhuka.TextChanged
+        Try
+            If rbKdm.Checked = True Then
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            Else
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtSample_TextChanged(sender As Object, e As EventArgs) Handles txtSample.TextChanged
+        Try
+            If rbKdm.Checked = True Then
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            Else
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub ActualReceiveWt()
+        Try
+
+            If rbKdm.Checked = True Then
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+
+                txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtPowder.Text = 0
+            Else
+                txtActualRecieveWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+                txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text) + Val(txtLoss.Text), "0.00")
+
+                txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+                txtLoss.Text = 0
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub ActualReceivePr()
+        Try
+            If rbKdm.Checked = True Then
+                txtActualIssuePr.Text = Format((Val(txtActualIssueFine.Text) / Val(txtActualIssueWt.Text)) * 100, "0.00")
+                txtActualReceivePr.Text = Format(Val(txtActualIssuePr.Text), "0.00")
+
+                txtReceivePr.Text = Format(Val(txtActualReceivePr.Text), "0.00")
+            Else
+                If Not txtActualRecieveFine.Text.Trim.Length = 0 Or txtActualRecieveWt.Text.Trim.Length = 0 Then
+                    txtActualReceivePr.Text = Format((Val(txtActualRecieveFine.Text) / Val(txtActualRecieveWt.Text)) * 100, "0.00")
+
+                    txtReceivePr.Text = Format(Val(txtActualReceivePr.Text), "0.00")
+                Else
+                    txtActualReceivePr.Clear()
+                End If
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub rbPowder_CheckedChanged(sender As Object, e As EventArgs) Handles rbPowder.CheckedChanged
+        'Me.Calculate()
+
+        If rbKdm.Checked = True Then
+            txtLoss.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+            txtPowder.Text = 0
+        Else
+            txtPowder.Text = Format(Val(txtActualIssueWt.Text) - Val(txtActualRecieveWt.Text), "0.00")
+            txtLoss.Text = 0
+        End If
+    End Sub
+    Private Sub txtSample_LostFocus(sender As Object, e As EventArgs) Handles txtSample.LostFocus
+        Me.btnCalculate_Click(sender, e)
     End Sub
 End Class

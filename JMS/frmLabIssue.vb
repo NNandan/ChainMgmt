@@ -8,7 +8,35 @@ Public Class frmLabIssue
     Dim GridDoubleClick As Boolean
     Private Sub frmLabIssue_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.fillLab()
+        Me.bindListView()
     End Sub
+    Private Sub bindListView()
+        Dim dtable As DataTable = fetchAllDetails()
+        'RadGridView1.Rows.Clear()
+        For i As Integer = 0 To dtable.Rows.Count - 1
+            If dtable.Rows.Count > 0 Then
+                DgvLabList.DataSource = dtable
+                DgvLabList.ReadOnly = True
+            Else
+                MessageBox.Show("Data Not Available To Update")
+            End If
+        Next
+    End Sub
+    Private Function fetchAllDetails() As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchListLab", DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_LabIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        Return dtData
+    End Function
     Private Sub fillLab()
         Dim connection As SqlConnection = Nothing
 
@@ -195,7 +223,6 @@ Public Class frmLabIssue
 
     End Sub
     Private Sub btnCopy_Click(sender As Object, e As EventArgs) Handles btnCopy.Click
-
         Dim dt As New DataTable
 
         If Not dgvLabIssue.Rows.Count > 0 Then
@@ -213,7 +240,6 @@ Public Class frmLabIssue
 
         dt.AcceptChanges()
         dgvDataSave.DataSource = dt
-
     End Sub
     Private Sub TabControl1_Click(sender As Object, e As EventArgs) Handles TabControl1.Click
         If TabControl1.SelectedIndex = 0 Then
@@ -238,20 +264,21 @@ Public Class frmLabIssue
         Else
 
             Try
-
-                ''Create Parameters for Update
                 Dim Dparameters = New List(Of SqlParameter)()
-                Dparameters.Clear()
 
                 For i As Integer = 0 To dgvLabReceipt.RowCount - 1
-                    'If dgvLabReceipt.Rows(i).IsSelected = True Then
-                    If dgvLabReceipt.Rows(i).Cells(0).Value = True Then
-                        Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReceiptForTran", DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@DTransactionId", Val(dgvLabReceipt.Rows(i).Cells(1).Value), DbType.Int16))
-                        Dparameters.Add(dbManager.CreateParameter("@DUpdateDt", ReceiptDt.Value.ToString(), DbType.DateTime))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", UserName.Trim(), DbType.String))
-
-                        dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                    If dgvLabReceipt.Rows(i).IsSelected = True Then
+                        'If dgvLabReceipt.Rows(i).Cells(0).Value = True Then
+                        With Dparameters
+                            .Clear()
+                            .Add(dbManager.CreateParameter("@ActionType", "LabReceiptForTran", DbType.String))
+                            .Add(dbManager.CreateParameter("@DLabIssueId", Val(dgvLabReceipt.Rows(i).Cells(1).Value), DbType.Int16))
+                            .Add(dbManager.CreateParameter("@DLotNo", Convert.ToString(dgvLabReceipt.Rows(i).Cells(2).Value), DbType.String))
+                            .Add(dbManager.CreateParameter("@DUpdateDt", ReceiptDt.Value.ToString(), DbType.DateTime))
+                            .Add(dbManager.CreateParameter("@ReceivedBy", UserName.Trim(), DbType.String))
+                            dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                        End With
+                        'End If
                     End If
                     Dparameters.Clear()
                 Next
@@ -280,20 +307,17 @@ Public Class frmLabIssue
 
                 For i As Integer = 0 To dgvLabReceipt.RowCount - 1
                     If dgvLabReceipt.Rows(i).Cells(0).Value = True Then
-                        ''If dgvLabReport.Rows(i).IsSelected = True Then
+                        'If dgvLabReport.Rows(i).IsSelected = True Then
                         Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReceiptForUsed", DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@DTransactionId", Val(dgvLabReceipt.Rows(i).Cells(1).Value), DbType.Int16))
-                        Dparameters.Add(dbManager.CreateParameter("@DUpdateDt", ReceiptDt.Value.ToString(), DbType.DateTime))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", UserName.Trim(), DbType.String))
-                        dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                            Dparameters.Add(dbManager.CreateParameter("@DLabIssueId", Val(dgvLabReceipt.Rows(i).Cells(1).Value), DbType.Int16))
+                            Dparameters.Add(dbManager.CreateParameter("@DUpdateDt", ReceiptDt.Value.ToString(), DbType.DateTime))
+                            Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", UserName.Trim(), DbType.String))
+                            dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                            MessageBox.Show("Receipt Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'End If
                     End If
                     Dparameters.Clear()
                 Next
-
-                trans.Commit()
-
-                MessageBox.Show("Receipt Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             Catch ex As Exception
                 MessageBox.Show("Error:- " & ex.Message)
             Finally
@@ -344,23 +368,24 @@ Public Class frmLabIssue
 
                 For i As Integer = 0 To dgvLabReport.RowCount - 1
                     If dgvLabReport.Rows(i).IsSelected = True Then
+                        'If dgvLabReceipt.Rows(i).Cells(0).Value = True Then
                         Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReportForTran", DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@DTransactionId", Val(dgvLabReport.Rows(i).Cells(1).Value), DbType.Int16))
+                        Dparameters.Add(dbManager.CreateParameter("@DLabIssueId", Val(dgvLabReport.Rows(i).Cells(1).Value), DbType.Int16))
+                        Dparameters.Add(dbManager.CreateParameter("@DIOId", Val(dgvLabReport.Rows(i).Cells(3).Value), DbType.Int16))
                         Dparameters.Add(dbManager.CreateParameter("@LabReport", Val(txtLabRptPr.Text.Trim), DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceiveGrossWt", Val(txtSampleGrossRec.Text.Trim), DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceiveFineWt", Val(txtSampleFineRec.Text.Trim), DbType.String))
-
+                        Dparameters.Add(dbManager.CreateParameter("@GSampleReceive", Val(txtSampleGrossRec.Text.Trim), DbType.String))
+                        Dparameters.Add(dbManager.CreateParameter("@FSampleReceive", Val(txtSampleFineRec.Text.Trim), DbType.String))
+                        Dparameters.Add(dbManager.CreateParameter("@ReceiveFineWt", Val(txtTotalRecTotal.Text.Trim), DbType.String))
                         Dparameters.Add(dbManager.CreateParameter("@RGLossWt", Val(txtTotalLossWt.Text.Trim), DbType.String))
                         Dparameters.Add(dbManager.CreateParameter("@RFLossWt", Val(txtTotalLossFine.Text.Trim), DbType.String))
-
                         Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", Val(UserId), DbType.Int16))
-
                         dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
                     End If
+                    'End If
                     Dparameters.Clear()
                 Next
 
-                MessageBox.Show("Report Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Report Data Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
                 MessageBox.Show("Error:- " & ex.Message)
@@ -378,44 +403,37 @@ Public Class frmLabIssue
             MessageBox.Show("Enter Lab Percent !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
             txtLabPr.Focus()
         Else
-            If Objcn.State = ConnectionState.Open Then Objcn.Close()
-            Objcn.Open()
-
-            trans = Objcn.BeginTransaction(System.Data.IsolationLevel.Serializable)
 
             Try
-
                 ''Create Parameters for Update
                 Dim Dparameters = New List(Of SqlParameter)()
                 Dparameters.Clear()
 
                 For i As Integer = 0 To dgvLabReport.RowCount - 1
                     If dgvLabReport.Rows(i).Cells(0).Value = True Then
-                        'If dgvLabReport.Rows(i).IsSelected = True Then
-                        Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReportForUsed", DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@DTransactionId", Val(dgvLabReport.Rows(i).Cells(1).Value), DbType.Int16))
-                        Dparameters.Add(dbManager.CreateParameter("@LabReport", Val(txtLabRptPr.Text), DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceiveGrossWt", Val(txtIssueWt.Text), DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceiveFineWt", Val(txtFineRptWt.Text), DbType.String))
-                        Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", Val(UserId), DbType.Int16))
+                        If dgvLabReport.Rows(i).IsSelected = True Then
+                            Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReportForUsed", DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@DLabIssueId", Val(dgvLabReport.Rows(i).Cells(1).Value), DbType.Int16))
+                            Dparameters.Add(dbManager.CreateParameter("@DIOId", Val(dgvLabReport.Rows(i).Cells(3).Value), DbType.Int16))
+                            Dparameters.Add(dbManager.CreateParameter("@LabReport", Val(txtLabRptPr.Text), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@GSampleReceive", Val(txtSampleGrossRec.Text.Trim), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@FSampleReceive", Val(txtSampleFineRec.Text.Trim), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@ReceiveFineWt", Val(txtTotalRecTotal.Text.Trim), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@RGLossWt", Val(txtTotalLossWt.Text), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@RFLossWt", Val(txtTotalLossFine.Text), DbType.String))
+                            Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", Val(UserId), DbType.Int16))
 
-                        dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                            dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                        End If
                     End If
                     Dparameters.Clear()
                 Next
 
-                trans.Commit()
-
-                MessageBox.Show("Report Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-                ''ClearAllData()
+                MessageBox.Show("Report Data Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Catch ex As Exception
-                trans.Rollback()
                 MessageBox.Show("Error:- " & ex.Message)
             Finally
-                ''Me.bindReportListview()
-                Objcn.Close()
             End Try
         End If
     End Sub
@@ -438,9 +456,12 @@ Public Class frmLabIssue
         'chkReAll.Checked = False
 
         txtLabRptPr.Clear()
+        txtIssueWt.Clear()
         txtIssuePr.Clear()
         txtFineRptWt.Clear()
         txtDiff.Clear()
+        txtTotalLossWt.Clear()
+        txtTotalLossFine.Clear()
 
         If TabControl1.SelectedIndex = 0 Then
             dgvLabIssue.DataSource = Nothing
@@ -455,7 +476,6 @@ Public Class frmLabIssue
     End Sub
     Private Sub SaveIssueDataTran()
         Dim alParaval As New ArrayList
-        Dim GridSrNo As String = ""
         Dim TransId As String = ""
         Dim LotNumber As String = ""
         Dim OperationId As String = ""
@@ -531,12 +551,12 @@ Public Class frmLabIssue
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
-            Me.ClearAllData()
+            Me.bindIssueGridViewTrans()
+            'Me.ClearAllData()
         End Try
     End Sub
     Private Sub SaveIssueDataUsed()
         Dim alParaval As New ArrayList
-        Dim GridSrNo As String = ""
         Dim TransId As String = ""
         Dim LotNumber As String = ""
         Dim OperationId As String = ""
@@ -613,6 +633,7 @@ Public Class frmLabIssue
             MessageBox.Show("Error:- " & ex.Message)
         Finally
             Me.ClearAllData()
+            Me.bindIssueGridviewBags()
         End Try
     End Sub
     Private Sub txtLabPr_KeyPress(sender As Object, e As KeyPressEventArgs)
@@ -646,10 +667,10 @@ Public Class frmLabIssue
                 sFinePr += Single.Parse(row.Cells(7).Value)
             End If
         Next
+
         txtIssueWt.Text = Format(sReceiveWt, "0.00")
         txtIssuePr.Text = Format(sReceivePr, "0.00")
         txtFineRptWt.Text = Format(sFinePr, "0.00")
-
     End Sub
     Private Sub frmLabIssue_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         Try
@@ -796,7 +817,7 @@ Public Class frmLabIssue
         Dim ColUsedBagId As New GridViewTextBoxColumn()
         ColUsedBagId.Name = "ColUsedBagId"
         ColUsedBagId.HeaderText = "UsedBag Id."
-        ColUsedBagId.FieldName = "UsedBagId"
+        ColUsedBagId.FieldName = "TransId"
         ColUsedBagId.IsVisible = False
         ColUsedBagId.TextAlignment = ContentAlignment.MiddleRight
         ObjGrdView.MasterTemplate.Columns.Add(ColUsedBagId)
@@ -805,7 +826,7 @@ Public Class frmLabIssue
         ColUsedBagDt.Name = "ColUsedBagDt"
         ColUsedBagDt.HeaderText = "UsedBag Dt."
         ColUsedBagDt.FieldName = "TransDt"
-        ColUsedBagDt.TextAlignment = ContentAlignment.MiddleRight
+        ColUsedBagDt.TextAlignment = ContentAlignment.MiddleLeft
         ColUsedBagDt.Width = 100
         ColUsedBagDt.FormatString = "{0:dd/MM/yyyy}"
         ColUsedBagDt.ReadOnly = True
@@ -835,7 +856,7 @@ Public Class frmLabIssue
         ColBagName.HeaderText = "Bag Name"
         ColBagName.FieldName = "OperationName"
         ColBagName.TextAlignment = ContentAlignment.MiddleLeft
-        ColBagName.Width = 125
+        ColBagName.Width = 145
         ColBagName.ReadOnly = True
         ColBagName.AllowFiltering = True
         ObjGrdView.MasterTemplate.Columns.Add(ColBagName)
@@ -875,11 +896,13 @@ Public Class frmLabIssue
     End Sub
     Private Sub rbRLotSample_CheckedChanged(sender As Object, e As EventArgs) Handles rbRLotSample.CheckedChanged
         If rbRLotSample.Checked = True Then
+            dgvLabReceipt.DataSource = Nothing
             Me.bindReceiptListviewforTran()
         End If
     End Sub
     Private Sub rbRBagSample_CheckedChanged(sender As Object, e As EventArgs) Handles rbRBagSample.CheckedChanged
         If rbRBagSample.Checked = True Then
+            dgvLabReceipt.DataSource = Nothing
             Me.bindReceiptListviewforUsed()
         End If
     End Sub
@@ -920,10 +943,56 @@ Public Class frmLabIssue
 
         If rbLotSample.Checked = True Then
             Me.SaveIssueDataTran()
+            'Me.UpdateStockLab1()
+            dgvDataSave.DataSource = Nothing
+
         Else
             Me.SaveIssueDataUsed()
+            'Me.UpdateStockLab1()
+            dgvDataSave.DataSource = Nothing
         End If
     End Sub
+    'Private Function UpdateStockLab1() As DataTable
+    '    Dim Dt As DataTable = Nothing
+    '    Dim alParaval As New ArrayList
+    '    Dim BagId As Int16 = 0
+    '    Dim TranId As String = Nothing
+    '    Dim IRowCount As Integer = 0
+    '    Dim iValue As Integer = 0
+    '    alParaval.Add(cmbCBagtype.SelectedValue)
+    '    If dgvFSampleBag.Rows.Count > 0 Then
+    '        For Each row As GridViewRowInfo In dgvFSampleBag.Rows
+    '            'If row.Cells(0).Value = True Then
+    '            If TranId = "" Then
+    '                TranId = Val(row.Cells(8).Value)
+    '            Else
+    '                TranId = TranId & "|" & Val(row.Cells(8).Value)
+    '            End If
+    '            'End If
+    '            IRowCount += 1
+    '        Next
+    '        alParaval.Add(TranId)
+    '        Try
+    '            Dim Dparameters = New List(Of SqlParameter)()
+    '            Dparameters.Clear()
+    '            With Dparameters
+    '                .Add(dbManager.CreateParameter("@ActionType", "UpdateSampleNo", DbType.String))
+    '                .Add(dbManager.CreateParameter("@BId", alParaval.Item(iValue), DbType.Int16))
+    '                iValue += 1
+    '                .Add(dbManager.CreateParameter("@TId", alParaval.Item(iValue), DbType.String))
+    '                iValue += 1
+    '                .Add(dbManager.CreateParameter("@GridCount", IRowCount, DbType.Int16))
+    '                .Add(dbManager.CreateParameter("@BagType", "S", DbType.String))
+    '            End With
+    '            Dt = dbManager.GetDataTable("SP_UsedBagNo_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+    '            'MessageBox.Show("Bhuka Bag Updated !!!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error:- " & ex.Message)
+    '        End Try
+    '    End If
+    '    Return Dt
+    'End Function
+
     Private Sub dgvDataSave_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvDataSave.KeyDown
         Try
             If e.KeyCode = Keys.Delete And dgvDataSave.RowCount > 0 Then
@@ -949,9 +1018,11 @@ Public Class frmLabIssue
         If rbRLotSample.Checked = True Then
             Me.SaveReceiptDataForTran()
             Me.btnRCancel_Click(sender, e)
+            Me.bindIssueGridViewTrans()
         Else
             Me.SaveReceiptDataForUsed()
             Me.btnRCancel_Click(sender, e)
+            Me.bindIssueGridviewBags()
         End If
     End Sub
     Private Sub dgvLabReport_ValueChanged(sender As Object, e As EventArgs) Handles dgvLabReport.ValueChanged
@@ -963,11 +1034,9 @@ Public Class frmLabIssue
         '        End If
         '    Next row
         'End If
-
         If dgvLabReport.CurrentColumn.Name = "colChkBox" Then
             dgvLabReport.EndEdit()
         End If
-
         Me.CalculateTotal()
     End Sub
     Private Sub txtLabRptPr_TextChanged(sender As Object, e As EventArgs) Handles txtLabRptPr.TextChanged
@@ -981,15 +1050,71 @@ Public Class frmLabIssue
         End Try
     End Sub
     Private Sub btnUSave_Click(sender As Object, e As EventArgs) Handles btnUSave.Click
-        If rbReLotSample.Checked = True Then
-            Me.SaveReportDataForTran()
-            Me.bindReportListviewForTran()
+        If btnUSave.Text = "&Save" Then
+            If rbReLotSample.Checked = True Then
+                Me.SaveReportDataForTran()
+                Me.btnUCancel_Click(sender, e)
+                Me.bindReportListviewForTran()
+            Else
+                Me.SaveReportDataForUsed()
+                Me.btnUCancel_Click(sender, e)
+                Me.bindReportListviewForUsed()
+            End If
         Else
-            Me.SaveReportDataForUsed()
-            Me.bindReportListviewForUsed()
+            For i As Integer = 0 To dgvLabReport.RowCount - 1
+                'If dgvLabReport.Rows(i).Cells(0).Value = False Then
+                '    MessageBox.Show("Please Select Record")
+                'Else
+                Me.UpdateReportDataForUsed()
+                    btnUSave.Text = "&Save"
+                    Me.bindReportListviewForUsed()
+                    Me.btnUCancel_Click(sender, e)
+                'End If
+            Next
         End If
+    End Sub
+    Private Sub UpdateReportDataForUsed()
+        Dim trans As SqlTransaction = Nothing
 
-        Me.btnUCancel_Click(sender, e)
+        'If ValidateReportData() = False Then
+        '    MessageBox.Show("No Report Data Available !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+        '    cmbLab.Focus()
+        'ElseIf String.IsNullOrWhiteSpace(txtLabRptPr.Text.Trim) Then
+        '    MessageBox.Show("Enter Lab Percent !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+        '    txtLabRptPr.Focus()
+        'Else
+
+        Try
+                ''Create Parameters for Update
+                Dim Dparameters = New List(Of SqlParameter)()
+                Dparameters.Clear()
+
+                For i As Integer = 0 To dgvLabReport.RowCount - 1
+                If dgvLabReport.Rows(i).IsSelected = True Then
+                    'If dgvLabReceipt.Rows(i).Cells(0).Value = True Then
+                    Dparameters.Add(dbManager.CreateParameter("@ActionType", "LabReportForTran", DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@DLabIssueId", Val(dgvLabReport.Rows(i).Cells(1).Value), DbType.Int16))
+                    Dparameters.Add(dbManager.CreateParameter("@DIOId", Val(dgvLabReport.Rows(i).Cells(3).Value), DbType.Int16))
+                    Dparameters.Add(dbManager.CreateParameter("@LabReport", Val(txtLabRptPr.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@GSampleReceive", Val(txtSampleGrossRec.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@FSampleReceive", Val(txtSampleFineRec.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@ReceiveFineWt", Val(txtTotalRecTotal.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@RGLossWt", Val(txtTotalLossWt.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@RFLossWt", Val(txtTotalLossFine.Text.Trim), DbType.String))
+                    Dparameters.Add(dbManager.CreateParameter("@ReceivedBy", Val(UserId), DbType.Int16))
+                    dbManager.Update("SP_LabIssue_Update", CommandType.StoredProcedure, Dparameters.ToArray())
+                    'End If
+                End If
+                Dparameters.Clear()
+            Next
+
+                MessageBox.Show("Report Data Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Catch ex As Exception
+                MessageBox.Show("Error:- " & ex.Message)
+            Finally
+            End Try
+        ' End If
     End Sub
     Private Sub txtLabRptPr_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtLabRptPr.KeyPress
         numdotkeypress(e, txtLabRptPr, Me)
@@ -1061,9 +1186,11 @@ Public Class frmLabIssue
         txtTotalLossFine.Text = Format((Val(txtFineRptWt.Text) - Val(txtTotalRecTotal.Text)), "0.00")
     End Sub
     Private Sub btnUCancel_Click(sender As Object, e As EventArgs) Handles btnUCancel.Click
-        txtLabRptPr.Clear()
-        txtSampleFineRec.Clear()
-        txtSampleGrossRec.Clear()
+        Try
+            Call Clear_UForm()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         Me.Close()
@@ -1091,6 +1218,12 @@ Public Class frmLabIssue
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+        Try
+            Call Clear_RForm()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Function ValidateReportData() As Boolean
         Dim blnCount As Boolean = False
@@ -1105,4 +1238,173 @@ Public Class frmLabIssue
 
         Return blnCount
     End Function
+
+    Private Sub DgvLabList_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles DgvLabList.CellDoubleClick
+        If DgvLabList.Rows.Count > 0 Then
+            Dim OtherLabIssueId As Integer = DgvLabList.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Me.ClearAllData()
+            btnUSave.Text = "Update"
+            btnRSave.Enabled = False
+            Me.FillGridU(OtherLabIssueId)
+            Me.TabControl1.SelectedIndex = 2
+        End If
+    End Sub
+    Private Sub FillGridU(ByVal OtherLabIssueId As String)
+        Dim dttable As New DataTable
+        dttable = fetchAllDetailsRUpdate(CStr(OtherLabIssueId))
+        dgvLabReport.DataSource = Nothing
+        dgvLabReport.DataSource = dttable
+        CalculateTotal()
+        Me.FetchUsedBagsDetails(OtherLabIssueId)
+        Me.GetSrNo(dgvLabReport)
+    End Sub
+    Sub GetSrNo(ByRef grid As Telerik.WinControls.UI.RadGridView)
+        Try
+            For Each rowInfo As GridViewRowInfo In dgvLabIssue.Rows
+                rowInfo.Cells(0).Value = rowInfo.Index + 1
+            Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Function fetchAllDetailsRUpdate(ByVal OtherLabIssueId As String) As DataTable
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchDetailsListLab", DbType.String))
+                .Add(dbManager.CreateParameter("@LabIssueId", Trim(OtherLabIssueId), DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_LabIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+        Return dtData
+    End Function
+    Private Sub FetchUsedBagsDetails(OtherLabIssueId)
+        Dim dtData As DataTable = New DataTable()
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+            parameters.Clear()
+            With parameters
+                .Add(dbManager.CreateParameter("@ActionType", "FetchDetailsDataLab", DbType.String))
+                .Add(dbManager.CreateParameter("@LabIssueId", OtherLabIssueId, DbType.String))
+            End With
+            dtData = dbManager.GetDataTable("SP_LabIssue_Select", CommandType.StoredProcedure, parameters.ToArray())
+            If dtData.Rows.Count > 0 Then
+                txtIssueWt.Text = dtData.Rows(0).Item("IssueWt").ToString()
+                txtIssuePr.Text = dtData.Rows(0).Item("IssuePr").ToString()
+                txtFineRptWt.Text = dtData.Rows(0).Item("FineWt").ToString()
+                txtLabRptPr.Text = dtData.Rows(0).Item("LabReport").ToString
+                txtSampleFineRec.Text = dtData.Rows(0).Item("FSampleReceive").ToString
+                txtSampleGrossRec.Text = dtData.Rows(0).Item("GSampleReceive").ToString
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Sub Clear_UForm()
+        Try
+            Me.RptUpdateDt.CustomFormat = "dd/MM/yyyy"
+            Me.RptUpdateDt.Value = DateTime.Now
+
+            txtLabRptPr.Clear()
+            txtSampleFineRec.Clear()
+            txtSampleGrossRec.Clear()
+            txtTotalRecWt.Clear()
+            txtTotalLossWt.Clear()
+            txtSampleGrossPr.Clear()
+            txtDiff.Clear()
+            txtSampleFineTotal.Clear()
+            txtSampleGrossTotal.Clear()
+            txtTotalRecTotal.Clear()
+            txtTotalLossFine.Clear()
+
+            txtIssueWt.Clear()
+            txtIssuePr.Clear
+            txtFineRptWt.Clear()
+
+            btnUSave.Text = "&Save"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+    Private Sub dgvLabReceipt_CellValueChanged(sender As Object, e As GridViewCellEventArgs) Handles dgvLabReceipt.CellValueChanged
+        'Dim columnIndex = 0
+
+        'If e.ColumnIndex = columnIndex Then
+        '    Dim isChecked = CBool(dgvLabReceipt.Rows(e.RowIndex).Cells(e.ColumnIndex).Value)
+
+        '    If isChecked Then
+        '        For Each row As GridViewRowInfo In dgvLabReceipt.Rows
+        '            If row.Index <> e.RowIndex Then
+        '                row.Cells(columnIndex).Value = Not isChecked
+        '            End If
+        '        Next
+        '    End If
+        'End If
+    End Sub
+    Private Sub dgvLabReceipt_ValueChanged(sender As Object, e As EventArgs) Handles dgvLabReceipt.ValueChanged
+        If dgvLabReceipt.CurrentColumn.Name = "colChkBox" Then
+            dgvLabReceipt.EndEdit()
+        End If
+        Me.CalculateTotal()
+    End Sub
+    Private Sub btnICancel_Click(sender As Object, e As EventArgs) Handles btnICancel.Click
+        Try
+            Call Clear_CForm()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub Clear_CForm()
+        Try
+            Me.TransDt.CustomFormat = "dd/MM/yyyy"
+            Me.TransDt.Value = DateTime.Now
+
+            cmbLab.SelectedIndex = 0
+
+            rbLotSample.Checked = False
+            rbBagSample.Checked = False
+
+            dgvLabIssue.DataSource = Nothing
+            dgvDataSave.DataSource = Nothing
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    Private Sub Clear_RForm()
+        Try
+            'Me.RTransDt.CustomFormat = "dd/MM/yyyy"
+            'Me.RTransDt.Value = DateTime.Now
+
+            'cmbRBagNo.Enabled = True
+            'cmbRBagNo.Text = ""
+            'txtRIssueWt.Clear()
+            'txtRIssuePr.Clear()
+            'txtRBagName.Clear()
+            'txtRWtOnScale.Clear()
+            'txtRRecieveWt.Clear()
+
+            'txtRSample.Clear()
+            'txtRTotalWt.Clear()
+
+            'txtRCarbon.Clear()
+            'txtRGrossLoss.Clear()
+            'txtRBagName.Clear()
+
+            'dgvRBhukaBag.DataSource = Nothing
+
+            'btnRSave.Text = "&Save"
+            'btnREdit.Enabled = True
+
+            'Me.fillRecBagNo()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

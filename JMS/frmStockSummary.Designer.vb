@@ -165,37 +165,22 @@ Partial Class frmStockSummary
         Me.btnOpStock = New System.Windows.Forms.Button()
         Me.btnDeptIssue = New System.Windows.Forms.Button()
         Me.btnDeptReceive = New System.Windows.Forms.Button()
-        Me.Label57 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtOpeningStockFw = New Telerik.WinControls.UI.RadTextBox()
         Me.txtOpeningStockPr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtOpeningStockWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtClosingStockPr = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtClosingStockWt = New Telerik.WinControls.UI.RadTextBox()
         Me.IssueGrossFw = New Telerik.WinControls.UI.RadTextBox()
         Me.ReceiptGrossFw = New Telerik.WinControls.UI.RadTextBox()
         Me.IssueGrossPr = New Telerik.WinControls.UI.RadTextBox()
         Me.ReceiptGrossPr = New Telerik.WinControls.UI.RadTextBox()
         Me.IssueGrossWt = New Telerik.WinControls.UI.RadTextBox()
         Me.ReceiptGrossWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtClosingStockFw = New Telerik.WinControls.UI.RadTextBox()
         Me.Label54 = New System.Windows.Forms.Label()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Label52 = New System.Windows.Forms.Label()
-        Me.btnUpdate = New Telerik.WinControls.UI.RadButton()
-        Me.lblGrossWt = New System.Windows.Forms.Label()
-        Me.lblGrossPr = New System.Windows.Forms.Label()
-        Me.lblGrossFw = New System.Windows.Forms.Label()
         Me.lblTotal = New System.Windows.Forms.Label()
-        Me.lblDiffFw = New System.Windows.Forms.Label()
-        Me.lblFinal = New System.Windows.Forms.Label()
-        Me.btnShow = New Telerik.WinControls.UI.RadButton()
-        Me.lblClosingStock = New System.Windows.Forms.Label()
-        Me.lblClosingStockFw = New System.Windows.Forms.Label()
-        Me.lblClosingStockPr = New System.Windows.Forms.Label()
-        Me.lblClosingStockWt = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnLBagNotUpdated = New System.Windows.Forms.Button()
         Me.LotFailBagNuFw = New Telerik.WinControls.UI.RadTextBox()
@@ -222,8 +207,67 @@ Partial Class frmStockSummary
         Me.Label40 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.btnAccountClosing = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.RadCollapsiblePanel1 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalWFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalWPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalWWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.RadCollapsiblePanel2 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalBncFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBncPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBncWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.RadCollapsiblePanel3 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalBnrFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnrPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnrWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.RadCollapsiblePanel4 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalBnuFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnuPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnuWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.RadCollapsiblePanel5 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel5 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalBnusFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnusPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalBnusWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.RadCollapsiblePanel6 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel6 = New Telerik.WinControls.UI.RadPanel()
+        Me.txtTotalLossFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalLossPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtTotalLossWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.RadPanel11 = New Telerik.WinControls.UI.RadPanel()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.RadCollapsiblePanel7 = New Telerik.WinControls.UI.RadCollapsiblePanel()
+        Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.txtClosingStockPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtClosingStockWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtClosingStockFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadPanel8 = New Telerik.WinControls.UI.RadPanel()
+        Me.lblClosingStockFw = New System.Windows.Forms.Label()
+        Me.lblClosingStockPr = New System.Windows.Forms.Label()
+        Me.lblClosingStockWt = New System.Windows.Forms.Label()
+        Me.lblClosingStock = New System.Windows.Forms.Label()
+        Me.RadPanel9 = New Telerik.WinControls.UI.RadPanel()
+        Me.btnShow = New Telerik.WinControls.UI.RadButton()
+        Me.lblFinal = New System.Windows.Forms.Label()
+        Me.lblDiffFw = New System.Windows.Forms.Label()
+        Me.RadPanel10 = New Telerik.WinControls.UI.RadPanel()
+        Me.btnAccountClosing = New System.Windows.Forms.Button()
         Me.GrpBWIP.SuspendLayout()
         CType(Me.WipFGrossFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WipFGrossPr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -301,17 +345,12 @@ Partial Class frmStockSummary
         CType(Me.txtOpeningStockFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOpeningStockPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOpeningStockWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtClosingStockPr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtClosingStockWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IssueGrossFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReceiptGrossFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IssueGrossPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReceiptGrossPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IssueGrossWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReceiptGrossWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtClosingStockFw, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnShow, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LotFailBagNuFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LotFailBagNuPr, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -326,6 +365,66 @@ Partial Class frmStockSummary
         CType(Me.BhukaBagNuFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BhukaBagNuPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BhukaBagNuWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FlowLayoutPanel1.SuspendLayout()
+        CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel1.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel1.SuspendLayout()
+        CType(Me.txtTotalWFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalWPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalWWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCollapsiblePanel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel2.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel2.SuspendLayout()
+        CType(Me.txtTotalBncFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBncPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBncWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCollapsiblePanel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel3.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel3.SuspendLayout()
+        CType(Me.txtTotalBnrFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnrPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnrWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCollapsiblePanel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel4.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel4.SuspendLayout()
+        CType(Me.txtTotalBnuFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnuPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnuWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCollapsiblePanel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel5.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel5.SuspendLayout()
+        CType(Me.txtTotalBnusFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnusPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalBnusWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCollapsiblePanel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel6.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel6.SuspendLayout()
+        CType(Me.txtTotalLossFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalLossPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtTotalLossWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel11.SuspendLayout()
+        Me.FlowLayoutPanel2.SuspendLayout()
+        CType(Me.RadCollapsiblePanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadCollapsiblePanel7.PanelContainer.SuspendLayout()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel7.SuspendLayout()
+        CType(Me.txtClosingStockPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtClosingStockWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtClosingStockFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel8.SuspendLayout()
+        CType(Me.RadPanel9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel9.SuspendLayout()
+        CType(Me.btnShow, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel10.SuspendLayout()
         Me.SuspendLayout()
         '
         'GrpBWIP
@@ -354,12 +453,11 @@ Partial Class frmStockSummary
         Me.GrpBWIP.Controls.Add(Me.Label7)
         Me.GrpBWIP.Controls.Add(Me.Label8)
         Me.GrpBWIP.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBWIP.Location = New System.Drawing.Point(475, 6)
+        Me.GrpBWIP.Location = New System.Drawing.Point(2, 3)
         Me.GrpBWIP.Name = "GrpBWIP"
-        Me.GrpBWIP.Size = New System.Drawing.Size(350, 120)
+        Me.GrpBWIP.Size = New System.Drawing.Size(344, 117)
         Me.GrpBWIP.TabIndex = 1
         Me.GrpBWIP.TabStop = False
-        Me.GrpBWIP.Text = "WIP (Work In Process)"
         '
         'btnWIPLots
         '
@@ -426,6 +524,7 @@ Partial Class frmStockSummary
         'WipFGrossFw
         '
         Me.WipFGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipFGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipFGrossFw.Location = New System.Drawing.Point(260, 93)
         Me.WipFGrossFw.Name = "WipFGrossFw"
         Me.WipFGrossFw.ReadOnly = True
@@ -436,11 +535,13 @@ Partial Class frmStockSummary
         Me.WipFGrossFw.RootElement.StretchVertically = True
         Me.WipFGrossFw.Size = New System.Drawing.Size(55, 20)
         Me.WipFGrossFw.TabIndex = 30
+        Me.WipFGrossFw.Text = "0.00"
         Me.WipFGrossFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipFGrossPr
         '
         Me.WipFGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipFGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipFGrossPr.Location = New System.Drawing.Point(203, 93)
         Me.WipFGrossPr.Name = "WipFGrossPr"
         Me.WipFGrossPr.ReadOnly = True
@@ -451,11 +552,13 @@ Partial Class frmStockSummary
         Me.WipFGrossPr.RootElement.StretchVertically = True
         Me.WipFGrossPr.Size = New System.Drawing.Size(55, 20)
         Me.WipFGrossPr.TabIndex = 29
+        Me.WipFGrossPr.Text = "0.00"
         Me.WipFGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipFGrossWt
         '
         Me.WipFGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipFGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipFGrossWt.Location = New System.Drawing.Point(146, 93)
         Me.WipFGrossWt.Name = "WipFGrossWt"
         Me.WipFGrossWt.ReadOnly = True
@@ -466,11 +569,13 @@ Partial Class frmStockSummary
         Me.WipFGrossWt.RootElement.StretchVertically = True
         Me.WipFGrossWt.Size = New System.Drawing.Size(55, 20)
         Me.WipFGrossWt.TabIndex = 28
+        Me.WipFGrossWt.Text = "0.00"
         Me.WipFGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipTGrossFw
         '
         Me.WipTGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipTGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipTGrossFw.Location = New System.Drawing.Point(260, 72)
         Me.WipTGrossFw.Name = "WipTGrossFw"
         Me.WipTGrossFw.ReadOnly = True
@@ -481,11 +586,13 @@ Partial Class frmStockSummary
         Me.WipTGrossFw.RootElement.StretchVertically = True
         Me.WipTGrossFw.Size = New System.Drawing.Size(55, 20)
         Me.WipTGrossFw.TabIndex = 27
+        Me.WipTGrossFw.Text = "0.00"
         Me.WipTGrossFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipTGrossPr
         '
         Me.WipTGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipTGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipTGrossPr.Location = New System.Drawing.Point(203, 72)
         Me.WipTGrossPr.Name = "WipTGrossPr"
         Me.WipTGrossPr.ReadOnly = True
@@ -496,11 +603,13 @@ Partial Class frmStockSummary
         Me.WipTGrossPr.RootElement.StretchVertically = True
         Me.WipTGrossPr.Size = New System.Drawing.Size(55, 20)
         Me.WipTGrossPr.TabIndex = 26
+        Me.WipTGrossPr.Text = "0.00"
         Me.WipTGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipTGrossWt
         '
         Me.WipTGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipTGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipTGrossWt.Location = New System.Drawing.Point(146, 72)
         Me.WipTGrossWt.Name = "WipTGrossWt"
         Me.WipTGrossWt.ReadOnly = True
@@ -511,11 +620,13 @@ Partial Class frmStockSummary
         Me.WipTGrossWt.RootElement.StretchVertically = True
         Me.WipTGrossWt.Size = New System.Drawing.Size(55, 20)
         Me.WipTGrossWt.TabIndex = 25
+        Me.WipTGrossWt.Text = "0.00"
         Me.WipTGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipMGrossFw
         '
         Me.WipMGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipMGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipMGrossFw.Location = New System.Drawing.Point(260, 51)
         Me.WipMGrossFw.Name = "WipMGrossFw"
         Me.WipMGrossFw.ReadOnly = True
@@ -526,11 +637,13 @@ Partial Class frmStockSummary
         Me.WipMGrossFw.RootElement.StretchVertically = True
         Me.WipMGrossFw.Size = New System.Drawing.Size(55, 20)
         Me.WipMGrossFw.TabIndex = 24
+        Me.WipMGrossFw.Text = "0.00"
         Me.WipMGrossFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipMGrossPr
         '
         Me.WipMGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipMGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipMGrossPr.Location = New System.Drawing.Point(203, 51)
         Me.WipMGrossPr.Name = "WipMGrossPr"
         Me.WipMGrossPr.ReadOnly = True
@@ -541,11 +654,13 @@ Partial Class frmStockSummary
         Me.WipMGrossPr.RootElement.StretchVertically = True
         Me.WipMGrossPr.Size = New System.Drawing.Size(55, 20)
         Me.WipMGrossPr.TabIndex = 23
+        Me.WipMGrossPr.Text = "0.00"
         Me.WipMGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipMGrossWt
         '
         Me.WipMGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipMGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipMGrossWt.Location = New System.Drawing.Point(146, 51)
         Me.WipMGrossWt.Name = "WipMGrossWt"
         Me.WipMGrossWt.ReadOnly = True
@@ -556,11 +671,13 @@ Partial Class frmStockSummary
         Me.WipMGrossWt.RootElement.StretchVertically = True
         Me.WipMGrossWt.Size = New System.Drawing.Size(55, 20)
         Me.WipMGrossWt.TabIndex = 22
+        Me.WipMGrossWt.Text = "0.00"
         Me.WipMGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipLGrossFw
         '
         Me.WipLGrossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipLGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipLGrossFw.Location = New System.Drawing.Point(260, 30)
         Me.WipLGrossFw.Name = "WipLGrossFw"
         Me.WipLGrossFw.ReadOnly = True
@@ -571,11 +688,13 @@ Partial Class frmStockSummary
         Me.WipLGrossFw.RootElement.StretchVertically = True
         Me.WipLGrossFw.Size = New System.Drawing.Size(55, 20)
         Me.WipLGrossFw.TabIndex = 21
+        Me.WipLGrossFw.Text = "0.00"
         Me.WipLGrossFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipLGrossPr
         '
         Me.WipLGrossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipLGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipLGrossPr.Location = New System.Drawing.Point(203, 30)
         Me.WipLGrossPr.Name = "WipLGrossPr"
         Me.WipLGrossPr.ReadOnly = True
@@ -586,11 +705,13 @@ Partial Class frmStockSummary
         Me.WipLGrossPr.RootElement.StretchVertically = True
         Me.WipLGrossPr.Size = New System.Drawing.Size(55, 20)
         Me.WipLGrossPr.TabIndex = 20
+        Me.WipLGrossPr.Text = "0.00"
         Me.WipLGrossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'WipLGrossWt
         '
         Me.WipLGrossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.WipLGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.WipLGrossWt.Location = New System.Drawing.Point(146, 30)
         Me.WipLGrossWt.Name = "WipLGrossWt"
         Me.WipLGrossWt.ReadOnly = True
@@ -601,6 +722,7 @@ Partial Class frmStockSummary
         Me.WipLGrossWt.RootElement.StretchVertically = True
         Me.WipLGrossWt.Size = New System.Drawing.Size(55, 20)
         Me.WipLGrossWt.TabIndex = 19
+        Me.WipLGrossWt.Text = "0.00"
         Me.WipLGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label5
@@ -664,12 +786,11 @@ Partial Class frmStockSummary
         Me.GrpBBnotCreated.Controls.Add(Me.Label24)
         Me.GrpBBnotCreated.Controls.Add(Me.Label9)
         Me.GrpBBnotCreated.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBBnotCreated.Location = New System.Drawing.Point(475, 131)
+        Me.GrpBBnotCreated.Location = New System.Drawing.Point(-1, 0)
         Me.GrpBBnotCreated.Name = "GrpBBnotCreated"
-        Me.GrpBBnotCreated.Size = New System.Drawing.Size(350, 120)
+        Me.GrpBBnotCreated.Size = New System.Drawing.Size(343, 106)
         Me.GrpBBnotCreated.TabIndex = 2
         Me.GrpBBnotCreated.TabStop = False
-        Me.GrpBBnotCreated.Text = "Bags Not Created"
         '
         'Label29
         '
@@ -739,6 +860,7 @@ Partial Class frmStockSummary
         Me.SampleBagNCFw.RootElement.StretchVertically = True
         Me.SampleBagNCFw.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNCFw.TabIndex = 106
+        Me.SampleBagNCFw.Text = "0.00"
         Me.SampleBagNCFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagNCPr
@@ -755,6 +877,7 @@ Partial Class frmStockSummary
         Me.SampleBagNCPr.RootElement.StretchVertically = True
         Me.SampleBagNCPr.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNCPr.TabIndex = 105
+        Me.SampleBagNCPr.Text = "0.00"
         Me.SampleBagNCPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNCFw
@@ -771,6 +894,7 @@ Partial Class frmStockSummary
         Me.VacuumBagNCFw.RootElement.StretchVertically = True
         Me.VacuumBagNCFw.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNCFw.TabIndex = 104
+        Me.VacuumBagNCFw.Text = "0.00"
         Me.VacuumBagNCFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNCPr
@@ -787,6 +911,7 @@ Partial Class frmStockSummary
         Me.VacuumBagNCPr.RootElement.StretchVertically = True
         Me.VacuumBagNCPr.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNCPr.TabIndex = 103
+        Me.VacuumBagNCPr.Text = "0.00"
         Me.VacuumBagNCPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagNCWt
@@ -803,6 +928,7 @@ Partial Class frmStockSummary
         Me.SampleBagNCWt.RootElement.StretchVertically = True
         Me.SampleBagNCWt.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNCWt.TabIndex = 102
+        Me.SampleBagNCWt.Text = "0.00"
         Me.SampleBagNCWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNCWt
@@ -819,11 +945,13 @@ Partial Class frmStockSummary
         Me.VacuumBagNCWt.RootElement.StretchVertically = True
         Me.VacuumBagNCWt.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNCWt.TabIndex = 101
+        Me.VacuumBagNCWt.Text = "0.00"
         Me.VacuumBagNCWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNCFw
         '
         Me.BhukaBagNCFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BhukaBagNCFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.BhukaBagNCFw.Location = New System.Drawing.Point(261, 38)
         Me.BhukaBagNCFw.Name = "BhukaBagNCFw"
         Me.BhukaBagNCFw.ReadOnly = True
@@ -834,11 +962,13 @@ Partial Class frmStockSummary
         Me.BhukaBagNCFw.RootElement.StretchVertically = True
         Me.BhukaBagNCFw.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNCFw.TabIndex = 100
+        Me.BhukaBagNCFw.Text = "0.00"
         Me.BhukaBagNCFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNCPr
         '
         Me.BhukaBagNCPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BhukaBagNCPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.BhukaBagNCPr.Location = New System.Drawing.Point(204, 38)
         Me.BhukaBagNCPr.Name = "BhukaBagNCPr"
         Me.BhukaBagNCPr.ReadOnly = True
@@ -849,11 +979,13 @@ Partial Class frmStockSummary
         Me.BhukaBagNCPr.RootElement.StretchVertically = True
         Me.BhukaBagNCPr.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNCPr.TabIndex = 99
+        Me.BhukaBagNCPr.Text = "0.00"
         Me.BhukaBagNCPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNCWt
         '
         Me.BhukaBagNCWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BhukaBagNCWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.BhukaBagNCWt.Location = New System.Drawing.Point(147, 38)
         Me.BhukaBagNCWt.Name = "BhukaBagNCWt"
         Me.BhukaBagNCWt.ReadOnly = True
@@ -864,6 +996,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNCWt.RootElement.StretchVertically = True
         Me.BhukaBagNCWt.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNCWt.TabIndex = 98
+        Me.BhukaBagNCWt.Text = "0.00"
         Me.BhukaBagNCWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label25
@@ -922,12 +1055,11 @@ Partial Class frmStockSummary
         Me.GrpBBCreated.Controls.Add(Me.Label41)
         Me.GrpBBCreated.Controls.Add(Me.Label17)
         Me.GrpBBCreated.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBBCreated.Location = New System.Drawing.Point(475, 245)
+        Me.GrpBBCreated.Location = New System.Drawing.Point(0, 3)
         Me.GrpBBCreated.Name = "GrpBBCreated"
-        Me.GrpBBCreated.Size = New System.Drawing.Size(350, 120)
+        Me.GrpBBCreated.Size = New System.Drawing.Size(346, 117)
         Me.GrpBBCreated.TabIndex = 3
         Me.GrpBBCreated.TabStop = False
-        Me.GrpBBCreated.Text = "Bags Not Received"
         '
         'btnLBagCreated
         '
@@ -951,6 +1083,7 @@ Partial Class frmStockSummary
         Me.LotFailBagFw.RootElement.StretchVertically = True
         Me.LotFailBagFw.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagFw.TabIndex = 76
+        Me.LotFailBagFw.Text = "0.00"
         Me.LotFailBagFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LotFailBagPr
@@ -967,6 +1100,7 @@ Partial Class frmStockSummary
         Me.LotFailBagPr.RootElement.StretchVertically = True
         Me.LotFailBagPr.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagPr.TabIndex = 75
+        Me.LotFailBagPr.Text = "0.00"
         Me.LotFailBagPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LotFailBagWt
@@ -983,6 +1117,7 @@ Partial Class frmStockSummary
         Me.LotFailBagWt.RootElement.StretchVertically = True
         Me.LotFailBagWt.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagWt.TabIndex = 74
+        Me.LotFailBagWt.Text = "0.00"
         Me.LotFailBagWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label20
@@ -1033,6 +1168,7 @@ Partial Class frmStockSummary
         Me.SampleBagFw.RootElement.StretchVertically = True
         Me.SampleBagFw.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagFw.TabIndex = 47
+        Me.SampleBagFw.Text = "0.00"
         Me.SampleBagFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagPr
@@ -1049,6 +1185,7 @@ Partial Class frmStockSummary
         Me.SampleBagPr.RootElement.StretchVertically = True
         Me.SampleBagPr.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagPr.TabIndex = 46
+        Me.SampleBagPr.Text = "0.00"
         Me.SampleBagPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagWt
@@ -1065,6 +1202,7 @@ Partial Class frmStockSummary
         Me.SampleBagWt.RootElement.StretchVertically = True
         Me.SampleBagWt.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagWt.TabIndex = 45
+        Me.SampleBagWt.Text = "0.00"
         Me.SampleBagWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagFw
@@ -1081,6 +1219,7 @@ Partial Class frmStockSummary
         Me.VacuumBagFw.RootElement.StretchVertically = True
         Me.VacuumBagFw.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagFw.TabIndex = 44
+        Me.VacuumBagFw.Text = "0.00"
         Me.VacuumBagFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNrFw
@@ -1097,6 +1236,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNrFw.RootElement.StretchVertically = True
         Me.BhukaBagNrFw.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNrFw.TabIndex = 43
+        Me.BhukaBagNrFw.Text = "0.00"
         Me.BhukaBagNrFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagPr
@@ -1113,6 +1253,7 @@ Partial Class frmStockSummary
         Me.VacuumBagPr.RootElement.StretchVertically = True
         Me.VacuumBagPr.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagPr.TabIndex = 42
+        Me.VacuumBagPr.Text = "0.00"
         Me.VacuumBagPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNrPr
@@ -1129,6 +1270,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNrPr.RootElement.StretchVertically = True
         Me.BhukaBagNrPr.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNrPr.TabIndex = 41
+        Me.BhukaBagNrPr.Text = "0.00"
         Me.BhukaBagNrPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagWt
@@ -1145,6 +1287,7 @@ Partial Class frmStockSummary
         Me.VacuumBagWt.RootElement.StretchVertically = True
         Me.VacuumBagWt.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagWt.TabIndex = 40
+        Me.VacuumBagWt.Text = "0.00"
         Me.VacuumBagWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNrWt
@@ -1161,6 +1304,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNrWt.RootElement.StretchVertically = True
         Me.BhukaBagNrWt.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNrWt.TabIndex = 39
+        Me.BhukaBagNrWt.Text = "0.00"
         Me.BhukaBagNrWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label43
@@ -1249,12 +1393,11 @@ Partial Class frmStockSummary
         Me.GrpBBNotUsed.Controls.Add(Me.Label10)
         Me.GrpBBNotUsed.Controls.Add(Me.Label11)
         Me.GrpBBNotUsed.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBBNotUsed.Location = New System.Drawing.Point(475, 369)
+        Me.GrpBBNotUsed.Location = New System.Drawing.Point(2, 0)
         Me.GrpBBNotUsed.Name = "GrpBBNotUsed"
-        Me.GrpBBNotUsed.Size = New System.Drawing.Size(350, 120)
+        Me.GrpBBNotUsed.Size = New System.Drawing.Size(346, 114)
         Me.GrpBBNotUsed.TabIndex = 4
         Me.GrpBBNotUsed.TabStop = False
-        Me.GrpBBNotUsed.Text = "Scrap Bags Not Used"
         '
         'btnLBagNotUsed
         '
@@ -1278,6 +1421,7 @@ Partial Class frmStockSummary
         Me.LotFailBagUFw.RootElement.StretchVertically = True
         Me.LotFailBagUFw.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagUFw.TabIndex = 72
+        Me.LotFailBagUFw.Text = "0.00"
         Me.LotFailBagUFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LotFailBagUPr
@@ -1294,6 +1438,7 @@ Partial Class frmStockSummary
         Me.LotFailBagUPr.RootElement.StretchVertically = True
         Me.LotFailBagUPr.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagUPr.TabIndex = 71
+        Me.LotFailBagUPr.Text = "0.00"
         Me.LotFailBagUPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LotFailBagUWt
@@ -1310,6 +1455,7 @@ Partial Class frmStockSummary
         Me.LotFailBagUWt.RootElement.StretchVertically = True
         Me.LotFailBagUWt.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagUWt.TabIndex = 70
+        Me.LotFailBagUWt.Text = "0.00"
         Me.LotFailBagUWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label19
@@ -1360,6 +1506,7 @@ Partial Class frmStockSummary
         Me.SampleBagUFw.RootElement.StretchVertically = True
         Me.SampleBagUFw.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagUFw.TabIndex = 65
+        Me.SampleBagUFw.Text = "0.00"
         Me.SampleBagUFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagUPr
@@ -1376,6 +1523,7 @@ Partial Class frmStockSummary
         Me.SampleBagUPr.RootElement.StretchVertically = True
         Me.SampleBagUPr.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagUPr.TabIndex = 64
+        Me.SampleBagUPr.Text = "0.00"
         Me.SampleBagUPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagUWt
@@ -1392,6 +1540,7 @@ Partial Class frmStockSummary
         Me.SampleBagUWt.RootElement.StretchVertically = True
         Me.SampleBagUWt.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagUWt.TabIndex = 63
+        Me.SampleBagUWt.Text = "0.00"
         Me.SampleBagUWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagUFw
@@ -1408,6 +1557,7 @@ Partial Class frmStockSummary
         Me.VacuumBagUFw.RootElement.StretchVertically = True
         Me.VacuumBagUFw.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagUFw.TabIndex = 62
+        Me.VacuumBagUFw.Text = "0.00"
         Me.VacuumBagUFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagUFw
@@ -1424,6 +1574,7 @@ Partial Class frmStockSummary
         Me.BhukaBagUFw.RootElement.StretchVertically = True
         Me.BhukaBagUFw.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagUFw.TabIndex = 61
+        Me.BhukaBagUFw.Text = "0.00"
         Me.BhukaBagUFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagUPr
@@ -1440,6 +1591,7 @@ Partial Class frmStockSummary
         Me.VacuumBagUPr.RootElement.StretchVertically = True
         Me.VacuumBagUPr.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagUPr.TabIndex = 60
+        Me.VacuumBagUPr.Text = "0.00"
         Me.VacuumBagUPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagUPr
@@ -1456,6 +1608,7 @@ Partial Class frmStockSummary
         Me.BhukaBagUPr.RootElement.StretchVertically = True
         Me.BhukaBagUPr.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagUPr.TabIndex = 59
+        Me.BhukaBagUPr.Text = "0.00"
         Me.BhukaBagUPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagUWt
@@ -1472,6 +1625,7 @@ Partial Class frmStockSummary
         Me.VacuumBagUWt.RootElement.StretchVertically = True
         Me.VacuumBagUWt.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagUWt.TabIndex = 58
+        Me.VacuumBagUWt.Text = "0.00"
         Me.VacuumBagUWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagUWt
@@ -1488,6 +1642,7 @@ Partial Class frmStockSummary
         Me.BhukaBagUWt.RootElement.StretchVertically = True
         Me.BhukaBagUWt.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagUWt.TabIndex = 57
+        Me.BhukaBagUWt.Text = " 0.00"
         Me.BhukaBagUWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
@@ -1561,12 +1716,12 @@ Partial Class frmStockSummary
         Me.GrpBMetalNotUsed.Controls.Add(Me.Label48)
         Me.GrpBMetalNotUsed.Controls.Add(Me.Label21)
         Me.GrpBMetalNotUsed.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBMetalNotUsed.Location = New System.Drawing.Point(475, 493)
+        Me.GrpBMetalNotUsed.Location = New System.Drawing.Point(3, 3)
         Me.GrpBMetalNotUsed.Name = "GrpBMetalNotUsed"
-        Me.GrpBMetalNotUsed.Size = New System.Drawing.Size(350, 70)
+        Me.GrpBMetalNotUsed.Size = New System.Drawing.Size(350, 63)
         Me.GrpBMetalNotUsed.TabIndex = 5
         Me.GrpBMetalNotUsed.TabStop = False
-        Me.GrpBMetalNotUsed.Text = "Vouchers Metal Unused"
+        Me.GrpBMetalNotUsed.Text = "                                             Vouchers Metal Unused"
         '
         'btnVoucherMetalUnused
         '
@@ -1672,12 +1827,12 @@ Partial Class frmStockSummary
         Me.GrpBLotAdditionStock.Controls.Add(Me.LotAddStockWt)
         Me.GrpBLotAdditionStock.Controls.Add(Me.Label18)
         Me.GrpBLotAdditionStock.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBLotAdditionStock.Location = New System.Drawing.Point(475, 568)
+        Me.GrpBLotAdditionStock.Location = New System.Drawing.Point(3, 72)
         Me.GrpBLotAdditionStock.Name = "GrpBLotAdditionStock"
-        Me.GrpBLotAdditionStock.Size = New System.Drawing.Size(350, 70)
+        Me.GrpBLotAdditionStock.Size = New System.Drawing.Size(350, 61)
         Me.GrpBLotAdditionStock.TabIndex = 6
         Me.GrpBLotAdditionStock.TabStop = False
-        Me.GrpBLotAdditionStock.Text = "Lot Addition Stock"
+        Me.GrpBLotAdditionStock.Text = "                                                   Lot Addition Stock"
         '
         'btnLotAdditionStock
         '
@@ -1793,12 +1948,11 @@ Partial Class frmStockSummary
         Me.GrpBLoss.Controls.Add(Me.lblLossTransaction)
         Me.GrpBLoss.Controls.Add(Me.Label33)
         Me.GrpBLoss.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBLoss.Location = New System.Drawing.Point(475, 642)
+        Me.GrpBLoss.Location = New System.Drawing.Point(2, 2)
         Me.GrpBLoss.Name = "GrpBLoss"
-        Me.GrpBLoss.Size = New System.Drawing.Size(350, 108)
+        Me.GrpBLoss.Size = New System.Drawing.Size(344, 103)
         Me.GrpBLoss.TabIndex = 7
         Me.GrpBLoss.TabStop = False
-        Me.GrpBLoss.Text = "Loss"
         '
         'BtnLossLabs
         '
@@ -1827,6 +1981,7 @@ Partial Class frmStockSummary
         'LabReceiveFw
         '
         Me.LabReceiveFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LabReceiveFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabReceiveFw.Location = New System.Drawing.Point(262, 79)
         Me.LabReceiveFw.Name = "LabReceiveFw"
         Me.LabReceiveFw.ReadOnly = True
@@ -1837,11 +1992,13 @@ Partial Class frmStockSummary
         Me.LabReceiveFw.RootElement.StretchVertically = True
         Me.LabReceiveFw.Size = New System.Drawing.Size(55, 20)
         Me.LabReceiveFw.TabIndex = 65
+        Me.LabReceiveFw.Text = "0.00"
         Me.LabReceiveFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LabReceivePr
         '
         Me.LabReceivePr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LabReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabReceivePr.Location = New System.Drawing.Point(205, 79)
         Me.LabReceivePr.Name = "LabReceivePr"
         Me.LabReceivePr.ReadOnly = True
@@ -1852,6 +2009,7 @@ Partial Class frmStockSummary
         Me.LabReceivePr.RootElement.StretchVertically = True
         Me.LabReceivePr.Size = New System.Drawing.Size(55, 20)
         Me.LabReceivePr.TabIndex = 64
+        Me.LabReceivePr.Text = "0.00"
         Me.LabReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label37
@@ -1887,6 +2045,7 @@ Partial Class frmStockSummary
         'LossTransFw
         '
         Me.LossTransFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossTransFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossTransFw.Location = New System.Drawing.Point(262, 57)
         Me.LossTransFw.Name = "LossTransFw"
         Me.LossTransFw.ReadOnly = True
@@ -1897,11 +2056,13 @@ Partial Class frmStockSummary
         Me.LossTransFw.RootElement.StretchVertically = True
         Me.LossTransFw.Size = New System.Drawing.Size(55, 20)
         Me.LossTransFw.TabIndex = 60
+        Me.LossTransFw.Text = "0.00"
         Me.LossTransFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LabReceiveWt
         '
         Me.LabReceiveWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LabReceiveWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LabReceiveWt.Location = New System.Drawing.Point(147, 79)
         Me.LabReceiveWt.Name = "LabReceiveWt"
         Me.LabReceiveWt.ReadOnly = True
@@ -1912,11 +2073,13 @@ Partial Class frmStockSummary
         Me.LabReceiveWt.RootElement.StretchVertically = True
         Me.LabReceiveWt.Size = New System.Drawing.Size(55, 20)
         Me.LabReceiveWt.TabIndex = 59
+        Me.LabReceiveWt.Text = "0.00"
         Me.LabReceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LossTransPr
         '
         Me.LossTransPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossTransPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossTransPr.Location = New System.Drawing.Point(205, 57)
         Me.LossTransPr.Name = "LossTransPr"
         Me.LossTransPr.ReadOnly = True
@@ -1927,11 +2090,13 @@ Partial Class frmStockSummary
         Me.LossTransPr.RootElement.StretchVertically = True
         Me.LossTransPr.Size = New System.Drawing.Size(55, 20)
         Me.LossTransPr.TabIndex = 58
+        Me.LossTransPr.Text = "0.00"
         Me.LossTransPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LossTransWt
         '
         Me.LossTransWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossTransWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossTransWt.Location = New System.Drawing.Point(147, 57)
         Me.LossTransWt.Name = "LossTransWt"
         Me.LossTransWt.ReadOnly = True
@@ -1942,11 +2107,13 @@ Partial Class frmStockSummary
         Me.LossTransWt.RootElement.StretchVertically = True
         Me.LossTransWt.Size = New System.Drawing.Size(55, 20)
         Me.LossTransWt.TabIndex = 57
+        Me.LossTransWt.Text = "0.00"
         Me.LossTransWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LossBagsFw
         '
         Me.LossBagsFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossBagsFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossBagsFw.Location = New System.Drawing.Point(262, 34)
         Me.LossBagsFw.Name = "LossBagsFw"
         Me.LossBagsFw.ReadOnly = True
@@ -1957,11 +2124,13 @@ Partial Class frmStockSummary
         Me.LossBagsFw.RootElement.StretchVertically = True
         Me.LossBagsFw.Size = New System.Drawing.Size(55, 20)
         Me.LossBagsFw.TabIndex = 56
+        Me.LossBagsFw.Text = "0.00"
         Me.LossBagsFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LossBagsPr
         '
         Me.LossBagsPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossBagsPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossBagsPr.Location = New System.Drawing.Point(205, 34)
         Me.LossBagsPr.Name = "LossBagsPr"
         Me.LossBagsPr.ReadOnly = True
@@ -1972,11 +2141,13 @@ Partial Class frmStockSummary
         Me.LossBagsPr.RootElement.StretchVertically = True
         Me.LossBagsPr.Size = New System.Drawing.Size(55, 20)
         Me.LossBagsPr.TabIndex = 55
+        Me.LossBagsPr.Text = "0.00"
         Me.LossBagsPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LossBagsWt
         '
         Me.LossBagsWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LossBagsWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.LossBagsWt.Location = New System.Drawing.Point(147, 34)
         Me.LossBagsWt.Name = "LossBagsWt"
         Me.LossBagsWt.ReadOnly = True
@@ -1987,6 +2158,7 @@ Partial Class frmStockSummary
         Me.LossBagsWt.RootElement.StretchVertically = True
         Me.LossBagsWt.Size = New System.Drawing.Size(55, 20)
         Me.LossBagsWt.TabIndex = 54
+        Me.LossBagsWt.Text = "0.00"
         Me.LossBagsWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblLossBag
@@ -2034,32 +2206,27 @@ Partial Class frmStockSummary
         Me.GrpBOpeningStock.Controls.Add(Me.btnOpStock)
         Me.GrpBOpeningStock.Controls.Add(Me.btnDeptIssue)
         Me.GrpBOpeningStock.Controls.Add(Me.btnDeptReceive)
-        Me.GrpBOpeningStock.Controls.Add(Me.Label57)
         Me.GrpBOpeningStock.Controls.Add(Me.Label56)
         Me.GrpBOpeningStock.Controls.Add(Me.Label12)
         Me.GrpBOpeningStock.Controls.Add(Me.Label13)
         Me.GrpBOpeningStock.Controls.Add(Me.txtOpeningStockFw)
         Me.GrpBOpeningStock.Controls.Add(Me.txtOpeningStockPr)
         Me.GrpBOpeningStock.Controls.Add(Me.txtOpeningStockWt)
-        Me.GrpBOpeningStock.Controls.Add(Me.txtClosingStockPr)
-        Me.GrpBOpeningStock.Controls.Add(Me.txtClosingStockWt)
         Me.GrpBOpeningStock.Controls.Add(Me.IssueGrossFw)
         Me.GrpBOpeningStock.Controls.Add(Me.ReceiptGrossFw)
         Me.GrpBOpeningStock.Controls.Add(Me.IssueGrossPr)
         Me.GrpBOpeningStock.Controls.Add(Me.ReceiptGrossPr)
         Me.GrpBOpeningStock.Controls.Add(Me.IssueGrossWt)
         Me.GrpBOpeningStock.Controls.Add(Me.ReceiptGrossWt)
-        Me.GrpBOpeningStock.Controls.Add(Me.txtClosingStockFw)
         Me.GrpBOpeningStock.Controls.Add(Me.Label54)
         Me.GrpBOpeningStock.Controls.Add(Me.Label53)
         Me.GrpBOpeningStock.Controls.Add(Me.Label52)
         Me.GrpBOpeningStock.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GrpBOpeningStock.Location = New System.Drawing.Point(7, 6)
+        Me.GrpBOpeningStock.Location = New System.Drawing.Point(3, 3)
         Me.GrpBOpeningStock.Name = "GrpBOpeningStock"
-        Me.GrpBOpeningStock.Size = New System.Drawing.Size(323, 167)
+        Me.GrpBOpeningStock.Size = New System.Drawing.Size(323, 141)
         Me.GrpBOpeningStock.TabIndex = 8
         Me.GrpBOpeningStock.TabStop = False
-        Me.GrpBOpeningStock.Text = "Summary"
         '
         'Button2
         '
@@ -2211,16 +2378,6 @@ Partial Class frmStockSummary
         Me.btnDeptReceive.TabIndex = 110
         Me.btnDeptReceive.UseVisualStyleBackColor = True
         '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label57.Location = New System.Drawing.Point(41, 140)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(79, 14)
-        Me.Label57.TabIndex = 109
-        Me.Label57.Text = "Closing Stock"
-        '
         'Label56
         '
         Me.Label56.AutoSize = True
@@ -2292,38 +2449,6 @@ Partial Class frmStockSummary
         Me.txtOpeningStockWt.Size = New System.Drawing.Size(55, 20)
         Me.txtOpeningStockWt.TabIndex = 102
         Me.txtOpeningStockWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtClosingStockPr
-        '
-        Me.txtClosingStockPr.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtClosingStockPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtClosingStockPr.Location = New System.Drawing.Point(181, 137)
-        Me.txtClosingStockPr.Name = "txtClosingStockPr"
-        Me.txtClosingStockPr.ReadOnly = True
-        '
-        '
-        '
-        Me.txtClosingStockPr.RootElement.ControlBounds = New System.Drawing.Rectangle(181, 137, 100, 20)
-        Me.txtClosingStockPr.RootElement.StretchVertically = True
-        Me.txtClosingStockPr.Size = New System.Drawing.Size(55, 20)
-        Me.txtClosingStockPr.TabIndex = 101
-        Me.txtClosingStockPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtClosingStockWt
-        '
-        Me.txtClosingStockWt.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtClosingStockWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtClosingStockWt.Location = New System.Drawing.Point(124, 137)
-        Me.txtClosingStockWt.Name = "txtClosingStockWt"
-        Me.txtClosingStockWt.ReadOnly = True
-        '
-        '
-        '
-        Me.txtClosingStockWt.RootElement.ControlBounds = New System.Drawing.Rectangle(124, 137, 100, 20)
-        Me.txtClosingStockWt.RootElement.StretchVertically = True
-        Me.txtClosingStockWt.Size = New System.Drawing.Size(55, 20)
-        Me.txtClosingStockWt.TabIndex = 100
-        Me.txtClosingStockWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'IssueGrossFw
         '
@@ -2421,22 +2546,6 @@ Partial Class frmStockSummary
         Me.ReceiptGrossWt.TabIndex = 94
         Me.ReceiptGrossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtClosingStockFw
-        '
-        Me.txtClosingStockFw.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtClosingStockFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtClosingStockFw.Location = New System.Drawing.Point(239, 137)
-        Me.txtClosingStockFw.Name = "txtClosingStockFw"
-        Me.txtClosingStockFw.ReadOnly = True
-        '
-        '
-        '
-        Me.txtClosingStockFw.RootElement.ControlBounds = New System.Drawing.Rectangle(239, 137, 100, 20)
-        Me.txtClosingStockFw.RootElement.StretchVertically = True
-        Me.txtClosingStockFw.Size = New System.Drawing.Size(55, 20)
-        Me.txtClosingStockFw.TabIndex = 105
-        Me.txtClosingStockFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'Label54
         '
         Me.Label54.AutoSize = True
@@ -2467,55 +2576,6 @@ Partial Class frmStockSummary
         Me.Label52.TabIndex = 57
         Me.Label52.Text = "Gross Wt."
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnUpdate.Location = New System.Drawing.Point(20, 511)
-        Me.btnUpdate.Name = "btnUpdate"
-        '
-        '
-        '
-        Me.btnUpdate.RootElement.ControlBounds = New System.Drawing.Rectangle(20, 511, 110, 24)
-        Me.btnUpdate.Size = New System.Drawing.Size(110, 24)
-        Me.btnUpdate.TabIndex = 9
-        Me.btnUpdate.Text = "Update Stock"
-        Me.btnUpdate.Visible = False
-        '
-        'lblGrossWt
-        '
-        Me.lblGrossWt.AutoSize = True
-        Me.lblGrossWt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblGrossWt.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblGrossWt.Location = New System.Drawing.Point(635, 751)
-        Me.lblGrossWt.Name = "lblGrossWt"
-        Me.lblGrossWt.Size = New System.Drawing.Size(35, 14)
-        Me.lblGrossWt.TabIndex = 69
-        Me.lblGrossWt.Text = "0.00"
-        '
-        'lblGrossPr
-        '
-        Me.lblGrossPr.AutoSize = True
-        Me.lblGrossPr.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblGrossPr.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblGrossPr.Location = New System.Drawing.Point(698, 751)
-        Me.lblGrossPr.Name = "lblGrossPr"
-        Me.lblGrossPr.Size = New System.Drawing.Size(35, 14)
-        Me.lblGrossPr.TabIndex = 10
-        Me.lblGrossPr.Text = "0.00"
-        Me.lblGrossPr.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'lblGrossFw
-        '
-        Me.lblGrossFw.AutoSize = True
-        Me.lblGrossFw.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblGrossFw.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblGrossFw.Location = New System.Drawing.Point(749, 751)
-        Me.lblGrossFw.Name = "lblGrossFw"
-        Me.lblGrossFw.Size = New System.Drawing.Size(35, 14)
-        Me.lblGrossFw.TabIndex = 70
-        Me.lblGrossFw.Text = "0.00"
-        Me.lblGrossFw.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
@@ -2525,82 +2585,6 @@ Partial Class frmStockSummary
         Me.lblTotal.Size = New System.Drawing.Size(113, 14)
         Me.lblTotal.TabIndex = 152
         Me.lblTotal.Text = "Stocks In  Hand :"
-        '
-        'lblDiffFw
-        '
-        Me.lblDiffFw.AutoSize = True
-        Me.lblDiffFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblDiffFw.Location = New System.Drawing.Point(255, 258)
-        Me.lblDiffFw.Name = "lblDiffFw"
-        Me.lblDiffFw.Size = New System.Drawing.Size(32, 14)
-        Me.lblDiffFw.TabIndex = 155
-        Me.lblDiffFw.Text = "0.00"
-        '
-        'lblFinal
-        '
-        Me.lblFinal.AutoSize = True
-        Me.lblFinal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFinal.Location = New System.Drawing.Point(61, 258)
-        Me.lblFinal.Name = "lblFinal"
-        Me.lblFinal.Size = New System.Drawing.Size(65, 14)
-        Me.lblFinal.TabIndex = 156
-        Me.lblFinal.Text = "Fine Diff :"
-        '
-        'btnShow
-        '
-        Me.btnShow.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnShow.Location = New System.Drawing.Point(7, 252)
-        Me.btnShow.Name = "btnShow"
-        '
-        '
-        '
-        Me.btnShow.RootElement.ControlBounds = New System.Drawing.Rectangle(7, 252, 110, 24)
-        Me.btnShow.Size = New System.Drawing.Size(50, 24)
-        Me.btnShow.TabIndex = 157
-        Me.btnShow.Text = "Refresh"
-        '
-        'lblClosingStock
-        '
-        Me.lblClosingStock.AutoSize = True
-        Me.lblClosingStock.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblClosingStock.Location = New System.Drawing.Point(29, 182)
-        Me.lblClosingStock.Name = "lblClosingStock"
-        Me.lblClosingStock.Size = New System.Drawing.Size(98, 14)
-        Me.lblClosingStock.TabIndex = 162
-        Me.lblClosingStock.Text = "Closing Stock :"
-        '
-        'lblClosingStockFw
-        '
-        Me.lblClosingStockFw.AutoSize = True
-        Me.lblClosingStockFw.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblClosingStockFw.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblClosingStockFw.Location = New System.Drawing.Point(266, 185)
-        Me.lblClosingStockFw.Name = "lblClosingStockFw"
-        Me.lblClosingStockFw.Size = New System.Drawing.Size(35, 14)
-        Me.lblClosingStockFw.TabIndex = 168
-        Me.lblClosingStockFw.Text = "0.00"
-        '
-        'lblClosingStockPr
-        '
-        Me.lblClosingStockPr.AutoSize = True
-        Me.lblClosingStockPr.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblClosingStockPr.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblClosingStockPr.Location = New System.Drawing.Point(207, 185)
-        Me.lblClosingStockPr.Name = "lblClosingStockPr"
-        Me.lblClosingStockPr.Size = New System.Drawing.Size(35, 14)
-        Me.lblClosingStockPr.TabIndex = 167
-        Me.lblClosingStockPr.Text = "0.00"
-        '
-        'lblClosingStockWt
-        '
-        Me.lblClosingStockWt.AutoSize = True
-        Me.lblClosingStockWt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblClosingStockWt.ForeColor = System.Drawing.Color.BlueViolet
-        Me.lblClosingStockWt.Location = New System.Drawing.Point(150, 185)
-        Me.lblClosingStockWt.Name = "lblClosingStockWt"
-        Me.lblClosingStockWt.Size = New System.Drawing.Size(35, 14)
-        Me.lblClosingStockWt.TabIndex = 166
-        Me.lblClosingStockWt.Text = "0.00"
         '
         'GroupBox1
         '
@@ -2629,12 +2613,11 @@ Partial Class frmStockSummary
         Me.GroupBox1.Controls.Add(Me.Label40)
         Me.GroupBox1.Controls.Add(Me.Label44)
         Me.GroupBox1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(28, 319)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(350, 137)
+        Me.GroupBox1.Size = New System.Drawing.Size(346, 128)
         Me.GroupBox1.TabIndex = 169
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Bags Not Updated"
         '
         'btnLBagNotUpdated
         '
@@ -2651,6 +2634,7 @@ Partial Class frmStockSummary
         Me.LotFailBagNuFw.Name = "LotFailBagNuFw"
         Me.LotFailBagNuFw.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagNuFw.TabIndex = 116
+        Me.LotFailBagNuFw.Text = "0.00"
         Me.LotFailBagNuFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LotFailBagNuPr
@@ -2660,6 +2644,7 @@ Partial Class frmStockSummary
         Me.LotFailBagNuPr.Name = "LotFailBagNuPr"
         Me.LotFailBagNuPr.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagNuPr.TabIndex = 115
+        Me.LotFailBagNuPr.Text = "0.00"
         Me.LotFailBagNuPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadTextBox17
@@ -2676,6 +2661,7 @@ Partial Class frmStockSummary
         Me.LotFailBagNuWt.Name = "LotFailBagNuWt"
         Me.LotFailBagNuWt.Size = New System.Drawing.Size(55, 20)
         Me.LotFailBagNuWt.TabIndex = 114
+        Me.LotFailBagNuWt.Text = "0.00"
         Me.LotFailBagNuWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label47
@@ -2756,6 +2742,7 @@ Partial Class frmStockSummary
         Me.SampleBagNuFw.RootElement.StretchVertically = True
         Me.SampleBagNuFw.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNuFw.TabIndex = 106
+        Me.SampleBagNuFw.Text = "0.00"
         Me.SampleBagNuFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagNuPr
@@ -2772,6 +2759,7 @@ Partial Class frmStockSummary
         Me.SampleBagNuPr.RootElement.StretchVertically = True
         Me.SampleBagNuPr.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNuPr.TabIndex = 105
+        Me.SampleBagNuPr.Text = "0.00"
         Me.SampleBagNuPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNuFw
@@ -2788,6 +2776,7 @@ Partial Class frmStockSummary
         Me.VacuumBagNuFw.RootElement.StretchVertically = True
         Me.VacuumBagNuFw.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNuFw.TabIndex = 104
+        Me.VacuumBagNuFw.Text = "0.00"
         Me.VacuumBagNuFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNuPr
@@ -2804,6 +2793,7 @@ Partial Class frmStockSummary
         Me.VacuumBagNuPr.RootElement.StretchVertically = True
         Me.VacuumBagNuPr.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNuPr.TabIndex = 103
+        Me.VacuumBagNuPr.Text = "0.00"
         Me.VacuumBagNuPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'SampleBagNuWt
@@ -2820,6 +2810,7 @@ Partial Class frmStockSummary
         Me.SampleBagNuWt.RootElement.StretchVertically = True
         Me.SampleBagNuWt.Size = New System.Drawing.Size(55, 20)
         Me.SampleBagNuWt.TabIndex = 102
+        Me.SampleBagNuWt.Text = "0.00"
         Me.SampleBagNuWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'VacuumBagNuWt
@@ -2836,6 +2827,7 @@ Partial Class frmStockSummary
         Me.VacuumBagNuWt.RootElement.StretchVertically = True
         Me.VacuumBagNuWt.Size = New System.Drawing.Size(55, 20)
         Me.VacuumBagNuWt.TabIndex = 101
+        Me.VacuumBagNuWt.Text = "0.00"
         Me.VacuumBagNuWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNuFw
@@ -2852,6 +2844,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNuFw.RootElement.StretchVertically = True
         Me.BhukaBagNuFw.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNuFw.TabIndex = 100
+        Me.BhukaBagNuFw.Text = "0.00"
         Me.BhukaBagNuFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNuPr
@@ -2868,6 +2861,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNuPr.RootElement.StretchVertically = True
         Me.BhukaBagNuPr.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNuPr.TabIndex = 99
+        Me.BhukaBagNuPr.Text = "0.00"
         Me.BhukaBagNuPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'BhukaBagNuWt
@@ -2884,6 +2878,7 @@ Partial Class frmStockSummary
         Me.BhukaBagNuWt.RootElement.StretchVertically = True
         Me.BhukaBagNuWt.Size = New System.Drawing.Size(55, 20)
         Me.BhukaBagNuWt.TabIndex = 98
+        Me.BhukaBagNuWt.Text = "0.00"
         Me.BhukaBagNuWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label39
@@ -2916,13 +2911,790 @@ Partial Class frmStockSummary
         Me.Label44.TabIndex = 95
         Me.Label44.Text = "All Scrap Bags"
         '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Controls.Add(Me.GrpBMetalNotUsed)
+        Me.FlowLayoutPanel1.Controls.Add(Me.GrpBLotAdditionStock)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel2)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel3)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel3)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel4)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel4)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel5)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel5)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadCollapsiblePanel6)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel6)
+        Me.FlowLayoutPanel1.Controls.Add(Me.RadPanel11)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(475, 6)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(362, 1297)
+        Me.FlowLayoutPanel1.TabIndex = 171
+        '
+        'RadCollapsiblePanel1
+        '
+        Me.RadCollapsiblePanel1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel1.HeaderText = "WIP(Work In Progress)"
+        Me.RadCollapsiblePanel1.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel1.Location = New System.Drawing.Point(3, 139)
+        Me.RadCollapsiblePanel1.Name = "RadCollapsiblePanel1"
+        '
+        'RadCollapsiblePanel1.PanelContainer
+        '
+        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.GrpBWIP)
+        Me.RadCollapsiblePanel1.PanelContainer.Size = New System.Drawing.Size(348, 132)
+        Me.RadCollapsiblePanel1.Size = New System.Drawing.Size(350, 160)
+        Me.RadCollapsiblePanel1.TabIndex = 7
+        '
+        'RadPanel1
+        '
+        Me.RadPanel1.Controls.Add(Me.txtTotalWFw)
+        Me.RadPanel1.Controls.Add(Me.txtTotalWPr)
+        Me.RadPanel1.Controls.Add(Me.txtTotalWWt)
+        Me.RadPanel1.Controls.Add(Me.Label51)
+        Me.RadPanel1.Location = New System.Drawing.Point(3, 305)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel1.TabIndex = 8
+        '
+        'txtTotalWFw
+        '
+        Me.txtTotalWFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalWFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalWFw.Location = New System.Drawing.Point(267, 3)
+        Me.txtTotalWFw.Name = "txtTotalWFw"
+        Me.txtTotalWFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalWFw.RootElement.ControlBounds = New System.Drawing.Rectangle(267, 3, 100, 20)
+        Me.txtTotalWFw.RootElement.StretchVertically = True
+        Me.txtTotalWFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalWFw.TabIndex = 34
+        Me.txtTotalWFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalWPr
+        '
+        Me.txtTotalWPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalWPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalWPr.Location = New System.Drawing.Point(210, 3)
+        Me.txtTotalWPr.Name = "txtTotalWPr"
+        Me.txtTotalWPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalWPr.RootElement.ControlBounds = New System.Drawing.Rectangle(210, 3, 100, 20)
+        Me.txtTotalWPr.RootElement.StretchVertically = True
+        Me.txtTotalWPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalWPr.TabIndex = 33
+        Me.txtTotalWPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalWWt
+        '
+        Me.txtTotalWWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalWWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalWWt.Location = New System.Drawing.Point(153, 3)
+        Me.txtTotalWWt.Name = "txtTotalWWt"
+        Me.txtTotalWWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalWWt.RootElement.ControlBounds = New System.Drawing.Rectangle(153, 3, 100, 20)
+        Me.txtTotalWWt.RootElement.StretchVertically = True
+        Me.txtTotalWWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalWWt.TabIndex = 32
+        Me.txtTotalWWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label51.Location = New System.Drawing.Point(88, 6)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(62, 14)
+        Me.Label51.TabIndex = 31
+        Me.Label51.Text = "WIP Total"
+        '
+        'RadCollapsiblePanel2
+        '
+        Me.RadCollapsiblePanel2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel2.HeaderText = "Bags Not Created"
+        Me.RadCollapsiblePanel2.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel2.Location = New System.Drawing.Point(3, 338)
+        Me.RadCollapsiblePanel2.Name = "RadCollapsiblePanel2"
+        '
+        'RadCollapsiblePanel2.PanelContainer
+        '
+        Me.RadCollapsiblePanel2.PanelContainer.Controls.Add(Me.GrpBBnotCreated)
+        Me.RadCollapsiblePanel2.PanelContainer.Size = New System.Drawing.Size(357, 118)
+        Me.RadCollapsiblePanel2.Size = New System.Drawing.Size(359, 146)
+        Me.RadCollapsiblePanel2.TabIndex = 9
+        '
+        'RadPanel2
+        '
+        Me.RadPanel2.Controls.Add(Me.txtTotalBncFw)
+        Me.RadPanel2.Controls.Add(Me.txtTotalBncPr)
+        Me.RadPanel2.Controls.Add(Me.txtTotalBncWt)
+        Me.RadPanel2.Controls.Add(Me.Label55)
+        Me.RadPanel2.Location = New System.Drawing.Point(3, 490)
+        Me.RadPanel2.Name = "RadPanel2"
+        Me.RadPanel2.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel2.TabIndex = 10
+        '
+        'txtTotalBncFw
+        '
+        Me.txtTotalBncFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBncFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBncFw.Location = New System.Drawing.Point(267, 3)
+        Me.txtTotalBncFw.Name = "txtTotalBncFw"
+        Me.txtTotalBncFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBncFw.RootElement.ControlBounds = New System.Drawing.Rectangle(267, 3, 100, 20)
+        Me.txtTotalBncFw.RootElement.StretchVertically = True
+        Me.txtTotalBncFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBncFw.TabIndex = 34
+        Me.txtTotalBncFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBncPr
+        '
+        Me.txtTotalBncPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBncPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBncPr.Location = New System.Drawing.Point(210, 3)
+        Me.txtTotalBncPr.Name = "txtTotalBncPr"
+        Me.txtTotalBncPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBncPr.RootElement.ControlBounds = New System.Drawing.Rectangle(210, 3, 100, 20)
+        Me.txtTotalBncPr.RootElement.StretchVertically = True
+        Me.txtTotalBncPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBncPr.TabIndex = 33
+        Me.txtTotalBncPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBncWt
+        '
+        Me.txtTotalBncWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBncWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBncWt.Location = New System.Drawing.Point(153, 3)
+        Me.txtTotalBncWt.Name = "txtTotalBncWt"
+        Me.txtTotalBncWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBncWt.RootElement.ControlBounds = New System.Drawing.Rectangle(153, 3, 100, 20)
+        Me.txtTotalBncWt.RootElement.StretchVertically = True
+        Me.txtTotalBncWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBncWt.TabIndex = 32
+        Me.txtTotalBncWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label55.Location = New System.Drawing.Point(15, 6)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(135, 14)
+        Me.Label55.TabIndex = 31
+        Me.Label55.Text = "Bags Not Created Total"
+        '
+        'RadCollapsiblePanel3
+        '
+        Me.RadCollapsiblePanel3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel3.HeaderText = "Bag Not Received"
+        Me.RadCollapsiblePanel3.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel3.Location = New System.Drawing.Point(3, 523)
+        Me.RadCollapsiblePanel3.Name = "RadCollapsiblePanel3"
+        '
+        'RadCollapsiblePanel3.PanelContainer
+        '
+        Me.RadCollapsiblePanel3.PanelContainer.Controls.Add(Me.GrpBBCreated)
+        Me.RadCollapsiblePanel3.PanelContainer.Size = New System.Drawing.Size(348, 130)
+        Me.RadCollapsiblePanel3.Size = New System.Drawing.Size(350, 158)
+        Me.RadCollapsiblePanel3.TabIndex = 11
+        '
+        'RadPanel3
+        '
+        Me.RadPanel3.Controls.Add(Me.txtTotalBnrFw)
+        Me.RadPanel3.Controls.Add(Me.txtTotalBnrPr)
+        Me.RadPanel3.Controls.Add(Me.txtTotalBnrWt)
+        Me.RadPanel3.Controls.Add(Me.Label58)
+        Me.RadPanel3.Location = New System.Drawing.Point(3, 687)
+        Me.RadPanel3.Name = "RadPanel3"
+        Me.RadPanel3.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel3.TabIndex = 12
+        '
+        'txtTotalBnrFw
+        '
+        Me.txtTotalBnrFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnrFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnrFw.Location = New System.Drawing.Point(266, 3)
+        Me.txtTotalBnrFw.Name = "txtTotalBnrFw"
+        Me.txtTotalBnrFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnrFw.RootElement.ControlBounds = New System.Drawing.Rectangle(266, 3, 100, 20)
+        Me.txtTotalBnrFw.RootElement.StretchVertically = True
+        Me.txtTotalBnrFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnrFw.TabIndex = 34
+        Me.txtTotalBnrFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnrPr
+        '
+        Me.txtTotalBnrPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnrPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnrPr.Location = New System.Drawing.Point(208, 3)
+        Me.txtTotalBnrPr.Name = "txtTotalBnrPr"
+        Me.txtTotalBnrPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnrPr.RootElement.ControlBounds = New System.Drawing.Rectangle(208, 3, 100, 20)
+        Me.txtTotalBnrPr.RootElement.StretchVertically = True
+        Me.txtTotalBnrPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnrPr.TabIndex = 33
+        Me.txtTotalBnrPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnrWt
+        '
+        Me.txtTotalBnrWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnrWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnrWt.Location = New System.Drawing.Point(150, 3)
+        Me.txtTotalBnrWt.Name = "txtTotalBnrWt"
+        Me.txtTotalBnrWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnrWt.RootElement.ControlBounds = New System.Drawing.Rectangle(150, 3, 100, 20)
+        Me.txtTotalBnrWt.RootElement.StretchVertically = True
+        Me.txtTotalBnrWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnrWt.TabIndex = 32
+        Me.txtTotalBnrWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label58.Location = New System.Drawing.Point(111, 6)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(35, 14)
+        Me.Label58.TabIndex = 31
+        Me.Label58.Text = "Total"
+        '
+        'RadCollapsiblePanel4
+        '
+        Me.RadCollapsiblePanel4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel4.HeaderText = "          Bag Not Update"
+        Me.RadCollapsiblePanel4.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel4.Location = New System.Drawing.Point(3, 720)
+        Me.RadCollapsiblePanel4.Name = "RadCollapsiblePanel4"
+        '
+        'RadCollapsiblePanel4.PanelContainer
+        '
+        Me.RadCollapsiblePanel4.PanelContainer.Controls.Add(Me.GroupBox1)
+        Me.RadCollapsiblePanel4.PanelContainer.Size = New System.Drawing.Size(348, 128)
+        Me.RadCollapsiblePanel4.Size = New System.Drawing.Size(350, 156)
+        Me.RadCollapsiblePanel4.TabIndex = 13
+        '
+        'RadPanel4
+        '
+        Me.RadPanel4.Controls.Add(Me.txtTotalBnuFw)
+        Me.RadPanel4.Controls.Add(Me.txtTotalBnuPr)
+        Me.RadPanel4.Controls.Add(Me.txtTotalBnuWt)
+        Me.RadPanel4.Controls.Add(Me.Label59)
+        Me.RadPanel4.Location = New System.Drawing.Point(3, 882)
+        Me.RadPanel4.Name = "RadPanel4"
+        Me.RadPanel4.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel4.TabIndex = 14
+        '
+        'txtTotalBnuFw
+        '
+        Me.txtTotalBnuFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnuFw.Location = New System.Drawing.Point(261, 3)
+        Me.txtTotalBnuFw.Name = "txtTotalBnuFw"
+        Me.txtTotalBnuFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnuFw.RootElement.ControlBounds = New System.Drawing.Rectangle(261, 3, 100, 20)
+        Me.txtTotalBnuFw.RootElement.StretchVertically = True
+        Me.txtTotalBnuFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnuFw.TabIndex = 34
+        Me.txtTotalBnuFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnuPr
+        '
+        Me.txtTotalBnuPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnuPr.Location = New System.Drawing.Point(204, 3)
+        Me.txtTotalBnuPr.Name = "txtTotalBnuPr"
+        Me.txtTotalBnuPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnuPr.RootElement.ControlBounds = New System.Drawing.Rectangle(204, 3, 100, 20)
+        Me.txtTotalBnuPr.RootElement.StretchVertically = True
+        Me.txtTotalBnuPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnuPr.TabIndex = 33
+        Me.txtTotalBnuPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnuWt
+        '
+        Me.txtTotalBnuWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnuWt.Location = New System.Drawing.Point(147, 3)
+        Me.txtTotalBnuWt.Name = "txtTotalBnuWt"
+        Me.txtTotalBnuWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnuWt.RootElement.ControlBounds = New System.Drawing.Rectangle(147, 3, 100, 20)
+        Me.txtTotalBnuWt.RootElement.StretchVertically = True
+        Me.txtTotalBnuWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnuWt.TabIndex = 32
+        Me.txtTotalBnuWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label59.Location = New System.Drawing.Point(109, 6)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(35, 14)
+        Me.Label59.TabIndex = 31
+        Me.Label59.Text = "Total"
+        '
+        'RadCollapsiblePanel5
+        '
+        Me.RadCollapsiblePanel5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel5.HeaderText = "Scrap Bags Not Used"
+        Me.RadCollapsiblePanel5.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel5.Location = New System.Drawing.Point(3, 915)
+        Me.RadCollapsiblePanel5.Name = "RadCollapsiblePanel5"
+        '
+        'RadCollapsiblePanel5.PanelContainer
+        '
+        Me.RadCollapsiblePanel5.PanelContainer.Controls.Add(Me.GrpBBNotUsed)
+        Me.RadCollapsiblePanel5.PanelContainer.Size = New System.Drawing.Size(348, 122)
+        Me.RadCollapsiblePanel5.Size = New System.Drawing.Size(350, 150)
+        Me.RadCollapsiblePanel5.TabIndex = 35
+        '
+        'RadPanel5
+        '
+        Me.RadPanel5.Controls.Add(Me.txtTotalBnusFw)
+        Me.RadPanel5.Controls.Add(Me.txtTotalBnusPr)
+        Me.RadPanel5.Controls.Add(Me.txtTotalBnusWt)
+        Me.RadPanel5.Controls.Add(Me.Label60)
+        Me.RadPanel5.Location = New System.Drawing.Point(3, 1071)
+        Me.RadPanel5.Name = "RadPanel5"
+        Me.RadPanel5.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel5.TabIndex = 36
+        '
+        'txtTotalBnusFw
+        '
+        Me.txtTotalBnusFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnusFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnusFw.Location = New System.Drawing.Point(267, 3)
+        Me.txtTotalBnusFw.Name = "txtTotalBnusFw"
+        Me.txtTotalBnusFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnusFw.RootElement.ControlBounds = New System.Drawing.Rectangle(267, 3, 100, 20)
+        Me.txtTotalBnusFw.RootElement.StretchVertically = True
+        Me.txtTotalBnusFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnusFw.TabIndex = 34
+        Me.txtTotalBnusFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnusPr
+        '
+        Me.txtTotalBnusPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnusPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnusPr.Location = New System.Drawing.Point(210, 3)
+        Me.txtTotalBnusPr.Name = "txtTotalBnusPr"
+        Me.txtTotalBnusPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnusPr.RootElement.ControlBounds = New System.Drawing.Rectangle(210, 3, 100, 20)
+        Me.txtTotalBnusPr.RootElement.StretchVertically = True
+        Me.txtTotalBnusPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnusPr.TabIndex = 33
+        Me.txtTotalBnusPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalBnusWt
+        '
+        Me.txtTotalBnusWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalBnusWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalBnusWt.Location = New System.Drawing.Point(152, 3)
+        Me.txtTotalBnusWt.Name = "txtTotalBnusWt"
+        Me.txtTotalBnusWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalBnusWt.RootElement.ControlBounds = New System.Drawing.Rectangle(152, 3, 100, 20)
+        Me.txtTotalBnusWt.RootElement.StretchVertically = True
+        Me.txtTotalBnusWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalBnusWt.TabIndex = 32
+        Me.txtTotalBnusWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label60.Location = New System.Drawing.Point(110, 6)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(39, 14)
+        Me.Label60.TabIndex = 31
+        Me.Label60.Text = " Total"
+        '
+        'RadCollapsiblePanel6
+        '
+        Me.RadCollapsiblePanel6.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadCollapsiblePanel6.HeaderText = "Loss"
+        Me.RadCollapsiblePanel6.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel6.Location = New System.Drawing.Point(3, 1104)
+        Me.RadCollapsiblePanel6.Name = "RadCollapsiblePanel6"
+        '
+        'RadCollapsiblePanel6.PanelContainer
+        '
+        Me.RadCollapsiblePanel6.PanelContainer.Controls.Add(Me.GrpBLoss)
+        Me.RadCollapsiblePanel6.PanelContainer.Size = New System.Drawing.Size(348, 109)
+        Me.RadCollapsiblePanel6.Size = New System.Drawing.Size(350, 137)
+        Me.RadCollapsiblePanel6.TabIndex = 37
+        '
+        'RadPanel6
+        '
+        Me.RadPanel6.Controls.Add(Me.txtTotalLossFw)
+        Me.RadPanel6.Controls.Add(Me.txtTotalLossPr)
+        Me.RadPanel6.Controls.Add(Me.txtTotalLossWt)
+        Me.RadPanel6.Controls.Add(Me.Label61)
+        Me.RadPanel6.Location = New System.Drawing.Point(3, 1247)
+        Me.RadPanel6.Name = "RadPanel6"
+        Me.RadPanel6.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel6.TabIndex = 38
+        '
+        'txtTotalLossFw
+        '
+        Me.txtTotalLossFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalLossFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalLossFw.Location = New System.Drawing.Point(267, 3)
+        Me.txtTotalLossFw.Name = "txtTotalLossFw"
+        Me.txtTotalLossFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalLossFw.RootElement.ControlBounds = New System.Drawing.Rectangle(267, 3, 100, 20)
+        Me.txtTotalLossFw.RootElement.StretchVertically = True
+        Me.txtTotalLossFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalLossFw.TabIndex = 34
+        Me.txtTotalLossFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalLossPr
+        '
+        Me.txtTotalLossPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalLossPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalLossPr.Location = New System.Drawing.Point(210, 3)
+        Me.txtTotalLossPr.Name = "txtTotalLossPr"
+        Me.txtTotalLossPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalLossPr.RootElement.ControlBounds = New System.Drawing.Rectangle(210, 3, 100, 20)
+        Me.txtTotalLossPr.RootElement.StretchVertically = True
+        Me.txtTotalLossPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalLossPr.TabIndex = 33
+        Me.txtTotalLossPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotalLossWt
+        '
+        Me.txtTotalLossWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtTotalLossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtTotalLossWt.Location = New System.Drawing.Point(153, 3)
+        Me.txtTotalLossWt.Name = "txtTotalLossWt"
+        Me.txtTotalLossWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtTotalLossWt.RootElement.ControlBounds = New System.Drawing.Rectangle(153, 3, 100, 20)
+        Me.txtTotalLossWt.RootElement.StretchVertically = True
+        Me.txtTotalLossWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtTotalLossWt.TabIndex = 32
+        Me.txtTotalLossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label61.Location = New System.Drawing.Point(111, 6)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(35, 14)
+        Me.Label61.TabIndex = 31
+        Me.Label61.Text = "Total"
+        '
+        'RadPanel11
+        '
+        Me.RadPanel11.Controls.Add(Me.Label62)
+        Me.RadPanel11.Controls.Add(Me.Label63)
+        Me.RadPanel11.Controls.Add(Me.Label64)
+        Me.RadPanel11.Controls.Add(Me.Label65)
+        Me.RadPanel11.Location = New System.Drawing.Point(3, 1280)
+        Me.RadPanel11.Name = "RadPanel11"
+        Me.RadPanel11.Size = New System.Drawing.Size(350, 27)
+        Me.RadPanel11.TabIndex = 125
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label62.ForeColor = System.Drawing.Color.BlueViolet
+        Me.Label62.Location = New System.Drawing.Point(281, 7)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(35, 14)
+        Me.Label62.TabIndex = 172
+        Me.Label62.Text = "0.00"
+        '
+        'Label63
+        '
+        Me.Label63.AutoSize = True
+        Me.Label63.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label63.ForeColor = System.Drawing.Color.BlueViolet
+        Me.Label63.Location = New System.Drawing.Point(221, 7)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(35, 14)
+        Me.Label63.TabIndex = 171
+        Me.Label63.Text = "0.00"
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label64.ForeColor = System.Drawing.Color.BlueViolet
+        Me.Label64.Location = New System.Drawing.Point(161, 7)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(35, 14)
+        Me.Label64.TabIndex = 170
+        Me.Label64.Text = "0.00"
+        '
+        'Label65
+        '
+        Me.Label65.AutoSize = True
+        Me.Label65.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label65.Location = New System.Drawing.Point(25, 7)
+        Me.Label65.Name = "Label65"
+        Me.Label65.Size = New System.Drawing.Size(105, 14)
+        Me.Label65.TabIndex = 169
+        Me.Label65.Text = "Stocks In  Hand"
+        '
+        'FlowLayoutPanel2
+        '
+        Me.FlowLayoutPanel2.Controls.Add(Me.RadCollapsiblePanel7)
+        Me.FlowLayoutPanel2.Controls.Add(Me.RadPanel7)
+        Me.FlowLayoutPanel2.Controls.Add(Me.RadPanel8)
+        Me.FlowLayoutPanel2.Controls.Add(Me.RadPanel9)
+        Me.FlowLayoutPanel2.Controls.Add(Me.RadPanel10)
+        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(469, 378)
+        Me.FlowLayoutPanel2.TabIndex = 172
+        '
+        'RadCollapsiblePanel7
+        '
+        Me.RadCollapsiblePanel7.HeaderText = "Summary"
+        Me.RadCollapsiblePanel7.HorizontalHeaderAlignment = Telerik.WinControls.UI.RadHorizontalAlignment.Right
+        Me.RadCollapsiblePanel7.Location = New System.Drawing.Point(3, 3)
+        Me.RadCollapsiblePanel7.Name = "RadCollapsiblePanel7"
+        '
+        'RadCollapsiblePanel7.PanelContainer
+        '
+        Me.RadCollapsiblePanel7.PanelContainer.Controls.Add(Me.GrpBOpeningStock)
+        Me.RadCollapsiblePanel7.PanelContainer.Size = New System.Drawing.Size(345, 146)
+        Me.RadCollapsiblePanel7.Size = New System.Drawing.Size(347, 180)
+        Me.RadCollapsiblePanel7.TabIndex = 0
+        '
+        'RadPanel7
+        '
+        Me.RadPanel7.Controls.Add(Me.Label57)
+        Me.RadPanel7.Controls.Add(Me.txtClosingStockPr)
+        Me.RadPanel7.Controls.Add(Me.txtClosingStockWt)
+        Me.RadPanel7.Controls.Add(Me.txtClosingStockFw)
+        Me.RadPanel7.Location = New System.Drawing.Point(3, 189)
+        Me.RadPanel7.Name = "RadPanel7"
+        Me.RadPanel7.Size = New System.Drawing.Size(347, 27)
+        Me.RadPanel7.TabIndex = 123
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label57.Location = New System.Drawing.Point(47, 6)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(79, 14)
+        Me.Label57.TabIndex = 113
+        Me.Label57.Text = "Closing Stock"
+        '
+        'txtClosingStockPr
+        '
+        Me.txtClosingStockPr.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtClosingStockPr.Location = New System.Drawing.Point(187, 3)
+        Me.txtClosingStockPr.Name = "txtClosingStockPr"
+        Me.txtClosingStockPr.ReadOnly = True
+        '
+        '
+        '
+        Me.txtClosingStockPr.RootElement.ControlBounds = New System.Drawing.Rectangle(187, 3, 100, 20)
+        Me.txtClosingStockPr.RootElement.StretchVertically = True
+        Me.txtClosingStockPr.Size = New System.Drawing.Size(55, 20)
+        Me.txtClosingStockPr.TabIndex = 111
+        Me.txtClosingStockPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtClosingStockWt
+        '
+        Me.txtClosingStockWt.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtClosingStockWt.Location = New System.Drawing.Point(130, 3)
+        Me.txtClosingStockWt.Name = "txtClosingStockWt"
+        Me.txtClosingStockWt.ReadOnly = True
+        '
+        '
+        '
+        Me.txtClosingStockWt.RootElement.ControlBounds = New System.Drawing.Rectangle(130, 3, 100, 20)
+        Me.txtClosingStockWt.RootElement.StretchVertically = True
+        Me.txtClosingStockWt.Size = New System.Drawing.Size(55, 20)
+        Me.txtClosingStockWt.TabIndex = 110
+        Me.txtClosingStockWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtClosingStockFw
+        '
+        Me.txtClosingStockFw.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtClosingStockFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtClosingStockFw.Location = New System.Drawing.Point(245, 3)
+        Me.txtClosingStockFw.Name = "txtClosingStockFw"
+        Me.txtClosingStockFw.ReadOnly = True
+        '
+        '
+        '
+        Me.txtClosingStockFw.RootElement.ControlBounds = New System.Drawing.Rectangle(245, 3, 100, 20)
+        Me.txtClosingStockFw.RootElement.StretchVertically = True
+        Me.txtClosingStockFw.Size = New System.Drawing.Size(55, 20)
+        Me.txtClosingStockFw.TabIndex = 112
+        Me.txtClosingStockFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'RadPanel8
+        '
+        Me.RadPanel8.Controls.Add(Me.lblClosingStockFw)
+        Me.RadPanel8.Controls.Add(Me.lblClosingStockPr)
+        Me.RadPanel8.Controls.Add(Me.lblClosingStockWt)
+        Me.RadPanel8.Controls.Add(Me.lblClosingStock)
+        Me.RadPanel8.Location = New System.Drawing.Point(3, 222)
+        Me.RadPanel8.Name = "RadPanel8"
+        Me.RadPanel8.Size = New System.Drawing.Size(347, 27)
+        Me.RadPanel8.TabIndex = 124
+        '
+        'lblClosingStockFw
+        '
+        Me.lblClosingStockFw.AutoSize = True
+        Me.lblClosingStockFw.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblClosingStockFw.ForeColor = System.Drawing.Color.BlueViolet
+        Me.lblClosingStockFw.Location = New System.Drawing.Point(258, 7)
+        Me.lblClosingStockFw.Name = "lblClosingStockFw"
+        Me.lblClosingStockFw.Size = New System.Drawing.Size(35, 14)
+        Me.lblClosingStockFw.TabIndex = 172
+        Me.lblClosingStockFw.Text = "0.00"
+        '
+        'lblClosingStockPr
+        '
+        Me.lblClosingStockPr.AutoSize = True
+        Me.lblClosingStockPr.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblClosingStockPr.ForeColor = System.Drawing.Color.BlueViolet
+        Me.lblClosingStockPr.Location = New System.Drawing.Point(203, 7)
+        Me.lblClosingStockPr.Name = "lblClosingStockPr"
+        Me.lblClosingStockPr.Size = New System.Drawing.Size(35, 14)
+        Me.lblClosingStockPr.TabIndex = 171
+        Me.lblClosingStockPr.Text = "0.00"
+        '
+        'lblClosingStockWt
+        '
+        Me.lblClosingStockWt.AutoSize = True
+        Me.lblClosingStockWt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblClosingStockWt.ForeColor = System.Drawing.Color.BlueViolet
+        Me.lblClosingStockWt.Location = New System.Drawing.Point(148, 7)
+        Me.lblClosingStockWt.Name = "lblClosingStockWt"
+        Me.lblClosingStockWt.Size = New System.Drawing.Size(35, 14)
+        Me.lblClosingStockWt.TabIndex = 170
+        Me.lblClosingStockWt.Text = "0.00"
+        '
+        'lblClosingStock
+        '
+        Me.lblClosingStock.AutoSize = True
+        Me.lblClosingStock.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.lblClosingStock.Location = New System.Drawing.Point(37, 8)
+        Me.lblClosingStock.Name = "lblClosingStock"
+        Me.lblClosingStock.Size = New System.Drawing.Size(90, 14)
+        Me.lblClosingStock.TabIndex = 169
+        Me.lblClosingStock.Text = "Closing Stock"
+        '
+        'RadPanel9
+        '
+        Me.RadPanel9.Controls.Add(Me.btnShow)
+        Me.RadPanel9.Controls.Add(Me.lblFinal)
+        Me.RadPanel9.Controls.Add(Me.lblDiffFw)
+        Me.RadPanel9.Location = New System.Drawing.Point(3, 255)
+        Me.RadPanel9.Name = "RadPanel9"
+        Me.RadPanel9.Size = New System.Drawing.Size(347, 27)
+        Me.RadPanel9.TabIndex = 125
+        '
+        'btnShow
+        '
+        Me.btnShow.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnShow.Location = New System.Drawing.Point(2, 2)
+        Me.btnShow.Name = "btnShow"
+        '
+        '
+        '
+        Me.btnShow.RootElement.ControlBounds = New System.Drawing.Rectangle(2, 2, 110, 24)
+        Me.btnShow.Size = New System.Drawing.Size(108, 23)
+        Me.btnShow.TabIndex = 160
+        Me.btnShow.Text = "Refresh"
+        '
+        'lblFinal
+        '
+        Me.lblFinal.AutoSize = True
+        Me.lblFinal.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFinal.Location = New System.Drawing.Point(117, 7)
+        Me.lblFinal.Name = "lblFinal"
+        Me.lblFinal.Size = New System.Drawing.Size(65, 14)
+        Me.lblFinal.TabIndex = 159
+        Me.lblFinal.Text = "Fine Diff :"
+        '
+        'lblDiffFw
+        '
+        Me.lblDiffFw.AutoSize = True
+        Me.lblDiffFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblDiffFw.Location = New System.Drawing.Point(258, 7)
+        Me.lblDiffFw.Name = "lblDiffFw"
+        Me.lblDiffFw.Size = New System.Drawing.Size(32, 14)
+        Me.lblDiffFw.TabIndex = 158
+        Me.lblDiffFw.Text = "0.00"
+        '
+        'RadPanel10
+        '
+        Me.RadPanel10.Controls.Add(Me.btnAccountClosing)
+        Me.RadPanel10.Location = New System.Drawing.Point(3, 288)
+        Me.RadPanel10.Name = "RadPanel10"
+        Me.RadPanel10.Size = New System.Drawing.Size(347, 27)
+        Me.RadPanel10.TabIndex = 126
+        '
         'btnAccountClosing
         '
         Me.btnAccountClosing.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnAccountClosing.Location = New System.Drawing.Point(20, 536)
+        Me.btnAccountClosing.Location = New System.Drawing.Point(0, 2)
         Me.btnAccountClosing.Name = "btnAccountClosing"
-        Me.btnAccountClosing.Size = New System.Drawing.Size(110, 24)
-        Me.btnAccountClosing.TabIndex = 170
+        Me.btnAccountClosing.Size = New System.Drawing.Size(110, 23)
+        Me.btnAccountClosing.TabIndex = 171
         Me.btnAccountClosing.Text = "Account Closing"
         Me.btnAccountClosing.UseVisualStyleBackColor = True
         '
@@ -2930,29 +3702,10 @@ Partial Class frmStockSummary
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(961, 749)
-        Me.Controls.Add(Me.btnAccountClosing)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.lblClosingStockFw)
-        Me.Controls.Add(Me.lblClosingStockPr)
-        Me.Controls.Add(Me.lblClosingStockWt)
-        Me.Controls.Add(Me.lblClosingStock)
-        Me.Controls.Add(Me.btnShow)
-        Me.Controls.Add(Me.lblFinal)
-        Me.Controls.Add(Me.lblDiffFw)
+        Me.ClientSize = New System.Drawing.Size(978, 749)
+        Me.Controls.Add(Me.FlowLayoutPanel2)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.lblTotal)
-        Me.Controls.Add(Me.lblGrossFw)
-        Me.Controls.Add(Me.lblGrossWt)
-        Me.Controls.Add(Me.lblGrossPr)
-        Me.Controls.Add(Me.btnUpdate)
-        Me.Controls.Add(Me.GrpBOpeningStock)
-        Me.Controls.Add(Me.GrpBLoss)
-        Me.Controls.Add(Me.GrpBLotAdditionStock)
-        Me.Controls.Add(Me.GrpBMetalNotUsed)
-        Me.Controls.Add(Me.GrpBBNotUsed)
-        Me.Controls.Add(Me.GrpBBCreated)
-        Me.Controls.Add(Me.GrpBBnotCreated)
-        Me.Controls.Add(Me.GrpBWIP)
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
         Me.Name = "frmStockSummary"
@@ -3043,17 +3796,12 @@ Partial Class frmStockSummary
         CType(Me.txtOpeningStockFw, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOpeningStockPr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOpeningStockWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtClosingStockPr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtClosingStockWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IssueGrossFw, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiptGrossFw, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IssueGrossPr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiptGrossPr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IssueGrossWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReceiptGrossWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtClosingStockFw, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnUpdate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnShow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.LotFailBagNuFw, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3069,6 +3817,76 @@ Partial Class frmStockSummary
         CType(Me.BhukaBagNuFw, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BhukaBagNuPr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BhukaBagNuWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.RadCollapsiblePanel1.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel1.ResumeLayout(False)
+        Me.RadPanel1.PerformLayout()
+        CType(Me.txtTotalWFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalWPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalWWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsiblePanel2.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel2.ResumeLayout(False)
+        Me.RadPanel2.PerformLayout()
+        CType(Me.txtTotalBncFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBncPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBncWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsiblePanel3.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel3.ResumeLayout(False)
+        Me.RadPanel3.PerformLayout()
+        CType(Me.txtTotalBnrFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnrPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnrWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsiblePanel4.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel4.ResumeLayout(False)
+        Me.RadPanel4.PerformLayout()
+        CType(Me.txtTotalBnuFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnuPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnuWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsiblePanel5.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel5.ResumeLayout(False)
+        Me.RadPanel5.PerformLayout()
+        CType(Me.txtTotalBnusFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnusPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalBnusWt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadCollapsiblePanel6.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel6.ResumeLayout(False)
+        Me.RadPanel6.PerformLayout()
+        CType(Me.txtTotalLossFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalLossPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtTotalLossWt, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel11.ResumeLayout(False)
+        Me.RadPanel11.PerformLayout()
+        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.RadCollapsiblePanel7.PanelContainer.ResumeLayout(False)
+        CType(Me.RadCollapsiblePanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel7.ResumeLayout(False)
+        Me.RadPanel7.PerformLayout()
+        CType(Me.txtClosingStockPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtClosingStockWt, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtClosingStockFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel8.ResumeLayout(False)
+        Me.RadPanel8.PerformLayout()
+        CType(Me.RadPanel9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel9.ResumeLayout(False)
+        Me.RadPanel9.PerformLayout()
+        CType(Me.btnShow, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel10.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3143,7 +3961,6 @@ Partial Class frmStockSummary
     Friend WithEvents Label54 As Label
     Friend WithEvents Label53 As Label
     Friend WithEvents Label52 As Label
-    Friend WithEvents Label57 As Label
     Friend WithEvents Label56 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
@@ -3151,21 +3968,12 @@ Partial Class frmStockSummary
     Friend WithEvents btnDeptReceive As Button
     Friend WithEvents btnLBagCreated As Button
     Friend WithEvents Label20 As Label
-    Friend WithEvents lblGrossWt As Label
-    Friend WithEvents lblGrossPr As Label
-    Friend WithEvents lblGrossFw As Label
     Friend WithEvents lblTotal As Label
-    Friend WithEvents lblDiffFw As Label
-    Friend WithEvents lblFinal As Label
     Friend WithEvents btnOpStock As Button
     Friend WithEvents Label26 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
-    Friend WithEvents lblClosingStock As Label
-    Friend WithEvents lblClosingStockFw As Label
-    Friend WithEvents lblClosingStockPr As Label
-    Friend WithEvents lblClosingStockWt As Label
     Private WithEvents WipFGrossFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents WipFGrossPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents WipFGrossWt As Telerik.WinControls.UI.RadTextBox
@@ -3226,20 +4034,15 @@ Partial Class frmStockSummary
     Private WithEvents txtOpeningStockFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtOpeningStockPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtOpeningStockWt As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents txtClosingStockPr As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents txtClosingStockWt As Telerik.WinControls.UI.RadTextBox
     Private WithEvents IssueGrossFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents ReceiptGrossFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents IssueGrossPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents ReceiptGrossPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents IssueGrossWt As Telerik.WinControls.UI.RadTextBox
     Private WithEvents ReceiptGrossWt As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents txtClosingStockFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents LotFailBagFw As Telerik.WinControls.UI.RadTextBox
     Private WithEvents LotFailBagPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents LotFailBagWt As Telerik.WinControls.UI.RadTextBox
-    Private WithEvents btnUpdate As Telerik.WinControls.UI.RadButton
-    Private WithEvents btnShow As Telerik.WinControls.UI.RadButton
     Private WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
     Private WithEvents RadTextBox2 As Telerik.WinControls.UI.RadTextBox
     Private WithEvents RadTextBox3 As Telerik.WinControls.UI.RadTextBox
@@ -3272,6 +4075,65 @@ Partial Class frmStockSummary
     Friend WithEvents LotFailBagNuWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents Label47 As Label
     Friend WithEvents btnLBagNotUpdated As Button
-    Friend WithEvents btnAccountClosing As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents RadCollapsiblePanel1 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalWFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalWPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalWWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label51 As Label
+    Friend WithEvents RadCollapsiblePanel2 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalBncFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBncPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBncWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label55 As Label
+    Friend WithEvents RadCollapsiblePanel3 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel3 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalBnrFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnrPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnrWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label58 As Label
+    Friend WithEvents RadCollapsiblePanel4 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel4 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalBnuFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnuPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnuWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label59 As Label
+    Friend WithEvents RadCollapsiblePanel5 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel5 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalBnusFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnusPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalBnusWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label60 As Label
+    Friend WithEvents RadCollapsiblePanel6 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel6 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents txtTotalLossFw As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalLossPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtTotalLossWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents Label61 As Label
+    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents RadCollapsiblePanel7 As Telerik.WinControls.UI.RadCollapsiblePanel
+    Friend WithEvents RadPanel7 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents Label57 As Label
+    Private WithEvents txtClosingStockPr As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtClosingStockWt As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtClosingStockFw As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel8 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents lblClosingStockFw As Label
+    Friend WithEvents lblClosingStockPr As Label
+    Friend WithEvents lblClosingStockWt As Label
+    Friend WithEvents lblClosingStock As Label
+    Friend WithEvents RadPanel9 As Telerik.WinControls.UI.RadPanel
+    Private WithEvents btnShow As Telerik.WinControls.UI.RadButton
+    Friend WithEvents lblFinal As Label
+    Friend WithEvents lblDiffFw As Label
+    Friend WithEvents RadPanel10 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents btnAccountClosing As Button
+    Friend WithEvents RadPanel11 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents Label62 As Label
+    Friend WithEvents Label63 As Label
+    Friend WithEvents Label65 As Label
+    Friend WithEvents Label64 As Label
 End Class

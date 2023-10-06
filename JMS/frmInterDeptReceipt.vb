@@ -97,7 +97,7 @@ Public Class frmInterDeptReceipt
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
@@ -168,8 +168,8 @@ Public Class frmInterDeptReceipt
             lblTotalFineWt.Text = 0.00
 
             For Each row As GridViewRowInfo In dgvReceipt.Rows
-                lblTotalGrossWt.Text = Format(Val(lblTotalGrossWt.Text) + CDbl(row.Cells(4).Value), "0.00")
-                lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(6).Value), "0.000")
+                lblTotalGrossWt.Text = Format(Val(lblTotalGrossWt.Text) + CDbl(row.Cells(6).Value), "0.00")
+                lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(8).Value), "0.000")
             Next
 
             If lblTotalFineWt.Text > 0 Then
@@ -251,7 +251,8 @@ Public Class frmInterDeptReceipt
         Dim alParaval As New ArrayList
 
         Dim IssueId As String = ""
-        Dim ItemId As String = ""
+        Dim PartyName As String = ""
+        Dim ItemName As String = ""
         Dim ReceivePr As String = ""
         Dim ReceiveWt As String = ""
         Dim FineWt As String = ""
@@ -270,23 +271,26 @@ Public Class frmInterDeptReceipt
             If row.Cells(0).Value <> Nothing Then
                 If IssueId = "" Then
                     IssueId = Val(row.Cells(1).Value)
-                    ItemId = Val(row.Cells(2).Value)
-                    ReceiveWt = Val(row.Cells(4).Value)
-                    ReceivePr = Val(row.Cells(5).Value)
-                    FineWt = Val(row.Cells(6).Value)
+                    PartyName = Convert.ToString(row.Cells(3).Value)
+                    ItemName = Convert.ToString(row.Cells(5).Value)
+                    ReceiveWt = Val(row.Cells(6).Value)
+                    ReceivePr = Val(row.Cells(7).Value)
+                    FineWt = Val(row.Cells(8).Value)
                 Else
                     IssueId = IssueId & "|" & Val(row.Cells(1).Value)
-                    ItemId = ItemId & "|" & Val(row.Cells(2).Value)
-                    ReceiveWt = ReceiveWt & "|" & row.Cells(4).Value
-                    ReceivePr = ReceivePr & "|" & row.Cells(5).Value
-                    FineWt = FineWt & "|" & row.Cells(6).Value
+                    PartyName = PartyName & "|" & Convert.ToString(row.Cells(3).Value)
+                    ItemName = ItemName & "|" & Convert.ToString(row.Cells(5).Value)
+                    ReceiveWt = ReceiveWt & "|" & row.Cells(6).Value
+                    ReceivePr = ReceivePr & "|" & row.Cells(7).Value
+                    FineWt = FineWt & "|" & row.Cells(8).Value
                 End If
             End If
             IRowCount += 1
         Next
 
         alParaval.Add(IssueId)
-        alParaval.Add(ItemId)
+        alParaval.Add(PartyName)
+        alParaval.Add(ItemName)
         alParaval.Add(ReceiveWt)
         alParaval.Add(ReceivePr)
         alParaval.Add(FineWt)
@@ -316,7 +320,9 @@ Public Class frmInterDeptReceipt
 
                 .Add(dbManager.CreateParameter("@DLotNo", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@DItemId", alParaval.Item(iValue), DbType.String))
+                .Add(dbManager.CreateParameter("@DPartyName", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DReceiveWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
@@ -339,7 +345,8 @@ Public Class frmInterDeptReceipt
         Dim alParaval As New ArrayList
 
         Dim IssueId As String = ""
-        Dim ItemId As String = ""
+        Dim PartyName As String = ""
+        Dim ItemName As String = ""
         Dim ReceivePr As String = ""
         Dim ReceiveWt As String = ""
         Dim FineWt As String = ""
@@ -357,24 +364,27 @@ Public Class frmInterDeptReceipt
         For Each row As GridViewRowInfo In dgvReceipt.Rows
             If row.Cells(0).Value <> Nothing Then
                 If IssueId = "" Then
-                    IssueId = Val(row.Cells(0).Value)
-                    ItemId = Val(row.Cells(2).Value)
-                    ReceiveWt = Val(row.Cells(4).Value)
-                    ReceivePr = Val(row.Cells(5).Value)
-                    FineWt = Val(row.Cells(6).Value)
+                    IssueId = Val(row.Cells(1).Value)
+                    PartyName = Convert.ToString(row.Cells(3).Value)
+                    ItemName = Convert.ToString(row.Cells(5).Value)
+                    ReceiveWt = Val(row.Cells(6).Value)
+                    ReceivePr = Val(row.Cells(7).Value)
+                    FineWt = Val(row.Cells(8).Value)
                 Else
-                    IssueId = IssueId & "|" & Val(row.Cells(0).Value)
-                    ItemId = ItemId & "|" & Val(row.Cells(2).Value)
-                    ReceiveWt = ReceiveWt & "|" & row.Cells(4).Value
-                    ReceivePr = ReceivePr & "|" & row.Cells(5).Value
-                    FineWt = FineWt & "|" & row.Cells(6).Value
+                    IssueId = IssueId & "|" & Val(row.Cells(1).Value)
+                    PartyName = PartyName & "|" & Convert.ToString(row.Cells(3).Value)
+                    ItemName = ItemName & "|" & Convert.ToString(row.Cells(5).Value)
+                    ReceiveWt = ReceiveWt & "|" & row.Cells(6).Value
+                    ReceivePr = ReceivePr & "|" & row.Cells(7).Value
+                    FineWt = FineWt & "|" & row.Cells(8).Value
                 End If
             End If
             IRowCount += 1
         Next
 
         alParaval.Add(IssueId)
-        alParaval.Add(ItemId)
+        alParaval.Add(PartyName)
+        alParaval.Add(ItemName)
         alParaval.Add(ReceiveWt)
         alParaval.Add(ReceivePr)
         alParaval.Add(FineWt)
@@ -405,7 +415,9 @@ Public Class frmInterDeptReceipt
 
                 .Add(dbManager.CreateParameter("@DLotNo", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@DItemId", alParaval.Item(iValue), DbType.String))
+                .Add(dbManager.CreateParameter("@DPartyName", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DReceiveWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
@@ -704,7 +716,7 @@ ErrHandler:
         dttable = fetchAllRecords(CInt(intReceiptId))
 
         For Each ROW As DataRow In dttable.Rows
-            dgvReceipt.Rows.Add(1, CStr(ROW("IssueId")), Val(ROW("ItemId")), CStr(ROW("ItemName")), Format(Val(ROW("ReceiveWt")), "0.00"), Format(Val(ROW("ReceivePr")), "0.00"), Format(Val(ROW("FineWt")), "0.00"))
+            dgvReceipt.Rows.Add(1, CStr(ROW("IssueId")), Val(ROW("PartyId")), CStr(ROW("PartyName")), Val(ROW("ItemId")), CStr(ROW("ItemName")), Format(Val(ROW("ReceiveWt")), "0.00"), Format(Val(ROW("ReceivePr")), "0.00"), Format(Val(ROW("FineWt")), "0.00"))
         Next
 
         Me.GetSrNo(dgvReceipt)

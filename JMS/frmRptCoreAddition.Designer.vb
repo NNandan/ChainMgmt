@@ -60,45 +60,45 @@ Partial Class frmCoreAdditionRpt
         GridViewTextBoxColumn1.FieldName = "CoreRemovalDt"
         GridViewTextBoxColumn1.HeaderText = "Core Removal Dt"
         GridViewTextBoxColumn1.Name = "colRemovalDt"
-        GridViewTextBoxColumn1.Width = 117
+        GridViewTextBoxColumn1.Width = 100
         GridViewTextBoxColumn2.EnableExpressionEditor = False
         GridViewTextBoxColumn2.FieldName = "LotNo"
         GridViewTextBoxColumn2.HeaderText = "Lot No."
         GridViewTextBoxColumn2.Name = "colLotNo"
-        GridViewTextBoxColumn2.Width = 93
+        GridViewTextBoxColumn2.Width = 90
         GridViewTextBoxColumn3.EnableExpressionEditor = False
         GridViewTextBoxColumn3.FieldName = "MeltingPr"
         GridViewTextBoxColumn3.HeaderText = "Melting %"
         GridViewTextBoxColumn3.Name = "colMeltingPr"
-        GridViewTextBoxColumn3.Width = 93
+        GridViewTextBoxColumn3.Width = 90
         GridViewTextBoxColumn4.EnableExpressionEditor = False
         GridViewTextBoxColumn4.HeaderText = "Issue %"
         GridViewTextBoxColumn4.Name = "colIssuePr"
-        GridViewTextBoxColumn4.Width = 93
+        GridViewTextBoxColumn4.Width = 90
         GridViewTextBoxColumn5.EnableExpressionEditor = False
         GridViewTextBoxColumn5.HeaderText = "Target Gold Wt."
         GridViewTextBoxColumn5.Name = "colTargetGoldWt"
-        GridViewTextBoxColumn5.Width = 117
+        GridViewTextBoxColumn5.Width = 100
         GridViewTextBoxColumn6.EnableExpressionEditor = False
         GridViewTextBoxColumn6.HeaderText = "Total Rec."
         GridViewTextBoxColumn6.Name = "colTotalRec"
-        GridViewTextBoxColumn6.Width = 93
+        GridViewTextBoxColumn6.Width = 90
         GridViewTextBoxColumn7.EnableExpressionEditor = False
         GridViewTextBoxColumn7.HeaderText = "Receive %"
         GridViewTextBoxColumn7.Name = "colTotalReceivePr"
-        GridViewTextBoxColumn7.Width = 93
+        GridViewTextBoxColumn7.Width = 90
         GridViewTextBoxColumn8.EnableExpressionEditor = False
         GridViewTextBoxColumn8.HeaderText = "Loss Wt."
         GridViewTextBoxColumn8.Name = "colLossWt"
-        GridViewTextBoxColumn8.Width = 93
+        GridViewTextBoxColumn8.Width = 90
         GridViewTextBoxColumn9.EnableExpressionEditor = False
         GridViewTextBoxColumn9.HeaderText = "Core Remains"
         GridViewTextBoxColumn9.Name = "colAdditionRemains"
-        GridViewTextBoxColumn9.Width = 93
+        GridViewTextBoxColumn9.Width = 90
         GridViewTextBoxColumn10.EnableExpressionEditor = False
         GridViewTextBoxColumn10.HeaderText = "Core Add Fine"
         GridViewTextBoxColumn10.Name = "colCoreAddFine"
-        GridViewTextBoxColumn10.Width = 93
+        GridViewTextBoxColumn10.Width = 90
         Me.dgvStockAddition.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10})
         Me.dgvStockAddition.MasterTemplate.ShowRowHeaderColumn = False
         SortDescriptor1.PropertyName = "colIssueDt"
@@ -107,31 +107,31 @@ Partial Class frmCoreAdditionRpt
         Me.dgvStockAddition.Name = "dgvStockAddition"
         Me.dgvStockAddition.ReadOnly = True
         Me.dgvStockAddition.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvStockAddition.Size = New System.Drawing.Size(971, 375)
+        Me.dgvStockAddition.Size = New System.Drawing.Size(913, 375)
         Me.dgvStockAddition.TabIndex = 1
         '
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(563, 383)
+        Me.btnExit.Location = New System.Drawing.Point(466, 385)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(87, 27)
+        Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 29
         Me.btnExit.Text = "E&xit"
         '
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(473, 383)
+        Me.btnPrint.Location = New System.Drawing.Point(389, 385)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(87, 27)
+        Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 28
         Me.btnPrint.Text = "&Print"
         '
         'frmCoreAdditionRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(978, 414)
+        Me.ClientSize = New System.Drawing.Size(926, 414)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvStockAddition)

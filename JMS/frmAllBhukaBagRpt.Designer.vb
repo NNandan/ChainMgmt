@@ -52,7 +52,7 @@ Partial Class frmAllBhukaBagRpt
         Me.dgvBhukaBagList.MasterTemplate.AllowAddNewRow = False
         Me.dgvBhukaBagList.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.FieldName = "TransactionDt"
+        GridViewTextBoxColumn1.FieldName = "TransDt"
         GridViewTextBoxColumn1.HeaderText = "Trans. Dt"
         GridViewTextBoxColumn1.Name = "colTransactionDt"
         GridViewTextBoxColumn1.Width = 90
@@ -110,7 +110,7 @@ Partial Class frmAllBhukaBagRpt
         Me.btnExit.TabIndex = 26
         Me.btnExit.Text = "E&xit"
         '
-        'frmAllBhukaBagReport
+        'frmAllBhukaBagRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(619, 412)
@@ -120,7 +120,7 @@ Partial Class frmAllBhukaBagRpt
         Me.Font = New System.Drawing.Font("Tahoma", 14.25!)
         Me.KeyPreview = True
         Me.MaximizeBox = False
-        Me.Name = "frmAllBhukaBagReport"
+        Me.Name = "frmAllBhukaBagRpt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "All Scrap Bag Report"
         CType(Me.dgvBhukaBagList.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()

@@ -46,7 +46,9 @@ Public Class frmRLotTransfer
 
         Dim parameters = New List(Of SqlParameter)()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchLotNo", DbType.String))
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FetchLotNo", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_LotTransfer_Select", CommandType.StoredProcedure, parameters.ToArray(), Objcn)
 
@@ -108,7 +110,9 @@ Public Class frmRLotTransfer
 
         Dim parameters = New List(Of SqlParameter)()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        With parameters
+            .Add(dbManager.CreateParameter("@ActionType", "FillOperation", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_OperationMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim dt As DataTable = New DataTable()
@@ -142,7 +146,10 @@ Public Class frmRLotTransfer
 
         Dim parameters = New List(Of SqlParameter)()
 
-        parameters.Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
+        End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
         Dim Odt As DataTable = New DataTable()
@@ -176,8 +183,8 @@ Public Class frmRLotTransfer
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not Validate_Fields() Then Exit Sub
 
+        Dim iOperationId As Integer = 19    ''Use Transfer Lot
         Dim iOperationTypeId As Integer = 7
-        Dim iOperationId As Integer = 20 ''Use Transfer Lot
 
         Dim trans As SqlTransaction = Nothing
 
@@ -204,8 +211,8 @@ Public Class frmRLotTransfer
                     .Add(dbManager.CreateParameter("@TRecievePr", txtReceivePr.Text.Trim(), DbType.Decimal))
                     .Add(dbManager.CreateParameter("@TRecieveWt", txtReceiveWt.Text(), DbType.Decimal))
 
-                    .Add(dbManager.CreateParameter("@TfLabourId", CInt(txtFrKarigar.Tag), DbType.Int16))
-                    .Add(dbManager.CreateParameter("@TtLabourId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
+                    .Add(dbManager.CreateParameter("@TfLabourName", CStr(txtFrKarigar.Text.Trim), DbType.String))
+                    .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
                 End With
 
                 dbManager.Insert("SP_Transaction_Save", CommandType.StoredProcedure, parameters.ToArray())
@@ -226,7 +233,7 @@ Public Class frmRLotTransfer
 
                 Me.btnCancel_Click(sender, e)
 
-                MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Data Saved !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 trans.Rollback()
                 MessageBox.Show("Error:- " & ex.Message)
@@ -304,6 +311,7 @@ Public Class frmRLotTransfer
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
+            .Clear()
             .Add(dbManager.CreateParameter("@ActionType", "FetchLotNoForTransfer", DbType.String))
             .Add(dbManager.CreateParameter("@LotNo", cmbLotNo.Text.Trim(), DbType.String))
         End With
@@ -316,6 +324,7 @@ Public Class frmRLotTransfer
             Else
                 txtTransNo.Text = dr("LotTransferId").ToString()
                 cmbItem.SelectedIndex = dr("ItemId").ToString()
+                cmbItem.Text = dr("ItemName").ToString()
 
                 txtFrKarigar.Tag = dr.Item("ToKarigarId").ToString()
                 txtFrKarigar.Text = dr("ToLabour").ToString()
@@ -367,7 +376,7 @@ Public Class frmRLotTransfer
             Call Clear_Form()
 
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub cmbLotNo_SelectedIndexChanged(sender As Object, e As Telerik.WinControls.UI.Data.PositionChangedEventArgs) Handles cmbLotNo.SelectedIndexChanged
@@ -423,13 +432,13 @@ Public Class frmRLotTransfer
 
             Me.fillLotNo()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
     Private Function Validate_Fields() As Boolean
         Try
-            If cmbItem.SelectedIndex = -1 Or cmbItem.SelectedIndex = 0 Then
+            If cmbItem.SelectedIndex = -1 Or cmbItem.SelectedIndex = 0 Or cmbItem.Text.Contains("---Select---") Then
                 MessageBox.Show("Select Item Name !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbItem.Focus()
                 Return False

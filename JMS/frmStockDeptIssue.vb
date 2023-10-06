@@ -21,9 +21,12 @@ Public Class frmStockDeptIssue
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
-            parameters.Add(dbManager.CreateParameter("@ActionType", "LossDeptIssueDetails", DbType.String))
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "LossDeptIssueDetails", DbType.String))
+            End With
+
             dtData = dbManager.GetDataTable("SP_StockDetails_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception

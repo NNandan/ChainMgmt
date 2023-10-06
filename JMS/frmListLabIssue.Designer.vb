@@ -71,7 +71,7 @@ Partial Class frmListLabIssue
         Me.dgvELabIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvELabIssue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvELabIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvELabIssue.Location = New System.Drawing.Point(7, 3)
+        Me.dgvELabIssue.Location = New System.Drawing.Point(-4, 0)
         '
         '
         '
@@ -103,7 +103,7 @@ Partial Class frmListLabIssue
         GridViewTextBoxColumn4.Name = "ColLabName"
         GridViewTextBoxColumn4.Width = 110
         GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.FieldName = "LotNumber"
+        GridViewTextBoxColumn5.FieldName = "LotNo"
         GridViewTextBoxColumn5.HeaderText = "Lot Number"
         GridViewTextBoxColumn5.Name = "ColLotNumber"
         GridViewTextBoxColumn5.ReadOnly = True
@@ -129,16 +129,17 @@ Partial Class frmListLabIssue
         GridViewTextBoxColumn9.FieldName = "TransType"
         GridViewTextBoxColumn9.HeaderText = "Trans Type"
         GridViewTextBoxColumn9.Name = "colTransType"
-        GridViewTextBoxColumn9.Width = 75
+        GridViewTextBoxColumn9.Width = 85
         GridViewTextBoxColumn10.EnableExpressionEditor = False
         GridViewTextBoxColumn10.FieldName = "SampleStatus"
         GridViewTextBoxColumn10.HeaderText = "Sample Status"
         GridViewTextBoxColumn10.Name = "colSampleStatus"
-        GridViewTextBoxColumn10.Width = 90
+        GridViewTextBoxColumn10.Width = 100
         GridViewTextBoxColumn11.EnableExpressionEditor = False
         GridViewTextBoxColumn11.FieldName = "LabReport"
         GridViewTextBoxColumn11.HeaderText = "Lab Report"
         GridViewTextBoxColumn11.Name = "colLabReport"
+        GridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn11.Width = 90
         GridViewTextBoxColumn12.EnableExpressionEditor = False
         GridViewTextBoxColumn12.FieldName = "SampleWt"
@@ -152,7 +153,7 @@ Partial Class frmListLabIssue
         Me.dgvELabIssue.Name = "dgvELabIssue"
         Me.dgvELabIssue.ReadOnly = True
         Me.dgvELabIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvELabIssue.Size = New System.Drawing.Size(925, 570)
+        Me.dgvELabIssue.Size = New System.Drawing.Size(940, 575)
         Me.dgvELabIssue.TabIndex = 788
         '
         'frmListLabIssue

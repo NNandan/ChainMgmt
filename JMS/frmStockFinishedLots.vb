@@ -59,7 +59,7 @@ Public Class frmStockFinishedLots
             Throw ex
         End Try
     End Sub
-    Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvWipLotNo.ViewCellFormatting
+    Private Sub dgvWipLotNo_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles MasterTemplate.ViewCellFormatting, dgvWipLotNo.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
 
             If e.Column.Name = "colOperationName" Then

@@ -97,7 +97,7 @@ Partial Class frmYearDetails
         'btnBack
         '
         Me.btnBack.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBack.Location = New System.Drawing.Point(270, 288)
+        Me.btnBack.Location = New System.Drawing.Point(270, 287)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(104, 71)
         Me.btnBack.TabIndex = 793
@@ -107,7 +107,7 @@ Partial Class frmYearDetails
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(380, 288)
+        Me.btnDelete.Location = New System.Drawing.Point(380, 287)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(104, 71)
         Me.btnDelete.TabIndex = 792
@@ -118,7 +118,7 @@ Partial Class frmYearDetails
         'btnOpen
         '
         Me.btnOpen.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOpen.Location = New System.Drawing.Point(160, 288)
+        Me.btnOpen.Location = New System.Drawing.Point(160, 287)
         Me.btnOpen.Name = "btnOpen"
         Me.btnOpen.Size = New System.Drawing.Size(104, 71)
         Me.btnOpen.TabIndex = 791
@@ -130,7 +130,7 @@ Partial Class frmYearDetails
         '
         Me.btnCreate.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCreate.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCreate.Location = New System.Drawing.Point(50, 288)
+        Me.btnCreate.Location = New System.Drawing.Point(50, 287)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(104, 71)
         Me.btnCreate.TabIndex = 790

@@ -139,7 +139,6 @@ Public Class frmStampMaster
             Me.Clear_Form()
         End If
     End Sub
-
     Private Sub Clear_Form()
         Try
             txtStampName.Tag = ""
@@ -165,7 +164,6 @@ Public Class frmStampMaster
                 txtStampName.Focus()
                 Return False
             End If
-
 
             Return True
         Catch ex As Exception
@@ -195,7 +193,6 @@ Public Class frmStampMaster
     End Function
     Private Function IsExists() As Boolean
         Try
-
             Dim parameters = New List(Of SqlParameter)()
 
             With parameters

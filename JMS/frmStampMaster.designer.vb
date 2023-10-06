@@ -94,7 +94,7 @@ Partial Class frmStampMaster
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(424, 290)
+        Me.btnExit.Location = New System.Drawing.Point(432, 290)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 800
@@ -137,7 +137,7 @@ Partial Class frmStampMaster
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(347, 290)
+        Me.btnCancel.Location = New System.Drawing.Point(355, 290)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 23
@@ -146,7 +146,7 @@ Partial Class frmStampMaster
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(193, 290)
+        Me.btnSave.Location = New System.Drawing.Point(201, 290)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 22
@@ -155,7 +155,7 @@ Partial Class frmStampMaster
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnDelete.Location = New System.Drawing.Point(270, 290)
+        Me.btnDelete.Location = New System.Drawing.Point(278, 290)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 25)
         Me.btnDelete.TabIndex = 21
@@ -190,7 +190,7 @@ Partial Class frmStampMaster
         'lblStampName
         '
         Me.lblStampName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.lblStampName.Location = New System.Drawing.Point(35, 41)
+        Me.lblStampName.Location = New System.Drawing.Point(37, 41)
         Me.lblStampName.Name = "lblStampName"
         Me.lblStampName.Size = New System.Drawing.Size(85, 18)
         Me.lblStampName.TabIndex = 6

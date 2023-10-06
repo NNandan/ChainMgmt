@@ -21,6 +21,8 @@ Public Class frmMelting
     Dim iIssueId As Int16
     Dim iUsedBagId As Int16
 
+    Dim iPartyId As Int16
+
     Dim dBalanceWt As Double
 
     Private Objerr As New ErrorProvider()
@@ -49,7 +51,6 @@ Public Class frmMelting
     End Property
     Private Sub Clear_Form()
         Try
-
             '' For Header Field Start
             txtMeltingNo.Tag = ""
             txtMeltingNo.Clear()
@@ -108,10 +109,10 @@ Public Class frmMelting
 
             txtMelting.Focus()
             txtMelting.Select()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Testing", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
     Private Sub frmMelting_Load(sender As Object, e As EventArgs) Handles Me.Load
 
@@ -169,7 +170,7 @@ Public Class frmMelting
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            .Add(dbManager.CreateParameter("@ActionType", "FillLabour", DbType.String))
         End With
 
         Dim dr = dbManager.GetDataReader("SP_LabourMaster_Select", CommandType.StoredProcedure, parameters.ToArray(), connection)
@@ -217,9 +218,9 @@ Public Class frmMelting
 
         Try
             Dim parameters = New List(Of SqlParameter)()
-            parameters.Clear()
 
             With parameters
+                .Clear()
                 .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
             End With
 
@@ -260,27 +261,30 @@ Public Class frmMelting
                                     CStr(Rmccmb.Text.Trim),
                                     txtItemName.Tag,
                                     txtItemName.Text.Trim(),
-                                    Format(Val(txtIssueWt.Text.Trim), "0.00"),
+                                    txtIssueWt.Text,
                                     Format(Val(txtIssuePr.Text.Trim), "0.00"),
                                     Format(Val(txtFineWt.Text.Trim), "0.000"),
                                     Val(iReceiptId),
                                     Val(iReceiptDetailId),
                                     Val(iUsedBagId),
-                                    Val(iIssueId))
+                                    Val(iIssueId),
+                                    Val(iPartyId))
 
             GetSrNo(dgvMelting)
         Else
-            dgvMelting.Rows(TempRow).Cells(0).Value = txtSrNo.Text.Trim
-            dgvMelting.Rows(TempRow).Cells(1).Value = cmbItemType.Text.Trim
-            dgvMelting.Rows(TempRow).Cells(2).Value = CStr(Rmccmb.Text.Trim)
-            dgvMelting.Rows(TempRow).Cells(3).Value = txtItemName.Tag
-            dgvMelting.Rows(TempRow).Cells(4).Value = txtItemName.Text.Trim
-            dgvMelting.Rows(TempRow).Cells(5).Value = Format(Val(txtIssueWt.Text.Trim), "0.00")
-            dgvMelting.Rows(TempRow).Cells(6).Value = Format(Val(txtIssuePr.Text.Trim), "0.00")
-            dgvMelting.Rows(TempRow).Cells(7).Value = Format(Val(txtFineWt.Text.Trim), "0.000")
-            iReceiptId = Val(txtIssueWt.Tag)
-            iReceiptDetailId = Val(txtIssuePr.Tag)
-            iUsedBagId = Val(txtFineWt.Tag)
+            dgvMelting.Rows.Add(Val(txtSrNo.Text.Trim),
+                                    cmbItemType.Text.Trim(),
+                                    CStr(Rmccmb.Text.Trim),
+                                    txtItemName.Tag,
+                                    txtItemName.Text.Trim(),
+                                    txtIssueWt.Text,
+                                    Format(Val(txtIssuePr.Text.Trim), "0.00"),
+                                    Format(Val(txtFineWt.Text.Trim), "0.000"),
+                                    Val(iReceiptId),
+                                    Val(iReceiptDetailId),
+                                    Val(iUsedBagId),
+                                    Val(iIssueId),
+                                    Val(iPartyId))
             GridDoubleClick = False
         End If
 
@@ -388,8 +392,6 @@ Public Class frmMelting
 
         Rmccmb.Columns(0).IsVisible = False
         Rmccmb.Columns(3).IsVisible = False
-        'Rmccmb.Columns(9).IsVisible = False
-        'Rmccmb.Columns(10).IsVisible = False
 
         Me.Rmccmb.AutoCompleteMode = AutoCompleteMode.Append
         Me.Rmccmb.AutoSizeDropDownToBestFit = True
@@ -420,17 +422,17 @@ Public Class frmMelting
 
         Rmccmb.Columns(1).TextAlignment = ContentAlignment.MiddleLeft
         Rmccmb.Columns(5).TextAlignment = ContentAlignment.MiddleLeft
-        Rmccmb.Columns(6).TextAlignment = ContentAlignment.MiddleRight
-        Rmccmb.Columns(7).TextAlignment = ContentAlignment.MiddleRight
+        Rmccmb.Columns(7).TextAlignment = ContentAlignment.MiddleLeft
         Rmccmb.Columns(8).TextAlignment = ContentAlignment.MiddleRight
         Rmccmb.Columns(9).TextAlignment = ContentAlignment.MiddleRight
+        Rmccmb.Columns(10).TextAlignment = ContentAlignment.MiddleRight
 
         Rmccmb.Columns(0).IsVisible = False
         Rmccmb.Columns(2).IsVisible = False
         Rmccmb.Columns(3).IsVisible = False
         Rmccmb.Columns(4).IsVisible = False
-        Rmccmb.Columns(9).IsVisible = False
-        Rmccmb.Columns(10).IsVisible = False
+        Rmccmb.Columns(6).IsVisible = False
+        Rmccmb.Columns(11).IsVisible = False
 
         Me.Rmccmb.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         Me.Rmccmb.AutoSizeDropDownToBestFit = True
@@ -457,7 +459,7 @@ Public Class frmMelting
         Rmccmb.DataSource = Nothing
 
         Rmccmb.DataSource = dt
-        Rmccmb.DisplayMember = "LotNo"
+        Rmccmb.DisplayMember = "LotAdditionNo"
         Rmccmb.ValueMember = "ItemId"
 
         Rmccmb.Columns(1).TextAlignment = ContentAlignment.MiddleLeft
@@ -493,8 +495,11 @@ Public Class frmMelting
                 TmpLotNo = Dt.Rows(0).Item(0)
 
                 MessageBoxTimer(TmpLotNo)
+                Me.fillVoucher()
             Else
                 Me.UpdateData()
+                Me.fillVoucher()
+
             End If
 
         Catch ex As Exception
@@ -526,6 +531,8 @@ Public Class frmMelting
         Dim ReceiptId As String = Nothing
         Dim ReceiptDetailsId As String = Nothing
         Dim UsedBagId As String = Nothing
+        Dim IssueId As String = Nothing
+        Dim PartyId As String = Nothing
 
         Dim SilverPr As String = Nothing
         Dim SilverWt As String = Nothing
@@ -536,7 +543,7 @@ Public Class frmMelting
 
         ''For Master
         alParaval.Add(TransDt.Value.ToString())
-        alParaval.Add(cmbItem.SelectedValue)
+        alParaval.Add(cmbItem.Text.Trim())
         alParaval.Add(txtMelting.Text)
         alParaval.Add(lblGrossTotal.Text)
         alParaval.Add(txtSilverPr.Text)
@@ -561,7 +568,8 @@ Public Class frmMelting
                     ReceiptId = Val(row.Cells(8).Value)
                     ReceiptDetailsId = Val(row.Cells(9).Value)
                     UsedBagId = Val(row.Cells(10).Value)
-
+                    IssueId = Val(row.Cells(11).Value)
+                    PartyId = Val(row.Cells(12).Value)
                 Else
                     GridSrNo = GridSrNo & "|" & Val(row.Cells(0).Value)
                     ItemType = ItemType & "|" & Convert.ToString(row.Cells(1).Value)
@@ -573,6 +581,8 @@ Public Class frmMelting
                     ReceiptId = ReceiptId & "|" & Val(row.Cells(8).Value)
                     ReceiptDetailsId = ReceiptDetailsId & "|" & Val(row.Cells(9).Value)
                     UsedBagId = UsedBagId & "|" & Val(row.Cells(10).Value)
+                    IssueId = IssueId & "|" & Val(row.Cells(10).Value)
+                    PartyId = PartyId & "|" & Val(row.Cells(11).Value)
                 End If
             End If
             IRowCount += 1
@@ -588,6 +598,8 @@ Public Class frmMelting
         alParaval.Add(ReceiptId)
         alParaval.Add(ReceiptDetailsId)
         alParaval.Add(UsedBagId)
+        alParaval.Add(IssueId)
+        alParaval.Add(PartyId)
 
         Try
             Dim Hparameters = New List(Of SqlParameter)()
@@ -596,7 +608,7 @@ Public Class frmMelting
             With Hparameters
                 .Add(dbManager.CreateParameter("@HMeltingDt", alParaval.Item(iValue), DbType.DateTime))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@HItemId", alParaval.Item(iValue), DbType.Int16))
+                .Add(dbManager.CreateParameter("@HItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HPercent", alParaval.Item(iValue), DbType.String))
                 iValue += 1
@@ -639,11 +651,15 @@ Public Class frmMelting
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DUsedBagId", alParaval.Item(iValue), DbType.String))
                 iValue += 1
+                .Add(dbManager.CreateParameter("@DIssueId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DPartyId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
             End With
 
             Dt = dbManager.GetDataTable("SP_Melting_Save", CommandType.StoredProcedure, Hparameters.ToArray())
 
-            MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data Saved !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
@@ -656,7 +672,7 @@ Public Class frmMelting
     End Function
     Private Sub txtFineWt_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtFineWt.Validating
         Try
-            If cmbItemType.Text.Trim <> "" And txtMelting.Text.Trim <> "" And txtItemName.Text.Trim <> "" And Val(txtIssueWt.Text.Trim) > 0 And Val(txtIssuePr.Text.Trim) > 0 Then
+            If cmbItemType.Text.Trim <> "" And txtMelting.Text.Trim <> "" And txtItemName.Text.Trim <> "" And Val(txtIssuePr.Text.Trim) > 0 Then
                 Me.fillGrid()
                 Me.Total()
             Else
@@ -668,7 +684,19 @@ Public Class frmMelting
     End Sub
     Private Sub txtGrossWt_TextChanged(sender As Object, e As EventArgs) Handles txtIssueWt.TextChanged
         Try
-            txtFineWt.Text = Format((Val(txtIssueWt.Text) * Val(txtIssuePr.Text)) / 100, "0.000")
+            If btnSave.Text = "&Save" Then
+                If txtIssueWt.Text.Trim <> "" Then
+                    If Convert.ToDouble(txtIssueWt.Text) > Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString Then
+                        MessageBox.Show("This Wt Not Allow")
+                    Else
+                        txtFineWt.Text = Format((Val(txtIssueWt.Text) * Val(txtIssuePr.Text)) / 100, "0.000")
+                    End If
+                Else
+                End If
+
+            Else
+                txtFineWt.Text = Format((Val(txtIssueWt.Text) * Val(txtIssuePr.Text)) / 100, "0.000")
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -702,6 +730,8 @@ Public Class frmMelting
         Dim ReceiptId As String = Nothing
         Dim ReceiptDetailsId As String = Nothing
         Dim UsedBagId As String = Nothing
+        Dim IssueId As String = Nothing
+        Dim PartyId As String = Nothing
 
         Dim SilverPr As String = Nothing
         Dim SilverWt As String = Nothing
@@ -713,7 +743,7 @@ Public Class frmMelting
         ''For Master
         alParaval.Add(TransDt.Value.ToString())
         alParaval.Add(txtMeltingNo.Text)
-        alParaval.Add(cmbItem.SelectedValue)
+        alParaval.Add(cmbItem.Text.Trim)
         alParaval.Add(txtMelting.Text)
         alParaval.Add(lblGrossTotal.Text)
         alParaval.Add(txtSilverPr.Text)
@@ -738,6 +768,8 @@ Public Class frmMelting
                     ReceiptId = Val(row.Cells(8).Value)
                     ReceiptDetailsId = Val(row.Cells(9).Value)
                     UsedBagId = Val(row.Cells(10).Value)
+                    IssueId = Val(row.Cells(11).Value)
+                    PartyId = Val(row.Cells(12).Value)
                 Else
                     GridSrNo = GridSrNo & "|" & Val(row.Cells(0).Value)
                     ItemType = ItemType & "|" & Convert.ToString(row.Cells(1).Value)
@@ -749,6 +781,8 @@ Public Class frmMelting
                     ReceiptId = ReceiptId & "|" & Val(row.Cells(8).Value)
                     ReceiptDetailsId = ReceiptDetailsId & "|" & Val(row.Cells(9).Value)
                     UsedBagId = UsedBagId & "|" & Val(row.Cells(10).Value)
+                    IssueId = IssueId & "|" & Val(row.Cells(10).Value)
+                    PartyId = PartyId & "|" & Val(row.Cells(12).Value)
                 End If
             End If
             IRowCount += 1
@@ -760,9 +794,12 @@ Public Class frmMelting
         alParaval.Add(GrossWt)
         alParaval.Add(ReceivePr)
         alParaval.Add(FineWt)
+
         alParaval.Add(ReceiptId)
         alParaval.Add(ReceiptDetailsId)
         alParaval.Add(UsedBagId)
+        alParaval.Add(IssueId)
+        alParaval.Add(PartyId)
 
         Try
             Dim Hparameters = New List(Of SqlParameter)()
@@ -773,7 +810,7 @@ Public Class frmMelting
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HMeltingLot", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@HItemId", alParaval.Item(iValue), DbType.Int16))
+                .Add(dbManager.CreateParameter("@HItemName", alParaval.Item(iValue), DbType.String))
                 iValue += 1
                 .Add(dbManager.CreateParameter("@HPercent", alParaval.Item(iValue), DbType.String))
                 iValue += 1
@@ -817,14 +854,20 @@ Public Class frmMelting
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DUsedBagId", alParaval.Item(iValue), DbType.String))
                 iValue += 1
+                .Add(dbManager.CreateParameter("@DIssueId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
+                .Add(dbManager.CreateParameter("@DPartyId", alParaval.Item(iValue), DbType.String))
+                iValue += 1
             End With
 
             dbManager.Insert("SP_Melting_Update", CommandType.StoredProcedure, Hparameters.ToArray())
 
-            MessageBox.Show("Data Updated !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data Updated !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
+        Finally
+            Cursor.Current = Cursors.Default
         End Try
     End Sub
     Private Function Validate_Fields() As Boolean
@@ -862,12 +905,9 @@ Public Class frmMelting
             Return True
         Catch ex As Exception
             Return False
-            MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Function
-    Private Sub Rmccmb_GotFocus(sender As Object, e As EventArgs) Handles Rmccmb.GotFocus
-        Me.Rmccmb.MultiColumnComboBoxElement.ShowPopup()
-    End Sub
     Private Sub dgvMelting_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvMelting.CellDoubleClick
         Try
             If e.RowIndex = -1 Then Exit Sub
@@ -883,14 +923,23 @@ Public Class frmMelting
                 txtIssueWt.Text = dgvMelting.Rows(e.RowIndex).Cells(5).Value.ToString()
                 txtIssuePr.Text = dgvMelting.Rows(e.RowIndex).Cells(6).Value.ToString()
                 txtFineWt.Text = dgvMelting.Rows(e.RowIndex).Cells(7).Value.ToString()
+
+                iReceiptId = dgvMelting.Rows(e.RowIndex).Cells(8).Value.ToString()
+                iReceiptDetailId = dgvMelting.Rows(e.RowIndex).Cells(9).Value.ToString()
+                iUsedBagId = dgvMelting.Rows(e.RowIndex).Cells(10).Value.ToString()
+                iIssueId = dgvMelting.Rows(e.RowIndex).Cells(11).Value.ToString()
+                iPartyId = dgvMelting.Rows(e.RowIndex).Cells(12).Value.ToString()
                 TempRow = e.RowIndex
             End If
-
+            With dgvMelting
+                .Rows.Remove(.CurrentRow)
+            End With
+            Me.Total()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-    Private Sub fillHeaderFromListView(ByVal intMeltingId As Integer)
+    Private Sub fillHeaderFromGridView(ByVal intMeltingId As Integer)
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
@@ -909,6 +958,7 @@ Public Class frmMelting
             txtMeltingNo.Text = dr.Item("LotNo").ToString()
             TransDt.Text = dr.Item("MeltingDt").ToString
             cmbItem.SelectedIndex = dr.Item("ItemId").ToString
+            cmbItem.Text = dr.Item("ItemName").ToString
             txtMelting.Text = dr.Item("RequirePr").ToString()
             lblAlloyTotal.Text = dr.Item("GrossWt").ToString
             txtSilverPr.Text = dr.Item("SilverPr").ToString
@@ -925,12 +975,13 @@ Public Class frmMelting
 ErrHandler:
         MsgBox(Err.Description, MsgBoxStyle.Critical)
     End Sub
-    Private Sub fillDetailsFromListView(ByVal MeltingId As Integer)
+    Private Sub fillDetailsFromGridView(ByVal MeltingId As Integer)
         Dim dttable As New DataTable
+
         dttable = fetchAllRecords(CInt(MeltingId))
 
         For Each ROW As DataRow In dttable.Rows
-            dgvMelting.Rows.Add(1, CStr(ROW("ItemType")), CStr(ROW("SlipBagNo")), Val(ROW("ItemBagId")), CStr(ROW("ItemName")), Format(Val(ROW("GrossWt")), "0.00"), Format(Val(ROW("GrossPr")), "0.00"), Format(Val(ROW("FineWt")), "0.000"), Val(ROW("ReceiptId")), Val(ROW("ReceiptDetailsId")), Val(ROW("UsedBagId")))
+            dgvMelting.Rows.Add(1, CStr(ROW("ItemType")), CStr(ROW("SlipBagNo")), Val(ROW("ItemBagId")), CStr(ROW("ItemName")), Format(Val(ROW("GrossWt")), "0.00"), Format(Val(ROW("GrossPr")), "0.00"), Format(Val(ROW("FineWt")), "0.000"), Val(ROW("ReceiptId")), Val(ROW("ReceiptDetailsId")), Val(ROW("UsedBagId")), Val(ROW("IssueId")), Val(ROW("PartyId")))
         Next
 
         Me.GetSrNo(dgvMelting)
@@ -947,29 +998,28 @@ ErrHandler:
         End If
     End Sub
     Private Sub txtGrossWt_Validating(sender As Object, e As CancelEventArgs) Handles txtIssueWt.Validating
-        Dim dsumOfWt As Double = 0
+        'Dim dsumOfWt As Double = 0
 
-        If GridDoubleClick = True Then
-            dsumOfWt = CDbl(Val(txtIssueWt.Tag) + Val(lblTotal.Text))
+        'If GridDoubleClick = True Then
+        '    dsumOfWt = CDbl(Val(txtIssueWt.Tag) + Val(lblTotal.Text))
 
-            If Val(txtIssueWt.Text) > Val(dsumOfWt) Then
-                e.Cancel = True
-                Objerr.SetError(txtIssueWt, "Wt should not be greather than Balance Wt. !")
-            Else
-                Objerr.Clear()
-            End If
-        Else
-            'If Val(txtIssueWt.Text) > Val(txtIssueWt.Tag) Then
-            If Val(txtIssueWt.Text) > Val(dBalanceWt) Then
-                e.Cancel = True
-                Objerr.SetError(txtIssueWt, "Wt should not be greather than Balance Wt. !" + dBalanceWt.ToString)
-            Else
-                Objerr.Clear()
-            End If
-        End If
+        '    If Val(txtIssueWt.Text) > Val(dsumOfWt) Then
+        '        e.Cancel = True
+        '        Objerr.SetError(txtIssueWt, "Wt should not be greather than Balance Wt. !")
+        '    Else
+        '        Objerr.Clear()
+        '    End If
+        'Else
+        '    If Val(txtIssueWt.Text) > Val(dBalanceWt) Then
+        '        e.Cancel = True
+        '        Objerr.SetError(txtIssueWt, "Wt should not be greather than Balance Wt. !" + dBalanceWt.ToString)
+        '    Else
+        '        Objerr.Clear()
+        '    End If
+        'End If
     End Sub
     Private Sub Rmccmb_DropDownClosed(sender As Object, args As RadPopupClosedEventArgs) Handles Rmccmb.DropDownClosed
-        If Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 0 Then      ''Bag
+        If Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 0 Then                   ''Bag
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
@@ -980,19 +1030,21 @@ ErrHandler:
 
             iUsedBagId = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then      ''Voucher
+            txtFineWt.Text = Format(CDbl(txtIssueWt.Text) * CDbl(txtIssuePr.Text) / 100, "0.00")
+        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then             ''Voucher
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
             dBalanceWt = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
-            txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiveWt").Value.ToString
+            txtIssueWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
             iReceiptId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
             iReceiptDetailId = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
-            txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 2 Then  ''Lot Addition Stock
+            iPartyId = Me.Rmccmb.EditorControl.CurrentRow.Cells("PartyId").Value.ToString
+            txtFineWt.Text = Format(CDbl(txtIssueWt.Text) * CDbl(txtIssuePr.Text) / 100, "0.00")
+        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 2 Then          ''Lot Addition Stock
             txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
             txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
@@ -1002,6 +1054,7 @@ ErrHandler:
             txtIssuePr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
             txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
+            txtFineWt.Text = Format(CDbl(txtIssueWt.Text) * CDbl(txtIssuePr.Text) / 100, "0.00")
         End If
     End Sub
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -1019,7 +1072,7 @@ ErrHandler:
 
                     dbManager.Delete("SP_AccountMaster_Delete", CommandType.StoredProcedure, parameters.ToArray())
 
-                    MessageBox.Show("Data Deleted !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Data Deleted !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                     Me.Clear_Form()
 
@@ -1047,25 +1100,23 @@ ErrHandler:
 
         If dgvMeltingData.Rows.Count > 0 Then
 
-            Dim MeltingId As Integer = Me.dgvMeltingData.SelectedRows(0).Cells(0).Value
+            Dim MeltingId As Int16 = Me.dgvMeltingData.SelectedRows(0).Cells(0).Value
 
             Me.Clear_Form()
 
             Fr_Mode = FormState.EStateMode
 
-            Me.fillHeaderFromListView(MeltingId)
+            Me.fillHeaderFromGridView(MeltingId)
 
-            Me.fillDetailsFromListView(MeltingId)
+            Me.fillDetailsFromGridView(MeltingId)
 
             Me.TbMelting.SelectedIndex = 0
         End If
 
     End Sub
-
     Private Sub txtSilverPr_Leave(sender As Object, e As EventArgs) Handles txtSilverPr.Leave
         txtSilverPr.Text = Format(Val(txtSilverPr.Text), "0.00")
     End Sub
-
     Private Sub frmMelting_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Try
             If (e.KeyCode = Keys.Escape) Then   'for Exit

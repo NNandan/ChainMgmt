@@ -39,11 +39,23 @@ Partial Class frmVaccumBag
         Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
         Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.tbVaccumeBag = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GCBoxDetails = New System.Windows.Forms.GroupBox()
+        Me.BtnCDelete = New Telerik.WinControls.UI.RadButton()
         Me.btnCExit = New Telerik.WinControls.UI.RadButton()
         Me.dgvVacuumBag = New Telerik.WinControls.UI.RadGridView()
         Me.lblFineTotal = New System.Windows.Forms.Label()
@@ -54,19 +66,26 @@ Partial Class frmVaccumBag
         Me.btnSave = New Telerik.WinControls.UI.RadButton()
         Me.lblRowCount = New System.Windows.Forms.Label()
         Me.GCBoxMain = New System.Windows.Forms.GroupBox()
+        Me.txtMaxNo = New Telerik.WinControls.UI.RadTextBox()
+        Me.lblMaxNo = New Telerik.WinControls.UI.RadLabel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbCBagtype = New Telerik.WinControls.UI.RadDropDownList()
         Me.cmbLabour = New Telerik.WinControls.UI.RadDropDownList()
         Me.lblLabourName = New System.Windows.Forms.Label()
-        Me.cmbCBagtype = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbOperation = New Telerik.WinControls.UI.RadDropDownList()
         Me.lblKarigarName = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.BtnREdit = New Telerik.WinControls.UI.RadButton()
         Me.btnRExit = New Telerik.WinControls.UI.RadButton()
         Me.btnRCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnRSave = New Telerik.WinControls.UI.RadButton()
         Me.GRBoxDetails = New System.Windows.Forms.GroupBox()
-        Me.dgvReceiveVacuum = New Telerik.WinControls.UI.RadGridView()
+        Me.dgvRVacuumBag = New Telerik.WinControls.UI.RadGridView()
         Me.GRBoxMain = New System.Windows.Forms.GroupBox()
+        Me.txtRBagName = New Telerik.WinControls.UI.RadTextBox()
+        Me.cmbRBagNo = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cmbRBagtype = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtRGrossLoss = New Telerik.WinControls.UI.RadTextBox()
         Me.txtRCarbon = New Telerik.WinControls.UI.RadTextBox()
         Me.txtRTotalWt = New Telerik.WinControls.UI.RadTextBox()
@@ -75,7 +94,6 @@ Partial Class frmVaccumBag
         Me.txtRWtOnScale = New Telerik.WinControls.UI.RadTextBox()
         Me.txtRIssuePr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtRIssueWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.cmbRBagNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -86,14 +104,15 @@ Partial Class frmVaccumBag
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtRTransId = New System.Windows.Forms.TextBox()
         Me.RTransDt = New System.Windows.Forms.DateTimePicker()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnUEdit = New Telerik.WinControls.UI.RadButton()
         Me.btnUExit = New Telerik.WinControls.UI.RadButton()
         Me.btnUCancel = New Telerik.WinControls.UI.RadButton()
         Me.btnUSave = New Telerik.WinControls.UI.RadButton()
         Me.GUBoxMain = New System.Windows.Forms.GroupBox()
-        Me.cmbUpdBagtype = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbUpdBagNo = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.txtUBagName = New Telerik.WinControls.UI.RadTextBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.RadCollapsiblePanel1 = New Telerik.WinControls.UI.RadCollapsiblePanel()
         Me.txtUcarbonReceive = New Telerik.WinControls.UI.RadTextBox()
@@ -101,11 +120,11 @@ Partial Class frmVaccumBag
         Me.txtUissueFineWt = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUissueWt = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUissuePr = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtULossFine = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtUpdLossFine = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUGrossLoss = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUreceiveFineWt = New Telerik.WinControls.UI.RadTextBox()
         Me.txtUreceiveWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtUreceivePr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtUReceivePr = New Telerik.WinControls.UI.RadTextBox()
         Me.lblCarbonReceive = New System.Windows.Forms.Label()
         Me.lblIssueFineWt = New System.Windows.Forms.Label()
         Me.lblIssueWt = New System.Windows.Forms.Label()
@@ -116,31 +135,41 @@ Partial Class frmVaccumBag
         Me.lblReceiveFineWt = New System.Windows.Forms.Label()
         Me.lblReceiveWt = New System.Windows.Forms.Label()
         Me.lblReceivePr = New System.Windows.Forms.Label()
-        Me.cmbUBagNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtUTransId = New System.Windows.Forms.TextBox()
-        Me.ULFailTransDt = New System.Windows.Forms.DateTimePicker()
+        Me.UTransDt = New System.Windows.Forms.DateTimePicker()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
+        Me.dgvFinalUpdate = New Telerik.WinControls.UI.RadGridView()
         Me.tbVaccumeBag.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GCBoxDetails.SuspendLayout()
+        CType(Me.BtnCDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvVacuumBag, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvVacuumBag.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GCBoxMain.SuspendLayout()
-        CType(Me.cmbLabour, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtMaxNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lblMaxNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbCBagtype, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbLabour, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbOperation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.BtnREdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnRSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GRBoxDetails.SuspendLayout()
-        CType(Me.dgvReceiveVacuum, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvReceiveVacuum.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRVacuumBag, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvRVacuumBag.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GRBoxMain.SuspendLayout()
-        CType(Me.cmbRBagtype, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRBagName, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRBagNo.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbRBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRGrossLoss, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRCarbon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,13 +178,16 @@ Partial Class frmVaccumBag
         CType(Me.txtRWtOnScale, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRIssuePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtRIssueWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        CType(Me.btnUEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUCancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GUBoxMain.SuspendLayout()
-        CType(Me.cmbUpdBagtype, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbUpdBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUBagName, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadCollapsiblePanel1.PanelContainer.SuspendLayout()
         CType(Me.txtUcarbonReceive, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,12 +195,17 @@ Partial Class frmVaccumBag
         CType(Me.txtUissueFineWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUissueWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUissuePr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtULossFine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUpdLossFine, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUGrossLoss, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUreceiveFineWt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtUreceiveWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtUreceivePr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbUBagNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtUReceivePr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGridView1.SuspendLayout()
+        CType(Me.dgvFinalUpdate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvFinalUpdate.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tbVaccumeBag
@@ -176,6 +213,7 @@ Partial Class frmVaccumBag
         Me.tbVaccumeBag.Controls.Add(Me.TabPage1)
         Me.tbVaccumeBag.Controls.Add(Me.TabPage2)
         Me.tbVaccumeBag.Controls.Add(Me.TabPage3)
+        Me.tbVaccumeBag.Controls.Add(Me.TabPage4)
         Me.tbVaccumeBag.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tbVaccumeBag.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbVaccumeBag.Location = New System.Drawing.Point(0, 0)
@@ -199,6 +237,7 @@ Partial Class frmVaccumBag
         'GCBoxDetails
         '
         Me.GCBoxDetails.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GCBoxDetails.Controls.Add(Me.BtnCDelete)
         Me.GCBoxDetails.Controls.Add(Me.btnCExit)
         Me.GCBoxDetails.Controls.Add(Me.dgvVacuumBag)
         Me.GCBoxDetails.Controls.Add(Me.lblFineTotal)
@@ -209,19 +248,28 @@ Partial Class frmVaccumBag
         Me.GCBoxDetails.Controls.Add(Me.btnSave)
         Me.GCBoxDetails.Controls.Add(Me.lblRowCount)
         Me.GCBoxDetails.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GCBoxDetails.Location = New System.Drawing.Point(7, 105)
+        Me.GCBoxDetails.Location = New System.Drawing.Point(7, 132)
         Me.GCBoxDetails.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.GCBoxDetails.Name = "GCBoxDetails"
         Me.GCBoxDetails.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.GCBoxDetails.Size = New System.Drawing.Size(725, 396)
+        Me.GCBoxDetails.Size = New System.Drawing.Size(725, 371)
         Me.GCBoxDetails.TabIndex = 25
         Me.GCBoxDetails.TabStop = False
         Me.GCBoxDetails.Text = "Vaccum Bag Details"
         '
+        'BtnCDelete
+        '
+        Me.BtnCDelete.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnCDelete.Location = New System.Drawing.Point(291, 336)
+        Me.BtnCDelete.Name = "BtnCDelete"
+        Me.BtnCDelete.Size = New System.Drawing.Size(73, 25)
+        Me.BtnCDelete.TabIndex = 38
+        Me.BtnCDelete.Text = "&Delete"
+        '
         'btnCExit
         '
         Me.btnCExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCExit.Location = New System.Drawing.Point(399, 367)
+        Me.btnCExit.Location = New System.Drawing.Point(443, 336)
         Me.btnCExit.Name = "btnCExit"
         Me.btnCExit.Size = New System.Drawing.Size(75, 25)
         Me.btnCExit.TabIndex = 49
@@ -234,7 +282,7 @@ Partial Class frmVaccumBag
         Me.dgvVacuumBag.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.dgvVacuumBag.ForeColor = System.Drawing.SystemColors.ControlText
         Me.dgvVacuumBag.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvVacuumBag.Location = New System.Drawing.Point(6, 21)
+        Me.dgvVacuumBag.Location = New System.Drawing.Point(6, 22)
         '
         '
         '
@@ -306,14 +354,14 @@ Partial Class frmVaccumBag
         Me.dgvVacuumBag.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvVacuumBag.Name = "dgvVacuumBag"
         Me.dgvVacuumBag.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvVacuumBag.Size = New System.Drawing.Size(715, 323)
+        Me.dgvVacuumBag.Size = New System.Drawing.Size(715, 281)
         Me.dgvVacuumBag.TabIndex = 47
         '
         'lblFineTotal
         '
         Me.lblFineTotal.AutoSize = True
         Me.lblFineTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblFineTotal.Location = New System.Drawing.Point(634, 349)
+        Me.lblFineTotal.Location = New System.Drawing.Point(634, 312)
         Me.lblFineTotal.Name = "lblFineTotal"
         Me.lblFineTotal.Size = New System.Drawing.Size(14, 14)
         Me.lblFineTotal.TabIndex = 43
@@ -323,7 +371,7 @@ Partial Class frmVaccumBag
         '
         Me.lblReceivePrTotal.AutoSize = True
         Me.lblReceivePrTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblReceivePrTotal.Location = New System.Drawing.Point(570, 350)
+        Me.lblReceivePrTotal.Location = New System.Drawing.Point(570, 312)
         Me.lblReceivePrTotal.Name = "lblReceivePrTotal"
         Me.lblReceivePrTotal.Size = New System.Drawing.Size(14, 14)
         Me.lblReceivePrTotal.TabIndex = 42
@@ -334,7 +382,7 @@ Partial Class frmVaccumBag
         '
         Me.lblVacuumTotal.AutoSize = True
         Me.lblVacuumTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblVacuumTotal.Location = New System.Drawing.Point(460, 348)
+        Me.lblVacuumTotal.Location = New System.Drawing.Point(460, 312)
         Me.lblVacuumTotal.Name = "lblVacuumTotal"
         Me.lblVacuumTotal.Size = New System.Drawing.Size(14, 14)
         Me.lblVacuumTotal.TabIndex = 41
@@ -343,7 +391,7 @@ Partial Class frmVaccumBag
         'lblCBhukaTotal
         '
         Me.lblCBhukaTotal.AutoSize = True
-        Me.lblCBhukaTotal.Location = New System.Drawing.Point(224, 348)
+        Me.lblCBhukaTotal.Location = New System.Drawing.Point(224, 311)
         Me.lblCBhukaTotal.Name = "lblCBhukaTotal"
         Me.lblCBhukaTotal.Size = New System.Drawing.Size(38, 14)
         Me.lblCBhukaTotal.TabIndex = 39
@@ -352,7 +400,7 @@ Partial Class frmVaccumBag
         'btnCancel
         '
         Me.btnCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnCancel.Location = New System.Drawing.Point(322, 367)
+        Me.btnCancel.Location = New System.Drawing.Point(366, 336)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnCancel.TabIndex = 38
@@ -361,7 +409,7 @@ Partial Class frmVaccumBag
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnSave.Location = New System.Drawing.Point(245, 367)
+        Me.btnSave.Location = New System.Drawing.Point(214, 336)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 25)
         Me.btnSave.TabIndex = 37
@@ -380,24 +428,64 @@ Partial Class frmVaccumBag
         'GCBoxMain
         '
         Me.GCBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GCBoxMain.Controls.Add(Me.txtMaxNo)
+        Me.GCBoxMain.Controls.Add(Me.lblMaxNo)
+        Me.GCBoxMain.Controls.Add(Me.Label3)
+        Me.GCBoxMain.Controls.Add(Me.cmbCBagtype)
         Me.GCBoxMain.Controls.Add(Me.cmbLabour)
         Me.GCBoxMain.Controls.Add(Me.lblLabourName)
-        Me.GCBoxMain.Controls.Add(Me.cmbCBagtype)
+        Me.GCBoxMain.Controls.Add(Me.cmbOperation)
         Me.GCBoxMain.Controls.Add(Me.lblKarigarName)
         Me.GCBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GCBoxMain.Location = New System.Drawing.Point(7, 9)
         Me.GCBoxMain.Margin = New System.Windows.Forms.Padding(5, 3, 3, 3)
         Me.GCBoxMain.Name = "GCBoxMain"
-        Me.GCBoxMain.Size = New System.Drawing.Size(725, 94)
+        Me.GCBoxMain.Size = New System.Drawing.Size(725, 112)
         Me.GCBoxMain.TabIndex = 18
         Me.GCBoxMain.TabStop = False
         Me.GCBoxMain.Text = "Vaccume Bag Information"
+        '
+        'txtMaxNo
+        '
+        Me.txtMaxNo.Location = New System.Drawing.Point(586, 25)
+        Me.txtMaxNo.Name = "txtMaxNo"
+        Me.txtMaxNo.Size = New System.Drawing.Size(100, 20)
+        Me.txtMaxNo.TabIndex = 45
+        '
+        'lblMaxNo
+        '
+        Me.lblMaxNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblMaxNo.Location = New System.Drawing.Point(532, 26)
+        Me.lblMaxNo.Name = "lblMaxNo"
+        Me.lblMaxNo.Size = New System.Drawing.Size(50, 18)
+        Me.lblMaxNo.TabIndex = 44
+        Me.lblMaxNo.Text = "Bag No."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(21, 56)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(97, 14)
+        Me.Label3.TabIndex = 43
+        Me.Label3.Text = "Select Bag Type"
+        '
+        'cmbCBagtype
+        '
+        Me.cmbCBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbCBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbCBagtype.Location = New System.Drawing.Point(121, 53)
+        Me.cmbCBagtype.Name = "cmbCBagtype"
+        Me.cmbCBagtype.Size = New System.Drawing.Size(145, 20)
+        Me.cmbCBagtype.TabIndex = 42
         '
         'cmbLabour
         '
         Me.cmbLabour.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbLabour.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbLabour.Location = New System.Drawing.Point(121, 51)
+        Me.cmbLabour.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbLabour.Location = New System.Drawing.Point(121, 80)
         Me.cmbLabour.Name = "cmbLabour"
         Me.cmbLabour.Size = New System.Drawing.Size(145, 20)
         Me.cmbLabour.TabIndex = 41
@@ -406,21 +494,21 @@ Partial Class frmVaccumBag
         '
         Me.lblLabourName.AutoSize = True
         Me.lblLabourName.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLabourName.Location = New System.Drawing.Point(36, 54)
+        Me.lblLabourName.Location = New System.Drawing.Point(36, 83)
         Me.lblLabourName.Name = "lblLabourName"
         Me.lblLabourName.Size = New System.Drawing.Size(82, 14)
         Me.lblLabourName.TabIndex = 40
         Me.lblLabourName.Text = "Select Labour"
         '
-        'cmbCBagtype
+        'cmbOperation
         '
-        Me.cmbCBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbCBagtype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbCBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbCBagtype.Location = New System.Drawing.Point(121, 26)
-        Me.cmbCBagtype.Name = "cmbCBagtype"
-        Me.cmbCBagtype.Size = New System.Drawing.Size(145, 20)
-        Me.cmbCBagtype.TabIndex = 36
+        Me.cmbOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbOperation.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbOperation.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbOperation.Location = New System.Drawing.Point(121, 26)
+        Me.cmbOperation.Name = "cmbOperation"
+        Me.cmbOperation.Size = New System.Drawing.Size(145, 20)
+        Me.cmbOperation.TabIndex = 36
         '
         'lblKarigarName
         '
@@ -434,6 +522,7 @@ Partial Class frmVaccumBag
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.BtnREdit)
         Me.TabPage2.Controls.Add(Me.btnRExit)
         Me.TabPage2.Controls.Add(Me.btnRCancel)
         Me.TabPage2.Controls.Add(Me.btnRSave)
@@ -447,10 +536,19 @@ Partial Class frmVaccumBag
         Me.TabPage2.Text = "Receive Vaccum Bag"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'BtnREdit
+        '
+        Me.BtnREdit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.BtnREdit.Location = New System.Drawing.Point(307, 472)
+        Me.BtnREdit.Name = "BtnREdit"
+        Me.BtnREdit.Size = New System.Drawing.Size(75, 25)
+        Me.BtnREdit.TabIndex = 51
+        Me.BtnREdit.Text = "&Edit"
+        '
         'btnRExit
         '
         Me.btnRExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRExit.Location = New System.Drawing.Point(419, 473)
+        Me.btnRExit.Location = New System.Drawing.Point(460, 472)
         Me.btnRExit.Name = "btnRExit"
         Me.btnRExit.Size = New System.Drawing.Size(75, 25)
         Me.btnRExit.TabIndex = 50
@@ -459,7 +557,7 @@ Partial Class frmVaccumBag
         'btnRCancel
         '
         Me.btnRCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRCancel.Location = New System.Drawing.Point(340, 473)
+        Me.btnRCancel.Location = New System.Drawing.Point(384, 472)
         Me.btnRCancel.Name = "btnRCancel"
         Me.btnRCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnRCancel.TabIndex = 28
@@ -468,7 +566,7 @@ Partial Class frmVaccumBag
         'btnRSave
         '
         Me.btnRSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnRSave.Location = New System.Drawing.Point(262, 473)
+        Me.btnRSave.Location = New System.Drawing.Point(229, 472)
         Me.btnRSave.Name = "btnRSave"
         Me.btnRSave.Size = New System.Drawing.Size(75, 25)
         Me.btnRSave.TabIndex = 27
@@ -477,7 +575,7 @@ Partial Class frmVaccumBag
         'GRBoxDetails
         '
         Me.GRBoxDetails.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GRBoxDetails.Controls.Add(Me.dgvReceiveVacuum)
+        Me.GRBoxDetails.Controls.Add(Me.dgvRVacuumBag)
         Me.GRBoxDetails.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GRBoxDetails.Location = New System.Drawing.Point(9, 190)
         Me.GRBoxDetails.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
@@ -488,19 +586,19 @@ Partial Class frmVaccumBag
         Me.GRBoxDetails.TabStop = False
         Me.GRBoxDetails.Text = "Receive Bag Details"
         '
-        'dgvReceiveVacuum
+        'dgvRVacuumBag
         '
-        Me.dgvReceiveVacuum.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvReceiveVacuum.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvReceiveVacuum.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.dgvReceiveVacuum.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgvReceiveVacuum.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvReceiveVacuum.Location = New System.Drawing.Point(8, 25)
+        Me.dgvRVacuumBag.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgvRVacuumBag.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvRVacuumBag.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvRVacuumBag.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvRVacuumBag.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvRVacuumBag.Location = New System.Drawing.Point(8, 25)
         '
         '
         '
-        Me.dgvReceiveVacuum.MasterTemplate.AllowAddNewRow = False
-        Me.dgvReceiveVacuum.MasterTemplate.AllowColumnReorder = False
+        Me.dgvRVacuumBag.MasterTemplate.AllowAddNewRow = False
+        Me.dgvRVacuumBag.MasterTemplate.AllowColumnReorder = False
         GridViewTextBoxColumn8.EnableExpressionEditor = False
         GridViewTextBoxColumn8.FieldName = "TransactionId"
         GridViewTextBoxColumn8.HeaderText = "Trans. Id."
@@ -548,28 +646,25 @@ Partial Class frmVaccumBag
         GridViewTextBoxColumn15.Name = "colFineWt"
         GridViewTextBoxColumn15.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn15.Width = 80
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "VaccumeBagNo"
-        GridViewTextBoxColumn16.HeaderText = "Bag Type"
-        GridViewTextBoxColumn16.Name = "colBagType"
-        GridViewTextBoxColumn16.Width = 80
-        Me.dgvReceiveVacuum.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16})
-        Me.dgvReceiveVacuum.MasterTemplate.EnableGrouping = False
-        Me.dgvReceiveVacuum.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.None
-        Me.dgvReceiveVacuum.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvReceiveVacuum.MasterTemplate.ViewDefinition = TableViewDefinition2
-        Me.dgvReceiveVacuum.Name = "dgvReceiveVacuum"
-        Me.dgvReceiveVacuum.ReadOnly = True
-        Me.dgvReceiveVacuum.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvReceiveVacuum.ShowGroupPanel = False
-        Me.dgvReceiveVacuum.Size = New System.Drawing.Size(703, 242)
-        Me.dgvReceiveVacuum.TabIndex = 0
+        Me.dgvRVacuumBag.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11, GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15})
+        Me.dgvRVacuumBag.MasterTemplate.EnableGrouping = False
+        Me.dgvRVacuumBag.MasterTemplate.SelectionMode = Telerik.WinControls.UI.GridViewSelectionMode.None
+        Me.dgvRVacuumBag.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvRVacuumBag.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvRVacuumBag.Name = "dgvRVacuumBag"
+        Me.dgvRVacuumBag.ReadOnly = True
+        Me.dgvRVacuumBag.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvRVacuumBag.ShowGroupPanel = False
+        Me.dgvRVacuumBag.Size = New System.Drawing.Size(703, 242)
+        Me.dgvRVacuumBag.TabIndex = 0
         '
         'GRBoxMain
         '
         Me.GRBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.GRBoxMain.Controls.Add(Me.txtRBagName)
+        Me.GRBoxMain.Controls.Add(Me.cmbRBagNo)
+        Me.GRBoxMain.Controls.Add(Me.Label11)
         Me.GRBoxMain.Controls.Add(Me.Label1)
-        Me.GRBoxMain.Controls.Add(Me.cmbRBagtype)
         Me.GRBoxMain.Controls.Add(Me.txtRGrossLoss)
         Me.GRBoxMain.Controls.Add(Me.txtRCarbon)
         Me.GRBoxMain.Controls.Add(Me.txtRTotalWt)
@@ -578,7 +673,6 @@ Partial Class frmVaccumBag
         Me.GRBoxMain.Controls.Add(Me.txtRWtOnScale)
         Me.GRBoxMain.Controls.Add(Me.txtRIssuePr)
         Me.GRBoxMain.Controls.Add(Me.txtRIssueWt)
-        Me.GRBoxMain.Controls.Add(Me.cmbRBagNo)
         Me.GRBoxMain.Controls.Add(Me.Label10)
         Me.GRBoxMain.Controls.Add(Me.Label9)
         Me.GRBoxMain.Controls.Add(Me.Label8)
@@ -589,7 +683,6 @@ Partial Class frmVaccumBag
         Me.GRBoxMain.Controls.Add(Me.Label7)
         Me.GRBoxMain.Controls.Add(Me.txtRTransId)
         Me.GRBoxMain.Controls.Add(Me.RTransDt)
-        Me.GRBoxMain.Controls.Add(Me.Label11)
         Me.GRBoxMain.Controls.Add(Me.Label12)
         Me.GRBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GRBoxMain.Location = New System.Drawing.Point(9, 9)
@@ -600,30 +693,71 @@ Partial Class frmVaccumBag
         Me.GRBoxMain.TabStop = False
         Me.GRBoxMain.Text = "Received Vaccum Bag"
         '
+        'txtRBagName
+        '
+        Me.txtRBagName.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtRBagName.Location = New System.Drawing.Point(128, 83)
+        Me.txtRBagName.Name = "txtRBagName"
+        Me.txtRBagName.Size = New System.Drawing.Size(145, 20)
+        Me.txtRBagName.TabIndex = 102
+        '
+        'cmbRBagNo
+        '
+        Me.cmbRBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        '
+        'cmbRBagNo.NestedRadGridView
+        '
+        Me.cmbRBagNo.EditorControl.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbRBagNo.EditorControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbRBagNo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmbRBagNo.EditorControl.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowAddNewRow = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowCellContextMenu = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.AllowColumnChooser = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.EnableGrouping = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.ShowFilteringRow = False
+        Me.cmbRBagNo.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.cmbRBagNo.EditorControl.Name = "NestedRadGridView"
+        Me.cmbRBagNo.EditorControl.ReadOnly = True
+        Me.cmbRBagNo.EditorControl.ShowGroupPanel = False
+        Me.cmbRBagNo.EditorControl.Size = New System.Drawing.Size(240, 150)
+        Me.cmbRBagNo.EditorControl.TabIndex = 0
+        Me.cmbRBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbRBagNo.Location = New System.Drawing.Point(128, 55)
+        Me.cmbRBagNo.Name = "cmbRBagNo"
+        Me.cmbRBagNo.Size = New System.Drawing.Size(145, 20)
+        Me.cmbRBagNo.TabIndex = 101
+        Me.cmbRBagNo.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label11.Location = New System.Drawing.Point(63, 86)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(62, 14)
+        Me.Label11.TabIndex = 100
+        Me.Label11.Text = "Bag Name"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label1.Location = New System.Drawing.Point(65, 57)
+        Me.Label1.Location = New System.Drawing.Point(64, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 14)
+        Me.Label1.Size = New System.Drawing.Size(61, 14)
         Me.Label1.TabIndex = 98
-        Me.Label1.Text = "Bag Type"
-        '
-        'cmbRBagtype
-        '
-        Me.cmbRBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbRBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbRBagtype.Location = New System.Drawing.Point(128, 54)
-        Me.cmbRBagtype.Name = "cmbRBagtype"
-        Me.cmbRBagtype.Size = New System.Drawing.Size(145, 20)
-        Me.cmbRBagtype.TabIndex = 97
+        Me.Label1.Text = "Bag Sr No"
         '
         'txtRGrossLoss
         '
         Me.txtRGrossLoss.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRGrossLoss.Location = New System.Drawing.Point(646, 143)
         Me.txtRGrossLoss.Name = "txtRGrossLoss"
+        Me.txtRGrossLoss.ReadOnly = True
         Me.txtRGrossLoss.Size = New System.Drawing.Size(60, 20)
         Me.txtRGrossLoss.TabIndex = 45
         Me.txtRGrossLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -643,6 +777,7 @@ Partial Class frmVaccumBag
         Me.txtRTotalWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRTotalWt.Location = New System.Drawing.Point(646, 91)
         Me.txtRTotalWt.Name = "txtRTotalWt"
+        Me.txtRTotalWt.ReadOnly = True
         Me.txtRTotalWt.Size = New System.Drawing.Size(60, 20)
         Me.txtRTotalWt.TabIndex = 43
         Me.txtRTotalWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -682,6 +817,7 @@ Partial Class frmVaccumBag
         Me.txtRIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.txtRIssuePr.Location = New System.Drawing.Point(128, 141)
         Me.txtRIssuePr.Name = "txtRIssuePr"
+        Me.txtRIssuePr.ReadOnly = True
         Me.txtRIssuePr.Size = New System.Drawing.Size(60, 20)
         Me.txtRIssuePr.TabIndex = 39
         Me.txtRIssuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -689,21 +825,12 @@ Partial Class frmVaccumBag
         'txtRIssueWt
         '
         Me.txtRIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtRIssueWt.Location = New System.Drawing.Point(128, 112)
+        Me.txtRIssueWt.Location = New System.Drawing.Point(128, 113)
         Me.txtRIssueWt.Name = "txtRIssueWt"
+        Me.txtRIssueWt.ReadOnly = True
         Me.txtRIssueWt.Size = New System.Drawing.Size(60, 20)
         Me.txtRIssueWt.TabIndex = 38
         Me.txtRIssueWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'cmbRBagNo
-        '
-        Me.cmbRBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbRBagNo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbRBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbRBagNo.Location = New System.Drawing.Point(128, 83)
-        Me.cmbRBagNo.Name = "cmbRBagNo"
-        Me.cmbRBagNo.Size = New System.Drawing.Size(145, 20)
-        Me.cmbRBagNo.TabIndex = 37
         '
         'Label10
         '
@@ -779,7 +906,7 @@ Partial Class frmVaccumBag
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(65, 115)
+        Me.Label7.Location = New System.Drawing.Point(65, 116)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(60, 14)
         Me.Label7.TabIndex = 16
@@ -788,7 +915,7 @@ Partial Class frmVaccumBag
         'txtRTransId
         '
         Me.txtRTransId.BackColor = System.Drawing.Color.White
-        Me.txtRTransId.Location = New System.Drawing.Point(214, 25)
+        Me.txtRTransId.Location = New System.Drawing.Point(231, 25)
         Me.txtRTransId.Name = "txtRTransId"
         Me.txtRTransId.ReadOnly = True
         Me.txtRTransId.Size = New System.Drawing.Size(10, 22)
@@ -802,24 +929,14 @@ Partial Class frmVaccumBag
         Me.RTransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.RTransDt.Location = New System.Drawing.Point(128, 25)
         Me.RTransDt.Name = "RTransDt"
-        Me.RTransDt.Size = New System.Drawing.Size(85, 22)
+        Me.RTransDt.Size = New System.Drawing.Size(100, 22)
         Me.RTransDt.TabIndex = 8
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label11.Location = New System.Drawing.Point(32, 86)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(93, 14)
-        Me.Label11.TabIndex = 3
-        Me.Label11.Text = "Vaccum Bag No"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label12.Location = New System.Drawing.Point(51, 28)
+        Me.Label12.Location = New System.Drawing.Point(52, 28)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(73, 14)
         Me.Label12.TabIndex = 1
@@ -827,6 +944,7 @@ Partial Class frmVaccumBag
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnUEdit)
         Me.TabPage3.Controls.Add(Me.btnUExit)
         Me.TabPage3.Controls.Add(Me.btnUCancel)
         Me.TabPage3.Controls.Add(Me.btnUSave)
@@ -838,10 +956,19 @@ Partial Class frmVaccumBag
         Me.TabPage3.Text = "Update Vaccum Bag"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'btnUEdit
+        '
+        Me.btnUEdit.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.btnUEdit.Location = New System.Drawing.Point(301, 337)
+        Me.btnUEdit.Name = "btnUEdit"
+        Me.btnUEdit.Size = New System.Drawing.Size(75, 25)
+        Me.btnUEdit.TabIndex = 22
+        Me.btnUEdit.Text = "&Edit"
+        '
         'btnUExit
         '
         Me.btnUExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUExit.Location = New System.Drawing.Point(401, 336)
+        Me.btnUExit.Location = New System.Drawing.Point(457, 337)
         Me.btnUExit.Name = "btnUExit"
         Me.btnUExit.Size = New System.Drawing.Size(75, 25)
         Me.btnUExit.TabIndex = 51
@@ -850,7 +977,7 @@ Partial Class frmVaccumBag
         'btnUCancel
         '
         Me.btnUCancel.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUCancel.Location = New System.Drawing.Point(320, 336)
+        Me.btnUCancel.Location = New System.Drawing.Point(379, 337)
         Me.btnUCancel.Name = "btnUCancel"
         Me.btnUCancel.Size = New System.Drawing.Size(75, 25)
         Me.btnUCancel.TabIndex = 22
@@ -859,7 +986,7 @@ Partial Class frmVaccumBag
         'btnUSave
         '
         Me.btnUSave.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnUSave.Location = New System.Drawing.Point(239, 336)
+        Me.btnUSave.Location = New System.Drawing.Point(223, 337)
         Me.btnUSave.Name = "btnUSave"
         Me.btnUSave.Size = New System.Drawing.Size(75, 25)
         Me.btnUSave.TabIndex = 21
@@ -868,12 +995,12 @@ Partial Class frmVaccumBag
         'GUBoxMain
         '
         Me.GUBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.GUBoxMain.Controls.Add(Me.cmbUpdBagtype)
+        Me.GUBoxMain.Controls.Add(Me.cmbUpdBagNo)
+        Me.GUBoxMain.Controls.Add(Me.txtUBagName)
         Me.GUBoxMain.Controls.Add(Me.Label28)
         Me.GUBoxMain.Controls.Add(Me.RadCollapsiblePanel1)
-        Me.GUBoxMain.Controls.Add(Me.cmbUBagNo)
         Me.GUBoxMain.Controls.Add(Me.txtUTransId)
-        Me.GUBoxMain.Controls.Add(Me.ULFailTransDt)
+        Me.GUBoxMain.Controls.Add(Me.UTransDt)
         Me.GUBoxMain.Controls.Add(Me.Label23)
         Me.GUBoxMain.Controls.Add(Me.Label24)
         Me.GUBoxMain.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -885,20 +1012,50 @@ Partial Class frmVaccumBag
         Me.GUBoxMain.TabStop = False
         Me.GUBoxMain.Text = "Update Vaccum Bag"
         '
-        'cmbUpdBagtype
+        'cmbUpdBagNo
         '
-        Me.cmbUpdBagtype.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbUpdBagtype.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbUpdBagtype.Location = New System.Drawing.Point(122, 53)
-        Me.cmbUpdBagtype.Name = "cmbUpdBagtype"
-        Me.cmbUpdBagtype.Size = New System.Drawing.Size(145, 20)
-        Me.cmbUpdBagtype.TabIndex = 99
+        Me.cmbUpdBagNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        '
+        'cmbUpdBagNo.NestedRadGridView
+        '
+        Me.cmbUpdBagNo.EditorControl.BackColor = System.Drawing.SystemColors.Window
+        Me.cmbUpdBagNo.EditorControl.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbUpdBagNo.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmbUpdBagNo.EditorControl.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowAddNewRow = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowCellContextMenu = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.AllowColumnChooser = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.EnableGrouping = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.ShowFilteringRow = False
+        Me.cmbUpdBagNo.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition4
+        Me.cmbUpdBagNo.EditorControl.Name = "NestedRadGridView"
+        Me.cmbUpdBagNo.EditorControl.ReadOnly = True
+        Me.cmbUpdBagNo.EditorControl.ShowGroupPanel = False
+        Me.cmbUpdBagNo.EditorControl.Size = New System.Drawing.Size(240, 150)
+        Me.cmbUpdBagNo.EditorControl.TabIndex = 0
+        Me.cmbUpdBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbUpdBagNo.Location = New System.Drawing.Point(122, 54)
+        Me.cmbUpdBagNo.Name = "cmbUpdBagNo"
+        Me.cmbUpdBagNo.Size = New System.Drawing.Size(145, 20)
+        Me.cmbUpdBagNo.TabIndex = 102
+        Me.cmbUpdBagNo.TabStop = False
+        '
+        'txtUBagName
+        '
+        Me.txtUBagName.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtUBagName.Location = New System.Drawing.Point(122, 81)
+        Me.txtUBagName.Name = "txtUBagName"
+        Me.txtUBagName.Size = New System.Drawing.Size(145, 20)
+        Me.txtUBagName.TabIndex = 100
         '
         'Label28
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(59, 56)
+        Me.Label28.Location = New System.Drawing.Point(59, 57)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(59, 14)
         Me.Label28.TabIndex = 98
@@ -917,11 +1074,11 @@ Partial Class frmVaccumBag
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUissueFineWt)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUissueWt)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUissuePr)
-        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtULossFine)
+        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUpdLossFine)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUGrossLoss)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceiveFineWt)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceiveWt)
-        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUreceivePr)
+        Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.txtUReceivePr)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.lblCarbonReceive)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.lblIssueFineWt)
         Me.RadCollapsiblePanel1.PanelContainer.Controls.Add(Me.lblIssueWt)
@@ -982,14 +1139,14 @@ Partial Class frmVaccumBag
         Me.txtUissuePr.TabIndex = 65
         Me.txtUissuePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtULossFine
+        'txtUpdLossFine
         '
-        Me.txtULossFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtULossFine.Location = New System.Drawing.Point(122, 123)
-        Me.txtULossFine.Name = "txtULossFine"
-        Me.txtULossFine.Size = New System.Drawing.Size(60, 20)
-        Me.txtULossFine.TabIndex = 64
-        Me.txtULossFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtUpdLossFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtUpdLossFine.Location = New System.Drawing.Point(122, 123)
+        Me.txtUpdLossFine.Name = "txtUpdLossFine"
+        Me.txtUpdLossFine.Size = New System.Drawing.Size(60, 20)
+        Me.txtUpdLossFine.TabIndex = 64
+        Me.txtUpdLossFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtUGrossLoss
         '
@@ -1018,60 +1175,65 @@ Partial Class frmVaccumBag
         Me.txtUreceiveWt.TabIndex = 61
         Me.txtUreceiveWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtUreceivePr
+        'txtUReceivePr
         '
-        Me.txtUreceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtUreceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtUreceivePr.Location = New System.Drawing.Point(122, 19)
-        Me.txtUreceivePr.Name = "txtUreceivePr"
-        Me.txtUreceivePr.Size = New System.Drawing.Size(60, 20)
-        Me.txtUreceivePr.TabIndex = 60
-        Me.txtUreceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtUReceivePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtUReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtUReceivePr.Location = New System.Drawing.Point(122, 19)
+        Me.txtUReceivePr.Name = "txtUReceivePr"
+        Me.txtUReceivePr.Size = New System.Drawing.Size(60, 20)
+        Me.txtUReceivePr.TabIndex = 60
+        Me.txtUReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'lblCarbonReceive
         '
         Me.lblCarbonReceive.AutoSize = True
-        Me.lblCarbonReceive.Location = New System.Drawing.Point(464, 126)
+        Me.lblCarbonReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblCarbonReceive.Location = New System.Drawing.Point(466, 126)
         Me.lblCarbonReceive.Name = "lblCarbonReceive"
-        Me.lblCarbonReceive.Size = New System.Drawing.Size(92, 13)
+        Me.lblCarbonReceive.Size = New System.Drawing.Size(91, 14)
         Me.lblCarbonReceive.TabIndex = 59
-        Me.lblCarbonReceive.Text = "Carbon Receive :"
+        Me.lblCarbonReceive.Text = "Carbon Receive"
         '
         'lblIssueFineWt
         '
         Me.lblIssueFineWt.AutoSize = True
+        Me.lblIssueFineWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.lblIssueFineWt.Location = New System.Drawing.Point(468, 74)
         Me.lblIssueFineWt.Name = "lblIssueFineWt"
-        Me.lblIssueFineWt.Size = New System.Drawing.Size(88, 13)
+        Me.lblIssueFineWt.Size = New System.Drawing.Size(90, 14)
         Me.lblIssueFineWt.TabIndex = 58
-        Me.lblIssueFineWt.Text = "Issue  Fine Wt. :"
+        Me.lblIssueFineWt.Text = "Issue  Fine Wt."
         '
         'lblIssueWt
         '
         Me.lblIssueWt.AutoSize = True
-        Me.lblIssueWt.Location = New System.Drawing.Point(496, 48)
+        Me.lblIssueWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblIssueWt.Location = New System.Drawing.Point(497, 48)
         Me.lblIssueWt.Name = "lblIssueWt"
-        Me.lblIssueWt.Size = New System.Drawing.Size(60, 13)
+        Me.lblIssueWt.Size = New System.Drawing.Size(60, 14)
         Me.lblIssueWt.TabIndex = 57
-        Me.lblIssueWt.Text = "Issue Wt. :"
+        Me.lblIssueWt.Text = "Issue Wt."
         '
         'lblIssuePr
         '
         Me.lblIssuePr.AutoSize = True
-        Me.lblIssuePr.Location = New System.Drawing.Point(505, 23)
+        Me.lblIssuePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblIssuePr.Location = New System.Drawing.Point(507, 22)
         Me.lblIssuePr.Name = "lblIssuePr"
-        Me.lblIssuePr.Size = New System.Drawing.Size(51, 13)
+        Me.lblIssuePr.Size = New System.Drawing.Size(51, 14)
         Me.lblIssuePr.TabIndex = 56
-        Me.lblIssuePr.Text = "Issue % :"
+        Me.lblIssuePr.Text = "Issue %"
         '
         'lblScaleWt
         '
         Me.lblScaleWt.AutoSize = True
-        Me.lblScaleWt.Location = New System.Drawing.Point(477, 101)
+        Me.lblScaleWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.lblScaleWt.Location = New System.Drawing.Point(478, 100)
         Me.lblScaleWt.Name = "lblScaleWt"
-        Me.lblScaleWt.Size = New System.Drawing.Size(79, 13)
+        Me.lblScaleWt.Size = New System.Drawing.Size(80, 14)
         Me.lblScaleWt.TabIndex = 50
-        Me.lblScaleWt.Text = "Wt. On Scale :"
+        Me.lblScaleWt.Text = "Wt. On Scale"
         '
         'lblLossFine
         '
@@ -1123,39 +1285,30 @@ Partial Class frmVaccumBag
         Me.lblReceivePr.TabIndex = 41
         Me.lblReceivePr.Text = "Receive %"
         '
-        'cmbUBagNo
-        '
-        Me.cmbUBagNo.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbUBagNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbUBagNo.Location = New System.Drawing.Point(122, 79)
-        Me.cmbUBagNo.Name = "cmbUBagNo"
-        Me.cmbUBagNo.Size = New System.Drawing.Size(145, 20)
-        Me.cmbUBagNo.TabIndex = 40
-        '
         'txtUTransId
         '
         Me.txtUTransId.BackColor = System.Drawing.Color.White
-        Me.txtUTransId.Location = New System.Drawing.Point(208, 25)
+        Me.txtUTransId.Location = New System.Drawing.Point(224, 25)
         Me.txtUTransId.Name = "txtUTransId"
         Me.txtUTransId.ReadOnly = True
         Me.txtUTransId.Size = New System.Drawing.Size(10, 22)
         Me.txtUTransId.TabIndex = 0
         Me.txtUTransId.Visible = False
         '
-        'ULFailTransDt
+        'UTransDt
         '
-        Me.ULFailTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ULFailTransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.ULFailTransDt.Location = New System.Drawing.Point(122, 25)
-        Me.ULFailTransDt.Name = "ULFailTransDt"
-        Me.ULFailTransDt.Size = New System.Drawing.Size(85, 22)
-        Me.ULFailTransDt.TabIndex = 8
+        Me.UTransDt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UTransDt.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.UTransDt.Location = New System.Drawing.Point(122, 25)
+        Me.UTransDt.Name = "UTransDt"
+        Me.UTransDt.Size = New System.Drawing.Size(100, 22)
+        Me.UTransDt.TabIndex = 8
         '
         'Label23
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(58, 82)
+        Me.Label23.Location = New System.Drawing.Point(58, 84)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(61, 14)
         Me.Label23.TabIndex = 3
@@ -1165,11 +1318,101 @@ Partial Class frmVaccumBag
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(45, 28)
+        Me.Label24.Location = New System.Drawing.Point(45, 29)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(73, 14)
         Me.Label24.TabIndex = 1
         Me.Label24.Text = "Transfer Dt."
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.RadGridView1)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(738, 505)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Edit Data"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'RadGridView1
+        '
+        Me.RadGridView1.Controls.Add(Me.dgvFinalUpdate)
+        Me.RadGridView1.Location = New System.Drawing.Point(1, 1)
+        '
+        '
+        '
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition6
+        Me.RadGridView1.Name = "RadGridView1"
+        Me.RadGridView1.Size = New System.Drawing.Size(738, 503)
+        Me.RadGridView1.TabIndex = 0
+        '
+        'dgvFinalUpdate
+        '
+        Me.dgvFinalUpdate.BackColor = System.Drawing.Color.Transparent
+        Me.dgvFinalUpdate.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvFinalUpdate.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvFinalUpdate.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvFinalUpdate.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvFinalUpdate.Location = New System.Drawing.Point(0, 3)
+        '
+        '
+        '
+        Me.dgvFinalUpdate.MasterTemplate.AllowAddNewRow = False
+        Me.dgvFinalUpdate.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn16.EnableExpressionEditor = False
+        GridViewTextBoxColumn16.FieldName = "UsedBagId"
+        GridViewTextBoxColumn16.HeaderText = "UsedBag Id."
+        GridViewTextBoxColumn16.IsVisible = False
+        GridViewTextBoxColumn16.Name = "colUsedBagId"
+        GridViewTextBoxColumn17.EnableExpressionEditor = False
+        GridViewTextBoxColumn17.FieldName = "BagSrNo"
+        GridViewTextBoxColumn17.HeaderText = "Bag No"
+        GridViewTextBoxColumn17.Name = "colBagSrNo"
+        GridViewTextBoxColumn17.Width = 80
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.FieldName = "BagName"
+        GridViewTextBoxColumn18.HeaderText = "Bag Name"
+        GridViewTextBoxColumn18.Name = "colBagName"
+        GridViewTextBoxColumn18.Width = 155
+        GridViewTextBoxColumn19.EnableExpressionEditor = False
+        GridViewTextBoxColumn19.FieldName = "ReceiveWt"
+        GridViewTextBoxColumn19.HeaderText = "Receive Wt."
+        GridViewTextBoxColumn19.Name = "colReceiveWt"
+        GridViewTextBoxColumn19.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn19.Width = 90
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.FieldName = "TFSampleWt"
+        GridViewTextBoxColumn20.HeaderText = "TF Sample Wt."
+        GridViewTextBoxColumn20.Name = "colTFSampleWt"
+        GridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn20.Width = 100
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.FieldName = "WtOnScale"
+        GridViewTextBoxColumn21.HeaderText = "Wt On Scale"
+        GridViewTextBoxColumn21.Name = "colWtOnScale"
+        GridViewTextBoxColumn21.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn21.Width = 90
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.FieldName = "CarbonReceive"
+        GridViewTextBoxColumn22.HeaderText = "Carbon Receive"
+        GridViewTextBoxColumn22.Name = "colCarbonReceive"
+        GridViewTextBoxColumn22.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn22.Width = 110
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.FieldName = "ReportPr"
+        GridViewTextBoxColumn23.HeaderText = "Report [%]"
+        GridViewTextBoxColumn23.Name = "colReportPr"
+        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn23.Width = 90
+        Me.dgvFinalUpdate.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23})
+        Me.dgvFinalUpdate.MasterTemplate.EnableGrouping = False
+        Me.dgvFinalUpdate.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvFinalUpdate.MasterTemplate.ViewDefinition = TableViewDefinition5
+        Me.dgvFinalUpdate.Name = "dgvFinalUpdate"
+        Me.dgvFinalUpdate.ReadOnly = True
+        Me.dgvFinalUpdate.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvFinalUpdate.Size = New System.Drawing.Size(738, 500)
+        Me.dgvFinalUpdate.TabIndex = 1
         '
         'frmVaccumBag
         '
@@ -1186,6 +1429,7 @@ Partial Class frmVaccumBag
         Me.TabPage1.ResumeLayout(False)
         Me.GCBoxDetails.ResumeLayout(False)
         Me.GCBoxDetails.PerformLayout()
+        CType(Me.BtnCDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvVacuumBag.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvVacuumBag, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1193,18 +1437,25 @@ Partial Class frmVaccumBag
         CType(Me.btnSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GCBoxMain.ResumeLayout(False)
         Me.GCBoxMain.PerformLayout()
-        CType(Me.cmbLabour, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtMaxNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lblMaxNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbCBagtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbLabour, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbOperation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.BtnREdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRCancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnRSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GRBoxDetails.ResumeLayout(False)
-        CType(Me.dgvReceiveVacuum.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvReceiveVacuum, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRVacuumBag.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvRVacuumBag, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GRBoxMain.ResumeLayout(False)
         Me.GRBoxMain.PerformLayout()
-        CType(Me.cmbRBagtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRBagName, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRBagNo.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRGrossLoss, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRCarbon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1213,14 +1464,17 @@ Partial Class frmVaccumBag
         CType(Me.txtRWtOnScale, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRIssuePr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtRIssueWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbRBagNo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        CType(Me.btnUEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUCancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnUSave, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GUBoxMain.ResumeLayout(False)
         Me.GUBoxMain.PerformLayout()
-        CType(Me.cmbUpdBagtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbUpdBagNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUBagName, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadCollapsiblePanel1.PanelContainer.ResumeLayout(False)
         Me.RadCollapsiblePanel1.PanelContainer.PerformLayout()
         CType(Me.RadCollapsiblePanel1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1229,12 +1483,18 @@ Partial Class frmVaccumBag
         CType(Me.txtUissueFineWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUissueWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUissuePr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtULossFine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUpdLossFine, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUGrossLoss, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUreceiveFineWt, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtUreceiveWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtUreceivePr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbUBagNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtUReceivePr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGridView1.ResumeLayout(False)
+        Me.RadGridView1.PerformLayout()
+        CType(Me.dgvFinalUpdate.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvFinalUpdate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1258,18 +1518,16 @@ Partial Class frmVaccumBag
     Friend WithEvents Label7 As Label
     Friend WithEvents txtRTransId As TextBox
     Friend WithEvents RTransDt As DateTimePicker
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents GUBoxMain As GroupBox
     Friend WithEvents txtUTransId As TextBox
-    Friend WithEvents ULFailTransDt As DateTimePicker
+    Friend WithEvents UTransDt As DateTimePicker
     Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents cmbCBagtype As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents cmbOperation As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents btnCancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
-    Friend WithEvents cmbRBagNo As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents txtRWtOnScale As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtRIssuePr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtRIssueWt As Telerik.WinControls.UI.RadTextBox
@@ -1280,8 +1538,7 @@ Partial Class frmVaccumBag
     Friend WithEvents txtRRecieveWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents btnRCancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnRSave As Telerik.WinControls.UI.RadButton
-    Friend WithEvents dgvReceiveVacuum As Telerik.WinControls.UI.RadGridView
-    Friend WithEvents cmbUBagNo As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents dgvRVacuumBag As Telerik.WinControls.UI.RadGridView
     Friend WithEvents RadCollapsiblePanel1 As Telerik.WinControls.UI.RadCollapsiblePanel
     Friend WithEvents btnUCancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnUSave As Telerik.WinControls.UI.RadButton
@@ -1290,11 +1547,11 @@ Partial Class frmVaccumBag
     Friend WithEvents txtUissueFineWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtUissueWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtUissuePr As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtULossFine As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtUpdLossFine As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtUGrossLoss As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtUreceiveFineWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtUreceiveWt As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtUreceivePr As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtUReceivePr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents lblCarbonReceive As Label
     Friend WithEvents lblIssueFineWt As Label
     Friend WithEvents lblIssueWt As Label
@@ -1310,13 +1567,26 @@ Partial Class frmVaccumBag
     Friend WithEvents lblReceivePrTotal As Label
     Friend WithEvents lblFineTotal As Label
     Friend WithEvents dgvVacuumBag As Telerik.WinControls.UI.RadGridView
-    Friend WithEvents cmbRBagtype As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label1 As Label
-    Friend WithEvents cmbUpdBagtype As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label28 As Label
     Friend WithEvents btnCExit As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnRExit As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnUExit As Telerik.WinControls.UI.RadButton
     Friend WithEvents lblLabourName As Label
     Friend WithEvents cmbLabour As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cmbCBagtype As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents Label11 As Label
+    Friend WithEvents cmbRBagNo As Telerik.WinControls.UI.RadMultiColumnComboBox
+    Friend WithEvents txtUBagName As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents dgvFinalUpdate As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents BtnREdit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents txtMaxNo As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents lblMaxNo As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents cmbUpdBagNo As Telerik.WinControls.UI.RadMultiColumnComboBox
+    Friend WithEvents BtnCDelete As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btnUEdit As Telerik.WinControls.UI.RadButton
+    Friend WithEvents txtRBagName As Telerik.WinControls.UI.RadTextBox
 End Class

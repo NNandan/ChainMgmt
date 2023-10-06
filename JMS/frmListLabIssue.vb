@@ -72,5 +72,4 @@ Public Class frmListLabIssue
             Throw ex
         End Try
     End Sub
-
 End Class

@@ -67,15 +67,15 @@ Public Class frmILotTransfer
                 With lparameters
                     .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
                     .Add(dbManager.CreateParameter("@LDate", TransDt.Value.ToString(), DbType.DateTime))
-                    .Add(dbManager.CreateParameter("@ItemId", Val(txtItemName.Tag), DbType.Int16))
+                    .Add(dbManager.CreateParameter("@ItemName", CStr(txtItemName.Text.Trim), DbType.String))
                     .Add(dbManager.CreateParameter("@LOperationId", Val(txtOperation.Tag), DbType.Int16))
                     .Add(dbManager.CreateParameter("@LFrLotNo", cmbFrLotNo.Text, DbType.String))
 
                     .Add(dbManager.CreateParameter("@LTransferWt", Format(CDec(txtTransferWt.Text), "0.00"), DbType.String))
                     .Add(dbManager.CreateParameter("@LIssuePr", Format(CDec(txtIssuePr.Text), "0.00"), DbType.String))
 
-                    .Add(dbManager.CreateParameter("@FrKarigarId", Val(txtFrKarigar.Tag), DbType.Int16))
-                    .Add(dbManager.CreateParameter("ToKarigarId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
+                    .Add(dbManager.CreateParameter("@TfLabourName", CStr(txtFrKarigar.Text.Trim), DbType.String))
+                    .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
                     .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
                 End With
                 ''For Lot Transfered Table End
@@ -93,8 +93,8 @@ Public Class frmILotTransfer
                     .Add(dbManager.CreateParameter("@TIssuePr", Convert.ToString(txtIssuePr.Text), DbType.String))
                     .Add(dbManager.CreateParameter("@TIssueWt", Convert.ToString(txtTotalWt.Text), DbType.String))
 
-                    .Add(dbManager.CreateParameter("@TfLabourId", Val(txtFrKarigar.Tag), DbType.Int16))
-                    .Add(dbManager.CreateParameter("@TtLabourId", Val(cmbTLabour.SelectedIndex), DbType.Int16))
+                    .Add(dbManager.CreateParameter("@TfLabourName", CStr(txtFrKarigar.Text.Trim), DbType.String))
+                    .Add(dbManager.CreateParameter("@TtLabourName", CStr(cmbTLabour.Text.Trim), DbType.String))
                 End With
                 ''For Transaction Table End
             End If

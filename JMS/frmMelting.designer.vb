@@ -82,11 +82,11 @@ Partial Class frmMelting
         Me.txtMeltingNo = New Telerik.WinControls.UI.RadTextBox()
         Me.lblLotNo = New System.Windows.Forms.Label()
         Me.cmbItem = New Telerik.WinControls.UI.RadDropDownList()
-        Me.cmbTLabour = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbtEmployee = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtMelting = New Telerik.WinControls.UI.RadTextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtFrKarigar = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtFrEmployee = New Telerik.WinControls.UI.RadTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -117,9 +117,9 @@ Partial Class frmMelting
         Me.GBoxMain.SuspendLayout()
         CType(Me.txtMeltingNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbtEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMelting, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtFrEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvMeltingData, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvMeltingData.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -647,11 +647,11 @@ Partial Class frmMelting
         Me.GBoxMain.Controls.Add(Me.txtMeltingNo)
         Me.GBoxMain.Controls.Add(Me.lblLotNo)
         Me.GBoxMain.Controls.Add(Me.cmbItem)
-        Me.GBoxMain.Controls.Add(Me.cmbTLabour)
+        Me.GBoxMain.Controls.Add(Me.cmbtEmployee)
         Me.GBoxMain.Controls.Add(Me.txtMelting)
         Me.GBoxMain.Controls.Add(Me.Label10)
         Me.GBoxMain.Controls.Add(Me.Label9)
-        Me.GBoxMain.Controls.Add(Me.txtFrKarigar)
+        Me.GBoxMain.Controls.Add(Me.txtFrEmployee)
         Me.GBoxMain.Controls.Add(Me.Label1)
         Me.GBoxMain.Controls.Add(Me.Label8)
         Me.GBoxMain.Controls.Add(Me.Label7)
@@ -719,20 +719,20 @@ Partial Class frmMelting
         Me.cmbItem.Size = New System.Drawing.Size(125, 20)
         Me.cmbItem.TabIndex = 807
         '
-        'cmbTLabour
+        'cmbtEmployee
         '
-        Me.cmbTLabour.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbTLabour.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbTLabour.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbTLabour.Location = New System.Drawing.Point(638, 54)
-        Me.cmbTLabour.Name = "cmbTLabour"
+        Me.cmbtEmployee.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbtEmployee.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbtEmployee.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbtEmployee.Location = New System.Drawing.Point(638, 54)
+        Me.cmbtEmployee.Name = "cmbtEmployee"
         '
         '
         '
-        Me.cmbTLabour.RootElement.ControlBounds = New System.Drawing.Rectangle(638, 54, 125, 20)
-        Me.cmbTLabour.RootElement.StretchVertically = True
-        Me.cmbTLabour.Size = New System.Drawing.Size(128, 20)
-        Me.cmbTLabour.TabIndex = 806
+        Me.cmbtEmployee.RootElement.ControlBounds = New System.Drawing.Rectangle(638, 54, 125, 20)
+        Me.cmbtEmployee.RootElement.StretchVertically = True
+        Me.cmbtEmployee.Size = New System.Drawing.Size(128, 20)
+        Me.cmbtEmployee.TabIndex = 806
         '
         'txtMelting
         '
@@ -769,21 +769,21 @@ Partial Class frmMelting
         Me.Label9.TabIndex = 151
         Me.Label9.Text = "Press  ( F12 )  to delete selected row"
         '
-        'txtFrKarigar
+        'txtFrEmployee
         '
-        Me.txtFrKarigar.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtFrKarigar.Font = New System.Drawing.Font("Tahoma", 8.25!)
-        Me.txtFrKarigar.Location = New System.Drawing.Point(638, 28)
-        Me.txtFrKarigar.Name = "txtFrKarigar"
-        Me.txtFrKarigar.ReadOnly = True
+        Me.txtFrEmployee.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.txtFrEmployee.Font = New System.Drawing.Font("Tahoma", 8.25!)
+        Me.txtFrEmployee.Location = New System.Drawing.Point(638, 28)
+        Me.txtFrEmployee.Name = "txtFrEmployee"
+        Me.txtFrEmployee.ReadOnly = True
         '
         '
         '
-        Me.txtFrKarigar.RootElement.ControlBounds = New System.Drawing.Rectangle(638, 28, 100, 20)
-        Me.txtFrKarigar.RootElement.StretchVertically = True
-        Me.txtFrKarigar.Size = New System.Drawing.Size(128, 19)
-        Me.txtFrKarigar.TabIndex = 5
-        Me.txtFrKarigar.TabStop = False
+        Me.txtFrEmployee.RootElement.ControlBounds = New System.Drawing.Rectangle(638, 28, 100, 20)
+        Me.txtFrEmployee.RootElement.StretchVertically = True
+        Me.txtFrEmployee.Size = New System.Drawing.Size(128, 19)
+        Me.txtFrEmployee.TabIndex = 5
+        Me.txtFrEmployee.TabStop = False
         '
         'Label1
         '
@@ -904,6 +904,7 @@ Partial Class frmMelting
         GridViewTextBoxColumn20.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn20.Width = 90
         Me.dgvMeltingData.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20})
+        Me.dgvMeltingData.MasterTemplate.EnableGrouping = False
         Me.dgvMeltingData.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvMeltingData.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.dgvMeltingData.Name = "dgvMeltingData"
@@ -954,9 +955,9 @@ Partial Class frmMelting
         Me.GBoxMain.PerformLayout()
         CType(Me.txtMeltingNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbItem, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbTLabour, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbtEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMelting, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtFrEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.dgvMeltingData.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvMeltingData, System.ComponentModel.ISupportInitialize).EndInit()
@@ -991,7 +992,7 @@ Partial Class frmMelting
     Friend WithEvents lblTotalSilverWt As Label
     Friend WithEvents lblLotNo As Label
     Friend WithEvents TransDt As DateTimePicker
-    Private WithEvents txtFrKarigar As Telerik.WinControls.UI.RadTextBox
+    Private WithEvents txtFrEmployee As Telerik.WinControls.UI.RadTextBox
     Private WithEvents dgvMelting As Telerik.WinControls.UI.RadGridView
     Private WithEvents txtSrNo As Telerik.WinControls.UI.RadTextBox
     Private WithEvents cmbItemType As Telerik.WinControls.UI.RadDropDownList
@@ -1007,7 +1008,7 @@ Partial Class frmMelting
     Private WithEvents txtFineWt As Telerik.WinControls.UI.RadTextBox
     Private WithEvents txtSilverPr As Telerik.WinControls.UI.RadTextBox
     Private WithEvents cmbItem As Telerik.WinControls.UI.RadDropDownList
-    Private WithEvents cmbTLabour As Telerik.WinControls.UI.RadDropDownList
+    Private WithEvents cmbtEmployee As Telerik.WinControls.UI.RadDropDownList
     Private WithEvents txtMeltingNo As Telerik.WinControls.UI.RadTextBox
     Private WithEvents dgvMeltingData As Telerik.WinControls.UI.RadGridView
 End Class

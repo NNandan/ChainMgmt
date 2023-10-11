@@ -385,6 +385,7 @@ Public Class frmCoreAdditionRemoval
 
         txtMeltingPr.Text = GetLotNoInLotTransfer()
     End Sub
+
     Private Sub Clear_Form()
         Try
             txtTransNo.Tag = ""

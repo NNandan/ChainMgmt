@@ -406,7 +406,6 @@ D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmFVStockRemoval.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmFWorkDoneRpt.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.vbprojResolveAssemblyReference.cache
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmfTruncateTable.resources
-D:\Desktop Projects\JMS\JMS\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCStockLogin.resources
 D:\ChainSoftware\JMS\JMS\bin\Debug\JMS.exe.config
 D:\ChainSoftware\JMS\JMS\bin\Debug\JMS.exe
@@ -638,3 +637,4 @@ D:\ChainSoftware\JMS\JMS\obj\Debug\JMS.pdb
 D:\ChainSoftware\JMS\JMS\obj\Debug\JMS.frmMeltingFinalizeLot.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmMeltingFinalizeLot.resources
 D:\ChainSoftware\JMS\JMS\obj\Debug\JMS.vbprojResolveAssemblyReference.cache
+D:\Desktop Projects\JMS\JMS\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll

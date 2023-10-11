@@ -1067,10 +1067,10 @@ ErrHandler:
 
                     With parameters
                         .Clear()
-                        .Add(dbManager.CreateParameter("@AId", txtMeltingNo.Tag, DbType.Int16))
+                        .Add(dbManager.CreateParameter("@MId", txtMeltingNo.Tag, DbType.Int16))
                     End With
 
-                    dbManager.Delete("SP_AccountMaster_Delete", CommandType.StoredProcedure, parameters.ToArray())
+                    dbManager.Delete("SP_Melting_Delete", CommandType.StoredProcedure, parameters.ToArray())
 
                     MessageBox.Show("Data Deleted !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 

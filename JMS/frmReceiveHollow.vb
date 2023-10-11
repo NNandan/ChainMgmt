@@ -44,6 +44,8 @@ Public Class frmReceiveHollow
     Private Sub frmReceiveHollow_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.fillLabour()
         Me.fillLotNo()
+
+        Me.Clear_Form()
     End Sub
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not Validate_Fields() Then Exit Sub
@@ -137,9 +139,11 @@ Public Class frmReceiveHollow
     End Sub
     Private Sub txtSample_TextChanged(sender As Object, e As EventArgs) Handles txtSample.TextChanged
         Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            txtRTotalWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
 
-            dblCoreRece = Format(Val(dblTotalSum) - Val(txtTotal.Text), "0.00")
+            txtRTotalFw.Text = Format(Val(txtReceiveFine.Text) + Val(txtReceiveBhukaFine.Text) + Val(txtReceiveSampleFine.Text), "0.000")
+
+            dblCoreRece = Format(Val(dblTotalSum) - Val(txtRTotalWt.Text), "0.00")
 
             'If Not String.IsNullOrEmpty(txtReceivePr.Text) Then
             '    txtReceiveFine.Text = Format(Val(txtReceiveTotalGross.Text) * Val(txtReceivePr.Text) / 100, "0.00")
@@ -150,9 +154,11 @@ Public Class frmReceiveHollow
     End Sub
     Private Sub txtChain_TextChanged(sender As Object, e As EventArgs) Handles txtChain.TextChanged
         Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            txtRTotalWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
 
-            dblCoreRece = Format(Val(dblTotalSum) - Val(txtTotal.Text), "0.00")
+            txtRTotalFw.Text = Format(Val(txtReceiveFine.Text) + Val(txtReceiveBhukaFine.Text) + Val(txtReceiveSampleFine.Text), "0.000")
+
+            dblCoreRece = Format(Val(dblTotalSum) - Val(txtRTotalWt.Text), "0.00")
 
             'If Not String.IsNullOrEmpty(txtReceivePr.Text) Then
             '    txtReceiveFine.Text = Format(Val(txtReceiveTotalGross.Text) * Val(txtReceivePr.Text) / 100, "0.00")
@@ -163,9 +169,11 @@ Public Class frmReceiveHollow
     End Sub
     Private Sub txtBhuka_TextChanged(sender As Object, e As EventArgs) Handles txtBhuka.TextChanged
         Try
-            txtTotal.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
+            txtRTotalWt.Text = Format(Val(txtChain.Text) + Val(txtBhuka.Text) + Val(txtSample.Text), "0.00")
 
-            dblCoreRece = Format(Val(dblTotalSum) - Val(txtTotal.Text), "0.00")
+            txtRTotalFw.Text = Format(Val(txtReceiveFine.Text) + Val(txtReceiveBhukaFine.Text) + Val(txtReceiveSampleFine.Text), "0.000")
+
+            dblCoreRece = Format(Val(dblTotalSum) - Val(txtRTotalWt.Text), "0.00")
 
             'If Not String.IsNullOrEmpty(txtReceivePr.Text) Then
             '    txtReceiveFine.Text = Format(Val(txtReceiveTotalGross.Text) * Val(txtReceivePr.Text) / 100, "0.00")
@@ -208,26 +216,30 @@ Public Class frmReceiveHollow
         End Try
     End Sub
     Private Sub SaveData()
-        Dim iOperationTypeId As Integer = 15 ''Operation Id for Hollow Issue
+        Dim iOperationTypeId As Integer = 16 ''Operation Id for Hollow Receive
 
         Try
             Dim parameters = New List(Of SqlParameter)()
 
             With parameters
                 .Clear()
-                .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
-                .Add(dbManager.CreateParameter("@HollowIssueDt", TransDt.Value.ToString(), DbType.DateTime))
-                .Add(dbManager.CreateParameter("@HOperationTypeId", iOperationTypeId, DbType.Int16))
-                '.Add(dbManager.CreateParameter("@HItemType", cmbItemType.Text.Trim, DbType.String))
-                .Add(dbManager.CreateParameter("@HSlipBagNo", cmbLotNo.Text.Trim, DbType.String))
-                .Add(dbManager.CreateParameter("@HCoreAddNo", txtCoreAddNo.Text.Trim, DbType.String))
-                '.Add(dbManager.CreateParameter("@HItemBagId", txtItemName.Tag, DbType.Int16))
-                .Add(dbManager.CreateParameter("@HIssueWt", txtIssueWt.Text.Trim, DbType.String))
-                .Add(dbManager.CreateParameter("@HIssuePr", txtIssuePr.Text, DbType.String))
-                .Add(dbManager.CreateParameter("@HFineWt", txtIssueFw.Text.Trim(), DbType.String))
-                .Add(dbManager.CreateParameter("@HFrKarigar", txtFrKarigar.Tag, DbType.Int16))
-                .Add(dbManager.CreateParameter("@HToKarigar", cmbtKarigar.SelectedValue, DbType.String))
-                .Add(dbManager.CreateParameter("@HCreatedBy", UserName.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@HollowReceiveDt", TransDt.Value.ToString(), DbType.DateTime))
+                .Add(dbManager.CreateParameter("@ItemId", iItemId, DbType.Int16))
+                .Add(dbManager.CreateParameter("@OperationTypeId", iOperationTypeId, DbType.Int16))
+                .Add(dbManager.CreateParameter("@LotNo", txtLotNo.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@IssueWt", txtIssueWt.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@IssuePr", txtIssuePr.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@MeltingPr", txtMeltingPr.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@ChainRecWt", txtChain.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@BhukaRecWt", txtBhuka.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@SampleRecWt", txtSample.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@TgtGoldWt", txtTgtGoldWt.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@CoreIssueWt", dblCoreIssu, DbType.String))
+                .Add(dbManager.CreateParameter("@CoreRemainsWt", txtCoreRemains.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@LossWt", txtLossWt.Text.Trim(), DbType.String))
+                .Add(dbManager.CreateParameter("@FrKarigar", txtFrKarigar.Tag, DbType.Int16))
+                .Add(dbManager.CreateParameter("@ToKarigar", cmbtKarigar.SelectedValue, DbType.String))
+                .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
             End With
 
             dbManager.Insert("SP_HollowReceive_Save", CommandType.StoredProcedure, parameters.ToArray())
@@ -267,19 +279,18 @@ Public Class frmReceiveHollow
             MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
     Private Sub SumOfGoldIssueMinusTotalRec()
         Dim dblLoss As Double = 0
 
         Try
-            dblCoreRemain = Format(CDbl(dblTotalSum) - CDbl(txtTotal.Text), "0.00")
+            dblCoreRemain = Format(CDbl(dblTotalSum) - CDbl(txtRTotalWt.Text), "0.00")
             dblLoss = dblCoreIssu - dblCoreRemain
 
             If (dblLoss < 0) Then
                 txtCoreRemains.Text = Format(0.00, "0.00")
-                txtLoss.Text = Format(dblLoss, "0.00")
+                txtLossWt.Text = Format(dblLoss, "0.00")
             Else
-                txtLoss.Text = Format(0.00, "0.00")
+                txtLossWt.Text = Format(0.00, "0.00")
                 txtCoreRemains.Text = Format(dblLoss, "0.00")
             End If
 
@@ -289,11 +300,60 @@ Public Class frmReceiveHollow
     Private Sub txtSample_LostFocus(sender As Object, e As EventArgs) Handles txtSample.LostFocus
         Try
             SumOfGoldIssueMinusTotalRec()
-
         Catch ex As Exception
 
         End Try
     End Sub
+    Private Sub txtReceivePr_TextChanged(sender As Object, e As EventArgs) Handles txtReceivePr.TextChanged
+        Try
+            txtReceiveFine.Text = Format((Val(txtChain.Text) * Val(txtReceivePr.Text)) / 100, "0.000")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub txtRTotalWt_TextChanged(sender As Object, e As EventArgs) Handles txtRTotalWt.TextChanged
+        Try
+            If Not String.IsNullOrEmpty(txtRTotalWt.Text) Then
+                txtReceivePr.Text = Format(Val(txtIssueFw.Text) / Val(txtRTotalWt.Text) * 100, "0.00")
+
+
+                txtReceiveSamplePr.Text = Format(Val(txtReceivePr.Text), "0.00")
+                txtReceiveBhukaPr.Text = Format(Val(txtReceivePr.Text), "0.00")
+            End If
+
+            'txtRTotalPr.Text = Format(Val(txtRTotalFw.Text) * Val(txtRTotalWt.Text) / 100, "0.00")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtReceiveBhukaPr_TextChanged(sender As Object, e As EventArgs) Handles txtReceiveBhukaPr.TextChanged
+        Try
+            txtReceiveBhukaFine.Text = Format((Val(txtBhuka.Text) * Val(txtReceiveBhukaPr.Text)) / 100, "0.000")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtReceiveSamplePr_TextChanged(sender As Object, e As EventArgs) Handles txtReceiveSamplePr.TextChanged
+        Try
+            txtReceiveSampleFine.Text = Format((Val(txtSample.Text) * Val(txtReceiveSamplePr.Text)) / 100, "0.000")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Sub txtRTotalFw_TextChanged(sender As Object, e As EventArgs) Handles txtRTotalFw.TextChanged
+        'Try
+        '    txtReceivePr.Text = Format(Val(txtIssueFw.Text) / Val(txtRTotalWt.Text) * 100, "0.00")
+
+        '    txtReceiveSamplePr.Text = Format(Val(txtReceivePr.Text), "0.00")
+        '    txtReceiveBhukaPr.Text = Format(Val(txtReceivePr.Text), "0.00")
+
+        '    txtRTotalPr.Text = Format(Val(txtRTotalFw.Text) * Val(txtRTotalWt.Text) / 100, "0.00")
+        'Catch ex As Exception
+        '    Throw ex
+        'End Try
+    End Sub
+
     Private Function Validate_Fields() As Boolean
         Try
             If Val(txtChain.Text) <= 0 Then
@@ -317,6 +377,34 @@ Public Class frmReceiveHollow
         End Try
     End Function
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If Not String.IsNullOrEmpty(txtTransNo.Text) Then
+
+            If (MsgBox("[DELETION] Are You Sure To Delete This Entry ?", vbYesNo + vbDefaultButton2 + vbQuestion, "Attn : " + UserName.Trim()) = vbYes) Then
+
+                Try
+                    Dim parameters = New List(Of SqlParameter)()
+
+                    With parameters
+                        .Clear()
+                        .Add(dbManager.CreateParameter("@HId", txtTransNo.Text, DbType.Int16))
+                    End With
+
+                    dbManager.Delete("SP_HollowReceive_Delete", CommandType.StoredProcedure, parameters.ToArray())
+
+                    MessageBox.Show("Data Deleted !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    Me.Clear_Form()
+
+                Catch ex As Exception
+                    MessageBox.Show("Error:- " & ex.Message)
+                End Try
+            End If
+        Else
+            MessageBox.Show("Please Select A Record !!!")
+        End If
+    End Sub
+
     Private Sub Clear_Form()
         Try
             txtTransNo.Tag = ""
@@ -339,17 +427,19 @@ Public Class frmReceiveHollow
             txtChain.Clear()
             txtBhuka.Clear()
             txtSample.Clear()
-            txtTotal.Clear()
+            txtRTotalWt.Clear()
 
             txtIssueWt.Clear()
             txtIssuePr.Clear()
             txtIssueFw.Clear()
 
-            txtLoss.Clear()
+            txtLossWt.Clear()
             txtMeltingPr.Clear()
 
             txtTgtGoldWt.Clear()
             txtCoreRemains.Clear()
+
+            Me.bindDataGridView()
 
             Fr_Mode = FormState.AStateMode
 
@@ -360,40 +450,119 @@ Public Class frmReceiveHollow
         End Try
 
     End Sub
+
+    Private Sub dgvHollowReceive_CellDoubleClick(sender As Object, e As Telerik.WinControls.UI.GridViewCellEventArgs) Handles dgvHollowReceive.CellDoubleClick
+        If dgvHollowReceive.SelectedRows.Count = 0 Then Exit Sub
+
+        If dgvHollowReceive.Rows.Count > 0 Then
+            Dim IssueId As Integer = Me.dgvHollowReceive.SelectedRows(0).Cells(0).Value
+
+            Me.Clear_Form()
+
+            Fr_Mode = FormState.EStateMode
+
+            Me.fillHeaderFromListView(IssueId)
+
+            Me.fillDetailsFromListView(IssueId)
+
+            Me.TbStockIssue.SelectedIndex = 0
+        End If
+    End Sub
+
     Private Sub UpdateData()
 
-        Dim iOperationTypeId As Integer = 15 ''Operation Id for Core Addition Issue
+        Dim iOperationTypeId As Integer = 16 ''Operation Id for Hollow Receive
 
         Try
             Dim parameters = New List(Of SqlParameter)()
             parameters.Clear()
 
-            'With parameters
-            '    .Add(dbManager.CreateParameter("@ActionType", "SaveData", DbType.String))
-            '    .Add(dbManager.CreateParameter("@CoreRemovalDt", TransDt.Value.ToString(), DbType.DateTime))
-            '    .Add(dbManager.CreateParameter("@ItemId", Val(txtTransNo.Tag), DbType.Int16))
-            '    .Add(dbManager.CreateParameter("@OperationTypeId", iOperationTypeId, DbType.Int16))
-            '    .Add(dbManager.CreateParameter("@IssueWt", txtIssueWeight.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@IssuePr", txtIssuePercent.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@ReceiveWt", txtChainReceiveWt.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@ReceivePr", txtReceivePr.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@LotNumber", cmbLotNo.SelectedItem.ToString(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@MeltingPr", txtMeltingPr.Text.Trim, DbType.String))
-            '    .Add(dbManager.CreateParameter("@BhukaWt", txtBhukaReceiveWt.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@SampleWt", txtSampleReceiveWt.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@CoreRemainsWt", txtCoreRemains.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@LossWt", txtLossWt.Text.Trim(), DbType.String))
-            '    .Add(dbManager.CreateParameter("@FrKarigar", txtFrKarigar.Tag.Trim(), DbType.Int16))
-            '    .Add(dbManager.CreateParameter("@ToKarigar", cmbTLabour.SelectedIndex, DbType.String))
-            '    .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
-            'End With
+            With parameters
+                .Add(dbManager.CreateParameter("@HollowReceiveDt", TransDt.Value.ToString(), DbType.DateTime))
+                .Add(dbManager.CreateParameter("@OperationTypeId", iOperationTypeId, DbType.Int16))
+                .Add(dbManager.CreateParameter("@LotNo", txtLotNo.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@ChainRecWt", txtChain.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@BhukaRecWt", txtBhuka.Text.Trim, DbType.String))
+                .Add(dbManager.CreateParameter("@SampleRecWt", txtSample.Text, DbType.String))
+                .Add(dbManager.CreateParameter("@FrKarigar", txtFrKarigar.Tag.Trim(), DbType.Int16))
+                .Add(dbManager.CreateParameter("@ToKarigar", cmbtKarigar.SelectedValue, DbType.String))
+                .Add(dbManager.CreateParameter("@CreatedBy", UserName.Trim(), DbType.String))
+            End With
 
-            dbManager.Insert("SP_CoreAdditionRemoval_Save", CommandType.StoredProcedure, parameters.ToArray())
+            dbManager.Insert("SP_HollowReceive_Update", CommandType.StoredProcedure, parameters.ToArray())
 
-            MessageBox.Show("Data Saved !!!", "Record", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Data Saved !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         End Try
+    End Sub
+    Private Sub bindDataGridView()
+        Dim dtdata As DataTable = fetchAllRecords()
+
+        Try
+            dgvHollowReceive.DataSource = dtdata
+            dgvHollowReceive.EnableFiltering = True
+            dgvHollowReceive.MasterTemplate.ShowFilteringRow = False
+            dgvHollowReceive.MasterTemplate.ShowHeaderCellButtons = True
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        Finally
+        End Try
+    End Sub
+    Private Function fetchAllRecords() As DataTable
+        Dim dtData As DataTable = New DataTable()
+
+        Try
+            Dim parameters = New List(Of SqlParameter)()
+
+            With parameters
+                .Clear()
+                .Add(dbManager.CreateParameter("@ActionType", "FetchData", DbType.String))
+            End With
+
+            dtData = dbManager.GetDataTable("SP_HollowReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
+
+        Catch ex As Exception
+            MessageBox.Show("Error:- " & ex.Message)
+        End Try
+
+        Return dtData
+
+    End Function
+
+    Private Sub fillHeaderFromGridView(ByVal intIssueId As Integer)
+        Dim parameters = New List(Of SqlParameter)()
+
+        With parameters
+            .Clear()
+            .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
+            .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
+        End With
+
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_StockIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+
+        If dr.HasRows = False Then
+            Exit Sub
+        Else
+            dr.Read()
+            txtVocucherNo.Tag = dr.Item("IssueId").ToString()
+            txtVocucherNo.Text = dr.Item("VoucherNo").ToString()
+            TransDt.Text = dr.Item("IssueDt").ToString()
+            cmbfDepartment.SelectedIndex = dr.Item("FrDeptId").ToString()
+            cmbtDepartment.SelectedIndex = dr.Item("ToDeptId").ToString()
+            txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString()
+            txtFrKarigar.Text = dr.Item("FrKarigar").ToString()
+
+            cmbtKarigar.SelectedIndex = dr.Item("ToKarigarId").ToString()
+            cmbtKarigar.Text = CStr(dr.Item("ToKarigar"))
+        End If
+
+        dr.Close()
+        Objcn.Close()
+
+        Exit Sub
+ErrHandler:
+        MsgBox(Err.Description, MsgBoxStyle.Critical)
     End Sub
 End Class

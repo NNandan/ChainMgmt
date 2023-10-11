@@ -85,11 +85,12 @@ Partial Class frmAllBhukaBagRpt
         GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
         GridViewTextBoxColumn6.Width = 90
         Me.dgvBhukaBagList.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
+        Me.dgvBhukaBagList.MasterTemplate.ShowRowHeaderColumn = False
         Me.dgvBhukaBagList.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.dgvBhukaBagList.Name = "dgvBhukaBagList"
         Me.dgvBhukaBagList.ReadOnly = True
         Me.dgvBhukaBagList.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvBhukaBagList.Size = New System.Drawing.Size(611, 377)
+        Me.dgvBhukaBagList.Size = New System.Drawing.Size(558, 377)
         Me.dgvBhukaBagList.TabIndex = 0
         '
         'btnPrint

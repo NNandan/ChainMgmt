@@ -22,22 +22,22 @@ Partial Class frmReceiveHollow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TbStockIssue = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtMeltingPr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtCoreRemains = New Telerik.WinControls.UI.RadTextBox()
         Me.txtTgtGoldWt = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtLoss = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtLossWt = New Telerik.WinControls.UI.RadTextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
@@ -50,14 +50,14 @@ Partial Class frmReceiveHollow
         Me.lblIssuePr = New System.Windows.Forms.Label()
         Me.lblFineWt = New System.Windows.Forms.Label()
         Me.GBoxReceive = New System.Windows.Forms.GroupBox()
-        Me.RadTextBox16 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox15 = New Telerik.WinControls.UI.RadTextBox()
-        Me.txtTotal = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox13 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox12 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtRTotalFw = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtRTotalPr = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtRTotalWt = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceiveSampleFine = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceiveSamplePr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtSample = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox10 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox8 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceiveBhukaFine = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceiveBhukaPr = New Telerik.WinControls.UI.RadTextBox()
         Me.RadTextBox9 = New Telerik.WinControls.UI.RadTextBox()
         Me.txtBhuka = New Telerik.WinControls.UI.RadTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -67,8 +67,8 @@ Partial Class frmReceiveHollow
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RadTextBox6 = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceiveFine = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtReceivePr = New Telerik.WinControls.UI.RadTextBox()
         Me.txtChain = New Telerik.WinControls.UI.RadTextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.btnExit = New Telerik.WinControls.UI.RadButton()
@@ -90,35 +90,34 @@ Partial Class frmReceiveHollow
         Me.TransDt = New System.Windows.Forms.DateTimePicker()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvStockIssue = New Telerik.WinControls.UI.RadGridView()
-        Me.txtMeltingPr = New Telerik.WinControls.UI.RadTextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dgvHollowReceive = New Telerik.WinControls.UI.RadGridView()
         Me.TbStockIssue.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GBoxDetails.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.txtMeltingPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCoreRemains, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTgtGoldWt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtLoss, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtLossWt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxIssue.SuspendLayout()
         CType(Me.txtSkinPr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssueFw, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssuePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxReceive.SuspendLayout()
-        CType(Me.RadTextBox16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtTotal, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRTotalFw, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRTotalPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtReceiveSampleFine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtReceiveSamplePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSample, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadTextBox8.SuspendLayout()
+        CType(Me.txtReceiveBhukaFine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtReceiveBhukaPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtReceiveBhukaPr.SuspendLayout()
         CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBhuka, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtReceiveFine, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtReceivePr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtChain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,9 +130,8 @@ Partial Class frmReceiveHollow
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.dgvStockIssue, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvStockIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtMeltingPr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHollowReceive, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvHollowReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TbStockIssue
@@ -185,7 +183,7 @@ Partial Class frmReceiveHollow
         Me.GroupBox1.Controls.Add(Me.txtMeltingPr)
         Me.GroupBox1.Controls.Add(Me.txtCoreRemains)
         Me.GroupBox1.Controls.Add(Me.txtTgtGoldWt)
-        Me.GroupBox1.Controls.Add(Me.txtLoss)
+        Me.GroupBox1.Controls.Add(Me.txtLossWt)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.Label25)
@@ -194,6 +192,24 @@ Partial Class frmReceiveHollow
         Me.GroupBox1.Size = New System.Drawing.Size(701, 77)
         Me.GroupBox1.TabIndex = 880
         Me.GroupBox1.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.Label3.Location = New System.Drawing.Point(130, 49)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(62, 14)
+        Me.Label3.TabIndex = 879
+        Me.Label3.Text = "Melting %"
+        '
+        'txtMeltingPr
+        '
+        Me.txtMeltingPr.Location = New System.Drawing.Point(195, 46)
+        Me.txtMeltingPr.Name = "txtMeltingPr"
+        Me.txtMeltingPr.Size = New System.Drawing.Size(60, 20)
+        Me.txtMeltingPr.TabIndex = 878
         '
         'txtCoreRemains
         '
@@ -213,14 +229,14 @@ Partial Class frmReceiveHollow
         Me.txtTgtGoldWt.TabIndex = 876
         Me.txtTgtGoldWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtLoss
+        'txtLossWt
         '
-        Me.txtLoss.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtLoss.Location = New System.Drawing.Point(195, 22)
-        Me.txtLoss.Name = "txtLoss"
-        Me.txtLoss.Size = New System.Drawing.Size(60, 20)
-        Me.txtLoss.TabIndex = 869
-        Me.txtLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtLossWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtLossWt.Location = New System.Drawing.Point(195, 22)
+        Me.txtLossWt.Name = "txtLossWt"
+        Me.txtLossWt.Size = New System.Drawing.Size(60, 20)
+        Me.txtLossWt.TabIndex = 869
+        Me.txtLossWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label15
         '
@@ -338,14 +354,14 @@ Partial Class frmReceiveHollow
         '
         'GBoxReceive
         '
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox16)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox15)
-        Me.GBoxReceive.Controls.Add(Me.txtTotal)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox13)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox12)
+        Me.GBoxReceive.Controls.Add(Me.txtRTotalFw)
+        Me.GBoxReceive.Controls.Add(Me.txtRTotalPr)
+        Me.GBoxReceive.Controls.Add(Me.txtRTotalWt)
+        Me.GBoxReceive.Controls.Add(Me.txtReceiveSampleFine)
+        Me.GBoxReceive.Controls.Add(Me.txtReceiveSamplePr)
         Me.GBoxReceive.Controls.Add(Me.txtSample)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox10)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox8)
+        Me.GBoxReceive.Controls.Add(Me.txtReceiveBhukaFine)
+        Me.GBoxReceive.Controls.Add(Me.txtReceiveBhukaPr)
         Me.GBoxReceive.Controls.Add(Me.txtBhuka)
         Me.GBoxReceive.Controls.Add(Me.Label11)
         Me.GBoxReceive.Controls.Add(Me.Label10)
@@ -354,8 +370,8 @@ Partial Class frmReceiveHollow
         Me.GBoxReceive.Controls.Add(Me.Label8)
         Me.GBoxReceive.Controls.Add(Me.Label7)
         Me.GBoxReceive.Controls.Add(Me.Label1)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox6)
-        Me.GBoxReceive.Controls.Add(Me.RadTextBox5)
+        Me.GBoxReceive.Controls.Add(Me.txtReceiveFine)
+        Me.GBoxReceive.Controls.Add(Me.txtReceivePr)
         Me.GBoxReceive.Controls.Add(Me.txtChain)
         Me.GBoxReceive.Location = New System.Drawing.Point(6, 21)
         Me.GBoxReceive.Name = "GBoxReceive"
@@ -364,48 +380,50 @@ Partial Class frmReceiveHollow
         Me.GBoxReceive.TabStop = False
         Me.GBoxReceive.Text = "Receive Details"
         '
-        'RadTextBox16
+        'txtRTotalFw
         '
-        Me.RadTextBox16.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox16.Location = New System.Drawing.Point(262, 105)
-        Me.RadTextBox16.Name = "RadTextBox16"
-        Me.RadTextBox16.Size = New System.Drawing.Size(60, 20)
-        Me.RadTextBox16.TabIndex = 889
+        Me.txtRTotalFw.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtRTotalFw.Location = New System.Drawing.Point(262, 105)
+        Me.txtRTotalFw.Name = "txtRTotalFw"
+        Me.txtRTotalFw.Size = New System.Drawing.Size(60, 20)
+        Me.txtRTotalFw.TabIndex = 889
+        Me.txtRTotalFw.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox15
+        'txtRTotalPr
         '
-        Me.RadTextBox15.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox15.Location = New System.Drawing.Point(195, 105)
-        Me.RadTextBox15.Name = "RadTextBox15"
-        Me.RadTextBox15.Size = New System.Drawing.Size(65, 20)
-        Me.RadTextBox15.TabIndex = 888
-        Me.RadTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtRTotalPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtRTotalPr.Location = New System.Drawing.Point(195, 105)
+        Me.txtRTotalPr.Name = "txtRTotalPr"
+        Me.txtRTotalPr.Size = New System.Drawing.Size(65, 20)
+        Me.txtRTotalPr.TabIndex = 888
+        Me.txtRTotalPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtTotal
+        'txtRTotalWt
         '
-        Me.txtTotal.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtTotal.Location = New System.Drawing.Point(119, 105)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(74, 20)
-        Me.txtTotal.TabIndex = 887
-        Me.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtRTotalWt.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtRTotalWt.Location = New System.Drawing.Point(119, 105)
+        Me.txtRTotalWt.Name = "txtRTotalWt"
+        Me.txtRTotalWt.Size = New System.Drawing.Size(74, 20)
+        Me.txtRTotalWt.TabIndex = 887
+        Me.txtRTotalWt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox13
+        'txtReceiveSampleFine
         '
-        Me.RadTextBox13.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox13.Location = New System.Drawing.Point(262, 83)
-        Me.RadTextBox13.Name = "RadTextBox13"
-        Me.RadTextBox13.Size = New System.Drawing.Size(60, 20)
-        Me.RadTextBox13.TabIndex = 886
+        Me.txtReceiveSampleFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveSampleFine.Location = New System.Drawing.Point(262, 83)
+        Me.txtReceiveSampleFine.Name = "txtReceiveSampleFine"
+        Me.txtReceiveSampleFine.Size = New System.Drawing.Size(60, 20)
+        Me.txtReceiveSampleFine.TabIndex = 886
+        Me.txtReceiveSampleFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox12
+        'txtReceiveSamplePr
         '
-        Me.RadTextBox12.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox12.Location = New System.Drawing.Point(195, 83)
-        Me.RadTextBox12.Name = "RadTextBox12"
-        Me.RadTextBox12.Size = New System.Drawing.Size(65, 20)
-        Me.RadTextBox12.TabIndex = 885
-        Me.RadTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtReceiveSamplePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveSamplePr.Location = New System.Drawing.Point(195, 83)
+        Me.txtReceiveSamplePr.Name = "txtReceiveSamplePr"
+        Me.txtReceiveSamplePr.Size = New System.Drawing.Size(65, 20)
+        Me.txtReceiveSamplePr.TabIndex = 885
+        Me.txtReceiveSamplePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtSample
         '
@@ -417,23 +435,24 @@ Partial Class frmReceiveHollow
         Me.txtSample.TabIndex = 884
         Me.txtSample.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox10
+        'txtReceiveBhukaFine
         '
-        Me.RadTextBox10.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox10.Location = New System.Drawing.Point(262, 61)
-        Me.RadTextBox10.Name = "RadTextBox10"
-        Me.RadTextBox10.Size = New System.Drawing.Size(60, 20)
-        Me.RadTextBox10.TabIndex = 883
+        Me.txtReceiveBhukaFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveBhukaFine.Location = New System.Drawing.Point(262, 61)
+        Me.txtReceiveBhukaFine.Name = "txtReceiveBhukaFine"
+        Me.txtReceiveBhukaFine.Size = New System.Drawing.Size(60, 20)
+        Me.txtReceiveBhukaFine.TabIndex = 883
+        Me.txtReceiveBhukaFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox8
+        'txtReceiveBhukaPr
         '
-        Me.RadTextBox8.Controls.Add(Me.RadTextBox9)
-        Me.RadTextBox8.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox8.Location = New System.Drawing.Point(195, 61)
-        Me.RadTextBox8.Name = "RadTextBox8"
-        Me.RadTextBox8.Size = New System.Drawing.Size(65, 20)
-        Me.RadTextBox8.TabIndex = 882
-        Me.RadTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtReceiveBhukaPr.Controls.Add(Me.RadTextBox9)
+        Me.txtReceiveBhukaPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveBhukaPr.Location = New System.Drawing.Point(195, 61)
+        Me.txtReceiveBhukaPr.Name = "txtReceiveBhukaPr"
+        Me.txtReceiveBhukaPr.Size = New System.Drawing.Size(65, 20)
+        Me.txtReceiveBhukaPr.TabIndex = 882
+        Me.txtReceiveBhukaPr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadTextBox9
         '
@@ -516,22 +535,23 @@ Partial Class frmReceiveHollow
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Receive %"
         '
-        'RadTextBox6
+        'txtReceiveFine
         '
-        Me.RadTextBox6.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox6.Location = New System.Drawing.Point(262, 39)
-        Me.RadTextBox6.Name = "RadTextBox6"
-        Me.RadTextBox6.Size = New System.Drawing.Size(60, 20)
-        Me.RadTextBox6.TabIndex = 2
+        Me.txtReceiveFine.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceiveFine.Location = New System.Drawing.Point(262, 39)
+        Me.txtReceiveFine.Name = "txtReceiveFine"
+        Me.txtReceiveFine.Size = New System.Drawing.Size(60, 20)
+        Me.txtReceiveFine.TabIndex = 2
+        Me.txtReceiveFine.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RadTextBox5
+        'txtReceivePr
         '
-        Me.RadTextBox5.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.RadTextBox5.Location = New System.Drawing.Point(195, 39)
-        Me.RadTextBox5.Name = "RadTextBox5"
-        Me.RadTextBox5.Size = New System.Drawing.Size(65, 20)
-        Me.RadTextBox5.TabIndex = 1
-        Me.RadTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.txtReceivePr.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtReceivePr.Location = New System.Drawing.Point(195, 39)
+        Me.txtReceivePr.Name = "txtReceivePr"
+        Me.txtReceivePr.Size = New System.Drawing.Size(65, 20)
+        Me.txtReceivePr.TabIndex = 1
+        Me.txtReceivePr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtChain
         '
@@ -746,7 +766,7 @@ Partial Class frmReceiveHollow
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.dgvStockIssue)
+        Me.TabPage2.Controls.Add(Me.dgvHollowReceive)
         Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Size = New System.Drawing.Size(723, 523)
@@ -754,86 +774,62 @@ Partial Class frmReceiveHollow
         Me.TabPage2.Text = "Edit Data"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'dgvStockIssue
+        'dgvHollowReceive
         '
-        Me.dgvStockIssue.BackColor = System.Drawing.Color.Transparent
-        Me.dgvStockIssue.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dgvStockIssue.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.dgvStockIssue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.dgvStockIssue.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.dgvStockIssue.Location = New System.Drawing.Point(0, 0)
+        Me.dgvHollowReceive.BackColor = System.Drawing.Color.Transparent
+        Me.dgvHollowReceive.Cursor = System.Windows.Forms.Cursors.Default
+        Me.dgvHollowReceive.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.dgvHollowReceive.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.dgvHollowReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.dgvHollowReceive.Location = New System.Drawing.Point(0, 0)
         '
         '
         '
-        Me.dgvStockIssue.MasterTemplate.AllowAddNewRow = False
-        Me.dgvStockIssue.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "IssueId"
-        GridViewTextBoxColumn17.HeaderText = "Issue Id."
-        GridViewTextBoxColumn17.IsVisible = False
-        GridViewTextBoxColumn17.Name = "colIssueId"
-        GridViewTextBoxColumn18.EnableExpressionEditor = False
-        GridViewTextBoxColumn18.FieldName = "IssueDt"
-        GridViewTextBoxColumn18.HeaderText = "Issue Dt."
-        GridViewTextBoxColumn18.Name = "colIssueDt"
-        GridViewTextBoxColumn18.Width = 90
-        GridViewTextBoxColumn19.EnableExpressionEditor = False
-        GridViewTextBoxColumn19.FieldName = "FrDeptId"
-        GridViewTextBoxColumn19.HeaderText = "FrDept Id."
-        GridViewTextBoxColumn19.IsVisible = False
-        GridViewTextBoxColumn19.Name = "colFrDeptId"
-        GridViewTextBoxColumn20.EnableExpressionEditor = False
-        GridViewTextBoxColumn20.FieldName = "FrDept"
-        GridViewTextBoxColumn20.HeaderText = "Fr Dept."
-        GridViewTextBoxColumn20.Name = "colFrDept"
-        GridViewTextBoxColumn20.Width = 120
-        GridViewTextBoxColumn21.EnableExpressionEditor = False
-        GridViewTextBoxColumn21.FieldName = "ToDeptId"
-        GridViewTextBoxColumn21.HeaderText = "ToDept Id."
-        GridViewTextBoxColumn21.IsVisible = False
-        GridViewTextBoxColumn21.Name = "colToDeptId"
-        GridViewTextBoxColumn22.EnableExpressionEditor = False
-        GridViewTextBoxColumn22.FieldName = "ToDept"
-        GridViewTextBoxColumn22.HeaderText = "To Dept."
-        GridViewTextBoxColumn22.Name = "colToDept"
-        GridViewTextBoxColumn22.Width = 120
-        GridViewTextBoxColumn23.EnableExpressionEditor = False
-        GridViewTextBoxColumn23.FieldName = "VoucherNo"
-        GridViewTextBoxColumn23.HeaderText = "Voucher No."
-        GridViewTextBoxColumn23.Name = "colVoucherNo"
-        GridViewTextBoxColumn23.Width = 120
-        GridViewTextBoxColumn24.EnableExpressionEditor = False
-        GridViewTextBoxColumn24.FieldName = "CreatedBy"
-        GridViewTextBoxColumn24.HeaderText = "Created By."
-        GridViewTextBoxColumn24.Name = "colCreatedBy"
-        GridViewTextBoxColumn24.Width = 125
-        Me.dgvStockIssue.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn17, GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24})
-        Me.dgvStockIssue.MasterTemplate.EnableGrouping = False
-        Me.dgvStockIssue.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvStockIssue.MasterTemplate.ViewDefinition = TableViewDefinition3
-        Me.dgvStockIssue.Name = "dgvStockIssue"
-        Me.dgvStockIssue.ReadOnly = True
-        Me.dgvStockIssue.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgvStockIssue.Size = New System.Drawing.Size(727, 523)
-        Me.dgvStockIssue.TabIndex = 0
-        '
-        'txtMeltingPr
-        '
-        Me.txtMeltingPr.Location = New System.Drawing.Point(195, 46)
-        Me.txtMeltingPr.Name = "txtMeltingPr"
-        Me.txtMeltingPr.Size = New System.Drawing.Size(60, 20)
-        Me.txtMeltingPr.TabIndex = 878
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.Label3.Location = New System.Drawing.Point(130, 49)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 14)
-        Me.Label3.TabIndex = 879
-        Me.Label3.Text = "Melting %"
+        Me.dgvHollowReceive.MasterTemplate.AllowAddNewRow = False
+        Me.dgvHollowReceive.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.FieldName = "HollowReceiveId"
+        GridViewTextBoxColumn1.HeaderText = "Receive Id."
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "colReceiveId"
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.FieldName = "HollowReceiveDt"
+        GridViewTextBoxColumn2.HeaderText = "Receive Dt."
+        GridViewTextBoxColumn2.Name = "colReceiveDt"
+        GridViewTextBoxColumn2.Width = 110
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.FieldName = "LotNo"
+        GridViewTextBoxColumn3.HeaderText = "Lot No"
+        GridViewTextBoxColumn3.Name = "colLotNo"
+        GridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn3.Width = 110
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.FieldName = "IssueWt"
+        GridViewTextBoxColumn4.HeaderText = "Issue Wt."
+        GridViewTextBoxColumn4.Name = "colIssueWt"
+        GridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn4.Width = 90
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.FieldName = "IssuePr"
+        GridViewTextBoxColumn5.HeaderText = "Issue [%]"
+        GridViewTextBoxColumn5.Name = "colIssuePr"
+        GridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn5.Width = 90
+        GridViewTextBoxColumn6.EnableExpressionEditor = False
+        GridViewTextBoxColumn6.FieldName = "FineWt"
+        GridViewTextBoxColumn6.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn6.Name = "colFineWt"
+        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn6.Width = 90
+        Me.dgvHollowReceive.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6})
+        Me.dgvHollowReceive.MasterTemplate.EnableGrouping = False
+        Me.dgvHollowReceive.MasterTemplate.ShowRowHeaderColumn = False
+        Me.dgvHollowReceive.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.dgvHollowReceive.Name = "dgvHollowReceive"
+        Me.dgvHollowReceive.ReadOnly = True
+        Me.dgvHollowReceive.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgvHollowReceive.Size = New System.Drawing.Size(727, 523)
+        Me.dgvHollowReceive.TabIndex = 0
         '
         'frmReceiveHollow
         '
@@ -851,9 +847,10 @@ Partial Class frmReceiveHollow
         Me.GBoxDetails.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.txtMeltingPr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCoreRemains, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTgtGoldWt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtLoss, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtLossWt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBoxIssue.ResumeLayout(False)
         Me.GBoxIssue.PerformLayout()
         CType(Me.txtSkinPr, System.ComponentModel.ISupportInitialize).EndInit()
@@ -862,20 +859,20 @@ Partial Class frmReceiveHollow
         CType(Me.txtIssueWt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GBoxReceive.ResumeLayout(False)
         Me.GBoxReceive.PerformLayout()
-        CType(Me.RadTextBox16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtTotal, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRTotalFw, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRTotalPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRTotalWt, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtReceiveSampleFine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtReceiveSamplePr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSample, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadTextBox8.ResumeLayout(False)
-        Me.RadTextBox8.PerformLayout()
+        CType(Me.txtReceiveBhukaFine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtReceiveBhukaPr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.txtReceiveBhukaPr.ResumeLayout(False)
+        Me.txtReceiveBhukaPr.PerformLayout()
         CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBhuka, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtReceiveFine, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtReceivePr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtChain, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnExit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCancel, System.ComponentModel.ISupportInitialize).EndInit()
@@ -889,9 +886,8 @@ Partial Class frmReceiveHollow
         CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgvStockIssue.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvStockIssue, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtMeltingPr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHollowReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvHollowReceive, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -911,7 +907,7 @@ Partial Class frmReceiveHollow
     Friend WithEvents TransDt As DateTimePicker
     Friend WithEvents Label26 As Label
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents dgvStockIssue As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents dgvHollowReceive As Telerik.WinControls.UI.RadGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label15 As Label
@@ -926,8 +922,8 @@ Partial Class frmReceiveHollow
     Friend WithEvents GBoxIssue As GroupBox
     Friend WithEvents GBoxReceive As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents RadTextBox6 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox5 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceiveFine As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceivePr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtChain As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtIssueFw As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtIssuePr As Telerik.WinControls.UI.RadTextBox
@@ -935,23 +931,23 @@ Partial Class frmReceiveHollow
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents RadTextBox9 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox8 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceiveBhukaPr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtBhuka As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents lblChain As Label
-    Friend WithEvents RadTextBox13 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox12 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceiveSampleFine As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceiveSamplePr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtSample As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox10 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtReceiveBhukaFine As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtCoreRemains As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtTgtGoldWt As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtLoss As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox16 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadTextBox15 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents txtTotal As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtLossWt As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtRTotalFw As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtRTotalPr As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txtRTotalWt As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents cmbLotNo As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents txtLotNo As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtSkinPr As Telerik.WinControls.UI.RadTextBox

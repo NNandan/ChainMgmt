@@ -126,12 +126,12 @@ Public Class frmStockIssue
             dt.Rows.InsertAt(row, 0)
 
             'Assign DataTable as DataSource.
-            cmbtKarigar.DataSource = dt
-            cmbtKarigar.DisplayMember = "LabourName"
-            cmbtKarigar.ValueMember = "LabourId"
+            cmbtEmployee.DataSource = dt
+            cmbtEmployee.DisplayMember = "LabourName"
+            cmbtEmployee.ValueMember = "LabourId"
 
-            cmbtKarigar.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            cmbtKarigar.AutoCompleteDataSource = AutoCompleteSource.ListItems
+            cmbtEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbtEmployee.AutoCompleteDataSource = AutoCompleteSource.ListItems
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
@@ -278,8 +278,8 @@ Public Class frmStockIssue
         alParaval.Add(TransDt.Value.ToString())
         alParaval.Add(cmbfDepartment.SelectedValue)
         alParaval.Add(cmbtDepartment.SelectedIndex)
-        alParaval.Add(txtFrKarigar.Tag)
-        alParaval.Add(cmbtKarigar.SelectedValue)
+        alParaval.Add(txtFrEmployee.Tag)
+        alParaval.Add(cmbtEmployee.SelectedValue)
 
         ''For Details
         For Each row As GridViewRowInfo In dgvIssue.Rows
@@ -379,8 +379,8 @@ Public Class frmStockIssue
         alParaval.Add(cmbfDepartment.SelectedValue)
         alParaval.Add(cmbtDepartment.SelectedIndex)
         alParaval.Add(txtVocucherNo.Text)
-        alParaval.Add(txtFrKarigar.Tag)
-        alParaval.Add(cmbtKarigar.SelectedValue)
+        alParaval.Add(txtFrEmployee.Tag)
+        alParaval.Add(cmbtEmployee.SelectedValue)
 
         ''For Details
         For Each row As GridViewRowInfo In dgvIssue.Rows
@@ -585,11 +585,11 @@ Public Class frmStockIssue
             TransDt.Text = dr.Item("IssueDt").ToString()
             cmbfDepartment.SelectedIndex = dr.Item("FrDeptId").ToString()
             cmbtDepartment.SelectedIndex = dr.Item("ToDeptId").ToString()
-            txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString()
-            txtFrKarigar.Text = dr.Item("FrKarigar").ToString()
+            txtFrEmployee.Tag = dr.Item("FrKarigarId").ToString()
+            txtFrEmployee.Text = dr.Item("FrKarigar").ToString()
 
-            cmbtKarigar.SelectedIndex = dr.Item("ToKarigarId").ToString()
-            cmbtKarigar.Text = CStr(dr.Item("ToKarigar"))
+            cmbtEmployee.SelectedIndex = dr.Item("ToKarigarId").ToString()
+            cmbtEmployee.Text = CStr(dr.Item("ToKarigar"))
         End If
 
         dr.Close()
@@ -720,15 +720,14 @@ ErrHandler:
     End Sub
     Private Sub Clear_Form()
         Try
-
             '' For Header Field Start
             txtVocucherNo.Tag = ""
             txtVocucherNo.Clear()
             TransDt.Value = DateTime.Now
 
             cmbfDepartment.SelectedIndex = 0
-            txtFrKarigar.Clear()
-            cmbtKarigar.SelectedIndex = 0
+            txtFrEmployee.Clear()
+            cmbtEmployee.SelectedIndex = 0
             '' For Header Field End
 
             '' For Detail Field Start
@@ -762,8 +761,8 @@ ErrHandler:
             cmbtDepartment.SelectedIndex = 4
             'cmbtDepartment.Enabled = False
 
-            txtFrKarigar.Tag = CInt(UserId)
-            txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
+            txtFrEmployee.Tag = CInt(UserId)
+            txtFrEmployee.Text = Convert.ToString(KarigarName.Trim)
 
             TransDt.Focus()
             TransDt.Select()
@@ -774,7 +773,6 @@ ErrHandler:
     End Sub
     Private Function Validate_Fields() As Boolean
         Try
-
             If Not dgvIssue.RowCount > 0 Then
                 MessageBox.Show("Cannot Save Without Detail Information!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 Return False
@@ -785,9 +783,9 @@ ErrHandler:
                 MessageBox.Show("Select Department !!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 cmbfDepartment.Focus()
                 Return False
-            ElseIf cmbtKarigar.SelectedIndex = -1 Or cmbtKarigar.SelectedIndex = 0 Or cmbtKarigar.Text.Contains("---Select---") Then
+            ElseIf cmbtEmployee.SelectedIndex = -1 Or cmbtEmployee.SelectedIndex = 0 Or cmbtEmployee.Text.Contains("---Select---") Then
                 MessageBox.Show("Select To Karigar !", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
-                cmbtKarigar.Focus()
+                cmbtEmployee.Focus()
                 Return False
             End If
 

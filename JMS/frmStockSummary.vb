@@ -453,7 +453,6 @@ Public Class frmStockSummary
                 txtSIHPr.Text = dtData.Rows(0).Item("MeltingPr").ToString()
                 txtSIHFWt.Text = dtData.Rows(0).Item("TotalFineWtScale").ToString()
                 txtSIHDiff.Text = dtData.Rows(0).Item("FineDiff").ToString()
-
             End If
         End If
     End Sub
@@ -570,7 +569,7 @@ Public Class frmStockSummary
                     End If
                 Next
 
-                If Not sFWtTotal = 0 Then
+                If sFWtTotal > 0 Then
                     sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.00")
                 End If
 
@@ -612,7 +611,7 @@ Public Class frmStockSummary
                 Next
             End If
 
-            If Not sFWtTotal = 0 Then
+            If sFWtTotal > 0 Then
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
@@ -653,7 +652,7 @@ Public Class frmStockSummary
                 Next
             End If
 
-            If Not sFWtTotal = 0 Then
+            If sFWtTotal > 0 Then
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
@@ -776,7 +775,7 @@ Public Class frmStockSummary
                 Next
             End If
 
-            If Not sFWtTotal = 0 Then
+            If sFWtTotal > 0 Then
                 sRPrTotal = Format((Val(sFWtTotal) / Val(sRWtTotal)) * 100, "0.000")
             End If
 
@@ -1213,7 +1212,6 @@ Public Class frmStockSummary
                     If Not IsDBNull(dtData.Rows(0)("ReceiveWt")) Then
                         sRWtTotal += Single.Parse(row("ReceiveWt"))
                     End If
-
 
                     If Not IsDBNull(dtData.Rows(0)("FineWt")) Then
                         sFWtTotal += Single.Parse(row("FineWt"))

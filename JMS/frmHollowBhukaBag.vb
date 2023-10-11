@@ -84,6 +84,10 @@ Public Class frmHollowBhukaBag
         End If
     End Sub
 
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+
+    End Sub
+
     Private Sub Clear_CForm()
         Try
             Me.RTransDt.CustomFormat = "dd/MM/yyyy"

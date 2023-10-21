@@ -79,22 +79,24 @@ Public Class frmBhukaBagByNumber
     End Sub
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         Try
-            Me.Cursor = Cursors.WaitCursor
+            'Me.Cursor = Cursors.WaitCursor
 
-            Dim doc As New RadPrintDocument()
-            doc.AssociatedObject = Me.dgvBhukaBagList
+            'Dim doc As New RadPrintDocument()
+            'doc.AssociatedObject = Me.dgvBhukaBagList
 
-            doc.LeftFooter = "Page [Page #] of [Total Pages]"
-            doc.LeftHeader = "[Time Printed]"
-            doc.MiddleFooter = "***"
-            doc.MiddleHeader = "Report Name"
-            doc.RightHeader = "[Date Printed]"
+            'doc.LeftFooter = "Page [Page #] of [Total Pages]"
+            'doc.LeftHeader = "[Time Printed]"
+            'doc.MiddleFooter = "***"
+            'doc.MiddleHeader = "Report Name"
+            'doc.RightHeader = "[Date Printed]"
 
-            Dim dialog As New RadPrintPreviewDialog(doc)
-            dialog.WindowState = FormWindowState.Maximized
+            'Dim dialog As New RadPrintPreviewDialog(doc)
+            'dialog.WindowState = FormWindowState.Maximized
 
-            dialog.ThemeName = Me.dgvBhukaBagList.ThemeName
-            dialog.ShowDialog()
+            'dialog.ThemeName = Me.dgvBhukaBagList.ThemeName
+            'dialog.ShowDialog()
+
+            dgvBhukaBagList.Print()
         Catch ex As Exception
             Me.Cursor = Cursors.Default
         Finally

@@ -19,8 +19,7 @@ Public Class frmRptViewer
         rds1.Value = FetchAllRecords(_LotNo)
 
         '' Dynaimc Path
-        Dim path As String = Directory.GetCurrentDirectory()
-        Dim CRPath As String = path.Replace("\bin\Debug", "") & "\Reports\" & "RptReceipt.rdlc"
+        Dim CRPath As String = Application.StartupPath & "\ChReports\RptReceipt.rdlc"
         ''
         ReportViewer1.LocalReport.ReportPath = CRPath
         ReportViewer1.LocalReport.DataSources.Clear()
@@ -30,8 +29,6 @@ Public Class frmRptViewer
         ReportViewer1.LocalReport.DataSources.Add(rds1)
 
         ReportViewer1.RefreshReport()
-
-        ReportViewer1.LocalReport.PrintToPrinter()
     End Sub
     Private Function FetchAllRecords(sLotNo As String) As DataTable
         Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum

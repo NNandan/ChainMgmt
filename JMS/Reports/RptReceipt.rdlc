@@ -373,63 +373,12 @@
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
-  <DataSources>
-    <DataSource Name="DataSet1">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>d8d8cc90-abb7-4085-a103-8830308cf8a0</rd:DataSourceID>
-    </DataSource>
-  </DataSources>
   <DataSets>
-    <DataSet Name="DataSet_Report">
+    <DataSet Name="ChDsReceipt">
       <Query>
-        <DataSourceName>DataSet1</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
+        <DataSourceName />
+        <CommandText />
       </Query>
-      <Fields>
-        <Field Name="TransactionId">
-          <DataField>TransactionId</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TransactionDt">
-          <DataField>TransactionDt</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LotNo">
-          <DataField>LotNo</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ItemName">
-          <DataField>ItemName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ReceiveWt">
-          <DataField>ReceiveWt</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="ReceivePr">
-          <DataField>ReceivePr</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="LabourName">
-          <DataField>LabourName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BarCode">
-          <DataField>BarCode</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\Desktop Projects\JMS\JMS\Report\DataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>Dt_Receipt</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
-      </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

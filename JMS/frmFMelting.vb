@@ -1024,8 +1024,12 @@ ErrHandler:
         Try
             If cmbItemType.Text.Trim <> "" And txtItemName.Text.Trim <> "" And Val(txtGrossWt.Text.Trim) > 0 And Val(txtGrossPr.Text.Trim) > 0 Then
 
-                Me.fillGrid()
-                Me.Total()
+                If dgvMelting.Rows.Count > 0 AndAlso ChkDuplicate() = True Then
+                    MsgBox("Duplicate Data")
+                Else
+                    Me.fillGrid()
+                    Me.Total()
+                End If
             Else
                 'ErrorProvider1.SetError(txtRequirePr, "Enter Required %")
                 MsgBox("Enter Proper Details")
@@ -1123,40 +1127,40 @@ ErrHandler:
         lblTotalSilverWt.Text = 0.0
         'dgvMelting.RowCount = 0
     End Sub
-    Private Sub Rmccmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Rmccmb.SelectedIndexChanged
-        If Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 0 Then
-            txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
-            txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
+    'Private Sub Rmccmb_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Rmccmb.SelectedIndexChanged
+    '    If Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 0 Then
+    '        txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
+    '        txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            txtGrossWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
-            txtGrossWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+    '        txtGrossWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+    '        txtGrossWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
-            txtGrossPr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
-            txtGrossPr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReportPr").Value.ToString
+    '        txtGrossPr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
+    '        txtGrossPr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReportPr").Value.ToString
 
-            txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
-            'Today Get Fine Wt On Balance Wt Not On Receive Wt
-            txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
-            'txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
+    '        txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
+    '        'Today Get Fine Wt On Balance Wt Not On Receive Wt
+    '        txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
+    '        'txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
 
-            txtSrNo.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
-        ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then
-            txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
-            txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
+    '        txtSrNo.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
+    '    ElseIf Me.Rmccmb.SelectedIndex > -1 And cmbItemType.SelectedIndex = 1 Then
+    '        txtItemName.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemId").Value.ToString
+    '        txtItemName.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ItemName").Value.ToString
 
-            txtGrossWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
-            txtGrossWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+    '        txtGrossWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
+    '        txtGrossWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalanceWt").Value.ToString
 
-            txtGrossPr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
-            txtGrossPr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
+    '        txtGrossPr.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptDetaild").Value.ToString
+    '        txtGrossPr.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceivePr").Value.ToString
 
-            txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
-            'txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
-            txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
-            txtSrNo.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
-        End If
+    '        txtFineWt.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("ReceiptId").Value.ToString
+    '        'txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("FineWt").Value.ToString
+    '        txtFineWt.Text = Me.Rmccmb.EditorControl.CurrentRow.Cells("BalFineWt").Value.ToString
+    '        txtSrNo.Tag = Me.Rmccmb.EditorControl.CurrentRow.Cells("UsedBagId").Value.ToString
+    '    End If
 
-    End Sub
+    'End Sub
     Private Sub fillHeaderFromNewLotNo(ByVal intNewLotId As Integer)
         Dim parameters = New List(Of SqlParameter)()
 
@@ -1180,8 +1184,10 @@ ErrHandler:
             txtToKarigar.Tag = dr.Item("LabourId").ToString
             txtToKarigar.Text = dr.Item("LabourName").ToString
             txtTreeNo.Tag = dr.Item("OperationTypeId").ToString
+
             Dim TransId As Integer
             TransId = dr.Item("NewLotId").ToString
+
             If txtTreeNo.Tag = "7" Or txtTreeNo.Tag = "9" Then
                 If Not CheckTransNoExist() Then Exit Sub
                 Me.ClearTreeDetails()
@@ -1393,8 +1399,6 @@ ErrHandler:
             End With
 
             dbManager.Insert("SP_NewLotNo_Update", CommandType.StoredProcedure, Hparameters.ToArray())
-
-            'MessageBox.Show("Data Updated !!!", "Fancy", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)

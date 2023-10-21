@@ -22,28 +22,28 @@ Partial Class frmFMelting
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn6 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn7 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn8 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn9 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn10 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn11 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim GridViewTextBoxColumn12 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn13 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn14 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn15 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn16 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn17 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim GridViewTextBoxColumn18 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn19 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn20 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn21 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn22 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn23 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn24 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn25 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn26 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn27 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn28 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition5 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn29 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn30 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.TbMelting = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GBoxDetails = New System.Windows.Forms.GroupBox()
@@ -500,7 +500,7 @@ Partial Class frmFMelting
         Me.Rmccmb.EditorControl.MasterTemplate.AllowColumnChooser = False
         Me.Rmccmb.EditorControl.MasterTemplate.EnableGrouping = False
         Me.Rmccmb.EditorControl.MasterTemplate.ShowFilteringRow = False
-        Me.Rmccmb.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.Rmccmb.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition4
         Me.Rmccmb.EditorControl.Name = "NestedRadGridView"
         Me.Rmccmb.EditorControl.ReadOnly = True
         Me.Rmccmb.EditorControl.ShowGroupPanel = False
@@ -518,10 +518,10 @@ Partial Class frmFMelting
         Me.cmbItemType.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.cmbItemType.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.cmbItemType.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        RadListDataItem1.Text = "Bags"
-        RadListDataItem2.Text = "Voucher"
-        Me.cmbItemType.Items.Add(RadListDataItem1)
-        Me.cmbItemType.Items.Add(RadListDataItem2)
+        RadListDataItem3.Text = "Bags"
+        RadListDataItem4.Text = "Voucher"
+        Me.cmbItemType.Items.Add(RadListDataItem3)
+        Me.cmbItemType.Items.Add(RadListDataItem4)
         Me.cmbItemType.Location = New System.Drawing.Point(47, 24)
         Me.cmbItemType.Name = "cmbItemType"
         Me.cmbItemType.Size = New System.Drawing.Size(97, 20)
@@ -552,66 +552,66 @@ Partial Class frmFMelting
         Me.dgvMelting.MasterTemplate.AllowAddNewRow = False
         Me.dgvMelting.MasterTemplate.AllowColumnReorder = False
         Me.dgvMelting.MasterTemplate.AllowDeleteRow = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.HeaderText = "Sr."
-        GridViewTextBoxColumn1.Name = "GSrNo"
-        GridViewTextBoxColumn1.ReadOnly = True
-        GridViewTextBoxColumn1.Width = 42
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.HeaderText = "Item Type"
-        GridViewTextBoxColumn2.Name = "GItemType"
-        GridViewTextBoxColumn2.ReadOnly = True
-        GridViewTextBoxColumn2.Width = 100
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.HeaderText = "Slip/Bag No. "
-        GridViewTextBoxColumn3.Name = "GSlipBagNo"
-        GridViewTextBoxColumn3.Width = 150
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.HeaderText = "ItemBagId"
-        GridViewTextBoxColumn4.IsVisible = False
-        GridViewTextBoxColumn4.Name = "GItemId"
-        GridViewTextBoxColumn4.Width = 92
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.HeaderText = "Item Name"
-        GridViewTextBoxColumn5.Name = "GItemName"
-        GridViewTextBoxColumn5.ReadOnly = True
-        GridViewTextBoxColumn5.Width = 230
-        GridViewTextBoxColumn6.EnableExpressionEditor = False
-        GridViewTextBoxColumn6.HeaderText = "Gross Wt."
-        GridViewTextBoxColumn6.Name = "GGrossWt"
-        GridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn6.Width = 80
-        GridViewTextBoxColumn7.EnableExpressionEditor = False
-        GridViewTextBoxColumn7.HeaderText = "Percent [%]"
-        GridViewTextBoxColumn7.Name = "GRequirePr"
-        GridViewTextBoxColumn7.ReadOnly = True
-        GridViewTextBoxColumn7.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn7.Width = 80
-        GridViewTextBoxColumn8.EnableExpressionEditor = False
-        GridViewTextBoxColumn8.HeaderText = "Fine Wt."
-        GridViewTextBoxColumn8.Name = "GFineWt"
-        GridViewTextBoxColumn8.ReadOnly = True
-        GridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn8.Width = 82
-        GridViewTextBoxColumn9.EnableExpressionEditor = False
-        GridViewTextBoxColumn9.FieldName = "ReceiptId"
-        GridViewTextBoxColumn9.HeaderText = "Receipt Id."
-        GridViewTextBoxColumn9.IsVisible = False
-        GridViewTextBoxColumn9.Name = "colReceiptId"
-        GridViewTextBoxColumn10.EnableExpressionEditor = False
-        GridViewTextBoxColumn10.FieldName = "ReceiptDetaild"
-        GridViewTextBoxColumn10.HeaderText = "Receipt Detail Id"
-        GridViewTextBoxColumn10.IsVisible = False
-        GridViewTextBoxColumn10.Name = "colReceiptDetailId"
-        GridViewTextBoxColumn11.EnableExpressionEditor = False
-        GridViewTextBoxColumn11.FieldName = "UsedBagId"
-        GridViewTextBoxColumn11.HeaderText = "UsedBagId"
-        GridViewTextBoxColumn11.IsVisible = False
-        GridViewTextBoxColumn11.Name = "colUsedBagId"
-        Me.dgvMelting.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewTextBoxColumn6, GridViewTextBoxColumn7, GridViewTextBoxColumn8, GridViewTextBoxColumn9, GridViewTextBoxColumn10, GridViewTextBoxColumn11})
+        GridViewTextBoxColumn18.EnableExpressionEditor = False
+        GridViewTextBoxColumn18.HeaderText = "Sr."
+        GridViewTextBoxColumn18.Name = "GSrNo"
+        GridViewTextBoxColumn18.ReadOnly = True
+        GridViewTextBoxColumn18.Width = 42
+        GridViewTextBoxColumn19.EnableExpressionEditor = False
+        GridViewTextBoxColumn19.HeaderText = "Item Type"
+        GridViewTextBoxColumn19.Name = "GItemType"
+        GridViewTextBoxColumn19.ReadOnly = True
+        GridViewTextBoxColumn19.Width = 100
+        GridViewTextBoxColumn20.EnableExpressionEditor = False
+        GridViewTextBoxColumn20.HeaderText = "Slip/Bag No. "
+        GridViewTextBoxColumn20.Name = "GSlipBagNo"
+        GridViewTextBoxColumn20.Width = 150
+        GridViewTextBoxColumn21.EnableExpressionEditor = False
+        GridViewTextBoxColumn21.HeaderText = "ItemBagId"
+        GridViewTextBoxColumn21.IsVisible = False
+        GridViewTextBoxColumn21.Name = "GItemId"
+        GridViewTextBoxColumn21.Width = 92
+        GridViewTextBoxColumn22.EnableExpressionEditor = False
+        GridViewTextBoxColumn22.HeaderText = "Item Name"
+        GridViewTextBoxColumn22.Name = "GItemName"
+        GridViewTextBoxColumn22.ReadOnly = True
+        GridViewTextBoxColumn22.Width = 230
+        GridViewTextBoxColumn23.EnableExpressionEditor = False
+        GridViewTextBoxColumn23.HeaderText = "Gross Wt."
+        GridViewTextBoxColumn23.Name = "GGrossWt"
+        GridViewTextBoxColumn23.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn23.Width = 80
+        GridViewTextBoxColumn24.EnableExpressionEditor = False
+        GridViewTextBoxColumn24.HeaderText = "Percent [%]"
+        GridViewTextBoxColumn24.Name = "GRequirePr"
+        GridViewTextBoxColumn24.ReadOnly = True
+        GridViewTextBoxColumn24.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn24.Width = 80
+        GridViewTextBoxColumn25.EnableExpressionEditor = False
+        GridViewTextBoxColumn25.HeaderText = "Fine Wt."
+        GridViewTextBoxColumn25.Name = "GFineWt"
+        GridViewTextBoxColumn25.ReadOnly = True
+        GridViewTextBoxColumn25.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn25.Width = 82
+        GridViewTextBoxColumn26.EnableExpressionEditor = False
+        GridViewTextBoxColumn26.FieldName = "ReceiptId"
+        GridViewTextBoxColumn26.HeaderText = "Receipt Id."
+        GridViewTextBoxColumn26.IsVisible = False
+        GridViewTextBoxColumn26.Name = "colReceiptId"
+        GridViewTextBoxColumn27.EnableExpressionEditor = False
+        GridViewTextBoxColumn27.FieldName = "ReceiptDetaild"
+        GridViewTextBoxColumn27.HeaderText = "Receipt Detail Id"
+        GridViewTextBoxColumn27.IsVisible = False
+        GridViewTextBoxColumn27.Name = "colReceiptDetailId"
+        GridViewTextBoxColumn28.EnableExpressionEditor = False
+        GridViewTextBoxColumn28.FieldName = "UsedBagId"
+        GridViewTextBoxColumn28.HeaderText = "UsedBagId"
+        GridViewTextBoxColumn28.IsVisible = False
+        GridViewTextBoxColumn28.Name = "colUsedBagId"
+        Me.dgvMelting.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn18, GridViewTextBoxColumn19, GridViewTextBoxColumn20, GridViewTextBoxColumn21, GridViewTextBoxColumn22, GridViewTextBoxColumn23, GridViewTextBoxColumn24, GridViewTextBoxColumn25, GridViewTextBoxColumn26, GridViewTextBoxColumn27, GridViewTextBoxColumn28})
         Me.dgvMelting.MasterTemplate.EnableGrouping = False
         Me.dgvMelting.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvMelting.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.dgvMelting.MasterTemplate.ViewDefinition = TableViewDefinition5
         Me.dgvMelting.Name = "dgvMelting"
         Me.dgvMelting.ReadOnly = True
         Me.dgvMelting.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -903,43 +903,43 @@ Partial Class frmFMelting
         Me.dgvMeltingData.MasterTemplate.AllowDeleteRow = False
         Me.dgvMeltingData.MasterTemplate.AllowEditRow = False
         Me.dgvMeltingData.MasterTemplate.AutoGenerateColumns = False
-        GridViewTextBoxColumn12.EnableExpressionEditor = False
-        GridViewTextBoxColumn12.FieldName = "MeltingId"
-        GridViewTextBoxColumn12.HeaderText = "Melting Id."
-        GridViewTextBoxColumn12.IsVisible = False
-        GridViewTextBoxColumn12.Name = "colMeltingId"
-        GridViewTextBoxColumn12.Width = 90
-        GridViewTextBoxColumn13.EnableExpressionEditor = False
-        GridViewTextBoxColumn13.FieldName = "MeltingDt"
-        GridViewTextBoxColumn13.HeaderText = "Melting Dt."
-        GridViewTextBoxColumn13.Name = "colMeltingDt"
-        GridViewTextBoxColumn13.Width = 100
-        GridViewTextBoxColumn14.EnableExpressionEditor = False
-        GridViewTextBoxColumn14.FieldName = "ItemName"
-        GridViewTextBoxColumn14.HeaderText = "Item Name"
-        GridViewTextBoxColumn14.Name = "colItemName"
-        GridViewTextBoxColumn14.Width = 300
-        GridViewTextBoxColumn15.EnableExpressionEditor = False
-        GridViewTextBoxColumn15.FieldName = "LotNo"
-        GridViewTextBoxColumn15.HeaderText = "Lot No."
-        GridViewTextBoxColumn15.Name = "colLotNo"
-        GridViewTextBoxColumn15.Width = 92
-        GridViewTextBoxColumn16.EnableExpressionEditor = False
-        GridViewTextBoxColumn16.FieldName = "GrossWt"
-        GridViewTextBoxColumn16.HeaderText = "Gross Wt."
-        GridViewTextBoxColumn16.Name = "colGrossWt"
-        GridViewTextBoxColumn16.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn16.Width = 100
-        GridViewTextBoxColumn17.EnableExpressionEditor = False
-        GridViewTextBoxColumn17.FieldName = "RequirePr"
-        GridViewTextBoxColumn17.HeaderText = "Require %"
-        GridViewTextBoxColumn17.Name = "colRequirePr"
-        GridViewTextBoxColumn17.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
-        GridViewTextBoxColumn17.Width = 90
-        Me.dgvMeltingData.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn12, GridViewTextBoxColumn13, GridViewTextBoxColumn14, GridViewTextBoxColumn15, GridViewTextBoxColumn16, GridViewTextBoxColumn17})
+        GridViewTextBoxColumn29.EnableExpressionEditor = False
+        GridViewTextBoxColumn29.FieldName = "MeltingId"
+        GridViewTextBoxColumn29.HeaderText = "Melting Id."
+        GridViewTextBoxColumn29.IsVisible = False
+        GridViewTextBoxColumn29.Name = "colMeltingId"
+        GridViewTextBoxColumn29.Width = 90
+        GridViewTextBoxColumn30.EnableExpressionEditor = False
+        GridViewTextBoxColumn30.FieldName = "MeltingDt"
+        GridViewTextBoxColumn30.HeaderText = "Melting Dt."
+        GridViewTextBoxColumn30.Name = "colMeltingDt"
+        GridViewTextBoxColumn30.Width = 100
+        GridViewTextBoxColumn31.EnableExpressionEditor = False
+        GridViewTextBoxColumn31.FieldName = "ItemName"
+        GridViewTextBoxColumn31.HeaderText = "Item Name"
+        GridViewTextBoxColumn31.Name = "colItemName"
+        GridViewTextBoxColumn31.Width = 300
+        GridViewTextBoxColumn32.EnableExpressionEditor = False
+        GridViewTextBoxColumn32.FieldName = "LotNo"
+        GridViewTextBoxColumn32.HeaderText = "Lot No."
+        GridViewTextBoxColumn32.Name = "colLotNo"
+        GridViewTextBoxColumn32.Width = 92
+        GridViewTextBoxColumn33.EnableExpressionEditor = False
+        GridViewTextBoxColumn33.FieldName = "GrossWt"
+        GridViewTextBoxColumn33.HeaderText = "Gross Wt."
+        GridViewTextBoxColumn33.Name = "colGrossWt"
+        GridViewTextBoxColumn33.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn33.Width = 100
+        GridViewTextBoxColumn34.EnableExpressionEditor = False
+        GridViewTextBoxColumn34.FieldName = "RequirePr"
+        GridViewTextBoxColumn34.HeaderText = "Require %"
+        GridViewTextBoxColumn34.Name = "colRequirePr"
+        GridViewTextBoxColumn34.TextAlignment = System.Drawing.ContentAlignment.MiddleRight
+        GridViewTextBoxColumn34.Width = 90
+        Me.dgvMeltingData.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn29, GridViewTextBoxColumn30, GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewTextBoxColumn34})
         Me.dgvMeltingData.MasterTemplate.EnableGrouping = False
         Me.dgvMeltingData.MasterTemplate.ShowRowHeaderColumn = False
-        Me.dgvMeltingData.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.dgvMeltingData.MasterTemplate.ViewDefinition = TableViewDefinition6
         Me.dgvMeltingData.Name = "dgvMeltingData"
         Me.dgvMeltingData.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgvMeltingData.Size = New System.Drawing.Size(783, 547)
@@ -948,7 +948,7 @@ Partial Class frmFMelting
         'lblTotalSilverWt
         '
         Me.lblTotalSilverWt.Font = New System.Drawing.Font("Tahoma", 8.25!)
-        Me.lblTotalSilverWt.Location = New System.Drawing.Point(796, 240)
+        Me.lblTotalSilverWt.Location = New System.Drawing.Point(799, 238)
         Me.lblTotalSilverWt.Name = "lblTotalSilverWt"
         Me.lblTotalSilverWt.Size = New System.Drawing.Size(77, 20)
         Me.lblTotalSilverWt.TabIndex = 810
@@ -959,7 +959,7 @@ Partial Class frmFMelting
         '
         Me.lblSilverWt.AutoSize = True
         Me.lblSilverWt.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSilverWt.Location = New System.Drawing.Point(819, 209)
+        Me.lblSilverWt.Location = New System.Drawing.Point(801, 209)
         Me.lblSilverWt.Name = "lblSilverWt"
         Me.lblSilverWt.Size = New System.Drawing.Size(60, 14)
         Me.lblSilverWt.TabIndex = 809
@@ -969,7 +969,7 @@ Partial Class frmFMelting
         '
         Me.txtSilverPr.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtSilverPr.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtSilverPr.Location = New System.Drawing.Point(799, 176)
+        Me.txtSilverPr.Location = New System.Drawing.Point(799, 175)
         Me.txtSilverPr.Name = "txtSilverPr"
         Me.txtSilverPr.Size = New System.Drawing.Size(93, 20)
         Me.txtSilverPr.TabIndex = 808
@@ -979,7 +979,7 @@ Partial Class frmFMelting
         '
         Me.lblSilverPr.AutoSize = True
         Me.lblSilverPr.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSilverPr.Location = New System.Drawing.Point(825, 143)
+        Me.lblSilverPr.Location = New System.Drawing.Point(801, 158)
         Me.lblSilverPr.Name = "lblSilverPr"
         Me.lblSilverPr.Size = New System.Drawing.Size(51, 14)
         Me.lblSilverPr.TabIndex = 807
@@ -988,7 +988,7 @@ Partial Class frmFMelting
         'txtFineAdd
         '
         Me.txtFineAdd.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtFineAdd.Location = New System.Drawing.Point(799, 104)
+        Me.txtFineAdd.Location = New System.Drawing.Point(799, 112)
         Me.txtFineAdd.Name = "txtFineAdd"
         Me.txtFineAdd.ReadOnly = True
         Me.txtFineAdd.Size = New System.Drawing.Size(93, 20)
@@ -998,7 +998,7 @@ Partial Class frmFMelting
         'lblFineAdd
         '
         Me.lblFineAdd.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.lblFineAdd.Location = New System.Drawing.Point(822, 80)
+        Me.lblFineAdd.Location = New System.Drawing.Point(801, 91)
         Me.lblFineAdd.Name = "lblFineAdd"
         Me.lblFineAdd.Size = New System.Drawing.Size(54, 18)
         Me.lblFineAdd.TabIndex = 806
@@ -1008,7 +1008,7 @@ Partial Class frmFMelting
         '
         Me.lblMeltingStockAdd.AutoSize = True
         Me.lblMeltingStockAdd.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMeltingStockAdd.Location = New System.Drawing.Point(796, 23)
+        Me.lblMeltingStockAdd.Location = New System.Drawing.Point(801, 31)
         Me.lblMeltingStockAdd.Name = "lblMeltingStockAdd"
         Me.lblMeltingStockAdd.Size = New System.Drawing.Size(107, 14)
         Me.lblMeltingStockAdd.TabIndex = 803
@@ -1024,7 +1024,7 @@ Partial Class frmFMelting
         Me.txtStockAdd.TabIndex = 7
         Me.txtStockAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'frmFaMelting
+        'frmFMelting
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(902, 574)
@@ -1041,7 +1041,7 @@ Partial Class frmFMelting
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.MaximizeBox = False
-        Me.Name = "frmFaMelting"
+        Me.Name = "frmFMelting"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Melting"
         Me.TbMelting.ResumeLayout(False)

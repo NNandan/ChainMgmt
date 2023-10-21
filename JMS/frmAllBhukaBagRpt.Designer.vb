@@ -96,7 +96,7 @@ Partial Class frmAllBhukaBagRpt
         'btnPrint
         '
         Me.btnPrint.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnPrint.Location = New System.Drawing.Point(240, 385)
+        Me.btnPrint.Location = New System.Drawing.Point(240, 384)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(75, 25)
         Me.btnPrint.TabIndex = 20
@@ -105,7 +105,7 @@ Partial Class frmAllBhukaBagRpt
         'btnExit
         '
         Me.btnExit.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.btnExit.Location = New System.Drawing.Point(317, 385)
+        Me.btnExit.Location = New System.Drawing.Point(317, 384)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(75, 25)
         Me.btnExit.TabIndex = 26
@@ -114,7 +114,7 @@ Partial Class frmAllBhukaBagRpt
         'frmAllBhukaBagRpt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(619, 412)
+        Me.ClientSize = New System.Drawing.Size(562, 412)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.dgvBhukaBagList)

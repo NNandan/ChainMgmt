@@ -6,6 +6,20 @@ JMS
 </name>
 </assembly>
 <members>
+<member name="M:JMS.frmBhukaBag.btnRCancel_Click(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:JMS.frmFStockIssue.frmOpeingStock_Load(System.Object,System.EventArgs)">
+ <summary>
+ 
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="T:JMS.My.Resources.Resources">
 <summary>
   A strongly-typed resource class, for looking up localized strings, etc.
@@ -61,20 +75,6 @@ JMS
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member>
-<member name="M:JMS.frmBhukaBag.btnRCancel_Click(System.Object,System.EventArgs)">
- <summary>
- 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
-</member>
-<member name="M:JMS.frmFStockIssue.frmOpeingStock_Load(System.Object,System.EventArgs)">
- <summary>
- 
- </summary>
- <param name="sender"></param>
- <param name="e"></param>
 </member>
 <member name="T:JMS.DataSet1">
 <summary>

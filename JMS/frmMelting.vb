@@ -34,14 +34,14 @@ Public Class frmMelting
             mFr_State = value
             Select Case mFr_State
                 Case FormState.AStateMode
-                    CType(Me.ParentForm, frmMain).FormMode.Text = "New"
+                    CType(Me.ParentForm, frmMain).FormMode.Text = "&New"
                     Me.btnSave.Enabled = True
                     Me.btnSave.Text = "&Save"
                     Me.btnDelete.Enabled = False
                     lblLotNo.Visible = False
                     txtMeltingNo.Visible = False
                 Case FormState.EStateMode
-                    CType(Me.ParentForm, frmMain).FormMode.Text = "Edit"
+                    CType(Me.ParentForm, frmMain).FormMode.Text = "&Edit"
                     Me.btnSave.Text = "&Update"
                     Me.btnDelete.Enabled = True
                     lblLotNo.Visible = True
@@ -60,9 +60,9 @@ Public Class frmMelting
             txtMelting.Clear()
             txtIssuePr.Clear()
 
-            txtFrKarigar.Tag = ""
-            txtFrKarigar.Clear()
-            cmbTLabour.SelectedIndex = 0
+            txtFrEmployee.Tag = ""
+            txtFrEmployee.Clear()
+            cmbtEmployee.SelectedIndex = 0
             '' For Header Field End
 
             '' For Detail Field Start
@@ -104,8 +104,8 @@ Public Class frmMelting
             btnSave.Enabled = True
             btnDelete.Enabled = False
 
-            txtFrKarigar.Tag = CInt(UserId)
-            txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
+            txtFrEmployee.Tag = CInt(UserId)
+            txtFrEmployee.Text = Convert.ToString(KarigarName.Trim)
 
             txtMelting.Focus()
             txtMelting.Select()
@@ -123,8 +123,8 @@ Public Class frmMelting
 
         Me.Clear_Form()
 
-        txtFrKarigar.Tag = CInt(UserId)
-        txtFrKarigar.Text = Convert.ToString(KarigarName.Trim)
+        txtFrEmployee.Tag = CInt(UserId)
+        txtFrEmployee.Text = Convert.ToString(KarigarName.Trim)
     End Sub
     Private Sub fillItemName()
         Dim connection As SqlConnection = Nothing
@@ -186,12 +186,12 @@ Public Class frmMelting
             dt.Rows.InsertAt(row, 0)
 
             'Assign DataTable as DataSource.
-            cmbTLabour.DataSource = dt
-            cmbTLabour.DisplayMember = "LabourName"
-            cmbTLabour.ValueMember = "LabourId"
+            cmbtEmployee.DataSource = dt
+            cmbtEmployee.DisplayMember = "LabourName"
+            cmbtEmployee.ValueMember = "LabourId"
 
-            cmbTLabour.AutoCompleteMode = AutoCompleteMode.SuggestAppend
-            cmbTLabour.AutoCompleteDataSource = AutoCompleteSource.ListItems
+            cmbtEmployee.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            cmbtEmployee.AutoCompleteDataSource = AutoCompleteSource.ListItems
         Catch ex As Exception
             MessageBox.Show("Error:- " & ex.Message)
         Finally
@@ -345,7 +345,6 @@ Public Class frmMelting
                 lblTotal.Text = Format(Val(lblTotal.Text) + Val(row.Cells(5).Value), "0.00")
                 lblTotalFineWt.Text = Format(Val(lblTotalFineWt.Text) + Val(row.Cells(7).Value), "0.000")
                 lblGrossTotal.Text = Format(Val(lblTotalFineWt.Text * 100) / Val(txtMelting.Text), "0.00")
-
                 lblAlloyTotal.Text = Format(Val(lblGrossTotal.Text) - Val(lblTotal.Text), "0.00")
             Next
 
@@ -550,8 +549,8 @@ Public Class frmMelting
         alParaval.Add(lblTotalSilverWt.Text)
         alParaval.Add(lblAlloyTotal.Text)
 
-        alParaval.Add(txtFrKarigar.Tag)
-        alParaval.Add(cmbTLabour.SelectedValue)
+        alParaval.Add(txtFrEmployee.Tag)
+        alParaval.Add(cmbtEmployee.SelectedValue)
 
         ''For Details
         For Each row As GridViewRowInfo In dgvMelting.Rows
@@ -673,8 +672,12 @@ Public Class frmMelting
     Private Sub txtFineWt_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtFineWt.Validating
         Try
             If cmbItemType.Text.Trim <> "" And txtMelting.Text.Trim <> "" And txtItemName.Text.Trim <> "" And Val(txtIssuePr.Text.Trim) > 0 Then
-                Me.fillGrid()
-                Me.Total()
+                If dgvMelting.Rows.Count > 0 AndAlso ChkDuplicate() = True Then
+                    MsgBox("Duplicate Data")
+                Else
+                    Me.fillGrid()
+                    Me.Total()
+                End If
             Else
                 MsgBox("Enter Proper Details")
             End If
@@ -750,8 +753,8 @@ Public Class frmMelting
         alParaval.Add(lblTotalSilverWt.Text)
         alParaval.Add(lblAlloyTotal.Text)
 
-        alParaval.Add(txtFrKarigar.Tag)
-        alParaval.Add(cmbTLabour.SelectedValue)
+        alParaval.Add(txtFrEmployee.Tag)
+        alParaval.Add(cmbtEmployee.SelectedValue)
 
         ''For Details
         For Each row As GridViewRowInfo In dgvMelting.Rows
@@ -893,9 +896,9 @@ Public Class frmMelting
                 txtMelting.Focus()
                 txtMelting.SelectAll()
                 Return False
-            ElseIf cmbTLabour.SelectedIndex = -1 Or cmbTLabour.SelectedIndex = 0 Then
+            ElseIf cmbtEmployee.SelectedIndex = -1 Or cmbtEmployee.SelectedIndex = 0 Then
                 MessageBox.Show("Select To Employee !", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
-                cmbTLabour.Focus()
+                cmbtEmployee.Focus()
                 Return False
             ElseIf lblAlloyTotal.Text < 0 Then
                 MessageBox.Show("Alloy Wt. Cannaot be Negative !", "Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
@@ -963,9 +966,9 @@ Public Class frmMelting
             lblAlloyTotal.Text = dr.Item("GrossWt").ToString
             txtSilverPr.Text = dr.Item("SilverPr").ToString
             lblTotalSilverWt.Text = dr.Item("SilverWt").ToString
-            txtFrKarigar.Tag = dr.Item("FrKarigarId").ToString
-            txtFrKarigar.Text = dr.Item("FrKarigar").ToString
-            cmbTLabour.SelectedIndex = dr.Item("ToKarigarId").ToString
+            txtFrEmployee.Tag = dr.Item("FrKarigarId").ToString
+            txtFrEmployee.Text = dr.Item("FrKarigar").ToString
+            cmbtEmployee.SelectedIndex = dr.Item("ToKarigarId").ToString
         End If
 
         dr.Close()

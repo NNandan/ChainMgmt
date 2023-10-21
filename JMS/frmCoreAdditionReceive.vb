@@ -304,9 +304,9 @@ Public Class frmCoreAdditionReceive
         alParaval.Add(dgvIssue.Rows(3).Cells(3).Value)          ''Issue Wt
         alParaval.Add(dgvIssue.Rows(3).Cells(4).Value)          ''Issue Pr
 
-        alParaval.Add(dgvRecevie.Rows(2).Cells(3).Value)         ''Rec Wt
-        alParaval.Add(dgvRecevie.Rows(3).Cells(4).Value)         ''Rec Pr
-        alParaval.Add(dgvRecevie.Rows(3).Cells(3).Value)         ''Bhuka Wt
+        alParaval.Add(dgvRecevie.Rows(2).Cells(3).Value)        ''Rec Wt
+        alParaval.Add(dgvRecevie.Rows(3).Cells(4).Value)        ''Rec Pr
+        alParaval.Add(dgvRecevie.Rows(3).Cells(3).Value)        ''Bhuka Wt
 
         alParaval.Add(txtFrKarigar.Tag)
         alParaval.Add(cmbTLabour.SelectedValue)
@@ -387,7 +387,7 @@ Public Class frmCoreAdditionReceive
             MessageBox.Show("Data Saved !!!", "Chain", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
         Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             Cursor.Current = Cursors.Default
         End Try
@@ -418,7 +418,7 @@ Public Class frmCoreAdditionReceive
                 MsgBox("Enter Proper Details")
             End If
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub SumOfRTotal()
@@ -508,7 +508,7 @@ Public Class frmCoreAdditionReceive
         Try
             txtRFineWt.Text = Format((Val(txtRRecWt.Text) * Val(txtRRecPr.Text)) / 100, "0.000")
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub txtRRecWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRRecWt.KeyPress
@@ -575,7 +575,7 @@ Public Class frmCoreAdditionReceive
                 rowInfo.Cells(0).Value = rowInfo.Index + 1
             Next
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Sub dgvFillReceive_CellDoubleClick(sender As Object, e As GridViewCellEventArgs) Handles dgvFillReceive.CellDoubleClick
@@ -631,7 +631,7 @@ Public Class frmCoreAdditionReceive
             End With
 
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
     End Sub
@@ -717,7 +717,7 @@ Public Class frmCoreAdditionReceive
                     Me.Clear_Form()
 
                 Catch ex As Exception
-                    MessageBox.Show("Error:- " & ex.Message)
+                    MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End If
         Else
@@ -785,11 +785,10 @@ ErrHandler:
                 TempRow = e.RowIndex
             End If
         Catch ex As Exception
-            Throw ex
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Private Function fetchAllRecords() As DataTable
-
         Dim dtData As DataTable = New DataTable()
 
         Try
@@ -803,11 +802,10 @@ ErrHandler:
             dtData = dbManager.GetDataTable("SP_CoreAdditionReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Return dtData
-
     End Function
     Private Function fetchAllRecords(ByVal intCoreId As Integer) As DataTable
         Dim dtData As DataTable = New DataTable()
@@ -824,7 +822,7 @@ ErrHandler:
             dtData = dbManager.GetDataTable("SP_CoreAdditionReceive_Select", CommandType.StoredProcedure, parameters.ToArray())
 
         Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Return dtData
@@ -838,7 +836,7 @@ ErrHandler:
             dgvFillReceive.MasterTemplate.ShowFilteringRow = False
             dgvFillReceive.MasterTemplate.ShowHeaderCellButtons = True
         Catch ex As Exception
-            MessageBox.Show("Error:- " & ex.Message)
+            MessageBox.Show(ex.Message, "Chain", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
         End Try
     End Sub

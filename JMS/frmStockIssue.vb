@@ -565,16 +565,16 @@ Public Class frmStockIssue
             Throw ex
         End Try
     End Sub
-    Private Sub fillHeaderFromListView(ByVal intIssueId As Integer)
+    Private Sub fillHeaderFromListView(ByVal intReceiveId As Integer)
         Dim parameters = New List(Of SqlParameter)()
 
         With parameters
             .Clear()
-            .Add(dbManager.CreateParameter("@IId", CInt(intIssueId), DbType.Int16))
+            .Add(dbManager.CreateParameter("@HId", CInt(intReceiveId), DbType.Int16))
             .Add(dbManager.CreateParameter("@ActionType", "FetchHeaderRecord", DbType.String))
         End With
 
-        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_StockIssue_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
+        Dim dr As SqlDataReader = dbManager.GetDataReader("SP_HollowReceive_Select", CommandType.StoredProcedure, Objcn, parameters.ToArray())
 
         If dr.HasRows = False Then
             Exit Sub
@@ -632,6 +632,7 @@ ErrHandler:
                 End With
 
                 dbManager.Delete("SP_StockIssue_Delete", CommandType.StoredProcedure, parameters.ToArray())
+
                 MessageBox.Show("Record Deleted Successfully !!!")
 
                 Me.Clear_Form()

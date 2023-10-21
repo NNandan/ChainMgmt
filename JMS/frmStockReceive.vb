@@ -324,8 +324,14 @@ Public Class frmStockReceive
                 iValue += 1
                 .Add(dbManager.CreateParameter("@DReceivePr", alParaval.Item(iValue), DbType.String))
                 iValue += 1
-                .Add(dbManager.CreateParameter("@DConvPr", alParaval.Item(iValue), DbType.String))
-                iValue += 1
+
+                If DeptId = 7 Then
+                    .Add(dbManager.CreateParameter("@DConvPr", alParaval.Item(iValue), DbType.String))
+                    iValue += 1
+                Else
+
+                End If
+
                 .Add(dbManager.CreateParameter("@DFineWt", alParaval.Item(iValue), DbType.String))
                 iValue += 1
             End With

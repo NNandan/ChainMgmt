@@ -76,22 +76,22 @@ JMS
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="T:JMS.DataSet1">
+<member name="T:JMS.ChDsReceipt">
 <summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
 </member>
-<member name="T:JMS.DataSet1.Dt_ReceiptDataTable">
+<member name="T:JMS.ChDsReceipt.ChDt_ReceiptDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:JMS.DataSet1.Dt_ReceiptRow">
+<member name="T:JMS.ChDsReceipt.ChDt_ReceiptRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:JMS.DataSet1.Dt_ReceiptRowChangeEvent">
+<member name="T:JMS.ChDsReceipt.ChDt_ReceiptRowChangeEvent">
 <summary>
 Row event argument class
 </summary>

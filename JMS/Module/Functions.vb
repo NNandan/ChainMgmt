@@ -1,7 +1,4 @@
-Imports Microsoft.Reporting.WinForms
-Imports System.Drawing.Printing
 Imports System.IO
-Imports System.Runtime.CompilerServices
 Module Functions
     Declare Function SetParent Lib "user32" (ByVal hWndChild As Integer, ByVal hWndNewParent As Integer) As Integer
     Declare Sub keybd_event Lib "user32" (ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
@@ -326,50 +323,6 @@ Module Functions
         Finally
             'AddHandler objForm.Load, AddressOf frmMain.Childfrm_Load
         End Try
-    End Sub
-    <Extension()>
-    Sub PrintToPrinter(ByVal report As LocalReport)
-        Dim pageSettings As PageSettings = New PageSettings()
-
-        pageSettings.PrinterSettings.DefaultPageSettings.PaperSize = New PaperSize("Custom", 650, 325)
-
-        Print(report, pageSettings)
-    End Sub
-    <Extension()>
-    Sub Print(ByVal report As LocalReport, ByVal pageSettings As PageSettings)
-
-        Dim deviceInfo As String = $"<DeviceInfo>
-                    <OutputFormat>EMF</OutputFormat>
-                    <PageWidth>{pageSettings.PaperSize.Width * 100}in</PageWidth>
-                    <PageHeight>{pageSettings.PaperSize.Height * 100}in</PageHeight>
-                    <MarginTop>{pageSettings.Margins.Top * 100}in</MarginTop>
-                    <MarginLeft>{pageSettings.Margins.Left * 100}in</MarginLeft>
-                    <MarginRight>{pageSettings.Margins.Right * 100}in</MarginRight>
-                    <MarginBottom>{pageSettings.Margins.Bottom * 100}in</MarginBottom>
-                </DeviceInfo>"
-
-        Dim warnings As Warning()
-        Dim streams = New List(Of Stream)()
-        Dim pageIndex = 0
-        report.Render("Image", deviceInfo, Function(name, fileNameExtension, encoding, mimeType, willSeek)
-                                               Dim stream As MemoryStream = New MemoryStream()
-                                               streams.Add(stream)
-                                               Return stream
-                                           End Function, warnings)
-
-        For Each stream As Stream In streams
-            stream.Position = 0
-        Next
-
-        If streams Is Nothing OrElse streams.Count = 0 Then Throw New Exception("No stream to print.")
-
-        Using printDocument As PrintDocument = New PrintDocument()
-            printDocument.DefaultPageSettings = pageSettings
-
-            If Not printDocument.PrinterSettings.IsValid Then
-                Throw New Exception("Can't find the default printer.")
-            End If
-        End Using
     End Sub
     Public Function fnEnCryptDeCrypt(ByVal Text As String) As String
         Dim strTempChar As String = "", i As Integer

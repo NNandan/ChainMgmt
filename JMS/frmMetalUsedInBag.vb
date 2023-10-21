@@ -92,7 +92,6 @@ Public Class frmMetalUsedInBag
     End Sub
     Private Sub dgvMeltingBagList_ViewCellFormatting(sender As Object, e As CellFormattingEventArgs) Handles dgvMeltingBagList.ViewCellFormatting
         If TypeOf e.Row Is GridViewSummaryRowInfo Then
-
             If e.Column.Name = "colUsedIn" Then
                 e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
             Else

@@ -902,7 +902,6 @@ D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCDailyStockDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCompanyDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionReceive.resources
-D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCoreAdditionRemoval.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmEditBags.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmEditLabIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmFAccountClosing.resources
@@ -1318,3 +1317,6 @@ D:\ChainSoftware\JMS\JMS\obj\Release\JMS.vbproj.GenerateResource.Cache
 D:\ChainSoftware\JMS\JMS\obj\Release\JMS.exe.licenses
 D:\ChainSoftware\JMS\JMS\obj\Release\RdlCompile.cache
 D:\ChainSoftware\JMS\JMS\obj\Release\RdlCompile.compiled
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmCStockLogin.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.frmMeltingFinalizeLot.resources
+D:\Desktop Projects\JMS\JMS\obj\Release\JMS.vbprojResolveAssemblyReference.cache

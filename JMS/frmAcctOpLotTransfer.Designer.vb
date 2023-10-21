@@ -96,9 +96,9 @@ Partial Class frmAcctOpLotTransfer
         Me.lblTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotal.Location = New System.Drawing.Point(356, 396)
         Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(44, 13)
+        Me.lblTotal.Size = New System.Drawing.Size(36, 13)
         Me.lblTotal.TabIndex = 25
-        Me.lblTotal.Text = "Total :"
+        Me.lblTotal.Text = "Total"
         '
         'frmAcctOpLotTransfer
         '

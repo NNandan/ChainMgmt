@@ -226,7 +226,6 @@ D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCDailyStockDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCompanyDetails.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCoreAdditionIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCoreAdditionReceive.resources
-D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmCoreAdditionRemoval.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmEditBags.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmEditLabIssue.resources
 D:\Desktop Projects\JMS\JMS\obj\Debug\JMS.frmFamilyMaster.resources

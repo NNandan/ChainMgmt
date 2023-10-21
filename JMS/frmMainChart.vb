@@ -286,58 +286,6 @@ Public Class frmMainChart
 
         Return dtData
     End Function
-    'Private Function FetchAllRecords(sLotNo As String) As DataTable
-    '    Dim barcode As Zen.Barcode.Code128BarcodeDraw = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum
-
-    '    Dim dtData As DataTable = New DataTable()
-    '    Dim NewDt As DataTable = New DataTable()
-
-    '    Try
-    '        Dim parameters = New List(Of SqlParameter)()
-    '        parameters.Clear()
-
-    '        With parameters
-    '            .Add(dbManager.CreateParameter("@ActionType", "PrintReceipt", DbType.String))
-    '            .Add(dbManager.CreateParameter("@TLotNo", Trim(sLotNo), DbType.String))
-    '        End With
-
-    '        dtData = dbManager.GetDataTable("SP_Transaction_Select", CommandType.StoredProcedure, parameters.ToArray())
-
-    '        NewDt = dtData.Clone()
-
-    '        Dim dcolColumn As DataColumn = New DataColumn("BarCode", GetType(System.Byte()))
-    '        NewDt.Columns.Add(dcolColumn)
-
-    '        Dim Img As Image = barcode.Draw(Trim(cmbLotNo.Text.Trim), 50)
-    '        'PictureBox1.Image = Img
-
-    '        For Each sourcerow As DataRow In dtData.Rows
-    '            Dim destRow As DataRow = NewDt.NewRow()
-    '            destRow("TransactionId") = sourcerow("TransactionId")
-    '            destRow("TransactionDt") = sourcerow("TransactionDt")
-    '            destRow("LotNo") = sourcerow("LotNo")
-    '            destRow("ItemName") = sourcerow("ItemName")
-    '            destRow("ReceiveWt") = sourcerow("ReceiveWt")
-    '            destRow("ReceivePr") = sourcerow("ReceivePr")
-    '            destRow("LabourName") = sourcerow("LabourName")
-
-    '            If Img IsNot Nothing Then
-    '                Dim ms As MemoryStream = New MemoryStream()
-    '                Img.Save(ms, System.Drawing.Imaging.ImageFormat.Png)
-    '                Dim imagedata As Byte() = ms.ToArray()
-    '                destRow("BarCode") = imagedata
-    '                'destRow("LotNo") = ms.ToArray()
-    '            End If
-    '            NewDt.Rows.Add(destRow)
-    '        Next
-
-    '    Catch ex As Exception
-    '        MessageBox.Show("Error:- " & ex.Message)
-    '    End Try
-
-    '    Return NewDt
-
-    'End Function
     Private Sub txtReceivedWt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtReceiveWt.KeyPress
         numdotkeypress(e, txtReceiveWt, Me)
     End Sub
@@ -398,7 +346,6 @@ Public Class frmMainChart
             strSQL = "DELETE FROM tblTransaction WHERE TransactionId = " & Val(iTransId) & " AND LotNumber = '" & CStr(sLotName) & "'"
 
             Try
-
                 dbManager.Delete(strSQL, CommandType.Text)
 
                 MessageBox.Show("Record Deleted Successfully !!!")

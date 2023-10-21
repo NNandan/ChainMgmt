@@ -92,7 +92,7 @@ Partial Class frmCStockLogin
         'lableHeading
         '
         Me.lableHeading.Font = New System.Drawing.Font("Segoe UI", 9.25!, System.Drawing.FontStyle.Bold)
-        Me.lableHeading.Location = New System.Drawing.Point(0, 57)
+        Me.lableHeading.Location = New System.Drawing.Point(0, 3)
         Me.lableHeading.Name = "lableHeading"
         Me.lableHeading.Size = New System.Drawing.Size(285, 20)
         Me.lableHeading.TabIndex = 7

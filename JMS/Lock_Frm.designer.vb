@@ -26,7 +26,7 @@ Partial Class Lock_Frm
         '
         'Lock_Frm
         '
-        Me.ClientSize = New System.Drawing.Size(234, 241)
+        Me.ClientSize = New System.Drawing.Size(291, 245)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False

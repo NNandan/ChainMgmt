@@ -274,12 +274,6 @@
     <Compile Include="frmCoreAdditionReceive.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCoreAdditionRemoval.Designer.vb">
-      <DependentUpon>frmCoreAdditionRemoval.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmCoreAdditionRemoval.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmCStockLogin.designer.vb">
       <DependentUpon>frmCStockLogin.vb</DependentUpon>
     </Compile>
@@ -1328,14 +1322,6 @@
     <Compile Include="RdfrmEditMelting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reports\DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\DataSet1.vb">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAbout.resx">
@@ -1406,9 +1392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCoreAdditionReceive.resx">
       <DependentUpon>frmCoreAdditionReceive.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCoreAdditionRemoval.resx">
-      <DependentUpon>frmCoreAdditionRemoval.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCStockLogin.resx">
       <DependentUpon>frmCStockLogin.vb</DependentUpon>
@@ -1959,17 +1942,6 @@
   <ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Reports\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Reports\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\login.gif" />
   </ItemGroup>

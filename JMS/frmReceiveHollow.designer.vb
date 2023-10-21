@@ -78,12 +78,12 @@ Partial Class frmReceiveHollow
         Me.GBoxMain = New System.Windows.Forms.GroupBox()
         Me.txtTransNo = New System.Windows.Forms.TextBox()
         Me.txtLotNo = New Telerik.WinControls.UI.RadTextBox()
-        Me.cmbLotNo = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbHollowNo = New Telerik.WinControls.UI.RadDropDownList()
         Me.txtCoreAddNo = New Telerik.WinControls.UI.RadTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtFrKarigar = New Telerik.WinControls.UI.RadTextBox()
+        Me.txtFrEmployee = New Telerik.WinControls.UI.RadTextBox()
         Me.Label21 = New System.Windows.Forms.Label()
-        Me.cmbtKarigar = New Telerik.WinControls.UI.RadDropDownList()
+        Me.cmbtEmployee = New Telerik.WinControls.UI.RadDropDownList()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -125,10 +125,10 @@ Partial Class frmReceiveHollow
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBoxMain.SuspendLayout()
         CType(Me.txtLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbHollowNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCoreAddNo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtFrEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbtEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvHollowReceive, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvHollowReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -612,12 +612,12 @@ Partial Class frmReceiveHollow
         Me.GBoxMain.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.GBoxMain.Controls.Add(Me.txtTransNo)
         Me.GBoxMain.Controls.Add(Me.txtLotNo)
-        Me.GBoxMain.Controls.Add(Me.cmbLotNo)
+        Me.GBoxMain.Controls.Add(Me.cmbHollowNo)
         Me.GBoxMain.Controls.Add(Me.txtCoreAddNo)
         Me.GBoxMain.Controls.Add(Me.Label5)
-        Me.GBoxMain.Controls.Add(Me.txtFrKarigar)
+        Me.GBoxMain.Controls.Add(Me.txtFrEmployee)
         Me.GBoxMain.Controls.Add(Me.Label21)
-        Me.GBoxMain.Controls.Add(Me.cmbtKarigar)
+        Me.GBoxMain.Controls.Add(Me.cmbtEmployee)
         Me.GBoxMain.Controls.Add(Me.Label6)
         Me.GBoxMain.Controls.Add(Me.Label2)
         Me.GBoxMain.Controls.Add(Me.Label4)
@@ -654,14 +654,14 @@ Partial Class frmReceiveHollow
         Me.txtLotNo.Size = New System.Drawing.Size(125, 20)
         Me.txtLotNo.TabIndex = 875
         '
-        'cmbLotNo
+        'cmbHollowNo
         '
-        Me.cmbLotNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbLotNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbLotNo.Location = New System.Drawing.Point(331, 22)
-        Me.cmbLotNo.Name = "cmbLotNo"
-        Me.cmbLotNo.Size = New System.Drawing.Size(125, 20)
-        Me.cmbLotNo.TabIndex = 874
+        Me.cmbHollowNo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbHollowNo.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbHollowNo.Location = New System.Drawing.Point(331, 22)
+        Me.cmbHollowNo.Name = "cmbHollowNo"
+        Me.cmbHollowNo.Size = New System.Drawing.Size(125, 20)
+        Me.cmbHollowNo.TabIndex = 874
         '
         'txtCoreAddNo
         '
@@ -681,14 +681,14 @@ Partial Class frmReceiveHollow
         Me.Label5.TabIndex = 870
         Me.Label5.Text = "Core Add No."
         '
-        'txtFrKarigar
+        'txtFrEmployee
         '
-        Me.txtFrKarigar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.txtFrKarigar.Location = New System.Drawing.Point(562, 23)
-        Me.txtFrKarigar.Name = "txtFrKarigar"
-        Me.txtFrKarigar.ReadOnly = True
-        Me.txtFrKarigar.Size = New System.Drawing.Size(145, 20)
-        Me.txtFrKarigar.TabIndex = 4
+        Me.txtFrEmployee.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.txtFrEmployee.Location = New System.Drawing.Point(562, 23)
+        Me.txtFrEmployee.Name = "txtFrEmployee"
+        Me.txtFrEmployee.ReadOnly = True
+        Me.txtFrEmployee.Size = New System.Drawing.Size(145, 20)
+        Me.txtFrEmployee.TabIndex = 4
         '
         'Label21
         '
@@ -700,16 +700,16 @@ Partial Class frmReceiveHollow
         Me.Label21.TabIndex = 873
         Me.Label21.Text = "Lot / Bag No."
         '
-        'cmbtKarigar
+        'cmbtEmployee
         '
-        Me.cmbtKarigar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.cmbtKarigar.DropDownHeight = 124
-        Me.cmbtKarigar.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.cmbtKarigar.Font = New System.Drawing.Font("Tahoma", 9.0!)
-        Me.cmbtKarigar.Location = New System.Drawing.Point(562, 55)
-        Me.cmbtKarigar.Name = "cmbtKarigar"
-        Me.cmbtKarigar.Size = New System.Drawing.Size(146, 20)
-        Me.cmbtKarigar.TabIndex = 5
+        Me.cmbtEmployee.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.cmbtEmployee.DropDownHeight = 124
+        Me.cmbtEmployee.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cmbtEmployee.Font = New System.Drawing.Font("Tahoma", 9.0!)
+        Me.cmbtEmployee.Location = New System.Drawing.Point(562, 55)
+        Me.cmbtEmployee.Name = "cmbtEmployee"
+        Me.cmbtEmployee.Size = New System.Drawing.Size(146, 20)
+        Me.cmbtEmployee.TabIndex = 5
         '
         'Label6
         '
@@ -881,10 +881,10 @@ Partial Class frmReceiveHollow
         Me.GBoxMain.ResumeLayout(False)
         Me.GBoxMain.PerformLayout()
         CType(Me.txtLotNo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbLotNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbHollowNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCoreAddNo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtFrKarigar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbtKarigar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtFrEmployee, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbtEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         CType(Me.dgvHollowReceive.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvHollowReceive, System.ComponentModel.ISupportInitialize).EndInit()
@@ -900,8 +900,8 @@ Partial Class frmReceiveHollow
     Friend WithEvents btnSave As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnDelete As Telerik.WinControls.UI.RadButton
     Friend WithEvents GBoxMain As GroupBox
-    Friend WithEvents txtFrKarigar As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents cmbtKarigar As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents txtFrEmployee As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents cmbtEmployee As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents TransDt As DateTimePicker
@@ -948,7 +948,7 @@ Partial Class frmReceiveHollow
     Friend WithEvents txtRTotalFw As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtRTotalPr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtRTotalWt As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents cmbLotNo As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents cmbHollowNo As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents txtLotNo As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtSkinPr As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents txtTransNo As TextBox

@@ -112,7 +112,7 @@ Partial Class frmBackup
         'ProgressBar1
         '
         Me.ProgressBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ProgressBar1.Location = New System.Drawing.Point(0, 131)
+        Me.ProgressBar1.Location = New System.Drawing.Point(0, 128)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(516, 23)
         Me.ProgressBar1.TabIndex = 3
@@ -124,17 +124,17 @@ Partial Class frmBackup
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'frmBakcup
+        'frmBackup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(516, 154)
+        Me.ClientSize = New System.Drawing.Size(516, 151)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnRestore)
         Me.Controls.Add(Me.btnBackup)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
-        Me.Name = "frmBakcup"
+        Me.Name = "frmBackup"
         Me.Text = "SQL Server Backup & Restore"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
